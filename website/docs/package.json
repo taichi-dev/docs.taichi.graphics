@@ -1,0 +1,23 @@
+{
+  "name": "taichi",
+  "version": "0.0.1",
+  "description": "The Taichi Programming Language",
+  "main": "index.js",
+  "authors": {
+    "name": "Taichi Developers",
+    "email": ""
+  },
+  "repository": "https://github.com/taichi-dev/taichi/taichi",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.5.4",
+    "@vuepress/plugin-back-to-top": "^1.5.4",
+    "@vuepress/plugin-medium-zoom": "^1.5.4",
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-mathjax": "^1.2.8"
+  }
+}
