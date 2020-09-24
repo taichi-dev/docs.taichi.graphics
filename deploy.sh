@@ -4,7 +4,7 @@
 set -e
 
 # build
-npm run build --prefix=website/docs
+yarn --cwd=website/docs build
 
 # navigate into the build output directory
 cd website/docs/src/.vuepress/dist

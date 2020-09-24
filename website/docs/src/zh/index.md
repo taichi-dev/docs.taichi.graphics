@@ -4,7 +4,7 @@ heroText:
 heroImage: /logo_large.png
 tagline: 为在GPU上进行高性能稀疏及可微分计算设计的高效可移植编程语言
 actionText: 从这里开始 →
-actionLink: /documentation/
+actionLink: /documentation/overview/overview/
 features:
 - title: PLACEHOLDER-FEATURE
   details: PLACEHOLDER-FEATURE

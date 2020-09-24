@@ -1,4 +1,4 @@
 .vscode
 node_modules/
-legacy/
+/legacy/
 website/docs/src/.vuepress/dist/

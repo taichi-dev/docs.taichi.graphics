@@ -6,16 +6,16 @@ The Taichi website uses [VuePress](Vue Press), a static site generator.
 
 You need to have:
 
-- `npm` installed (`brew install node` on macOS)
+- `yarn` installed (`brew install yarn` on macOS)
 - `vuepress` and its dependencies installed:
     ```
-    npm install --prefix=website/docs
+    yarn --cwd=website/docs install
     ```
 
 
 ## Development
 
-Run `npm run dev --prefix=website/docs` to spin up the dev server.
+Run `yarn --cwd=website/docs dev` to spin up the dev server.
 
 
 ## Deploy

@@ -4,7 +4,7 @@ heroText:
 heroImage: /logo_large.png
 tagline: Productive & portable programming language for high-performance, sparse & differentiable computing on GPUs
 actionText: Get Started →
-actionLink: /documentation/
+actionLink: /documentation/overview/overview/
 features:
 - title: PLACEHOLDER-FEATURE
   details: PLACEHOLDER-FEATURE

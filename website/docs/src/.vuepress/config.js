@@ -4,6 +4,7 @@ module.exports = {
   title: 'Taichi',
   description: description,
   base: '/taichi.graphics/',
+  // theme: 'reco',
 
   // Extra tags to be injected to the page HTML `<head>`
   head: [
@@ -49,14 +50,21 @@ module.exports = {
         ariaLabel: 'Languages',
         editLinkText: 'Edit this page on GitHub',
         nav: [
-          {text: 'Documentation', link: '/documentation/'},
+          {text: 'Documentation', link: '/documentation/overview/overview'},
           {text: 'Tutorials', link: '/tutorials/'},
-          {text: 'Explore', items: [
-            {text: 'Gallery', link: '/gallery/'},
-            {text: 'Research', link: '/research/'},
-            {text: 'Playground', link: '/playground/'},
-            {text: 'Changelog', link: 'https://github.com/taichi-dev/taichi/releases'},
-            {text: 'FAQ', link: '/faq/'},
+          {text: 'Learn More', items: [
+            {text: 'Explore', items: [
+              {text: 'Gallery', link: '/gallery/'},
+              {text: 'Research', link: '/research/'},
+              {text: 'Playground', link: '/playground/'}
+            ]},
+            {text: 'Resources', items: [
+              {text: 'Contribution Guide', link: '/contribution/'},
+              {text: 'Changelog', link: 'https://github.com/taichi-dev/taichi/releases'},
+            ]},
+            {text: 'FAQ', items: [
+              {text: 'FAQ', link: '/faq/'},
+            ]},
           ]},
           {text: 'Forum', link: 'https://forum.taichi.graphics/'}
         ],
@@ -65,9 +73,74 @@ module.exports = {
             {
               title: 'Overview',
               collapsable: true,
-              children: ['overview', 'install', 'hello']
+              children: ['overview/overview', 'overview/install', 'overview/hello']
+            },
+            {
+              title: 'Basic Concepts',
+              collapsable: true,
+              children: ['basic/syntax', 'basic/type', 'basic/field_matrix', 'basic/external']
+            },
+            {
+              title: 'Advanced Programming',
+              collapsable: true,
+              children: ['advanced/meta', 'advanced/layout',
+              'advanced/sparse',
+              'advanced/differentiable_programming',
+              'advanced/performance',
+              'advanced/odop',
+              'advanced/syntax_sugars',
+              'advanced/offset']
+            },
+            {
+              title: 'API References',
+              collapsable: true,
+              children: ['api/field', 'api/ti', 'api/scalar_field', 'api/vector', 'api/matrix', 'api/arithmetics', 'api/atomic', 'api/snode']
+            },
+            {
+              title: 'Miscellaneous',
+              collapsable: true,
+              children: [
+                'misc/gui',
+                'misc/debugging',
+                'misc/export_results',
+                'misc/cli_utilities',
+                'misc/global_settings',
+                'misc/export_kernels',
+                'misc/extension_libraries'
+              ]
+            },
+            {
+              title: 'Acknowledgments',
+              collapsable: true,
+              children: ['ack/acknowledgments']
+            },
+            {
+              title: 'Legacy',
+              collapsable: true,
+              children: [
+                'legacy/legacy_installation'
+              ]
             }
           ],
+          '/contribution/': [
+            {
+              title: 'Contribution Guide',
+              collapsable: false,
+              children: [
+                '',
+                'dev_install',
+                'contributor_guide',
+                'write_test',
+                'utilities',
+                'profiler',
+                'cpp_style',
+                'compilation',
+                'internal',
+                'taichicon',
+                'versioning_releases',
+              ]
+            },
+          ]
         }
       },
       '/zh/': {
@@ -105,5 +178,12 @@ module.exports = {
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
     ['vuepress-plugin-mathjax', {target: 'svg', macros: {'*': '\\times'}}],
+    '@vuepress/blog',
+    ['api-docs-generator', {tagColors: {static: '#10ac84'}}],
+    ['vuepress-plugin-code-copy', {
+      color: '#900C3F',
+      backgroundTransition: false,
+      staticIcon: false
+    }]
   ]
 }
