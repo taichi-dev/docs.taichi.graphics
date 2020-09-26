@@ -11,20 +11,20 @@ element being a matrix.
 
 ## Scalar fields
 
--   Every global variable is an N-dimensional field.
+- Every global variable is an N-dimensional field.
 
-    -   Global `scalars` are treated as 0-D scalar fields.
+  - Global `scalars` are treated as 0-D scalar fields.
 
--   Fields are always accessed using indices
+- Fields are always accessed using indices
 
-    -   E.g. `x[i, j, k]` if `x` is a 3D scalar field.
-    -   Even when accessing 0-D field `x`, use `x[None] = 0` instead of `x = 0`. Please **always** use indexing to access entries in fields.
+  - E.g. `x[i, j, k]` if `x` is a 3D scalar field.
+  - Even when accessing 0-D field `x`, use `x[None] = 0` instead of `x = 0`. Please **always** use indexing to access entries in fields.
 
--   Field values are initially zero.
+- Field values are initially zero.
 
--   Sparse fields are initially inactive.
+- Sparse fields are initially inactive.
 
--   See [Scalar fields](../api/scalar_field.md) for more details.
+- See [Scalar fields](../api/scalar_field.md) for more details.
 
 ## Matrix fields
 
@@ -35,15 +35,15 @@ a `3 x 2` matrix. To allocate a `128 x 64` matrix field which has a
 `3 x 2` matrix for each of its entry, use the statement
 `A = ti.Matrix.field(3, 2, dtype=ti.f32, shape=(128, 64))`.
 
--   If you want to get the matrix of grid node `i, j`, please use
-    `mat = A[i, j]`. `mat` is simply a `3 x 2` matrix
--   To get the element on the first row and second column of that
-    matrix, use `mat[0, 1]` or `A[i, j][0, 1]`.
--   As you may have noticed, there are **two** indexing operators `[]`
-    when you load an matrix element from a global matrix field: the
-    first is for field indexing, the second for matrix indexing.
--   `ti.Vector` is simply an alias of `ti.Matrix`.
--   See [Matrices](../api/matrix.md) for more on matrices.
+- If you want to get the matrix of grid node `i, j`, please use
+  `mat = A[i, j]`. `mat` is simply a `3 x 2` matrix
+- To get the element on the first row and second column of that
+  matrix, use `mat[0, 1]` or `A[i, j][0, 1]`.
+- As you may have noticed, there are **two** indexing operators `[]`
+  when you load an matrix element from a global matrix field: the
+  first is for field indexing, the second for matrix indexing.
+- `ti.Vector` is simply an alias of `ti.Matrix`.
+- See [Matrices](../api/matrix.md) for more on matrices.
 
 ## Matrix size
 

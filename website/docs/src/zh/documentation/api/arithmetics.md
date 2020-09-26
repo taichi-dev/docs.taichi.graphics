@@ -4,14 +4,14 @@
 
 ### Arithmetic operators
 
--   `-a`
--   `a + b`
--   `a - b`
--   `a * b`
--   `a / b`
--   `a // b`
--   `a % b`
--   `a ** b`
+- `-a`
+- `a + b`
+- `a - b`
+- `a * b`
+- `a / b`
+- `a // b`
+- `a % b`
+- `a ** b`
 
 ::: tip NOTE
 
@@ -30,6 +30,7 @@ For C-style mod, please use `ti.raw_mod`:
 print(ti.raw_mod(2, 3))   # 2
 print(ti.raw_mod(-2, 3))  # -2
 ```
+
 :::
 
 ::: tip NOTE
@@ -38,10 +39,10 @@ Python 3 distinguishes `/` (true division) and `//` (floor division).
 For example, `1.0 / 2.0 = 0.5`, `1 / 2 = 0.5`, `1 // 2 = 0`,
 `4.2 // 2 = 2`. And Taichi follows the same design:
 
--   **true divisions** on integral types will first cast their
-    operands to the default float point type.
--   **floor divisions** on float-point types will first cast their
-    operands to the default integer type.
+- **true divisions** on integral types will first cast their
+  operands to the default float point type.
+- **floor divisions** on float-point types will first cast their
+  operands to the default integer type.
 
 To avoid such implicit casting, you can manually cast your operands to
 desired types, using `ti.cast`. See
@@ -51,23 +52,23 @@ default numerical types.
 
 ### Logic operators
 
--   `~a`
--   `a == b`
--   `a != b`
--   `a > b`
--   `a < b`
--   `a >= b`
--   `a <= b`
--   `not a`
--   `a or b`
--   `a and b`
--   `a if cond else b`
+- `~a`
+- `a == b`
+- `a != b`
+- `a > b`
+- `a < b`
+- `a >= b`
+- `a <= b`
+- `not a`
+- `a or b`
+- `a and b`
+- `a if cond else b`
 
 ### Bitwise operators
 
--   `a & b`
--   `a ^ b`
--   `a | b`
+- `a & b`
+- `a ^ b`
+- `a | b`
 
 ## Functions
 
@@ -110,19 +111,20 @@ ti.ceil(x)
 ```python
 ti.cast(x, dtype)
 ```
-See [Type system](../basic/type.md#type-system) for more details.
 
+See [Type system](../basic/type.md#type-system) for more details.
 
 ```python
 int(x)
 ```
+
 A shortcut for `ti.cast(x, int)`.
 
 ```python
 float(x)
 ```
-A shortcut for `ti.cast(x, float)`.
 
+A shortcut for `ti.cast(x, float)`.
 
 ### Builtin-alike functions
 

@@ -6,11 +6,11 @@ instance of a kernel.
 
 The life cycle of a Taichi kernel has the following stages:
 
--   Kernel registration
--   Template instantiation and caching
--   Python AST transforms
--   Taichi IR compilation, optimization, and executable generation
--   Launching
+- Kernel registration
+- Template instantiation and caching
+- Python AST transforms
+- Taichi IR compilation, optimization, and executable generation
+- Launching
 
 ![image](https://raw.githubusercontent.com/taichi-dev/public_files/fa03e63ca4e161318c8aa9a5db7f4a825604df88/taichi/life_of_kernel.png)
 
@@ -100,17 +100,17 @@ The Taichi AST lowering pass translates Taichi frontend IR into
 hierarchical static single assignment (SSA) IR, which allows a series of
 further IR passes to happen, such as
 
--   Loop vectorization
--   Type inference and checking
--   General simplifications such as common subexpression elimination
-    (CSE), dead instruction elimination (DIE), constant folding, and
-    store forwarding
--   Access lowering
--   Data access optimizations
--   Reverse-mode automatic differentiation (if using differentiable
-    programming)
--   Parallelization and offloading
--   Atomic operation demotion
+- Loop vectorization
+- Type inference and checking
+- General simplifications such as common subexpression elimination
+  (CSE), dead instruction elimination (DIE), constant folding, and
+  store forwarding
+- Access lowering
+- Data access optimizations
+- Reverse-mode automatic differentiation (if using differentiable
+  programming)
+- Parallelization and offloading
+- Atomic operation demotion
 
 ## The just-in-time (JIT) compilation engine
 

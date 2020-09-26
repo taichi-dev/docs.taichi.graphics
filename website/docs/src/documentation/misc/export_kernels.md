@@ -66,6 +66,7 @@ variables on Unix-like system:
 ```bash
 TI_ARCH=cc TI_ACTION_RECORD=mpm88.yml python mpm88.py
 ```
+
 :::
 
 ### Compose YAML into a single C file

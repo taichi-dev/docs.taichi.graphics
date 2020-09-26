@@ -1,7 +1,7 @@
 # Advanced dense layouts
 
-Fields ([Scalar fields](../api/scalar_field.md)) can be *placed*
-in a specific shape and *layout*. Defining a proper layout can be
+Fields ([Scalar fields](../api/scalar_field.md)) can be _placed_
+in a specific shape and _layout_. Defining a proper layout can be
 critical to performance, especially for memory-bound applications. A
 carefully designed data layout can significantly improve cache/TLB-hit
 rates and cacheline utilization. Although when performance is not the
@@ -102,6 +102,7 @@ for (int i = 0; i < 3; i++) {
     }
 }
 ```
+
 :::
 
 ## Array of Structures (AoS), Structure of Arrays (SoA)

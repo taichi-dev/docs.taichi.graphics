@@ -6,12 +6,12 @@ tagline: Productive & portable programming language for high-performance, sparse
 actionText: Get Started →
 actionLink: /documentation/overview/overview/
 features:
-- title: PLACEHOLDER-FEATURE
-  details: PLACEHOLDER-FEATURE
-- title: PLACEHOLDER-FEATURE
-  details: PLACEHOLDER-FEATURE
-- title: PLACEHOLDER-FEATURE
-  details: PLACEHOLDER-FEATURE
+  - title: PLACEHOLDER-FEATURE
+    details: PLACEHOLDER-FEATURE
+  - title: PLACEHOLDER-FEATURE
+    details: PLACEHOLDER-FEATURE
+  - title: PLACEHOLDER-FEATURE
+    details: PLACEHOLDER-FEATURE
 footer: MIT License | The Taichi Developers
 ---
 

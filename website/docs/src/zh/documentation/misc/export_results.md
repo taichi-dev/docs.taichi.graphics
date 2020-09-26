@@ -5,20 +5,20 @@ videos**. This tutorial demonstrates how to use them step by step.
 
 ## Export images
 
--   There are two ways to export visual results of your program to
-    images.
--   The first and easier way is to make use of `ti.GUI`.
--   The second way is to call some Taichi functions such as
-    `ti.imwrite`.
+- There are two ways to export visual results of your program to
+  images.
+- The first and easier way is to make use of `ti.GUI`.
+- The second way is to call some Taichi functions such as
+  `ti.imwrite`.
 
 ### Export images using `ti.GUI.show`
 
--   `ti.GUI.show(filename)` can not only display the GUI canvas on your
-    screen, but also save the image to your specified `filename`.
--   Note that the format of the image is fully determined by the suffix
-    of `filename`.
--   Taichi now supports saving to `png`, `jpg`, and `bmp` formats.
--   We recommend using `png` format. For example:
+- `ti.GUI.show(filename)` can not only display the GUI canvas on your
+  screen, but also save the image to your specified `filename`.
+- Note that the format of the image is fully determined by the suffix
+  of `filename`.
+- Taichi now supports saving to `png`, `jpg`, and `bmp` formats.
+- We recommend using `png` format. For example:
 
 ```python {23}
 import taichi as ti
@@ -46,10 +46,10 @@ for i in range(iterations):
     gui.show(filename)  # export and show in GUI
 ```
 
--   After running the code above, you will get a series of images in the
-    current folder.
--   To compose these images into a single `mp4` or `gif` file, see
-    [Converting PNGs to video](./cli_utilities.md#converting-pngs-to-video).
+- After running the code above, you will get a series of images in the
+  current folder.
+- To compose these images into a single `mp4` or `gif` file, see
+  [Converting PNGs to video](./cli_utilities.md#converting-pngs-to-video).
 
 ### Export images using `ti.imwrite`
 
@@ -74,18 +74,18 @@ ti.imwrite(pixels.to_numpy(), filename)
 print(f'The image has been saved to {filename}')
 ```
 
--   `ti.imwrite` can export Taichi fields (`ti.Matrix.field`,
-    `ti.Vector.field`, `ti.field`) and numpy arrays `np.ndarray`.
--   Same as above `ti.GUI.show(filename)`, the image format (`png`,
-    `jpg` and `bmp`) is also controlled by the suffix of `filename` in
-    `ti.imwrite(filename)`.
--   Meanwhile, the resulted image type (grayscale, RGB, or RGBA) is
-    determined by **the number of channels in the input field**, i.e.,
-    the length of the third dimension (`field.shape[2]`).
--   In other words, a field that has shape `(w, h)` or `(w, h, 1)` will
-    be exported as a grayscale image.
--   If you want to export `RGB` or `RGBA` images instead, the input
-    field should have a shape `(w, h, 3)` or `(w, h, 4)` respectively.
+- `ti.imwrite` can export Taichi fields (`ti.Matrix.field`,
+  `ti.Vector.field`, `ti.field`) and numpy arrays `np.ndarray`.
+- Same as above `ti.GUI.show(filename)`, the image format (`png`,
+  `jpg` and `bmp`) is also controlled by the suffix of `filename` in
+  `ti.imwrite(filename)`.
+- Meanwhile, the resulted image type (grayscale, RGB, or RGBA) is
+  determined by **the number of channels in the input field**, i.e.,
+  the length of the third dimension (`field.shape[2]`).
+- In other words, a field that has shape `(w, h)` or `(w, h, 1)` will
+  be exported as a grayscale image.
+- If you want to export `RGB` or `RGBA` images instead, the input
+  field should have a shape `(w, h, 3)` or `(w, h, 4)` respectively.
 
 ::: tip NOTE
 All Taichi fields have their own data types, such as `ti.u8` and
@@ -94,9 +94,9 @@ All Taichi fields have their own data types, such as `ti.u8` and
 more details.
 :::
 
--   Taichi offers other helper functions that read and show images in
-    addition to `ti.imwrite`. They are also demonstrated in
-    [GUI system](./gui.md).
+- Taichi offers other helper functions that read and show images in
+  addition to `ti.imwrite`. They are also demonstrated in
+  [GUI system](./gui.md).
 
 ## Export videos
 
@@ -106,8 +106,8 @@ not installed on your machine, please follow the installation
 instructions of `ffmpeg` at the end of this page.
 :::
 
--   `ti.VideoManager` can help you export results in `mp4` or `gif`
-    format. For example,
+- `ti.VideoManager` can help you export results in `mp4` or `gif`
+  format. For example,
 
 ```python {13,24}
 import taichi as ti
@@ -145,14 +145,14 @@ After running the code above, you will find the output videos in the
 
 ### Install ffmpeg on Windows
 
--   Download the `ffmpeg` archive(named `ffmpeg-2020xxx.zip`) from
-    [ffmpeg](https://ffmpeg.org/download.html).
--   Unzip this archive to a folder, such as `D:/YOUR_FFMPEG_FOLDER`.
--   **Important:** add `D:/YOUR_FFMPEG_FOLDER/bin` to the `PATH`
-    environment variable.
--   Open the Windows `cmd` or `PowerShell` and type the line of code
-    below to test your installation. If `ffmpeg` is set up properly, the
-    version information will be printed.
+- Download the `ffmpeg` archive(named `ffmpeg-2020xxx.zip`) from
+  [ffmpeg](https://ffmpeg.org/download.html).
+- Unzip this archive to a folder, such as `D:/YOUR_FFMPEG_FOLDER`.
+- **Important:** add `D:/YOUR_FFMPEG_FOLDER/bin` to the `PATH`
+  environment variable.
+- Open the Windows `cmd` or `PowerShell` and type the line of code
+  below to test your installation. If `ffmpeg` is set up properly, the
+  version information will be printed.
 
 ```bash
 ffmpeg -version
@@ -160,28 +160,29 @@ ffmpeg -version
 
 ### Install `ffmpeg` on Linux
 
--   Most Linux distribution came with `ffmpeg` natively, so you do not
-    need to read this part if the `ffmpeg` command is already there on
-    your machine.
--   Install `ffmpeg` on Ubuntu
+- Most Linux distribution came with `ffmpeg` natively, so you do not
+  need to read this part if the `ffmpeg` command is already there on
+  your machine.
+- Install `ffmpeg` on Ubuntu
 
 ```bash
 sudo apt-get update
 sudo apt-get install ffmpeg
 ```
 
--   Install `ffmpeg` on CentOS and RHEL
+- Install `ffmpeg` on CentOS and RHEL
 
 ```bash
 sudo yum install ffmpeg ffmpeg-devel
 ```
 
--   Install `ffmpeg` on Arch Linux:
+- Install `ffmpeg` on Arch Linux:
 
 ```bash
 pacman -S ffmpeg
 ```
--   Test your installation using
+
+- Test your installation using
 
 ```bash
 ffmpeg -h
@@ -189,7 +190,7 @@ ffmpeg -h
 
 ### Install `ffmpeg` on OS X
 
--   `ffmpeg` can be installed on OS X using `homebrew`:
+- `ffmpeg` can be installed on OS X using `homebrew`:
 
 ```bash
 brew install ffmpeg
@@ -197,9 +198,9 @@ brew install ffmpeg
 
 ## Export PLY files
 
--   `ti.PLYwriter` can help you export results in the `ply` format.
-    Below is a short example of exporting 10 frames of a moving cube
-    with vertices randomly colored,
+- `ti.PLYwriter` can help you export results in the `ply` format.
+  Below is a short example of exporting 10 frames of a moving cube
+  with vertices randomly colored,
 
 ```python
 import taichi as ti
@@ -253,7 +254,7 @@ After running the code above, you will find the output sequence of `ply`
 files in the current working directory. Next, we will break down the
 usage of `ti.PLYWriter` into 4 steps and show some examples.
 
--   Setup `ti.PLYWriter`
+- Setup `ti.PLYWriter`
 
 ```python
 # num_vertices must be a positive int
@@ -268,7 +269,7 @@ writer = ti.PLYWriter(num_vertices=num_vertices)
 writer2 = ti.PLYWriter(num_vertices=20, num_faces=5, face_type="quad")
 ```
 
--   Add required channels
+- Add required channels
 
 ```python
 # A 2D grid with quad faces
@@ -300,7 +301,7 @@ indices = np.array([0, 1, 5, 4]*12)+np.repeat(
 writer.add_faces(indices)
 ```
 
--   Add optional channels
+- Add optional channels
 
 ```python
 # Add custome vertex channel, the input should include a key, a supported datatype and, the data np.array
@@ -339,7 +340,7 @@ writer.add_face_id()
 writer.add_face_piece(np.ones(12))
 ```
 
--   Export files
+- Export files
 
 ```python
 series_prefix = "example.ply"

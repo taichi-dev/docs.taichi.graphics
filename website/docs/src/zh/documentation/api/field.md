@@ -8,7 +8,7 @@ docs:
       desc: Converts a field object to numpy ndarray.
       since: v0.5.14
       static: false
-      tags: ['numpy']
+      tags: ["numpy"]
       params:
         - name: self
           type: ti.field | ti.Vector.field | ti.Matrix.field
@@ -20,7 +20,7 @@ docs:
       desc: Creates a field object from numpy ndarray.
       since: v0.5.14
       static: false
-      tags: ['numpy']
+      tags: ["numpy"]
       params:
         - name: self
           type: ti.field | ti.Vector.field | ti.Matrix.field
@@ -33,7 +33,7 @@ docs:
       desc: Converts a field object to PyTorch Tensor.
       since: v0.5.14
       static: false
-      tags: ['PyTorch']
+      tags: ["PyTorch"]
       params:
         - name: self
           type: ti.field | ti.Vector.field | ti.Matrix.field
@@ -48,7 +48,7 @@ docs:
       desc: Creates a field object from PyTorch Tensor.
       since: v0.5.14
       static: false
-      tags: ['PyTorch']
+      tags: ["PyTorch"]
       params:
         - name: self
           type: ti.field | ti.Vector.field | ti.Matrix.field

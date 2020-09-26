@@ -8,11 +8,11 @@ talk about **scalar fields**, whose elements are simply scalars.
 
 Fields can have up to eight **dimensions**.
 
--   A 0D scalar field is simply a single scalar.
--   A 1D scalar field is a 1D linear array.
--   A 2D scalar field can be used to represent a 2D regular grid of
-    values. For example, a gray-scale image.
--   A 3D scalar field can be used for volumetric data.
+- A 0D scalar field is simply a single scalar.
+- A 1D scalar field is a 1D linear array.
+- A 2D scalar field can be used to represent a 2D regular grid of
+  values. For example, a gray-scale image.
+- A 3D scalar field can be used for volumetric data.
 
 Fields could be either dense or sparse, see [Sparse Computation](../advanced/sparse.md) for
 details on sparse fields. We will only talk about **dense fields** in
@@ -31,22 +31,22 @@ ti.field(dtype, shape = None, offset = None)
 
 parameter dtype
 
-:   (DataType) type of the field element
+: (DataType) type of the field element
 
 parameter shape
 
-:   (optional, scalar or tuple) the shape of field
+: (optional, scalar or tuple) the shape of field
 
 parameter offset
 
-:   (optional, scalar or tuple) see [coordinate offset](../advanced/offset.md)
+: (optional, scalar or tuple) see [coordinate offset](../advanced/offset.md)
 
-For example, this creates a *dense* field with four `int32` as elements:
+For example, this creates a _dense_ field with four `int32` as elements:
 :
 
     x = ti.field(ti.i32, shape=4)
 
-This creates a 4x3 *dense* field with `float32` elements: :
+This creates a 4x3 _dense_ field with `float32` elements: :
 
     x = ti.field(ti.f32, shape=(4, 3))
 
@@ -64,12 +64,13 @@ it afterwards: :
     x = ti.field(ti.f32)
     ti.root.dense(ti.ij, (4, 3)).place(x)
     # equivalent to: x = ti.field(ti.f32, shape=(4, 3))
+
 :::
 
 ::: tip NOTE
 
-Not providing `shape` allows you to *place* the field in a layout other
-than the default *dense*, see [Advanced dense layouts](../advanced/layout.md) for
+Not providing `shape` allows you to _place_ the field in a layout other
+than the default _dense_, see [Advanced dense layouts](../advanced/layout.md) for
 more details.
 :::
 
@@ -100,6 +101,7 @@ x[None] = 1
 y = ti.field(ti.f32, shape=())
 # ERROR: cannot create fields after any field accesses from the Python-scope!
 ```
+
 :::
 
 ## Accessing components
@@ -111,19 +113,19 @@ a\[p, q, \...\]
 
 parameter a
 
-:   (ti.field) the sclar field
+: (ti.field) the sclar field
 
 parameter p
 
-:   (scalar) index of the first field dimension
+: (scalar) index of the first field dimension
 
 parameter q
 
-:   (scalar) index of the second field dimension
+: (scalar) index of the second field dimension
 
 return
 
-:   (scalar) the element at `[p, q, ...]`
+: (scalar) the element at `[p, q, ...]`
 
 This extracts the element value at index `[3, 4]` of field `a`: :
 
@@ -132,6 +134,7 @@ This extracts the element value at index `[3, 4]` of field `a`: :
 This sets the element value at index `2` of 1D field `b` to `5`: :
 
     b[2] = 5
+
 :::
 
 ::: tip NOTE
@@ -149,15 +152,16 @@ a.shape
 
 parameter a
 
-:   (ti.field) the field
+: (ti.field) the field
 
 return
 
-:   (tuple) the shape of field `a`
+: (tuple) the shape of field `a`
 
 ```{=html}
 <!-- -->
 ```
+
     x = ti.field(ti.i32, (6, 5))
     x.shape  # (6, 5)
 
@@ -166,6 +170,7 @@ return
 
     z = ti.field(ti.i32, ())
     z.shape  # ()
+
 :::
 
 ::: {.attribute}
@@ -173,17 +178,19 @@ a.dtype
 
 parameter a
 
-:   (ti.field) the field
+: (ti.field) the field
 
 return
 
-:   (DataType) the data type of `a`
+: (DataType) the data type of `a`
 
 ```{=html}
 <!-- -->
 ```
+
     x = ti.field(ti.i32, (2, 3))
     x.dtype  # ti.i32
+
 :::
 
 ::: {.function}
@@ -191,20 +198,21 @@ a.parent(n = 1)
 
 parameter a
 
-:   (ti.field) the field
+: (ti.field) the field
 
 parameter n
 
-:   (optional, scalar) the number of parent steps, i.e. `n=1` for
-    parent, `n=2` grandparent, etc.
+: (optional, scalar) the number of parent steps, i.e. `n=1` for
+parent, `n=2` grandparent, etc.
 
 return
 
-:   (SNode) the parent of `a`\'s containing SNode
+: (SNode) the parent of `a`\'s containing SNode
 
 ```{=html}
 <!-- -->
 ```
+
     x = ti.field(ti.i32)
     y = ti.field(ti.i32)
     blk1 = ti.root.dense(ti.ij, (6, 5))

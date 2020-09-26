@@ -10,23 +10,23 @@ ti.GUI(title = \'Taichi\', res = (512, 512), background_color =
 
 parameter title
 
-:   (optional, string) the window title
+: (optional, string) the window title
 
 parameter res
 
-:   (optional, scalar or tuple) resolution / size of the window
+: (optional, scalar or tuple) resolution / size of the window
 
 parameter background_color
 
-:   (optional, RGB hex) background color of the window
+: (optional, RGB hex) background color of the window
 
 parameter show_gui
 
-:   (optional, bool) see the note below
+: (optional, bool) see the note below
 
 return
 
-:   (GUI) an object represents the window
+: (GUI) an object represents the window
 
 Create a window. If `res` is scalar, then width will be equal to height.
 
@@ -48,6 +48,7 @@ while gui.running:
     ...
     gui.show(f'{gui.frame:06d}.png')  # save a series of screenshot
 ```
+
 :::
 :::
 
@@ -56,11 +57,11 @@ gui.show(filename = None)
 
 parameter gui
 
-:   (GUI) the window object
+: (GUI) the window object
 
 parameter filename
 
-:   (optional, string) see notes below
+: (optional, string) see notes below
 
 Show the window on the screen.
 
@@ -74,6 +75,7 @@ window to `.png`\'s:
         render(img)
         gui.set_image(img)
         gui.show(f'{frame:06d}.png')
+
 :::
 :::
 
@@ -84,11 +86,11 @@ gui.set_image(img)
 
 parameter gui
 
-:   (GUI) the window object
+: (GUI) the window object
 
 parameter img
 
-:   (np.array or ti.field) field containing the image, see notes below
+: (np.array or ti.field) field containing the image, see notes below
 
 Set an image to display on the window.
 
@@ -98,34 +100,34 @@ vertical coordinates (from bottom to top).
 
 If the window size is `(x, y)`, then `img` must be one of:
 
--   `ti.field(shape=(x, y))`, a grey-scale image
--   `ti.field(shape=(x, y, 3))`, where [3]{.title-ref} is for
-    `(r, g, b)` channels
--   `ti.field(shape=(x, y, 2))`, where [2]{.title-ref} is for `(r, g)`
-    channels
--   `ti.Vector.field(3, shape=(x, y))` `(r, g, b)` channels on each
-    component (see `vector`{.interpreted-text role="ref"})
--   `ti.Vector.field(2, shape=(x, y))` `(r, g)` channels on each
-    component
--   `np.ndarray(shape=(x, y))`
--   `np.ndarray(shape=(x, y, 3))`
--   `np.ndarray(shape=(x, y, 2))`
+- `ti.field(shape=(x, y))`, a grey-scale image
+- `ti.field(shape=(x, y, 3))`, where [3]{.title-ref} is for
+  `(r, g, b)` channels
+- `ti.field(shape=(x, y, 2))`, where [2]{.title-ref} is for `(r, g)`
+  channels
+- `ti.Vector.field(3, shape=(x, y))` `(r, g, b)` channels on each
+  component (see `vector`{.interpreted-text role="ref"})
+- `ti.Vector.field(2, shape=(x, y))` `(r, g)` channels on each
+  component
+- `np.ndarray(shape=(x, y))`
+- `np.ndarray(shape=(x, y, 3))`
+- `np.ndarray(shape=(x, y, 2))`
 
 The data type of `img` must be one of:
 
--   `uint8`, range `[0, 255]`
--   `uint16`, range `[0, 65535]`
--   `uint32`, range `[0, 4294967295]`
--   `float32`, range `[0, 1]`
--   `float64`, range `[0, 1]`
-:::
+- `uint8`, range `[0, 255]`
+- `uint16`, range `[0, 65535]`
+- `uint32`, range `[0, 4294967295]`
+- `float32`, range `[0, 1]`
+- `float64`, range `[0, 1]`
+  :::
 
 ::: {.function}
 gui.get_image()
 
 return
 
-:   (np.array) the current image shown on the GUI
+: (np.array) the current image shown on the GUI
 
 Get the 4-channel (RGBA) image shown in the current GUI system.
 :::
@@ -135,19 +137,19 @@ gui.circle(pos, color = 0xFFFFFF, radius = 1)
 
 parameter gui
 
-:   (GUI) the window object
+: (GUI) the window object
 
 parameter pos
 
-:   (tuple of 2) the position of the circle
+: (tuple of 2) the position of the circle
 
 parameter color
 
-:   (optional, RGB hex) the color to fill the circle
+: (optional, RGB hex) the color to fill the circle
 
 parameter radius
 
-:   (optional, scalar) the radius of the circle
+: (optional, scalar) the radius of the circle
 
 Draw a solid circle.
 :::
@@ -157,21 +159,21 @@ gui.circles(pos, color = 0xFFFFFF, radius = 1)
 
 parameter gui
 
-:   (GUI) the window object
+: (GUI) the window object
 
 parameter pos
 
-:   (np.array) the positions of the circles
+: (np.array) the positions of the circles
 
 parameter color
 
-:   (optional, RGB hex or np.array of uint32) the color(s) to fill the
-    circles
+: (optional, RGB hex or np.array of uint32) the color(s) to fill the
+circles
 
 parameter radius
 
-:   (optional, scalar or np.array of float32) the radius (radii) of the
-    circles
+: (optional, scalar or np.array of float32) the radius (radii) of the
+circles
 
 Draw solid circles.
 :::
@@ -186,23 +188,23 @@ gui.line(begin, end, color = 0xFFFFFF, radius = 1)
 
 parameter gui
 
-:   (GUI) the window object
+: (GUI) the window object
 
 parameter begin
 
-:   (tuple of 2) the first end point position of line
+: (tuple of 2) the first end point position of line
 
 parameter end
 
-:   (tuple of 2) the second end point position of line
+: (tuple of 2) the second end point position of line
 
 parameter color
 
-:   (optional, RGB hex) the color of line
+: (optional, RGB hex) the color of line
 
 parameter radius
 
-:   (optional, scalar) the width of line
+: (optional, scalar) the width of line
 
 Draw a line.
 :::
@@ -212,23 +214,23 @@ gui.lines(begin, end, color = 0xFFFFFF, radius = 1)
 
 parameter gui
 
-:   (GUI) the window object
+: (GUI) the window object
 
 parameter begin
 
-:   (np.array) the positions of the first end point of lines
+: (np.array) the positions of the first end point of lines
 
 parameter end
 
-:   (np.array) the positions of the second end point of lines
+: (np.array) the positions of the second end point of lines
 
 parameter color
 
-:   (optional, RGB hex or np.array of uint32) the color(s) of lines
+: (optional, RGB hex or np.array of uint32) the color(s) of lines
 
 parameter radius
 
-:   (optional, scalar or np.array of float32) the width(s) of the lines
+: (optional, scalar or np.array of float32) the width(s) of the lines
 
 Draw lines.
 :::
@@ -238,23 +240,23 @@ gui.triangle(a, b, c, color = 0xFFFFFF)
 
 parameter gui
 
-:   (GUI) the window object
+: (GUI) the window object
 
 parameter a
 
-:   (tuple of 2) the first end point position of triangle
+: (tuple of 2) the first end point position of triangle
 
 parameter b
 
-:   (tuple of 2) the second end point position of triangle
+: (tuple of 2) the second end point position of triangle
 
 parameter c
 
-:   (tuple of 2) the third end point position of triangle
+: (tuple of 2) the third end point position of triangle
 
 parameter color
 
-:   (optional, RGB hex) the color to fill the triangle
+: (optional, RGB hex) the color to fill the triangle
 
 Draw a solid triangle.
 :::
@@ -264,24 +266,24 @@ gui.triangles(a, b, c, color = 0xFFFFFF)
 
 parameter gui
 
-:   (GUI) the window object
+: (GUI) the window object
 
 parameter a
 
-:   (np.array) the positions of the first end point of triangles
+: (np.array) the positions of the first end point of triangles
 
 parameter b
 
-:   (np.array) the positions of the second end point of triangles
+: (np.array) the positions of the second end point of triangles
 
 parameter c
 
-:   (np.array) the positions of the third end point of triangles
+: (np.array) the positions of the third end point of triangles
 
 parameter color
 
-:   (optional, RGB hex or np.array of uint32) the color(s) to fill the
-    triangles
+: (optional, RGB hex or np.array of uint32) the color(s) to fill the
+triangles
 
 Draw solid triangles.
 :::
@@ -291,23 +293,23 @@ gui.rect(topleft, bottomright, radius = 1, color = 0xFFFFFF)
 
 parameter gui
 
-:   (GUI) the window object
+: (GUI) the window object
 
 parameter topleft
 
-:   (tuple of 2) the top-left point position of rectangle
+: (tuple of 2) the top-left point position of rectangle
 
 parameter bottomright
 
-:   (tuple of 2) the bottom-right point position of rectangle
+: (tuple of 2) the bottom-right point position of rectangle
 
 parameter color
 
-:   (optional, RGB hex) the color of stroke line
+: (optional, RGB hex) the color of stroke line
 
 parameter radius
 
-:   (optional, scalar) the width of stroke line
+: (optional, scalar) the width of stroke line
 
 Draw a hollow rectangle.
 :::
@@ -317,23 +319,23 @@ gui.text(content, pos, font_size = 15, color = 0xFFFFFF)
 
 parameter gui
 
-:   (GUI) the window object
+: (GUI) the window object
 
 parameter content
 
-:   (str) the text to draw
+: (str) the text to draw
 
 parameter pos
 
-:   (tuple of 2) the top-left point position of the fonts / texts
+: (tuple of 2) the top-left point position of the fonts / texts
 
 parameter font_size
 
-:   (optional, scalar) the size of font (in height)
+: (optional, scalar) the size of font (in height)
 
 parameter color
 
-:   (optional, RGB hex) the foreground color of text
+: (optional, RGB hex) the foreground color of text
 
 Draw a line of text on screen.
 :::
@@ -343,11 +345,11 @@ ti.rgb_to_hex(rgb):
 
 parameter rgb
 
-:   (tuple of 3 floats) The (R, G, B) float values, in range \[0, 1\]
+: (tuple of 3 floats) The (R, G, B) float values, in range \[0, 1\]
 
 return
 
-:   (RGB hex or np.array of uint32) The converted hex value
+: (RGB hex or np.array of uint32) The converted hex value
 
 Convert a (R, G, B) tuple of floats into a single integer value. E.g.,
 
@@ -366,14 +368,14 @@ The return values can be used in GUI drawing APIs.
 
 Every event have a key and type.
 
-*Event type* is the type of event, for now, there are just three type of
+_Event type_ is the type of event, for now, there are just three type of
 event:
 
     ti.GUI.RELEASE  # key up or mouse button up
     ti.GUI.PRESS    # key down or mouse button down
     ti.GUI.MOTION   # mouse motion or mouse wheel
 
-*Event key* is the key that you pressed on keyboard or mouse, can be one
+_Event key_ is the key that you pressed on keyboard or mouse, can be one
 of:
 
     # for ti.GUI.PRESS and ti.GUI.RELEASE event:
@@ -390,7 +392,7 @@ of:
     ti.GUI.MOVE    # Mouse Moved
     ti.GUI.WHEEL   # Mouse Wheel Scrolling
 
-A *event filter* is a list combined of *key*, *type* and *(type, key)*
+A _event filter_ is a list combined of _key_, _type_ and _(type, key)_
 tuple, e.g.:
 
 ```python
@@ -409,11 +411,11 @@ gui.running
 
 parameter gui
 
-:   (GUI)
+: (GUI)
 
 return
 
-:   (bool) `True` if `ti.GUI.EXIT` event occurred, vice versa
+: (bool) `True` if `ti.GUI.EXIT` event occurred, vice versa
 
 `ti.GUI.EXIT` occurs when you click on the close (X) button of a window.
 So `gui.running` will obtain `False` when the GUI is being closed.
@@ -435,6 +437,7 @@ You can also close the window by manually setting `gui.running` to
         render()
         gui.set_image(pixels)
         gui.show()
+
 :::
 
 ::: {.function}
@@ -442,15 +445,15 @@ gui.get_event(a, \...)
 
 parameter gui
 
-:   (GUI)
+: (GUI)
 
 parameter a
 
-:   (optional, EventFilter) filter out matched events
+: (optional, EventFilter) filter out matched events
 
 return
 
-:   (bool) `False` if there is no pending event, vise versa
+: (bool) `False` if there is no pending event, vise versa
 
 Try to pop a event from the queue, and store it in `gui.event`.
 
@@ -465,6 +468,7 @@ For example, loop until ESC is pressed:
     while not gui.get_event(ti.GUI.ESCAPE):
         gui.set_image(img)
         gui.show()
+
 :::
 
 ::: {.function}
@@ -472,15 +476,15 @@ gui.get_events(a, \...)
 
 parameter gui
 
-:   (GUI)
+: (GUI)
 
 parameter a
 
-:   (optional, EventFilter) filter out matched events
+: (optional, EventFilter) filter out matched events
 
 return
 
-:   (generator) a python generator, see below
+: (generator) a python generator, see below
 
 Basically the same as `gui.get_event`, except for this one returns a
 generator of events instead of storing into `gui.event`:
@@ -492,6 +496,7 @@ generator of events instead of storing into `gui.event`:
             do_something()
         elif e.key in ['a', ti.GUI.LEFT]:
             ...
+
 :::
 
 ::: {.function}
@@ -499,15 +504,15 @@ gui.is_pressed(key, \...)
 
 parameter gui
 
-:   (GUI)
+: (GUI)
 
 parameter key
 
-:   (EventKey) keys you want to detect
+: (EventKey) keys you want to detect
 
 return
 
-:   (bool) `True` if one of the keys pressed, vice versa
+: (bool) `True` if one of the keys pressed, vice versa
 
 ::: warning
 
@@ -520,6 +525,7 @@ example:
             print('Go left!')
         elif gui.is_pressed('d', ti.GUI.RIGHT):
             print('Go right!')
+
 :::
 :::
 
@@ -528,15 +534,16 @@ gui.get_cursor_pos()
 
 parameter gui
 
-:   (GUI)
+: (GUI)
 
 return
 
-:   (tuple of 2) current cursor position within the window
+: (tuple of 2) current cursor position within the window
 
 For example:
 
     mouse_x, mouse_y = gui.get_cursor_pos()
+
 :::
 
 ::: {.attribute}
@@ -544,11 +551,11 @@ gui.fps_limit
 
 parameter gui
 
-:   (GUI)
+: (GUI)
 
 return
 
-:   (scalar or None) the maximum FPS, `None` for no limit
+: (scalar or None) the maximum FPS, `None` for no limit
 
 The default value is 60.
 
@@ -570,24 +577,24 @@ gui.slider(text, minimum, maximum, step=1)
 
 parameter text
 
-:   (str) the text to be displayed above this slider.
+: (str) the text to be displayed above this slider.
 
 parameter minumum
 
-:   (float) the minimum value of the slider value.
+: (float) the minimum value of the slider value.
 
 parameter maxumum
 
-:   (float) the maximum value of the slider value.
+: (float) the maximum value of the slider value.
 
 parameter step
 
-:   (optional, float) the step between two separate value.
+: (optional, float) the step between two separate value.
 
 return
 
-:   (WidgetValue) a value getter / setter, see
-    `WidgetValue`{.interpreted-text role="class"}.
+: (WidgetValue) a value getter / setter, see
+`WidgetValue`{.interpreted-text role="class"}.
 
 The widget will be display as: `{text}: {value:.3f}`, followed with a
 slider.
@@ -598,12 +605,12 @@ gui.label(text)
 
 parameter text
 
-:   (str) the text to be displayed in the label.
+: (str) the text to be displayed in the label.
 
 return
 
-:   (WidgetValue) a value getter / setter, see
-    `WidgetValue`{.interpreted-text role="class"}.
+: (WidgetValue) a value getter / setter, see
+`WidgetValue`{.interpreted-text role="class"}.
 
 The widget will be display as: `{text}: {value:.3f}`.
 :::
@@ -613,16 +620,16 @@ gui.button(text, event_name=None)
 
 parameter text
 
-:   (str) the text to be displayed in the button.
+: (str) the text to be displayed in the button.
 
 parameter event_name
 
-:   (optional, str) customize the event name.
+: (optional, str) customize the event name.
 
 return
 
-:   (EventKey) the event key for this button, see
-    `gui_event`{.interpreted-text role="ref"}.
+: (EventKey) the event key for this button, see
+`gui_event`{.interpreted-text role="ref"}.
 :::
 
 ::: {.WidgetValue}
@@ -644,6 +651,7 @@ For example:
         radius.value += 0.01
         ...
         gui.show()
+
 :::
 
 ## Image I/O
@@ -653,11 +661,11 @@ ti.imwrite(img, filename)
 
 parameter img
 
-:   (ti.Vector.field or ti.field) the image you want to export
+: (ti.Vector.field or ti.field) the image you want to export
 
 parameter filename
 
-:   (string) the location you want to save to
+: (string) the location you want to save to
 
 Export a `np.ndarray` or Taichi field (`ti.Matrix.field`,
 `ti.Vector.field`, or `ti.field`) to a specified location `filename`.
@@ -700,14 +708,14 @@ fields** which has different datatypes all **into integars between \[0,
 255\]**. As a result, `ti.imwrite` has the following requirements for
 different datatypes of input fields:
 
--   For float-type (`ti.f16`, `ti.f32`, etc) input fields, **the value
-    of each pixel should be float between \[0.0, 1.0\]**. Otherwise
-    `ti.imwrite` will first clip them into \[0.0, 1.0\]. Then they are
-    multiplied by 256 and casted to integaters ranging from \[0, 255\].
--   For int-type (`ti.u8`, `ti.u16`, etc) input fields, **the value of
-    each pixel can be any valid integer in its own bounds**. These
-    integers in this field will be scaled to \[0, 255\] by being divided
-    over the upper bound of its basic type accordingly.
+- For float-type (`ti.f16`, `ti.f32`, etc) input fields, **the value
+  of each pixel should be float between \[0.0, 1.0\]**. Otherwise
+  `ti.imwrite` will first clip them into \[0.0, 1.0\]. Then they are
+  multiplied by 256 and casted to integaters ranging from \[0, 255\].
+- For int-type (`ti.u8`, `ti.u16`, etc) input fields, **the value of
+  each pixel can be any valid integer in its own bounds**. These
+  integers in this field will be scaled to \[0, 255\] by being divided
+  over the upper bound of its basic type accordingly.
 
 Here is another example:
 
@@ -731,6 +739,7 @@ draw()
 
 ti.imwrite(pixels, f"export_f32.png")
 ```
+
 :::
 
 ::: {.function}
@@ -738,17 +747,17 @@ ti.imread(filename, channels=0)
 
 parameter filename
 
-:   (string) the filename of the image to load
+: (string) the filename of the image to load
 
 parameter channels
 
-:   (optional int) the number of channels in your specified image. The
-    default value `0` means the channels of the returned image is
-    adaptive to the image file
+: (optional int) the number of channels in your specified image. The
+default value `0` means the channels of the returned image is
+adaptive to the image file
 
 return
 
-:   (np.ndarray) the image read from `filename`
+: (np.ndarray) the image read from `filename`
 
 This function loads an image from the target filename and returns it as
 a `np.ndarray(dtype=np.uint8)`.
@@ -761,11 +770,11 @@ ti.imshow(img, windname)
 
 parameter img
 
-:   (ti.Vector.field or ti.field) the image to show in the GUI
+: (ti.Vector.field or ti.field) the image to show in the GUI
 
 parameter windname
 
-:   (string) the name of the GUI window
+: (string) the name of the GUI window
 
 This function will create an instance of `ti.GUI` and show the input
 image on the screen.
@@ -778,19 +787,19 @@ ti.imresize(img, w, h=None):
 
 parameter img
 
-:   (np.array or ti.field) the input image.
+: (np.array or ti.field) the input image.
 
 parameter w
 
-:   (int) the width after resizing.
+: (int) the width after resizing.
 
 parameter h
 
-:   (optional, int) the height after resizing.
+: (optional, int) the height after resizing.
 
 return
 
-:   (np.array) the resized image.
+: (np.array) the resized image.
 
 If `h` is not specified, it will be equal to `w` by default.
 

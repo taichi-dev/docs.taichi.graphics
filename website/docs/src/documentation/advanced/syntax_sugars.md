@@ -53,12 +53,13 @@ def compute_laplacian(self):
 
 ::: tip NOTE
 `ti.static` can also be used in combination with:
+
 - `if` (compile-time
-branching) and
+  branching) and
 - `for` (compile-time unrolling)
 
 See [Metaprogramming](./meta.md) for more details.
 
-Here, we are using it for *compile-time const values*, i.e. the
+Here, we are using it for _compile-time const values_, i.e. the
 **field/function handles** are constants at compile time.
 :::

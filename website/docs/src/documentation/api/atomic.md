@@ -19,6 +19,7 @@ operations. For example, to sum up all the elements in `x`, :
 
             # Approach 3: Wrong result since the operation is not atomic.
             total[None] = total[None] + x[i]
+
 :::
 
 ::: tip NOTE
@@ -44,7 +45,7 @@ Atomically compute `x + y` or `x - y` and store the result in `x`.
 
 return
 
-:   The old value of `x`.
+: The old value of `x`.
 
 For example, :
 
@@ -52,6 +53,7 @@ For example, :
     y[i] = 4
     z[i] = ti.atomic_add(x[i], y[i])
     # now x[i] = 7, y[i] = 4, z[i] = 3
+
 :::
 
 ::: {.function}
@@ -70,7 +72,7 @@ Atomically compute `x & y` (bitwise and), `x | y` (bitwise or), or
 
 return
 
-:   The old value of `x`.
+: The old value of `x`.
 :::
 
 ::: tip NOTE
@@ -78,7 +80,7 @@ return
 Supported atomic operations on each backend:
 
 | type | CPU/CUDA | OpenGL | Metal | C source |
-|------|----------|--------|-------|----------|
+| ---- | -------- | ------ | ----- | -------- |
 | i32  | > OK     | > OK   | > OK  | > OK     |
 | f32  | > OK     | > OK   | > OK  | > OK     |
 | i64  | > OK     | > EXT  | > N/A | > OK     |

@@ -102,6 +102,7 @@ def foo():
 
 foo()
 ```
+
 :::
 
 ## Compile-time `ti.static_print`
@@ -270,7 +271,7 @@ You may already feel brain fried by the annoying `decorated`\'s and
 almost no benefit for end-users but make the traceback hard to read.
 
 For this purpose, we may want to use `ti.init(excepthook=True)`, which
-*hooks* on the exception handler, and make the stack traceback from
+_hooks_ on the exception handler, and make the stack traceback from
 Taichi-scope easier to read and intuitive. e.g.:
 
 ```python {2}

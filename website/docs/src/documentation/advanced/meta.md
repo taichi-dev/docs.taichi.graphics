@@ -2,13 +2,13 @@
 
 Taichi provides metaprogramming infrastructures. Metaprogramming can
 
--   Unify the development of dimensionality-dependent code, such as
-    2D/3D physical simulations
--   Improve run-time performance by from run-time costs to compile time
--   Simplify the development of Taichi standard library
+- Unify the development of dimensionality-dependent code, such as
+  2D/3D physical simulations
+- Improve run-time performance by from run-time costs to compile time
+- Simplify the development of Taichi standard library
 
-Taichi kernels are *lazily instantiated* and a lot of computation can
-happen at *compile-time*. Every kernel in Taichi is a template kernel,
+Taichi kernels are _lazily instantiated_ and a lot of computation can
+happen at _compile-time_. Every kernel in Taichi is a template kernel,
 even if it has no template arguments.
 
 ## Template metaprogramming
@@ -122,9 +122,9 @@ Using compile-time evaluation will allow certain computations to happen
 when kernels are being instantiated. This saves the overhead of those
 computations at runtime.
 
--   Use `ti.static` for compile-time branching (for those who come from
-    C++17, this is [if
-    constexpr](https://en.cppreference.com/w/cpp/language/if).):
+- Use `ti.static` for compile-time branching (for those who come from
+  C++17, this is [if
+  constexpr](https://en.cppreference.com/w/cpp/language/if).):
 
 ```python {5}
 enable_projection = True
@@ -135,7 +135,7 @@ def static():
     x[0] = 1
 ```
 
--   Use `ti.static` for forced loop unrolling:
+- Use `ti.static` for forced loop unrolling:
 
 ```python {3}
 @ti.kernel
@@ -154,8 +154,8 @@ def func():
 
 There are several reasons why `ti.static` for loops should be used.
 
--   Loop unrolling for performance.
--   Loop over vector/matrix elements. Indices into Taichi matrices must be a compile-time constant. Indexing into taichi fields can be run-time variables. For example, if you want to access a vector field `x`, accessed as `x[field_index][vector_component_index]`. The first index can be variable, yet the second must be a constant.
+- Loop unrolling for performance.
+- Loop over vector/matrix elements. Indices into Taichi matrices must be a compile-time constant. Indexing into taichi fields can be run-time variables. For example, if you want to access a vector field `x`, accessed as `x[field_index][vector_component_index]`. The first index can be variable, yet the second must be a constant.
 
 For example, code for resetting this vector fields should be
 

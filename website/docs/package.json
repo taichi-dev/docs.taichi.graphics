@@ -17,6 +17,7 @@
     "@vuepress/plugin-active-header-links": "^1.5.4",
     "@vuepress/plugin-back-to-top": "^1.5.4",
     "@vuepress/plugin-medium-zoom": "^1.5.4",
+    "prettier": "2.1.2",
     "vuepress": "^1.5.4",
     "vuepress-plugin-api-docs-generator": "^1.0.19",
     "vuepress-plugin-code-copy": "^1.0.6",

@@ -1,51 +1,51 @@
 # Type system
 
 Taichi supports common numerical data types. Each type is denoted as a
-character indicating its *category* and a number of *precision bits*,
+character indicating its _category_ and a number of _precision bits_,
 e.g., `i32` and `f64`.
 
-The *category* can be one of:
+The _category_ can be one of:
 
--   `i` for signed integers, e.g. 233, -666
--   `u` for unsigned integers, e.g. 233, 666
--   `f` for floating point numbers, e.g. 2.33, 1e-4
+- `i` for signed integers, e.g. 233, -666
+- `u` for unsigned integers, e.g. 233, 666
+- `f` for floating point numbers, e.g. 2.33, 1e-4
 
-The *digital number* can be one of:
+The _digital number_ can be one of:
 
--   `8`
--   `16`
--   `32`
--   `64`
+- `8`
+- `16`
+- `32`
+- `64`
 
 It represents how many **bits** are used in storing the data. The larger
 the bit number, the higher the precision is.
 
 For example, the two most commonly used types:
 
--   `i32` represents a 32-bit signed integer.
--   `f32` represents a 32-bit floating pointer number.
+- `i32` represents a 32-bit signed integer.
+- `f32` represents a 32-bit floating pointer number.
 
 ## Supported types
 
 Currently, supported basic types in Taichi are
 
--   int8 `ti.i8`
--   int16 `ti.i16`
--   int32 `ti.i32`
--   int64 `ti.i64`
--   uint8 `ti.u8`
--   uint16 `ti.u16`
--   uint32 `ti.u32`
--   uint64 `ti.u64`
--   float32 `ti.f32`
--   float64 `ti.f64`
+- int8 `ti.i8`
+- int16 `ti.i16`
+- int32 `ti.i32`
+- int64 `ti.i64`
+- uint8 `ti.u8`
+- uint16 `ti.u16`
+- uint32 `ti.u32`
+- uint64 `ti.u64`
+- float32 `ti.f32`
+- float64 `ti.f64`
 
 ::: tip NOTE
 
 Supported types on each backend:
 
 | type | CPU/CUDA | OpenGL | Metal | C source |
-|------|----------|--------|-------|----------|
+| ---- | -------- | ------ | ----- | -------- |
 | i8   | > OK     | > N/A  | > OK  | > OK     |
 | i16  | > OK     | > N/A  | > OK  | > OK     |
 | i32  | > OK     | > OK   | > OK  | > OK     |
@@ -69,8 +69,8 @@ Boolean types are represented using `ti.i32`.
 Binary operations on different types will give you a promoted type,
 following the C programming language convention, e.g.:
 
--   `i32 + f32 = f32` (integer + float = float)
--   `i32 + i64 = i64` (less-bits + more-bits = more-bits)
+- `i32 + f32 = f32` (integer + float = float)
+- `i32 + i64 = i64` (less-bits + more-bits = more-bits)
 
 Basically it will try to choose the more precise type to contain the
 result value.
@@ -119,8 +119,8 @@ def func(a: ti.f32) -> ti.i64:
 The type of a variable is **determinated on it\'s initialization**.
 :::
 
-When a *low-precision* variable is assigned to a *high-precision*
-variable, it will be implicitly promoted to the *high-precision* type
+When a _low-precision_ variable is assigned to a _high-precision_
+variable, it will be implicitly promoted to the _high-precision_ type
 and no warning will be raised:
 
 ```python {3}
@@ -129,8 +129,8 @@ a = 1
 print(a)  # 1.0
 ```
 
-When a *high-precision* variable is assigned to a *low-precision* type,
-it will be implicitly down-cast into the *low-precision* type and Taichi
+When a _high-precision_ variable is assigned to a _low-precision_ type,
+it will be implicitly down-cast into the _low-precision_ type and Taichi
 will raise a warning:
 
 ```python {3}
@@ -178,5 +178,5 @@ the same width as the the old type. For example, bit-casting `i32` to
 `f64` is not allowed. Use this operation with caution.
 
 ::: tip NOTE
-For people from C++, ``ti.bit_cast`` is equivalent to ``reinterpret_cast``.
+For people from C++, `ti.bit_cast` is equivalent to `reinterpret_cast`.
 :::

@@ -2,9 +2,9 @@
 
 Normally we write functional tests in Python.
 
--   We use [pytest](https://github.com/pytest-dev/pytest) for our Python
-    test infrastructure.
--   Python tests should be added to `tests/python/test_xxx.py`.
+- We use [pytest](https://github.com/pytest-dev/pytest) for our Python
+  test infrastructure.
+- Python tests should be added to `tests/python/test_xxx.py`.
 
 For example, you've just added a utility function `ti.log10`. Now you
 want to write a **test**, to test if it functions properly.

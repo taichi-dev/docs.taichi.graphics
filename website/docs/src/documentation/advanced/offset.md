@@ -1,11 +1,11 @@
 # Coordinate offsets
 
--   A Taichi field can be defined with **coordinate offsets**. The
-    offsets will move field bounds so that field origins are no longer
-    zero vectors. A typical use case is to support voxels with negative
-    coordinates in physical simulations.
--   For example, a matrix of `32x64` elements with coordinate offset
-    `(-16, 8)` can be defined as the following:
+- A Taichi field can be defined with **coordinate offsets**. The
+  offsets will move field bounds so that field origins are no longer
+  zero vectors. A typical use case is to support voxels with negative
+  coordinates in physical simulations.
+- For example, a matrix of `32x64` elements with coordinate offset
+  `(-16, 8)` can be defined as the following:
 
 ```python
 a = ti.Matrix.field(2, 2, dtype=ti.f32, shape=(32, 64), offset=(-16, 8))

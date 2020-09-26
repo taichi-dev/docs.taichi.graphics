@@ -9,7 +9,7 @@ Taichi uses [spdlog](https://github.com/gabime/spdlog) as its logging
 system. Logs can have different levels, from low to high, they are:
 
 | LEVELS |
-|--------|
+| ------ |
 | trace  |
 | debug  |
 | info   |
@@ -81,15 +81,15 @@ int func(void *p) {
 
 ## Benchmarking and regression tests
 
--   Run `ti benchmark` to run tests in benchmark mode. This will record
-    the performance of `ti test`, and save it in `benchmarks/output`.
--   Run `ti regression` to show the difference between the previous
-    result in `benchmarks/baseline`. And you can see if the performance
-    is increasing or decreasing after your commits. This is really
-    helpful when your work is related to IR optimizations.
--   Run `ti baseline` to save the benchmark result to
-    `benchmarks/baseline` for future comparison, this may be executed on
-    performance-related PRs, before they are merged into master.
+- Run `ti benchmark` to run tests in benchmark mode. This will record
+  the performance of `ti test`, and save it in `benchmarks/output`.
+- Run `ti regression` to show the difference between the previous
+  result in `benchmarks/baseline`. And you can see if the performance
+  is increasing or decreasing after your commits. This is really
+  helpful when your work is related to IR optimizations.
+- Run `ti baseline` to save the benchmark result to
+  `benchmarks/baseline` for future comparison, this may be executed on
+  performance-related PRs, before they are merged into master.
 
 For example, this is part of the output by `ti regression` after
 enabling constant folding optimization pass:
@@ -119,16 +119,16 @@ a time benchmark server at some point. See detailed discussion at [Github Issue 
 The suggested workflow for the performance-related PR author to run the
 regression tests is:
 
--   Run `ti benchmark && ti baseline` in `master` to save the current
-    performance as a baseline.
--   Run `git checkout -b your-branch-name`.
--   Do works on the issue, stage 1.
--   Run `ti benchmark && ti regression` to obtain the result.
--   (If result BAD) Do further improvements, until the result is
-    satisfying.
--   (If result OK) Run `ti baseline` to save stage 1 performance as a
-    baseline.
--   Go forward to stage 2, 3, ..., and the same workflow is applied.
+- Run `ti benchmark && ti baseline` in `master` to save the current
+  performance as a baseline.
+- Run `git checkout -b your-branch-name`.
+- Do works on the issue, stage 1.
+- Run `ti benchmark && ti regression` to obtain the result.
+- (If result BAD) Do further improvements, until the result is
+  satisfying.
+- (If result OK) Run `ti baseline` to save stage 1 performance as a
+  baseline.
+- Go forward to stage 2, 3, ..., and the same workflow is applied.
 
 ## (Linux only) Trigger `gdb` when programs crash
 
@@ -162,14 +162,14 @@ To ensure that our tests covered every situation, we need to have
 **coverage report**. That is, to detect how many percents of code lines
 in is executed in test.
 
--   Generally, the higher the coverage percentage is, the stronger our
-    tests are.
--   When making a PR, we want to **ensure that it comes with
-    corresponding tests**. Or code coverage will decrease.
--   Code coverage statuses are visible at
-    [Codecov](https://codecov.io/gh/taichi-dev/taichi).
--   Currently, Taichi coverage report is only set up for Python code,
-    not C++ yet.
+- Generally, the higher the coverage percentage is, the stronger our
+  tests are.
+- When making a PR, we want to **ensure that it comes with
+  corresponding tests**. Or code coverage will decrease.
+- Code coverage statuses are visible at
+  [Codecov](https://codecov.io/gh/taichi-dev/taichi).
+- Currently, Taichi coverage report is only set up for Python code,
+  not C++ yet.
 
 ```bash
 ti test -C       # run tests and save results to .coverage

@@ -31,7 +31,7 @@ for _ in range(1):  # I'm the outer-most loop!
 
 ## **Q:** Can Taichi co-operate with **other Python packages** like `matplotlib`?
 
-**A:** Yes, as long as that *package* provides an interface with
+**A:** Yes, as long as that _package_ provides an interface with
 `numpy`, see [Interacting with other Python packages](../documentation/overview/hello.md#interacting-with-other-python-packages).
 
 ## **Q:** Shall we add some handy functions like `ti.smoothstep` or `ti.vec3`?

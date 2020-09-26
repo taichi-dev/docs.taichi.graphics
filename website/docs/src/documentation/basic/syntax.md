@@ -68,6 +68,7 @@ def good_kernel(vx: ti.f32, vy: ti.f32):
     v = ti.Vector([vx, vy])
     ...
 ```
+
 :::
 
 ### Return value
@@ -110,6 +111,7 @@ def bad_kernel() -> (ti.i32, ti.f32):
     y = 0.5
     return x, y  # Error
 ```
+
 :::
 
 ### Advanced arguments
@@ -239,6 +241,7 @@ def render(d_x: ti.f32, d_y: ti.f32):  # kernels do not support vector/matrix ar
     p += d * t
     ...
 ```
+
 :::
 
 ::: warning
@@ -266,4 +269,5 @@ def safe_sqrt(x):
     ret = 0.0
   return ret
 ```
+
 :::

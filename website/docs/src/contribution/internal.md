@@ -13,10 +13,10 @@ The internal organization of Taichi\'s data structure can be confusing.
 It is important to distinguish the concept of **containers**, **cells**,
 and **components**.
 
--   A **container** can have multiple **cells**. The numbers of
-    **cells** are recommended to be powers of two.
--   A **cell** can have multiple **components**.
--   Each **component** is a **container** of a lower-level SNode.
+- A **container** can have multiple **cells**. The numbers of
+  **cells** are recommended to be powers of two.
+- A **cell** can have multiple **components**.
+- Each **component** is a **container** of a lower-level SNode.
 
 Note that containers of `place` SNodes do have cells. Instead, they
 directly contain numerical values.
@@ -40,24 +40,24 @@ S5 = S1.dense(ti.i, 2)
 S5.place(z) # S6: z
 ```
 
--   The whole data structure is an `S0root` **container**, containing
-    -   `1x` `S0root` **cell**, which has only one **component**, which
-        is
-        -   An `S1pointer` **container**, containing
-            -   4x `S1pointer` **cells**, each with two **components**,
-                which are
-                -   An `S2dense` **container**, containing
-                    -   2x `S2dense` **cells**, each with two
-                        **components**, which are
-                        -   An `S3place_x` container which directly
-                            contains a `x: ti.i32` value
-                        -   An `S4place_y` container which directly
-                            contains a `y: ti.i32` value
-                -   An `S5dense` **container**, containing
-                    -   2x `S5dense` **cells**, each with one
-                        **component**, which is
-                        -   An `S6place` container which directly
-                            contains a `z: ti.i32` value
+- The whole data structure is an `S0root` **container**, containing
+  - `1x` `S0root` **cell**, which has only one **component**, which
+    is
+    - An `S1pointer` **container**, containing
+      - 4x `S1pointer` **cells**, each with two **components**,
+        which are
+        - An `S2dense` **container**, containing
+          - 2x `S2dense` **cells**, each with two
+            **components**, which are
+            - An `S3place_x` container which directly
+              contains a `x: ti.i32` value
+            - An `S4place_y` container which directly
+              contains a `y: ti.i32` value
+        - An `S5dense` **container**, containing
+          - 2x `S5dense` **cells**, each with one
+            **component**, which is
+            - An `S6place` container which directly
+              contains a `z: ti.i32` value
 
 The following figure shows the hierarchy of the data structure. The
 numbers are `indices` of the containers and cells.
@@ -68,20 +68,20 @@ Note that the `S0root` container and cell do not have an `index`.
 
 In summary, we will have the following containers:
 
--   `1 S0root` container
--   `1 S1pointer` container
--   `4 S2dense` containers
--   `4 S5dense` containers
--   `8 S3place_x` containers, each directly contains an `i32` value
--   `8 S4place_y` containers, each directly contains an `i32` value
--   `8 S6place_z` containers, each directly contains an `i32` value
+- `1 S0root` container
+- `1 S1pointer` container
+- `4 S2dense` containers
+- `4 S5dense` containers
+- `8 S3place_x` containers, each directly contains an `i32` value
+- `8 S4place_y` containers, each directly contains an `i32` value
+- `8 S6place_z` containers, each directly contains an `i32` value
 
 ... and the following cells:
 
--   `1 S0root` cell
--   `4 S1pointer` cells
--   `8 S2dense` cells
--   `8 S5dense` cells
+- `1 S0root` cell
+- `4 S1pointer` cells
+- `8 S2dense` cells
+- `8 S5dense` cells
 
 Again, note that `S3place_x, S4place_x, S6place_x` SNodes do **not**
 have corresponding cells.
@@ -156,10 +156,10 @@ $4 = offloaded struct_for(S2bitmasked) block_dim=0 {
 
 Note that `func` leads to two list generations:
 
--   (Tasks `$0` and `$1`) based on the list of `root` node (`S0`),
-    generate the list of the `dense` nodes (`S1`);
--   (Tasks `$2` and `$3`) based on the list of `dense` nodes (`S1`),
-    generate the list of `bitmasked` nodes (`S2`).
+- (Tasks `$0` and `$1`) based on the list of `root` node (`S0`),
+  generate the list of the `dense` nodes (`S1`);
+- (Tasks `$2` and `$3`) based on the list of `dense` nodes (`S1`),
+  generate the list of `bitmasked` nodes (`S2`).
 
 The list of `root` node always has exactly one element (instance), so we
 never clear or re-generate this list.
@@ -212,46 +212,46 @@ ti.core.print_stat()
 
 Embedding Taichi in `python` has the following advantages:
 
--   Easy to learn. Taichi has a very similar syntax to Python.
--   Easy to run. No ahead-of-time compilation is needed.
--   This design allows people to reuse existing python infrastructure:
-    -   IDEs. A python IDE mostly works for Taichi with syntax
-        highlighting, syntax checking, and autocomplete.
-    -   Package manager (pip). A developed Taichi application and be
-        easily submitted to `PyPI` and others can easily set it up with
-        `pip`.
-    -   Existing packages. Interacting with other python components
-        (e.g. `matplotlib` and `numpy`) is just trivial.
--   The built-in AST manipulation tools in `python` allow us to do
-    magical things, as long as the kernel body can be parsed by the
-    Python parser.
+- Easy to learn. Taichi has a very similar syntax to Python.
+- Easy to run. No ahead-of-time compilation is needed.
+- This design allows people to reuse existing python infrastructure:
+  - IDEs. A python IDE mostly works for Taichi with syntax
+    highlighting, syntax checking, and autocomplete.
+  - Package manager (pip). A developed Taichi application and be
+    easily submitted to `PyPI` and others can easily set it up with
+    `pip`.
+  - Existing packages. Interacting with other python components
+    (e.g. `matplotlib` and `numpy`) is just trivial.
+- The built-in AST manipulation tools in `python` allow us to do
+  magical things, as long as the kernel body can be parsed by the
+  Python parser.
 
 However, this design has drawbacks as well:
 
--   Taichi kernels must parse-able by Python parsers. This means Taichi
-    syntax cannot go beyond Python syntax.
-    -   For example, indexing is always needed when accessing elements
-        in Taichi fields, even if the fields is 0D. Use `x[None] = 123`
-        to set the value in `x` if `x` is 0D. This is because `x = 123`
-        will set `x` itself (instead of its containing value) to be the
-        constant `123` in python syntax, and, unfortunately, we cannot
-        modify this behavior.
--   Python has relatively low performance. This can cause a performance
-    issue when initializing large Taichi fields with pure python
-    scripts. A Taichi kernel should be used to initialize a huge fields.
+- Taichi kernels must parse-able by Python parsers. This means Taichi
+  syntax cannot go beyond Python syntax.
+  - For example, indexing is always needed when accessing elements
+    in Taichi fields, even if the fields is 0D. Use `x[None] = 123`
+    to set the value in `x` if `x` is 0D. This is because `x = 123`
+    will set `x` itself (instead of its containing value) to be the
+    constant `123` in python syntax, and, unfortunately, we cannot
+    modify this behavior.
+- Python has relatively low performance. This can cause a performance
+  issue when initializing large Taichi fields with pure python
+  scripts. A Taichi kernel should be used to initialize a huge fields.
 
 ## Virtual indices v.s. physical indices
 
-In Taichi, *virtual indices* are used to locate elements in fields, and
-*physical indices* are used to specify data layouts in memory.
+In Taichi, _virtual indices_ are used to locate elements in fields, and
+_physical indices_ are used to specify data layouts in memory.
 
 For example,
 
--   In `a[i, j, k]`, `i`, `j`, and `k` are **virtual** indices.
--   In `for i, j in x:`, `i` and `j` are **virtual** indices.
--   `ti.i, ti.j, ti.k, ti.l, ...` are **physical** indices.
--   In struct-for statements, `LoopIndexStmt::index` is a **physical**
-    index.
+- In `a[i, j, k]`, `i`, `j`, and `k` are **virtual** indices.
+- In `for i, j in x:`, `i` and `j` are **virtual** indices.
+- `ti.i, ti.j, ti.k, ti.l, ...` are **physical** indices.
+- In struct-for statements, `LoopIndexStmt::index` is a **physical**
+  index.
 
 The mapping between virtual indices and physical indices for each
 `SNode` is stored in `SNode::physical_index_position`. I.e.,

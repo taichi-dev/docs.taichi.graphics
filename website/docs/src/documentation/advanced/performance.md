@@ -26,19 +26,19 @@ GPUs have a **thread hierarchy**.
 From small to large, the computation units are: **iteration** \<
 **thread** \< **block** \< **grid**.
 
--   **iteration**: Iteration is the **body of a for-loop**. Each
-    iteration corresponding to a specific `i` value in for-loop.
--   **thread**: Iterations are grouped into threads. Threads are the
-    minimal unit that is parallelized. All iterations within a thread
-    are executed in **serial**. We usually use 1 iteration per thread
-    for maximizing parallel performance.
--   **block**: Threads are grouped into blocks. All threads within a
-    block are executed in **parallel**. Threads within the same block
-    can share their **block local storage**.
--   **grid**: Blocks are grouped into grids. Grid is the minimal unit
-    that being **launched** from host. All blocks within a grid are
-    executed in **parallel**. In Taichi, each **parallelized for-loop**
-    is a grid.
+- **iteration**: Iteration is the **body of a for-loop**. Each
+  iteration corresponding to a specific `i` value in for-loop.
+- **thread**: Iterations are grouped into threads. Threads are the
+  minimal unit that is parallelized. All iterations within a thread
+  are executed in **serial**. We usually use 1 iteration per thread
+  for maximizing parallel performance.
+- **block**: Threads are grouped into blocks. All threads within a
+  block are executed in **parallel**. Threads within the same block
+  can share their **block local storage**.
+- **grid**: Blocks are grouped into grids. Grid is the minimal unit
+  that being **launched** from host. All blocks within a grid are
+  executed in **parallel**. In Taichi, each **parallelized for-loop**
+  is a grid.
 
 For more details, please see [the CUDA C programming
 guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#thread-hierarchy).

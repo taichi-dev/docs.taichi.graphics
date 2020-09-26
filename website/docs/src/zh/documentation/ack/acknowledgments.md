@@ -8,7 +8,7 @@ shipped with taichi and users do not have to install manually:
 - [Catch2](https://github.com/catchorg/Catch2)
 - [spdlog](https://github.com/gabime/spdlog)
 - [stb_image, stb_image_write
-stb_truetype](https://github.com/nothings/stb)
+  stb_truetype](https://github.com/nothings/stb)
 - [tinyobjloader](https://github.com/syoyo/tinyobjloader)
 - [ffmpeg](https://www.ffmpeg.org/)
 - [miniz](https://github.com/richgel999/miniz)

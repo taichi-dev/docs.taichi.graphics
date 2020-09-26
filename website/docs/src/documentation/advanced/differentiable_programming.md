@@ -187,12 +187,12 @@ programming:
 
 **Global Data Access Rules:**
 
--   If a global field element is written more than once, then starting
-    from the second write, the write **must** come in the form of an
-    atomic add ("accumulation\", using `ti.atomic_add` or simply
-    `+=`).
--   No read accesses happen to a global field element, until its
-    accumulation is done.
+- If a global field element is written more than once, then starting
+  from the second write, the write **must** come in the form of an
+  atomic add ("accumulation\", using `ti.atomic_add` or simply
+  `+=`).
+- No read accesses happen to a global field element, until its
+  accumulation is done.
 
 **Kernel Simplicity Rule:** Kernel body consists of multiple [simply
 nested]{.title-ref} for-loops. I.e., each for-loop can either contain

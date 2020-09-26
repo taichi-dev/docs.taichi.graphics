@@ -85,10 +85,10 @@ ti.init(arch=ti.cpu)
 Supported backends on different platforms:
 
 | **platform** | **CPU** | **CUDA** | **OpenGL** | **Metal** | **C source** |
-|:------------:|:-------:|:--------:|:----------:|:---------:|:------------:|
-|    Windows   |    OK   |    OK    |     OK     |    N/A    |      N/A     |
-|     Linux    |    OK   |    OK    |     OK     |    N/A    |      OK      |
-|   Mac OS X   |    OK   |    N/A   |     N/A    |     OK    |      N/A     |
+| :----------: | :-----: | :------: | :--------: | :-------: | :----------: |
+|   Windows    |   OK    |    OK    |     OK     |    N/A    |     N/A      |
+|    Linux     |   OK    |    OK    |     OK     |    N/A    |      OK      |
+|   Mac OS X   |   OK    |   N/A    |    N/A     |    OK     |     N/A      |
 
 (OK: supported; N/A: not available)
 
@@ -218,6 +218,7 @@ def bar(k: ti.i32):
         for i in range(10): # Serial :-(
             ...
 ```
+
 :::
 
 **Struct-for loops** are particularly useful when iterating over
@@ -252,6 +253,7 @@ def bar(k: ti.i32):
         for i in x: # Not allowed. Struct-fors must live in the outermost scope.
             ...
 ```
+
 :::
 
 ::: warning
@@ -276,6 +278,7 @@ def foo():
           ...
           break # OK!
 ```
+
 :::
 
 ## Interacting with other Python packages

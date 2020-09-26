@@ -51,8 +51,8 @@ For details, check [Field in API references](../api/field.md)
 Shapes of Taichi fields (see [Scalar fields](../api/scalar_field.md)) and those of corresponding NumPy arrays are closely
 connected via the following rules:
 
--   For scalar fields, **the shape of NumPy array is exactly the same as
-    the Taichi field**:
+- For scalar fields, **the shape of NumPy array is exactly the same as
+  the Taichi field**:
 
 ```python
 field = ti.field(ti.i32, shape=(233, 666))
@@ -64,8 +64,8 @@ array.shape  # (233, 666)
 field.from_numpy(array)  # the input array must be of shape (233, 666)
 ```
 
--   For vector fields, if the vector is `n`-D, then **the shape of NumPy
-    array should be** `(*field_shape, vector_n)`:
+- For vector fields, if the vector is `n`-D, then **the shape of NumPy
+  array should be** `(*field_shape, vector_n)`:
 
 ```python
 field = ti.Vector.field(3, ti.i32, shape=(233, 666))
@@ -78,8 +78,8 @@ array.shape  # (233, 666, 3)
 field.from_numpy(array)  # the input array must be of shape (233, 666, 3)
 ```
 
--   For matrix fields, if the matrix is `n*m`, then **the shape of NumPy
-    array should be** `(*field_shape, matrix_n, matrix_m)`:
+- For matrix fields, if the matrix is `n*m`, then **the shape of NumPy
+  array should be** `(*field_shape, matrix_n, matrix_m)`:
 
 ```python
 field = ti.Matrix.field(3, 4, ti.i32, shape=(233, 666))

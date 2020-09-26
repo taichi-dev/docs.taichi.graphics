@@ -15,9 +15,26 @@ You need to have:
 
 ## Development
 
+### Local Development with hot-reload
+
 Run `yarn --cwd=website/docs dev` to spin up the dev server.
 
+### Routing
+
+The routing table of the entire site can be found at `website/docs/src/.vuepress/config.js`.
+
+### Custom Styles
+
+Must of the customization is done in 3 places:
+
+- The plugin section of `website/docs/src/.vuepress/config.js`.
+- `website/docs/src/.vuepress/style/index.styl`.
+- `website/docs/src/.vuepress/style/palette.styl`.
+
+### Formatting
+
+Run `yarn --cwd=website/docs prettier --write .`
 
 ## Deploy
 
-Run `bash deploy.sh` to deploy.
+Run `bash deploy.sh` to deploy for now.

@@ -13,7 +13,7 @@ docs:
         :::
       since: v0.5.14
       static: true
-      tags: ['decorator']
+      tags: ["decorator"]
       params:
         - name: n
           type: int
