@@ -4,7 +4,7 @@ heroText:
 heroImage: /logo_large.png
 tagline: 为在GPU上进行高性能稀疏及可微分计算设计的高效可移植编程语言
 actionText: 从这里开始 →
-actionLink: /documentation/overview/overview/
+actionLink: /zh/documentation/overview/overview/
 features:
 - title: PLACEHOLDER-FEATURE
   details: PLACEHOLDER-FEATURE
@@ -15,6 +15,9 @@ features:
 footer: MIT License | The Taichi Developers
 ---
 
+::: danger 友情提示
+本网站还处于持续施工 🚧 中，这里的内容极有可能发生改变。访问我们现有的文档站[Read the Docs](https://taichi.readthedocs.io/)来查看详细的，特别是API和[中文文档](https://taichi.readthedocs.io/zh_CN/latest/) 的相关内容。
+:::
 
 ## 概览
 

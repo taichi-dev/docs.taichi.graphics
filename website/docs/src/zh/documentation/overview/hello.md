@@ -115,7 +115,7 @@ allocator to adaptively allocate memory.
 
 Taichi is a data-oriented programming language where dense or
 spatially-sparse fields are the first-class citizens. See
-[Scalar fields](/scalar_field.md#scalar-fields) for more details on
+[Scalar fields](../api/scalar_field.md#scalar-fields) for more details on
 fields.
 
 In the code above, `pixels = ti.field(dtype=float, shape=(n * 2, n))`
@@ -133,7 +133,7 @@ type-hinted (if any).
 Taichi **functions** are defined with the decorator `@ti.func`. They can
 be called by Taichi kernels or other Taichi functions.
 
-See [syntax](/syntax.md) for more details about Taichi
+See [syntax](../basic/syntax.md) for more details about Taichi
 kernels and functions.
 
 The language used in Taichi kernels and functions looks exactly like
@@ -172,8 +172,7 @@ Nested functions are **supported**.
 Recursive functions are **not supported for now**.
 :::
 
-Parallel for-loops
-------------------
+## Parallel for-loops
 
 For loops at the outermost scope in a Taichi kernel is **automatically
 parallelized**. For loops can have two forms, i.e. _range-for
@@ -228,7 +227,7 @@ over all the pixel coordinates, i.e.
 
 ::: tip NOTE
 
-Struct-for is the key to [sparse computation](/sparse.md) in
+Struct-for is the key to [sparse computation](../advanced/sparse.md) in
 Taichi, as it will only loop over active elements in a sparse field. In
 dense fields, all elements are active.
 :::
@@ -326,4 +325,4 @@ while gui.running:
     gui.show()
 ```
 
-See [external](/external.md#interacting-with-external-arrays) for more details.
+See [external](../basic/external.md#interacting-with-external-arrays) for more details.

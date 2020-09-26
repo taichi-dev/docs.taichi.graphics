@@ -15,6 +15,10 @@ features:
 footer: MIT License | The Taichi Developers
 ---
 
+::: danger REMINDER
+This docsite is still under construction 🚧 and the content is subject to changes. For detailed instructions, especially the API docs of Taichi and the Chinese version of the Taichi documentation, please visit our old documentation site on [Read the Docs](https://taichi.readthedocs.io/) and [中文文档](https://taichi.readthedocs.io/zh_CN/latest/)
+:::
+
 ## Overview
 
 Taichi (太极) is a programming language designed for high-performance computer graphics. It is deeply embedded in Python, and its just-in-time compiler offloads compute-intensive tasks to multi-core CPUs and massively parallel GPUs.

@@ -4,12 +4,4 @@ sidebar: auto
 
 # Tutorials
 
-## foo
-
-- Type: `string`
-- Default: `/`
-
-## bar
-
-- Type: `string`
-- Default: `/`
+This is the tutorial page of Taichi. Coming soon...

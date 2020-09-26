@@ -1,4 +1,8 @@
+# IDEs
 .vscode
+
+# Node
 node_modules/
-/legacy/
+
+# Website build
 website/docs/src/.vuepress/dist/

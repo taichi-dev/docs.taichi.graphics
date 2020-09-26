@@ -4,12 +4,4 @@ sidebar: auto
 
 # Gallery
 
-## foo
-
-- Type: `string`
-- Default: `/`
-
-## bar
-
-- Type: `string`
-- Default: `/`
+This is the gallery page of Taichi. Coming soon...
