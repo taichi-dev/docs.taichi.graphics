@@ -1,6 +1,6 @@
 # (WIP) Taichi Website
 
-The Taichi website uses [VuePress](Vue Press), a static site generator.
+The Taichi website uses [VuePress](https://vuepress.vuejs.org/), a static site generator.
 
 **Top Priorities**
 
@@ -10,6 +10,7 @@ The Taichi website uses [VuePress](Vue Press), a static site generator.
 - [ ] Chinese docs migration
 - [ ] i18n translation workflow migration
 - [ ] Taichi API docs auto-gen
+- [ ] Auto deploy Github Action
 
 ## Pre-requisites
 
@@ -20,7 +21,6 @@ You need to have:
     ```
     yarn --cwd=website/docs install
     ```
-
 
 ## Development
 
@@ -34,7 +34,7 @@ The routing table of the entire site can be found at `website/docs/src/.vuepress
 
 ### Custom Styles
 
-Must of the customization is done in 3 places:
+Most of the customization is done in 3 places:
 
 - The plugin section of `website/docs/src/.vuepress/config.js`.
 - `website/docs/src/.vuepress/style/index.styl`.
