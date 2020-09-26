@@ -36,7 +36,7 @@ module.exports = {
 
   // theme config
   themeConfig: {
-    logo: "/logo.png",
+    logo: "/logo_medium.png",
     editLinks: false,
     docsDir: "",
     sidebarDepth: 3,
