@@ -18,7 +18,7 @@ You need to have:
 
 - `yarn` installed (`brew install yarn` on macOS)
 - `vuepress` and its dependencies installed:
-    ```
+    ```bash
     yarn --cwd=website/docs install
     ```
 
@@ -47,3 +47,9 @@ Run `yarn --cwd=website/docs prettier --write .`
 ## Deploy
 
 Run `bash deploy.sh` to deploy for now.
+
+## Credits
+
+This website is built on top of the wonderful Vuepress along with a list of
+great plugins, thanks to all of the contributors of the [plugins that are used by
+this site](./website/docs/src/.vuepress/config.js)!
