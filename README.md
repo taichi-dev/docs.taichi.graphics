@@ -2,6 +2,15 @@
 
 The Taichi website uses [VuePress](Vue Press), a static site generator.
 
+**Top Priorities**
+
+- [ ] Doc versioning
+- [ ] Integrate into Taichi release workflow
+- [ ] Search integration with Algolia
+- [ ] Chinese docs migration
+- [ ] i18n translation workflow migration
+- [ ] Taichi API docs auto-gen
+
 ## Pre-requisites
 
 You need to have:
