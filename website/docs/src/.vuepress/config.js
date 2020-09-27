@@ -4,7 +4,6 @@ module.exports = {
   title: "Taichi",
   description: description,
   base: "/taichi.graphics/",
-
   // Extra tags to be injected to the page HTML `<head>`
   head: [
     ["meta", { name: "theme-color", content: "#3eaf7c" }],

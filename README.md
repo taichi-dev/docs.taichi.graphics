@@ -30,7 +30,7 @@ Run `yarn --cwd=website/docs dev` to spin up the dev server.
 
 ### Routing
 
-The routing table of the entire site can be found at `website/docs/src/.vuepress/config.js`.
+The routing table of the entire site can be found at `website/docs/src/.vuepress/config.js`. See [VuePress Docs](https://vuepress.vuejs.org/guide/directory-structure.html#directory-structure) for more details about this.
 
 ### Custom Styles
 
