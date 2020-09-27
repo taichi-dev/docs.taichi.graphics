@@ -2,16 +2,16 @@
 home: true
 heroText:
 heroImage: /logo_large.png
-tagline: Productive & portable programming language for high-performance, sparse & differentiable computing on GPUs
+tagline: Computer graphics programming for everyone
 actionText: Get Started →
 actionLink: /documentation/overview/overview/
 features:
-  - title: PLACEHOLDER-FEATURE
-    details: PLACEHOLDER-FEATURE
-  - title: PLACEHOLDER-FEATURE
-    details: PLACEHOLDER-FEATURE
-  - title: PLACEHOLDER-FEATURE
-    details: PLACEHOLDER-FEATURE
+  - title: Productive
+    details: As a language embedded in Python, Taichi has a Python-style syntax which is extremely easy to learn. Research shows Taichi programs are 10x shorter compared to equivalent C++/CUDA code while achieving higher performance.
+  - title: Portable
+    details: Without any code modification, a Taichi program can run on various platforms, including x64 & ARM CPUs, GPUs, web browsers and smartphones. Taichi supports Windows, Linux, and OS X.
+  - title: Performant
+    details: Taichi's just-in-time compiler offloads compute-intensive tasks to multi-core CPUs and massively parallel GPUs. The Taichi langauge design allows effective performance optimizations by the Taichi compiler.
 footer: MIT License | The Taichi Developers
 ---
 
@@ -19,14 +19,29 @@ footer: MIT License | The Taichi Developers
 This docsite is still under construction 🚧 and the content is subject to changes. For detailed instructions, especially the API docs of Taichi and the Chinese version of the Taichi documentation, please visit our old documentation site on [Read the Docs](https://taichi.readthedocs.io/) and [中文文档](https://taichi.readthedocs.io/zh_CN/latest/)
 :::
 
-## Overview
-
-Taichi (太极) is a programming language designed for high-performance computer graphics. It is deeply embedded in Python, and its just-in-time compiler offloads compute-intensive tasks to multi-core CPUs and massively parallel GPUs.
+## Hello, Taichi!
 
 <Index-Branding/>
 
+::: slot install
+Taichi can be easily installed via `pip`:
+
+```
+python3 -m pip install taichi
+```
+
+(Please make sure you are using 64-bit Python 3.6/3.7/3.8.)
+
+Download [fractal.py](https://raw.githubusercontent.com/taichi-dev/taichi/master/examples/fractal.py) and run it with 
+```
+python3 fractal.py
+```
+You will see the animation below:
+:::
+
 ::: slot fractal
-```python {1}
+```python {2}
+# fractal.py
 import taichi as ti
 
 ti.init(arch=ti.gpu)
@@ -40,7 +55,7 @@ def complex_sqr(z):
 
 @ti.kernel
 def paint(t: float):
-    for i, j in pixels:
+    for i, j in pixels: # Automatically parallelized
         c = ti.Vector([-0.8, ti.cos(t) * 0.2])
         z = ti.Vector([i / n - 1, j / n - 0.5]) * 2
         iterations = 0
