@@ -62,7 +62,7 @@ matrix: :
 
 :::
 
-::: tip NOTE
+::: note
 
 In Python-scope, `ti.field` declares a scalar field
 ([Scalar fields](./scalar_field.md)), while `ti.Matrix.field`
@@ -173,7 +173,7 @@ This extracts the first element in matrix `a[6, 3]`: :
 
 :::
 
-::: tip NOTE
+::: note
 
 **Always** use two pair of square brackets to access scalar elements
 from matrix fields.
@@ -234,7 +234,7 @@ For example:
     b = a.transpose()
     # Now b = ti.Matrix([[2, 4], [3, 5]])
 
-::: tip NOTE
+::: note
 
 `a.transpose()` will not effect the data in `a`, it just return the
 result.
@@ -266,7 +266,7 @@ return
 
 : (scalar) the determinant of matrix `a`.
 
-::: tip NOTE
+::: note
 
 The matrix size of matrix must be 1x1, 2x2, 3x3 or 4x4 for now.
 
@@ -285,7 +285,7 @@ return
 
 : (ti.Matrix) the inverse of matrix `a`.
 
-::: tip NOTE
+::: note
 
 The matrix size of matrix must be 1x1, 2x2, 3x3 or 4x4 for now.
 

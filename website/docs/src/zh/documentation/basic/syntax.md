@@ -7,7 +7,7 @@ Code decorated by `@ti.kernel` or `@ti.func` is in the **Taichi-scope**.
 They are to be compiled and executed on CPU or GPU devices with high
 parallelization performance, on the cost of less flexibility.
 
-::: tip NOTE
+::: note
 For people from CUDA, Taichi-scope = **device** side.
 :::
 
@@ -16,7 +16,7 @@ Code outside `@ti.kernel` or `@ti.func` is in the **Python-scope**.
 They are not compiled by the Taichi compiler and have lower performance
 but with a richer type system and better flexibility.
 
-::: tip NOTE
+::: note
 For people from CUDA, Python-scope = **host** side.
 :::
 
@@ -34,7 +34,7 @@ my_kernel()
 
 Kernels should be called from **Python-scope**.
 
-::: tip NOTE
+::: note
 For people from CUDA, Taichi kernels = `__global__` functions.
 :::
 
@@ -53,7 +53,7 @@ def my_kernel(x: ti.i32, y: ti.f32):
 my_kernel(2, 3.3)  # prints: 5.3
 ```
 
-::: tip NOTE
+::: note
 
 For now, we only support scalars as arguments. Specifying `ti.Matrix` or
 `ti.Vector` as argument is not supported. For example:
@@ -94,7 +94,7 @@ def add_xy() -> ti.i32:  # int32
 print(my_kernel())  # 233, since return type is ti.i32
 ```
 
-::: tip NOTE
+::: note
 
 For now, a kernel can only have one scalar return value. Returning
 `ti.Matrix` or `ti.Vector` is not supported. Python-style tuple return
@@ -122,7 +122,7 @@ array arguments** (see [Interacting with external arrays](./external.md)) in
 Taichi kernels. Use `ti.template()` or `ti.ext_arr()` as their
 type-hints respectively.
 
-::: tip NOTE
+::: note
 
 When using differentiable programming, there are a few more constraints
 on kernel structures. See the [**Kernel Simplicity Rule**](../advanced/differentiable_programming.md#kernel-simplicity-rule).
@@ -153,11 +153,11 @@ my_kernel()    # call kernels from Python-scope
 
 Taichi functions should be called from **Taichi-scope**.
 
-::: tip NOTE
+::: note
 For people from CUDA, Taichi functions = `__device__` functions.
 :::
 
-::: tip NOTE
+::: note
 Taichi functions can be nested.
 :::
 
@@ -223,7 +223,7 @@ def my_kernel():
     ...
 ```
 
-::: tip NOTE
+::: note
 
 Unlike kernels, functions **do support vectors or matrices as arguments
 and return values**:

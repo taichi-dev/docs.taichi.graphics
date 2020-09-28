@@ -18,7 +18,7 @@ constructs and their semantics are listed below:
   serves the role of `std::vector` in C++ or `list` in Python, and can
   be used to maintain objects (e.g. particles) contained in a block.
 
-::: tip NOTE
+::: note
 
 Supported SNode types on each backend:
 
@@ -192,7 +192,7 @@ The following code places a 2-D field of shape `(3, 4)`:
     x = ti.field(dtype=ti.i32)
     ti.root.dense(ti.ij, (3, 4)).place(x)
 
-::: tip NOTE
+::: note
 
 If `shape` is a scalar and there are multiple indices, then `shape` will
 be automatically expanded to fit the number of indices. For example,

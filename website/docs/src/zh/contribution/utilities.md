@@ -62,7 +62,7 @@ int func(void *p) {
 }
 ```
 
-::: tip NOTE
+::: note
 For people from Linux kernels, `TI_ERROR` is just `panic`.
 :::
 
@@ -108,7 +108,7 @@ codegen_kernel_statements                   2820 ->  2789    -1.1%
 codegen_evaluator_statements                   0 ->    14    +inf%
 ```
 
-::: tip NOTE
+::: note
 Currently `ti benchmark` only supports benchmarking
 number-of-statements, no time benchmarking is included since it depends
 on hardware performance and therefore hard to compare if the baseline is
@@ -147,7 +147,7 @@ CoreState::set_trigger_gdb_when_crash(true);
 export TI_GDB_TRIGGER=1
 ```
 
-::: tip NOTE
+::: note
 **Quickly pinpointing segmentation faults/assertion failures using**
 `gdb`: When Taichi crashes, `gdb` will be triggered and attach to the
 current thread. You might be prompt to enter sudo password required for

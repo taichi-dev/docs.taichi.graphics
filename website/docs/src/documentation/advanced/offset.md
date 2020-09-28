@@ -20,7 +20,7 @@ a[-16, 64]  # upper left corner
 a[16, 64]   # upper right corner
 ```
 
-::: tip NOTE
+::: note
 The dimensionality of field shapes should **be consistent** with that of
 the offset. Otherwise, a `AssertionError` will be raised.
 :::

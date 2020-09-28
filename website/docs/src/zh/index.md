@@ -24,22 +24,25 @@ footer: MIT License | The Taichi Developers
 <Index-Branding/>
 
 ::: slot install
-Taichi可以用`pip`安装:
+Taichi 可以用`pip`安装:
 
 ```
 python3 -m pip install taichi
 ```
 
-(请确保您在使用64位的Python 3.6/3.7/3.8.)
+(请确保您在使用 64 位的 Python 3.6/3.7/3.8.)
 
-下载 [fractal.py](https://raw.githubusercontent.com/taichi-dev/taichi/master/examples/fractal.py) 并使用Python运行：
+下载 [fractal.py](https://raw.githubusercontent.com/taichi-dev/taichi/master/examples/fractal.py) 并使用 Python 运行：
+
 ```
 python3 fractal.py
 ```
+
 您将会看到如下效果：
 :::
 
 ::: slot fractal
+
 ```python {2}
 # fractal.py
 import taichi as ti
@@ -71,4 +74,5 @@ for i in range(1000000):
     gui.set_image(pixels)
     gui.show()
 ```
+
 :::

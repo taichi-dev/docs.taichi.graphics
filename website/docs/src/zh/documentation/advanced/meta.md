@@ -90,7 +90,7 @@ def print_field_info(x: ti.template()):
 
 See [Scalar fields](../api/scalar_field.md) for more details.
 
-::: tip NOTE
+::: note
 For sparse fields, the full domain shape will be returned.
 :::
 

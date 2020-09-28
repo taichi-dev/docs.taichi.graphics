@@ -22,7 +22,7 @@ operations. For example, to sum up all the elements in `x`, :
 
 :::
 
-::: tip NOTE
+::: note
 
 When atomic operations are applied to local values, the Taichi compiler
 will try to demote these operations into their non-atomic counterparts.
@@ -75,7 +75,7 @@ return
 : The old value of `x`.
 :::
 
-::: tip NOTE
+::: note
 
 Supported atomic operations on each backend:
 

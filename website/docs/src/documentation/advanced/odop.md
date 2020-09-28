@@ -11,7 +11,7 @@ object-oriented programming (OOP).
 For convenience, let\'s call the hybrid scheme **objective data-oriented
 programming** (ODOP).
 
-::: tip NOTE
+::: note
 More documentation on this topic is on the way ...
 :::
 

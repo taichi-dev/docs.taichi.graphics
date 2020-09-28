@@ -64,7 +64,7 @@ add(y, 42)
 
 will lead to a new instantiation of **add**.
 
-::: tip NOTE
+::: note
 **Template signatures** are what distinguish different instantiations of
 a kernel template. The signature of `add(x, 42)` is `(x, ti.i32)`, which
 is the same as that of `add(x, 1)`. Therefore, the latter can reuse the
@@ -73,7 +73,7 @@ previously compiled binary. The signature of `add(y, 42)` is
 new kernel will be instantiated and compiled.
 :::
 
-::: tip NOTE
+::: note
 Many basic operations in the Taichi standard library are implemented
 using Taichi kernels using metaprogramming tricks. Invoking them will
 incur **implicit kernel instantiations**.

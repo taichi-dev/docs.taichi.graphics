@@ -149,7 +149,7 @@ while gui.running:
     gui.show()
 ```
 
-::: tip NOTE
+::: note
 
 The argument `U` to `ti.Tape(U)` must be a 0D field.
 
@@ -157,7 +157,7 @@ For using autodiff with multiple output variables, please see the
 `kernel.grad()` usage below.
 :::
 
-::: tip NOTE
+::: note
 
 `ti.Tape(U)` will automatically set _`U[None]`_ to 0 on
 start up.
@@ -222,7 +222,7 @@ def differentiable_task():
 
 Taichi programs that violate this rule will result in an error.
 
-::: tip NOTE
+::: note
 **static for-loops** (e.g. `for i in ti.static(range(4))`) will get
 unrolled by the Python frontend preprocessor and therefore does not
 count as a level of loop.

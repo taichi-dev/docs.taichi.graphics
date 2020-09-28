@@ -43,7 +43,7 @@ For example, this creates a 3-D vector field of the shape of `5x4`: :
 
 :::
 
-::: tip NOTE
+::: note
 
 In Python-scope, `ti.field` declares a scalar field
 [Scalar fields](./scalar_field.md)), while `ti.Vector.field`
@@ -103,7 +103,7 @@ This extracts the first component of vector `a[6, 3]`: :
 
 :::
 
-::: tip NOTE
+::: note
 
 **Always** use two pairs of square brackets to access scalar elements
 from vector fields.
@@ -225,7 +225,7 @@ For example, :
 `a.norm(eps)` is equivalent to `ti.sqrt(a.dot(a) + eps)`
 :::
 
-::: tip NOTE
+::: note
 
 To safeguard the operator\'s gradient on zero vectors during
 differentiable programming, set `eps` to a small, positive value such as
@@ -347,7 +347,7 @@ E.g., :
 
 :::
 
-::: tip NOTE
+::: note
 
 The outer product should not be confused with the cross product
 (`ti.cross`). For example, `a` and `b` do not have to be 2- or
@@ -378,7 +378,7 @@ E.g., :
 See `type`{.interpreted-text role="ref"} for more details.
 :::
 
-::: tip NOTE
+::: note
 
 Vectors are special matrices with only 1 column. In fact, `ti.Vector` is
 just an alias of `ti.Matrix`.
@@ -411,7 +411,7 @@ E.g., :
 
 :::
 
-::: tip NOTE
+::: note
 
 When used as a global vector field, it will additionally contain all the
 metadata that a scalar field would have, E.g.:

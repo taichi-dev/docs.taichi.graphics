@@ -67,7 +67,7 @@ are specified, then the one in the environment variable will
 - if `ti.init(debug=True)` and `export TI_DEBUG=0` are specified at
   the same time, then Taichi will disable debug mode.
 
-::: tip NOTE
+::: note
 
 If `ti.init` is called twice, then the configuation in first invocation
 will be completely discarded, e.g.:

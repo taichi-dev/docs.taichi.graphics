@@ -331,5 +331,15 @@ module.exports = {
         staticIcon: false,
       },
     ],
+    [
+      "vuepress-plugin-container",
+      {
+        type: "note",
+        defaultTitle: {
+          "/": "NOTE",
+          "/zh/": "注解",
+        },
+      },
+    ],
   ],
 };
