@@ -11,6 +11,7 @@ The Taichi website uses [VuePress](https://vuepress.vuejs.org/), a static site g
 - [ ] i18n translation workflow migration
 - [ ] Taichi API docs auto-gen
 - [ ] Auto deploy Github Action
+- [ ] Docs about how to write the docs
 
 ## Pre-requisites
 
