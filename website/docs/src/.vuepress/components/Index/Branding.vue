@@ -13,9 +13,6 @@
 <script>
 export default {
   name: "Branding",
-  data(x) {
-    return x;
-  },
 };
 </script>
 
