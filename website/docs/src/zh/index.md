@@ -3,7 +3,7 @@ home: true
 heroText:
 heroImage: /logo_large.png
 tagline: 大家的计算机图形学编程语言
-actionText: 从这里开始 →
+actionText: 文档 →
 actionLink: /zh/documentation/overview/overview/
 features:
   - title: 生产力
