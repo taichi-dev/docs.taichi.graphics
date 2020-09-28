@@ -13,7 +13,7 @@
 - `a % b`
 - `a ** b`
 
-::: tip NOTE
+::: note
 
 The `%` operator in Taichi follows the Python style instead of C style,
 e.g.:
@@ -33,7 +33,7 @@ print(ti.raw_mod(-2, 3))  # -2
 
 :::
 
-::: tip NOTE
+::: note
 
 Python 3 distinguishes `/` (true division) and `//` (floor division).
 For example, `1.0 / 2.0 = 0.5`, `1 / 2 = 0.5`, `1 // 2 = 0`,

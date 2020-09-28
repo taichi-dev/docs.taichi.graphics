@@ -6,7 +6,7 @@ Taichi can be easily installed via `pip`:
 python3 -m pip install taichi
 ```
 
-::: tip Note
+::: note
 
 Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit).
 :::

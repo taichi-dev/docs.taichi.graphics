@@ -87,7 +87,7 @@ print(f'The image has been saved to {filename}')
 - If you want to export `RGB` or `RGBA` images instead, the input
   field should have a shape `(w, h, 3)` or `(w, h, 4)` respectively.
 
-::: tip NOTE
+::: note
 All Taichi fields have their own data types, such as `ti.u8` and
 `ti.f32`. Different data types can lead to different behaviors of
 `ti.imwrite`. Please check out [GUI system](./gui.md) for
@@ -100,7 +100,7 @@ more details.
 
 ## Export videos
 
-::: tip NOTE
+::: note
 The video export utilities of Taichi depend on `ffmpeg`. If `ffmpeg` is
 not installed on your machine, please follow the installation
 instructions of `ffmpeg` at the end of this page.

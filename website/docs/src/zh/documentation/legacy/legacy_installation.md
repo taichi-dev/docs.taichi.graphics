@@ -1,6 +1,6 @@
 # Installing the legacy Taichi Library
 
-::: tip NOTE
+::: note
 
 This is NOT for installing the Taichi programming language. Unless you
 are building a legacy project based on the [legacy Taichi
@@ -28,7 +28,7 @@ wget https://raw.githubusercontent.com/yuanming-hu/taichi/legacy/install.py
 python3 install.py
 ```
 
-::: tip NOTE
+::: note
 Note, if Python complains that a package is missing, simply rerun
 `install.py` and the package should be loaded.
 :::

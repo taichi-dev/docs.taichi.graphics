@@ -15,7 +15,7 @@ For example, specifying a suitable `ti.block_dim` could yield an almost
 3x performance boost in
 [examples/mpm3d.py](https://github.com/taichi-dev/taichi/blob/master/examples/mpm3d.py).
 
-::: tip NOTE
+::: note
 For performance profiling utilities, see [**Profiler** section of the Contribution Guide](../../contribution/profiler.md).
 :::
 

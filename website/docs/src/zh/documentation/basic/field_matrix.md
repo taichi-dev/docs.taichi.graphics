@@ -4,7 +4,7 @@ Fields are global variables provided by Taichi. Fields can be either
 sparse or dense. An element of a field can be either a scalar or a
 vector/matrix.
 
-::: tip NOTE
+::: note
 Matrices can be used as field elements, so you can have fields with each
 element being a matrix.
 :::

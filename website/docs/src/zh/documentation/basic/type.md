@@ -40,7 +40,7 @@ Currently, supported basic types in Taichi are
 - float32 `ti.f32`
 - float64 `ti.f64`
 
-::: tip NOTE
+::: note
 
 Supported types on each backend:
 
@@ -60,7 +60,7 @@ Supported types on each backend:
 (OK: supported, EXT: require extension, N/A: not available)
 :::
 
-::: tip NOTE
+::: note
 Boolean types are represented using `ti.i32`.
 :::
 
@@ -177,6 +177,6 @@ underlying bits will be preserved in this cast. The new type must have
 the same width as the the old type. For example, bit-casting `i32` to
 `f64` is not allowed. Use this operation with caution.
 
-::: tip NOTE
+::: note
 For people from C++, `ti.bit_cast` is equivalent to `reinterpret_cast`.
 :::

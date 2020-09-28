@@ -80,7 +80,7 @@ ti.init(arch=ti.metal)
 ti.init(arch=ti.cpu)
 ```
 
-::: tip NOTE
+::: note
 
 Supported backends on different platforms:
 
@@ -98,7 +98,7 @@ If no GPU backend (CUDA, Metal, or OpenGL) is supported, Taichi will
 fall back on CPUs.
 :::
 
-::: tip NOTE
+::: note
 
 When used with the CUDA backend on Windows or ARM devices (e.g. NVIDIA
 Jetson), Taichi by default allocates 1 GB GPU memory for field storage.
@@ -141,7 +141,7 @@ Python, yet the Taichi frontend compiler converts it into a language
 that is **compiled, statically-typed, lexically-scoped, parallel and
 differentiable**.
 
-::: tip NOTE
+::: note
 
 **Taichi-scopes v.s. Python-scopes**:
 
@@ -157,7 +157,7 @@ Taichi kernels must be called from the Python-scope. Taichi functions
 must be called from the Taichi-scope.
 :::
 
-::: tip NOTE
+::: note
 
 For those who come from the world of CUDA, `ti.func` corresponds to
 `__device__` while `ti.kernel` corresponds to `__global__`.
@@ -201,7 +201,7 @@ def fill_3d():
         x[i, j, k] = i + j + k
 ```
 
-::: tip NOTE
+::: note
 
 It is the loop **at the outermost scope** that gets parallelized, not
 the outermost loop.
@@ -226,7 +226,7 @@ def bar(k: ti.i32):
 over all the pixel coordinates, i.e.
 `(0, 0), (0, 1), (0, 2), ... , (0, 319), (1, 0), ..., (639, 319)`.
 
-::: tip NOTE
+::: note
 
 Struct-for is the key to [sparse computation](../advanced/sparse.md) in
 Taichi, as it will only loop over active elements in a sparse field. In

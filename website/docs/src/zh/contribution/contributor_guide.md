@@ -48,7 +48,7 @@ are slightly more challenging but still friendly to beginners.
   bugs can be easily pinpointed.
 - Unit/integration tests are our friends.
 
-::: tip NOTE
+::: note
 "There are two ways of constructing a software design: One way is to
 make it so simple that there are obviously no deficiencies, and the
 other way is to make it so complicated that there are no obvious
@@ -221,7 +221,7 @@ Frequently used tags:
   `misc/prtags.json` in the first PR with that tag, so that people can
   follow.
 
-::: tip NOTE
+::: note
 
 We do appreciate all kinds of contributions, yet we should not expose
 the title of every PR to end-users. Therefore the changelog will
@@ -282,7 +282,7 @@ to make the Taichi compiler print out IR:
 - `print_kernel_nvptx = True`: save the emitted NVPTX of each kernel
   (CUDA only).
 
-::: tip NOTE
+::: note
 Data accessors in Python-scope are implemented as special Taichi
 kernels. For example, `x[1, 2, 3] = 3` will call the writing accessor
 kernel of `x`, and `print(y[42])` will call the reading accessor kernel
@@ -371,7 +371,7 @@ Documentations are put under the folder `docs/`.
 - Use `ti doc` to build the documentation locally.
 - Open the documentation at `docs/build/index.html`.
 
-::: tip NOTE
+::: note
 
 On Linux/OS X, use `watch -n 1 ti doc` to continuously build the
 documentation.

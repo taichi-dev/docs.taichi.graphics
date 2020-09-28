@@ -40,7 +40,7 @@ The outputs would be:
 [ 77.27%] compute_c4_0_kernel_2_serial                min   0.004 ms   avg   0.004 ms   max   0.004 ms   total   0.000 s [      1x]
 ```
 
-::: tip NOTE
+::: note
 Currently the result of `KernelProfiler` could be incorrect on OpenGL
 backend due to its lack of support for `ti.sync()`.
 :::
@@ -71,7 +71,7 @@ ti.print_profile_info()
 
 `ti.print_profile_info()` prints profiling results in a hierarchical format.
 
-::: tip NOTE
+::: note
 `ScopedProfiler` is a C++ class in the core of Taichi. It is not exposed
 to Python users.
 :::

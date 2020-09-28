@@ -3,7 +3,7 @@ home: true
 heroText:
 heroImage: /logo_large.png
 tagline: Computer graphics programming for everyone
-actionText: Get Started →
+actionText: Documentation →
 actionLink: /documentation/overview/overview/
 features:
   - title: Productive
@@ -32,14 +32,17 @@ python3 -m pip install taichi
 
 (Please make sure you are using 64-bit Python 3.6/3.7/3.8.)
 
-Download [fractal.py](https://raw.githubusercontent.com/taichi-dev/taichi/master/examples/fractal.py) and run it with 
+Download [fractal.py](https://raw.githubusercontent.com/taichi-dev/taichi/master/examples/fractal.py) and run it with
+
 ```
 python3 fractal.py
 ```
+
 You will see the animation below:
 :::
 
 ::: slot fractal
+
 ```python {2}
 # fractal.py
 import taichi as ti
@@ -71,4 +74,5 @@ for i in range(1000000):
     gui.set_image(pixels)
     gui.show()
 ```
+
 :::

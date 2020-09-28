@@ -95,7 +95,7 @@ Note that **cells** are never exposed to end-users.
 **List generation** generates lists of SNode **containers** (instead of
 SNode **cells**).
 
-::: tip NOTE
+::: note
 We are on our way to remove usages of **children**, **instances**, and
 **elements** in Taichi. These are very ambiguous terms.
 :::
@@ -164,7 +164,7 @@ Note that `func` leads to two list generations:
 The list of `root` node always has exactly one element (instance), so we
 never clear or re-generate this list.
 
-::: tip NOTE
+::: note
 
 The list of `place` (leaf) nodes (e.g., `S3` in this example) is never
 generated. Instead, we simply loop over the list of their parent nodes,

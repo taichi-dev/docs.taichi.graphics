@@ -58,7 +58,7 @@ This will save all the kernels in `mpm88.py` to `mpm88.yml`:
  ...
 ```
 
-::: tip NOTE
+::: note
 
 Equivalently, you may also specify these two arguments from environment
 variables on Unix-like system:
@@ -109,7 +109,7 @@ void Tk_init_c6_0(struct Ti_Context *ti_ctx) {
 ... and a C header file `mpm88.h` for declarations of data structures,
 functions (Taichi kernels) for this file.
 
-::: tip NOTE
+::: note
 
 The generated C source is promised to be C99 compatible.
 

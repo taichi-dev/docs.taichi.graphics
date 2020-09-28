@@ -54,7 +54,7 @@ compiling the Taichi compiler. On Windows only MSVC supported.
   - [LLVM 10.0.0 for OS
     X](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/taichi-llvm-10.0.0-macos.zip)
 
-::: tip NOTE
+::: note
 On Windows, if you use the pre-built LLVM for Taichi, please add
 `$LLVM_FOLDER/bin` to `PATH`. Later, when you build Taichi using
 `CMake`, set `LLVM_DIR` to `$LLVM_FOLDER/lib/cmake/llvm`.
@@ -131,7 +131,7 @@ installer.
 
     Then execute `source ~/.bashrc` to reload shell config.
 
-    ::: tip NOTE
+    ::: note
     If you're using fish, use `set -x NAME VALUES`, otherwise it
     won't be loaded by child processes.
     :::
@@ -228,7 +228,7 @@ For those who prefer to use Docker, we also provide a Dockerfile which
 helps setup the Taichi development environment with CUDA support based
 on Ubuntu docker image.
 
-::: tip NOTE
+::: note
 In order to follow the instructions in this section, please make sure
 you have the [Docker DeskTop (or Engine for
 Linux)](https://www.docker.com/products/docker-desktop) installed and
@@ -243,7 +243,7 @@ local master branch tagged with _latest_. Since this builds the image
 from source, please expect up to 40 mins build time if you don\'t have
 cached Docker image layers.
 
-::: tip NOTE
+::: note
 
 In order to save the time on building Docker images, you could always
 visit our [Docker Hub

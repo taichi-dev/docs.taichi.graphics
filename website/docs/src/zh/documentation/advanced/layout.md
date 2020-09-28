@@ -87,7 +87,7 @@ have a very different memory layouts:
 What do we find here? `x` first increases the first index (i.e. row-major), while `y`
 first increases the second index (i.e. column-major).
 
-::: tip NOTE
+::: note
 
 For those people from C/C++, here\'s what they look like:
 

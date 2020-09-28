@@ -82,7 +82,7 @@ Note that host access or program end will also implicitly invoke
 `ti.sync()`.
 :::
 
-::: tip NOTE
+::: note
 Note that `print` in Taichi-scope can only receive **comma-separated
 parameter**. Neither f-string nor formatted string should be used. For
 example:
@@ -339,7 +339,7 @@ See? Our exception hook has removed some useless Taichi internal frames
 from traceback. What's more, although not visible in the doc, the
 output is **colorful**!
 
-::: tip NOTE
+::: note
 For IPython / Jupyter notebook users, the IPython stack traceback hook
 will be overriden by the Taichi one when `ti.enable_excepthook()`.
 :::

@@ -10,7 +10,8 @@
   "repository": "https://github.com/taichi-dev/taichi/taichi",
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "build": "vuepress build src",
+    "format": "prettier --write ."
   },
   "license": "MIT",
   "devDependencies": {
@@ -23,6 +24,7 @@
     "vuepress": "^1.5.4",
     "vuepress-plugin-api-docs-generator": "^1.0.19",
     "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-container": "^2.1.5",
     "vuepress-plugin-mathjax": "^1.2.8"
   },
   "dependencies": {

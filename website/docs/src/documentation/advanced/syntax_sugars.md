@@ -51,7 +51,7 @@ def compute_laplacian(self):
                 + (a[i, j+1] - 2.0*a[i, j] + a[i, j-1])/(dy**2)
 ```
 
-::: tip NOTE
+::: note
 `ti.static` can also be used in combination with:
 
 - `if` (compile-time

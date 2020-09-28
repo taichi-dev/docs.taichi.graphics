@@ -65,7 +65,7 @@ parameter filename
 
 Show the window on the screen.
 
-::: tip NOTE
+::: note
 
 If `filename` is specified, a screenshot will be saved to the file
 specified by the name. For example, the following saves frames of the

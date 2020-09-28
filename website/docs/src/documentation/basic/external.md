@@ -128,6 +128,6 @@ for i in range(n):
     assert a[i, j] == i * j + i + j
 ```
 
-::: tip NOTE
+::: note
 Struct-for\'s are not supported on external arrays.
 :::

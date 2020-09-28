@@ -23,9 +23,15 @@
   display: none
 
 // custom blocks
-
-// tip
-.custom-block.tip
+// note
+.custom-block.note
+  .custom-block-title
+    font-weight 600
+    margin-bottom -0.4rem
+  padding .1rem 1.5rem
+  border-left-width .5rem
+  border-left-style solid
+  margin 1rem 0
   background-color: #f3f5f7
   border-color: #171717
 
@@ -35,7 +41,15 @@
   .custom-block-title::before
     content: "☯ "
 
-//warning
+// tip
+.custom-block.tip
+  .custom-block-title::before
+    content: "☯ "
+
+  .custom-block-title
+    color: #42b983
+
+// warning
 .custom-block.warning
   background-color: #f3f5f7
   border-color: #ffe300
@@ -43,10 +57,16 @@
   .custom-block-title
     color: #efcd00
 
-//danger
+  .custom-block-title::before
+    content: "☯ "
+
+// danger
 .custom-block.danger
   background-color: #f3f5f7
   border-color: #CC0000
 
   .custom-block-title
     color: #CC0000
+
+  .custom-block-title::before
+    content: "☯ "
