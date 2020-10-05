@@ -6,7 +6,7 @@ A static website built with [VuePress](https://vuepress.vuejs.org/) and [Bulma](
 
 ## For documentation writters
 
-**To update existing documentation or create new documentation, always work on `website/docs/src/versioned_docs/develop` only, and merge back to that directly, versions should be cut-off following the guidelines below. Please carefully consider if you really need to update a doc that belongs to an older version!**
+**To update existing documentation or create new documentation, please always work on `website/docs/src/versioned_docs/develop` only, and merge back to that directly, versions should be cut-off following the guidelines below. Please carefully consider if you really need to update a doc that belongs to an older version!**
 
 ## Prerequisites
 
