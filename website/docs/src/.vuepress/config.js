@@ -36,7 +36,7 @@ module.exports = {
   // theme config
   themeConfig: {
     logo: "/logo_medium.png",
-    editLinks: false,
+    docsRepo: 'taichi-dev/taichi.graphics',
     docsDir: "",
     sidebarDepth: 3,
     displayAllHeaders: true,
