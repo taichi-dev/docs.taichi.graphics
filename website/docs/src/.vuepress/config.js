@@ -1,8 +1,8 @@
-const { description } = require("../../package");
+const versioning = require("./scripts/versioning.js");
 
 module.exports = {
   title: "Taichi",
-  description: description,
+  description: "The Taichi Programming Language",
   base: "/taichi.graphics/",
   // Extra tags to be injected to the page HTML `<head>`
   head: [
@@ -24,7 +24,7 @@ module.exports = {
     "/": {
       lang: "en-US",
       title: "Taichi",
-      description: description,
+      description: "The Taichi Programming Language",
     },
     "/zh/": {
       lang: "zh-CN",
@@ -44,6 +44,11 @@ module.exports = {
     editLinks: true,
     lastUpdated: true,
     repo: "taichi-dev/taichi",
+    versions: {
+      latest: versioning.versions.latest,
+      selected: versioning.versions.latest,
+      all: versioning.versions.all,
+    },
     locales: {
       "/": {
         selectText: "Languages",
@@ -51,7 +56,11 @@ module.exports = {
         ariaLabel: "Languages",
         editLinkText: "Edit this page on GitHub",
         nav: [
-          { text: "Documentation", link: "/documentation/overview/overview" },
+          {
+            text: "Documentation",
+            items: versioning.linksFor("documentation/overview/overview", "en"),
+            // link: "/documentation/overview/overview"
+          },
           { text: "Tutorials", link: "/tutorials/" },
           {
             text: "Learn More",
@@ -81,78 +90,7 @@ module.exports = {
           { text: "Forum", link: "https://forum.taichi.graphics/" },
         ],
         sidebar: {
-          "/documentation/": [
-            {
-              title: "Overview",
-              collapsable: true,
-              children: [
-                "overview/overview",
-                "overview/install",
-                "overview/hello",
-              ],
-            },
-            {
-              title: "Basic Concepts",
-              collapsable: true,
-              children: [
-                "basic/syntax",
-                "basic/type",
-                "basic/field_matrix",
-                "basic/external",
-              ],
-            },
-            {
-              title: "Advanced Programming",
-              collapsable: true,
-              children: [
-                "advanced/meta",
-                "advanced/layout",
-                "advanced/sparse",
-                "advanced/differentiable_programming",
-                "advanced/performance",
-                "advanced/odop",
-                "advanced/syntax_sugars",
-                "advanced/offset",
-              ],
-            },
-            {
-              title: "API References",
-              collapsable: true,
-              children: [
-                "api/field",
-                "api/ti",
-                "api/scalar_field",
-                "api/vector",
-                "api/matrix",
-                "api/arithmetics",
-                "api/atomic",
-                "api/snode",
-              ],
-            },
-            {
-              title: "Miscellaneous",
-              collapsable: true,
-              children: [
-                "misc/gui",
-                "misc/debugging",
-                "misc/export_results",
-                "misc/cli_utilities",
-                "misc/global_settings",
-                "misc/export_kernels",
-                "misc/extension_libraries",
-              ],
-            },
-            {
-              title: "Acknowledgments",
-              collapsable: true,
-              children: ["ack/acknowledgments"],
-            },
-            {
-              title: "Legacy",
-              collapsable: true,
-              children: ["legacy/legacy_installation"],
-            },
-          ],
+          ...versioning.sidebarsFor("en"),
           "/contribution/": [
             {
               title: "Contribution Guide",
@@ -185,7 +123,10 @@ module.exports = {
         ariaLabel: "语言",
         editLinkText: "在 GitHub 上编辑此页",
         nav: [
-          { text: "文档", link: "/zh/documentation/overview/overview" },
+          {
+            text: "文档",
+            items: versioning.linksFor("documentation/overview/overview", "zh"),
+          },
           { text: "教程", link: "/zh/tutorials/" },
           {
             text: "了解更多",
@@ -215,78 +156,7 @@ module.exports = {
           { text: "论坛", link: "https://forum.taichi.graphics/" },
         ],
         sidebar: {
-          "/zh/documentation/": [
-            {
-              title: "概览",
-              collapsable: true,
-              children: [
-                "overview/overview",
-                "overview/install",
-                "overview/hello",
-              ],
-            },
-            {
-              title: "基本概念",
-              collapsable: true,
-              children: [
-                "basic/syntax",
-                "basic/type",
-                "basic/field_matrix",
-                "basic/external",
-              ],
-            },
-            {
-              title: "高级编程",
-              collapsable: true,
-              children: [
-                "advanced/meta",
-                "advanced/layout",
-                "advanced/sparse",
-                "advanced/differentiable_programming",
-                "advanced/performance",
-                "advanced/odop",
-                "advanced/syntax_sugars",
-                "advanced/offset",
-              ],
-            },
-            {
-              title: "API 参考手册",
-              collapsable: true,
-              children: [
-                "api/field",
-                "api/ti",
-                "api/scalar_field",
-                "api/vector",
-                "api/matrix",
-                "api/arithmetics",
-                "api/atomic",
-                "api/snode",
-              ],
-            },
-            {
-              title: "杂项",
-              collapsable: true,
-              children: [
-                "misc/gui",
-                "misc/debugging",
-                "misc/export_results",
-                "misc/cli_utilities",
-                "misc/global_settings",
-                "misc/export_kernels",
-                "misc/extension_libraries",
-              ],
-            },
-            {
-              title: "致谢",
-              collapsable: true,
-              children: ["ack/acknowledgments"],
-            },
-            {
-              title: "遗留系统",
-              collapsable: true,
-              children: ["legacy/legacy_installation"],
-            },
-          ],
+          ...versioning.sidebarsFor("zh"),
           "/zh/contribution/": [
             {
               title: "贡献指南",
@@ -321,6 +191,18 @@ module.exports = {
     "@vuepress/active-header-links",
     "@vuepress/plugin-back-to-top",
     "@vuepress/plugin-medium-zoom",
+    [
+      "@vuepress/search",
+      {
+        searchMaxSuggestions: 15,
+        // Only search the latest version otherwise many
+        // duplicates will show up and confuse ppl
+        test: [
+          `/${versioning.versions.latest.replace(".", "\\.")}/`,
+          `/zh/${versioning.versions.latest.replace(".", "\\.")}/`,
+        ],
+      },
+    ],
     ["vuepress-plugin-mathjax", { target: "svg", macros: { "*": "\\times" } }],
     ["api-docs-generator", { tagColors: { static: "#10ac84" } }],
     [
