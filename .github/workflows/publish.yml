@@ -29,8 +29,6 @@ jobs:
           node-version: 12.x
 
       - name: Install and Build
-        env:
-          CI: true
         run: yarn --cwd=website/docs install && yarn --cwd=website/docs build
 
       - name: Deploy
