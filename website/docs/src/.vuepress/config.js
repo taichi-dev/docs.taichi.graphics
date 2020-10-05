@@ -17,6 +17,11 @@ module.exports = {
   ],
   markdown: {
     lineNumbers: false,
+    extendMarkdown: (md) => {
+      md.use(require("markdown-it-imsize"));
+      md.use(require("markdown-it-footnote"));
+      md.use(require("markdown-it-mark"));
+    },
   },
 
   // i18n support
