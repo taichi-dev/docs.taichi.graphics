@@ -4,7 +4,7 @@ Hosted at https://taichi.graphics
 
 A static website built with [VuePress](https://vuepress.vuejs.org/) and [Bulma](https://bulma.io/) for [Taichi](https://taichi.graphics), and its documentation, tutorials, event and etc.
 
-## For documentation writters
+## For documentation writers
 
 **To update existing documentation or create new documentation, please always work on `website/docs/src/versioned_docs/develop` only, and merge back to that directly, versions should be cut-off following the guidelines below. Please carefully consider if you really need to update a doc that belongs to an older version!**
 
@@ -88,11 +88,9 @@ The above changes should be regarded as a transaction and shall be reverted **al
 
 ## Deploy
 
-**Subject to change shortly**
+This website currently hosted on Github Pages at https://taichi.graphics. The `gh-pages` branch is hosting the static files.
 
-This website currently hosted on Github Pages at https://rexwang.cc/taichi.graphics/. The `gh-pages` branch is hosting the static files.
-
-Run `bash deploy.sh` to deploy for now.
+The deployment is automatically done when Pull Requests are merged to `master` branch. It can also be triggered manually [here](https://github.com/rexwangcc/taichi.graphics/actions?query=workflow%3A%22Deploy+Taichi+Website%22).
 
 ## Future Work
 
