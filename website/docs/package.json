@@ -11,13 +11,15 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "createVersion": "node -e 'require(\"./src/.vuepress/scripts/versioning.js\").main()'"
   },
   "license": "MIT",
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.5.4",
     "@vuepress/plugin-back-to-top": "^1.5.4",
     "@vuepress/plugin-medium-zoom": "^1.5.4",
+    "fs-extra": "^9.0.1",
     "node-sass": "^4.14.1",
     "prettier": "2.1.2",
     "sass-loader": "7.3.1",
