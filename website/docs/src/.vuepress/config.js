@@ -17,6 +17,11 @@ module.exports = {
   ],
   markdown: {
     lineNumbers: false,
+    extendMarkdown: (md) => {
+      md.use(require("markdown-it-imsize"));
+      md.use(require("markdown-it-footnote"));
+      md.use(require("markdown-it-mark"));
+    },
   },
 
   // i18n support
@@ -98,6 +103,7 @@ module.exports = {
               children: [
                 "dev_install",
                 "contributor_guide",
+                "doc_writing",
                 "write_test",
                 "utilities",
                 "profiler",
@@ -164,6 +170,7 @@ module.exports = {
               children: [
                 "dev_install",
                 "contributor_guide",
+                "doc_writing",
                 "write_test",
                 "utilities",
                 "profiler",
