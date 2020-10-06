@@ -106,6 +106,20 @@ The deployment is automatically done when Pull Requests are merged to `master` b
 - [ ] Docs about how to write the docs
 - [ ] "Make"-ify the commands
 
+## Future Work
+
+**Top Priorities**
+
+- [ ] Implement Doc versioning
+- [ ] Integrate into Taichi release workflow
+- [ ] Search integration with Algolia
+- [ ] Chinese docs migration
+- [ ] i18n translation workflow migration
+- [ ] Taichi API docs auto-gen
+- [ ] Auto deploy Github Action
+- [ ] Docs about how to write the docs
+- [ ] "Make"-ify the commands
+
 ## Credits
 
 This website is built on top of the wonderful VuePress along with a list of
