@@ -103,6 +103,7 @@ module.exports = {
               children: [
                 "dev_install",
                 "contributor_guide",
+                "doc_writing",
                 "write_test",
                 "utilities",
                 "profiler",
@@ -169,6 +170,7 @@ module.exports = {
               children: [
                 "dev_install",
                 "contributor_guide",
+                "doc_writing",
                 "write_test",
                 "utilities",
                 "profiler",
