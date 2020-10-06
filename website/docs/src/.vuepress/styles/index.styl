@@ -10,9 +10,18 @@
 /**
  * cancel the extra margin added by
  * plugin: vuepress-plugin-code-copy
+ * also make sure no scroll bar shows up
  */
 .code-copy
-  height: 0
+  margin-top: -0.85rem;
+  margin-bottom: -0.85rem;
+  // height: 0
+
+/**
+ * custom code block labels
+ */
+div[class~="language-cpp"]:before
+  content "c++"
 
 /**
  * cancel the site name since we have
@@ -70,3 +79,24 @@
 
   .custom-block-title::before
     content: "☯ "
+
+// enable text highlights
+#inline-blue
+  background-color: #2780e3
+  color: #fff
+  font-size: 95%
+
+#inline-purple
+  background-color: #9954bb
+  color: #fff
+  font-size: 95%
+
+#inline-yellow
+  background-color: #f0ad4e
+  color: #fff
+  font-size: 95%
+
+#inline-green
+  background-color: #5cb85c
+  color: #fff
+  font-size: 95%
