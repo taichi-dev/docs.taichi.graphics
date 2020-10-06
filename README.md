@@ -1,5 +1,7 @@
 # (WIP) Taichi Website
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/taichi-dev/taichi.graphics/Deploy%20Taichi%20Website?label=Website%20Deployment&logo=github&style=flat-square)
+
 Hosted at https://taichi.graphics
 
 A static website built with [VuePress](https://vuepress.vuejs.org/) and [Bulma](https://bulma.io/) for [Taichi](https://taichi.graphics), and its documentation, tutorials, event and etc.
@@ -96,28 +98,14 @@ The deployment is automatically done when Pull Requests are merged to `master` b
 
 **Top Priorities**
 
-- [ ] Implement Doc versioning
+- [x] Implement Doc versioning
 - [ ] Integrate into Taichi release workflow
 - [ ] Search integration with Algolia
 - [ ] Chinese docs migration
 - [ ] i18n translation workflow migration
 - [ ] Taichi API docs auto-gen
-- [ ] Auto deploy Github Action
-- [ ] Docs about how to write the docs
-- [ ] "Make"-ify the commands
-
-## Future Work
-
-**Top Priorities**
-
-- [ ] Implement Doc versioning
-- [ ] Integrate into Taichi release workflow
-- [ ] Search integration with Algolia
-- [ ] Chinese docs migration
-- [ ] i18n translation workflow migration
-- [ ] Taichi API docs auto-gen
-- [ ] Auto deploy Github Action
-- [ ] Docs about how to write the docs
+- [x] Auto deploy Github Action
+- [x] Docs about how to write the docs
 - [ ] "Make"-ify the commands
 
 ## Credits

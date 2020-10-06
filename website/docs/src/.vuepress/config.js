@@ -75,7 +75,7 @@ module.exports = {
                 items: [
                   { text: "Gallery", link: "/gallery/" },
                   { text: "Research", link: "/research/" },
-                  { text: "Playground", link: "/playground/" },
+                  { text: "Taichi Hub Playground", link: "http://hub.taichi.graphics/" },
                 ],
               },
               {
@@ -142,7 +142,7 @@ module.exports = {
                 items: [
                   { text: "画廊", link: "/zh/gallery/" },
                   { text: "研究", link: "/zh/research/" },
-                  { text: "游乐场", link: "/zh/playground/" },
+                  { text: "Taichi Hub游乐场", link: "http://hub.taichi.graphics/" },
                 ],
               },
               {
