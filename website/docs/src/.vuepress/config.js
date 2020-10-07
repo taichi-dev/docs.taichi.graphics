@@ -44,7 +44,7 @@ module.exports = {
     docsRepo: 'taichi-dev/taichi.graphics',
     docsDir: "",
     sidebarDepth: 3,
-    displayAllHeaders: true,
+    displayAllHeaders: false,
     smoothScroll: true,
     editLinks: true,
     lastUpdated: true,
