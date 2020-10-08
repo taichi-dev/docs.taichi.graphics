@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # Me
 
 Redirecting you to https://yuanming.taichi.graphics/ ...
