@@ -45,6 +45,7 @@ module.exports = {
     sidebarDepth: 3,
     displayAllHeaders: false,
     smoothScroll: true,
+    docsDir: "website/docs/src",
     editLinks: true,
     lastUpdated: true,
     repo: "taichi-dev/taichi",
