@@ -11,7 +11,7 @@ features:
   - title: 可移植
     details: 无需改动任何代码，Taichi程序就可以在多种平台上运行，包括x64/ARM CPU、GPU、浏览器、智能手机等。Taichi支持Windows、Linux、OS X等操作系统。
   - title: 高性能
-    details: Taichi的即时编译系统能利用多核CPU与大规模并行GPU。Taichi的语言设计使得其编译器能够进行有力的性能优化。
+    details: Taichi的即时编译(JIT)系统能利用多核CPU与大规模并行GPU。Taichi的语言设计使得其编译器能够进行有力的性能优化。
 footer: MIT License | The Taichi Developers
 ---
 

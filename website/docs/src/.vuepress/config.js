@@ -3,7 +3,6 @@ const versioning = require("./scripts/versioning.js");
 module.exports = {
   title: "Taichi",
   description: "The Taichi Programming Language",
-  base: "/taichi.graphics/",
   // Extra tags to be injected to the page HTML `<head>`
   head: [
     ["meta", { name: "theme-color", content: "#3eaf7c" }],
@@ -44,7 +43,7 @@ module.exports = {
     docsRepo: 'taichi-dev/taichi.graphics',
     docsDir: "",
     sidebarDepth: 3,
-    displayAllHeaders: true,
+    displayAllHeaders: false,
     smoothScroll: true,
     editLinks: true,
     lastUpdated: true,
