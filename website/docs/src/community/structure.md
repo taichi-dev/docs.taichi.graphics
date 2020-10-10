@@ -25,7 +25,7 @@ Reviewers ensure code quality and correctness.
 
 - Contributed at least 5 PRs
 - Demonstrate good communication skills
-- Nominate by one of the maintainers
+- Get nominated by one of the maintainers
 
 ### Duties of a reviewer
 
@@ -64,7 +64,7 @@ Maintainers are developers who have established the highest level of trust. They
 - Adhere well to the code of conduct
 - Deeply understand the whole Taichi system
 - Contribute significantly to the Taichi project
-- Show great a sense of responsibility
+- Show a great sense of responsibility
 - Get nominated by the BDFL
 
 ### Rights of maintainers
@@ -76,7 +76,7 @@ Maintainers are developers who have established the highest level of trust. They
 ### Duties of maintainers
 
 - Enforce community code of conduct
-- Design and improve development workflows
+- Design and improve the development workflows
 - Promote and mentor committers and reviewers
 - Refactor community structure, when necessary, to better suit its growing scale
 
