@@ -93,6 +93,7 @@ module.exports = {
             ],
           },
           { text: "Forum", link: "https://forum.taichi.graphics/" },
+          { text: "Community", link: "/community/" },
         ],
         sidebar: {
           ...versioning.sidebarsFor("en"),
@@ -119,6 +120,13 @@ module.exports = {
               title: "Events",
               collapsable: false,
               children: ["taichicon"],
+            },
+          ],
+          "/community/": [
+            {
+              title: "Community",
+              collapsable: false,
+              children: ["structure", "members"],
             },
           ],
         },
