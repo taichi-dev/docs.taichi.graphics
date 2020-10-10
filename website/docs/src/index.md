@@ -11,7 +11,7 @@ features:
   - title: Portable
     details: Without any code modification, a Taichi program can run on various platforms, including x64 & ARM CPUs, GPUs, web browsers and smartphones. Taichi supports Windows, Linux, and OS X.
   - title: Performant
-    details: Taichi's Just-In-Time compiler offloads compute-intensive tasks to multi-core CPUs and massively parallel GPUs. The Taichi langauge design allows effective performance optimizations by the Taichi compiler.
+    details: Taichi's Just-In-Time compiler offloads compute-intensive tasks to multi-core CPUs and massively parallel GPUs. The Taichi language design allows effective performance optimizations by the Taichi compiler.
 footer: MIT License | The Taichi Developers
 ---
 

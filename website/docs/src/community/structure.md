@@ -1,0 +1,85 @@
+# Structure
+
+The developer community consists of four roles:
+
+- Active contributor
+- Reviewer
+- Committer
+- Maintainer
+
+Our developer architecture builds on two standards, **trust** and **contribution**. Contributors who finish what they have promised will build trust and reputation in the community. See our code of conduct for more details.
+
+## Active contributor
+
+Everyone who has contributed at least one PR since January 1, 2020 is an active developer.
+
+### Rights of an active contributor
+
+- Have names displayed on the release containing the PR, and the Taichi weekly newsletter
+
+## Reviewer
+
+Reviewers ensure code quality and correctness.
+
+### Becoming a reviewer
+
+- Contributed at least 5 PRs
+- Demonstrate good communication skills
+- Nominate by one of the maintainers
+
+### Duties of a reviewer
+
+- Ensure PR correctness by participating in the reviewing process
+
+### Rights of a reviewer
+
+- Triage permission in the main repository
+- Commenting on and approving PRs
+- Join the [`taichi-dev`](https://github.com/orgs/taichi-dev/people) organization
+
+## Committer
+
+Committers are trust-worthy contributors who have made notable contributions to the project.
+
+### Becoming a committer
+
+- Contribute at least 10 PRs
+- Write at least 10 quality PR reviews
+- Get nominated by one of the maintainers
+
+### Duties of committers
+
+- Merge PRs with at least one approval by a committer
+
+### Rights of committers
+
+- Write access to the master branch of the Taichi repository
+
+## Maintainer
+
+Maintainers are developers who have established the highest level of trust. They serve as the designer of Taichi's future and judges to resolve disputes.
+
+### Becoming a maintainer
+
+- Adhere well to the code of conduct
+- Deeply understand the whole Taichi system
+- Contribute significantly to the Taichi project
+- Show great a sense of responsibility
+- Get nominated by the BDFL
+
+### Rights of maintainers
+
+- Admin access to the main [Taichi repository](https://github.com/taichi-dev/taichi)
+- Make decisions on public API changes
+- Participate in software versioning and releasing
+
+### Duties of maintainers
+
+- Enforce community code of conduct
+- Design and improve development workflows
+- Promote and mentor committers and reviewers
+- Refactor community structure, when necessary, to better suit its growing scale
+
+### Benevolent dictator for life (BDFL)
+
+The BDFL is a special maintainer who retains the final say in disputes or arguments, minor or major, within the community.
