@@ -91,6 +91,14 @@ This will make the following changes:
 
 The above changes should be regarded as a transaction and shall be reverted **altogether** manually if needed.
 
+## Generating API references
+
+This site ships with a built-in API reference generator by peeking docstring in the `taichi` module. The docstring should be Google-style.
+To update the API references (under `website/docs/src/versioned_docs/develop/api/`) with the `taichi` in `PYTHONPATH`:
+```bash
+python dumper.py
+```
+
 ## Deployment
 
 This website currently hosted on Github Pages at https://taichi.graphics. The `gh-pages` branch is hosting the static files.
