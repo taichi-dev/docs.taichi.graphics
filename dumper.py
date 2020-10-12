@@ -54,7 +54,7 @@ def parse(doc: str) -> Dict[str, Any]:
         except ValueError:
             pass
         else:
-            if key[:1].isupper():  # is a valid taichi doc key, e.g. Scope, Args, Returns
+            if key[0].isupper():  # is a valid taichi doc key, e.g. Scope, Args, Returns
                 key = key.lower().strip()
                 if not value:  # multiline value
                     values = []
@@ -69,7 +69,7 @@ def parse(doc: str) -> Dict[str, Any]:
                                 lines.insert(0, line)
                                 break
                         values.append(line)
-                    value = '\n'.join(values)  # we always enforce LF as linesep even on windows
+                    value = '\n'.join(values)
                 value = value.strip()
                 if value == 'true':
                     value = True
