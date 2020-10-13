@@ -90,8 +90,8 @@ def dumpscope(module: Any, scope: str, desc: str) -> str:
         if not doc.startswith('Scope'):
             continue  # skip non-taichi docs
 
-        their_scope = doc[len('Scope:'):].splitlines()[0].strip()
-        if scope and their_scope != scope:
+        doc_scope = doc[len('Scope:'):].splitlines()[0].strip()
+        if scope and doc_scope != scope:
             continue  # not in the expected scope
 
         doc = parse(doc)
