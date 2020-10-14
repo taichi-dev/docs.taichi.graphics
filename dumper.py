@@ -80,7 +80,7 @@ def parse(doc: str) -> Dict[str, Any]:
 
 
 def dumpscope(module: Any, scope: str, desc: str) -> str:
-    docs = {'desc': desc, 'functions': [], 'classes': [], 'others': []}
+    docs = {'desc': desc, 'functions': []}
     for k, v in module.__dict__.items():
         if k.startswith('_') and not (k.startswith('__') and k.endswith('__')):
             continue  # skip private functions
@@ -105,13 +105,8 @@ def dumpscope(module: Any, scope: str, desc: str) -> str:
         if 'returns' in doc:
             doc['returns'] = parsereturns(doc['returns'])
 
-        if inspect.isfunction(v):
-            docs['functions'].append(doc)
-        elif inspect.isclass(v):
-            # TODO: parse class methods
-            docs['classes'].append(doc)
-        else:
-            docs['others'].append(doc)
+        # TODO: support classes and variables too
+        docs['functions'].append(doc)
 
     docs = {'title': scope, 'docs': docs}
     return '---\n' + yaml.dump(docs) + '---\n\n<ApiDocs/>\n'

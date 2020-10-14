@@ -1,6 +1,5 @@
 ---
 docs:
-  classes: []
   desc: Scalar and matrix fields.
   functions:
   - desc: 'Create a scalar field.
@@ -25,8 +24,6 @@ docs:
     scope: field
     since: v0.5.14
     static: true
-    tags: pre-materializaion
-  others: []
 title: field
 ---
 
