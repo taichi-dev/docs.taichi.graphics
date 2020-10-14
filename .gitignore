@@ -4,9 +4,6 @@
 # Node
 node_modules/
 
-# Yarn
-yarn.lock
-
 # Website build
 website/docs/src/.vuepress/dist/
 

@@ -1,3 +1,8 @@
+'''
+A dummy `taichi` module to test the API dumper functionality :)
+'''
+
+
 def field(dtype, shape=None):
     '''
     Scope: field
