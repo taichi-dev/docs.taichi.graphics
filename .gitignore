@@ -5,7 +5,7 @@
 node_modules/
 
 # Website build
-website/docs/src/.vuepress/dist/
+dist/
 
 # OS
 .DS_Store
