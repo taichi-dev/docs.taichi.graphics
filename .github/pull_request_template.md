@@ -8,7 +8,7 @@
 ### Changes
 <!-- Please list out what major changes were made in this PR to address the issue: -->
 
-<!-- TO DOCUMENTATION WRITERS: Please always work on `website/docs/src/versioned_docs/develop` only, which is the latest "develop" directory of the documentation. Think twice if you really need to update other older versions of the docs! -->
+<!-- TO DOCUMENTATION WRITERS: Please always work on `website/docs/develop` only, which is the latest "develop" directory of the documentation. Think twice if you really need to update other older versions of the docs! -->
 
 - No changes.
 
