@@ -65,18 +65,18 @@ module.exports = {
     switch (locale) {
       case "en":
         versions.forEach((version) => {
-          let sidebar = require(`../../versioned_docs/${version}/sidebar.js`);
-          sidebars[`/versioned_docs/${version}/documentation/`] = sidebar;
+          let sidebar = require(`../../docs/${version}/sidebar.js`);
+          sidebars[`/docs/${version}/documentation/`] = sidebar;
         });
       case "zh":
         versions.forEach((version) => {
-          let sidebar = require(`../../zh/versioned_docs/${version}/sidebar.js`);
-          sidebars[`/zh/versioned_docs/${version}/documentation/`] = sidebar;
+          let sidebar = require(`../../zh/docs/${version}/sidebar.js`);
+          sidebars[`/zh/docs/${version}/documentation/`] = sidebar;
         });
       default:
         versions.forEach((version) => {
-          let sidebar = require(`../../versioned_docs/${version}/sidebar.js`);
-          sidebars[`/versioned_docs/${version}/documentation/`] = sidebar;
+          let sidebar = require(`../../docs/${version}/sidebar.js`);
+          sidebars[`/docs/${version}/documentation/`] = sidebar;
         });
     }
     return sidebars;
@@ -87,7 +87,7 @@ module.exports = {
     versions.forEach((version) => {
       let dropDownItem = {
         text: version,
-        link: `/versioned_docs/${version}/${url}`,
+        link: `/docs/${version}/${url}`,
       };
       dropDownMenu.push(dropDownItem);
     });
@@ -101,7 +101,7 @@ module.exports = {
     version = version || process.argv[1];
     console.log("\n");
 
-    if (!fse.existsSync(`${thisPath}/src/.vuepress/versions.json`)) {
+    if (!fse.existsSync(`${thisPath}/.vuepress/versions.json`)) {
       this.error(
         "Cannot find the required version file '.vuepress/versions.json'!"
       );
@@ -120,20 +120,20 @@ module.exports = {
     }
 
     this.info(
-      `Generating version ${version} into 'src/versioned_docs/(locale)/${version}' ... \n`
+      `Generating version ${version} into 'docs/(locale)/${version}' ... \n`
     );
 
     try {
       // [i18n-EN]: copy all from the develop docs to the newly created verion dir
       fse.copySync(
-        `${thisPath}/src/versioned_docs/develop`,
-        `${thisPath}/src/versioned_docs/${version}`
+        `${thisPath}/docs/develop`,
+        `${thisPath}/docs/${version}`
       );
 
       // [i18n-ZH]: copy all from the develop docs to the newly created verion dir
       fse.copySync(
-        `${thisPath}/src/zh/versioned_docs/develop`,
-        `${thisPath}/src/zh/versioned_docs/${version}`
+        `${thisPath}/zh/docs/develop`,
+        `${thisPath}/zh/docs/${version}`
       );
 
       // [i18n - other ...] to be added ...
@@ -148,7 +148,7 @@ module.exports = {
       versions.unshift("develop");
 
       fse.writeFileSync(
-        `${thisPath}/src/.vuepress/versions.json`,
+        `${thisPath}/.vuepress/versions.json`,
         `${JSON.stringify(versions, null, 2)}\n`
       );
 
@@ -162,9 +162,9 @@ module.exports = {
     console.log("\033[1;91mERROR: ", msg);
   },
   info(msg) {
-    console.log("\033[1;90mERROR: ", msg);
+    console.log("\033[1;90mINFO: ", msg);
   },
   success(msg) {
-    console.log("\033[1;92mERROR: ", msg);
+    console.log("\033[1;92mSUCCESS: ", msg);
   },
 };

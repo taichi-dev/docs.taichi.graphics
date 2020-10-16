@@ -26,4 +26,4 @@ jobs:
           node-version: 12.x
 
       - name: Install and Build
-        run: yarn --cwd=website/docs install && yarn --cwd=website/docs build
+        run: yarn --cwd=website install && yarn --cwd=website build

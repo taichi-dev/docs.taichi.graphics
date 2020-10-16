@@ -9,21 +9,21 @@
   },
   "repository": "https://github.com/taichi-dev/taichi/taichi",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src",
+    "dev": "vuepress dev",
+    "build": "vuepress build",
     "format": "prettier --write .",
-    "createVersion": "node -e 'require(\"./src/.vuepress/scripts/versioning.js\").main()'"
+    "createVersion": "node -e 'require(\"./.vuepress/scripts/versioning.js\").main()'"
   },
   "license": "MIT",
   "devDependencies": {
-    "@vuepress/plugin-active-header-links": "^1.6.0",
-    "@vuepress/plugin-back-to-top": "^1.6.0",
-    "@vuepress/plugin-medium-zoom": "^1.6.0",
+    "@vuepress/plugin-active-header-links": "^1.7.1",
+    "@vuepress/plugin-back-to-top": "^1.7.1",
+    "@vuepress/plugin-medium-zoom": "^1.7.1",
     "fs-extra": "^9.0.1",
     "node-sass": "^4.14.1",
     "prettier": "2.1.2",
     "sass-loader": "7.3.1",
-    "vuepress": "^1.6.0",
+    "vuepress": "^1.7.1",
     "vuepress-plugin-api-docs-generator": "^1.0.19",
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-container": "^2.1.5",

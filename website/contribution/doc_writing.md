@@ -64,7 +64,7 @@ To link to sections in other articles, use the following syntax (note the relati
 
 - `[Return to Contribution guidelines](./contributor_guide)`: [Return to Contribution guidelines](./contributor_guide)
 - `[Return to Contribution guidelines](./contributor_guide.md)`: [Return to Contribution guidelines](./contributor_guide.md)
-- `[Return to The Documentation](../versioned_docs/develop/documentation/overview/hello.md#portability)`: [Return to The Documentation](../versioned_docs/develop/documentation/overview/hello.md#portability)
+- `[Return to The Documentation](../docs/develop/documentation/overview/hello.md#portability)`: [Return to The Documentation](../docs/develop/documentation/overview/hello.md#portability)
 
 ## 4. Centered text block
 

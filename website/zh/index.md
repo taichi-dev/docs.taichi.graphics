@@ -4,7 +4,7 @@ heroText:
 heroImage: /logo_large.png
 tagline: 大家的计算机图形学编程语言
 actionText: 文档 →
-actionLink: /zh/versioned_docs/develop/documentation/overview/overview/
+actionLink: /zh/docs/develop/documentation/overview/overview/
 features:
   - title: 生产力
     details: Taichi嵌入在Python中，其语法与Python极其相近，因此十分容易学习。研究表明Taichi程序比等价的C++/CUDA代码短10倍，并能轻松达到更高性能。

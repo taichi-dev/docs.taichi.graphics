@@ -4,7 +4,7 @@ heroText:
 heroImage: /logo_large.png
 tagline: Computer graphics programming for everyone
 actionText: Documentation →
-actionLink: /versioned_docs/develop/documentation/overview/overview/
+actionLink: /docs/develop/documentation/overview/overview/
 features:
   - title: Productive
     details: As a language embedded in Python, Taichi has a Python-style syntax which is extremely easy to learn. Research shows Taichi programs are 10x shorter compared to equivalent C++/CUDA code while achieving higher performance.
