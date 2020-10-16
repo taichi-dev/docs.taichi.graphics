@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - website/docs/**
+      - website/**
   workflow_dispatch:
 
 jobs:
@@ -29,11 +29,11 @@ jobs:
           node-version: 12.x
 
       - name: Install and Build
-        run: yarn --cwd=website/docs install && yarn --cwd=website/docs build
+        run: yarn --cwd=website install && yarn --cwd=website build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           BRANCH: gh-pages
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FOLDER: website/docs/src/.vuepress/dist
+          FOLDER: website/.vuepress/dist

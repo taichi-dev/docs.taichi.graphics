@@ -9,10 +9,10 @@
   },
   "repository": "https://github.com/taichi-dev/taichi/taichi",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src",
+    "dev": "vuepress dev",
+    "build": "vuepress build",
     "format": "prettier --write .",
-    "createVersion": "node -e 'require(\"./src/.vuepress/scripts/versioning.js\").main()'"
+    "createVersion": "node -e 'require(\"./.vuepress/scripts/versioning.js\").main()'"
   },
   "license": "MIT",
   "devDependencies": {
