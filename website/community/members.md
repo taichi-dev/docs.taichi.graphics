@@ -1,6 +1,6 @@
 # Members
 
-## Technical steering committee
+## Technical Steering Committee
 
 - [yuanming-hu](https://github.com/yuanming-hu/) (BDFL)
 - [k-ye](https://github.com/k-ye/)
