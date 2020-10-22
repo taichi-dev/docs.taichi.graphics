@@ -1,6 +1,6 @@
 # Members
 
-## Maintainers
+## Technical steering committee
 
 - [yuanming-hu](https://github.com/yuanming-hu/) (BDFL)
 - [k-ye](https://github.com/k-ye/)
@@ -53,3 +53,16 @@
 - [DomHudson](https://github.com/DomHudson/)
 - [cjim8889](https://github.com/cjim8889/)
 - [jackalcooper](https://github.com/jackalcooper)
+
+## [Simplified Chinese documentation](https://github.com/taichi-dev/taichi-docs-zh-cn) contributors
+
+- [StephenArk30](https://github.com/StephenArk30) (Creator)
+- [archibate](https://github.com/archibate)
+- [ArkhamWJZ](https://github.com/ArkhamWJZ)
+- [isdanni](https://github.com/isdanni)
+- [rexwangcc](https://github.com/rexwangcc)
+- [liaopeiyuan](https://github.com/liaopeiyuan)
+- [zhiyaluo](https://github.com/zhiyaluo)
+- [moscribe](https://github.com/moscribe)
+- [YiYiXia](https://github.com/YiYiXia)
+- [Wheeeeeeeeels](https://github.com/Wheeeeeeeeels)
