@@ -126,7 +126,7 @@ module.exports = {
             {
               title: "Community",
               collapsable: false,
-              children: ["structure", "members"],
+              children: ["code_of_conduct", "structure", "members"],
             },
           ],
         },
@@ -168,9 +168,21 @@ module.exports = {
             ],
           },
           { text: "论坛", link: "https://forum.taichi.graphics/" },
+          { text: "社区", link: "/zh/community/" },
         ],
         sidebar: {
           ...versioning.sidebarsFor("zh"),
+          "/zh/community/": [
+            {
+              title: "社区",
+              collapsable: false,
+              children: [
+                "/zh/code_of_conduct",
+                "/zh/structure",
+                "/zh/members"
+              ],
+            },
+          ],
           "/zh/contribution/": [
             {
               title: "贡献指南",

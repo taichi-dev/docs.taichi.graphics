@@ -2,7 +2,7 @@
 home: true
 heroText:
 heroImage: /logo_large.png
-tagline: 大家的计算机图形学编程语言
+tagline: 让图形编程惠及每一人
 actionText: 文档 →
 actionLink: /zh/docs/develop/documentation/overview/overview/
 features:

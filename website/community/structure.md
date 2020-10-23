@@ -33,7 +33,7 @@ Reviewers ensure code quality and correctness.
 
 ### Rights of a reviewer
 
-- Triage permission in the main repository
+- **Triage** access to the [main Taichi repository](https://github.com/taichi-dev/taichi)
 - Commenting on and approving PRs
 - Join the [`taichi-dev`](https://github.com/orgs/taichi-dev/people) organization
 
@@ -53,7 +53,7 @@ Committers are trust-worthy contributors who have made notable contributions to 
 
 ### Rights of committers
 
-- Write access to the master branch of the Taichi repository
+- **Write** access to the [main Taichi repository](https://github.com/taichi-dev/taichi)
 
 ## Technical Steering Committee (TSC) members
 
@@ -69,7 +69,7 @@ TSC members are developers who have established the highest level of trust. They
 
 ### Rights of TSC members
 
-- Admin access to the [main Taichi repository](https://github.com/taichi-dev/taichi)
+- **Admin** access to the [main Taichi repository](https://github.com/taichi-dev/taichi)
 - Make decisions on public API changes
 - Participate in software versioning and releasing
 
@@ -77,7 +77,7 @@ TSC members are developers who have established the highest level of trust. They
 
 - Enforce community code of conduct
 - Design and improve the development workflows
-- Promote and mentor committers and reviewers
+- Promote and mentor contributors
 - Refactor community structure, when necessary, to better suit its growing scale
 
 ### Benevolent dictator for life (BDFL)
