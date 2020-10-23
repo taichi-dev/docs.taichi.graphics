@@ -1,5 +1,5 @@
 # On hybrid lagrangian-eulerian simulation methods: practical notes and high-performance aspects
 
-Redirecting to [https://yuanming.taichi.graphics/publication/2019-mpm-tutorial/](https://yuanming.taichi.graphics/publication/2019-mpm-tutorial/) ...
+Redirecting to https://yuanming.taichi.graphics/publication/2019-mpm-tutorial/ ...
 
-<script>setTimeout(function(){window.location.href = 'https://yuanming.taichi.graphics/publication/2019-mpm-tutorial/'}, 1000);</script>
+<script>window.location.href = 'https://yuanming.taichi.graphics/publication/2019-mpm-tutorial/';</script>
