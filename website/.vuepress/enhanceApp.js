@@ -11,4 +11,15 @@ export default ({
   siteData, // site metadata
 }) => {
   // ...apply enhancements for the site.
+
+  // Redirections for the old Taichi websites
+  router.beforeResolve((to, from, next) => {
+    if (to.fullPath == '/me' || to.fullPath == '/me/') {
+      window.location.href = 'https://yuanming.taichi.graphics/';
+    } else if (to.fullPath.startsWith('/mpm_course2019')) {
+      window.location.href = 'https://yuanming.taichi.graphics/publication/2019-mpm-tutorial/';
+    } else {
+      next();
+    }
+  });
 };
