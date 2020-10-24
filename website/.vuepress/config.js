@@ -177,8 +177,8 @@ module.exports = {
               title: "社区",
               collapsable: false,
               children: [
-                "/zh/community/code_of_conduct",
-                "/zh/community/structure",
+                "code_of_conduct",
+                "structure",
                 "/community/members"
               ],
             },
