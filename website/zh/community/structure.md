@@ -29,7 +29,7 @@ Reviewer 保障代码的质量和准确性。
 
 ### Reviewer 的义务
 
-- 参加 Code review 流程以确保 PR 正确性
+- 参加 code review 流程以确保 PR 正确性
 
 ### Reviewer 的权利
 
