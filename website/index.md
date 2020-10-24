@@ -2,7 +2,7 @@
 home: true
 heroText:
 heroImage: /logo_large.png
-tagline: Computer graphics programming for everyone
+tagline: Graphics programming for everyone
 actionText: Documentation →
 actionLink: /docs/develop/documentation/overview/overview/
 features:
