@@ -39,7 +39,7 @@ Reviewer 保障代码的质量和准确性。
 
 ## Committer
 
-Committer 是值得信任的、为项目作出显著贡献的贡献者。
+Committer 是持续为项目作出显著贡献的开发者。他们精通Taichi中某些模块，并可以独立主导新feature或大型重构等任务。
 
 ### 如何成为 committer
 

@@ -10,4 +10,4 @@ Quality > quantity. Exhibit attention to detail. Behave professionally. Finish w
 Be considerate of others. Cherish community resources: polish well before raising pull/review requests.
 
 ### Stay humble
-Think about what you can learn from everyone. Communicate politely and constructively. Treat community members with dignity.
+Think about what you can learn from everyone. Communicate politely and constructively. Please help us construct a respectful and blame-free community.
