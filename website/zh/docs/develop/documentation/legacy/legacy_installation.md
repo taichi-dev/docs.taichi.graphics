@@ -1,4 +1,4 @@
-# 安装legacy Taichi库
+# 安装 legacy Taichi 库
 
 ::: note
 

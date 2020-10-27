@@ -1,4 +1,4 @@
-# GUI系统
+# GUI 系统
 
 Taichi has a built-in GUI system to help users visualize results.
 

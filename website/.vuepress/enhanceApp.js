@@ -15,10 +15,11 @@ export default ({
   // Redirections to the old Taichi pages
   // https://github.com/vuejs/vuepress/issues/1803#issuecomment-602783264
   router.beforeResolve((to, from, next) => {
-    if (to.fullPath == '/me' || to.fullPath == '/me/') {
-      window.location.href = 'https://yuanming.taichi.graphics/';
-    } else if (to.fullPath.startsWith('/mpm_course2019')) {
-      window.location.href = 'https://yuanming.taichi.graphics/publication/2019-mpm-tutorial/';
+    if (to.fullPath == "/me" || to.fullPath == "/me/") {
+      window.location.href = "https://yuanming.taichi.graphics/";
+    } else if (to.fullPath.startsWith("/mpm_course2019")) {
+      window.location.href =
+        "https://yuanming.taichi.graphics/publication/2019-mpm-tutorial/";
     } else {
       next();
     }
