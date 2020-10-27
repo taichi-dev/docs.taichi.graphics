@@ -1,4 +1,4 @@
-# Type system
+# 类型系统
 
 Taichi supports common numerical data types. Each type is denoted as a
 character indicating its _category_ and a number of _precision bits_,

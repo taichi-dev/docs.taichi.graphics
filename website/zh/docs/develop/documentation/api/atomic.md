@@ -1,4 +1,4 @@
-# Atomic operations
+# 原子操作
 
 In Taichi, augmented assignments (e.g., `x[i] += 1`) are automatically
 [atomic](https://en.wikipedia.org/wiki/Fetch-and-add).

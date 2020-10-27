@@ -1,4 +1,4 @@
-# Export Taichi kernels to C source
+# 将Taichi内核导出到C源
 
 The C backend of Taichi allows you to **export Taichi kernels to C
 source**.

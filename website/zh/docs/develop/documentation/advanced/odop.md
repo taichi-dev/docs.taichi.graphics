@@ -1,4 +1,4 @@
-# Objective data-oriented programming
+# 面向数据对象式编程
 
 Taichi is a
 [data-oriented](https://en.wikipedia.org/wiki/Data-oriented_design)

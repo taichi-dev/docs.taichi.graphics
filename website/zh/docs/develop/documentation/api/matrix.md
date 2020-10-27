@@ -1,4 +1,4 @@
-# Matrices
+# 矩阵
 
 - `ti.Matrix` is for small matrices (e.g. [3x3]{.title-ref}) only. If
   you have [64x64]{.title-ref} matrices, you should consider using a

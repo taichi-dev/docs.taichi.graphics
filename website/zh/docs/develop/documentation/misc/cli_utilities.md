@@ -1,4 +1,4 @@
-# Command line utilities
+# 命令行工具使用指南
 
 A successful installation of Taichi should add a CLI (Command-Line
 Interface) to your system, which is helpful to perform several rountine

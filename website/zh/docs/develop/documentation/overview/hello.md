@@ -1,4 +1,4 @@
-# Hello, world!
+# 你好，世界！
 
 We introduce the Taichi programming language through a very basic
 _fractal_ example.

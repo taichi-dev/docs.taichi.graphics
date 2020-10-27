@@ -1,4 +1,4 @@
-# Differentiable programming
+# 可微分编程
 
 We suggest starting with the `ti.Tape()`, and then migrate to more
 advanced differentiable programming using the `kernel.grad()` syntax if

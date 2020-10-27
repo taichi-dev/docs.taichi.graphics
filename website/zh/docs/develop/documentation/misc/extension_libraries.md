@@ -1,4 +1,4 @@
-# Extension libraries
+# 扩展库
 
 The Taichi programming language offers a minimal and generic built-in
 standard library. Extra domain-specific functionalities are provided via

@@ -1,4 +1,4 @@
-# Global settings
+# 全局设置
 
 ## Backends
 

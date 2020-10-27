@@ -1,4 +1,4 @@
-# Export your results
+# 导出结果
 
 Taichi has functions that help you **export visual results to images or
 videos**. This tutorial demonstrates how to use them step by step.

@@ -1,4 +1,4 @@
-# Installing the legacy Taichi Library
+# 安装legacy Taichi库
 
 ::: note
 

@@ -1,4 +1,4 @@
-# Vectors
+# 向量
 
 A vector in Taichi can have two forms:
 
