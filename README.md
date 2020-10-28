@@ -33,7 +33,7 @@ For Arch Linux, use the following command:
 sudo pacman -S yarn
 ```
 
-3. To install yarn on Windows, you need to install Node.js first. You can check it using `node -v‘` in the terminal. AFter it's verified, download the [Yarn installer(.smi)](https://classic.yarnpkg.com/en/docs/install#windows-stable) from the official yarn website and install it. To verifiy the installation, use `yarn --version`.
+3. To install yarn on Windows, you need to install Node.js first. You can check it using `node -v‘` in the terminal. After it's verified, download the [Yarn installer(.smi)](https://classic.yarnpkg.com/en/docs/install#windows-stable) from the official yarn website and install it. To verifiy the installation, use `yarn --version`.
 
 ## Setup
 
