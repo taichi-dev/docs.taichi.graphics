@@ -1,4 +1,4 @@
-# Debugging
+# 调试
 
 Debugging a parallel program is not easy, so Taichi provides builtin
 utilities that could hopefully help you debug your Taichi program.

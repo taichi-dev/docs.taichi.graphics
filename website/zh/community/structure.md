@@ -11,7 +11,7 @@
 
 ## Active contributor
 
-自2020年1月1日开始，至少贡献一个PR的开发者为 active contributor。
+自 2020 年 1 月 1 日开始，至少贡献一个 PR 的开发者为 active contributor。
 
 ### Active contributor 的权利
 
@@ -23,7 +23,7 @@ Reviewer 保障代码的质量和准确性。
 
 ### 如何成为 reviewer
 
-- 至少贡献 5 个PR
+- 至少贡献 5 个 PR
 - 具备优秀的沟通技能
 - 获得至少一个 TSC 成员提名
 
@@ -39,11 +39,11 @@ Reviewer 保障代码的质量和准确性。
 
 ## Committer
 
-Committer 是持续为项目作出显著贡献的开发者。他们精通Taichi中某些模块，并可以独立主导新feature或大型重构等任务。
+Committer 是持续为项目作出显著贡献的开发者。他们精通 Taichi 中某些模块，并可以独立主导新 feature 或大型重构等任务。
 
 ### 如何成为 committer
 
-- 至少贡献 10个 PR
+- 至少贡献 10 个 PR
 - 至少发表 10 条高质量的 PR review
 - 获得至少一个 TSC 成员提名
 

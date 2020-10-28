@@ -90,6 +90,7 @@ For images, you **HAVE TO** insert blank lines to make them work:
 
 </center>
 ```
+
 :::
 
 ## 5. Text with color backgorund
@@ -113,7 +114,6 @@ You could also use the markdown-it syntax `==My text==` to achieve similar resul
 ## 6. Custom containers
 
 As we already saw in this guide several places, we could add custom containers:
-
 
 ```md
 ::: tip
@@ -194,12 +194,14 @@ using namespace std;
 
 int main()
 {
-    // prints hello world
-    cout<<"Hello World";
+// prints hello world
+cout<<"Hello World";
 
     return 0;
+
 }
-```
+
+````
 </code-block>
 </code-group>
 
@@ -211,7 +213,7 @@ It is important to cite the references, to do so, use the `markdown-it`'s footno
 This sentence has a footnote[^1]. (See footnote at the bottom of this guide.)
 
 [^1]: I'm a footnote!
-```
+````
 
 which results in:
 
@@ -275,6 +277,7 @@ You could add a variety of badges along with the text:
 <Badge text="hello!" type="tip"/>
 <Badge text="hello!" type="tip" vertical="middle"/>
 ```
+
 <Badge text="hello!" type="tip"/>
 <Badge text="hello!" type="tip" vertical="middle"/>
 
@@ -282,6 +285,7 @@ You could add a variety of badges along with the text:
 <Badge text="hello!" type="warning"/>
 <Badge text="hello!" type="warning" vertical="middle"/>
 ```
+
 <Badge text="hello!" type="warning"/>
 <Badge text="hello!" type="warning" vertical="middle"/>
 
@@ -289,5 +293,6 @@ You could add a variety of badges along with the text:
 <Badge text="hello!" type="error"/>
 <Badge text="hello!" type="error" vertical="middle"/>
 ```
+
 <Badge text="hello!" type="error"/>
 <Badge text="hello!" type="error" vertical="middle"/>

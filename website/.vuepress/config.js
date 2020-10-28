@@ -40,7 +40,7 @@ module.exports = {
   // theme config
   themeConfig: {
     logo: "/logo_medium.png",
-    docsRepo: 'taichi-dev/taichi.graphics',
+    docsRepo: "taichi-dev/taichi.graphics",
     docsDir: "",
     sidebarDepth: 3,
     displayAllHeaders: false,
@@ -75,7 +75,10 @@ module.exports = {
                 items: [
                   { text: "Gallery", link: "/gallery/" },
                   { text: "Research", link: "/research/" },
-                  { text: "Taichi Hub Playground", link: "http://hub.taichi.graphics/" },
+                  {
+                    text: "Taichi Hub Playground",
+                    link: "http://hub.taichi.graphics/",
+                  },
                 ],
               },
               {
@@ -150,7 +153,10 @@ module.exports = {
                 items: [
                   { text: "画廊", link: "/zh/gallery/" },
                   { text: "研究", link: "/zh/research/" },
-                  { text: "Taichi Hub游乐场", link: "http://hub.taichi.graphics/" },
+                  {
+                    text: "Taichi Hub游乐场",
+                    link: "http://hub.taichi.graphics/",
+                  },
                 ],
               },
               {
@@ -176,11 +182,7 @@ module.exports = {
             {
               title: "社区",
               collapsable: false,
-              children: [
-                "code_of_conduct",
-                "structure",
-                "/community/members"
-              ],
+              children: ["code_of_conduct", "structure", "/community/members"],
             },
           ],
           "/zh/contribution/": [

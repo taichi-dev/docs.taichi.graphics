@@ -1,4 +1,4 @@
-# Interacting with external arrays
+# 与外部数组进行交互
 
 Although Taichi fields are mainly used in Taichi-scope, in some cases
 efficiently manipulating Taichi field data in Python-scope could also be

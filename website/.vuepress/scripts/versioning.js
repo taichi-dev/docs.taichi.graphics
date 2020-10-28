@@ -125,10 +125,7 @@ module.exports = {
 
     try {
       // [i18n-EN]: copy all from the develop docs to the newly created verion dir
-      fse.copySync(
-        `${thisPath}/docs/develop`,
-        `${thisPath}/docs/${version}`
-      );
+      fse.copySync(`${thisPath}/docs/develop`, `${thisPath}/docs/${version}`);
 
       // [i18n-ZH]: copy all from the develop docs to the newly created verion dir
       fse.copySync(

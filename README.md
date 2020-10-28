@@ -15,11 +15,25 @@ You need to install the following before setting up this project:
 
 - `yarn`
 
-On macOS, you can install the above by:
+1. On macOS, you can install the above by:
 
 ```bash
 brew install yarn
 ```
+
+2. On Debian-based Linux distribution, you can install the above by:
+
+```bash
+sudo apt install yarn
+```
+
+For Arch Linux, use the following command:
+
+```bash
+sudo pacman -S yarn
+```
+
+3. To install yarn on Windows, you need to install Node.js first. You can check it using `node -v‘` in the terminal. After it's verified, download the [Yarn installer(.smi)](https://classic.yarnpkg.com/en/docs/install#windows-stable) from the official yarn website and install it. To verifiy the installation, use `yarn --version`.
 
 ## Setup
 

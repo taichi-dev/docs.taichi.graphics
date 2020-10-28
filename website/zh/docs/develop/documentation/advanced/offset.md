@@ -1,4 +1,4 @@
-# Coordinate offsets
+# 坐标偏移
 
 - A Taichi field can be defined with **coordinate offsets**. The
   offsets will move field bounds so that field origins are no longer

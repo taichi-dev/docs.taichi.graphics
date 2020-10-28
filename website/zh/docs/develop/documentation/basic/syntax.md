@@ -1,4 +1,4 @@
-# Kernels and functions
+# 内核和函数
 
 ## Taichi-scope vs Python-scope
 

@@ -1,4 +1,4 @@
-# Structural nodes (SNodes)
+# 结构节点 (SNodes)
 
 After writing the computation code, the user needs to specify the
 internal data structure hierarchy. Specifying a data structure includes

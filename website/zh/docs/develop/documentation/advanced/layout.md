@@ -1,4 +1,4 @@
-# Advanced dense layouts
+# 高级数据布局
 
 Fields ([Scalar fields](../api/scalar_field.md)) can be _placed_
 in a specific shape and _layout_. Defining a proper layout can be
