@@ -6,6 +6,8 @@ from typing import *
 def parseargs(doc: str) -> List[Dict[str, str]]:
     args = []
     lines = [line.strip() for line in doc.splitlines()]
+    # We don't use `for line in lines:` here because we need to *peek*
+    # the next `line[0]` without pop it:
     while lines:
         line = lines.pop(0)
         try:
@@ -130,7 +132,8 @@ if __name__ == '__main__':
     }
     import taichi as ti
 
+    path = 'website/docs/src/versioned_docs/develop/documentation/api'
     docs = dumpdocs(ti, scopes)
     for scope, doc in docs.items():
-        with open(f'website/docs/src/versioned_docs/develop/documentation/api/{scope}.md', 'w') as f:
+        with open(f'{path}/{scope}.md', 'w') as f:
             f.write(doc)
