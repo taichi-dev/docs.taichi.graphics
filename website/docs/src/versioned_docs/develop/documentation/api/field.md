@@ -1,6 +1,6 @@
 ---
 docs:
-  desc: Scalar and matrix fields.
+  desc: Scalar, vector, and matrix fields.
   functions:
   - desc: 'Create a scalar field.
 
