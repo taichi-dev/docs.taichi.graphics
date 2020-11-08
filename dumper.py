@@ -125,9 +125,9 @@ def dumpdocs(module: Any, scopes: Dict[str, str]) -> Dict[str, str]:
 
 if __name__ == '__main__':
     scopes = {
-        'field': 'Scalar and matrix fields.',
-        'matrix': 'Linear algebra, vectors, and matrices.',
-        'snode': 'Structural nodes (SNode).',
+        'field': 'Scalar, vector, and matrix fields.',
+        'matrix': 'Linear algebra (vectors and matrices).',
+        'snode': 'Structural nodes (SNodes).',
         'arithmetics': 'Arithmetic operations.',
     }
     import taichi as ti

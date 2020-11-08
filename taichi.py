@@ -14,7 +14,7 @@ def field(dtype, shape=None):
         Create a scalar field.
 
         ::: note
-        When shape is not specified or `None`, it will allocates a sparse field.
+        When `shape` is `None` (or unspecified), its layout needs to be specified later using advanced data layouts.
         :::
 
     Args:
