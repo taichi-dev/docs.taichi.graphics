@@ -39,6 +39,10 @@ module.exports = {
 
   // theme config
   themeConfig: {
+    algolia: {
+      apiKey: 'af0e5e752542b015cba900b98e25197d',
+      indexName: 'taichi',
+    },
     logo: "/logo_medium.png",
     docsRepo: "taichi-dev/taichi.graphics",
     docsDir: "",
@@ -220,6 +224,10 @@ module.exports = {
     "@vuepress/active-header-links",
     "@vuepress/plugin-back-to-top",
     "@vuepress/plugin-medium-zoom",
+    /*
+    * the built-in search engine which
+    * is superceded by Algolia Search
+    * see: https://vuepress.vuejs.org/theme/default-theme-config.html#algolia-search
     [
       "@vuepress/search",
       {
@@ -232,6 +240,7 @@ module.exports = {
         ],
       },
     ],
+    */
     ["vuepress-plugin-mathjax", { target: "svg", macros: { "*": "\\times" } }],
     ["api-docs-generator", { tagColors: { static: "#10ac84" } }],
     [
