@@ -1,6 +1,5 @@
 preserve_hierarchy: true
-commit_message: "[Crowdin Cron] Update translation for %language%"
-append_commit_message: false
+commit_message: "[crowdin cron]"
 files:
   # documentation
   - source: /website/docs/develop/**/*.md
