@@ -1,20 +1,16 @@
 # 元编程
 
-Taichi provides metaprogramming infrastructures. Metaprogramming can
+Taichi provides metaprogramming infrastructures. Metaprogramming can Metaprogramming can
 
-- Unify the development of dimensionality-dependent code, such as
-  2D/3D physical simulations
+- Unify the development of dimensionality-dependent code, such as 2D/3D physical simulations
 - Improve run-time performance by from run-time costs to compile time
 - Simplify the development of Taichi standard library
 
-Taichi kernels are _lazily instantiated_ and a lot of computation can
-happen at _compile-time_. Every kernel in Taichi is a template kernel,
-even if it has no template arguments.
+Taichi kernels are _lazily instantiated_ and a lot of computation can happen at _compile-time_. Every kernel in Taichi is a template kernel, even if it has no template arguments. Every kernel in Taichi is a template kernel, even if it has no template arguments.
 
 ## Template metaprogramming
 
-You may use `ti.template()` as a type hint to pass a field as an
-argument. For example:
+You may use `ti.template()` as a type hint to pass a field as an argument. For example: For example:
 
 ```python {2}
 @ti.kernel
@@ -30,14 +26,11 @@ copy(a, b)
 copy(c, d)
 ```
 
-As shown in the example above, template programming may enable us to
-reuse our code and provide more flexibility.
+As shown in the example above, template programming may enable us to reuse our code and provide more flexibility.
 
 ## Dimensionality-independent programming using grouped indices
 
-However, the `copy` template shown above is not perfect. For example, it
-can only be used to copy 1D fields. What if we want to copy 2D fields?
-Do we have to write another kernel?
+However, the `copy` template shown above is not perfect. For example, it can only be used to copy 1D fields. However, the `copy` template shown above is not perfect. For example, it can only be used to copy 1D fields. What if we want to copy 2D fields? Do we have to write another kernel? Do we have to write another kernel?
 
 ```python
 @ti.kernel
@@ -46,9 +39,7 @@ def copy2d(x: ti.template(), y: ti.template()):
         y[i, j] = x[i, j]
 ```
 
-:tada: Not necessary! Taichi provides `ti.grouped` syntax which enables you to
-pack loop indices into a grouped vector to unify kernels of different
-dimensionalities. For example:
+:tada: Not necessary! :tada: Not necessary! Taichi provides `ti.grouped` syntax which enables you to pack loop indices into a grouped vector to unify kernels of different dimensionalities. For example: For example:
 
 ```python {3-10,15-16}
 @ti.kernel
@@ -71,13 +62,22 @@ def array_op(x: ti.template(), y: ti.template()):
     # then it is equivalent to:
     for i, j in x:
         y[i, j + 1] = i + j
+        x[I] = y[I]
+
+@ti.kernel
+def array_op(x: ti.template(), y: ti.template()):
+    # if field x is 2D:
+    for I in ti.grouped(x): # I is simply a 2D vector with data type i32
+        y[I + ti.Vector([0, 1])] = I[0] + I[1]
+
+    # then it is equivalent to:
+    for i, j in x:
+        y[i, j + 1] = i + j
 ```
 
 ## Field metadata
 
-Sometimes it is useful to get the data type (`field.dtype`) and shape
-(`field.shape`) of fields. These attributes can be accessed in both
-Taichi- and Python-scopes.
+Sometimes it is useful to get the data type (`field.dtype`) and shape (`field.shape`) of fields. These attributes can be accessed in both Taichi- and Python-scopes. These attributes can be accessed in both Taichi- and Python-scopes.
 
 ```python {2-6}
 @ti.func
@@ -90,20 +90,13 @@ def print_field_info(x: ti.template()):
 
 See [Scalar fields](../api/scalar_field.md) for more details.
 
-::: note
-For sparse fields, the full domain shape will be returned.
-:::
+::: note For sparse fields, the full domain shape will be returned. ::: :::
 
 ## Matrix & vector metadata
 
-Getting the number of matrix columns and rows will allow you to write
-dimensionality-independent code. For example, this can be used to unify
-2D and 3D physical simulators.
+Getting the number of matrix columns and rows will allow you to write dimensionality-independent code. For example, this can be used to unify 2D and 3D physical simulators. For example, this can be used to unify 2D and 3D physical simulators.
 
-`matrix.m` equals to the number of columns of a matrix, while `matrix.n`
-equals to the number of rows of a matrix. Since vectors are considered
-as matrices with one column, `vector.n` is simply the dimensionality of
-the vector.
+`matrix.m` equals to the number of columns of a matrix, while `matrix.n` equals to the number of rows of a matrix. `matrix.m` equals to the number of columns of a matrix, while `matrix.n` equals to the number of rows of a matrix. Since vectors are considered as matrices with one column, `vector.n` is simply the dimensionality of the vector.
 
 ```python {4-5,7-8}
 @ti.kernel
@@ -118,13 +111,9 @@ def foo():
 
 ## Compile-time evaluations
 
-Using compile-time evaluation will allow certain computations to happen
-when kernels are being instantiated. This saves the overhead of those
-computations at runtime.
+Using compile-time evaluation will allow certain computations to happen when kernels are being instantiated. This saves the overhead of those computations at runtime. This saves the overhead of those computations at runtime.
 
-- Use `ti.static` for compile-time branching (for those who come from
-  C++17, this is [if
-  constexpr](https://en.cppreference.com/w/cpp/language/if).):
+- Use `ti.static` for compile-time branching (for those who come from C++17, this is [if constexpr](https://en.cppreference.com/w/cpp/language/if).):
 
 ```python {5}
 enable_projection = True
@@ -166,5 +155,6 @@ def reset():
     for j in ti.static(range(x.n)):
       # The inner loop must be unrolled since j is a vector index instead
       # of a global field index.
+      x[i][j] = 0
       x[i][j] = 0
 ```
