@@ -7,7 +7,7 @@
 - Committer
 - Technical Steering Committee (TSC) members
 
-开发者结构建立在 **信任** 和 **贡献** 这两项准则之上。在社区中，完成既定承诺事项的开发者将会赢得信任与声誉。更多细节信息请参阅社区行为准则。
+开发者结构建立在 **信任** 和 **贡献** 这两项准则之上。 在社区中，完成既定承诺事项的开发者将会赢得信任与声誉。 更多细节信息请参阅社区行为准则。
 
 ## Active contributor
 
@@ -39,7 +39,7 @@ Reviewer 保障代码的质量和准确性。
 
 ## Committer
 
-Committer 是持续为项目作出显著贡献的开发者。他们精通 Taichi 中某些模块，并可以独立主导新 feature 或大型重构等任务。
+Committers are trust-worthy contributors who have made notable contributions to the project.
 
 ### 如何成为 committer
 
@@ -57,7 +57,7 @@ Committer 是持续为项目作出显著贡献的开发者。他们精通 Taichi
 
 ## Technical Steering Committee (TSC) members
 
-TSC 成员是被社区高度信任的开发者，他们负责规划社区的未来，维持秩序、裁决争端。
+TSC 成员是被社区高度信任的开发者，他们负责规划社区的未来，维持秩序、裁决争端。 They serve as the designer of Taichi's future and judges to resolve disputes.
 
 ### 如何成为 TSC 成员
 
