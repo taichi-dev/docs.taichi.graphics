@@ -1,8 +1,6 @@
 # 可微分编程
 
-We suggest starting with the `ti.Tape()`, and then migrate to more
-advanced differentiable programming using the `kernel.grad()` syntax if
-necessary.
+We suggest starting with the `ti.Tape()`, and then migrate to more advanced differentiable programming using the `kernel.grad()` syntax if necessary.
 
 ## Introduction
 
@@ -17,8 +15,7 @@ def compute_y():
     y[None] = ti.sin(x[None])
 ```
 
-Now if you want to get the derivative of y corresponding to x, i.e.,
-dy/dx. You may want to implement the derivative kernel by yourself:
+Now if you want to get the derivative of y corresponding to x, i.e., dy/dx. You may want to implement the derivative kernel by yourself: You may want to implement the derivative kernel by yourself:
 
 ```python
 x = ti.field(float, ())
@@ -30,22 +27,16 @@ def compute_dy_dx():
     dy_dx[None] = ti.cos(x[None])
 ```
 
-But wait, what if I changed the original `compute_y`? We will have to
-recalculate the derivative by hand and rewrite `compute_dy_dx` again,
-which is very error-prone and not convenient at all.
+But wait, what if I changed the original `compute_y`? But wait, what if I changed the original `compute_y`? We will have to recalculate the derivative by hand and rewrite `compute_dy_dx` again, which is very error-prone and not convenient at all.
 
-If you run into this situation, don\'t worry! Taichi provides a handy autodiff system that can help you obtain the derivative of a kernel without any pain!
+If you run into this situation, don\'t worry! If you run into this situation, don\'t worry! Taichi provides a handy autodiff system that can help you obtain the derivative of a kernel without any pain!
 
 ## Using `ti.Tape()`
 
-Let\'s still take the `compute_y` in above example for explaination.
-What\'s the most convienent way to obtain a kernel that computes x to
-$dy/dx$?
+Let\'s still take the `compute_y` in above example for explaination. Let\'s still take the `compute_y` in above example for explaination. What\'s the most convienent way to obtain a kernel that computes x to $dy/dx$?
 
-1.  Use the `needs_grad=True` option when declaring fields involved in
-    the derivative chain.
-2.  Use `with ti.Tape(y):` to embrace the invocation into kernel(s) you
-    want to compute derivative.
+1.  Use the `needs_grad=True` option when declaring fields involved in the derivative chain.
+2.  Use `with ti.Tape(y):` to embrace the invocation into kernel(s) you want to compute derivative.
 3.  Now `x.grad[None]` is the dy/dx value at current x.
 
 ```python
@@ -82,18 +73,11 @@ print('at x =', x[None])
 
 ### Usage example
 
-For a physical simulation, sometimes it could be easy to compute the
-energy but hard to compute the force on each particles.
+For a physical simulation, sometimes it could be easy to compute the energy but hard to compute the force on each particles.
 
-But recall that we can differentiate (negative) potential energy to get
-forces. a.k.a.: $F_i = -dU / dx_i$. So once you\'ve write a kernel that
-is able to compute the potential energy, you may use Taichi\'s autodiff
-system to obtain the derivative of it and then the force on each
-particles.
+But recall that we can differentiate (negative) potential energy to get forces. a.k.a.: $F_i = -dU / dx_i$. But recall that we can differentiate (negative) potential energy to get forces. a.k.a.: $F_i = -dU / dx_i$. So once you\'ve write a kernel that is able to compute the potential energy, you may use Taichi\'s autodiff system to obtain the derivative of it and then the force on each particles.
 
-Take
-[examples/ad_gravity.py](https://github.com/taichi-dev/taichi/blob/master/examples/ad_gravity.py)
-as an example:
+Take [examples/ad_gravity.py](https://github.com/taichi-dev/taichi/blob/master/examples/ad_gravity.py) as an example:
 
 ```python
 import taichi as ti
@@ -147,29 +131,37 @@ while gui.running:
     print('U = ', U[None])
     gui.circles(x.to_numpy(), radius=3)
     gui.show()
+        compute_U()  # will also computes dU/dx and save in x.grad
+    advance()
+
+
+@ti.kernel
+def init():
+    for i in x:
+        x[i] = [ti.random(), ti.random()]
+
+
+init()
+gui = ti.GUI('Autodiff gravity')
+while gui.running:
+    for i in range(50):
+        substep()
+    print('U = ', U[None])
+    gui.circles(x.to_numpy(), radius=3)
+    gui.show()
 ```
 
 ::: note
 
 The argument `U` to `ti.Tape(U)` must be a 0D field.
 
-For using autodiff with multiple output variables, please see the
-`kernel.grad()` usage below.
-:::
+For using autodiff with multiple output variables, please see the `kernel.grad()` usage below. ::: :::
 
 ::: note
 
-`ti.Tape(U)` will automatically set _`U[None]`_ to 0 on
-start up.
-:::
+`ti.Tape(U)` will automatically set _`U[None]`_ to 0 on start up. ::: :::
 
-::: tip
-See
-[examples/mpm_lagrangian_forces.py](https://github.com/taichi-dev/taichi/blob/master/examples/mpm_lagrangian_forces.py)
-and
-[examples/fem99.py](https://github.com/taichi-dev/taichi/blob/master/examples/fem99.py)
-for examples on using autodiff for MPM and FEM.
-:::
+::: tip See [examples/mpm_lagrangian_forces.py](https://github.com/taichi-dev/taichi/blob/master/examples/mpm_lagrangian_forces.py) and [examples/fem99.py](https://github.com/taichi-dev/taichi/blob/master/examples/fem99.py) for examples on using autodiff for MPM and FEM. ::: :::
 
 ## Using `kernel.grad()`
 
@@ -177,27 +169,16 @@ TODO: Documentation WIP.
 
 ## Kernel Simplicity Rule
 
-Unlike tools such as TensorFlow where **immutable** output buffers are
-generated, the **imperative** programming paradigm adopted in Taichi
-allows programmers to freely modify global fields.
+Unlike tools such as TensorFlow where **immutable** output buffers are generated, the **imperative** programming paradigm adopted in Taichi allows programmers to freely modify global fields.
 
-To make automatic differentiation well-defined under this setting, we
-make the following assumption on Taichi programs for differentiable
-programming:
+To make automatic differentiation well-defined under this setting, we make the following assumption on Taichi programs for differentiable programming:
 
 **Global Data Access Rules:**
 
-- If a global field element is written more than once, then starting
-  from the second write, the write **must** come in the form of an
-  atomic add ("accumulation\", using `ti.atomic_add` or simply
-  `+=`).
-- No read accesses happen to a global field element, until its
-  accumulation is done.
+- If a global field element is written more than once, then starting from the second write, the write **must** come in the form of an atomic add ("accumulation\", using `ti.atomic_add` or simply `+=`).
+- No read accesses happen to a global field element, until its accumulation is done.
 
-**Kernel Simplicity Rule:** Kernel body consists of multiple [simply
-nested]{.title-ref} for-loops. I.e., each for-loop can either contain
-exactly one (nested) for-loop (and no other statements), or a group of
-statements without loops.
+**Kernel Simplicity Rule:** Kernel body consists of multiple [simply nested]{.title-ref} for-loops. I.e., each for-loop can either contain exactly one (nested) for-loop (and no other statements), or a group of statements without loops. I.e., each for-loop can either contain exactly one (nested) for-loop (and no other statements), or a group of statements without loops.
 
 Example:
 
@@ -217,24 +198,21 @@ def differentiable_task():
         for j in range(20):
             ...
         for j in range(20):
+            ... The outer for loop contains two for loops
+    for i in range(10):
+        for j in range(20):
+            ...
+        for j in range(20):
             ...
 ```
 
 Taichi programs that violate this rule will result in an error.
 
-::: note
-**static for-loops** (e.g. `for i in ti.static(range(4))`) will get
-unrolled by the Python frontend preprocessor and therefore does not
-count as a level of loop.
-:::
+::: note **static for-loops** (e.g. `for i in ti.static(range(4))`) will get unrolled by the Python frontend preprocessor and therefore does not count as a level of loop. ::: :::
 
 ## DiffTaichi
 
-The [DiffTaichi repo](https://github.com/yuanming-hu/difftaichi)
-contains 10 differentiable physical simulators built with Taichi
-differentiable programming. A few examples with neural network
-controllers optimized using differentiable simulators and brute-force
-gradient descent:
+The [DiffTaichi repo](https://github.com/yuanming-hu/difftaichi) contains 10 differentiable physical simulators built with Taichi differentiable programming. A few examples with neural network controllers optimized using differentiable simulators and brute-force gradient descent: A few examples with neural network controllers optimized using differentiable simulators and brute-force gradient descent:
 
 ![image](https://github.com/yuanming-hu/public_files/raw/master/learning/difftaichi/ms3_final-cropped.gif)
 
@@ -242,8 +220,4 @@ gradient descent:
 
 ![image](https://github.com/yuanming-hu/public_files/raw/master/learning/difftaichi/diffmpm3d.gif)
 
-::: tip
-Check out [the DiffTaichi paper](https://arxiv.org/pdf/1910.00935.pdf)
-and [video](https://www.youtube.com/watch?v=Z1xvAZve9aE) to learn more
-about Taichi differentiable programming.
-:::
+::: tip Check out [the DiffTaichi paper](https://arxiv.org/pdf/1910.00935.pdf) and [video](https://www.youtube.com/watch?v=Z1xvAZve9aE) to learn more about Taichi differentiable programming. ::: :::
