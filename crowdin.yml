@@ -8,6 +8,10 @@ files:
   # community pages
   - source: /website/community/**/*.md
     translation: /website/%locale%/community/**/%original_file_name%
+    # ignore members since we redirect all locales to EN page for convenience
+    ignore:
+      - /website/community/members.md
+      - /website/zh/community/README.md
     languages_mapping:
       locale:
         zh-CN: zh
