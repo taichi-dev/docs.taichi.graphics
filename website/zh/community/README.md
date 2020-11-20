@@ -4,4 +4,4 @@
 
 - [行为准则](./code_of_conduct.md)
 - [社区结构](./structure.md)
-- [社区成员](../../community/members.md)
+- [社区成员](./members.md)
