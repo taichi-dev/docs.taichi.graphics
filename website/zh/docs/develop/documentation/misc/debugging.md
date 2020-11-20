@@ -1,7 +1,6 @@
 # 调试
 
-Debugging a parallel program is not easy, so Taichi provides builtin
-utilities that could hopefully help you debug your Taichi program.
+Debugging a parallel program is not easy, so Taichi provides builtin utilities that could hopefully help you debug your Taichi program.
 
 ## Run-time `print` in kernels
 
@@ -9,7 +8,7 @@ utilities that could hopefully help you debug your Taichi program.
 print(arg1, ..., sep='', end='\n')
 ```
 
-Debug your program with `print()` in Taichi-scope. For example:
+Debug your program with `print()` in Taichi-scope. For example: For example:
 
 ```python {1}
 @ti.kernel
@@ -37,22 +36,13 @@ def inside_taichi_scope():
     #=> v = [3, 4]
 ```
 
-For now, Taichi-scope `print` supports string, scalar, vector, and
-matrix expressions as arguments. `print` in Taichi-scope may be a little
-different from `print` in Python-scope. Please see details below.
+For now, Taichi-scope `print` supports string, scalar, vector, and matrix expressions as arguments. `print` in Taichi-scope may be a little different from `print` in Python-scope. Please see details below. `print` in Taichi-scope may be a little different from `print` in Python-scope. Please see details below.
 
-::: warning
-For the **CPU and CUDA backend**, `print` will not work in Graphical
-Python Shells including IDLE and Jupyter notebook. This is because these
-backends print the outputs to the console instead of the GUI. Use the
-**OpenGL or Metal backend** if you wish to use `print` in IDLE /
-Jupyter.
-:::
+::: warning For the **CPU and CUDA backend**, `print` will not work in Graphical Python Shells including IDLE and Jupyter notebook. This is because these backends print the outputs to the console instead of the GUI. Use the **OpenGL or Metal backend** if you wish to use `print` in IDLE / Jupyter. ::: This is because these backends print the outputs to the console instead of the GUI. Use the **OpenGL or Metal backend** if you wish to use `print` in IDLE / Jupyter. :::
 
 ::: warning
 
-For the **CUDA backend**, the printed result will not show up until
-`ti.sync()` is called:
+For the **CUDA backend**, the printed result will not show up until `ti.sync()` is called:
 
 ```python
 import taichi as ti
@@ -78,14 +68,9 @@ inside kernel
 after sync
 ```
 
-Note that host access or program end will also implicitly invoke
-`ti.sync()`.
-:::
+Note that host access or program end will also implicitly invoke `ti.sync()`. ::: :::
 
-::: note
-Note that `print` in Taichi-scope can only receive **comma-separated
-parameter**. Neither f-string nor formatted string should be used. For
-example:
+::: note Note that `print` in Taichi-scope can only receive **comma-separated parameter**. Neither f-string nor formatted string should be used. For example: Neither f-string nor formatted string should be used. For example:
 
 ```python {9-11}
 import taichi as ti
@@ -107,10 +92,7 @@ foo()
 
 ## Compile-time `ti.static_print`
 
-Sometimes it is useful to print Python-scope objects and constants like
-data types or SNodes in Taichi-scope. So, similar to `ti.static` we
-provide `ti.static_print` to print compile-time constants. It is similar
-to Python-scope `print`.
+Sometimes it is useful to print Python-scope objects and constants like data types or SNodes in Taichi-scope. So, similar to `ti.static` we provide `ti.static_print` to print compile-time constants. It is similar to Python-scope `print`. So, similar to `ti.static` we provide `ti.static_print` to print compile-time constants. It is similar to Python-scope `print`.
 
 ```python
 x = ti.field(ti.f32, (2, 3))
@@ -130,32 +112,21 @@ def inside_taichi_scope():
             # will only print once
 ```
 
-Unlike `print`, `ti.static_print` will only print the expression once at
-compile-time, and therefore it has no runtime cost.
+Unlike `print`, `ti.static_print` will only print the expression once at compile-time, and therefore it has no runtime cost.
 
 ## Serial execution
 
-The automatic parallelization feature of Taichi may lead to
-undeterministic behaviors. For debugging purposes, it may be useful to
-serialize program execution to get repeatable results and to diagnose
-data races. When running your Taichi program on CPUs, you can initialize
-Taichi to use a single thread using `cpu_max_num_threads=1`, so that the
-whole program becomes serial and deterministic. For example,
+The automatic parallelization feature of Taichi may lead to undeterministic behaviors. For debugging purposes, it may be useful to serialize program execution to get repeatable results and to diagnose data races. The automatic parallelization feature of Taichi may lead to undeterministic behaviors. For debugging purposes, it may be useful to serialize program execution to get repeatable results and to diagnose data races. When running your Taichi program on CPUs, you can initialize Taichi to use a single thread using `cpu_max_num_threads=1`, so that the whole program becomes serial and deterministic. For example, For example,
 
 `ti.init(arch=ti.cpu, cpu_max_num_threads=1)`
 
-If you program works well in serial but not in parallel, check
-parallelization-related issues such as data races.
+If you program works well in serial but not in parallel, check parallelization-related issues such as data races.
 
 ## Runtime `assert` in kernel
 
-Programmers may use `assert` statements in Taichi-scope. When the
-assertion condition failed, a `RuntimeError` will be raised to indicate
-the error.
+Programmers may use `assert` statements in Taichi-scope. Programmers may use `assert` statements in Taichi-scope. When the assertion condition failed, a `RuntimeError` will be raised to indicate the error.
 
-To make `assert` work, first make sure you are using the **CPU
-backend**. For performance reason, `assert` only works when `debug` mode
-is on, For example:
+To make `assert` work, first make sure you are using the **CPU backend**. For performance reason, `assert` only works when `debug` mode is on, For example: For performance reason, `assert` only works when `debug` mode is on, For example:
 
 ```python
 ti.init(arch=ti.cpu, debug=True)
@@ -169,8 +140,7 @@ def do_sqrt_all():
         x[i] = ti.sqrt(x)
 ```
 
-When you are done with debugging, simply set `debug=False`. Now `assert`
-will be ignored and there will be no runtime overhead.
+When you are done with debugging, simply set `debug=False`. Now `assert` will be ignored and there will be no runtime overhead. Now `assert` will be ignored and there will be no runtime overhead.
 
 ## Compile-time `ti.static_assert`
 
@@ -178,11 +148,7 @@ will be ignored and there will be no runtime overhead.
 ti.static_assert(cond, msg=None)
 ```
 
-Like `ti.static_print`, we also provide a static version of `assert`:
-`ti.static_assert`. It can be useful to make assertions on data types,
-dimensionality, and shapes. It works whether `debug=True` is specified
-or not. When an assertion fails, it will raise an `AssertionError`, just
-like a Python-scope `assert`.
+Like `ti.static_print`, we also provide a static version of `assert`: `ti.static_assert`. It can be useful to make assertions on data types, dimensionality, and shapes. It works whether `debug=True` is specified or not. When an assertion fails, it will raise an `AssertionError`, just like a Python-scope `assert`. It can be useful to make assertions on data types, dimensionality, and shapes. It works whether `debug=True` is specified or not. When an assertion fails, it will raise an `AssertionError`, just like a Python-scope `assert`.
 
 For example:
 
@@ -197,10 +163,7 @@ def copy(dst: ti.template(), src: ti.template()):
 
 ## Pretty Taichi-scope traceback
 
-As we all know, Python provides a useful stack traceback system, which
-could help you locate the issue easily. But sometimes stack tracebacks
-from **Taichi-scope** could be extremely complicated and hard to read.
-For example:
+As we all know, Python provides a useful stack traceback system, which could help you locate the issue easily. As we all know, Python provides a useful stack traceback system, which could help you locate the issue easily. But sometimes stack tracebacks from **Taichi-scope** could be extremely complicated and hard to read. For example: For example:
 
 ```python
 import taichi as ti
@@ -266,17 +229,14 @@ Traceback (most recent call last):
 AssertionError
 ```
 
-You may already feel brain fried by the annoying `decorated`\'s and
-`__call__`\'s. These are the Taichi internal stack frames. They have
-almost no benefit for end-users but make the traceback hard to read.
+You may already feel brain fried by the annoying `decorated`\'s and `__call__`\'s. These are the Taichi internal stack frames. They have almost no benefit for end-users but make the traceback hard to read. These are the Taichi internal stack frames. They have almost no benefit for end-users but make the traceback hard to read.
 
-For this purpose, we may want to use `ti.init(excepthook=True)`, which
-_hooks_ on the exception handler, and make the stack traceback from
-Taichi-scope easier to read and intuitive. e.g.:
+For this purpose, we may want to use `ti.init(excepthook=True)`, which _hooks_ on the exception handler, and make the stack traceback from Taichi-scope easier to read and intuitive. e.g.: e.g.:
 
 ```python {2}
 import taichi as ti
 ti.init(excepthook=True)  # just add this option!
+...
 ...
 ```
 
@@ -335,34 +295,21 @@ def func3():
 AssertionError
 ```
 
-See? Our exception hook has removed some useless Taichi internal frames
-from traceback. What's more, although not visible in the doc, the
-output is **colorful**!
+See? Our exception hook has removed some useless Taichi internal frames from traceback. See? Our exception hook has removed some useless Taichi internal frames from traceback. What's more, although not visible in the doc, the output is **colorful**!
 
-::: note
-For IPython / Jupyter notebook users, the IPython stack traceback hook
-will be overriden by the Taichi one when `ti.enable_excepthook()`.
-:::
+::: note For IPython / Jupyter notebook users, the IPython stack traceback hook will be overriden by the Taichi one when `ti.enable_excepthook()`. ::: :::
 
 ## Debugging Tips
 
-Debugging a Taichi program can be hard even with the builtin tools
-above. Here we showcase some common bugs that one may encounter in a
-Taichi program.
+Debugging a Taichi program can be hard even with the builtin tools above. Here we showcase some common bugs that one may encounter in a Taichi program. Here we showcase some common bugs that one may encounter in a Taichi program.
 
 ### Static type system
 
-Python code in Taichi-scope is translated into a statically typed
-language for high performance. This means code in Taichi-scope can have
-a different behavior compared with that in Python-scope, especially when
-it comes to types.
+Python code in Taichi-scope is translated into a statically typed language for high performance. This means code in Taichi-scope can have a different behavior compared with that in Python-scope, especially when it comes to types. This means code in Taichi-scope can have a different behavior compared with that in Python-scope, especially when it comes to types.
 
-The type of a variable is simply **determined at its initialization and
-never changes later**.
+The type of a variable is simply **determined at its initialization and never changes later**.
 
-Although Taichi\'s static type system provides better performance, it
-may lead to bugs if programmers carelessly used the wrong types. For
-example,
+Although Taichi\'s static type system provides better performance, it may lead to bugs if programmers carelessly used the wrong types. For example, For example,
 
 ```python
 @ti.kernel
@@ -373,17 +320,18 @@ def buggy():
     print(ret)  # will show 0
 
 buggy()
+    print(ret)  # will show 0
+
+buggy()
 ```
 
-The code above shows a common bug due to Taichi\'s static type system.
-The Taichi compiler should show a warning like:
+The code above shows a common bug due to Taichi\'s static type system. The Taichi compiler should show a warning like: The Taichi compiler should show a warning like:
 
 ```
 [W 06/27/20 21:43:51.853] [type_check.cpp:visit@66] [$19] Atomic add (float32 to int32) may lose precision.
 ```
 
-This means that Taichi cannot store a `float32` result precisely to
-`int32`. The solution is to initialize `ret` as a float-point value:
+This means that Taichi cannot store a `float32` result precisely to `int32`. The solution is to initialize `ret` as a float-point value: The solution is to initialize `ret` as a float-point value:
 
 ```python
 @ti.kernel
@@ -393,20 +341,19 @@ def not_buggy():
         ret += 0.1 * i  # f32 += f32. OK!
     print(ret)  # will show 0.6
 
+not_buggy() OK!
+    print(ret)  # will show 0.6
+
 not_buggy()
 ```
 
 ### Advanced Optimization
 
-Taichi has an advanced optimization engine to make your Taichi kernel to
-be as fast as it could. But like what `gcc -O3` does, advanced
-optimization may occasionally lead to bugs as it tries too hard. This
-includes runtime errors such as:
+Taichi has an advanced optimization engine to make your Taichi kernel to be as fast as it could. But like what `gcc -O3` does, advanced optimization may occasionally lead to bugs as it tries too hard. This includes runtime errors such as: But like what `gcc -O3` does, advanced optimization may occasionally lead to bugs as it tries too hard. This includes runtime errors such as:
 
 `RuntimeError: [verify.cpp:basic_verify@40] stmt 8 cannot have operand 7.`
 
-You may use `ti.init(advanced_optimization=False)` to turn off advanced
-optimization and see if the issue still exists:
+You may use `ti.init(advanced_optimization=False)` to turn off advanced optimization and see if the issue still exists:
 
 ```python {3}
 import taichi as ti
@@ -415,7 +362,4 @@ ti.init(advanced_optimization=False)
 ...
 ```
 
-Whether or not turning off optimization fixes the issue, please feel
-free to report this bug on
-[GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md).
-Thank you!
+Whether or not turning off optimization fixes the issue, please feel free to report this bug on [GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md). Thank you! Thank you!
