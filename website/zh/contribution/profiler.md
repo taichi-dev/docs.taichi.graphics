@@ -1,20 +1,15 @@
 # Profiler
 
-Taichi's profiler can help you analyze the run-time cost of your
-program. There are two profiling systems in Taichi: `KernelProfiler` and
-`ScopedProfiler`.
+Taichi's profiler can help you analyze the run-time cost of your program. Taichi's profiler can help you analyze the run-time cost of your program. There are two profiling systems in Taichi: `KernelProfiler` and `ScopedProfiler`.
 
 `KernelProfiler` is used to analyze the performance of user kernels.
 
-While `ScopedProfiler` is used by Taichi developers to analyze the
-performance of the compiler itself.
+While `ScopedProfiler` is used by Taichi developers to analyze the performance of the compiler itself.
 
 ## KernelProfiler
 
-1.  `KernelProfiler` records the costs of Taichi kernels on devices. To
-    enable this profiler, set `kernel_profiler=True` in `ti.init`.
-2.  Call `ti.kernel_profiler_print()` to show the kernel profiling
-    result. For example:
+1.  `KernelProfiler` records the costs of Taichi kernels on devices. To enable this profiler, set `kernel_profiler=True` in `ti.init`. To enable this profiler, set `kernel_profiler=True` in `ti.init`.
+2.  Call `ti.kernel_profiler_print()` to show the kernel profiling result. For example: For example:
 
 ```python {3,13}
 import taichi as ti
@@ -40,17 +35,12 @@ The outputs would be:
 [ 77.27%] compute_c4_0_kernel_2_serial                min   0.004 ms   avg   0.004 ms   max   0.004 ms   total   0.000 s [      1x]
 ```
 
-::: note
-Currently the result of `KernelProfiler` could be incorrect on OpenGL
-backend due to its lack of support for `ti.sync()`.
-:::
+::: note Currently the result of `KernelProfiler` could be incorrect on OpenGL backend due to its lack of support for `ti.sync()`. ::: :::
 
 ## ScopedProfiler
 
-1.  `ScopedProfiler` measures time spent on the **host tasks**
-    hierarchically.
-2.  This profiler is automatically on. To show its results, call
-    `ti.print_profile_info()`. For example:
+1.  `ScopedProfiler` measures time spent on the **host tasks** hierarchically.
+2.  This profiler is automatically on. This profiler is automatically on. To show its results, call `ti.print_profile_info()`. For example: For example:
 
 ```python
 import taichi as ti
@@ -71,7 +61,4 @@ ti.print_profile_info()
 
 `ti.print_profile_info()` prints profiling results in a hierarchical format.
 
-::: note
-`ScopedProfiler` is a C++ class in the core of Taichi. It is not exposed
-to Python users.
-:::
+::: note `ScopedProfiler` is a C++ class in the core of Taichi. It is not exposed to Python users. ::: It is not exposed to Python users. :::
