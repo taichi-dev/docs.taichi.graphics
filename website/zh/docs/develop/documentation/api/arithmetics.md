@@ -15,8 +15,7 @@
 
 ::: note
 
-The `%` operator in Taichi follows the Python style instead of C style,
-e.g.:
+The `%` operator in Taichi follows the Python style instead of C style, e.g.:
 
 ```python
 # no matter Taichi-scope or Python-scope:
@@ -35,20 +34,12 @@ print(ti.raw_mod(-2, 3))  # -2
 
 ::: note
 
-Python 3 distinguishes `/` (true division) and `//` (floor division).
-For example, `1.0 / 2.0 = 0.5`, `1 / 2 = 0.5`, `1 // 2 = 0`,
-`4.2 // 2 = 2`. And Taichi follows the same design:
+Python 3 distinguishes `/` (true division) and `//` (floor division). For example, `1.0 / 2.0 = 0.5`, `1 / 2 = 0.5`, `1 // 2 = 0`, `4.2 // 2 = 2`. And Taichi follows the same design: For example, `1.0 / 2.0 = 0.5`, `1 / 2 = 0.5`, `1 // 2 = 0`, `4.2 // 2 = 2`. And Taichi follows the same design:
 
-- **true divisions** on integral types will first cast their
-  operands to the default float point type.
-- **floor divisions** on float-point types will first cast their
-  operands to the default integer type.
+- **true divisions** on integral types will first cast their operands to the default float point type.
+- **floor divisions** on float-point types will first cast their operands to the default integer type.
 
-To avoid such implicit casting, you can manually cast your operands to
-desired types, using `ti.cast`. See
-[Default precisions](../basic/type.md#default-precisions) for more details on
-default numerical types.
-:::
+To avoid such implicit casting, you can manually cast your operands to desired types, using `ti.cast`. See [Default precisions](../basic/type.md#default-precisions) for more details on default numerical types. ::: See [Default precisions](../basic/type.md#default-precisions) for more details on default numerical types. :::
 
 ### Logic operators
 
@@ -104,6 +95,14 @@ ti.log(x)
 ti.floor(x)
 
 ti.ceil(x)
+
+ti.exp(x)
+
+ti.log(x)
+
+ti.floor(x)
+
+ti.ceil(x)
 ```
 
 ### Casting types
@@ -136,6 +135,10 @@ max(x, y, \...)
 min(x, y, \...)
 
 pow(x, y)  # Same as `x ** y`.
+
+min(x, y, \...)
+
+pow(x, y)  # Same as `x ** y`.
 ```
 
 ### Random number generator
@@ -146,7 +149,7 @@ ti.random(dtype = float)
 
 ## Element-wise arithmetics for vectors and matrices
 
-When these scalar functions are applied on [Matrices](./matrix.md) and [Vectors](./vector.md), they are applied in an element-wise manner. For example:
+When these scalar functions are applied on [Matrices](./matrix.md) and [Vectors](./vector.md), they are applied in an element-wise manner. For example: For example:
 
 ```python
 B = ti.Matrix([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
