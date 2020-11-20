@@ -1,54 +1,43 @@
 # 结构节点 (SNodes)
 
-After writing the computation code, the user needs to specify the
-internal data structure hierarchy. Specifying a data structure includes
-choices at both the macro level, dictating how the data structure
-components nest with each other and the way they represent sparsity, and
-the micro level, dictating how data are grouped together (e.g. structure
-of arrays vs. array of structures). Taichi provides _Structural Nodes
-(SNodes)_ to compose the hierarchy and particular properties. These
-constructs and their semantics are listed below:
+After writing the computation code, the user needs to specify the internal data structure hierarchy. After writing the computation code, the user needs to specify the internal data structure hierarchy. Specifying a data structure includes choices at both the macro level, dictating how the data structure components nest with each other and the way they represent sparsity, and the micro level, dictating how data are grouped together (e.g. structure of arrays vs. array of structures). Taichi provides _Structural Nodes (SNodes)_ to compose the hierarchy and particular properties. These constructs and their semantics are listed below: Taichi provides _Structural Nodes (SNodes)_ to compose the hierarchy and particular properties. These constructs and their semantics are listed below:
 
 - dense: A fixed-length contiguous array.
-- bitmasked: This is similar to dense, but it also uses a mask to
-  maintain sparsity information, one bit per child.
-- pointer: Store pointers instead of the whole structure to save
-  memory and maintain sparsity.
-- dynamic: Variable-length array, with a predefined maximum length. It
-  serves the role of `std::vector` in C++ or `list` in Python, and can
-  be used to maintain objects (e.g. particles) contained in a block.
+- bitmasked: This is similar to dense, but it also uses a mask to maintain sparsity information, one bit per child.
+- pointer: Store pointers instead of the whole structure to save memory and maintain sparsity.
+- dynamic: Variable-length array, with a predefined maximum length. dynamic: Variable-length array, with a predefined maximum length. It serves the role of `std::vector` in C++ or `list` in Python, and can be used to maintain objects (e.g. particles) contained in a block.
 
 ::: note
 
 Supported SNode types on each backend:
 
 |   SNode   | CPU/CUDA | OpenGL | Metal | C source |
-| :-------: | :------: | :----: | :---: | :------: |
+|:---------:|:--------:|:------:|:-----:|:--------:|
 |   dense   |    OK    |   OK   |  OK   |    OK    |
 | bitmasked |    OK    |  N/A   |  OK   |   N/A    |
 |  pointer  |    OK    |  N/A   |  N/A  |   N/A    |
 |  dynamic  |    OK    |  PAR   |  N/A  |   N/A    |
 
-(OK: supported; PAR: partial support; N/A: not available)
-:::
+(OK: supported; PAR: partial support; N/A: not available) :::
 
-See `layout`{.interpreted-text role="ref"} for more details. `ti.root`
-is the root node of the data structure.
+See `layout`{.interpreted-text role="ref"} for more details. `ti.root` is the root node of the data structure. `ti.root` is the root node of the data structure.
 
-::: {.function}
-snode.place(x, \...)
+::: {.function} snode.place(x, \...)
 
 parameter snode
+:
 
-: (SNode) where to place
+(SNode) where to place
 
 parameter a
+:
 
-: (ti.field) field(s) to be placed
+(ti.field) field(s) to be placed
 
 return
+:
 
-: (SNode) the `snode` itself
+(SNode) the `snode` itself
 
 The following code places two 0-D fields named `x` and `y`:
 
@@ -59,16 +48,17 @@ The following code places two 0-D fields named `x` and `y`:
 
 :::
 
-::: {.function}
-field.shape
+::: {.function} field.shape
 
 parameter a
+:
 
-: (ti.field)
+(ti.field)
 
 return
+:
 
-: (tuple of integers) the shape of field
+(tuple of integers) the shape of field
 
 Equivalent to `field.snode.shape`.
 
@@ -79,20 +69,22 @@ For example,
 
 :::
 
-::: {.function}
-field.snode
+::: {.function} field.snode
 
 parameter a
+:
 
-: (ti.field)
+(ti.field)
 
 return
+:
 
-: (SNode) the structual node where `field` is placed
+(SNode) the structual node where `field` is placed
 
 ```{=html}
 <!-- -->
 ```
+
 
     x = ti.field(dtype=ti.i32)
     y = ti.field(dtype=ti.f32)
@@ -102,20 +94,22 @@ return
 
 :::
 
-::: {.function}
-snode.shape
+::: {.function} snode.shape
 
 parameter snode
+:
 
-: (SNode)
+(SNode)
 
 return
+:
 
-: (tuple) the size of node along that axis
+(tuple) the size of node along that axis
 
 ```{=html}
 <!-- -->
 ```
+
 
     blk1 = ti.root
     blk2 = blk1.dense(ti.i,  3)
@@ -128,25 +122,27 @@ return
 
 :::
 
-::: {.function}
-snode.parent(n = 1)
+::: {.function} snode.parent(n = 1)
 
 parameter snode
+:
 
-: (SNode)
+(SNode)
 
 parameter n
+:
 
-: (optional, scalar) the number of steps, i.e. `n=1` for parent, `n=2`
-grandparent, etc.
+(optional, scalar) the number of steps, i.e. `n=1` for parent, `n=2` grandparent, etc.
 
 return
+:
 
-: (SNode) the parent node of `snode`
+(SNode) the parent node of `snode`
 
 ```{=html}
 <!-- -->
 ```
+
 
     blk1 = ti.root.dense(ti.i, 8)
     blk2 = blk1.dense(ti.j, 4)
@@ -163,24 +159,27 @@ return
 
 ## Node types
 
-::: {.function}
-snode.dense(indices, shape)
+::: {.function} snode.dense(indices, shape)
 
 parameter snode
+:
 
-: (SNode) parent node where the child is derived from
+(SNode) parent node where the child is derived from
 
 parameter indices
+:
 
-: (Index or Indices) indices used for this node
+(Index or Indices) indices used for this node
 
 parameter shape
+:
 
-: (scalar or tuple) shape of the field
+(scalar or tuple) shape of the field
 
 return
+:
 
-: (SNode) the derived child node
+(SNode) the derived child node
 
 The following code places a 1-D field of size `3`:
 
@@ -194,8 +193,7 @@ The following code places a 2-D field of shape `(3, 4)`:
 
 ::: note
 
-If `shape` is a scalar and there are multiple indices, then `shape` will
-be automatically expanded to fit the number of indices. For example,
+If `shape` is a scalar and there are multiple indices, then `shape` will be automatically expanded to fit the number of indices. For example, For example,
 
     snode.dense(ti.ijk, 3)
 
@@ -203,36 +201,36 @@ is equivalent to
 
     snode.dense(ti.ijk, (3, 3, 3))
 
-:::
-:::
+::: :::
 
-::: {.function}
-snode.dynamic(index, size, chunk_size = None)
+::: {.function} snode.dynamic(index, size, chunk_size = None)
 
 parameter snode
+:
 
-: (SNode) parent node where the child is derived from
+(SNode) parent node where the child is derived from
 
 parameter index
+:
 
-: (Index) the `dynamic` node indices
+(Index) the `dynamic` node indices
 
 parameter size
+:
 
-: (scalar) the maximum size of the dynamic node
+(scalar) the maximum size of the dynamic node
 
 parameter chunk_size
+:
 
-: (optional, scalar) the number of elements in each dynamic memory
-allocation chunk
+(optional, scalar) the number of elements in each dynamic memory allocation chunk
 
 return
+:
 
-: (SNode) the derived child node
+(SNode) the derived child node
 
-`dynamic` nodes acts like `std::vector` in C++ or `list` in Python.
-Taichi\'s dynamic memory allocation system allocates its memory on the
-fly.
+`dynamic` nodes acts like `std::vector` in C++ or `list` in Python. Taichi\'s dynamic memory allocation system allocates its memory on the fly. Taichi\'s dynamic memory allocation system allocates its memory on the fly.
 
 The following places a 1-D dynamic field of maximum size `16`:
 
@@ -240,114 +238,85 @@ The following places a 1-D dynamic field of maximum size `16`:
 
 :::
 
-::: {.function}
-snode.bitmasked
-:::
+::: {.function} snode.bitmasked :::
 
-::: {.function}
-snode.pointer
-:::
+::: {.function} snode.pointer :::
 
-::: {.function}
-snode.hash
+::: {.function} snode.hash
 
-TODO: add descriptions here
-:::
+TODO: add descriptions here :::
 
 ## Working with `dynamic` SNodes
 
-::: {.function}
-ti.length(snode, indices)
+::: {.function} ti.length(snode, indices)
 
 parameter snode
+:
 
-: (SNode, dynamic)
+(SNode, dynamic)
 
 parameter indices
+:
 
-: (scalar or tuple of scalars) the `dynamic` node indices
+(scalar or tuple of scalars) the `dynamic` node indices
 
 return
+:
 
-: (int32) the current size of the dynamic node
-:::
+(int32) the current size of the dynamic node :::
 
-::: {.function}
-ti.append(snode, indices, val)
+::: {.function} ti.append(snode, indices, val)
 
 parameter snode
+:
 
-: (SNode, dynamic)
+(SNode, dynamic)
 
 parameter indices
+:
 
-: (scalar or tuple of scalars) the `dynamic` node indices
+(scalar or tuple of scalars) the `dynamic` node indices
 
 parameter val
+:
 
-: (depends on SNode data type) value to store
+(depends on SNode data type) value to store
 
 return
+:
 
-: (int32) the size of the dynamic node, before appending
+(int32) the size of the dynamic node, before appending
 
-Inserts `val` into the `dynamic` node with indices `indices`.
-:::
+Inserts `val` into the `dynamic` node with indices `indices`. ::: :::
 
 ## Taichi fields like powers of two
 
-Non-power-of-two field dimensions are promoted into powers of two and
-thus these fields will occupy more virtual address space. For example, a
-(dense) field of size `(18, 65)` will be materialized as `(32, 128)`.
+Non-power-of-two field dimensions are promoted into powers of two and thus these fields will occupy more virtual address space. For example, a (dense) field of size `(18, 65)` will be materialized as `(32, 128)`. For example, a (dense) field of size `(18, 65)` will be materialized as `(32, 128)`.
 
 ## Indices
 
-::: {.attribute}
-ti.i
-:::
+::: {.attribute} ti.i :::
 
-::: {.attribute}
-ti.j
-:::
+::: {.attribute} ti.j :::
 
-::: {.attribute}
-ti.k
-:::
+::: {.attribute} ti.k :::
 
-::: {.attribute}
-ti.ij
-:::
+::: {.attribute} ti.ij :::
 
-::: {.attribute}
-ti.ji
-:::
+::: {.attribute} ti.ji :::
 
-::: {.attribute}
-ti.jk
-:::
+::: {.attribute} ti.jk :::
 
-::: {.attribute}
-ti.kj
-:::
+::: {.attribute} ti.kj :::
 
-::: {.attribute}
-ti.ik
-:::
+::: {.attribute} ti.ik :::
 
-::: {.attribute}
-ti.ki
-:::
+::: {.attribute} ti.ki :::
 
-::: {.attribute}
-ti.ijk
-:::
+::: {.attribute} ti.ijk :::
 
-::: {.attribute}
-ti.ijkl
-:::
+::: {.attribute} ti.ijkl :::
 
-::: {.function}
-ti.indices(a, b, \...)
-:::
+::: {.function} ti.indices(a, b, \...) ::: :::
 
 (TODO)
