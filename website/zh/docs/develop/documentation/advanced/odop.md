@@ -1,19 +1,12 @@
 # 面向数据对象式编程
 
-Taichi is a
-[data-oriented](https://en.wikipedia.org/wiki/Data-oriented_design)
-programming (DOP) language. However, simple DOP makes modularization
-hard.
+Taichi is a [data-oriented](https://en.wikipedia.org/wiki/Data-oriented_design) programming (DOP) language. However, simple DOP makes modularization hard. However, simple DOP makes modularization hard.
 
-To allow modularized code, Taichi borrow some concepts from
-object-oriented programming (OOP).
+To allow modularized code, Taichi borrow some concepts from object-oriented programming (OOP).
 
-For convenience, let\'s call the hybrid scheme **objective data-oriented
-programming** (ODOP).
+For convenience, let\'s call the hybrid scheme **objective data-oriented programming** (ODOP).
 
-::: note
-More documentation on this topic is on the way ...
-:::
+::: note More documentation on this topic is on the way ... ::: :::
 
 A brief example:
 
