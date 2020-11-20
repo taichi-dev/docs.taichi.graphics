@@ -1,51 +1,44 @@
 # 原子操作
 
-In Taichi, augmented assignments (e.g., `x[i] += 1`) are automatically
-[atomic](https://en.wikipedia.org/wiki/Fetch-and-add).
+In Taichi, augmented assignments (e.g., `x[i] += 1`) are automatically [atomic](https://en.wikipedia.org/wiki/Fetch-and-add).
 
 ::: warning
 
-When modifying global variables in parallel, make sure you use atomic
-operations. For example, to sum up all the elements in `x`, :
+When modifying global variables in parallel, make sure you use atomic operations. For example, to sum up all the elements in `x`, : For example, to sum up all the elements in `x`, :
 
     @ti.kernel
     def sum():
         for i in x:
             # Approach 1: OK
             total[None] += x[i]
-
+    
             # Approach 2: OK
             ti.atomic_add(total[None], x[i])
-
+    
             # Approach 3: Wrong result since the operation is not atomic.
+            total[None] = total[None] + x[i]
             total[None] = total[None] + x[i]
 
 :::
 
 ::: note
 
-When atomic operations are applied to local values, the Taichi compiler
-will try to demote these operations into their non-atomic counterparts.
-:::
+When atomic operations are applied to local values, the Taichi compiler will try to demote these operations into their non-atomic counterparts. ::: :::
 
-Apart from the augmented assignments, explicit atomic operations, such
-as `ti.atomic_add`, also do read-modify-write atomically. These
-operations additionally return the **old value** of the first argument.
+Apart from the augmented assignments, explicit atomic operations, such as `ti.atomic_add`, also do read-modify-write atomically. These operations additionally return the **old value** of the first argument. These operations additionally return the **old value** of the first argument.
 
 Below is a list of all explicit atomic operations:
 
-::: {.function}
-ti.atomic_add(x, y)
-:::
+::: {.function} ti.atomic_add(x, y) :::
 
-::: {.function}
-ti.atomic_sub(x, y)
+::: {.function} ti.atomic_sub(x, y)
 
 Atomically compute `x + y` or `x - y` and store the result in `x`.
 
 return
+:
 
-: The old value of `x`.
+The old value of `x`.
 
 For example, :
 
@@ -56,24 +49,18 @@ For example, :
 
 :::
 
-::: {.function}
-ti.atomic_and(x, y)
-:::
+::: {.function} ti.atomic_and(x, y) :::
 
-::: {.function}
-ti.atomic_or(x, y)
-:::
+::: {.function} ti.atomic_or(x, y) :::
 
-::: {.function}
-ti.atomic_xor(x, y)
+::: {.function} ti.atomic_xor(x, y)
 
-Atomically compute `x & y` (bitwise and), `x | y` (bitwise or), or
-`x ^ y` (bitwise xor), and store the result in `x`.
+Atomically compute `x & y` (bitwise and), `x | y` (bitwise or), or `x ^ y` (bitwise xor), and store the result in `x`.
 
 return
+:
 
-: The old value of `x`.
-:::
+The old value of `x`. ::: :::
 
 ::: note
 
@@ -86,5 +73,4 @@ Supported atomic operations on each backend:
 | i64  | > OK     | > EXT  | > N/A | > OK     |
 | f64  | > OK     | > EXT  | > N/A | > OK     |
 
-(OK: supported; EXT: require extension; N/A: not available)
-:::
+(OK: supported; EXT: require extension; N/A: not available) :::
