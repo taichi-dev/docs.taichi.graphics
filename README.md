@@ -107,22 +107,14 @@ This website currently hosted on Github Pages at https://taichi.graphics. The `g
 
 The deployment is automatically done when Pull Requests are merged to `master` branch. It can also be triggered manually [here](https://github.com/rexwangcc/taichi.graphics/actions?query=workflow%3A%22Deploy+Taichi+Website%22).
 
-## Future Work
-
-**Top Priorities**
-
-- [x] Implement Doc versioning
-- [ ] Integrate into Taichi release workflow
-- [ ] Search integration with Algolia
-- [ ] Chinese docs migration
-- [ ] i18n translation workflow migration
-- [ ] Taichi API docs auto-gen
-- [x] Auto deploy Github Action
-- [x] Docs about how to write the docs
-- [ ] "Make"-ify the commands
-
 ## Credits
 
 This website is built on top of the wonderful VuePress along with a list of
 great plugins, thanks to all of the contributors of the [plugins that are used by
 this site](./website/.vuepress/config.js)!
+
+## Acknowledgements (documentation, website and i18n)
+
+- Thanks to all contributors who have contributed to the development of Taichi documentation, community and website. Please navigate to the [members page of Taichi website](https://taichi.graphics/community/members.html) to see the full acknowledgements.
+
+- Taichi中文文档及其社区、网站能够如此快速地成长，离不开每一位贡献者的工作和付出，感谢大家！请移步至 [Taichi网站的社区成员页面](https://taichi.graphics/community/members.html#simplified-chinese-documentation-contributors)来查看完整的鸣谢列表。
