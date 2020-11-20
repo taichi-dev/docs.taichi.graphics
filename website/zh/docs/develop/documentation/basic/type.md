@@ -1,8 +1,6 @@
 # 类型系统
 
-Taichi supports common numerical data types. Each type is denoted as a
-character indicating its _category_ and a number of _precision bits_,
-e.g., `i32` and `f64`.
+Taichi supports common numerical data types. Taichi supports common numerical data types. Each type is denoted as a character indicating its _category_ and a number of _precision bits_, e.g., `i32` and `f64`.
 
 The _category_ can be one of:
 
@@ -17,8 +15,7 @@ The _digital number_ can be one of:
 - `32`
 - `64`
 
-It represents how many **bits** are used in storing the data. The larger
-the bit number, the higher the precision is.
+It represents how many **bits** are used in storing the data. The larger the bit number, the higher the precision is. The larger the bit number, the higher the precision is.
 
 For example, the two most commonly used types:
 
@@ -57,31 +54,24 @@ Supported types on each backend:
 | f32  | > OK     | > OK   | > OK  | > OK     |
 | f64  | > OK     | > OK   | > N/A | > OK     |
 
-(OK: supported, EXT: require extension, N/A: not available)
-:::
+(OK: supported, EXT: require extension, N/A: not available) :::
 
-::: note
-Boolean types are represented using `ti.i32`.
-:::
+::: note Boolean types are represented using `ti.i32`. ::: :::
 
 ## Type promotion
 
-Binary operations on different types will give you a promoted type,
-following the C programming language convention, e.g.:
+Binary operations on different types will give you a promoted type, following the C programming language convention, e.g.:
 
 - `i32 + f32 = f32` (integer + float = float)
 - `i32 + i64 = i64` (less-bits + more-bits = more-bits)
 
-Basically it will try to choose the more precise type to contain the
-result value.
+Basically it will try to choose the more precise type to contain the result value.
 
 ## Default precisions
 
-By default, all numerical literals have 32-bit precisions. For example,
-`42` has type `ti.i32` and `3.14` has type `ti.f32`.
+By default, all numerical literals have 32-bit precisions. For example, `42` has type `ti.i32` and `3.14` has type `ti.f32`. For example, `42` has type `ti.i32` and `3.14` has type `ti.f32`.
 
-Default integer and float-point precisions (`default_ip` and
-`default_fp`) can be specified when initializing Taichi:
+Default integer and float-point precisions (`default_ip` and `default_fp`) can be specified when initializing Taichi:
 
 ```python
 ti.init(default_fp=ti.f32)
@@ -91,8 +81,7 @@ ti.init(default_ip=ti.i32)
 ti.init(default_ip=ti.i64)
 ```
 
-Also note that you may use `float` or `int` in type definitions as
-aliases for default precisions, e.g.:
+Also note that you may use `float` or `int` in type definitions as aliases for default precisions, e.g.:
 
 ```python
 ti.init(default_ip=ti.i64, default_fp=ti.f32)
@@ -109,19 +98,19 @@ def func(a: float) -> int:
 # is equivalent to:
 def func(a: ti.f32) -> ti.i64:
     ...
+
+# is equivalent to:
+def func(a: ti.f32) -> ti.i64:
+    ...
 ```
 
 ## Type casts
 
 ### Implicit casts
 
-::: warning
-The type of a variable is **determinated on it\'s initialization**.
-:::
+::: warning The type of a variable is **determinated on it\'s initialization**. ::: :::
 
-When a _low-precision_ variable is assigned to a _high-precision_
-variable, it will be implicitly promoted to the _high-precision_ type
-and no warning will be raised:
+When a _low-precision_ variable is assigned to a _high-precision_ variable, it will be implicitly promoted to the _high-precision_ type and no warning will be raised:
 
 ```python {3}
 a = 1.7
@@ -129,9 +118,7 @@ a = 1
 print(a)  # 1.0
 ```
 
-When a _high-precision_ variable is assigned to a _low-precision_ type,
-it will be implicitly down-cast into the _low-precision_ type and Taichi
-will raise a warning:
+When a _high-precision_ variable is assigned to a _low-precision_ type, it will be implicitly down-cast into the _low-precision_ type and Taichi will raise a warning:
 
 ```python {3}
 a = 1
@@ -141,8 +128,7 @@ print(a)  # 1
 
 ### Explicit casts
 
-You may use `ti.cast` to explicitly cast scalar values between different
-types:
+You may use `ti.cast` to explicitly cast scalar values between different types:
 
 ```python {2-3}
 a = 1.7
@@ -150,8 +136,7 @@ b = ti.cast(a, ti.i32)  # 1
 c = ti.cast(b, ti.f32)  # 1.0
 ```
 
-Equivalently, use `int()` and `float()` to convert values to float-point
-or integer types of default precisions:
+Equivalently, use `int()` and `float()` to convert values to float-point or integer types of default precisions:
 
 ```python {2-3}
 a = 1.7
@@ -172,11 +157,6 @@ v = ti.cast(u, ti.i32)  # ti.Vector([2, 4])
 
 ### Bit casting
 
-Use `ti.bit_cast` to bit-cast a value into another data type. The
-underlying bits will be preserved in this cast. The new type must have
-the same width as the the old type. For example, bit-casting `i32` to
-`f64` is not allowed. Use this operation with caution.
+Use `ti.bit_cast` to bit-cast a value into another data type. The underlying bits will be preserved in this cast. The new type must have the same width as the the old type. For example, bit-casting `i32` to `f64` is not allowed. Use this operation with caution. The underlying bits will be preserved in this cast. The new type must have the same width as the the old type. For example, bit-casting `i32` to `f64` is not allowed. Use this operation with caution.
 
-::: note
-For people from C++, `ti.bit_cast` is equivalent to `reinterpret_cast`.
-:::
+::: note For people from C++, `ti.bit_cast` is equivalent to `reinterpret_cast`. ::: :::
