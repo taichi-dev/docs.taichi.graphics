@@ -1,24 +1,19 @@
 # 导出结果
 
-Taichi has functions that help you **export visual results to images or
-videos**. This tutorial demonstrates how to use them step by step.
+Taichi has functions that help you **export visual results to images or videos**. This tutorial demonstrates how to use them step by step. This tutorial demonstrates how to use them step by step.
 
 ## Export images
 
-- There are two ways to export visual results of your program to
-  images.
+- There are two ways to export visual results of your program to images.
 - The first and easier way is to make use of `ti.GUI`.
-- The second way is to call some Taichi functions such as
-  `ti.imwrite`.
+- The second way is to call some Taichi functions such as `ti.imwrite`.
 
 ### Export images using `ti.GUI.show`
 
-- `ti.GUI.show(filename)` can not only display the GUI canvas on your
-  screen, but also save the image to your specified `filename`.
-- Note that the format of the image is fully determined by the suffix
-  of `filename`.
+- `ti.GUI.show(filename)` can not only display the GUI canvas on your screen, but also save the image to your specified `filename`.
+- Note that the format of the image is fully determined by the suffix of `filename`.
 - Taichi now supports saving to `png`, `jpg`, and `bmp` formats.
-- We recommend using `png` format. For example:
+- We recommend using `png` format. For example: For example:
 
 ```python {23}
 import taichi as ti
@@ -46,15 +41,12 @@ for i in range(iterations):
     gui.show(filename)  # export and show in GUI
 ```
 
-- After running the code above, you will get a series of images in the
-  current folder.
-- To compose these images into a single `mp4` or `gif` file, see
-  [Converting PNGs to video](./cli_utilities.md#converting-pngs-to-video).
+- After running the code above, you will get a series of images in the current folder.
+- To compose these images into a single `mp4` or `gif` file, see [Converting PNGs to video](./cli_utilities.md#converting-pngs-to-video).
 
 ### Export images using `ti.imwrite`
 
-To save images without invoking `ti.GUI.show(filename)`, use
-`ti.imwrite(filename)`. For example:
+To save images without invoking `ti.GUI.show(filename)`, use `ti.imwrite(filename)`. For example: For example:
 
 ```python {14}
 import taichi as ti
@@ -74,40 +66,21 @@ ti.imwrite(pixels.to_numpy(), filename)
 print(f'The image has been saved to {filename}')
 ```
 
-- `ti.imwrite` can export Taichi fields (`ti.Matrix.field`,
-  `ti.Vector.field`, `ti.field`) and numpy arrays `np.ndarray`.
-- Same as above `ti.GUI.show(filename)`, the image format (`png`,
-  `jpg` and `bmp`) is also controlled by the suffix of `filename` in
-  `ti.imwrite(filename)`.
-- Meanwhile, the resulted image type (grayscale, RGB, or RGBA) is
-  determined by **the number of channels in the input field**, i.e.,
-  the length of the third dimension (`field.shape[2]`).
-- In other words, a field that has shape `(w, h)` or `(w, h, 1)` will
-  be exported as a grayscale image.
-- If you want to export `RGB` or `RGBA` images instead, the input
-  field should have a shape `(w, h, 3)` or `(w, h, 4)` respectively.
+- `ti.imwrite` can export Taichi fields (`ti.Matrix.field`, `ti.Vector.field`, `ti.field`) and numpy arrays `np.ndarray`.
+- Same as above `ti.GUI.show(filename)`, the image format (`png`, `jpg` and `bmp`) is also controlled by the suffix of `filename` in `ti.imwrite(filename)`.
+- Meanwhile, the resulted image type (grayscale, RGB, or RGBA) is determined by **the number of channels in the input field**, i.e., the length of the third dimension (`field.shape[2]`).
+- In other words, a field that has shape `(w, h)` or `(w, h, 1)` will be exported as a grayscale image.
+- If you want to export `RGB` or `RGBA` images instead, the input field should have a shape `(w, h, 3)` or `(w, h, 4)` respectively.
 
-::: note
-All Taichi fields have their own data types, such as `ti.u8` and
-`ti.f32`. Different data types can lead to different behaviors of
-`ti.imwrite`. Please check out [GUI system](./gui.md) for
-more details.
-:::
+::: note All Taichi fields have their own data types, such as `ti.u8` and `ti.f32`. Different data types can lead to different behaviors of `ti.imwrite`. Please check out [GUI system](./gui.md) for more details. ::: Different data types can lead to different behaviors of `ti.imwrite`. Please check out [GUI system](./gui.md) for more details. :::
 
-- Taichi offers other helper functions that read and show images in
-  addition to `ti.imwrite`. They are also demonstrated in
-  [GUI system](./gui.md).
+- Taichi offers other helper functions that read and show images in addition to `ti.imwrite`. They are also demonstrated in [GUI system](./gui.md). They are also demonstrated in [GUI system](./gui.md).
 
 ## Export videos
 
-::: note
-The video export utilities of Taichi depend on `ffmpeg`. If `ffmpeg` is
-not installed on your machine, please follow the installation
-instructions of `ffmpeg` at the end of this page.
-:::
+::: note The video export utilities of Taichi depend on `ffmpeg`. ::: note The video export utilities of Taichi depend on `ffmpeg`. If `ffmpeg` is not installed on your machine, please follow the installation instructions of `ffmpeg` at the end of this page. ::: :::
 
-- `ti.VideoManager` can help you export results in `mp4` or `gif`
-  format. For example,
+- `ti.VideoManager` can help you export results in `mp4` or `gif` format. For example, For example,
 
 ```python {13,24}
 import taichi as ti
@@ -136,23 +109,21 @@ print('Exporting .mp4 and .gif videos...')
 video_manager.make_video(gif=True, mp4=True)
 print(f'MP4 video is saved to {video_manager.get_output_filename(".mp4")}')
 print(f'GIF video is saved to {video_manager.get_output_filename(".gif")}')
+video_manager.make_video(gif=True, mp4=True)
+print(f'MP4 video is saved to {video_manager.get_output_filename(".mp4")}')
+print(f'GIF video is saved to {video_manager.get_output_filename(".gif")}')
 ```
 
-After running the code above, you will find the output videos in the
-`./results/` folder.
+After running the code above, you will find the output videos in the `./results/` folder.
 
 ## Install ffmpeg
 
 ### Install ffmpeg on Windows
 
-- Download the `ffmpeg` archive(named `ffmpeg-2020xxx.zip`) from
-  [ffmpeg](https://ffmpeg.org/download.html).
+- Download the `ffmpeg` archive(named `ffmpeg-2020xxx.zip`) from [ffmpeg](https://ffmpeg.org/download.html).
 - Unzip this archive to a folder, such as `D:/YOUR_FFMPEG_FOLDER`.
-- **Important:** add `D:/YOUR_FFMPEG_FOLDER/bin` to the `PATH`
-  environment variable.
-- Open the Windows `cmd` or `PowerShell` and type the line of code
-  below to test your installation. If `ffmpeg` is set up properly, the
-  version information will be printed.
+- **Important:** add `D:/YOUR_FFMPEG_FOLDER/bin` to the `PATH` environment variable.
+- Open the Windows `cmd` or `PowerShell` and type the line of code below to test your installation. If `ffmpeg` is set up properly, the version information will be printed. If `ffmpeg` is set up properly, the version information will be printed.
 
 ```bash
 ffmpeg -version
@@ -160,9 +131,7 @@ ffmpeg -version
 
 ### Install `ffmpeg` on Linux
 
-- Most Linux distribution came with `ffmpeg` natively, so you do not
-  need to read this part if the `ffmpeg` command is already there on
-  your machine.
+- Most Linux distribution came with `ffmpeg` natively, so you do not need to read this part if the `ffmpeg` command is already there on your machine.
 - Install `ffmpeg` on Ubuntu
 
 ```bash
@@ -198,9 +167,7 @@ brew install ffmpeg
 
 ## Export PLY files
 
-- `ti.PLYwriter` can help you export results in the `ply` format.
-  Below is a short example of exporting 10 frames of a moving cube
-  with vertices randomly colored,
+- `ti.PLYwriter` can help you export results in the `ply` format. `ti.PLYwriter` can help you export results in the `ply` format. Below is a short example of exporting 10 frames of a moving cube with vertices randomly colored,
 
 ```python
 import taichi as ti
@@ -250,9 +217,7 @@ for frame in range(10):
     writer.export_frame_ascii(frame, series_prefix)
 ```
 
-After running the code above, you will find the output sequence of `ply`
-files in the current working directory. Next, we will break down the
-usage of `ti.PLYWriter` into 4 steps and show some examples.
+After running the code above, you will find the output sequence of `ply` files in the current working directory. Next, we will break down the usage of `ti.PLYWriter` into 4 steps and show some examples. Next, we will break down the usage of `ti.PLYWriter` into 4 steps and show some examples.
 
 - Setup `ti.PLYWriter`
 
@@ -299,6 +264,16 @@ writer.add_vertex_pos(x, y, z)
 indices = np.array([0, 1, 5, 4]*12)+np.repeat(
     np.array(list(np.arange(0, 3))*4)+4*np.repeat(np.arange(4), 3), 4)
 writer.add_faces(indices)
+
+x = np.zeros(20)
+y = np.array(list(np.arange(0, 4))*5)
+z = np.repeat(np.arange(5), 4)
+writer.add_vertex_pos(x, y, z)
+
+# For faces (if any), the only required channel is the list of vertex indices that each face contains.
+indices = np.array([0, 1, 5, 4]*12)+np.repeat(
+    np.array(list(np.arange(0, 3))*4)+4*np.repeat(np.arange(4), 3), 4)
+writer.add_faces(indices)
 ```
 
 - Add optional channels
@@ -312,6 +287,32 @@ writer.add_vertex_channel("vdata1", "double", vdata)
 foo_data = np.zeros(12)
 writer.add_face_channel("foo_key", "foo_data_type", foo_data)
 # error! because "foo_data_type" is not a supported datatype. Supported ones are
+# ['char', 'uchar', 'short', 'ushort', 'int', 'uint', 'float', 'double']
+
+# PLYwriter already defines several useful helper functions for common channels
+# Add vertex color, alpha, and rgba
+# using float/double r g b alpha to reprent color, the range should be 0 to 1
+r = np.random.rand(20)
+g = np.random.rand(20)
+b = np.random.rand(20)
+alpha = np.random.rand(20)
+writer.add_vertex_color(r, g, b)
+writer.add_vertex_alpha(alpha)
+# equivilantly
+# add_vertex_rgba(r, g, b, alpha)
+
+# vertex normal
+writer.add_vertex_normal(np.ones(20), np.zeros(20), np.zeros(20))
+
+# vertex index, and piece (group id)
+writer.add_vertex_id()
+writer.add_vertex_piece(np.ones(20))
+
+# Add face index, and piece (group id)
+# Indexing the existing faces in the writer and add this channel to face channels
+writer.add_face_id()
+# Set all the faces is in group 1
+writer.add_face_piece(np.ones(12)) because "foo_data_type" is not a supported datatype. Supported ones are
 # ['char', 'uchar', 'short', 'ushort', 'int', 'uint', 'float', 'double']
 
 # PLYwriter already defines several useful helper functions for common channels
@@ -383,21 +384,8 @@ for frame in range(10):
 
 ### Import `ply` files into Houdini and Blender
 
-Houdini supports importing a series of `ply` files sharing the same
-prefix/post-fix. Our `export_frame` can achieve the requirement for you.
+Houdini supports importing a series of `ply` files sharing the same prefix/post-fix. Our `export_frame` can achieve the requirement for you. Our `export_frame` can achieve the requirement for you.
 
-In Houdini, click `File->Import->Geometry` and navigate to the folder
-containing your frame results, which should be collapsed into one single
-entry like `example_$F6.ply (0-9)`. Double-click this entry to finish
-the importing process.
+In Houdini, click `File->Import->Geometry` and navigate to the folder containing your frame results, which should be collapsed into one single entry like `example_$F6.ply (0-9)`. Double-click this entry to finish the importing process. Double-click this entry to finish the importing process.
 
-Blender requires an add-on called
-[Stop-motion-OBJ](https://github.com/neverhood311/Stop-motion-OBJ) to
-load the result sequences. [Detailed
-documentation](https://github.com/neverhood311/Stop-motion-OBJ/wiki) is
-provided by the author on how to install and use the add-on. If you\'re
-using the latest version of Blender (2.80+), download and install the
-[latest
-release](https://github.com/neverhood311/Stop-motion-OBJ/releases/latest)
-of Stop-motion-OBJ. For Blender 2.79 and older, use version `v1.1.1` of
-the add-on.
+Blender requires an add-on called [Stop-motion-OBJ](https://github.com/neverhood311/Stop-motion-OBJ) to load the result sequences. [Detailed documentation](https://github.com/neverhood311/Stop-motion-OBJ/wiki) is provided by the author on how to install and use the add-on. Blender requires an add-on called [Stop-motion-OBJ](https://github.com/neverhood311/Stop-motion-OBJ) to load the result sequences. [Detailed documentation](https://github.com/neverhood311/Stop-motion-OBJ/wiki) is provided by the author on how to install and use the add-on. If you\'re using the latest version of Blender (2.80+), download and install the [latest release](https://github.com/neverhood311/Stop-motion-OBJ/releases/latest) of Stop-motion-OBJ. For Blender 2.79 and older, use version `v1.1.1` of the add-on. For Blender 2.79 and older, use version `v1.1.1` of the add-on.
