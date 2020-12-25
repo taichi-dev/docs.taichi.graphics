@@ -137,13 +137,17 @@ while gui.running:
 
 The argument `U` to `ti.Tape(U)` must be a 0D field.
 
-For using autodiff with multiple output variables, please see the `kernel.grad()` usage below. :::
+For using autodiff with multiple output variables, please see the `kernel.grad()` usage below.
+:::
 
 ::: note
 
-`ti.Tape(U)` will automatically set _`U[None]`_ to 0 on start up. :::
+`ti.Tape(U)` will automatically set _`U[None]`_ to 0 on start up.
+:::
 
-::: tip See [examples/mpm_lagrangian_forces.py](https://github.com/taichi-dev/taichi/blob/master/examples/mpm_lagrangian_forces.py) and [examples/fem99.py](https://github.com/taichi-dev/taichi/blob/master/examples/fem99.py) for examples on using autodiff for MPM and FEM. :::
+::: tip
+See [examples/mpm_lagrangian_forces.py](https://github.com/taichi-dev/taichi/blob/master/examples/mpm_lagrangian_forces.py) and [examples/fem99.py](https://github.com/taichi-dev/taichi/blob/master/examples/fem99.py) for examples on using autodiff for MPM and FEM.
+:::
 
 ## Using `kernel.grad()`
 
@@ -185,7 +189,9 @@ def differentiable_task():
 
 Taichi programs that violate this rule will result in an error.
 
-::: note **static for-loops** (e.g. `for i in ti.static(range(4))`) will get unrolled by the Python frontend preprocessor and therefore does not count as a level of loop. :::
+::: note
+**static for-loops** (e.g. `for i in ti.static(range(4))`) will get unrolled by the Python frontend preprocessor and therefore does not count as a level of loop.
+:::
 
 ## DiffTaichi
 
@@ -197,4 +203,6 @@ The [DiffTaichi repo](https://github.com/yuanming-hu/difftaichi) contains 10 dif
 
 ![image](https://github.com/yuanming-hu/public_files/raw/master/learning/difftaichi/diffmpm3d.gif)
 
-::: tip Check out [the DiffTaichi paper](https://arxiv.org/pdf/1910.00935.pdf) and [video](https://www.youtube.com/watch?v=Z1xvAZve9aE) to learn more about Taichi differentiable programming. :::
+::: tip
+Check out [the DiffTaichi paper](https://arxiv.org/pdf/1910.00935.pdf) and [video](https://www.youtube.com/watch?v=Z1xvAZve9aE) to learn more about Taichi differentiable programming.
+:::
