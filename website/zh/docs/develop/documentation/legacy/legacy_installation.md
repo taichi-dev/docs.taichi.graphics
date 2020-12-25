@@ -4,7 +4,8 @@
 
 This is NOT for installing the Taichi programming language. Unless you are building a legacy project based on the [legacy Taichi library](https://github.com/yuanming-hu/taichi/tree/legacy) (e.g. [taichi_mpm](https://github.com/yuanming-hu/taichi_mpm) and [spgrid_topo_opt](https://github.com/yuanming-hu/spgrid_topo_opt)) you should always install Taichi using `pip`.
 
-If you are working on the Taichi compiler and need to build from source, see [Developer installation section of the Contribution Guide](../../contribution/dev_install.md). :::
+If you are working on the Taichi compiler and need to build from source, see [Developer installation section of the Contribution Guide](../../contribution/dev_install.md).
+:::
 
 Supported platforms:
 
@@ -21,7 +22,9 @@ wget https://raw.githubusercontent.com/yuanming-hu/taichi/legacy/install.py
 python3 install.py
 ```
 
-::: note Note, if Python complains that a package is missing, simply rerun `install.py` and the package should be loaded. :::
+::: note
+Note, if Python complains that a package is missing, simply rerun `install.py` and the package should be loaded.
+:::
 
 ## Windows
 
