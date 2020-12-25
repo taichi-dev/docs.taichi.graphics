@@ -54,9 +54,12 @@ Supported types on each backend:
 | f32  | > OK     | > OK   | > OK  | > OK     |
 | f64  | > OK     | > OK   | > N/A | > OK     |
 
-(OK: supported, EXT: require extension, N/A: not available) :::
+(OK: supported, EXT: require extension, N/A: not available)
+:::
 
-::: note Boolean types are represented using `ti.i32`. :::
+::: note
+Boolean types are represented using `ti.i32`.
+:::
 
 ## Type promotion
 
@@ -104,7 +107,9 @@ def func(a: ti.f32) -> ti.i64:
 
 ### Implicit casts
 
-::: warning The type of a variable is **determinated on it\'s initialization**. :::
+::: warning
+The type of a variable is **determinated on it\'s initialization**.
+:::
 
 When a _low-precision_ variable is assigned to a _high-precision_ variable, it will be implicitly promoted to the _high-precision_ type and no warning will be raised:
 
@@ -155,4 +160,6 @@ v = ti.cast(u, ti.i32)  # ti.Vector([2, 4])
 
 Use `ti.bit_cast` to bit-cast a value into another data type. The underlying bits will be preserved in this cast. The new type must have the same width as the the old type. For example, bit-casting `i32` to `f64` is not allowed. Use this operation with caution.
 
-::: note For people from C++, `ti.bit_cast` is equivalent to `reinterpret_cast`. :::
+::: note
+For people from C++, `ti.bit_cast` is equivalent to `reinterpret_cast`.
+:::
