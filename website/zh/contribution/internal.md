@@ -78,7 +78,9 @@ Note that **cells** are never exposed to end-users.
 
 **List generation** generates lists of SNode **containers** (instead of SNode **cells**).
 
-::: note We are on our way to remove usages of **children**, **instances**, and **elements** in Taichi. These are very ambiguous terms. :::
+::: note
+We are on our way to remove usages of **children**, **instances**, and **elements** in Taichi. These are very ambiguous terms.
+:::
 
 ## List generation (WIP)
 
@@ -138,7 +140,8 @@ The list of `place` (leaf) nodes (e.g., `S3` in this example) is never generated
 
 The motivation for this design is to amortize list generation overhead. Generating one list element per leaf node (`place` SNode) element is too expensive, likely much more expensive than the essential computation happening on the leaf element. Therefore we only generate their parent element list, so that the list generation cost is amortized over multiple child elements of a second-to-last-level SNode element.
 
-In the example above, although we have `16` instances of `x`, we only generate a list of `4` `bitmasked` nodes (and `1` `dense` node). :::
+In the example above, although we have `16` instances of `x`, we only generate a list of `4` `bitmasked` nodes (and `1` `dense` node).
+:::
 
 ## Statistics
 
