@@ -10,7 +10,9 @@ Taichi provides some API to modify these parameters. This allows advanced users 
 
 For example, specifying a suitable `ti.block_dim` could yield an almost 3x performance boost in [examples/mpm3d.py](https://github.com/taichi-dev/taichi/blob/master/examples/mpm3d.py).
 
-::: note For performance profiling utilities, see [**Profiler** section of the Contribution Guide](../../contribution/profiler.md). :::
+::: note
+For performance profiling utilities, see [**Profiler** section of the Contribution Guide](../../contribution/profiler.md).
+:::
 
 ### Thread hierarchy of GPUs
 
