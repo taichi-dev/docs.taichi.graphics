@@ -42,13 +42,17 @@ python -m pip install taichi_glsl
 
 **A:** You may export it with [Export PLY files](../documentation/misc/export_results.md#export-ply-files) so that you could view it in Houdini or Blender.
 
-::: tip Or make use the extension library [Taichi THREE](https://github.com/taichi-dev/taichi_glsl) to render images and update to GUI in real-time. :::
+::: tip
+Or make use the extension library [Taichi THREE](https://github.com/taichi-dev/taichi_glsl) to render images and update to GUI in real-time.
+:::
 
 ## **Q:** How do I declare a field with **dynamic length**?
 
 **A:** What you want may be the `dynamic` SNode, a kind of sparse field, see [Working with dynamic SNodes](../documentation/api/snode.md#working-with-dynamic-snodes).
 
-::: tip Or simply allocate a dense field large enough, and another 0-D field `field_len[None]` for length record. But in fact, the `dynamic` SNode could be slower than the latter solution, due to the cost of maintaining the sparsity information. :::
+::: tip
+Or simply allocate a dense field large enough, and another 0-D field `field_len[None]` for length record. But in fact, the `dynamic` SNode could be slower than the latter solution, due to the cost of maintaining the sparsity information.
+:::
 
 ## **Q:** Can a user iterate over irregular topologies (e.g., graphs or tetrahedral meshes) instead of regular grids?
 
