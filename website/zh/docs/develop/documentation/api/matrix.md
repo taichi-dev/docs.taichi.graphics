@@ -57,7 +57,8 @@ For example, this creates a 5x4 matrix field with each entry being a 3x3 matrix:
 
 ::: note
 
-In Python-scope, `ti.field` declares a scalar field ([Scalar fields](./scalar_field.md)), while `ti.Matrix.field` declares a matrix field. :::
+In Python-scope, `ti.field` declares a scalar field ([Scalar fields](./scalar_field.md)), while `ti.Matrix.field` declares a matrix field.
+:::
 
 ### As a temporary local variable
 
@@ -90,7 +91,8 @@ For example, this creates a 2x3 matrix with components (2, 3, 4) in the first ro
 
 :::
 
-::: {.function} ti.Matrix.rows(\[v0, v1, v2, \...\]) :::
+::: {.function} ti.Matrix.rows(\[v0, v1, v2, \...\])
+:::
 
 ::: {.function} ti.Matrix.cols(\[v0, v1, v2, \...\])
 
@@ -175,7 +177,8 @@ This extracts the first element in matrix `a[6, 3]`: :
 - The indices in the first pair of brackets locate the matrix inside the matrix fields;
 - The indices in the second pair of brackets locate the scalar element inside the matrix.
 
-For 0-D matrix fields, indices in the first pair of brackets should be `[None]`. :::
+For 0-D matrix fields, indices in the first pair of brackets should be `[None]`.
+:::
 
 ### As a temporary local variable
 
@@ -228,7 +231,8 @@ For example:
 
 ::: note
 
-`a.transpose()` will not effect the data in `a`, it just return the result. ::: :::
+`a.transpose()` will not effect the data in `a`, it just return the result. :::
+:::
 
 ::: {.function} a.trace()
 
@@ -242,7 +246,8 @@ return
 
 (scalar) the trace of matrix `a`.
 
-The return value can be computed as `a[0, 0] + a[1, 1] + ...`. :::
+The return value can be computed as `a[0, 0] + a[1, 1] + ...`.
+:::
 
 ::: {.function} a.determinant()
 
@@ -260,7 +265,8 @@ return
 
 The matrix size of matrix must be 1x1, 2x2, 3x3 or 4x4 for now.
 
-This function only works in Taichi-scope for now. ::: :::
+This function only works in Taichi-scope for now. :::
+:::
 
 ::: {.function} a.inverse()
 
@@ -278,4 +284,5 @@ return
 
 The matrix size of matrix must be 1x1, 2x2, 3x3 or 4x4 for now.
 
-This function only works in Taichi-scope for now. ::: :::
+This function only works in Taichi-scope for now. :::
+:::
