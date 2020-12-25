@@ -51,7 +51,8 @@ while gui.running:
     gui.show(f'{gui.frame:06d}.png')  # save a series of screenshot
 ```
 
-::: :::
+:::
+:::
 
 ::: {.function} gui.show(filename = None)
 
@@ -76,7 +77,8 @@ If `filename` is specified, a screenshot will be saved to the file specified by 
         gui.set_image(img)
         gui.show(f'{frame:06d}.png')
 
-::: :::
+:::
+:::
 
 ## Paint on a window
 
@@ -113,7 +115,8 @@ The data type of `img` must be one of:
 - `uint16`, range `[0, 65535]`
 - `uint32`, range `[0, 4294967295]`
 - `float32`, range `[0, 1]`
-- `float64`, range `[0, 1]` :::
+- `float64`, range `[0, 1]`
+:::
 
 ::: {.function} gui.get_image()
 
@@ -122,7 +125,8 @@ return
 
 (np.array) the current image shown on the GUI
 
-Get the 4-channel (RGBA) image shown in the current GUI system. :::
+Get the 4-channel (RGBA) image shown in the current GUI system.
+:::
 
 ::: {.function} gui.circle(pos, color = 0xFFFFFF, radius = 1)
 
@@ -146,7 +150,8 @@ parameter radius
 
 (optional, scalar) the radius of the circle
 
-Draw a solid circle. :::
+Draw a solid circle.
+:::
 
 ::: {.function} gui.circles(pos, color = 0xFFFFFF, radius = 1)
 
@@ -170,9 +175,11 @@ parameter radius
 
 (optional, scalar or np.array of float32) the radius (radii) of the circles
 
-Draw solid circles. :::
+Draw solid circles.
+:::
 
-::: ti NOTE If `color` is a numpy array, the circle at `pos[i]` will be colored with `color[i]`. In this case, `color` must have the same size as `pos`. :::
+::: ti NOTE If `color` is a numpy array, the circle at `pos[i]` will be colored with `color[i]`. In this case, `color` must have the same size as `pos`.
+:::
 
 ::: {.function} gui.line(begin, end, color = 0xFFFFFF, radius = 1)
 
@@ -201,7 +208,8 @@ parameter radius
 
 (optional, scalar) the width of line
 
-Draw a line. :::
+Draw a line.
+:::
 
 ::: {.function} gui.lines(begin, end, color = 0xFFFFFF, radius = 1)
 
@@ -230,7 +238,8 @@ parameter radius
 
 (optional, scalar or np.array of float32) the width(s) of the lines
 
-Draw lines. :::
+Draw lines.
+:::
 
 ::: {.function} gui.triangle(a, b, c, color = 0xFFFFFF)
 
@@ -259,7 +268,8 @@ parameter color
 
 (optional, RGB hex) the color to fill the triangle
 
-Draw a solid triangle. :::
+Draw a solid triangle.
+:::
 
 ::: {.function} gui.triangles(a, b, c, color = 0xFFFFFF)
 
@@ -288,7 +298,8 @@ parameter color
 
 (optional, RGB hex or np.array of uint32) the color(s) to fill the triangles
 
-Draw solid triangles. :::
+Draw solid triangles.
+:::
 
 ::: {.function} gui.rect(topleft, bottomright, radius = 1, color = 0xFFFFFF)
 
@@ -317,7 +328,8 @@ parameter radius
 
 (optional, scalar) the width of stroke line
 
-Draw a hollow rectangle. :::
+Draw a hollow rectangle.
+:::
 
 ::: {.function} gui.text(content, pos, font_size = 15, color = 0xFFFFFF)
 
@@ -346,7 +358,8 @@ parameter color
 
 (optional, RGB hex) the foreground color of text
 
-Draw a line of text on screen. :::
+Draw a line of text on screen.
+:::
 
 ::: {.function} ti.rgb_to_hex(rgb):
 
@@ -370,7 +383,8 @@ rgb = np.array([[0.4, 0.8, 1.0], [0.0, 0.5, 1.0]])
 hex = ti.rgb_to_hex(rgb)  # np.array([0x66ccff, 0x007fff])
 ```
 
-The return values can be used in GUI drawing APIs. :::
+The return values can be used in GUI drawing APIs.
+:::
 
 ## Event processing
 
@@ -534,7 +548,8 @@ Must be used together with `gui.get_event`, or it won\'t be updated! For example
         elif gui.is_pressed('d', ti.GUI.RIGHT):
             print('Go right!')
 
-::: :::
+:::
+:::
 
 ::: {.function} gui.get_cursor_pos()
 
@@ -568,7 +583,8 @@ return
 
 The default value is 60.
 
-For example, to restrict FPS to be below 24, simply `gui.fps_limit = 24`. This helps reduce the overload on your hardware especially when you\'re using OpenGL on your intergrated GPU which could make desktop slow to response. :::
+For example, to restrict FPS to be below 24, simply `gui.fps_limit = 24`. This helps reduce the overload on your hardware especially when you\'re using OpenGL on your intergrated GPU which could make desktop slow to response.
+:::
 
 ## GUI Widgets
 
@@ -601,7 +617,8 @@ return
 
 (WidgetValue) a value getter / setter, see `WidgetValue`{.interpreted-text role="class"}.
 
-The widget will be display as: `{text}: {value:.3f}`, followed with a slider. :::
+The widget will be display as: `{text}: {value:.3f}`, followed with a slider.
+:::
 
 ::: {.function} gui.label(text)
 
@@ -615,7 +632,8 @@ return
 
 (WidgetValue) a value getter / setter, see `WidgetValue`{.interpreted-text role="class"}.
 
-The widget will be display as: `{text}: {value:.3f}`. :::
+The widget will be display as: `{text}: {value:.3f}`.
+:::
 
 ::: {.function} gui.button(text, event_name=None)
 
@@ -632,13 +650,15 @@ parameter event_name
 return
 :
 
-(EventKey) the event key for this button, see `gui_event`{.interpreted-text role="ref"}. :::
+(EventKey) the event key for this button, see `gui_event`{.interpreted-text role="ref"}.
+:::
 
 ::: {.WidgetValue} A getter / setter for widget values.
 
 ::: {.attribute} value
 
-Get / set the current value in the widget where we\'re returned from. :::
+Get / set the current value in the widget where we\'re returned from.
+:::
 
 For example:
 
@@ -743,7 +763,8 @@ return
 
 This function loads an image from the target filename and returns it as a `np.ndarray(dtype=np.uint8)`.
 
-Each value in this returned field is an integer in \[0, 255\]. :::
+Each value in this returned field is an integer in \[0, 255\].
+:::
 
 ::: {.function} ti.imshow(img, windname)
 
@@ -759,7 +780,8 @@ parameter windname
 
 This function will create an instance of `ti.GUI` and show the input image on the screen.
 
-It has the same logic as `ti.imwrite` for different datatypes. :::
+It has the same logic as `ti.imwrite` for different datatypes.
+:::
 
 ::: {.function} ti.imresize(img, w, h=None):
 
@@ -785,4 +807,5 @@ return
 
 If `h` is not specified, it will be equal to `w` by default.
 
-The output image shape is: `(w, h, *img.shape[2:])`. :::
+The output image shape is: `(w, h, *img.shape[2:])`.
+:::
