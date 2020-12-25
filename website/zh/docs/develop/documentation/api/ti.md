@@ -11,7 +11,8 @@ docs:
 
         ::: note
         The argument `n` must be a power-of-two for now.
-        :::
+
+:::
       since: v0.5.14
       static: true
       tags:
