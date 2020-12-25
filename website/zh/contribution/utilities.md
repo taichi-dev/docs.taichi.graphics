@@ -56,7 +56,9 @@ int func(void *p) {
 }
 ```
 
-::: note For people from Linux kernels, `TI_ERROR` is just `panic`. :::
+::: note
+For people from Linux kernels, `TI_ERROR` is just `panic`.
+:::
 
 You may also simplify the above code by using `TI_ASSERT`:
 
@@ -93,7 +95,9 @@ codegen_kernel_statements                   2820 ->  2789    -1.1%
 codegen_evaluator_statements                   0 ->    14    +inf%
 ```
 
-::: note Currently `ti benchmark` only supports benchmarking number-of-statements, no time benchmarking is included since it depends on hardware performance and therefore hard to compare if the baseline is from another machine. We are to purchase a fixed-performance machine as a time benchmark server at some point. See detailed discussion at [Github Issue #948](https://github.com/taichi-dev/taichi/issues/948) :::
+::: note
+Currently `ti benchmark` only supports benchmarking number-of-statements, no time benchmarking is included since it depends on hardware performance and therefore hard to compare if the baseline is from another machine. We are to purchase a fixed-performance machine as a time benchmark server at some point. See detailed discussion at [Github Issue #948](https://github.com/taichi-dev/taichi/issues/948)
+:::
 
 The suggested workflow for the performance-related PR author to run the regression tests is:
 
@@ -122,7 +126,9 @@ CoreState::set_trigger_gdb_when_crash(true);
 export TI_GDB_TRIGGER=1
 ```
 
-::: note **Quickly pinpointing segmentation faults/assertion failures using** `gdb`: When Taichi crashes, `gdb` will be triggered and attach to the current thread. You might be prompt to enter sudo password required for gdb thread attaching. After entering `gdb`, check the stack backtrace with command `bt` (`backtrace`), then find the line of code triggering the error. :::
+::: note
+**Quickly pinpointing segmentation faults/assertion failures using** `gdb`: When Taichi crashes, `gdb` will be triggered and attach to the current thread. You might be prompt to enter sudo password required for gdb thread attaching. After entering `gdb`, check the stack backtrace with command `bt` (`backtrace`), then find the line of code triggering the error.
+:::
 
 ## Code coverage
 
