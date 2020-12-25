@@ -6,13 +6,17 @@ Code decorated by `@ti.kernel` or `@ti.func` is in the **Taichi-scope**.
 
 They are to be compiled and executed on CPU or GPU devices with high parallelization performance, on the cost of less flexibility.
 
-::: note For people from CUDA, Taichi-scope = **device** side. :::
+::: note
+For people from CUDA, Taichi-scope = **device** side.
+:::
 
 Code outside `@ti.kernel` or `@ti.func` is in the **Python-scope**.
 
 They are not compiled by the Taichi compiler and have lower performance but with a richer type system and better flexibility.
 
-::: note For people from CUDA, Python-scope = **host** side. :::
+::: note
+For people from CUDA, Python-scope = **host** side.
+:::
 
 ## Kernels
 
@@ -28,7 +32,9 @@ my_kernel()
 
 Kernels should be called from **Python-scope**.
 
-::: note For people from CUDA, Taichi kernels = `__global__` functions. :::
+::: note
+For people from CUDA, Taichi kernels = `__global__` functions.
+:::
 
 ### Arguments
 
@@ -109,7 +115,8 @@ We also support **template arguments** (see [Template metaprogramming](../advanc
 
 When using differentiable programming, there are a few more constraints on kernel structures. See the [**Kernel Simplicity Rule**](../advanced/differentiable_programming.md#kernel-simplicity-rule).
 
-Also, please do not use kernel return values in differentiable programming, since the return value will not be tracked by automatic differentiation. Instead, store the result into a global variable (e.g. `loss[None]`). :::
+Also, please do not use kernel return values in differentiable programming, since the return value will not be tracked by automatic differentiation. Instead, store the result into a global variable (e.g. `loss[None]`).
+:::
 
 ### Functions
 
@@ -131,11 +138,17 @@ my_kernel()    # call kernels from Python-scope
 
 Taichi functions should be called from **Taichi-scope**.
 
-::: note For people from CUDA, Taichi functions = `__device__` functions. :::
+::: note
+For people from CUDA, Taichi functions = `__device__` functions.
+:::
 
-::: note Taichi functions can be nested. :::
+::: note
+Taichi functions can be nested.
+:::
 
-::: warning Currently, all functions are force-inlined. Therefore, no recursion is allowed. :::
+::: warning
+Currently, all functions are force-inlined. Therefore, no recursion is allowed.
+:::
 
 ### Arguments and return values
 
