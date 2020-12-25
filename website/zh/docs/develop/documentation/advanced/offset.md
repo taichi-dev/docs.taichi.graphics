@@ -16,7 +16,9 @@ a[-16, 64]  # upper left corner
 a[16, 64]   # upper right corner
 ```
 
-::: note The dimensionality of field shapes should **be consistent** with that of the offset. Otherwise, a `AssertionError` will be raised. :::
+::: note
+The dimensionality of field shapes should **be consistent** with that of the offset. Otherwise, a `AssertionError` will be raised.
+:::
 
 ```python
 a = ti.Matrix.field(2, 3, dtype=ti.f32, shape=(32,), offset=(-16, ))          # Works!
