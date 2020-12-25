@@ -39,7 +39,8 @@ Python 3 distinguishes `/` (true division) and `//` (floor division). For exampl
 - **true divisions** on integral types will first cast their operands to the default float point type.
 - **floor divisions** on float-point types will first cast their operands to the default integer type.
 
-To avoid such implicit casting, you can manually cast your operands to desired types, using `ti.cast`. See [Default precisions](../basic/type.md#default-precisions) for more details on default numerical types. :::
+To avoid such implicit casting, you can manually cast your operands to desired types, using `ti.cast`. See [Default precisions](../basic/type.md#default-precisions) for more details on default numerical types.
+:::
 
 ### Logic operators
 
