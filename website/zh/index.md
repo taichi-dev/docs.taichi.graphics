@@ -18,7 +18,9 @@ features:
 footer: MIT License | The Taichi Developers
 ---
 
-::: danger REMINDER <Badge text="beta" type="warning"/> This docsite is still under construction 🚧 and the content is subject to change. For detailed instructions, especially the API docs of Taichi and the Chinese version of the Taichi documentation, please visit our old documentation site on [Read the Docs](https://taichi.readthedocs.io/) and [中文文档](https://taichi.readthedocs.io/zh_CN/latest/) :::
+::: danger REMINDER
+<Badge text="beta" type="warning"/> This docsite is still under construction 🚧 and the content is subject to change. For detailed instructions, especially the API docs of Taichi and the Chinese version of the Taichi documentation, please visit our old documentation site on [Read the Docs](https://taichi.readthedocs.io/) and [中文文档](https://taichi.readthedocs.io/zh_CN/latest/)
+:::
 
 ## Hello, Taichi!
 
@@ -38,7 +40,8 @@ Download [fractal.py](https://raw.githubusercontent.com/taichi-dev/taichi/master
 python3 fractal.py
 ```
 
-You will see the animation below: :::
+You will see the animation below:
+:::
 
 ::: slot fractal
 
