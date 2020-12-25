@@ -83,13 +83,15 @@ Supported backends on different platforms:
 
 (OK: supported; N/A: not available)
 
-With `arch=ti.gpu`, Taichi will first try to run with CUDA. If CUDA is not supported on your machine, Taichi will fall back on Metal or OpenGL. If no GPU backend (CUDA, Metal, or OpenGL) is supported, Taichi will fall back on CPUs. :::
+With `arch=ti.gpu`, Taichi will first try to run with CUDA. If CUDA is not supported on your machine, Taichi will fall back on Metal or OpenGL. If no GPU backend (CUDA, Metal, or OpenGL) is supported, Taichi will fall back on CPUs.
+:::
 
 ::: note
 
 When used with the CUDA backend on Windows or ARM devices (e.g. NVIDIA Jetson), Taichi by default allocates 1 GB GPU memory for field storage. You can override this behavior by initializing with `ti.init(arch=ti.cuda, device_memory_GB=3.4)` to allocate `3.4` GB GPU memory, or `ti.init(arch=ti.cuda, device_memory_fraction=0.3)` to allocate `30%` of the total GPU memory.
 
-On other platforms, Taichi will make use of its on-demand memory allocator to adaptively allocate memory. :::
+On other platforms, Taichi will make use of its on-demand memory allocator to adaptively allocate memory.
+:::
 
 ## Fields
 
@@ -115,15 +117,18 @@ The language used in Taichi kernels and functions looks exactly like Python, yet
 
 Everything decorated with `@ti.kernel` and `@ti.func` is in Taichi-scope and hence will be compiled by the Taichi compiler.
 
-Everything else is in Python-scope. They are simply Python native code. :::
+Everything else is in Python-scope. They are simply Python native code.
+:::
 
 ::: warning
 
-Taichi kernels must be called from the Python-scope. Taichi functions must be called from the Taichi-scope. :::
+Taichi kernels must be called from the Python-scope. Taichi functions must be called from the Taichi-scope.
+:::
 
 ::: note
 
-For those who come from the world of CUDA, `ti.func` corresponds to `__device__` while `ti.kernel` corresponds to `__global__`. :::
+For those who come from the world of CUDA, `ti.func` corresponds to `__device__` while `ti.kernel` corresponds to `__global__`.
+:::
 
 ::: warning
 
@@ -131,7 +136,8 @@ Nested kernels are **not supported**.
 
 Nested functions are **supported**.
 
-Recursive functions are **not supported for now**. :::
+Recursive functions are **not supported for now**.
+:::
 
 ## Parallel for-loops
 
@@ -181,7 +187,8 @@ def bar(k: ti.i32):
 
 ::: note
 
-Struct-for is the key to [sparse computation](../advanced/sparse.md) in Taichi, as it will only loop over active elements in a sparse field. In dense fields, all elements are active. :::
+Struct-for is the key to [sparse computation](../advanced/sparse.md) in Taichi, as it will only loop over active elements in a sparse field. In dense fields, all elements are active.
+:::
 
 ::: warning
 
