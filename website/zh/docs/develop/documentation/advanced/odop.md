@@ -6,7 +6,9 @@ To allow modularized code, Taichi borrow some concepts from object-oriented prog
 
 For convenience, let\'s call the hybrid scheme **objective data-oriented programming** (ODOP).
 
-::: note More documentation on this topic is on the way ... :::
+::: note
+More documentation on this topic is on the way ...
+:::
 
 A brief example:
 
