@@ -30,7 +30,9 @@ Note that on Linux/OS X, `clang` is the only supported compiler for compiling th
   - [LLVM 10.0.0 for Windows MSVC 2019](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/taichi-llvm-10.0.0-msvc2019.zip)
   - [LLVM 10.0.0 for OS X](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/taichi-llvm-10.0.0-macos.zip)
 
-::: note On Windows, if you use the pre-built LLVM for Taichi, please add `$LLVM_FOLDER/bin` to `PATH`. Later, when you build Taichi using `CMake`, set `LLVM_DIR` to `$LLVM_FOLDER/lib/cmake/llvm`. :::
+::: note
+On Windows, if you use the pre-built LLVM for Taichi, please add `$LLVM_FOLDER/bin` to `PATH`. Later, when you build Taichi using `CMake`, set `LLVM_DIR` to `$LLVM_FOLDER/lib/cmake/llvm`.
+:::
 
 - If the downloaded LLVM does not work, please build from source:
 
@@ -90,7 +92,8 @@ If you don\'t have CUDA, go to [this website](https://developer.nvidia.com/cuda-
 
     Then execute `source ~/.bashrc` to reload shell config.
 
-    ::: note If you're using fish, use `set -x NAME VALUES`, otherwise it won't be loaded by child processes. :::
+    ::: note If you're using fish, use `set -x NAME VALUES`, otherwise it won't be loaded by child processes.
+:::
 
   - On Windows, please add these variables by accessing your system settings:
 
@@ -165,7 +168,9 @@ If you don\'t have CUDA, go to [this website](https://developer.nvidia.com/cuda-
 
 For those who prefer to use Docker, we also provide a Dockerfile which helps setup the Taichi development environment with CUDA support based on Ubuntu docker image.
 
-::: note In order to follow the instructions in this section, please make sure you have the [Docker DeskTop (or Engine for Linux)](https://www.docker.com/products/docker-desktop) installed and set up properly. :::
+::: note
+In order to follow the instructions in this section, please make sure you have the [Docker DeskTop (or Engine for Linux)](https://www.docker.com/products/docker-desktop) installed and set up properly.
+:::
 
 ### Build the Docker Image
 
@@ -175,11 +180,13 @@ From within the root directory of the taichi Git repository, execute `docker bui
 
 In order to save the time on building Docker images, you could always visit our [Docker Hub repository](https://hub.docker.com/r/taichidev/taichi) and pull the versions of pre-built images you would like to use. Currently the builds are triggered per taichi Github release.
 
-For example, to pull a image built from release v0.6.17, run `docker pull taichidev/taichi:v0.6.17` :::
+For example, to pull a image built from release v0.6.17, run `docker pull taichidev/taichi:v0.6.17`
+:::
 
 ::: warning
 
-The nature of Docker container determines that no changes to the file system on the container could be preserved once you exit from the container. If you want to use Docker as a persistent development environment, we recommend you [mount the taichi Git repository to the container as a volume](https://docs.docker.com/storage/volumes/) and set the Python path to the mounted directory. :::
+The nature of Docker container determines that no changes to the file system on the container could be preserved once you exit from the container. If you want to use Docker as a persistent development environment, we recommend you [mount the taichi Git repository to the container as a volume](https://docs.docker.com/storage/volumes/) and set the Python path to the mounted directory.
+:::
 
 ### Use Docker Image on macOS (cpu only)
 
