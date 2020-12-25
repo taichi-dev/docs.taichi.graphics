@@ -18,7 +18,8 @@ Supported SNode types on each backend:
 |  pointer  |    OK    |  N/A   |  N/A  |   N/A    |
 |  dynamic  |    OK    |  PAR   |  N/A  |   N/A    |
 
-(OK: supported; PAR: partial support; N/A: not available) :::
+(OK: supported; PAR: partial support; N/A: not available)
+:::
 
 See `layout`{.interpreted-text role="ref"} for more details. `ti.root` is the root node of the data structure.
 
@@ -201,7 +202,8 @@ is equivalent to
 
     snode.dense(ti.ijk, (3, 3, 3))
 
-::: :::
+:::
+:::
 
 ::: {.function} snode.dynamic(index, size, chunk_size = None)
 
@@ -238,13 +240,16 @@ The following places a 1-D dynamic field of maximum size `16`:
 
 :::
 
-::: {.function} snode.bitmasked :::
+::: {.function} snode.bitmasked
+:::
 
-::: {.function} snode.pointer :::
+::: {.function} snode.pointer
+:::
 
 ::: {.function} snode.hash
 
-TODO: add descriptions here :::
+TODO: add descriptions here
+:::
 
 ## Working with `dynamic` SNodes
 
@@ -263,7 +268,8 @@ parameter indices
 return
 :
 
-(int32) the current size of the dynamic node :::
+(int32) the current size of the dynamic node
+:::
 
 ::: {.function} ti.append(snode, indices, val)
 
@@ -287,7 +293,8 @@ return
 
 (int32) the size of the dynamic node, before appending
 
-Inserts `val` into the `dynamic` node with indices `indices`. :::
+Inserts `val` into the `dynamic` node with indices `indices`.
+:::
 
 ## Taichi fields like powers of two
 
@@ -295,28 +302,40 @@ Non-power-of-two field dimensions are promoted into powers of two and thus these
 
 ## Indices
 
-::: {.attribute} ti.i :::
+::: {.attribute} ti.i
+:::
 
-::: {.attribute} ti.j :::
+::: {.attribute} ti.j
+:::
 
-::: {.attribute} ti.k :::
+::: {.attribute} ti.k
+:::
 
-::: {.attribute} ti.ij :::
+::: {.attribute} ti.ij
+:::
 
-::: {.attribute} ti.ji :::
+::: {.attribute} ti.ji
+:::
 
-::: {.attribute} ti.jk :::
+::: {.attribute} ti.jk
+:::
 
-::: {.attribute} ti.kj :::
+::: {.attribute} ti.kj
+:::
 
-::: {.attribute} ti.ik :::
+::: {.attribute} ti.ik
+:::
 
-::: {.attribute} ti.ki :::
+::: {.attribute} ti.ki
+:::
 
-::: {.attribute} ti.ijk :::
+::: {.attribute} ti.ijk
+:::
 
-::: {.attribute} ti.ijkl :::
+::: {.attribute} ti.ijkl
+:::
 
-::: {.function} ti.indices(a, b, \...) :::
+::: {.function} ti.indices(a, b, \...)
+:::
 
 (TODO)
