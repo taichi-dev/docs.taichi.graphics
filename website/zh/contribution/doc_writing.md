@@ -52,7 +52,9 @@ def paint(t: float):
 |       Val2       |       Val5       |
 |       Val3       |       Val6       |
 
-::: tip TIP It's worth mentioning that [Tables Generator](https://www.tablesgenerator.com/markdown_tables) is a great tool for generating and re-formatting markdown tables. :::
+::: tip TIP
+It's worth mentioning that [Tables Generator](https://www.tablesgenerator.com/markdown_tables) is a great tool for generating and re-formatting markdown tables.
+:::
 
 ## 3. Cross-reference and anchor
 
@@ -78,7 +80,8 @@ Centered Text Block!
 Centered Text Block!
 </center>
 
-::: danger NOTE For images, you **HAVE TO** insert blank lines to make them work:
+::: danger NOTE
+For images, you **HAVE TO** insert blank lines to make them work:
 
 ```md
 <center>
@@ -115,7 +118,9 @@ This is a tip without title!
 :::
 ```
 
-::: tip This is a tip without title! :::
+::: tip
+This is a tip without title!
+:::
 
 ```md
 ::: tip
@@ -123,7 +128,9 @@ This is a tip with a title!
 :::
 ```
 
-::: tip TITLE This is a tip with a title! :::
+::: tip TITLE
+This is a tip with a title!
+:::
 
 ```md
 ::: note
@@ -131,7 +138,9 @@ This is a note!
 :::
 ```
 
-::: note This is a note! :::
+::: note
+This is a note!
+:::
 
 ```md WARNING
 ::: warning
@@ -139,7 +148,9 @@ This is a warning!
 :::
 ```
 
-::: warning WARNING This is a warning! :::
+::: warning WARNING
+This is a warning!
+:::
 
 ```md
 ::: danger DANGER
@@ -147,7 +158,9 @@ This is a danger!
 :::
 ```
 
-::: danger DANGER This is a danger! :::
+::: danger DANGER
+This is a danger!
+:::
 
 ```md
 ::: details SUMMARY
@@ -155,7 +168,9 @@ Details by default are hidden!
 :::
 ```
 
-::: details SUMMARY Details by default are hidden! :::
+::: details SUMMARY
+Details by default are hidden!
+:::
 
 ## 7. Code groups
 
