@@ -46,11 +46,13 @@ def compute_laplacian(self):
                 + (a[i, j+1] - 2.0*a[i, j] + a[i, j-1])/(dy**2)
 ```
 
-::: note `ti.static` can also be used in combination with:
+::: note
+`ti.static` can also be used in combination with:
 
 - `if` (compile-time branching) and
 - `for` (compile-time unrolling)
 
 See [Metaprogramming](./meta.md) for more details.
 
-Here, we are using it for _compile-time const values_, i.e. the **field/function handles** are constants at compile time. :::
+Here, we are using it for _compile-time const values_, i.e. the **field/function handles** are constants at compile time.
+:::
