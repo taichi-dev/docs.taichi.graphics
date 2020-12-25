@@ -79,7 +79,9 @@ def print_field_info(x: ti.template()):
 
 See [Scalar fields](../api/scalar_field.md) for more details.
 
-::: note For sparse fields, the full domain shape will be returned. :::
+::: note
+For sparse fields, the full domain shape will be returned.
+:::
 
 ## Matrix & vector metadata
 
