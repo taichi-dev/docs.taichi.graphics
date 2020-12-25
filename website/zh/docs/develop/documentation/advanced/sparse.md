@@ -8,4 +8,5 @@ If you are interested in sparse computation in Taichi, please read our [paper](h
 
 The legacy source-to-source backend (commit [`dc162e11`](https://github.com/taichi-dev/taichi/tree/dc162e11)) provides full sparse computation functionality. However, since little engineering has been done to make that commit portable (i.e. easy to compile on different platforms), we suggest waiting until the LLVM version of sparse computation is fully implemented.
 
-Sparse computation functionalities with the new LLVM backend will be back online by the end of December 2019. :::
+Sparse computation functionalities with the new LLVM backend will be back online by the end of December 2019.
+:::
