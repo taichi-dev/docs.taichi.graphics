@@ -31,7 +31,9 @@ Issues marked with [\"welcome contribution\"](https://github.com/taichi-dev/taic
 - Debugging is hard. Changesets should be small so that sources of bugs can be easily pinpointed.
 - Unit/integration tests are our friends.
 
-::: note "There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. _The first method is far more difficult_." — [C.A.R. Hoare](https://en.wikipedia.org/wiki/Tony_Hoare) :::
+::: note
+"There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. _The first method is far more difficult_." — [C.A.R. Hoare](https://en.wikipedia.org/wiki/Tony_Hoare)
+:::
 
 One thing to keep in mind is that, Taichi was originally born as an academic research project. This usually means that some parts did not have the luxury to go through a solid design. While we are always trying to improve the code quality, it doesn\'t mean that the project is free from technical debts. Some places may be confusing or overly complicated. Whenever you spot one, you are more than welcome to shoot us a PR! :-)
 
@@ -45,9 +47,13 @@ One thing to keep in mind is that, Taichi was originally born as an academic res
 
 Please base your discussion and feedback on facts, and not personal feelings. It is very important for all of us to maintain a friendly and blame-free community. Some examples:
 
-::: tip Acceptable :-) This design could be confusing to new Taichi users. :::
+::: tip
+Acceptable :-) This design could be confusing to new Taichi users.
+:::
 
-::: danger Not Acceptable This design is terrible. :::
+::: danger
+Not Acceptable This design is terrible.
+:::
 
 ## Making good pull requests
 
@@ -142,7 +148,8 @@ We do appreciate all kinds of contributions, yet we should not expose the title 
 
 - PRs with visible/notable features to the users should be marked with tags starting with **the first letter capitalized**, e.g. `[Metal], [OpenGL], [IR], [Lang], [CLI]`. When releasing a new version, a script (`python/taichi/make_changelog.py`) will generate a changelog with these changes (PR title) highlighted. Therefore it is **important** to make sure the end-users can understand what your PR does, **based on your PR title**.
 - Other PRs (underlying development/intermediate implementation) should use tags with **everything in lowercase letters**: e.g. `[metal], [opengl], [ir], [lang], [cli]`.
-- Because of the way the release changelog is generated, there should be **at most one captialized tag** in a PR title to prevent duplicate PR highlights. For example, `[GUI] [Mac] Support modifier keys` (\#1189) is a bad example, we should use `[gui] [Mac] Support modifier keys in GUI` instead. Please capitalize the tag that is most relevant to the PR. :::
+- Because of the way the release changelog is generated, there should be **at most one captialized tag** in a PR title to prevent duplicate PR highlights. For example, `[GUI] [Mac] Support modifier keys` (\#1189) is a bad example, we should use `[gui] [Mac] Support modifier keys in GUI` instead. Please capitalize the tag that is most relevant to the PR.
+:::
 
 ## C++ and Python standards
 
@@ -164,7 +171,9 @@ When creating a Taichi program using `ti.init(arch=desired_arch, **kwargs)`, pas
 - `print_kernel_llvm_ir_optimized = True`: save the optimized LLVM IR of each kernel.
 - `print_kernel_nvptx = True`: save the emitted NVPTX of each kernel (CUDA only).
 
-::: note Data accessors in Python-scope are implemented as special Taichi kernels. For example, `x[1, 2, 3] = 3` will call the writing accessor kernel of `x`, and `print(y[42])` will call the reading accessor kernel of `y`. :::
+::: note
+Data accessors in Python-scope are implemented as special Taichi kernels. For example, `x[1, 2, 3] = 3` will call the writing accessor kernel of `x`, and `print(y[42])` will call the reading accessor kernel of `y`.
+:::
 
 ## Folder structure
 
@@ -240,7 +249,8 @@ Documentations are put under the folder `docs/`.
 
 On Linux/OS X, use `watch -n 1 ti doc` to continuously build the documentation.
 
-If the OpenGL backend detector keeps creating new windows, execute `export TI_WITH_OPENGL=0` for `ti doc`. :::
+If the OpenGL backend detector keeps creating new windows, execute `export TI_WITH_OPENGL=0` for `ti doc`.
+:::
 
 ## Efficient code navigation across Python/C++
 
