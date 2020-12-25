@@ -106,9 +106,11 @@ def test_log10():
     assert r[None] == ti.approx(2)
 ```
 
-::: warning Simply using `pytest.approx` won't work well here, since it's tolerance won't vary among different Taichi backends. It'll be likely to fail on the OpenGL backend.
+::: warning
+Simply using `pytest.approx` won't work well here, since it's tolerance won't vary among different Taichi backends. It'll be likely to fail on the OpenGL backend.
 
-`ti.approx` also do treatments on boolean types, e.g.: `2 == ti.approx(True)`. :::
+`ti.approx` also do treatments on boolean types, e.g.: `2 == ti.approx(True)`.
+:::
 
 Great on improving stability! But the test is still not good enough, yet.
 
