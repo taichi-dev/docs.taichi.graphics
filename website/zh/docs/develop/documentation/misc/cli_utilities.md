@@ -24,7 +24,9 @@ Sometimes it's convenient to start a Python shell with `import taichi as ti` as 
 
 When you try to report potential bugs in an issue, please consider running `ti diagnose` and offer its output as an attachment. This could help maintainers to learn more about the context and the system information of your environment to make the debugging process more efficient and solve your issue more easily.
 
-::: warning **Before posting it, please review and make sure there's no sensitive information about your data or yourself gets carried in.** :::
+::: warning
+**Before posting it, please review and make sure there's no sensitive information about your data or yourself gets carried in.**
+:::
 
 ## Converting PNGs to video
 
