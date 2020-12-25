@@ -10,7 +10,9 @@ The exported C code is self-contained for portability. Required Taichi runtime f
 
 For example, this allows programmers to distribute Taichi programs in a binary format, by compiling and linking exported C code to their project.
 
-::: warning Currently, this feature is only officially supported on the C backend on Linux. In the future, we will support OS X and Windows. :::
+::: warning
+Currently, this feature is only officially supported on the C backend on Linux. In the future, we will support OS X and Windows.
+:::
 
 ## The workflow of exporting
 
@@ -94,7 +96,8 @@ void Tk_init_c6_0(struct Ti_Context *ti_ctx) {
 
 The generated C source is promised to be C99 compatible.
 
-It should also be functional when compiled using a C++ compiler. :::
+It should also be functional when compiled using a C++ compiler.
+:::
 
 ## Calling the exported kernels
 
