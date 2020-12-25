@@ -8,7 +8,8 @@ python3 -m pip install taichi
 
 ::: note
 
-Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit). :::
+Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit).
+:::
 
 - On Ubuntu 19.04+, please execute `sudo apt install libtinfo5`.
 - On Arch Linux, please execute `yaourt -S ncurses5-compat-libs`.
