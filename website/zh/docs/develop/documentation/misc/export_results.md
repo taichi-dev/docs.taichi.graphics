@@ -72,13 +72,17 @@ print(f'The image has been saved to {filename}')
 - In other words, a field that has shape `(w, h)` or `(w, h, 1)` will be exported as a grayscale image.
 - If you want to export `RGB` or `RGBA` images instead, the input field should have a shape `(w, h, 3)` or `(w, h, 4)` respectively.
 
-::: note All Taichi fields have their own data types, such as `ti.u8` and `ti.f32`. Different data types can lead to different behaviors of `ti.imwrite`. Please check out [GUI system](./gui.md) for more details. :::
+::: note
+All Taichi fields have their own data types, such as `ti.u8` and `ti.f32`. Different data types can lead to different behaviors of `ti.imwrite`. Please check out [GUI system](./gui.md) for more details.
+:::
 
 - Taichi offers other helper functions that read and show images in addition to `ti.imwrite`. They are also demonstrated in [GUI system](./gui.md).
 
 ## Export videos
 
-::: note The video export utilities of Taichi depend on `ffmpeg`. If `ffmpeg` is not installed on your machine, please follow the installation instructions of `ffmpeg` at the end of this page. :::
+::: note
+The video export utilities of Taichi depend on `ffmpeg`. If `ffmpeg` is not installed on your machine, please follow the installation instructions of `ffmpeg` at the end of this page.
+:::
 
 - `ti.VideoManager` can help you export results in `mp4` or `gif` format. For example,
 
