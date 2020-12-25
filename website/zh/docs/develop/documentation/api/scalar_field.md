@@ -15,7 +15,8 @@ Fields could be either dense or sparse, see [Sparse Computation](../advanced/spa
 
 ::: note
 
-We once used the term **tensor** instead of **field**. **Tensor** will no longer be used. :::
+We once used the term **tensor** instead of **field**. **Tensor** will no longer be used.
+:::
 
 ## Declaration
 
@@ -62,7 +63,8 @@ If shape is **not provided** or `None`, the user must manually `place` it afterw
 
 ::: note
 
-Not providing `shape` allows you to _place_ the field in a layout other than the default _dense_, see [Advanced dense layouts](../advanced/layout.md) for more details. :::
+Not providing `shape` allows you to _place_ the field in a layout other than the default _dense_, see [Advanced dense layouts](../advanced/layout.md) for more details.
+:::
 
 ::: warning
 
@@ -129,9 +131,13 @@ This sets the element value at index `2` of 1D field `b` to `5`: :
 
 :::
 
-::: note In Python, x[(exp1, exp2, …, expN)] is equivalent to x[exp1, exp2, …, expN]; the latter is just syntactic sugar for the former. :::
+::: note
+In Python, x[(exp1, exp2, …, expN)] is equivalent to x[exp1, exp2, …, expN]; the latter is just syntactic sugar for the former.
+:::
 
-::: note The returned value can also be `Vector` / `Matrix` if `a` is a vector/matrix field, see [Vectors](./vector.md) for more details. :::
+::: note
+The returned value can also be `Vector` / `Matrix` if `a` is a vector/matrix field, see [Vectors](./vector.md) for more details.
+:::
 
 ## Meta data
 
@@ -218,4 +224,5 @@ return
     y.parent()   # blk2
     y.parent(2)  # blk1
 
-See [Structural nodes (SNodes)](./snode.md) for more details. :::
+See [Structural nodes (SNodes)](./snode.md) for more details.
+:::
