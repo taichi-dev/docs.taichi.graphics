@@ -38,7 +38,9 @@ def inside_taichi_scope():
 
 For now, Taichi-scope `print` supports string, scalar, vector, and matrix expressions as arguments. `print` in Taichi-scope may be a little different from `print` in Python-scope. Please see details below.
 
-::: warning For the **CPU and CUDA backend**, `print` will not work in Graphical Python Shells including IDLE and Jupyter notebook. This is because these backends print the outputs to the console instead of the GUI. Use the **OpenGL or Metal backend** if you wish to use `print` in IDLE / Jupyter. :::
+::: warning
+For the **CPU and CUDA backend**, `print` will not work in Graphical Python Shells including IDLE and Jupyter notebook. This is because these backends print the outputs to the console instead of the GUI. Use the **OpenGL or Metal backend** if you wish to use `print` in IDLE / Jupyter.
+:::
 
 ::: warning
 
@@ -68,9 +70,11 @@ inside kernel
 after sync
 ```
 
-Note that host access or program end will also implicitly invoke `ti.sync()`. :::
+Note that host access or program end will also implicitly invoke `ti.sync()`.
+:::
 
-::: note Note that `print` in Taichi-scope can only receive **comma-separated parameter**. Neither f-string nor formatted string should be used. For example:
+::: note
+Note that `print` in Taichi-scope can only receive **comma-separated parameter**. Neither f-string nor formatted string should be used. For example:
 
 ```python {9-11}
 import taichi as ti
@@ -296,7 +300,9 @@ AssertionError
 
 See? Our exception hook has removed some useless Taichi internal frames from traceback. What's more, although not visible in the doc, the output is **colorful**!
 
-::: note For IPython / Jupyter notebook users, the IPython stack traceback hook will be overriden by the Taichi one when `ti.enable_excepthook()`. :::
+::: note
+For IPython / Jupyter notebook users, the IPython stack traceback hook will be overriden by the Taichi one when `ti.enable_excepthook()`.
+:::
 
 ## Debugging Tips
 
