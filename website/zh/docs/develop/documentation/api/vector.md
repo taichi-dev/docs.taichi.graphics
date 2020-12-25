@@ -42,7 +42,8 @@ For example, this creates a 3-D vector field of the shape of `5x4`: :
 
 ::: note
 
-In Python-scope, `ti.field` declares a scalar field [Scalar fields](./scalar_field.md)), while `ti.Vector.field` declares a vector field. :::
+In Python-scope, `ti.field` declares a scalar field [Scalar fields](./scalar_field.md)), while `ti.Vector.field` declares a vector field.
+:::
 
 ### As a temporary local variable
 
@@ -108,7 +109,8 @@ This extracts the first component of vector `a[6, 3]`: :
 - The indices in the first pair of brackets locate the vector inside the vector fields;
 - The indices in the second pair of brackets locate the scalar element inside the vector.
 
-For 0-D vector fields, indices in the first pair of brackets should be `[None]`. :::
+For 0-D vector fields, indices in the first pair of brackets should be `[None]`.
+:::
 
 ### As a temporary local variable
 
@@ -132,7 +134,8 @@ This sets the second component of `a` to 4: :
 
     a[1] = 4
 
-TODO: add descriptions about `a(i, j)` :::
+TODO: add descriptions about `a(i, j)`
+:::
 
 ### XYZW vector component accessors
 
@@ -140,21 +143,26 @@ We also provide four handy accessors for the first four vector components:
 
 ::: {.attribute} a.x
 
-Same as `a[0]`. :::
+Same as `a[0]`.
+:::
 
 ::: {.attribute} a.y
 
-Same as `a[1]`. :::
+Same as `a[1]`.
+:::
 
 ::: {.attribute} a.z
 
-Same as `a[2]`. :::
+Same as `a[2]`.
+:::
 
 ::: {.attribute} a.w
 
-Same as `a[3]`. :::
+Same as `a[3]`.
+:::
 
-::: {.note} ::: {.title} Note :::
+::: {.note} ::: {.title} Note
+:::
 
 XYZW accessors can be used for both reading and writing:
 
@@ -203,11 +211,13 @@ For example, :
     a = ti.Vector([3, 4])
     a.norm() # sqrt(3*3 + 4*4 + 0) = 5
 
-`a.norm(eps)` is equivalent to `ti.sqrt(a.dot(a) + eps)` :::
+`a.norm(eps)` is equivalent to `ti.sqrt(a.dot(a) + eps)`
+:::
 
 ::: note
 
-To safeguard the operator\'s gradient on zero vectors during differentiable programming, set `eps` to a small, positive value such as `1e-5`. :::
+To safeguard the operator\'s gradient on zero vectors during differentiable programming, set `eps` to a small, positive value such as `1e-5`.
+:::
 
 ::: {.function} a.norm_sqr()
 
@@ -226,7 +236,8 @@ For example, :
     a = ti.Vector([3, 4])
     a.norm_sqr() # 3*3 + 4*4 = 25
 
-`a.norm_sqr()` is equivalent to `a.dot(a)` :::
+`a.norm_sqr()` is equivalent to `a.dot(a)`
+:::
 
 ::: {.function} a.normalized()
 
@@ -245,7 +256,8 @@ For example, :
     a = ti.Vector([3, 4])
     a.normalized() # [3 / 5, 4 / 5]
 
-`a.normalized()` is equivalent to `a / a.norm()`. :::
+`a.normalized()` is equivalent to `a / a.norm()`.
+:::
 
 ::: {.function} a.dot(b)
 
@@ -331,7 +343,8 @@ E.g., :
 
 ::: note
 
-The outer product should not be confused with the cross product (`ti.cross`). For example, `a` and `b` do not have to be 2- or 3-component vectors for this function. :::
+The outer product should not be confused with the cross product (`ti.cross`). For example, `a` and `b` do not have to be 2- or 3-component vectors for this function.
+:::
 
 ::: {.function} a.cast(dt)
 
@@ -356,11 +369,13 @@ E.g., :
     a = ti.Vector([1.6, 2.3])
     a.cast(ti.i32) # [2, 3]
 
-See `type`{.interpreted-text role="ref"} for more details. :::
+See `type`{.interpreted-text role="ref"} for more details.
+:::
 
 ::: note
 
-Vectors are special matrices with only 1 column. In fact, `ti.Vector` is just an alias of `ti.Matrix`. :::
+Vectors are special matrices with only 1 column. In fact, `ti.Vector` is just an alias of `ti.Matrix`.
+:::
 
 ## Metadata
 
