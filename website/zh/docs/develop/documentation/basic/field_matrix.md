@@ -2,7 +2,9 @@
 
 Fields are global variables provided by Taichi. Fields can be either sparse or dense. An element of a field can be either a scalar or a vector/matrix.
 
-::: note Matrices can be used as field elements, so you can have fields with each element being a matrix. :::
+::: note
+Matrices can be used as field elements, so you can have fields with each element being a matrix.
+:::
 
 ## Scalar fields
 
@@ -37,6 +39,8 @@ Suppose you have a `128 x 64` field called `A`, each element containing a `3 x 2
 
 For performance reasons matrix operations will be unrolled, therefore we suggest using only small matrices. For example, `2x1`, `3x3`, `4x4` matrices are fine, yet `32x6` is probably too big as a matrix size.
 
-::: warning Due to the unrolling mechanisms, operating on large matrices (e.g. `32x128`) can lead to very long compilation time and low performance. :::
+::: warning
+Due to the unrolling mechanisms, operating on large matrices (e.g. `32x128`) can lead to very long compilation time and low performance.
+:::
 
 If you have a dimension that is too large (e.g. `64`), it\'s better to declare a field of size `64`. E.g., instead of declaring `ti.Matrix.field(64, 32, dtype=ti.f32, shape=(3, 2))`, declare `ti.Matrix.field(3, 2, dtype=ti.f32, shape=(64, 32))`. Try to put large dimensions to fields instead of matrices.
