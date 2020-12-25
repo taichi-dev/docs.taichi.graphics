@@ -56,13 +56,17 @@ add(y, 42)
 
 will lead to a new instantiation of **add**.
 
-::: note **Template signatures** are what distinguish different instantiations of a kernel template. The signature of `add(x, 42)` is `(x, ti.i32)`, which is the same as that of `add(x, 1)`. Therefore, the latter can reuse the previously compiled binary. The signature of `add(y, 42)` is `(y, ti.i32)`, a different value from the previous signature, hence a new kernel will be instantiated and compiled. :::
+::: note
+**Template signatures** are what distinguish different instantiations of a kernel template. The signature of `add(x, 42)` is `(x, ti.i32)`, which is the same as that of `add(x, 1)`. Therefore, the latter can reuse the previously compiled binary. The signature of `add(y, 42)` is `(y, ti.i32)`, a different value from the previous signature, hence a new kernel will be instantiated and compiled.
+:::
 
-::: note Many basic operations in the Taichi standard library are implemented using Taichi kernels using metaprogramming tricks. Invoking them will incur **implicit kernel instantiations**.
+::: note
+Many basic operations in the Taichi standard library are implemented using Taichi kernels using metaprogramming tricks. Invoking them will incur **implicit kernel instantiations**.
 
 Examples include `x.to_numpy()` and `y.from_torch(torch_tensor)`. When you invoke these functions, you will see kernel instantiations, as Taichi kernels will be generated to offload the hard work to multiple CPU cores/GPUs.
 
-As mentioned before, the second time you call the same operation, the cached compiled kernel will be reused and no further compilation is needed. :::
+As mentioned before, the second time you call the same operation, the cached compiled kernel will be reused and no further compilation is needed.
+:::
 
 ## Code transformation and optimizations
 
