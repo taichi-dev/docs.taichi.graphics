@@ -1,17 +1,17 @@
-# Code of conduct
+# 行为准则
 
-### Pragmatic
+### 务实
 
-Practically solving problems is usually our development goal. Simple, readable, and maintainable solutions are often optimal in practice.
+不炫技，脚踏实地解决问题才是真； 简单、易读、易维护的方案往往是最优解。
 
-### Focused
+### 专注
 
-Quality > quantity. Please try to behave professionally and exhibit attention to details. Finishing what you started earns you _trust_ and _reputation_ in the community.
+质量>数量， 认真做好每一件事； 注重细节，行为专业，善始善终。
 
-### Empathetic
+### 同理心
 
-Most Taichi contributors have their main jobs. Please be considerate of others, who may live in different time zones with their own lifestyles. Please think of code reviews as a limited resource and use it wisely: the more concise and polished a PR is, the sooner it will get reviewed and merged.
+大多数太极贡献者都有自己的工作。 请设身处境，多替他人着想； 珍惜社区资源，做好准备再提出请求。
 
-### Modest
+### 谦逊
 
-Communicate politely and constructively. Please help us construct a respectful, blame-free, and inclusive community.
+保持始终学习的心态；礼貌沟通，建设性讨论， 尊重每一位社区成员。
