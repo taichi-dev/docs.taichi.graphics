@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-# Frequently Asked Questions
+# 常见问题
 
 ## **Q:** Installing Taichi with `pip`, complains `package not found`.
 
