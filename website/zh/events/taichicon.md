@@ -84,5 +84,5 @@ TaichiCon 每轮发言的主体时间为10分钟。 每次发言后，将会是5
 - 将视频上传到 Youtube 和 Bilibili；
 - 收集发言者 PDF 格式的幻灯片；
   - 使用每轮发言的首页幻灯片截图制作一张概览图；
-- 按照第0届 TaichiCon 的汇总形式更新 [ TaichiCon ](https://github.com/taichi-dev/taichicon) 仓库。
+- 按照第0届 TaichiCon 的汇总形式更新 [TaichiCon](https://github.com/taichi-dev/taichicon) 仓库。
 - 如果发现有任何能够改善 TaichiCon 工作流程的环节，请更新本页文档。
