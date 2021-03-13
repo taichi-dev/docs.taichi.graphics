@@ -178,13 +178,13 @@ You could also insert tab-based code groups:
 <code-group>
 <code-block title="Python"></p>
 
-<pre><code class="python" spaces="0" spaces-closing-marker="0" marker="```" spaces-after-opening-marker="0" line-breaks-before="1">print("Hello World")
+<pre><code class="python" spaces="0" spaces-closing-marker="0" marker="```" spaces-after-opening-marker="0">print("Hello World")
 </code></pre>
 </code-block>
 
 <code-block title="C++">&lt;/p>
 
-&lt;pre>&lt;code class="cpp" spaces="0" spaces-closing-marker="0" marker="```" spaces-after-opening-marker="0" line-breaks-before="1">#include&lt;iostream&gt;
+&lt;pre>&lt;code class="cpp" spaces="0" spaces-closing-marker="0" marker="```" spaces-after-opening-marker="0">#include&lt;iostream&gt;
 
 using namespace std;
 

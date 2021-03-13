@@ -2,45 +2,45 @@
 home: true
 heroText:
 heroImage: /logo_large.png
-tagline: Graphics programming for everyone
-actionText: Documentation →
-actionLink: /docs/develop/documentation/overview/overview/
+tagline: 让图形编程惠及每一人
+actionText: 文档 →
+actionLink: /zh/docs/develop/documentation/overview/overview/
 features:
-  - 
-    title: Productive
-    details: As a language embedded in Python, Taichi has a Python-style syntax which is extremely easy to learn. Research shows Taichi programs are 10x shorter compared to equivalent C++/CUDA code while achieving higher performance.
-  - 
-    title: Portable
-    details: Without any code modification, a Taichi program can run on various platforms, including x64 & ARM CPUs, GPUs, web browsers and smartphones. Taichi supports Windows, Linux, and OS X.
-  - 
-    title: Performant
-    details: Taichi's Just-In-Time compiler offloads compute-intensive tasks to multi-core CPUs and massively parallel GPUs. The Taichi language design allows effective performance optimizations by the Taichi compiler.
-footer: MIT License | The Taichi Developers
+  -
+    title: 生产力
+    details: Taichi嵌入在Python中，其语法与Python极其相近，因此十分容易学习。 研究表明Taichi程序比等价的C++/CUDA代码短10倍，并能轻松达到更高性能。
+  -
+    title: 可移植
+    details: 无需改动任何代码，Taichi程序就可以在多种平台上运行，包括x64 & ARM CPU、GPU、浏览器、智能手机等。 Taichi支持Windows、Linux、OS X等操作系统。
+  -
+    title: 高性能
+    details: Taichi的即时编译系统能利用多核CPU与大规模并行GPU。 Taichi的语言设计使得其编译器能够进行有效的性能优化。
+footer: MIT 许可证 | Taichi 开发者团队
 ---
 
-::: danger REMINDER
-<Badge text="beta" type="warning"/> This docsite is still under construction 🚧 and the content is subject to change. For detailed instructions, especially the API docs of Taichi and the Chinese version of the Taichi documentation, please visit our old documentation site on [Read the Docs](https://taichi.readthedocs.io/) and [中文文档](https://taichi.readthedocs.io/zh_CN/latest/)
+::: danger友情提示 <Badge text="beta" type="warning"/>
+本网站还处于持续施工 🚧 中，这里的内容极有可能发生改变。 访问我们现有的文档站[Read the Docs](https://taichi.readthedocs.io/)来查看详细的，特别是 API 和[中文文档](https://taichi.readthedocs.io/zh_CN/latest/) 的相关内容。
 :::
 
-## Hello, Taichi!
+## 你好，Taichi！
 
 <Index-Branding/>
 
-::: slot install Taichi can be easily installed via `pip`:
+::: slot install Taichi 可以用`pip`安装:
 
 ```
 python3 -m pip install taichi
 ```
 
-(Please make sure you are using 64-bit Python 3.6/3.7/3.8.)
+(请确保您在使用 64 位的 Python 3.6/3.7/3.8.)
 
-Download [fractal.py](https://raw.githubusercontent.com/taichi-dev/taichi/master/examples/fractal.py) and run it with
+下载 [fractal.py](https://raw.githubusercontent.com/taichi-dev/taichi/master/examples/fractal.py) 并使用 Python 运行：
 
 ```
 python3 fractal.py
 ```
 
-You will see the animation below:
+您将会看到如下效果：
 :::
 
 ::: slot fractal

@@ -1,85 +1,85 @@
-# Structure
+# 社区结构
 
-The developer community consists of four roles:
+开发者社区由以下四种角色组成：
 
 - Active contributor
 - Reviewer
 - Committer
 - Technical Steering Committee (TSC) members
 
-Our developer architecture builds on two standards, **trust** and **contribution**. Contributors who finish what they have promised will build trust and reputation in the community. See our code of conduct for more details.
+开发者结构建立在 **信任** 和 **贡献** 这两项准则之上。 在社区中，完成既定承诺事项的开发者将会赢得信任与声誉。 更多细节信息请参阅社区行为准则。
 
 ## Active contributor
 
-Everyone who has contributed at least one PR since January 1, 2020 is an active developer.
+自 2020 年 1 月 1 日开始，至少贡献一个 PR 的开发者为 active contributor。
 
-### Rights of an active contributor
+### Active contributor 的权利
 
-- Have names displayed on the release containing the PR, and the Taichi weekly newsletter
+- 在相关的新版本发布公告以及太极周报中提名
 
 ## Reviewer
 
-Reviewers ensure code quality and correctness.
+Reviewer 保障代码的质量和准确性。
 
-### Becoming a reviewer
+### 如何成为 reviewer
 
-- Contributed at least 5 PRs
-- Demonstrate good communication skills
-- Get nominated by one of the TSC members
+- 至少贡献 5 个 PR
+- 具备优秀的沟通技能
+- 获得至少一个 TSC 成员提名
 
-### Duties of a reviewer
+### Reviewer 的义务
 
-- Ensure PR correctness by participating in the reviewing process
+- 参加 code review 流程以确保 PR 正确性
 
-### Rights of a reviewer
+### Reviewer 的权利
 
-- **Triage** access to the [main Taichi repository](https://github.com/taichi-dev/taichi)
-- Commenting on and approving PRs
-- Join the [`taichi-dev`](https://github.com/orgs/taichi-dev/people) organization
+- [太极主仓库](https://github.com/taichi-dev/taichi)的 **Triage** 权限
+- Review 以及 approve PR
+- 加入 [`taichi-dev`](https://github.com/orgs/taichi-dev/people) 组织
 
 ## Committer
 
-Committers are trust-worthy contributors who have made notable contributions to the project.
+Committer 是持续为项目作出显著贡献的开发者。他们精通 Taichi 中某些模块，并可以独立主导新 feature 或大型重构等任务。
 
-### Becoming a committer
+### 如何成为 committer
 
-- Contribute at least 10 PRs
-- Write at least 10 quality PR reviews
-- Get nominated by one of the TSC members
+- 至少贡献 10 个 PR
+- 至少发表 10 条高质量的 PR review
+- 获得至少一个 TSC 成员提名
 
-### Duties of committers
+### Committer 的义务
 
-- Merge PRs with at least one approval by a committer
+- 合并被至少一位 committer 批准通过的 PR
 
-### Rights of committers
+### Committer 的权利
 
-- **Write** access to the [main Taichi repository](https://github.com/taichi-dev/taichi)
+- [太极主仓库](https://github.com/taichi-dev/taichi)的 **Write** 权限
 
 ## Technical Steering Committee (TSC) members
 
-TSC members are developers who have established the highest level of trust. They serve as the designer of Taichi's future and judges to resolve disputes.
+TSC 成员是被社区高度信任的开发者，他们负责规划社区的未来，维持秩序、裁决争端。 TSC 成员是被社区高度信任的开发者，他们负责规划社区的未来，维持秩序、裁决争端。
 
-### Becoming a TSC member
+### 如何成为 TSC 成员
 
-- Adhere well to the code of conduct
-- Deeply understand the whole Taichi system
-- Contribute significantly to the Taichi project
-- Show a great sense of responsibility
-- Get nominated by the BDFL
+- 高度遵守社区行为准则
+- 深刻理解整个太极系统
+- 对太极项目作出杰出贡献
+- 具备高度责任感
+- 获得 BDFL 提名
 
-### Rights of TSC members
+### TSC 成员权利
 
-- **Admin** access to the [main Taichi repository](https://github.com/taichi-dev/taichi)
-- Make decisions on public API changes
-- Participate in software versioning and releasing
+- [太极主仓库](https://github.com/taichi-dev/taichi)的 **Admin** 权限
+- 决定公共 API 变更事项
+- 参与软件版本管理与版本发布
 
-### Duties of TSC members
+### TSC 成员义务
 
-- Enforce community code of conduct
-- Design and improve the development workflows
-- Promote and mentor contributors
-- Refactor community structure, when necessary, to better suit its growing scale
+- 确保社区行为准则得以执行
+- 设计并提升开发工作流程
+- 提拔及指导贡献者
+- 在必要时重构社区结构，以适应增长规模
 
-### Benevolent dictator for life (BDFL)
+### Benevolent dictator for life (BDFL, 终身仁慈独裁者)
 
-The BDFL is a special TSC member who retains the final say in disputes or arguments, minor or major, within the community.
+BDFL 是 TSC 的特殊成员，该成员对社区内或大或小的分歧或争端保留最终决定权。
