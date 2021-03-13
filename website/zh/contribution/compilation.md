@@ -1,18 +1,18 @@
-# Life of a Taichi kernel
+# Taichi 内核的生命周期
 
-Sometimes it is helpful to understand the life cycle of a Taichi kernel. In short, compilation will only happen on the first invocation of an instance of a kernel.
+有时了解 Taichi 内核的生命周期会有所帮助。 简而言之，编译只会在第一次调用内核实例时发生。
 
-The life cycle of a Taichi kernel has the following stages:
+Taichi 内核的生命周期有如下几个阶段：
 
-- Kernel registration
-- Template instantiation and caching
-- Python AST transforms
-- Taichi IR compilation, optimization, and executable generation
-- Launching
+- 内核注册
+- 模板实例化和缓存
+- Python 抽象语法树转换(AST: \[Abstact Syntax Tree\](https://en.wikipedia.org/wiki/Abstract_syntax_tree))
+- Taichi 中间表示代码编译，优化和可执行文件生成
+- 启动
 
 ![image](https://raw.githubusercontent.com/taichi-dev/public_files/fa03e63ca4e161318c8aa9a5db7f4a825604df88/taichi/life_of_kernel.png)
 
-Let's consider the following simple kernel:
+让我们考虑以下简单内核：
 
 ```python
 @ti.kernel
@@ -21,43 +21,43 @@ def add(field: ti.template(), delta: ti.i32):
         field[i] += delta
 ```
 
-We allocate two 1D fields to simplify discussion:
+我们分配了两个1维张量以简化讨论：
 
 ```python
 x = ti.field(dtype=ti.f32, shape=128)
 y = ti.field(dtype=ti.f32, shape=16)
 ```
 
-## Kernel registration
+## 内核注册
 
-When the `ti.kernel` decorator is executed, a kernel named `add` is registered. Specifically, the Python Abstract Syntax Tree (AST) of the `add` function will be memorized. No compilation will happen until the first invocation of `add`.
+当执行 `ti.kernel` 装饰器时，将注册一个名为 `add` 的内核。 具体来说，Taichi将记住`add`函数的Python抽象语法树(AST)。 在第一次调用 `add` 之前不会进行编译。
 
-## Template instantiation and caching
+## 模板实例化和缓存
 
 ```python
 add(x, 42)
 ```
 
-When `add` is called for the first time, the Taichi frontend compiler will instantiate the kernel.
+第一次调用 `add` 时，Taichi前端编译器将实例化内核。
 
-When you have a second call with the same **template signature** (explained later), e.g.,
+当你以相同的 **模板签名**（稍后说明）进行第二次调用时，例如，
 
 ```python
 add(x, 1)
 ```
 
-Taichi will directly reuse the previously compiled binary.
+Taichi将直接重复使用之前编译的二进制文件。
 
-Arguments hinted with `ti.template()` are template arguments, and will incur template instantiation. For example,
+用 `ti.template()` 提示的参数是模板参数，将引起模板实例化。 例如，
 
 ```python
 add(y, 42)
 ```
 
-will lead to a new instantiation of **add**.
+将导致 **add** 的新实例化。
 
 ::: note
-**Template signatures** are what distinguish different instantiations of a kernel template. The signature of `add(x, 42)` is `(x, ti.i32)`, which is the same as that of `add(x, 1)`. Therefore, the latter can reuse the previously compiled binary. The signature of `add(y, 42)` is `(y, ti.i32)`, a different value from the previous signature, hence a new kernel will be instantiated and compiled.
+**模板签名** 可以区分内核模板的不同实例。 The signature of `add(x, 42)` is `(x, ti.i32)`, which is the same as that of `add(x, 1)`. Therefore, the latter can reuse the previously compiled binary. The signature of `add(y, 42)` is `(y, ti.i32)`, a different value from the previous signature, hence a new kernel will be instantiated and compiled.
 :::
 
 ::: note
