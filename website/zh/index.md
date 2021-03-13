@@ -6,20 +6,20 @@ tagline: 让图形编程惠及每一人
 actionText: 文档 →
 actionLink: /zh/docs/develop/documentation/overview/overview/
 features:
-  - 
+  -
     title: 生产力
     details: Taichi嵌入在Python中，其语法与Python极其相近，因此十分容易学习。 研究表明Taichi程序比等价的C++/CUDA代码短10倍，并能轻松达到更高性能。
-  - 
+  -
     title: 可移植
     details: 无需改动任何代码，Taichi程序就可以在多种平台上运行，包括x64 & ARM CPU、GPU、浏览器、智能手机等。 Taichi支持Windows、Linux、OS X等操作系统。
-  - 
+  -
     title: 高性能
     details: Taichi的即时编译系统能利用多核CPU与大规模并行GPU。 Taichi的语言设计使得其编译器能够进行有效的性能优化。
 footer: MIT 许可证 | Taichi 开发者团队
 ---
 
-::: danger
-友情提示 <Badge text="beta" type="warning"/> 本网站还处于持续施工 🚧 中，这里的内容极有可能发生改变。 访问我们现有的文档站[Read the Docs](https://taichi.readthedocs.io/)来查看详细的，特别是 API 和[中文文档](https://taichi.readthedocs.io/zh_CN/latest/) 的相关内容。
+::: danger友情提示 <Badge text="beta" type="warning"/>
+本网站还处于持续施工 🚧 中，这里的内容极有可能发生改变。 访问我们现有的文档站[Read the Docs](https://taichi.readthedocs.io/)来查看详细的，特别是 API 和[中文文档](https://taichi.readthedocs.io/zh_CN/latest/) 的相关内容。
 :::
 
 ## 你好，Taichi！
