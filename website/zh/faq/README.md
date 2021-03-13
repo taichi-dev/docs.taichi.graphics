@@ -12,9 +12,9 @@ sidebar: auto
 
 ** A：** 没有，但你可以使用 `math.pi` 或 `numpy.pi` 代替。 Taichi能够在 JIT 期间处理这些常量，因此内核不会承担运行时成本。
 
-## ** Q：** 如何 **强制** 串行执行最外层的循环，即 **不并行化**？
+## **Q：** 如何 **强制** 串行执行最外层的循环，即 **不并行化**？
 
-** A：** 试试这个技巧：
+**A：** 试试这个技巧：
 
 ```python {1}
 for _ in range(1):  # I'm the outer-most loop!
@@ -22,9 +22,9 @@ for _ in range(1):  # I'm the outer-most loop!
         ...
 ```
 
-## ** Q：** 怎样才能最方便地将图像/纹理加载到 Taichi 张量中？
+## **Q：** 怎样才能最方便地将图像/纹理加载到 Taichi 张量中？
 
-** A：** 只需使用 `tensor.from_numpy(ti.imread('filename.png'))` 即可。
+**A：** 只需使用 `tensor.from_numpy(ti.imread('filename.png'))` 即可。
 
 ## ** Q：** Taichi能否像 </strong>matplotlib</code> 那样和 **其他 Python 包** 合作呢？
 
