@@ -4,17 +4,17 @@ sidebar: auto
 
 # 常见问题
 
-## **Q:** Installing Taichi with `pip`, complains `package not found`.
+## **Q：** 用 `pip` 安装 Taichi 时，报错 `package not found` 。
 
-**A:** Is your Python version \>= 3.6, and 64-bit? See [Troubleshooting](../documentation/overview/install.md#troubleshooting).
+** A：** 你的 Python 版本是否 >= 3.6 并且是 64 位？ 请参阅[ Troubleshooting ](../documentation/overview/install.md#troubleshooting)。
 
-## **Q:** Do we have something like `ti.pi`?
+## ** Q：** 我们有提供像 `ti.pi` 之类的常量吗？
 
-**A:** No, but you may use `math.pi` or `numpy.pi` instead. Taichi is able to bake in these constants during JIT, so your kernels incur no runtime cost.
+** A：** 没有，但你可以使用 `math.pi` 或 `numpy.pi` 代替。 Taichi能够在 JIT 期间处理这些常量，因此内核不会承担运行时成本。
 
-## **Q:** How do I **force** an outermost loop to be serial, i.e. **not parallelized**?
+## ** Q：** 如何 **强制** 串行执行最外层的循环，即 **不并行化**？
 
-**A:** Try this trick:
+** A：** 试试这个技巧：
 
 ```python {1}
 for _ in range(1):  # I'm the outer-most loop!
