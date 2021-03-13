@@ -30,23 +30,23 @@ for _ in range(1):  # I'm the outer-most loop!
 
 **A：** 可以，只要那个_包_提供 `numpy` 接口，请参阅[ other_python_packages ](../documentation/overview/hello.md#interacting-with-other-python-packages)。
 
-## ** Q：** 我们可以添加一些诸如 `ti.smoothstep` 或 `ti.vec3` 之类的便捷函数吗？
+## **Q：** 我们可以添加一些诸如 `ti.smoothstep` 或 `ti.vec3` 之类的便捷函数吗？
 
-** A：** 不必要，因为我们在扩展库 [ Taichi GLSL ](https://taichi-glsl.readthedocs.io) 中已经进行了提供，请使用以下命令安装：
+**A：** 不必要，因为我们在扩展库 [ Taichi GLSL ](https://taichi-glsl.readthedocs.io) 中已经进行了提供，请使用以下命令安装：
 
 ```bash
 python -m pip install taichi_glsl
 ```
 
-## ** Q：** 如何不用自己编写光线跟踪，就能 **渲染出 3D 结果**？
+## **Q：** 如何不用自己编写光线跟踪，就能 **渲染出 3D 结果**？
 
-** A：** 你可以使用[ export_ply_files ](../documentation/misc/export_results.md#export-ply-files) 导出模型，接着就可以在 Houdini 或 Blender 中查看了。
+**A：** 你可以使用[ export_ply_files ](../documentation/misc/export_results.md#export-ply-files) 导出模型，接着就可以在 Houdini 或 Blender 中查看了。
 
 ::: tip
 或者使用扩展库 [Taichi THREE](https://github.com/taichi-dev/taichi_glsl) 来渲染图像并实时更新到 GUI。
 :::
 
-## ** Q：** 如何声明具有 **动态长度**的张量？
+## **Q：** 如何声明具有 **动态长度**的张量？
 
 **A：** 你想要的可能是 `dynamic` SNode，这是一种稀疏张量，详见 [dynamic](../documentation/api/snode.md#working-with-dynamic-snodes)。
 
