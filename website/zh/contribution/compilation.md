@@ -10,7 +10,7 @@ Taichi 内核的生命周期有如下几个阶段：
 - Taichi 中间表示代码编译，优化和可执行文件生成
 - 启动
 
-![image](https://raw.githubusercontent.com/taichi-dev/public_files/fa03e63ca4e161318c8aa9a5db7f4a825604df88/taichi/life_of_kernel.png)
+![图像](https://raw.githubusercontent.com/taichi-dev/public_files/fa03e63ca4e161318c8aa9a5db7f4a825604df88/taichi/life_of_kernel.png)
 
 让我们考虑以下简单内核：
 
@@ -57,36 +57,36 @@ add(y, 42)
 将导致 **add** 的新实例化。
 
 ::: note
-**模板签名** 可以区分内核模板的不同实例。 The signature of `add(x, 42)` is `(x, ti.i32)`, which is the same as that of `add(x, 1)`. Therefore, the latter can reuse the previously compiled binary. The signature of `add(y, 42)` is `(y, ti.i32)`, a different value from the previous signature, hence a new kernel will be instantiated and compiled.
+**模板签名** 可以区分内核模板的不同实例。 `add(x, 42)` 的签名是 `(x, ti.i32)` ，这与 `add(x, 1)` 的签名相同。 因此，后者可以重用之前编译的二进制文件。 `add(y, 42)`的签名是`(y, ti.i32)`，与之前 x 的签名不同，因此一个新的内核将被实例化和编译。
 :::
 
 ::: note
-Many basic operations in the Taichi standard library are implemented using Taichi kernels using metaprogramming tricks. Invoking them will incur **implicit kernel instantiations**.
+Taichi 标准库中的许多基本操作都是使用 Taichi 内核和元编程技巧实现的。 调用它们将导致**隐式内核实例化**。
 
-Examples include `x.to_numpy()` and `y.from_torch(torch_tensor)`. When you invoke these functions, you will see kernel instantiations, as Taichi kernels will be generated to offload the hard work to multiple CPU cores/GPUs.
+示例包括 `x.to_numpy()` 和 `y.from_torch(torch_tensor)`。 调用这些函数时，你将看到内核实例化，因为Taichi内核们将被生成，以来把繁重的工作分流给多个CPU内核/ GPU。
 
-As mentioned before, the second time you call the same operation, the cached compiled kernel will be reused and no further compilation is needed.
+如前所述，第二次调用相同的操作时，缓存的已编译内核将被重用，并且不需要进一步的编译。
 :::
 
-## Code transformation and optimizations
+## 代码转换和优化
 
-When a new instantiation happens, the Taichi frontend compiler (i.e., the `ASTTransformer` Python class) will transform the kernel body AST into a Python script, which, when executed, emits a Taichi frontend AST. Basically, some patches are applied to the Python AST so that the Taichi frontend can recognize it.
+当一个新的实例化发生时，Taichi 的前端编译器（即 Python 类 `ASTTransformer` ）将把内核函数体的 AST 转换为 Python 脚本，当该脚本执行时会输出一个 Taichi 前端 AST。 大体上讲，由于应用在 Python AST 上的一些补丁，使得 Taichi 前端可以识别它。
 
-The Taichi AST lowering pass translates Taichi frontend IR into hierarchical static single assignment (SSA) IR, which allows a series of further IR passes to happen, such as
+AST 的降阶过程 (lowering pass) 会将前端的中间表示代码转换为分层静态单任务 (SSA: \[Static Single Assignment\](https://en. wikipedia. org/wiki/Static_single_assignment_form) 的中间表示代码，从而允许一系列过程更进一步地处理中间表示代码，例如
 
-- Loop vectorization
-- Type inference and checking
-- General simplifications such as common subexpression elimination (CSE), dead instruction elimination (DIE), constant folding, and store forwarding
-- Access lowering
-- Data access optimizations
-- Reverse-mode automatic differentiation (if using differentiable programming)
-- Parallelization and offloading
-- Atomic operation demotion
+- 循环矢量化
+- 类型推断和检查
+- 一般简化，例如通用子表达式消除(CSE)，无效指令消除(DIE)，常数折叠和存储转发
+- 降低访问权限
+- 数据访问优化
+- 反向模式自动微分（如果使用微分编程）
+- 并行化和卸载
+- 原子操作降级
 
-## The just-in-time (JIT) compilation engine
+## 即时（JIT）编译引擎
 
-Finally, the optimized SSA IR is fed into backend compilers such as LLVM or Apple Metal/OpenGL shader compilers. The backend compilers then generate high-performance executable CPU/GPU programs.
+最后，优化后的 SSA IR 被输入后端编译器，如 LLVM 或 Apple Metal/OpenGL 着色器编译器。 然后后端编译器生成高性能可执行的 CPU/GPU 程序。
 
-## Kernel launching
+## 内核启动
 
-Taichi kernels will be ultimately launched as multi-threaded CPU tasks or GPU kernels.
+Taichi 内核最终将作为多线程 CPU 任务或 CUDA 内核启动。
