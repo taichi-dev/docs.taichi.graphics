@@ -103,47 +103,47 @@ Taichi 是一门面向数据的程序设计语言，其中（稠密、稀疏）�
 
 计算发生在 Taichi 的 **内核(kernel)**和**函数(function)** 中。
 
-Taichi **kernels** are defined with the decorator `@ti.kernel`. They can be called from Python to perform computation. Kernel arguments must be type-hinted (if any).
+我们使用`@ti.kernel`来定义Taichi 的**内核**。 内核可被从Python调用来进行计算。 内核如果有参数的话，则参数必须显式指定类型。
 
-Taichi **functions** are defined with the decorator `@ti.func`. They can be called by Taichi kernels or other Taichi functions.
+你应该使用关键字 `@ti.func` 来进行定义Taichi 的 **函数**。 他们可以被 Taichi 内核和其他 Taichi 函数调用。
 
-See [syntax](../basic/syntax.md) for more details about Taichi kernels and functions.
+在 [ 语法](../basic/syntax.md) 这一章节获得更多有关Taichi内核与函数的细节。
 
-The language used in Taichi kernels and functions looks exactly like Python, yet the Taichi frontend compiler converts it into a language that is **compiled, statically-typed, lexically-scoped, parallel and differentiable**.
+Taichi 内核与函数中所用的语法，看起来和Python的语法很像，然而 Taichi 的前端编译器会将其转换为**编译型，静态类型，有词法作用域，并行执行且可微分**的语言。
 
 ::: note
 
-**Taichi-scopes v.s. Python-scopes**:
+**Taichi 作用域与 Python 作用域**：
 
-Everything decorated with `@ti.kernel` and `@ti.func` is in Taichi-scope and hence will be compiled by the Taichi compiler.
+任何被 `@ti.kernel` 和 `@ti.func` 修饰的函数体都处于Taichi 作用域中，这些代码会由 Taichi 编译器编译。
 
-Everything else is in Python-scope. They are simply Python native code.
+而在 Taichi 作用域之外的代码就都处于 Python 作用域。 它们是单纯的Python 代码。
 :::
 
 ::: warning
 
-Taichi kernels must be called from the Python-scope. Taichi functions must be called from the Taichi-scope.
+Taichi 内核只有在 Python 作用域中才能被调用。 Taichi 函数只有在 Taichi 作用域中才能被调用。
 :::
 
 ::: note
 
-For those who come from the world of CUDA, `ti.func` corresponds to `__device__` while `ti.kernel` corresponds to `__global__`.
+如果用 CUDA 做类比的话，`ti.func`就像是`__device__`，而`ti.kernel`就像是`__global__`。
 :::
 
 ::: warning
 
-Nested kernels are **not supported**.
+Taichi**不支持**嵌套的内核。
 
-Nested functions are **supported**.
+Taichi**支持**嵌套的函数。
 
-Recursive functions are **not supported for now**.
+Taichi**目前暂时不支持**递归的函数。
 :::
 
-## Parallel for-loops
+## 并行执行的for循环
 
-For loops at the outermost scope in a Taichi kernel is **automatically parallelized**. For loops can have two forms, i.e. _range-for loops_ and _struct-for loops_.
+最外层作用域的 for 循环是被 **自动并行执行** 的。 Taichi 的 for 循环具有两种形式，_区间 for 循环_，和 _结构for 循环_。
 
-**Range-for loops** are no different from Python for loops, except that it will be parallelized when used at the outermost scope. Range-for loops can be nested.
+**区间 for 循环**和普通的 Python for 循环没多大区别，只是 Taichi 最外层的 for 会并行执行而已。 区间 for 循环可以嵌套。
 
 ```python {3,7,14-15}
 @ti.kernel
@@ -152,32 +152,32 @@ def fill():
         x[i] += i
 
         s = 0
-        for j in range(5): # Serialized in each parallel thread
+        for j in range(5): # 在每个并行的线程中顺序执行
             s += j
 
         y[i] = s
 
 @ti.kernel
 def fill_3d():
-    # Parallelized for all 3 <= i < 8, 1 <= j < 6, 0 <= k < 9
+    # 在区间 3 <= i < 8, 1 <= j < 6, 0 <= k < 9 上展开并行
     for i, j, k in ti.ndrange((3, 8), (1, 6), 9):
         x[i, j, k] = i + j + k
 ```
 
 ::: note
 
-It is the loop **at the outermost scope** that gets parallelized, not the outermost loop.
+是最外层 **作用域** 的循环并行执行，而不是最外层的循环。
 
 ```python {3,9}
 @ti.kernel
 def foo():
-    for i in range(10): # Parallelized :-)
+    for i in range(10): # 并行 :-)
         ...
 
 @ti.kernel
 def bar(k: ti.i32):
     if k > 42:
-        for i in range(10): # Serial :-(
+        for i in range(10): # 串行 :-(
             ...
 ```
 
