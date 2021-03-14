@@ -1,31 +1,31 @@
-# Contribution guidelines
+# 开发与贡献指南
 
-First of all, thank you for contributing! We welcome contributions of all forms, including but not limited to
+首先，感谢你的参与和贡献！ 我们欢迎一切形式的贡献，包括但不限于
 
-- Bug fixes
-- Proposing and implementing new features
-- Documentation improvement and translations (e.g. [Simplified Chinese](https://github.com/taichi-dev/taichi-docs-zh-cn))
-- Improved error messages that are more user-friendly
-- New test cases
-- New examples
-- Compiler performance patches
-- Blog posts and tutorials on Taichi
-- Participation in the [Taichi forum](https://forum.taichi.graphics/)
-- Introduce Taichi to your friends or simply star [the project](https://github.com/taichi-dev/taichi).
-- Typo fixes in the documentation, code or comments (please directly make a pull request for minor issues like these)
+- 修复 Bug
+- 提出和实现新功能
+- 对本文档进行改进和翻译（欢迎前往\[Taichi 中文文档\](https://crowdin.com/project/taichi-programming-language/zh-CN#)）
+- 完善错误时的提示，使之对用户更友好
+- 提交新的测试用例
+- 提交新的样例程序
+- 提交编译器性能补丁
+- 发布有关 Taichi 的博客文章和教程
+- 加入我们的 [Taichi 论坛](https://forum.taichi.graphics/)
+- 向你的朋友们介绍 Taichi 或者直接在 GitHub 上星标[Taichi项目](https://github.com/taichi-dev/taichi)。
+- 修复文档，代码，注释中的拼写错误（像这样的小问题请直接创建一个 PR 而不必开一个issue）
 
-## How to contribute bug fixes and new features
+## 如何参与 Bug 修复，添加新特性
 
-Issues marked with [\"good first issue\"](https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) are great chances for starters.
+标记了 [\"good first issue\"](https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) 的 issue 对新手来说较容易上手。
 
-- Please first leave a note (e.g. _I know how to fix this and would like to help!_) on the issue, so that people know someone is already working on it. This helps prevent redundant work;
-- If no core developer has commented and described a potential solution on the issue, please briefly describe your plan, and wait for a core developer to reply before you start. This helps keep implementations simple and effective.
+- 请先在这个 issue 中留下一句评论（比如： _我知道怎么解决这个，并且乐于提供帮助！_）。这样大家就知道已经有人在解决这个问题了。 这样有助于避免重复劳动；
+- 如果没有核心开发成员说明一个 issue 可能的解决方案，请简要地描述你的方案，并在开始前静候开发成员的回复确认。 这可以保障实现的简洁高效。
 
-Issues marked with [\"welcome contribution\"](https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22) are slightly more challenging but still friendly to beginners.
+标记了 [\"welcome contribution\"](https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22) 的 issue 相比之下更有挑战性但对新手仍然是比较友好的。
 
-## High-level guidelines
+## 进阶指导
 
-- Be pragmatic: practically solving problems is our ultimate goal.
+- 切实解决问题是我们的最终目标。
 - No overkills: always use _easy_ solutions to solve easy problems, so that you have time and energy for real hard ones.
 - Almost every design decision has pros and cons. A decision is [good]{.title-ref} if its pros outweigh its cons. Always think about both sides.
 - Debugging is hard. Changesets should be small so that sources of bugs can be easily pinpointed.
