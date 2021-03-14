@@ -183,18 +183,18 @@ def bar(k: ti.i32):
 
 :::
 
-**Struct-for loops** are particularly useful when iterating over (sparse) field elements. In the code above, `for i, j in pixels` loops over all the pixel coordinates, i.e. `(0, 0), (0, 1), (0, 2), ... , (0, 319), (1, 0), ..., (639, 319)`.
+**结构 for 循环**在遍历（稀疏）场元素的时候很有用。 例如在上述的代码中，`for i, j in pixels`将遍历所有像素点坐标, 即`(0, 0), (0, 1), (0, 2), ... , (0, 319), (1, 0), ..., (639, 319)`。
 
 ::: note
 
-Struct-for is the key to [sparse computation](../advanced/sparse.md) in Taichi, as it will only loop over active elements in a sparse field. In dense fields, all elements are active.
+结构 for 循环是 Taichi[稀疏计算](../advanced/sparse.md)的关键，它只会遍历稀疏场中的活跃元素。 对于稠密场而言，所有元素都是活跃元素。
 :::
 
 ::: warning
 
-Struct-for loops must live at the outer-most scope of kernels.
+结构 for 循环只能使用在内核的最外层作用域。
 
-It is the loop **at the outermost scope** that gets parallelized, not the outermost loop.
+是最外层 **作用域** 的循环并行执行，而不是最外层的循环。
 
 ```python
 @ti.kernel
@@ -204,9 +204,9 @@ def foo():
 
 @ti.kernel
 def bar(k: ti.i32):
-    # The outermost scope is a `if` statement
+    # 最外层作用域是 `if` 语句
     if k > 42:
-        for i in x: # Not allowed. Struct-fors must live in the outermost scope.
+        for i in x: # 语法错误。 结构 for 循环 只能用于最外层作用域。
             ...
 ```
 
@@ -214,46 +214,46 @@ def bar(k: ti.i32):
 
 ::: warning
 
-`break` **is not supported in parallel loops**:
+**并行循环不支持** `break` 语句：
 
 ```python {5,9,16}
 @ti.kernel
 def foo():
   for i in x:
       ...
-      break # Error!
+      break # 错误！并行执行的循环不能有 break
 
   for i in range(10):
       ...
-      break # Error!
+      break # 错误！并行执行的循环不能有 break
 
 @ti.kernel
 def foo():
   for i in x:
       for j in range(10):
           ...
-          break # OK!
+          break # 可以!
 ```
 
 :::
 
-## Interacting with other Python packages
+## 与其他 Python 程序交互
 
-### Python-scope data access
+### Python 作用域的数据访问
 
-Everything outside Taichi-scopes (`ti.func` and `ti.kernel`) is simply Python code. In Python-scopes, you can access Taichi field elements using plain indexing syntax. For example, to access a single pixel of the rendered image in Python-scope, simply use:
+所有在 Taichi 作用域（`ti.func` 和 `ti.kernel`）之外的部分都只是单纯的 Python 代码。 在 Python 作用域中，你可以通过一般的索引语法访问 Taichi 场元素。 例如，要在 Python 中访问渲染图像的某个像素，只需使用以下代码：
 
 ```python
 import taichi as ti
 pixels = ti.field(ti.f32, (1024, 512))
 
-pixels[42, 11] = 0.7  # store data into pixels
-print(pixels[42, 11]) # prints 0.7
+pixels[42, 11] = 0.7  # 将数据存储到像素点中
+print(pixels[42, 11]) # 打印 0.7
 ```
 
-### Sharing data with other packages
+### 与其他软件包共享数据
 
-Taichi provides helper functions such as `from_numpy` and `to_numpy` for transfer data between Taichi fields and NumPy arrays, So that you can also use your favorite Python packages (e.g. `numpy`, `pytorch`, `matplotlib`) together with Taichi. e.g.:
+Taichi 提供了诸如`from_numpy`和`to_numpy`等辅助函数来在 Taichi 场和 NumPy 数组之间传输数据。这样你就可以将最喜欢的 Python 软件包（例如`numpy`，`pytorch`， `matplotlib`等）与 Taichi 一起使用。 例如：
 
 ```python
 import taichi as ti
@@ -261,10 +261,10 @@ pixels = ti.field(ti.f32, (1024, 512))
 
 import numpy as np
 arr = np.random.rand(1024, 512)
-pixels.from_numpy(arr)   # load numpy data into taichi fields
+pixels.from_numpy(arr)   # 将numpy数据载入到taichi 场中
 
 import matplotlib.pyplot as plt
-arr = pixels.to_numpy()  # store taichi data into numpy arrays
+arr = pixels.to_numpy()  # 将taichi数据导出至numpy数组中
 plt.imshow(arr)
 plt.show()
 
@@ -278,4 +278,4 @@ while gui.running:
     gui.show()
 ```
 
-See [external](../basic/external.md#interacting-with-external-arrays) for more details.
+在 [external](../basic/external.md#interacting-with-external-arrays) 这一章节获得更多有关细节。
