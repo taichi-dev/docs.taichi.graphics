@@ -1,6 +1,6 @@
-# Installation
+# 安装 Taichi
 
-Taichi can be easily installed via `pip`:
+通过 `pip` 可以很容易安装 Taichi：
 
 ```bash
 python3 -m pip install taichi
@@ -8,11 +8,11 @@ python3 -m pip install taichi
 
 ::: note
 
-Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit).
+目前，Taichi 支持的 Python 版本有 3.6/3.7/3.8 (64-bit)。
 :::
 
-- On Ubuntu 19.04+, please execute `sudo apt install libtinfo5`.
-- On Arch Linux, please execute `yaourt -S ncurses5-compat-libs`.
+- 对于Ubuntu 19.04+，请执行 `sudo apt install libtinfo5` 安装依赖项。
+- 对于Arch Linux，请执行 `yaourt -S ncurses5-compat-libs` 安装依赖项。
 - On Windows, please install [Microsoft Visual C++ Redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe) if you haven\'t.
 
 ## Troubleshooting
