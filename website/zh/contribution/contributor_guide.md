@@ -26,101 +26,101 @@
 ## 进阶指导
 
 - 切实解决问题是我们的最终目标。
-- No overkills: always use _easy_ solutions to solve easy problems, so that you have time and energy for real hard ones.
-- Almost every design decision has pros and cons. A decision is [good]{.title-ref} if its pros outweigh its cons. Always think about both sides.
-- Debugging is hard. Changesets should be small so that sources of bugs can be easily pinpointed.
-- Unit/integration tests are our friends.
+- 不要小题大做：用 _简单_ 的方案去解决简单的问题，这样你可以抽出时间和精力处理那些真正困难的问题。
+- 几乎每一个设计都有两面性。 如果利大于弊，那就可以看作是一个 好的_决定_ ，请务必权衡利弊。 请务必权衡利弊。
+- 调试是很困难的。 每一次的改动应该很小，这样 Bug 的源头就可以很容易地找到。
+- 单元/集成测试是我们的好伙伴。
 
 ::: note
-"There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. _The first method is far more difficult_." — [C.A.R. Hoare](https://en.wikipedia.org/wiki/Tony_Hoare)
+"软件设计过程中中存在两种模式：一种是使之结构简单明了到没有任何问题，另一种是令结构设计足够复杂到完美无缺。 _而第一种方案则要困难的多_。" [C.A.R. 霍尔](https://en.wikipedia.org/wiki/Tony_Hoare)
 :::
 
-One thing to keep in mind is that, Taichi was originally born as an academic research project. This usually means that some parts did not have the luxury to go through a solid design. While we are always trying to improve the code quality, it doesn\'t mean that the project is free from technical debts. Some places may be confusing or overly complicated. Whenever you spot one, you are more than welcome to shoot us a PR! :-)
+需要记住的一点是，Taichi 最初是作为一个学术研究项目而诞生的。 这通常意味着有些部分没有机会经过稳固坚实的设计。 虽然我们一直在努力提高代码质量，但这并不意味着项目能没有技术负债。 有些地方仍可能会过于复杂而让人感到困惑。 一旦你发现这种情形的存在，非常欢迎给我们提出 PR！ :-)
 
-## Effective communication
+## 高效率地沟通
 
-- How much information we effectively convey, is way more important than how many words we typed.
-- Be constructive. Be polite. Be organized. Be concise.
-- Bulleted lists are our friends.
-- Proofread before you post: if you are the reader, can you understand what you typed?
-- If you are not a native speaker, consider using a spell checker such as [Grammarly](https://app.grammarly.com/).
+- 传达了多少有效信息，比打了多少字重要的多。
+- 在沟通中保持积极， 礼貌， 注意语言的组织性、 准确性。
+- 注意除了文字之外，列表（Bulleted lists）也是我们表达过程中的好伙伴。
+- 提交评论前请仔细预读：如果你是读者，你能读懂自己所写的内容么？
+- 如果你的母语不是英语，考虑使用拼写检查器，例如[Grammarly](https://app.grammarly.com/)。
 
-Please base your discussion and feedback on facts, and not personal feelings. It is very important for all of us to maintain a friendly and blame-free community. Some examples:
+请根据事实进行讨论与反馈，而不是个人感觉。 对我们所有人来说，保持一个友好、零责备的社区环境是非常重要的。 一些例子如下：
 
 ::: tip
-Acceptable :-) This design could be confusing to new Taichi users.
+可接受的表达方式 :-) 这种设计可能会让 Taichi 的初学者感到困惑。
 :::
 
 ::: danger
-Not Acceptable This design is terrible.
+不可接受的表达方式 这种设计真是太糟糕了。
 :::
 
-## Making good pull requests
+## 提交良好的 PR
 
-- PRs with **small** changesets are preferred. A PR should ideally address **only one issue**.
-  - It is fine to include off-topic **trivial** refactoring such as typo fixes;
-  - The reviewers reserve the right to ask PR authors to remove off-topic **non-trivial** changes.
-- All commits in a PR will always be **squashed and merged into master as a single commit**.
-- PR authors **should not squash commits on their own**;
-- When implementing a complex feature, consider breaking it down into small PRs, to keep a more detailed development history and to interact with core developers more frequently.
-- If you want early feedback from core developers
-  - Open a PR in [Draft](https://github.blog/2019-02-14-introducing-draft-pull-requests/) state on GitHub so that you can share your progress;
-  - Make sure you @ the corresponding developer in the comments or request the review.
-- If you are making multiple PRs
-  - Independent PRs should be based on **different** branches forking from `master`;
-  - PRs with dependencies should be raised only after all prerequisite PRs are merged into `master`.
-- All PRs should ideally come with corresponding **tests**;
-- All PRs should come with **documentation update**, except for internal compiler implementations;
-- All PRs must pass **continuous integration tests** before they get merged;
-- PR titles should follow `prtag`{.interpreted-text role="ref"};
-- A great article from Google on [how to have your PR merged quickly](https://testing.googleblog.com/2017/06/code-health-too-many-comments-on-your.html). [\[PDF\]](https://github.com/yuanming-hu/public_files/blob/master/graphics/taichi/google_review_comments.pdf)
+- 我们鼓励改动**很小**的 PR。 一个 PR 理想情况下应该 **只针对一个问题(issue)** 。
+  - 也可以掺杂一些 **无关紧要** 的优化重构，比如修正笔误；
+  - 审稿人保留要求 PR 作者删除一些 **无关紧要** 的改动的权利。
+- PR 中的所有 commit 都应被 **压缩&合并到 master 分支的一个 commit 里** 。
+- 为保留清晰的提交日志 PR 作者 **不应该将多条 commit 压缩(squash) 后提交**；
+- 当实现一个复杂的特性时，考虑将其分散为许多个小 PR，从而保证更具细节的开发时间线，保证与开发者更频繁的沟通。
+- 如果你想更及时的得到核心开发成员的反馈
+  - 通过 GitHub 的 [Draft](https://github.blog/2019-02-14-introducing-draft-pull-requests/)状态开一个 PR，这样就可以和我们实时分享你的进展了；
+  - 请确保在评论中 @ 相应开发成员，或者使用请求评审(request the review)。
+- 如果你同时在处理多个 PR
+  - 互不依赖的 PR 都应该是基于 `master` 衍生出的 **不同** 分支；
+  - 互相依赖的 PR 应该在所有前置 PR 合并入 `master` 后再进行提出。
+- 所有 PR 理想情况下都应该伴随着相应的 **测试**；
+- 除了内部编译器的实现外，其余的 PR 都应该带有与其功能相对应的 **文档更新**；
+- 所有 PR 必须通过 **持续集成测试(continuous integration tests)** 后才能被合并；
+- PR 的标题应当按照 `prtag` 的要求编写；
+- 除此之外，谷歌有篇相当棒的文章[how to have your PR merged quickly](https://testing.googleblog.com/2017/06/code-health-too-many-comments-on-your.html)可供参考。 [[PDF]](https://github.com/yuanming-hu/public_files/blob/master/graphics/taichi/google_review_comments.pdf)
 
-## Reviewing & PR merging
+## 审核与 PR 的合并
 
-- Please try to follow these tips from Google
+- 请按照以下几个来自谷歌的建议
   - [Code Health: Understanding Code In Review](https://testing.googleblog.com/2018/05/code-health-understanding-code-in-review.html); [\[PDF\]](https://github.com/yuanming-hu/public_files/blob/master/graphics/taichi/google_understanding_code.pdf)
   - [Code Health: Respectful Reviews == Useful Reviews](https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html). [\[PDF\]](https://github.com/yuanming-hu/public_files/blob/master/graphics/taichi/google_respectful_reviews.pdf)
-- The merger should always **squash and merge** PRs into the master branch;
-- The master branch is required to have a **linear history**;
-- Make sure the PR passes **continuous integration tests**, except for cases like documentation updates;
-- Make sure the title follows `prtag`{.interpreted-text role="ref"}.
+- 合并操作应当始终将 PR **压缩&合并** 到主分支（默认为master）上；
+- 主分支要求记录 **线性历史**；
+- 确保 PR 能够顺利通过 **持续集成测试**，文档更新等情况除外；
+- 确保标题遵循 `prtag` 的要求。
 
-## Using continuous integration
+## 持续集成的运用
 
-- Continuous Integration (CI), will **build** and **test** your commits in a PR against in environments.
-- Currently, Taichi uses [Travis CI](https://travis-ci.org) (for OS X and Linux) and [AppVeyor](https://www.appveyor.com) (for Windows).
-- CI will be triggered every time you push commits to an open PR.
-- You can prepend `[skip ci]` to your commit message to avoid triggering CI. e.g. `[skip ci] This commit will not trigger CI`
-- A tick on the right of commit hash means CI passed, a cross means CI failed.
+- 持续集成(Continuous Integration, CI)，将在 CI 环境中 **构建** 和 **测试**你所提交的 PR。
+- 目前，Taichi 使用的集成测试服务是[TravisCI](https://travis-ci.org)(OS X 和Linux 平台) 以及[AppVeyor](https://www.appveyor.com)(Windows 平台)。
+- 每次你推送提交到一个开着的 PR 时，CI 将被触发。
+- 可以在提交消息前加上 `[skip ci]` 以避免触发 CI。例如 `[skip ci] This commit will not trigger CI`
+- 提交 ID 右侧有绿色对勾表示 CI 通过，红色叉号表示 CI 失败。
 
-## Enforcing code style
+## 规范代码结构
 
-- Locally, you can run `ti format` in the command line to re-format code style. Note that you have to install `clang-format-6.0` and `yapf v0.29.0` locally before you use `ti format`.
+- 在本地，可以通过在命令行中运行 `ti format` 来自动格式化代码。 请注意，在使用`ti format`之前，您必须在本地安装 `clang-format-6.0`和`yapf v0.29.0`。
 
-- If you don't have to install these formatting tools locally, use the **format server**. It\'s an online version of `ti format`.
+- 如果不想在本地安装这些格式化工具，也可以使用我们的**格式化服务器(format server)**。 这是个 `ti format` 的在线版本。
 
-  - Go to ☷ <http://kun.csail.mit.edu:31415/>, and click at the desired PR id.
-  - Come back to the PR page, you'll see a user called \@taichi-gardener (bot) pushed a commit named `[skip ci] enforce code format`.
-  - You won't see the bot's commit if it didn't find anything not matching the format.
-  - Then please run `git pull` in your local branch to pull the formatted code.
-  - Note that commit messages marked with `[format]` will automatically trigger the format server. e.g. `[format] your commit message`
+  - 访问 ☷ <http://kun.csail.mit.edu:31415/>, 并点击选取所需格式化的 PR id。
+  - 回到 PR 页面，你将看到一个名为 @taichi-gardener (机器人) 的用户推送了一个名为`[skip ci] enforce code format`的提交。
+  - 如果你没能找到机器人的提交，说明没有发现任何不规范的代码格式。
+  - 然后请在本地分支中运行 `git pull` 来提取格式化代码。
+  - 值得留意的是，备注带有为 `[format]` 的提交信息将自动触发格式化服务。 例如：`[format] our commit message`
 
-## PR title format and tags
+## PR 标题格式和标签
 
-PR titles will be part of the commit history reflected in the `master` branch, therefore it is important to keep PR titles readable.
+PR 标题将成为 `master` 分支中提交历史的一部分，因此保证 PR 标题的可读性非常重要。
 
-- Please always prepend **at least one tag** such as `[Lang]` to PR titles:
-  - When using multiple tags, make sure there is exactly one space between tags;
-  - E.g., \"\[Lang\]\[refactor\]\" (no space) should be replaced by \"\[Lang\] \[refactor\]\";
-- The first letter of the PR title body should be capitalized:
-  - E.g., `[Doc] improve documentation` should be replaced by `[Doc] Improve documentation`;
-  - `[Lang] "ti.sqr(x)" is now deprecated` is fine because `"` is a symbol.
-- Please do not include back quotes (\"\`\") in PR titles.
-- For example, \"\[Metal\] Support bitmasked SNode\", \"\[OpenGL\] AtomicMin/Max support\", or \"\[Opt\] \[IR\] Enhanced constant folding\".
+- 请务必在 PR 标题前附加上**至少一个**标签，如 `[Lang]` 等：
+  - 当使用多个标签时，确保标签之间只留有一个空格分隔；
+  - 例如， `\[Lang\]\[refactor\]`（没有空格）应该被格式化为 `\[Lang\] \[refactor\]`；
+- PR 标题主干部分的首字母应该大写：
+  - 例如，`[Doc] improve documentation` 应该被格式化为 `[Doc] Improve documentation`；
+  - 同时，`[Lang] "ti.sqr(x)" is now deprecated` 是可以的，因为 `"`是一个符号。
+- 请不要在 PR 标题中包括反引号 (\"`\")。
+- 例如，\"\[Metal\] Support bitmasked SNode\", \"\[OpenGL\] AtomicMin/Max support\", 或 \"\[Opt\] \[IR\] Enhanced constant folding\"。
 
-Frequently used tags:
+常用的标签：
 
-- `[Metal], [OpenGL], [CPU], [CUDA]`: backends;
+- `[Metal], [OpenGL], [CPU], [CUDA]`: 后端；
 - `[LLVM]`: the LLVM backend shared by CPUs and CUDA;
 - `[Lang]`: frontend language features, including syntax sugars;
 - `[Std]`: standard library, e.g. `ti.Matrix` and `ti.Vector`;
