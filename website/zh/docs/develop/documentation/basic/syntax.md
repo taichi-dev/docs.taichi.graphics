@@ -1,24 +1,24 @@
-# Kernels and functions
+# 内核和函数
 
-## Taichi-scope vs Python-scope
+## Taichi-作用域 vs Python-作用域
 
-Code decorated by `@ti.kernel` or `@ti.func` is in the **Taichi-scope**.
+被`@ti.kernel`或`@ti.func`装饰的代码在**Taichi-作用域**中。
 
-They are to be compiled and executed on CPU or GPU devices with high parallelization performance, on the cost of less flexibility.
-
-::: note
-For people from CUDA, Taichi-scope = **device** side.
-:::
-
-Code outside `@ti.kernel` or `@ti.func` is in the **Python-scope**.
-
-They are not compiled by the Taichi compiler and have lower performance but with a richer type system and better flexibility.
+它们将被编译并在CPU或GPU设备上执行，以降低灵活性的代价换取很高的并行性能。
 
 ::: note
-For people from CUDA, Python-scope = **host** side.
+如果用 CUDA 做类比的话，Taichi-作用域 = **device** side。
 :::
 
-## Kernels
+在`@ti.kernel`或`@ti.func`之外的代码即在**Python-作用域**中。
+
+它们不会被Taichi编译器编译，性能较低，但有这更丰富的类型系统和更好的灵活性。
+
+::: note
+如果用 CUDA 做类比的话，Python-作用域 = **host** side。
+:::
+
+## 内核
 
 A Python function decorated by `@ti.kernel` is a **Taichi kernel**:
 
