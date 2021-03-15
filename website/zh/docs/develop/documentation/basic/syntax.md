@@ -20,7 +20,7 @@
 
 ## 内核
 
-A Python function decorated by `@ti.kernel` is a **Taichi kernel**:
+一个由`@ti.kernel`装饰的 Python 函数是一个 **Taichi 内核**：
 
 ```python {1}
 @ti.kernel
@@ -30,17 +30,17 @@ def my_kernel():
 my_kernel()
 ```
 
-Kernels should be called from **Python-scope**.
+内核应该被从 **Python-作用域**内调用。
 
 ::: note
-For people from CUDA, Taichi kernels = `__global__` functions.
+如果用 CUDA 做类比的话，Taichi 内核 = `__global__` 函数。
 :::
 
-### Arguments
+### 参数
 
-Kernels can have at most 8 parameters so that you can pass values from Python-scope to Taichi-scope easily.
+为方便地从 Python-作用域传递到 Taichi-作用域，内核最多只能有 8 个参数。
 
-Kernel arguments must be type-hinted:
+内核如果有参数的话，则参数必须显式指定类型。
 
 ```python {2}
 @ti.kernel
