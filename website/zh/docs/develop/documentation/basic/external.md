@@ -1,8 +1,8 @@
-# Interacting with external arrays
+# 与外部数组进行交互
 
-Although Taichi fields are mainly used in Taichi-scope, in some cases efficiently manipulating Taichi field data in Python-scope could also be helpful.
+尽管 Taichi 场主要被用于 Taichi-作用域，在一些情况下在 Python 作用域中高效地操作场数据是很有用的。
 
-We provide various interfaces to copy the data between Taichi fields and external arrays. The most typical case maybe copying between Tachi fields and Numpy arrays. Let\'s take a look at two examples below.
+我们提供了不同的接口用以在 Taichi 场和外部数组直接拷贝数据。 最典型的案例可能是在 Taichi 场和 numpy 数组之间复制数据。 让我们来看一下接下来的两个例子。
 
 **Export data in Taichi fields to a NumPy array** via `to_numpy()`. This allows us to export computation results to other Python packages that support NumPy, e.g. `matplotlib`.
 
