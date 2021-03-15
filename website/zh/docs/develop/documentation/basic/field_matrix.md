@@ -31,7 +31,7 @@
 
 - 如果你想获取网格节点`i, j`上的矩阵，请使用`mat = A[i, j]`。 `mat`是一个`3 x 2`的矩阵
 - 要获取第1行第2列的矩阵元素，请使用`mat[0, 1]`或者`A[i, j][0, 1]`。
-- 你可能已经注意到，当你从全局矩阵场加载矩阵元素时会有 **两个** 索引运算符`[]`：第一个用于张量索引，而第二个则用于矩阵索引。
+- 你可能已经注意到，当你从全局矩阵场加载矩阵元素时会有 **两个** 索引运算符`[]`：第一个用于场索引，而第二个则用于矩阵索引。
 - `ti.Vector`其实只是`ti.Matrix`的别名。
 - 有关矩阵的更多信息，请参见 [Matrices](../api/matrix.md) 。
 
@@ -43,4 +43,4 @@
 由于展开机制的存在，在大型矩阵（例如 `32x128` ）上进行操作会导致很长的编译时间并带来较低的性能。
 :::
 
-If you have a dimension that is too large (e.g. `64`), it\'s better to declare a field of size `64`. E.g., instead of declaring `ti.Matrix.field(64, 32, dtype=ti.f32, shape=(3, 2))`, declare `ti.Matrix.field(3, 2, dtype=ti.f32, shape=(64, 32))`. Try to put large dimensions to fields instead of matrices.
+如果你的矩阵的某维度很大（例如`64`），则最好定义一个大小为`64`的场。 例如，声明一个`ti.Matrix.field(64, 32, dtype=ti.f32, shape=(3, 2))`是不合理的，可以试着用`ti.Matrix.field(3, 2, dtype=ti.f32, shape=(64, 32))`来代替。 始终把大的维度放在场中而非矩阵中。
