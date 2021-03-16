@@ -1,19 +1,19 @@
-# Installing the legacy Taichi Library
+# 安装旧版Taichi库
 
 ::: note
 
-This is NOT for installing the Taichi programming language. Unless you are building a legacy project based on the [legacy Taichi library](https://github.com/yuanming-hu/taichi/tree/legacy) (e.g. [taichi_mpm](https://github.com/yuanming-hu/taichi_mpm) and [spgrid_topo_opt](https://github.com/yuanming-hu/spgrid_topo_opt)) you should always install Taichi using `pip`.
+这并不是安装Taichi编程语言的文档。 除非您 正在构建一个基于 [旧版Taichi 库](https://github.com/yuanming-hu/taichi/tree/legacy) 的旧版项目（例如 [taichi_mpm](https://github.com/yuanming-hu/taichi_mpm) 和 [spgrid_topo_opt](https://github.com/yuanming-hu/spgrid_topo_opt)）您应该始终使用 `pip` 来安装Taichi。
 
-If you are working on the Taichi compiler and need to build from source, see [Developer installation section of the Contribution Guide](../../contribution/dev_install.md).
+如果您正在参与开发Taichi编译器，并需要从源代码构建， 请查看 [贡献指南的开发者安装部分](../../contribution/dev_install.md)。
 :::
 
-Supported platforms:
+支持的平台：
 
 - Ubuntu (gcc 5+)
 - Mac OS X (gcc 5+, clang 4.0+)
 - Windows (Microsoft Visual Studio 2017)
 
-Make sure you have `python 3.5+`.
+请确保您有 `python 3.5+`。
 
 ## Ubuntu, Arch Linux, and Mac OS X
 
@@ -23,20 +23,20 @@ python3 install.py
 ```
 
 ::: note
-Note, if Python complains that a package is missing, simply rerun `install.py` and the package should be loaded.
+注意， 如果 Python 抱怨有软件包丢失，只需重新运行`install.py` 就可以重新加载软件包。
 :::
 
 ## Windows
 
-Download and execute [this script](https://raw.githubusercontent.com/yuanming-hu/taichi/legacy/install.py) with Python3.
+下载并使用 Python3 执行 [此脚本](https://raw.githubusercontent.com/yuanming-hu/taichi/legacy/install.py)。
 
-Additional environment variables (assuming taichi is installed in `DIR/taichi`):
+额外的环境变量（假定 Taichi 安装在`DIR/taichi`下）：
 
-- Set `TAICHI_REPO_DIR` as `DIR/taichi` (e.g. `E:/repos/taichi`).
-- Add `%TAICHI_REPO_DIR%/python` to `PYTHONPATH`, `DIR/taichi/bin` (e.g. `E:/repos/taichi/bin`) to `PATH`.
-- Restart cmd or PowerShell, and you should be able to run command `ti`.
+- 设定 `TAICHI_REPO_DIR` 为 `DIR/taichi` （例如`E:/repos/taichi`）。
+- 添加 `%TAICHI_REPO_DIR%/python` 至 `PYTHONPATH`， `DIR/taichi/bin` （例如 `E:/repos/taichi/bin`） 至 `PATH`。
+- 重启 cmd 或 PowerShell，您应该能够运行命令 `ti`。
 
-## Build with Double Precision (64 bit) Float Point
+## 使用双精度（64 位）浮点构建
 
 ```bash
 export TC_USE_DOUBLE=1
