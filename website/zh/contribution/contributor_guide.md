@@ -130,21 +130,21 @@ PR 标题将成为 `master` 分支中提交历史的一部分，因此保证 PR 
 - `[GUI]`：内嵌的 GUI 系统；
 - `[Refactor]`：代码重构；
 - `[CLI]`：命令行接口，例如 `ti`命令；
-- `[Doc]`: documentation under `docs/`;
-- `[Example]`: examples under `examples/`;
-- `[Test]`: adding or improving tests under `tests/`;
-- `[Linux]`: Linux platform;
-- `[Mac]`: Mac OS X platform;
-- `[Windows]`: Windows platform;
-- `[Perf]`: performance improvements;
-- `[Misc]`: something that doesn\'t belong to any category, such as version bump, reformatting;
-- `[Bug]`: bug fixes;
-- Check out more tags in [misc/prtags.json](https://github.com/taichi-dev/taichi/blob/master/misc/prtags.json).
-- When introducing a new tag, please update the list in `misc/prtags.json` in the first PR with that tag, so that people can follow.
+- `[Doc]`：与`docs/`目录下的文档相关；
+- `[Example]`：与 `examples/` 目录下的样例程序相关；
+- `[Test]`：与 `tests/` 目录下增加和改进测试程序相关；
+- `[Linux]`：与 Linux 平台相关；
+- `[Mac]`：与 Mac OS X 平台相关；
+- `[Windows]`：与 Windows 平台相关；
+- `[Perf]`：性能改进；
+- `[Misc]`：难以归类的杂项，如版本跳跃，格式优化等；
+- `[Bug]`：Bug修复；
+- 在[misc/prtags.json](https://github.com/taichi-dev/taichi/blob/master/misc/prtags.json)中查看更多标签。
+- 在引进新标签时，请在首先使用该标签的 PR 中一并更新`misc/prtags.json`列表，以便其他成员跟随使用。
 
 ::: note
 
-We do appreciate all kinds of contributions, yet we should not expose the title of every PR to end-users. Therefore the changelog will distinguish [what the user should know]{.title-ref} from [what the developers are doing]{.title-ref}. This is done by **capitalizing PR tags**:
+我们感谢所有的贡献，但是我们不应该把每一个 PR 的标题暴露给终端用户。 因此，应该将变更日志分类成用户应该知道什么和开发人员正在做什么是必要的。 而这是通过**大写 PR 标签**实现的：
 
 - PRs with visible/notable features to the users should be marked with tags starting with **the first letter capitalized**, e.g. `[Metal], [OpenGL], [IR], [Lang], [CLI]`. When releasing a new version, a script (`python/taichi/make_changelog.py`) will generate a changelog with these changes (PR title) highlighted. Therefore it is **important** to make sure the end-users can understand what your PR does, **based on your PR title**.
 - Other PRs (underlying development/intermediate implementation) should use tags with **everything in lowercase letters**: e.g. `[metal], [opengl], [ir], [lang], [cli]`.
