@@ -120,16 +120,16 @@ PR 标题将成为 `master` 分支中提交历史的一部分，因此保证 PR 
 
 常用的标签：
 
-- `[Metal], [OpenGL], [CPU], [CUDA]`: 后端；
-- `[LLVM]`: the LLVM backend shared by CPUs and CUDA;
-- `[Lang]`: frontend language features, including syntax sugars;
-- `[Std]`: standard library, e.g. `ti.Matrix` and `ti.Vector`;
-- `[Sparse]`: sparse computation;
-- `[IR]`: intermediate representation;
-- `[Opt]`: IR optimization passes;
-- `[GUI]`: the built-in GUI system;
-- `[Refactor]`: code refactoring;
-- `[CLI]`: commandline interfaces, e.g. the `ti` command;
+- `[Metal], [OpenGL], [CPU], [CUDA]`：后端；
+- `[LLVM]`：CPU 和 CUDA 共享的 LLVM 后端；
+- `[Lang]`：前端语法特性，包括语法糖；
+- `[Std]`：标准库，例如 `ti.Matrix` 和 `ti.Vector`；
+- `[Sparse]`：稀疏计算；
+- `[IR]`：中间表示(intermediate representation, IR)；
+- `[Opt]`：IR 优化迭代轮数；
+- `[GUI]`：内嵌的 GUI 系统；
+- `[Refactor]`：代码重构；
+- `[CLI]`：命令行接口，例如 `ti`命令；
 - `[Doc]`: documentation under `docs/`;
 - `[Example]`: examples under `examples/`;
 - `[Test]`: adding or improving tests under `tests/`;
