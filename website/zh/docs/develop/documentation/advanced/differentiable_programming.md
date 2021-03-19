@@ -29,11 +29,11 @@ def compute_dy_dx():
 
 但是请等等，如果我改变了`compute_y`的原始值怎么办？ 我们将会需要重新手动计算微分然后重新写入`compute_dy_dx`，这是很容易出错，且很不方便的。
 
-If you run into this situation, don\'t worry! Taichi provides a handy autodiff system that can help you obtain the derivative of a kernel without any pain!
+如果你遇到这种情况，请不要担心！ Taichi 提供了一个便捷的自动微分系统来帮你获取一个内核的微分！
 
-## Using `ti.Tape()`
+## 使用`ti.Tape()`
 
-Let\'s still take the `compute_y` in above example for explaination. What\'s the most convienent way to obtain a kernel that computes x to $dy/dx$?
+让我们来使用上面例子中的`compute_y`作为讲解。 有什么便捷的方法来获得一个从x计算$dy/dx$的内核？
 
 1.  Use the `needs_grad=True` option when declaring fields involved in the derivative chain.
 2.  Use `with ti.Tape(y):` to embrace the invocation into kernel(s) you want to compute derivative.
