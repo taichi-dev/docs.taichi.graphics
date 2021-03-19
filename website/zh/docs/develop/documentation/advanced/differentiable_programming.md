@@ -1,10 +1,10 @@
 # 可微编程
 
-We suggest starting with the `ti.Tape()`, and then migrate to more advanced differentiable programming using the `kernel.grad()` syntax if necessary.
+我们建议您从`ti.Tape()`开始，然后如有必要，再逐步迁移到更高阶的使用`kernel.grad()`语法的可微编程。
 
-## Introduction
+## 简介
 
-For example, you have the following kernel:
+例如，若你有如下内核：
 
 ```python
 x = ti.field(float, ())
@@ -15,7 +15,7 @@ def compute_y():
     y[None] = ti.sin(x[None])
 ```
 
-Now if you want to get the derivative of y corresponding to x, i.e., dy/dx. You may want to implement the derivative kernel by yourself:
+现在，如果你想要y对应x的微分（导数），也即dy/dx， 你可能想要自己实现微分内核：
 
 ```python
 x = ti.field(float, ())
@@ -27,7 +27,7 @@ def compute_dy_dx():
     dy_dx[None] = ti.cos(x[None])
 ```
 
-But wait, what if I changed the original `compute_y`? We will have to recalculate the derivative by hand and rewrite `compute_dy_dx` again, which is very error-prone and not convenient at all.
+但是请等等，如果我改变了`compute_y`的原始值怎么办？ 我们将会需要重新手动计算微分然后重新写入`compute_dy_dx`，这是很容易出错，且很不方便的。
 
 If you run into this situation, don\'t worry! Taichi provides a handy autodiff system that can help you obtain the derivative of a kernel without any pain!
 
