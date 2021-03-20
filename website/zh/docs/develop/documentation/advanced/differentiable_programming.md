@@ -15,7 +15,7 @@ def compute_y():
     y[None] = ti.sin(x[None])
 ```
 
-现在，如果你想要y对应x的微分（导数），也即dy/dx， 你可能想要自己实现微分内核：
+现在，如果你想要y对应x的导数，也即dy/dx， 你可能想要自己实现导数内核：
 
 ```python
 x = ti.field(float, ())
@@ -27,15 +27,15 @@ def compute_dy_dx():
     dy_dx[None] = ti.cos(x[None])
 ```
 
-但是请等等，如果我改变了`compute_y`的原始值怎么办？ 我们将会需要重新手动计算微分然后重新写入`compute_dy_dx`，这是很容易出错，且很不方便的。
+但是如果我改变了`compute_y`的原始值怎么办？ 我们将会需要重新手动计算导数然后重新写入`compute_dy_dx`，这是很容易出错，且很不方便的。
 
-如果你遇到这种情况，请不要担心！ Taichi 提供了一个便捷的自动微分系统来帮你获取一个内核的微分！
+如果你遇到这种情况，请不要担心！ Taichi 提供了一个便捷的自动微分系统来帮你获取一个内核的导数！
 
 ## 使用`ti.Tape()`
 
-让我们来使用上面例子中的`compute_y`作为讲解。 有什么便捷的方法来获得一个从x计算$dy/dx$的内核？
+我们仍使用上面的`compute_y`作为例子。 有什么便捷的方法来获得一个从x计算$dy/dx$的内核？
 
-1.  Use the `needs_grad=True` option when declaring fields involved in the derivative chain.
+1.  在声明需要求导的场时，使用`needs_grad=True`选项。
 2.  Use `with ti.Tape(y):` to embrace the invocation into kernel(s) you want to compute derivative.
 3.  Now `x.grad[None]` is the dy/dx value at current x.
 
