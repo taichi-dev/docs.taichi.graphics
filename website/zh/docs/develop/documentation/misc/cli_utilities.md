@@ -1,18 +1,18 @@
-# Command line utilities
+# 命令行工具使用指南
 
-A successful installation of Taichi should add a CLI (Command-Line Interface) to your system, which is helpful to perform several rountine tasks quickly. To invoke the CLI, please run `ti` or `python3 -m taichi`.
+Taichi 成功安装之后后会在系统中增加一个 CLI（命令行窗口）工具，这个工具可以帮助你快速地执行多个日常任务。 如要调用 CLI，请在 shell 中运行`ti` 或者 `python3 -m taichi`。
 
-## Examples
+## 示例
 
-Taichi provides a set of bundled examples. You could run `ti example -h` to print the help message and get a list of available example names.
+Taichi提供了一组捆绑示例。 你可以在命令行窗口中运行：`ti example -h`来打印帮助信息并获取可用示例名称的列表。
 
-For instance, to run the basic `fractal` example, try: `ti example fractal` from your shell. (`ti example fractal.py` should also work)
+例如，要运行基础的`fractal（分形）`示例，尝试在shell中运行`ti example fractal`。 （运行`ti example fractal.py`也同样奏效）
 
-You may print the source code of example by running `ti example -p fractal`, or `ti example -P fractal` for print with syntax highlight.
+你可以通过运行`ti example -p fractal`或`ti example -P fractal`来打印带语法高亮的示例源代码。
 
-You may also save the example to current work directory by running `ti example -s fractal`.
+你还可以通过运行`ti example -s fractal`来将示例保存到当前的工作目录中。
 
-## Changelog
+## 更新日志
 
 Sometimes it's convenient to view the changelog of the current version of Taichi. To do so, you could run `ti changelog` in your shell.
 
