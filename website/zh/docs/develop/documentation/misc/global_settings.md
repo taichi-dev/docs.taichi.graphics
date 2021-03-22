@@ -1,55 +1,55 @@
-# Global settings
+# 全局设置
 
-## Backends
+## 后端
 
-- To specify which Arch to use: `ti.init(arch=ti.cuda)`.
-- To specify pre-allocated memory size for CUDA: `ti.init(device_memory_GB=0.5)`.
-- To disable unified memory usage on CUDA: `ti.init(use_unified_memory=False)`.
-- To specify which GPU to use for CUDA: `export CUDA_VISIBLE_DEVICES=[gpuid]`.
-- To disable a backend on start up, say, CUDA: `export TI_ENABLE_CUDA=0`.
+- 指定要使用的后端，请使用：`ti.init(arch=ti.cuda)`。
+- 指定 CUDA 预分配内存的大小：`ti.init(device_memory_GB=0.5)`。
+- 禁止 CUDA 使用统一内存 (Unified Memory)：`ti.init(use_unified_memory=False)`。
+- 指定 CUDA 所使用的 GPU：`export CUDA_VISIBLE_DEVICES=[gpuid]`。
+- 要在启动时禁用某个后端，比如 CUDA：`export TI_ENABLE_CUDA=0`。
 
-## Compilation
+## 编译
 
-- Disable advanced optimization to save compile time & possible errors: `ti.init(advanced_optimization=False)`.
-- Disable fast math to prevent possible undefined math behavior: `ti.init(fast_math=False)`.
-- To print preprocessed Python code: `ti.init(print_preprocessed=True)`.
-- To show pretty Taichi-scope stack traceback: `ti.init(excepthook=True)`.
-- To print intermediate IR generated: `ti.init(print_ir=True)`.
+- 禁用高级优化以节省编译时间和可能的错误：`ti.init(advanced_optimization=False)`。
+- 禁用 fast math 以防止可能出现的未定义数学行为: `ti.init(fast_math=False)`。
+- 如要打印预处理后的 Python 代码：`ti.init(print_preprocessed=True)`。
+- 如要显示美化后的 Taichi 作用域栈回溯: `ti.init(excepthook=True)`。
+- 如要打印生成的中间表示码 (IR)：`ti.init(print_ir=True)`。
 
-## Runtime
+## 运行时
 
-- Restart the entire Taichi system (destroy all fields and kernels): `ti.reset()`.
-- To start program in debug mode: `ti.init(debug=True)` or `ti debug your_script.py`.
-- To disable importing torch on start up: `export TI_ENABLE_TORCH=0`.
+- 重新启动 Taichi 运行时系统（销毁所有场和内核）：`ti.reset()`。
+- 如要以调试模式启动程序：`ti.init(debug=True)`或`ti debug your_script.py`。
+- 禁止在启动时导入 torch：`export TI_ENABLE_TORCH=0`。
 
-## Logging
+## 日志记录
 
-- Show more detailed log to level TRACE: `ti.init(log_level=ti.TRACE)` or `ti.set_logging_level(ti.TRACE)`.
-- Eliminate verbose outputs: `ti.init(verbose=False)`.
+- 通过输出 TRACE 级日志以显示更详尽的信息：`ti.init(log_level=ti.TRACE)`或`ti.set_logging_level(ti.TRACE)`。
+- 消除冗余输出：`ti.init(verbose=False)`。
 
-## Develop
+## 开发
 
-- To trigger GDB when Taichi crashes: `ti.init(gdb_trigger=True)`.
-- Cache compiled runtime bitcode in **dev mode** to save start up time: `export TI_CACHE_RUNTIME_BITCODE=1`.
-- To specify how many threads to run test: `export TI_TEST_THREADS=4` or `ti test -t4`.
+- 如要在 Taichi 崩溃时触发 GDB：`ti.init(gdb_trigger=True)`。
+- **开发模式**中，缓存编译过的运行时位码 (compiled runtime bitcode) 以节省启动时间：`export TI_CACHE_RUNTIME_BITCODE=1`。
+- 如要指定运行测试的线程数：`export TI_TEST_THREADS=4` 或 `ti test -t4`。
 
-## Specifying `ti.init` arguments from environment variables
+## 由环境变量指定`ti.init`中的参数
 
-Arguments for `ti.init` may also be specified from environment variables. For example:
+`ti.init`中的参数也可以从环境变量中指定。 例如：
 
-- `ti.init(arch=ti.cuda)` is equivalent to `export TI_ARCH=cuda`.
-- `ti.init(log_level=ti.TRACE)` is equivalent to `export TI_LOG_LEVEL=trace`.
-- `ti.init(debug=True)` is equivalent to `export TI_DEBUG=1`.
-- `ti.init(use_unified_memory=False)` is equivalent to `export TI_USE_UNIFIED_MEMORY=0`.
+- `ti.init(arch=ti.cuda)`相当于`export TI_ARCH=cuda`。
+- `ti.init(log_level=ti.TRACE)`相当于`export TI_LOG_LEVEL=trace`。
+- `ti.init(debug=True)`相当于`export TI_DEBUG=1`。
+- `ti.init(use_unified_memory=False)`相当于`export TI_USE_UNIFIED_MEMORY=0`。
 
-If both `ti.init` argument and the corresponding environment variable are specified, then the one in the environment variable will **override** the one in the argument, e.g.:
+如果`ti.init`中的参数也同时在对应的环境变量中被指定，那么环境变量中的参数将**覆盖**<0>ti.init</0>中的参数，例如：
 
-- if `ti.init(arch=ti.cuda)` and `export TI_ARCH=opengl` are specified at the same time, then Taichi will choose `ti.opengl` as backend.
-- if `ti.init(debug=True)` and `export TI_DEBUG=0` are specified at the same time, then Taichi will disable debug mode.
+- 如果同时指定了`ti.init(arch=ti.cuda)`和`export TI_ARCH=opengl`，那么Taichi将会选择`ti.opengl`作为后端。
+- 如果同时指定了`ti.init(debug=True)`和`export TI_DEBUG=0`，那么Taichi将会禁用debug模式。
 
 ::: note
 
-If `ti.init` is called twice, then the configuation in first invocation will be completely discarded, e.g.:
+如果调用了两次`ti.init`，那么首次调用时的配置将被完全丢弃，例如：
 
 ```python {1,3}
 ti.init(debug=True)
