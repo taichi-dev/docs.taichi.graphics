@@ -2,13 +2,13 @@
 
 调试并行程序并不容易，因此Taichi提供了内置的支持，希望能帮助你更方便地调试Taichi程序。
 
-## Run-time `print` in kernels
+## 在内核中的运行时`print`
 
 ```python
 print(arg1, ..., sep='', end='\n')
 ```
 
-Debug your program with `print()` in Taichi-scope. For example:
+在 Taichi 作用域内用 `print()` 调试程序。 例如：
 
 ```python {1}
 @ti.kernel
@@ -36,10 +36,10 @@ def inside_taichi_scope():
     #=> v = [3, 4]
 ```
 
-For now, Taichi-scope `print` supports string, scalar, vector, and matrix expressions as arguments. `print` in Taichi-scope may be a little different from `print` in Python-scope. Please see details below.
+目前，Taichi 作用域的 `print`支持字符串、标量、向量和矩阵表达式作为参数。 Taichi 作用域中的`print`可能与 Python 作用域中的`print`略有不同。 请参阅下面的详细信息。
 
 ::: warning
-For the **CPU and CUDA backend**, `print` will not work in Graphical Python Shells including IDLE and Jupyter notebook. This is because these backends print the outputs to the console instead of the GUI. Use the **OpenGL or Metal backend** if you wish to use `print` in IDLE / Jupyter.
+对于 **CPU 和 CUDA 后端**, `print` 在图形化的 Python 界面中（包括 IDLE 和 Jupyter notebook）不起作用。 这是因为这些后端将输出打印到控制台而非GUI。 Use the **OpenGL or Metal backend** if you wish to use `print` in IDLE / Jupyter.
 :::
 
 ::: warning
