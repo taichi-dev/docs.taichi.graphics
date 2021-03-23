@@ -1,6 +1,6 @@
-# Debugging
+# 调试
 
-Debugging a parallel program is not easy, so Taichi provides builtin utilities that could hopefully help you debug your Taichi program.
+调试并行程序并不容易，因此Taichi提供了内置的支持，希望能帮助你更方便地调试Taichi程序。
 
 ## Run-time `print` in kernels
 
