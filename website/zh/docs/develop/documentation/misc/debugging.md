@@ -96,7 +96,7 @@ foo()
 
 ## 编译时`ti.static_print`
 
-有时，在Taichi 作用域中打印 Python 作用域的对象和常量（如数据类型或 SNodes）非常有用。 So, similar to `ti.static` we provide `ti.static_print` to print compile-time constants. It is similar to Python-scope `print`.
+有时，在Taichi 作用域中打印 Python 作用域的对象和常量（如数据类型或 SNodes）非常有用。 因此，类似于`ti.static`，我们提供`ti.static_print`来打印编译时常数。 它类似与Python作用域中的`print`。
 
 ```python
 x = ti.field(ti.f32, (2, 3))
@@ -113,20 +113,20 @@ def inside_taichi_scope():
     for i in range(4):
             ti.static_print(i.dtype)
             # => DataType.int32
-            # will only print once
+            # 只会打印一次
 ```
 
-Unlike `print`, `ti.static_print` will only print the expression once at compile-time, and therefore it has no runtime cost.
+与`print`不同，`ti.static_print`在编译时只打印一次表达式，因此没有运行时成本。
 
-## Serial execution
+## 串行执行
 
-The automatic parallelization feature of Taichi may lead to undeterministic behaviors. For debugging purposes, it may be useful to serialize program execution to get repeatable results and to diagnose data races. When running your Taichi program on CPUs, you can initialize Taichi to use a single thread using `cpu_max_num_threads=1`, so that the whole program becomes serial and deterministic. For example,
+Taichi的自动并行化特性有时会导致不确定的行为。 为了方便调试，可能需要串行化程序的执行来获得可重复的结果并诊断数据竞争问题。 当在CPU上运行你的Taichi程序时，你可以使用`cpu_max_num_threads=1`来初始化Taichi来使用单线程，这样整个程序就变为串行的和确定性的。 例如，
 
 `ti.init(arch=ti.cpu, cpu_max_num_threads=1)`
 
-If you program works well in serial but not in parallel, check parallelization-related issues such as data races.
+如果你的程序在串行时表现良好但并行时出现了问题，请检查并行相关的问题，例如数据竞争。
 
-## Runtime `assert` in kernel
+## 在内核中的运行时`assert`
 
 Programmers may use `assert` statements in Taichi-scope. When the assertion condition failed, a `RuntimeError` will be raised to indicate the error.
 
