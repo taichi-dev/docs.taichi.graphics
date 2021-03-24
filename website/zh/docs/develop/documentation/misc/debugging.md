@@ -39,12 +39,12 @@ def inside_taichi_scope():
 目前，Taichi 作用域的 `print`支持字符串、标量、向量和矩阵表达式作为参数。 Taichi 作用域中的`print`可能与 Python 作用域中的`print`略有不同。 请参阅下面的详细信息。
 
 ::: warning
-对于 **CPU 和 CUDA 后端**, `print` 在图形化的 Python 界面中（包括 IDLE 和 Jupyter notebook）不起作用。 这是因为这些后端将输出打印到控制台而非GUI。 Use the **OpenGL or Metal backend** if you wish to use `print` in IDLE / Jupyter.
+对于 **CPU 和 CUDA 后端**, `print` 在图形化的 Python 界面中（包括 IDLE 和 Jupyter notebook）不起作用。 这是因为这些后端将输出打印到控制台而非GUI。 如果你希望在 IDLE/ Jupyter 中使用`print`，请使用**OpenGL 或 Metal 后端**。
 :::
 
 ::: warning
 
-For the **CUDA backend**, the printed result will not show up until `ti.sync()` is called:
+对于**CUDA 后端**，打印的结果不会显示，直到`ti.sync()`被调用“
 
 ```python
 import taichi as ti
@@ -61,7 +61,7 @@ ti.sync()
 print('after sync')
 ```
 
-results in:
+得到：
 
 ```
 before kernel
@@ -70,11 +70,11 @@ inside kernel
 after sync
 ```
 
-Note that host access or program end will also implicitly invoke `ti.sync()`.
+请注意，主机访问或程序终止也将隐式地触发`ti.sync()`。
 :::
 
 ::: note
-Note that `print` in Taichi-scope can only receive **comma-separated parameter**. Neither f-string nor formatted string should be used. For example:
+注意Taichi作用域中的`print` 只能接受 **逗号分隔的参数**。 不应使用f-字符串或格式化的字符串。 例如：
 
 ```python {9-11}
 import taichi as ti
@@ -85,18 +85,18 @@ a = ti.field(ti.f32, 4)
 @ti.kernel
 def foo():
     a[0] = 1.0
-    print('a[0] = ', a[0]) # right
-    print(f'a[0] = {a[0]}') # wrong, f-string is not supported
-    print("a[0] = %f" % a[0]) # wrong, formatted string is not supported
+    print('a[0] = ', a[0]) # 正确
+    print(f'a[0] = {a[0]}') # 错误, 不支持f-字符创
+    print("a[0] = %f" % a[0]) # 错误, 不支持格式化的字符串
 
 foo()
 ```
 
 :::
 
-## Compile-time `ti.static_print`
+## 编译时`ti.static_print`
 
-Sometimes it is useful to print Python-scope objects and constants like data types or SNodes in Taichi-scope. So, similar to `ti.static` we provide `ti.static_print` to print compile-time constants. It is similar to Python-scope `print`.
+有时，在Taichi 作用域中打印 Python 作用域的对象和常量（如数据类型或 SNodes）非常有用。 So, similar to `ti.static` we provide `ti.static_print` to print compile-time constants. It is similar to Python-scope `print`.
 
 ```python
 x = ti.field(ti.f32, (2, 3))
