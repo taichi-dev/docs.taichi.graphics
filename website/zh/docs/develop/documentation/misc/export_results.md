@@ -1,14 +1,14 @@
-# Export your results
+# 导出结果
 
-Taichi has functions that help you **export visual results to images or videos**. This tutorial demonstrates how to use them step by step.
+Taichi 提供的函数可以帮助你以**图像或视频的形式导出可视化结果**。 本节文档将对它们的使用方法逐步演示。
 
-## Export images
+## 导出图像
 
-- There are two ways to export visual results of your program to images.
-- The first and easier way is to make use of `ti.GUI`.
-- The second way is to call some Taichi functions such as `ti.imwrite`.
+- 这里有两种方法可以将程序的可视化结果导出为图像。
+- 第一种也是较简单的方式是使用`ti.GUI`。
+- 第二种方式是调用一系列相关 Taichi 函数，比如`ti.imwrite`。
 
-### Export images using `ti.GUI.show`
+### 通过`ti.GUI.show`导出图像
 
 - `ti.GUI.show(filename)` can not only display the GUI canvas on your screen, but also save the image to your specified `filename`.
 - Note that the format of the image is fully determined by the suffix of `filename`.
