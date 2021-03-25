@@ -301,58 +301,58 @@ AssertionError
 我们可以看到， 这里的异常挂钩(exception hook) 已经从回溯中删除了一些无用的 Taichi 内部堆栈帧。 更重要的是，虽然在文档中不可见，但这些输出都是 **彩色** 的！
 
 ::: note
-For IPython / Jupyter notebook users, the IPython stack traceback hook will be overriden by the Taichi one when `ti.enable_excepthook()`.
+对于 IPython / Jupyter notebook 的用户，当`ti.enable_excepthook()`触发时，IPython 原有的堆栈回溯挂钩将被 Taichi 取代。
 :::
 
-## Debugging Tips
+## 调试技巧
 
-Debugging a Taichi program can be hard even with the builtin tools above. Here we showcase some common bugs that one may encounter in a Taichi program.
+即使有上面的内置工具，调试 Taichi 程序也可能会很难。 在这里，我们展示了一些 Taichi 程序中可能会遇到的常见错误。
 
-### Static type system
+### 静态类型系统
 
-Python code in Taichi-scope is translated into a statically typed language for high performance. This means code in Taichi-scope can have a different behavior compared with that in Python-scope, especially when it comes to types.
+Taichi 作用域中的 Python 代码被翻译成静态类型语言以实现高性能。 这意味着Taichi 作用域中的代码与 Python 作用域中的代码可以有不同的行为，尤其是在类型方面。
 
-The type of a variable is simply **determined at its initialization and never changes later**.
+变量的类型只**在初始化时确定，并且之后不会做更改**。
 
-Although Taichi\'s static type system provides better performance, it may lead to bugs if programmers carelessly used the wrong types. For example,
+虽然Taichi的静态类型系统提供更好的性能，但如果程序员不小心使用了错误的类型，它可能会导致错误。 例如，
 
 ```python
 @ti.kernel
 def buggy():
-    ret = 0  # 0 is an integer, so `ret` is typed as int32
+    ret = 0  # 0 是整数, 所以 `ret` 类型是 int32
     for i in range(3):
-        ret += 0.1 * i  # i32 += f32, the result is still stored in int32!
-    print(ret)  # will show 0
+        ret += 0.1 * i  # i32 += f32，结果依旧储存在 int32!
+    print(ret)  # 会显示 0
 
 buggy()
 ```
 
-The code above shows a common bug due to Taichi\'s static type system. The Taichi compiler should show a warning like:
+上面的代码显示了由于Taichi的静态类型系统而导致的常见错误。 Taichi编译器应显示以下警告：
 
 ```
 [W 06/27/20 21:43:51.853] [type_check.cpp:visit@66] [$19] Atomic add (float32 to int32) may lose precision.
 ```
 
-This means that Taichi cannot store a `float32` result precisely to `int32`. The solution is to initialize `ret` as a float-point value:
+这意味着Taichi不能将`float32`结果精确存储到`int32`。 解决方案是初始化`ret`作为浮点值：
 
 ```python
 @ti.kernel
 def not_buggy():
-    ret = 0.0  # 0 is a floating point number, so `ret` is typed as float32
+    ret = 0.0  # 0 是浮点数， 所以 `ret` 类型是 float32
     for i in range(3):
-        ret += 0.1 * i  # f32 += f32. OK!
-    print(ret)  # will show 0.6
+        ret += 0.1 * i  # f32 += f32. 成立！
+    print(ret)  # 会显示 0.6
 
 not_buggy()
 ```
 
-### Advanced Optimization
+### 高级优化
 
-Taichi has an advanced optimization engine to make your Taichi kernel to be as fast as it could. But like what `gcc -O3` does, advanced optimization may occasionally lead to bugs as it tries too hard. This includes runtime errors such as:
+Taichi有一个先进的优化引擎，可以使你的Taichi内核尽可能地快。 但是，就像`gcc -O3`一样，高级优化偶尔也会导致错误，因为它过于努力了。 这包括运行时错误，例如：
 
 `RuntimeError: [verify.cpp:basic_verify@40] stmt 8 cannot have operand 7.`
 
-You may use `ti.init(advanced_optimization=False)` to turn off advanced optimization and see if the issue still exists:
+你可以使用`ti.init(advanced_optimization=False)`关闭高级优化，并查看问题是否仍然存在：
 
 ```python {3}
 import taichi as ti
@@ -361,4 +361,4 @@ ti.init(advanced_optimization=False)
 ...
 ```
 
-Whether or not turning off optimization fixes the issue, please feel free to report this bug on [GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md). Thank you!
+无论是否关闭优化修复了问题，请随时在[GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md)上报告此 Bug。 谢谢！
