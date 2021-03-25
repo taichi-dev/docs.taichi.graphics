@@ -128,9 +128,9 @@ Taichi的自动并行化特性有时会导致不确定的行为。 为了方便�
 
 ## 在内核中的运行时`assert`
 
-Programmers may use `assert` statements in Taichi-scope. When the assertion condition failed, a `RuntimeError` will be raised to indicate the error.
+程序员可以在 Taichi 作用域内使用`assert`语句。 当断言的条件失败时，一个`RuntimeError`会被触发以指示错误。
 
-To make `assert` work, first make sure you are using the **CPU backend**. For performance reason, `assert` only works when `debug` mode is on, For example:
+若要使`assert`正常工作，首先请确保使用**CPU后端**运行程序。 其次出于性能方面的考量，`assert`仅在`debug`模式开启时有效，例如：
 
 ```python
 ti.init(arch=ti.cpu, debug=True)
@@ -144,17 +144,17 @@ def do_sqrt_all():
         x[i] = ti.sqrt(x)
 ```
 
-When you are done with debugging, simply set `debug=False`. Now `assert` will be ignored and there will be no runtime overhead.
+完成调试后，只需设置`debug=False`。 此时，`assert`将被忽略，并且不会产生运行时开销。
 
-## Compile-time `ti.static_assert`
+## 编译时`ti.static_assert`
 
 ```python
 ti.static_assert(cond, msg=None)
 ```
 
-Like `ti.static_print`, we also provide a static version of `assert`: `ti.static_assert`. It can be useful to make assertions on data types, dimensionality, and shapes. It works whether `debug=True` is specified or not. When an assertion fails, it will raise an `AssertionError`, just like a Python-scope `assert`.
+与 `ti.static_print` 类似，我们还提供了 `assert` 的静态版本：`ti.static_assert`。 它对数据类型、维度和形状进行断言可能很有用。 无论是否指定`debug=True`，它都有效。 当断言失败时，它将引发一个`AssertionError`，就像 Python 作用域中的 `assert` 一样。
 
-For example:
+例如：
 
 ```python
 @ti.func
@@ -165,9 +165,9 @@ def copy(dst: ti.template(), src: ti.template()):
     return x % 2 == 1
 ```
 
-## Pretty Taichi-scope traceback
+## 优雅的 Taichi 作用域的栈回溯
 
-As we all know, Python provides a useful stack traceback system, which could help you locate the issue easily. But sometimes stack tracebacks from **Taichi-scope** could be extremely complicated and hard to read. For example:
+我们都知道，Python 提供了一个有用的堆栈回溯系统，它可以帮你轻松定位到问题。 但有时 **Taichi 作用域** 的堆栈回溯(stack traceback) 日志可能极其复杂且难以阅读。 例如：
 
 ```python
 import taichi as ti
@@ -192,7 +192,7 @@ def func0():
 func0()
 ```
 
-Running this code, of course, will result in an `AssertionError`:
+当然，运行此代码将导致`AssertionError`错误：
 
 ```
 Traceback (most recent call last):
@@ -233,17 +233,17 @@ Traceback (most recent call last):
 AssertionError
 ```
 
-You may already feel brain fried by the annoying `decorated`\'s and `__call__`\'s. These are the Taichi internal stack frames. They have almost no benefit for end-users but make the traceback hard to read.
+分析诸如 `decorated` 和 `__call__` 之类晦涩的信息有时会让人感到异常困难和烦躁。 其实这些是Taichi的内部堆栈帧。 直接暴露它们对普通用户几乎没有好处，并且会使回溯日志很难阅读。
 
-For this purpose, we may want to use `ti.init(excepthook=True)`, which _hooks_ on the exception handler, and make the stack traceback from Taichi-scope easier to read and intuitive. e.g.:
+为此，我们可能希望使用`ti.init(excepthook=True)`，这会与异常处理程序_挂钩(hook)_，从而使 Taichi 作用域中的堆栈回溯日志更直观且易于阅读。 例如：
 
 ```python {2}
 import taichi as ti
-ti.init(excepthook=True)  # just add this option!
+ti.init(excepthook=True)  # 简单地传入这个选项!
 ...
 ```
 
-And the result will be:
+这样结果会是：
 
 ```python
 ========== Taichi Stack Traceback ==========
@@ -298,7 +298,7 @@ def func3():
 AssertionError
 ```
 
-See? Our exception hook has removed some useless Taichi internal frames from traceback. What's more, although not visible in the doc, the output is **colorful**!
+我们可以看到， 这里的异常挂钩(exception hook) 已经从回溯中删除了一些无用的 Taichi 内部堆栈帧。 更重要的是，虽然在文档中不可见，但这些输出都是 **彩色** 的！
 
 ::: note
 For IPython / Jupyter notebook users, the IPython stack traceback hook will be overriden by the Taichi one when `ti.enable_excepthook()`.
