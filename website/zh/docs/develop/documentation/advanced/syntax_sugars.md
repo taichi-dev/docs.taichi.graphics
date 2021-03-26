@@ -2,7 +2,7 @@
 
 ## Aliases
 
-Creating aliases for global variables and functions with cumbersome names can sometimes improve readability. In Taichi, this can be done by assigning kernel and function local variables with `ti.static()`, which forces Taichi to use standard python pointer assignment.
+Creating aliases for global variables and functions with cumbersome names can sometimes improve readability. Creating aliases for global variables and functions with cumbersome names can sometimes improve readability. In Taichi, this can be done by assigning kernel and function local variables with `ti.static()`, which forces Taichi to use standard python pointer assignment.
 
 For example, consider the simple kernel:
 
@@ -54,5 +54,5 @@ def compute_laplacian(self):
 
 See [Metaprogramming](./meta.md) for more details.
 
-Here, we are using it for _compile-time const values_, i.e. the **field/function handles** are constants at compile time.
+Here, we are using it for _compile-time const values_, i.e. the **field/function handles** are constants at compile time. :::
 :::
