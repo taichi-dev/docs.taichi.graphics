@@ -1,10 +1,10 @@
-# Syntax sugars
+# 语法糖
 
-## Aliases
+## 别名
 
-Creating aliases for global variables and functions with cumbersome names can sometimes improve readability. Creating aliases for global variables and functions with cumbersome names can sometimes improve readability. In Taichi, this can be done by assigning kernel and function local variables with `ti.static()`, which forces Taichi to use standard python pointer assignment.
+有时为命名繁琐的全局变量和函数创建别名可以提高可读性。 在Taichi中，这可以通过使用`ti.static()`分配内核和函数局部变量实现，这会迫使Taichi使用标准的python指针分配。
 
-For example, consider the simple kernel:
+例如，考虑下面这个简单的内核：
 
 ```python
 @ti.kernel
@@ -13,7 +13,7 @@ def my_kernel():
         field_b[i, j] = some_function(field_a[i, j])
 ```
 
-The fields and function be aliased to new names with `ti.static`:
+场和函数使用`ti.static`别名为新名称：
 
 ```python {3}
 @ti.kernel
@@ -23,9 +23,9 @@ def my_kernel():
         b[i, j] = fun(a[i, j])
 ```
 
-Aliases can also be created for class members and methods, which can help prevent cluttering objective data-oriented programming code with `self`.
+还可以为类成员和方法创建别名，这有助于防止含有 `self` 的面向对象编程代码混乱。
 
-For example, consider class kernel to compute the 2-D laplacian of some field:
+例如，考虑使用类内核来计算某个场的二维拉普拉斯算子：
 
 ```python
 @ti.kernel
@@ -35,7 +35,7 @@ def compute_laplacian(self):
                  + (self.a[i, j + 1] - 2.0*self.a[i, j] + self.a[i, j-1])/(self.dy**2)
 ```
 
-Using `ti.static()`, it can be simplified to:
+使用`ti.static()`，这可以简化为：
 
 ```python {3-6}
 @ti.kernel
@@ -47,12 +47,12 @@ def compute_laplacian(self):
 ```
 
 ::: note
-`ti.static` can also be used in combination with:
+`ti.static` 还可与其他语法结合使用：
 
-- `if` (compile-time branching) and
-- `for` (compile-time unrolling)
+- `if`（编译时分支）和
+- `for`（编译时展开）
 
-See [Metaprogramming](./meta.md) for more details.
+更多相关详细信息，请参见[元编程](./meta.md)章节。
 
-Here, we are using it for _compile-time const values_, i.e. the **field/function handles** are constants at compile time. :::
+在这里，我们将其用于_编译时常量值_，即 **场/函数句柄** 在编译时是常量。
 :::
