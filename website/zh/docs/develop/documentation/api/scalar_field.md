@@ -2,42 +2,42 @@
 
 **Taichi fields** are used to store data.
 
-Field **elements** could be either a scalar, a vector, or a matrix (see [Matrices](./matrix.md)). In this paragraph, we will only talk about **scalar fields**, whose elements are simply scalars. In this paragraph, we will only talk about **scalar fields**, whose elements are simply scalars.
+Field **elements** could be either a scalar, a vector, or a matrix (see [Matrices](./matrix.md)). In this paragraph, we will only talk about **scalar fields**, whose elements are simply scalars.
 
 Fields can have up to eight **dimensions**.
 
 - A 0D scalar field is simply a single scalar.
 - A 1D scalar field is a 1D linear array.
-- A 2D scalar field can be used to represent a 2D regular grid of values. For example, a gray-scale image. For example, a gray-scale image.
+- A 2D scalar field can be used to represent a 2D regular grid of values. For example, a gray-scale image.
 - A 3D scalar field can be used for volumetric data.
 
-Fields could be either dense or sparse, see [Sparse Computation](../advanced/sparse.md) for details on sparse fields. We will only talk about **dense fields** in this paragraph. We will only talk about **dense fields** in this paragraph.
+Fields could be either dense or sparse, see [Sparse Computation](../advanced/sparse.md) for details on sparse fields. We will only talk about **dense fields** in this paragraph.
 
 ::: note
 
-We once used the term **tensor** instead of **field**. **Tensor** will no longer be used. ::: **Tensor** will no longer be used.
+We once used the term **tensor** instead of **field**. **Tensor** will no longer be used.
 :::
 
 ## Declaration
 
 ::: {.function} ti.field(dtype, shape = None, offset = None)
 
-parameter shape :
+parameter dtype
 :
 
 (DataType) type of the field element
 
-parameter a :
+parameter shape
 :
 
 (optional, scalar or tuple) the shape of field
 
-parameter a :
+parameter offset
 :
 
 (optional, scalar or tuple) see [coordinate offset](../advanced/offset.md)
 
-parameter dtype :
+For example, this creates a _dense_ field with four `int32` as elements: :
 
     x = ti.field(ti.i32, shape=4)
 
@@ -53,7 +53,7 @@ Then access it by passing `None` as index: :
 
     x[None] = 2
 
-parameter offset :
+If shape is **not provided** or `None`, the user must manually `place` it afterwards: :
 
     x = ti.field(ti.f32)
     ti.root.dense(ti.ij, (4, 3)).place(x)
@@ -63,12 +63,12 @@ parameter offset :
 
 ::: note
 
-Not providing `shape` allows you to _place_ the field in a layout other than the default _dense_, see [Advanced dense layouts](../advanced/layout.md) for more details. :::
+Not providing `shape` allows you to _place_ the field in a layout other than the default _dense_, see [Advanced dense layouts](../advanced/layout.md) for more details.
 :::
 
 ::: warning
 
-All variables should be created and placed before any kernel invocation or any of them accessed from python-scope. For example: For example:
+All variables should be created and placed before any kernel invocation or any of them accessed from python-scope. For example:
 
 ```python
 x = ti.field(ti.f32)
@@ -99,24 +99,24 @@ y = ti.field(ti.f32, shape=())
 
 You can access an element of the Taichi field by an index or indices.
 
-::: {.attribute} a.shape
+::: {.attribute} a\[p, q, \...\]
 
-parameter a :
+parameter a
 :
 
 (ti.field) the sclar field
 
-parameter p :
+parameter p
 :
 
 (scalar) index of the first field dimension
 
-parameter q :
+parameter q
 :
 
 (scalar) index of the second field dimension
 
-return :
+return
 :
 
 (scalar) the element at `[p, q, ...]`
@@ -132,23 +132,23 @@ This sets the element value at index `2` of 1D field `b` to `5`: :
 :::
 
 ::: note
-In Python, x[(exp1, exp2, …, expN)] is equivalent to x[exp1, exp2, …, expN]; the latter is just syntactic sugar for the former. :::
+In Python, x[(exp1, exp2, …, expN)] is equivalent to x[exp1, exp2, …, expN]; the latter is just syntactic sugar for the former.
 :::
 
 ::: note
-The returned value can also be `Vector` / `Matrix` if `a` is a vector/matrix field, see [Vectors](./vector.md) for more details. :::
+The returned value can also be `Vector` / `Matrix` if `a` is a vector/matrix field, see [Vectors](./vector.md) for more details.
 :::
 
 ## Meta data
 
-::: {.attribute} a\[p, q, \...\]
+::: {.attribute} a.shape
 
-parameter a :
+parameter a
 :
 
 (ti.field) the field
 
-return :
+return
 :
 
 (tuple) the shape of field `a`
@@ -171,12 +171,12 @@ return :
 
 ::: {.attribute} a.dtype
 
-parameter n :
+parameter a
 :
 
 (ti.field) the field
 
-return :
+return
 :
 
 (DataType) the data type of `a`
@@ -203,7 +203,7 @@ parameter n
 
 (optional, scalar) the number of parent steps, i.e. `n=1` for parent, `n=2` grandparent, etc.
 
-return :
+return
 :
 
 (SNode) the parent of `a`\'s containing SNode
@@ -224,5 +224,5 @@ return :
     y.parent()   # blk2
     y.parent(2)  # blk1
 
-See [Structural nodes (SNodes)](./snode.md) for more details. :::
+See [Structural nodes (SNodes)](./snode.md) for more details.
 :::
