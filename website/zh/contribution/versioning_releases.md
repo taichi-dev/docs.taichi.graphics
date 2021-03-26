@@ -8,19 +8,19 @@ Since Taichi is still under version 1.0.0, we use minor version bumps (e.g., `0.
 
 ## Workflow: releasing a new version
 
-- Trigger a Linux build on [Jenkins](http://f11.csail.mit.edu:8080/job/taichi/) to see if CUDA passes all tests. Note that Jenkins is the only build bot we have that tests CUDA. (This may take half an hour.)
+- Trigger a Linux build on [Jenkins](http://f11.csail.mit.edu:8080/job/taichi/) to see if CUDA passes all tests. Note that Jenkins is the only build bot we have that tests CUDA. (This may take half an hour.) Note that Jenkins is the only build bot we have that tests CUDA. (This may take half an hour.)
 
 - Create a branch for the release PR, forking from the latest commit of the `master` branch.
 
-  - Update Taichi version number at the beginning of `CMakeLists.txt`. For example, change `SET(TI_VERSION_PATCH 9)` to `SET(TI_VERSION_PATCH 10)` for a patch release.
+  - Update Taichi version number at the beginning of `CMakeLists.txt`. For example, change `SET(TI_VERSION_PATCH 9)` to `SET(TI_VERSION_PATCH 10)` for a patch release. For example, change `SET(TI_VERSION_PATCH 9)` to `SET(TI_VERSION_PATCH 10)` for a patch release.
   - commit with message "[release] vX.Y.Z", e.g. "[release] v0.6.10".
   - You should see two changes in this commit: one line in `CMakeLists.txt` and one line in `docs/version`.
-  - Execute `ti changelog` and save its outputs. You will need this later.
+  - Execute `ti changelog` and save its outputs. You will need this later. You will need this later.
 
 - Open a PR titled "[release] vX.Y.Z" with the branch and commit you just now created.
 
   - Use the `ti changelog` output you saved in the previous step as the content of the PR description.
-  - Wait for all the checks and build bots to complete. (This step may take up to two hours).
+  - Wait for all the checks and build bots to complete. (This step may take up to two hours). (This step may take up to two hours).
 
 - Squash and merge the PR.
 
