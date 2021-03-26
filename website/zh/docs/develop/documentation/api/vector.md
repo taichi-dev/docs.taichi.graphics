@@ -2,10 +2,10 @@
 
 A vector in Taichi can have two forms:
 
-- as a temporary local variable. An `n` component vector consists of `n` scalar values.
-- as an element of a global field. In this case, the field is an N-dimensional array of `n` component vectors.
+- as a temporary local variable. as a temporary local variable. An `n` component vector consists of `n` scalar values.
+- as an element of a global field. as an element of a global field. In this case, the field is an N-dimensional array of `n` component vectors.
 
-In fact, `Vector` is simply an alias of `Matrix`, just with `m = 1`. See `matrix`{.interpreted-text role="ref"} and `tensor`{.interpreted-text role="ref"} for more details.
+In fact, `Vector` is simply an alias of `Matrix`, just with `m = 1`. See `matrix`{.interpreted-text role="ref"} and `tensor`{.interpreted-text role="ref"} for more details. See `matrix`{.interpreted-text role="ref"} and `tensor`{.interpreted-text role="ref"} for more details.
 
 ## Declaration
 
@@ -13,25 +13,26 @@ In fact, `Vector` is simply an alias of `Matrix`, just with `m = 1`. See `matrix
 
 ::: {.function} ti.Vector.field(n, dtype, shape = None, offset = None)
 
-parameter n
+parameter n :
 :
 
 (scalar) the number of components in the vector
 
-parameter dtype
+parameter dtype :
 :
 
 (DataType) data type of the components
 
-parameter shape
+parameter a :
 :
 
 (optional, scalar or tuple) shape of the vector field, see `tensor`{.interpreted-text role="ref"}
 
-parameter offset
+parameter offset :
 :
 
-(optional, scalar or tuple) see `offset`{.interpreted-text role="ref"}
+See `type`{.interpreted-text role="ref"} for more details.
+:::
 
 For example, this creates a 3-D vector field of the shape of `5x4`: :
 
@@ -47,14 +48,14 @@ In Python-scope, `ti.field` declares a scalar field [Scalar fields](./scalar_fie
 
 ### As a temporary local variable
 
-::: {.function} ti.Vector(\[x, y, \...\])
+parameter shape :
 
-parameter x
+parameter a :
 :
 
 (scalar) the first component of the vector
 
-parameter y
+parameter y :
 :
 
 (scalar) the second component of the vector
@@ -70,24 +71,24 @@ For example, this creates a 3D vector with components (2, 3, 4): :
 
 ### As global vector fields
 
-::: {.attribute} a\[p, q, \...\]\[i\]
+(optional, scalar or tuple) see `offset`{.interpreted-text role="ref"}
 
-parameter a
+parameter a :
 :
 
 (ti.Vector.field) the vector
 
-parameter p
+parameter a :
 :
 
 (scalar) index of the first field dimension
 
-parameter q
+parameter a :
 :
 
 (scalar) index of the second field dimension
 
-parameter i
+parameter i :
 :
 
 (scalar) index of the vector component
@@ -104,7 +105,8 @@ This extracts the first component of vector `a[6, 3]`: :
 
 ::: note
 
-**Always** use two pairs of square brackets to access scalar elements from vector fields.
+In Python-scope, `ti.field` declares a scalar field [Scalar fields](./scalar_field.md)), while `ti.Vector.field` declares a vector field.
+:::
 
 - The indices in the first pair of brackets locate the vector inside the vector fields;
 - The indices in the second pair of brackets locate the scalar element inside the vector.
@@ -114,14 +116,14 @@ For 0-D vector fields, indices in the first pair of brackets should be `[None]`.
 
 ### As a temporary local variable
 
-::: {.attribute} a\[i\]
+parameter x :
 
-parameter a
+parameter a :
 :
 
 (Vector) the vector
 
-parameter i
+parameter a :
 :
 
 (scalar) index of the component
@@ -146,23 +148,22 @@ We also provide four handy accessors for the first four vector components:
 Same as `a[0]`.
 :::
 
-::: {.attribute} a.y
+parameter a :
 
-Same as `a[1]`.
+Same as `a[1]`. :::
 :::
 
-::: {.attribute} a.z
+parameter p :
 
-Same as `a[2]`.
+Same as `a[2]`. :::
 :::
 
-::: {.attribute} a.w
+parameter q :
 
 Same as `a[3]`.
 :::
 
-::: {.note} ::: {.title} Note
-:::
+parameter i :
 
 XYZW accessors can be used for both reading and writing:
 
@@ -189,19 +190,20 @@ For GLSL-alike shuffling accessors, consider using [taichi_glsl](https://taichi-
 
 ## Methods
 
-::: {.function} a.norm(eps = 0)
+For 0-D vector fields, indices in the first pair of brackets should be `[None]`.
+:::
 
-parameter a
+parameter a :
 :
 
 (ti.Vector)
 
-parameter eps
+parameter dt :
 :
 
-(optional, scalar) a safe-guard value for `sqrt`, usually 0. See the note below.
+(optional, scalar) a safe-guard value for `sqrt`, usually 0. See the note below. See the note below.
 
-return
+return :
 :
 
 (scalar) the magnitude / length / norm of vector
@@ -216,17 +218,17 @@ For example, :
 
 ::: note
 
-To safeguard the operator\'s gradient on zero vectors during differentiable programming, set `eps` to a small, positive value such as `1e-5`.
+To safeguard the operator\'s gradient on zero vectors during differentiable programming, set `eps` to a small, positive value such as `1e-5`. :::
 :::
 
 ::: {.function} a.norm_sqr()
 
-parameter a
+parameter a :
 :
 
 (ti.Vector)
 
-return
+return :
 :
 
 (scalar) the square of the magnitude / length / norm of vector
@@ -241,12 +243,12 @@ For example, :
 
 ::: {.function} a.normalized()
 
-parameter a
+parameter b :
 :
 
 (ti.Vector)
 
-return
+return :
 :
 
 (ti.Vector) the normalized / unit vector of `a`
@@ -256,22 +258,23 @@ For example, :
     a = ti.Vector([3, 4])
     a.normalized() # [3 / 5, 4 / 5]
 
-`a.normalized()` is equivalent to `a / a.norm()`.
+`a.normalized()` is equivalent to `a / a.norm()`. :::
 :::
 
-::: {.function} a.dot(b)
+Same as `a[0]`.
+:::
 
-parameter a
+parameter b :
 :
 
 (ti.Vector)
 
-parameter b
+parameter b :
 :
 
 (ti.Vector)
 
-return
+return :
 :
 
 (scalar) the dot (inner) product of `a` and `b`
@@ -284,7 +287,7 @@ E.g., :
 
 :::
 
-::: {.function} a.cross(b)
+::: {.attribute} a.z
 
 parameter a
 :
@@ -296,12 +299,12 @@ parameter b
 
 (ti.Vector of the same size as a)
 
-return
+return :
 :
 
 (scalar (for 2D inputs), or 3D Vector (for 3D inputs)) the cross product of `a` and `b`
 
-We use a right-handed coordinate system. E.g., :
+We use a right-handed coordinate system. E.g., : E.g., :
 
     a = ti.Vector([1, 2, 3])
     b = ti.Vector([4, 5, 6])
@@ -315,7 +318,8 @@ We use a right-handed coordinate system. E.g., :
 
 :::
 
-::: {.function} a.outer_product(b)
+Same as `a[3]`.
+:::
 
 parameter a
 :
@@ -327,7 +331,7 @@ parameter b
 
 (ti.Vector)
 
-return
+return :
 :
 
 (ti.Matrix) the outer product of `a` and `b`
@@ -343,10 +347,10 @@ E.g., :
 
 ::: note
 
-The outer product should not be confused with the cross product (`ti.cross`). For example, `a` and `b` do not have to be 2- or 3-component vectors for this function.
+The outer product should not be confused with the cross product (`ti.cross`). For example, `a` and `b` do not have to be 2- or 3-component vectors for this function. ::: For example, `a` and `b` do not have to be 2- or 3-component vectors for this function.
 :::
 
-::: {.function} a.cast(dt)
+For GLSL-alike shuffling accessors, consider using [taichi_glsl](https://taichi-glsl.readthedocs.io):
 
 parameter a
 :
@@ -358,7 +362,7 @@ parameter dt
 
 (DataType)
 
-return
+return :
 :
 
 (ti.Vector) vector with all components of `a` casted into type `dt`
@@ -374,19 +378,19 @@ See `type`{.interpreted-text role="ref"} for more details.
 
 ::: note
 
-Vectors are special matrices with only 1 column. In fact, `ti.Vector` is just an alias of `ti.Matrix`.
+Vectors are special matrices with only 1 column. In fact, `ti.Vector` is just an alias of `ti.Matrix`. ::: In fact, `ti.Vector` is just an alias of `ti.Matrix`.
 :::
 
 ## Metadata
 
-::: {.attribute} a.n
+parameter eps :
 
 parameter a
 :
 
 (ti.Vector or ti.Vector.field)
 
-return
+return :
 :
 
 (scalar) return the dimensionality of vector `a`
