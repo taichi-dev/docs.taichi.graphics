@@ -10,10 +10,10 @@ Taichi 提供的函数可以帮助你以**图像或视频的形式导出可视�
 
 ### 通过`ti.GUI.show`导出图像
 
-- `ti.GUI.show(filename)` can not only display the GUI canvas on your screen, but also save the image to your specified `filename`.
-- Note that the format of the image is fully determined by the suffix of `filename`.
-- Taichi now supports saving to `png`, `jpg`, and `bmp` formats.
-- We recommend using `png` format. For example:
+- `ti.GUI.show(文件名)`不仅可以在屏幕上显示 GUI 画布，还可以将 GUI 中的图像保存到指定的`文件名`中。
+- 请注意，图像的格式完全由`文件名`中的后缀所决定。
+- Taichi 现在支持将图片保存为`png`，`jpg`，和 `bmp`格式。
+- 我们建议使用`png`格式。 例如：
 
 ```python {23}
 import taichi as ti
@@ -36,17 +36,17 @@ for i in range(iterations):
     paint()
     gui.set_image(pixels)
 
-    filename = f'frame_{i:05d}.png'   # create filename with suffix png
+    filename = f'frame_{i:05d}.png'   # 创建带有 png 后缀的文件名
     print(f'Frame {i} is recorded in {filename}')
-    gui.show(filename)  # export and show in GUI
+    gui.show(filename)  # 导出并显示在 GUI 中
 ```
 
-- After running the code above, you will get a series of images in the current folder.
-- To compose these images into a single `mp4` or `gif` file, see [Converting PNGs to video](./cli_utilities.md#converting-pngs-to-video).
+- 运行上述代码后，你将在当前文件夹中获得一系列 png 图像。
+- 若要将这些图像转换成单个的`mp4`视频或`gif`文件，请参阅[将PNG图片转换为视频](./cli_utilities.md#converting-pngs-to-video)章节。
 
-### Export images using `ti.imwrite`
+### 通过`ti.imwrite`导出图像
 
-To save images without invoking `ti.GUI.show(filename)`, use `ti.imwrite(filename)`. For example:
+如果不想通过调用 `ti.GUI.show(文件名)` 保存图像的话，可以使用`ti.imwrite(文件名)`。 例如：
 
 ```python {14}
 import taichi as ti
@@ -66,8 +66,8 @@ ti.imwrite(pixels.to_numpy(), filename)
 print(f'The image has been saved to {filename}')
 ```
 
-- `ti.imwrite` can export Taichi fields (`ti.Matrix.field`, `ti.Vector.field`, `ti.field`) and numpy arrays `np.ndarray`.
-- Same as above `ti.GUI.show(filename)`, the image format (`png`, `jpg` and `bmp`) is also controlled by the suffix of `filename` in `ti.imwrite(filename)`.
+- `ti.imwrite`可以导出Taichi场（`ti.Matrix.field`，`ti.Vector.field`, `ti.field`）和numpy数组`np.ndarray`。
+- 与之前提到的`ti.GUI.show(文件名)`一样，图像格式（`png`, `jpg` and `bmp`）也由`ti.imwrite(文件名)`中的`文件名`所决定。
 - Meanwhile, the resulted image type (grayscale, RGB, or RGBA) is determined by **the number of channels in the input field**, i.e., the length of the third dimension (`field.shape[2]`).
 - In other words, a field that has shape `(w, h)` or `(w, h, 1)` will be exported as a grayscale image.
 - If you want to export `RGB` or `RGBA` images instead, the input field should have a shape `(w, h, 3)` or `(w, h, 4)` respectively.
