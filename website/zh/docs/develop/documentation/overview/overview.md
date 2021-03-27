@@ -1,6 +1,6 @@
 # 为什么选择一门新的编程语言
 
-太极是一种用于计算机图形应用的高性能编程语言。 其设计目标有：
+Taichi is a high-performance programming language for computer graphics applications. The design goals are 其设计目标有：
 
 - 生产力
 - 性能
