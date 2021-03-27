@@ -4,7 +4,7 @@ This section provides a detailed description of some commonly used utilities for
 
 ## Logging
 
-Taichi uses [spdlog](https://github.com/gabime/spdlog) as its logging system. Logs can have different levels, from low to high, they are:
+Taichi uses [spdlog](https://github.com/gabime/spdlog) as its logging system. Logs can have different levels, from low to high, they are: Logs can have different levels, from low to high, they are:
 
 | LEVELS |
 | ------ |
@@ -16,7 +16,7 @@ Taichi uses [spdlog](https://github.com/gabime/spdlog) as its logging system. Lo
 
 The higher the level is, the more critical the message is.
 
-The default logging level is `info`. You may override the default logging level by:
+The default logging level is `info`. You may override the default logging level by: You may override the default logging level by:
 
 1.  Setting the environment variable like `export TI_LOG_LEVEL=warn`.
 2.  Setting the log level from Python side: `ti.set_logging_level(ti.WARN)`.
@@ -26,6 +26,10 @@ In **Python**, you may write logs using the `ti.*` interface:
 ```python
 # Python
 ti.trace("Hello world!")
+ti.debug("Hello world!")
+ti.info("Hello world!")
+ti.warn("Hello world!")
+ti.error("Hello world!")
 ti.debug("Hello world!")
 ti.info("Hello world!")
 ti.warn("Hello world!")
@@ -57,7 +61,7 @@ int func(void *p) {
 ```
 
 ::: note
-For people from Linux kernels, `TI_ERROR` is just `panic`.
+For people from Linux kernels, `TI_ERROR` is just `panic`. :::
 :::
 
 You may also simplify the above code by using `TI_ASSERT`:
@@ -75,8 +79,8 @@ int func(void *p) {
 
 ## Benchmarking and regression tests
 
-- Run `ti benchmark` to run tests in benchmark mode. This will record the performance of `ti test`, and save it in `benchmarks/output`.
-- Run `ti regression` to show the difference between the previous result in `benchmarks/baseline`. And you can see if the performance is increasing or decreasing after your commits. This is really helpful when your work is related to IR optimizations.
+- Run `ti benchmark` to run tests in benchmark mode. Run `ti benchmark` to run tests in benchmark mode. This will record the performance of `ti test`, and save it in `benchmarks/output`.
+- Run `ti regression` to show the difference between the previous result in `benchmarks/baseline`. And you can see if the performance is increasing or decreasing after your commits. This is really helpful when your work is related to IR optimizations. And you can see if the performance is increasing or decreasing after your commits. This is really helpful when your work is related to IR optimizations.
 - Run `ti baseline` to save the benchmark result to `benchmarks/baseline` for future comparison, this may be executed on performance-related PRs, before they are merged into master.
 
 For example, this is part of the output by `ti regression` after enabling constant folding optimization pass:
@@ -96,7 +100,7 @@ codegen_evaluator_statements                   0 ->    14    +inf%
 ```
 
 ::: note
-Currently `ti benchmark` only supports benchmarking number-of-statements, no time benchmarking is included since it depends on hardware performance and therefore hard to compare if the baseline is from another machine. We are to purchase a fixed-performance machine as a time benchmark server at some point. See detailed discussion at [Github Issue #948](https://github.com/taichi-dev/taichi/issues/948)
+Currently `ti benchmark` only supports benchmarking number-of-statements, no time benchmarking is included since it depends on hardware performance and therefore hard to compare if the baseline is from another machine. We are to purchase a fixed-performance machine as a time benchmark server at some point. See detailed discussion at [Github Issue #948](https://github.com/taichi-dev/taichi/issues/948) ::: We are to purchase a fixed-performance machine as a time benchmark server at some point. See detailed discussion at [Github Issue #948](https://github.com/taichi-dev/taichi/issues/948)
 :::
 
 The suggested workflow for the performance-related PR author to run the regression tests is:
@@ -127,15 +131,15 @@ export TI_GDB_TRIGGER=1
 ```
 
 ::: note
-**Quickly pinpointing segmentation faults/assertion failures using** `gdb`: When Taichi crashes, `gdb` will be triggered and attach to the current thread. You might be prompt to enter sudo password required for gdb thread attaching. After entering `gdb`, check the stack backtrace with command `bt` (`backtrace`), then find the line of code triggering the error.
+**Quickly pinpointing segmentation faults/assertion failures using** `gdb`: When Taichi crashes, `gdb` will be triggered and attach to the current thread. You might be prompt to enter sudo password required for gdb thread attaching. After entering `gdb`, check the stack backtrace with command `bt` (`backtrace`), then find the line of code triggering the error. ::: You might be prompt to enter sudo password required for gdb thread attaching. After entering `gdb`, check the stack backtrace with command `bt` (`backtrace`), then find the line of code triggering the error.
 :::
 
 ## Code coverage
 
-To ensure that our tests covered every situation, we need to have **coverage report**. That is, to detect how many percents of code lines in is executed in test.
+To ensure that our tests covered every situation, we need to have **coverage report**. That is, to detect how many percents of code lines in is executed in test. That is, to detect how many percents of code lines in is executed in test.
 
 - Generally, the higher the coverage percentage is, the stronger our tests are.
-- When making a PR, we want to **ensure that it comes with corresponding tests**. Or code coverage will decrease.
+- When making a PR, we want to **ensure that it comes with corresponding tests**. Or code coverage will decrease. Or code coverage will decrease.
 - Code coverage statuses are visible at [Codecov](https://codecov.io/gh/taichi-dev/taichi).
 - Currently, Taichi coverage report is only set up for Python code, not C++ yet.
 
@@ -193,7 +197,7 @@ struct Particle {
 
 ## Progress notification (legacy)
 
-The Taichi messenger can send an email to `$TI_MONITOR_EMAIL` when the task finishes or crashes. To enable:
+The Taichi messenger can send an email to `$TI_MONITOR_EMAIL` when the task finishes or crashes. To enable: To enable:
 
 ```python
 from taichi.tools import messenger
