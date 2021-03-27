@@ -1,4 +1,4 @@
-# Acknowledgments
+# 致谢
 
 _Taichi_ depends on other open-source projects, which are shipped with taichi and users do not have to install manually:
 
