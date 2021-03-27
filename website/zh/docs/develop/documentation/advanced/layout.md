@@ -1,8 +1,8 @@
 # 高级数据布局
 
-Fields ([Scalar fields](../api/scalar_field.md)) can be _placed_ in a specific shape and _layout_. Defining a proper layout can be critical to performance, especially for memory-bound applications. A carefully designed data layout can significantly improve cache/TLB-hit rates and cacheline utilization. Although when performance is not the first priority, you probably don\'t have to worry about it.
+场（[标量场](../api/scalar_field.md)）可以被_放置_在特定的形状和_布局_中。 构造适当的数据布局对性能来说非常关键，特别是对内存密集型的应用程序而言。 精心设计的数据布局可以显著提高缓存/转址旁路缓存(TLB) 命中率和缓存行(CacheLine) 利用率。 不过某些情况下性能不是最优先要考虑的因素，因此你可能不需要去担心它。
 
-Taichi decouples algorithms from data layouts, and the Taichi compiler automatically optimizes data accesses on a specific data layout. These Taichi features allow programmers to quickly experiment with different data layouts and figure out the most efficient one on a specific task and computer architecture.
+Taichi 将算法与数据布局解耦，并且 Taichi 编译器可以自动优化特定数据布局上的数据访问。 These Taichi features allow programmers to quickly experiment with different data layouts and figure out the most efficient one on a specific task and computer architecture.
 
 In Taichi, the layout is defined in a recursive manner. See [Structural nodes (SNodes)](../api/snode.md) for more details about how this works. We suggest starting with the default layout specification (simply by specifying `shape` when creating fields using `ti.field/ti.Vector.field/ti.Matrix.field`), and then migrate to more advanced layouts using the `ti.root.X` syntax if necessary.
 
