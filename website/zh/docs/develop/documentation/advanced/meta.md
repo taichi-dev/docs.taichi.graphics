@@ -39,32 +39,32 @@ def copy2d(x: ti.template(), y: ti.template()):
         y[i, j] = x[i, j]
 ```
 
-:tada:没有必要！ Taichi provides `ti.grouped` syntax which enables you to pack loop indices into a grouped vector to unify kernels of different dimensionalities. For example:
+:tada:没有必要！ Taichi 提供了`ti.grouped`语法，使你可以将 for 循环索引打包成一个分组向量，以统一不同维度的内核。 例如：
 
 ```python {3-10,15-16}
 @ti.kernel
 def copy(x: ti.template(), y: ti.template()):
     for I in ti.grouped(y):
-        # I is a vector with same dimensionality with x and data type i32
-        # If y is 0D, then I = ti.Vector([]), which is equivalent to `None` when used in x[I]
-        # If y is 1D, then I = ti.Vector([i])
-        # If y is 2D, then I = ti.Vector([i, j])
-        # If y is 3D, then I = ti.Vector([i, j, k])
+        # I 是与x相同维度的向量，类型为i32
+        # 如果y是0维的，则I = ti.Vector([])，其在x[I]中与`None`相同
+        # 如果y是1维的，则I = ti.Vector([i])
+        # 如果y是2维的，则I = ti.Vector([i, j])
+        # 如果y是3维的，则I = ti.Vector([i, j, k])
         # ...
         x[I] = y[I]
 
 @ti.kernel
 def array_op(x: ti.template(), y: ti.template()):
-    # if field x is 2D:
+    # 如果场 x是2维的:
     for I in ti.grouped(x): # I is simply a 2D vector with data type i32
         y[I + ti.Vector([0, 1])] = I[0] + I[1]
 
-    # then it is equivalent to:
+    # 则其相当于下面的：
     for i, j in x:
         y[i, j + 1] = i + j
 ```
 
-## Field metadata
+## 场元数据
 
 Sometimes it is useful to get the data type (`field.dtype`) and shape (`field.shape`) of fields. These attributes can be accessed in both Taichi- and Python-scopes.
 
