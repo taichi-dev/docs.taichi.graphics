@@ -8,22 +8,22 @@ python3 -m pip install taichi
 
 ::: note
 
-目前，Taichi 支持的 Python 版本有 3.6/3.7/3.8 (64-bit)。
+Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit). :::
 :::
 
 - 对于Ubuntu 19.04+，请执行 `sudo apt install libtinfo5` 安装依赖项。
 - 对于Arch Linux，请执行 `yaourt -S ncurses5-compat-libs` 安装依赖项。
-- 对于 Windows，请预先安装运行组件库 [Microsoft Visual C++ Redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe)。
+- On Windows, please install [Microsoft Visual C++ Redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe) if you haven\'t.
 
 ## 故障排除
 
 ### Windows 相关问题
 
-- 如果在 Windows 下 Taichi 崩溃并报告`ImportError`：请考虑安装运行组件库[Microsoft Visual C++ Redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe)。
+- If Taichi crashes and reports `ImportError` on Windows: Please consider installing [Microsoft Visual C++ Redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe).
 
 ### Python 相关问题
 
-- 如果 `pip` 报错找不到合适的包，即,
+- If `pip` complains that it could not find a satisfying package, i.e.,
 
   ```
   ERROR: Could not find a version that satisfies the requirement taichi (from versions: none)
@@ -55,17 +55,17 @@ python3 -m pip install taichi
   [E 05/14/20 10:46:49.911] Received signal 7 (Bus error)
   ```
 
-  这可能是因为你使用的 NVIDIA GPU 低于 Pascal 架构，这对 [统一内存(Unified Memory)](https://www.nextplatform.com/2019/01/24/unified-memory-the-final-piece-of-the-gpu-programming-puzzle/)的支持会有所限制。
+  This might be due to the fact that your NVIDIA GPU is pre-Pascal and has limited support for [Unified Memory](https://www.nextplatform.com/2019/01/24/unified-memory-the-final-piece-of-the-gpu-programming-puzzle/).
 
-  - **可能的解决方案**：尝试添加`export TI_USE_UNIFIED_MEMORY=0`到你的`~/.bashrc`文件中。 该操作将禁用CUDA后端使用统一内存。
+  - **Possible solution**: add `export TI_USE_UNIFIED_MEMORY=0` to your `~/.bashrc`. This disables unified memory usage in CUDA backend. 该操作将禁用CUDA后端使用统一内存。
 
 - 如果你遇到了其他 CUDA 相关问题，不要气馁：
 
-  - **可能的解决方案**：尝试添加`export TI_ENABLE_CUDA=0`到你的`~/.bashrc`文件中。 该操作将完全禁用CUDA后端，这样Taichi会转而依赖于其他GPU后端，如OpenGL。
+  - **可能的解决方案**：尝试添加`export TI_ENABLE_CUDA=0`到你的`~/.bashrc`文件中。 **Possible solution**: add `export TI_ENABLE_CUDA=0` to your `~/.bashrc`. This disables the CUDA backend completely and Taichi will fall back on other GPU backends such as OpenGL.
 
 ### OpenGL 相关问题
 
-- 针对 Taichi 打印出的调用栈回溯 (stack backtrace) 中包含`glfwCreateWindow`等信息的情况 (更详细的问题描述请对照[#958](https://github.com/taichi-dev/taichi/issues/958))：
+- If Taichi crashes with a stack backtrace containing a line of `glfwCreateWindow` (see [\#958](https://github.com/taichi-dev/taichi/issues/958)):
 
   ```{9-11}
   [Taichi] mode=release
@@ -83,9 +83,9 @@ python3 -m pip install taichi
   ... (省略多行)
   ```
 
-  这很可能是因为你运行 Taichi 的虚拟机上的 OpenGL 版本过低。 Taichi 需要 OpenGL 4.3+ 才能正常工作。
+  This is likely because you are running Taichi on a (virtual) machine with an old OpenGL API. Taichi requires OpenGL 4.3+ to work. Taichi 需要 OpenGL 4.3+ 才能正常工作。
 
-  - **可能的解决方案**：尝试添加`export TI_ENABLE_OPENGL=0`到你的`~/.bashrc`文件中，即使你使用了非OpenGL后端初始化Taichi。 该操作将禁用OpenGL后端检测，以避免OpenGL版本不兼容的问题。
+  - **Possible solution**: add `export TI_ENABLE_OPENGL=0` to your `~/.bashrc` even if you initialize Taichi with other backends than OpenGL. This disables the OpenGL backend detection to avoid incompatibilities. 该操作将禁用OpenGL后端检测，以避免OpenGL版本不兼容的问题。
 
 ### Linux 相关问题
 
@@ -93,7 +93,7 @@ python3 -m pip install taichi
 
   - 对于 Ubuntu ，请执行 `sudo apt install libtinfo-dev` 安装依赖项。
 
-  - 对于 Arch Linux ，请首先编辑 `/etc/pacman.conf`，添加以下代码：
+  - On Arch Linux, first edit `/etc/pacman.conf`, and append these lines:
 
     ```
     [archlinuxcn]
@@ -102,9 +102,9 @@ python3 -m pip install taichi
 
     随后执行`sudo pacman -Syy ncurses5-compat-libs`。
 
-- 如果 Taichi 崩溃并报告 ``/usr/lib/libstdc++.so.6: version `CXXABI_1.3.11' not found``：
+- If Taichi crashes and reports ``/usr/lib/libstdc++.so.6: version `CXXABI_1.3.11' not found``:
 
-  你可能正在使用 Ubuntu 16.04 ，请根据[这个帖子](https://github.com/tensorflow/serving/issues/819#issuecomment-377776784)中的解决方案尝试解决：
+  You might be using Ubuntu 16.04, please try the solution in [this thread](https://github.com/tensorflow/serving/issues/819#issuecomment-377776784):
 
   ```bash
   sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
@@ -114,4 +114,4 @@ python3 -m pip install taichi
 
 ### 其他问题
 
-- 如果以上方案都没能解决你的问题，请在 GitHub 上[建立一个 issue](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md)进行报告。 这将帮助我们后续提高用户体验和兼容性，非常感谢！
+- If none of those above address your problem, please report this by [opening an issue](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md) on GitHub. This would help us improve user experiences and compatibility, many thanks! 这将帮助我们后续提高用户体验和兼容性，非常感谢！
