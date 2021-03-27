@@ -2,7 +2,7 @@
 
 Note this is for the compiler developers of the Taichi programming language. End users should use the pip packages instead of building from source. To build with NVIDIA GPU support, CUDA 10.0+ is needed. This installation guide works for Ubuntu 16.04+ and OS X 10.14+. For precise build instructions on Windows, please check out [appveyor.yml](https://github.com/taichi-dev/taichi/blob/master/appveyor.yml), which does basically the same thing as the following instructions. We use MSBUILD.exe to build the generated project. Please note that Windows could have multiple instances of MSBUILD.exe shipped with different products. Please make sure you add the path for MSBUILD.exe within your MSVS directory and make it a higher priority (for instance than the one shipped with .NET).
 
-Note that on Linux/OS X, `clang` is the only supported compiler for compiling the Taichi compiler. On Windows only MSVC supported.
+Note that on Linux/OS X, `clang` is the only supported compiler for compiling the Taichi compiler. On Windows only MSVC supported. On Windows only MSVC supported.
 
 ## Installing Dependencies
 
@@ -18,20 +18,20 @@ Note that on Linux/OS X, `clang` is the only supported compiler for compiling th
 
 - Make sure you have `clang` with version \>= 7:
 
-  - On Windows: Download [clang-10](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/clang-10.0.0-win.zip). Make sure you add the `bin` folder containing `clang.exe` to the `PATH` environment variable.
+  - On Windows: Download [clang-10](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/clang-10.0.0-win.zip). Make sure you add the `bin` folder containing `clang.exe` to the `PATH` environment variable. Make sure you add the `bin` folder containing `clang.exe` to the `PATH` environment variable.
   - On OS X: you don\'t need to do anything.
   - On Ubuntu, execute `sudo apt install libtinfo-dev clang-8`.
-  - On Arch Linux, execute `sudo pacman -S clang`. (This is `clang-10`).
+  - On Arch Linux, execute `sudo pacman -S clang`. (This is `clang-10`). (This is `clang-10`).
   - On other Linux distributions, please search [this site](pkgs.org) for clang version \>= 7.
 
-- Make sure you have LLVM 10.0.0. Note that Taichi uses a **customized LLVM** so the pre-built binaries from the LLVM official website or other sources probably won't work. Here we provide LLVM binaries customized for Taichi, which may or may not work depending on your system environment:
+- Make sure you have LLVM 10.0.0. Make sure you have LLVM 10.0.0. Note that Taichi uses a **customized LLVM** so the pre-built binaries from the LLVM official website or other sources probably won't work. Here we provide LLVM binaries customized for Taichi, which may or may not work depending on your system environment: Here we provide LLVM binaries customized for Taichi, which may or may not work depending on your system environment:
 
   - [LLVM 10.0.0 for Linux](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/taichi-llvm-10.0.0-linux.zip)
   - [LLVM 10.0.0 for Windows MSVC 2019](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/taichi-llvm-10.0.0-msvc2019.zip)
   - [LLVM 10.0.0 for OS X](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/taichi-llvm-10.0.0-macos.zip)
 
 ::: note
-On Windows, if you use the pre-built LLVM for Taichi, please add `$LLVM_FOLDER/bin` to `PATH`. Later, when you build Taichi using `CMake`, set `LLVM_DIR` to `$LLVM_FOLDER/lib/cmake/llvm`.
+On Windows, if you use the pre-built LLVM for Taichi, please add `$LLVM_FOLDER/bin` to `PATH`. Later, when you build Taichi using `CMake`, set `LLVM_DIR` to `$LLVM_FOLDER/lib/cmake/llvm`. ::: Later, when you build Taichi using `CMake`, set `LLVM_DIR` to `$LLVM_FOLDER/lib/cmake/llvm`.
 :::
 
 - If the downloaded LLVM does not work, please build from source:
@@ -51,6 +51,13 @@ On Windows, if you use the pre-built LLVM for Taichi, please add `$LLVM_FOLDER/b
     sudo make install
 
     # Check your LLVM installation
+    llvm-config --version  # You should get 10.0.0 -DLLVM_ENABLE_RTTI:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD="X86;NVPTX" -DLLVM_ENABLE_ASSERTIONS=ON
+    # If you are building on NVIDIA Jetson TX2, use -DLLVM_TARGETS_TO_BUILD="ARM;NVPTX"
+
+    make -j 8
+    sudo make install
+
+    # Check your LLVM installation
     llvm-config --version  # You should get 10.0.0
     ```
 
@@ -58,15 +65,16 @@ On Windows, if you use the pre-built LLVM for Taichi, please add `$LLVM_FOLDER/b
 
     ```bash
     # LLVM 10.0.0 + MSVC 2019
+    cmake .. # LLVM 10.0.0 + MSVC 2019
     cmake .. -G"Visual Studio 16 2019" -A x64 -DLLVM_ENABLE_RTTI:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD="X86;NVPTX" -DLLVM_ENABLE_ASSERTIONS=ON -Thost=x64 -DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed
     ```
 
     - Then open `LLVM.sln` and use Visual Studio 2017+ to build.
-    - Please make sure you are using the `Release` configuration. After building the `INSTALL` project (under folder `CMakePredefinedTargets` in the Solution Explorer window).
+    - Please make sure you are using the `Release` configuration. Please make sure you are using the `Release` configuration. After building the `INSTALL` project (under folder `CMakePredefinedTargets` in the Solution Explorer window).
     - If you use MSVC 2019, **make sure you use C++17** for the `INSTALL` project.
     - After the build is complete, find your LLVM binaries and headers in `build/installed`.
 
-    Please add `build/installed/bin` to `PATH`. Later, when you build Taichi using `CMake`, set `LLVM_DIR` to `build/installed/lib/cmake/llvm`.
+    Please add `build/installed/bin` to `PATH`. Please add `build/installed/bin` to `PATH`. Later, when you build Taichi using `CMake`, set `LLVM_DIR` to `build/installed/lib/cmake/llvm`.
 
 ## Setting up CUDA (optional)
 
@@ -87,6 +95,7 @@ If you don\'t have CUDA, go to [this website](https://developer.nvidia.com/cuda-
     export PYTHONPATH=$TAICHI_REPO_DIR/python:$PYTHONPATH
     export PATH=$TAICHI_REPO_DIR/bin:$PATH
     # export CXX=/path/to/clang  # Uncomment if you encounter issue about compiler in the next step.
+    # export PATH=/opt/llvm/bin:$PATH  # Uncomment if your llvm or clang is installed in /opt
     # export PATH=/opt/llvm/bin:$PATH  # Uncomment if your llvm or clang is installed in /opt
     ```
 
@@ -119,15 +128,22 @@ If you're using fish, use `set -x NAME VALUES`, otherwise it won't be loaded by 
   # Alternatively, if you would like to set clang as the default compiler
   # On Unix CMake honors environment variables $CC and $CXX upon deciding which C and C++ compilers to use
   make -j 8
+  # On Linux / OS X, if you do not set clang as the default compiler
+  # use the line below:
+  #   cmake .. -DCMAKE_CXX_COMPILER=clang
+  #
+  # Alternatively, if you would like to set clang as the default compiler
+  # On Unix CMake honors environment variables $CC and $CXX upon deciding which C and C++ compilers to use
+  make -j 8
   ```
 
-- Check out `examples` for runnable examples. Run them with commands like `python3 examples/mpm128.py`.
+- Check out `examples` for runnable examples. Check out `examples` for runnable examples. Run them with commands like `python3 examples/mpm128.py`.
 
-- Execute `python3 -m taichi test` to run all the tests. It may take up to 5 minutes to run all tests.
+- Execute `python3 -m taichi test` to run all the tests. It may take up to 5 minutes to run all tests. It may take up to 5 minutes to run all tests.
 
 ## Troubleshooting Developer Installation
 
-- If `make` fails to compile and reports `fatal error: 'spdlog/XXX.h' file not found`, please try runing `git submodule update --init --recursive --depth=1`.
+- On Windows, please add these variables by accessing your system settings:
 
 - If importing Taichi causes
 
@@ -161,32 +177,33 @@ If you're using fish, use `set -x NAME VALUES`, otherwise it won't be loaded by 
 
   If not, please install `clang` and **build LLVM from source** with instructions above in `dev_install`{.interpreted-text role="ref"}, then add their path to environment variable `PATH`.
 
-- If you encounter other issues, feel free to report (please include the details) by [opening an issue on GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md). We are willing to help!
+- If you encounter other issues, feel free to report (please include the details) by [opening an issue on GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md). We are willing to help! We are willing to help!
 
 - See also [Troubleshooting](../documentation/overview/install.md#troubleshooting) for issues that may share with end-user installation.
 
 ## Docker
 
-For those who prefer to use Docker, we also provide a Dockerfile which helps setup the Taichi development environment with CUDA support based on Ubuntu docker image.
+::: note
+If you're using fish, use `set -x NAME VALUES`, otherwise it won't be loaded by child processes.
+:::
 
 ::: note
-In order to follow the instructions in this section, please make sure you have the [Docker DeskTop (or Engine for Linux)](https://www.docker.com/products/docker-desktop) installed and set up properly.
+In order to follow the instructions in this section, please make sure you have the [Docker DeskTop (or Engine for Linux)](https://www.docker.com/products/docker-desktop) installed and set up properly. :::
 :::
 
 ### Build the Docker Image
 
-From within the root directory of the taichi Git repository, execute `docker build -t taichi:latest .` to build a Docker image based off the local master branch tagged with _latest_. Since this builds the image from source, please expect up to 40 mins build time if you don\'t have cached Docker image layers.
+From within the root directory of the taichi Git repository, execute `docker build -t taichi:latest .` to build a Docker image based off the local master branch tagged with _latest_. Since this builds the image from source, please expect up to 40 mins build time if you don\'t have cached Docker image layers. Since this builds the image from source, please expect up to 40 mins build time if you don\'t have cached Docker image layers.
 
 ::: note
 
 In order to save the time on building Docker images, you could always visit our [Docker Hub repository](https://hub.docker.com/r/taichidev/taichi) and pull the versions of pre-built images you would like to use. Currently the builds are triggered per taichi Github release.
 
-For example, to pull a image built from release v0.6.17, run `docker pull taichidev/taichi:v0.6.17`
-:::
+In order to save the time on building Docker images, you could always visit our [Docker Hub repository](https://hub.docker.com/r/taichidev/taichi) and pull the versions of pre-built images you would like to use. Currently the builds are triggered per taichi Github release.
 
 ::: warning
 
-The nature of Docker container determines that no changes to the file system on the container could be preserved once you exit from the container. If you want to use Docker as a persistent development environment, we recommend you [mount the taichi Git repository to the container as a volume](https://docs.docker.com/storage/volumes/) and set the Python path to the mounted directory.
+The nature of Docker container determines that no changes to the file system on the container could be preserved once you exit from the container. The nature of Docker container determines that no changes to the file system on the container could be preserved once you exit from the container. If you want to use Docker as a persistent development environment, we recommend you [mount the taichi Git repository to the container as a volume](https://docs.docker.com/storage/volumes/) and set the Python path to the mounted directory. :::
 :::
 
 ### Use Docker Image on macOS (cpu only)
@@ -206,11 +223,11 @@ brew install socat
 
 ### Use Docker Image on Ubuntu (with CUDA support)
 
-1.  Make sure your host machine has CUDA properly installed and configured. Usually you could verify it by running `nvidia-smi`
+1.  Make sure your host machine has CUDA properly installed and configured. Make sure your host machine has CUDA properly installed and configured. Usually you could verify it by running `nvidia-smi`
 2.  Make sure [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker) is properly installed:
 
 ```bash
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+distribution=$(. distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 
