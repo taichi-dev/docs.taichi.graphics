@@ -1,8 +1,8 @@
 # 你好，世界！
 
-我们将通过一个_分形程序_的例子来介绍 Taichi。
+We introduce the Taichi programming language through a very basic _fractal_ example.
 
-通过 （`python3 fractal.py`或`ti example fractal`） 运行下面这段 Taichi 代码，你将得到 [朱利亚集 (Julia set)](https://en.wikipedia.org/wiki/Julia_set) 的一段动画：
+Running the Taichi code below (`python3 fractal.py` or `ti example fractal`) will give you an animation of [Julia set](https://en.wikipedia.org/wiki/Julia_set):
 
 <center>
 
@@ -50,11 +50,11 @@ for i in range(1000000):
 
 ## import taichi as ti
 
-Taichi 是一种嵌入在 Python 中的领域特定语言(\[Domain-Specific Language, DSL\](https://en.wikipedia.org/wiki/Domain-specific_language))。 为了使 Taichi能像 Python 包一样易于使用，基于这个目标我们做了大量的工程工作——使得每个 Python 程序员能够以最低的学习成本编写 Taichi程序。 你甚至可以选择你最喜欢的 Python 包管理系统、Python IDE 以及其他 Python 包和 Taichi 一起结合使用。
+Taichi is a domain-specific language (DSL) embedded in Python. To make Taichi as easy to use as a Python package, we have done heavy engineering with this goal in mind - letting every Python programmer write Taichi programs with minimal learning effort. You can even use your favorite Python package management system, Python IDEs and other Python packages in conjunction with Taichi. 为了使 Taichi能像 Python 包一样易于使用，基于这个目标我们做了大量的工程工作——使得每个 Python 程序员能够以最低的学习成本编写 Taichi程序。 你甚至可以选择你最喜欢的 Python 包管理系统、Python IDE 以及其他 Python 包和 Taichi 一起结合使用。
 
 ## 可移植性
 
-Taichi 既能在 CPU，也能在 GPU 上运行。 你只需根据你的硬件平台初始化 Taichi：
+Taichi programs run on either CPUs or GPUs. Initialize Taichi according to your hardware platform as follows: 你只需根据你的硬件平台初始化 Taichi：
 
 ```python
 # 在 GPU 上运行，自动选择后端
@@ -83,51 +83,51 @@ ti.init(arch=ti.cpu)
 
 （可用: 该系统上有最完整的支持；不可用: 由于平台限制，我们无法实现该后端）
 
-在参数 `arch=ti.gpu` 下，Taichi 将首先尝试在 CUDA 上运行。 如果你的设备不支持 CUDA，那么 Taichi将会转到 Metal 或 OpenGL。 如果所在平台不支持 GPU 后端（CUDA、Metal 或 OpenGL），Taichi 将默认使用CPU后端运行。
+在参数 `arch=ti.gpu` 下，Taichi 将首先尝试在 CUDA 上运行。 With `arch=ti.gpu`, Taichi will first try to run with CUDA. If CUDA is not supported on your machine, Taichi will fall back on Metal or OpenGL. If no GPU backend (CUDA, Metal, or OpenGL) is supported, Taichi will fall back on CPUs. ::: 如果所在平台不支持 GPU 后端（CUDA、Metal 或 OpenGL），Taichi 将默认使用CPU后端运行。
 :::
 
 ::: note
 
-当在 Windows 平台 或者 ARM 设备（如 NVIDIA Jetson）上使用 CUDA 后端时，Taichi 会默认分配 1 GB显存用于张量存储。 如需重载显存分配，你可以在初始化的时候通过`ti.init(arch=ti.cuda, device_memory_GB=3.4)`来分配`3.4`GB显存，或者使用`ti.init(arch=ti.cuda, device_memory_fraction=0.3)`来分配所有可用显存的`30%`。
+当在 Windows 平台 或者 ARM 设备（如 NVIDIA Jetson）上使用 CUDA 后端时，Taichi 会默认分配 1 GB显存用于张量存储。 When used with the CUDA backend on Windows or ARM devices (e.g. NVIDIA Jetson), Taichi by default allocates 1 GB GPU memory for field storage. You can override this behavior by initializing with `ti.init(arch=ti.cuda, device_memory_GB=3.4)` to allocate `3.4` GB GPU memory, or `ti.init(arch=ti.cuda, device_memory_fraction=0.3)` to allocate `30%` of the total GPU memory.
 
-在其他平台上， Taichi 将会使用它的自适应内存分配器来动态分配内存。
+On other platforms, Taichi will make use of its on-demand memory allocator to adaptively allocate memory. :::
 :::
 
 ## 场
 
-Taichi 是一门面向数据的程序设计语言，其中（稠密、稀疏）场是第一类公民(First-class Citizen)。 在[Scalar fields](../api/scalar_field.md#scalar-fields) 这一章节，你可以了解到更多关于场的详细信息。
+Taichi is a data-oriented programming language where dense or spatially-sparse fields are the first-class citizens. See [Scalar fields](../api/scalar_field.md#scalar-fields) for more details on fields. 在[Scalar fields](../api/scalar_field.md#scalar-fields) 这一章节，你可以了解到更多关于场的详细信息。
 
-在以上代码中，`pixels = ti.field(dtype=float, shape=(n * 2, n))`分配了一个叫做`pixels`的二维稠密场，大小是 `(640, 320)` ，数据类型是 ` float`。
+In the code above, `pixels = ti.field(dtype=float, shape=(n * 2, n))` allocates a 2D dense field named `pixels` of size `(640, 320)` and element data type `float`.
 
 ## 函数与内核
 
 计算发生在 Taichi 的 **内核(kernel)**和**函数(function)** 中。
 
-我们使用`@ti.kernel`来定义Taichi 的**内核**。 内核可被从Python调用来进行计算。 内核如果有参数的话，则参数必须显式指定类型。
+Taichi **kernels** are defined with the decorator `@ti.kernel`. They can be called from Python to perform computation. Kernel arguments must be type-hinted (if any). 内核可被从Python调用来进行计算。 内核如果有参数的话，则参数必须显式指定类型。
 
-你应该使用关键字 `@ti.func` 来进行定义Taichi 的 **函数**。 他们可以被 Taichi 内核和其他 Taichi 函数调用。
+Taichi **functions** are defined with the decorator `@ti.func`. They can be called by Taichi kernels or other Taichi functions. 他们可以被 Taichi 内核和其他 Taichi 函数调用。
 
-在 [ 语法](../basic/syntax.md) 这一章节获得更多有关Taichi内核与函数的细节。
+See [syntax](../basic/syntax.md) for more details about Taichi kernels and functions.
 
-Taichi 内核与函数中所用的语法，看起来和Python的语法很像，然而 Taichi 的前端编译器会将其转换为**编译型，静态类型，有词法作用域，并行执行且可微分**的语言。
+The language used in Taichi kernels and functions looks exactly like Python, yet the Taichi frontend compiler converts it into a language that is **compiled, statically-typed, lexically-scoped, parallel and differentiable**.
 
 ::: note
 
-**Taichi 作用域与 Python 作用域**：
+**Taichi-scopes v.s. Python-scopes**: Python 作用域</strong>：
 
-任何被 `@ti.kernel` 和 `@ti.func` 修饰的函数体都处于Taichi 作用域中，这些代码会由 Taichi 编译器编译。
+Everything decorated with `@ti.kernel` and `@ti.func` is in Taichi-scope and hence will be compiled by the Taichi compiler.
 
-而在 Taichi 作用域之外的代码就都处于 Python 作用域。 它们是单纯的Python 代码。
+Everything else is in Python-scope. They are simply Python native code. ::: 它们是单纯的Python 代码。
 :::
 
 ::: warning
 
-Taichi 内核只有在 Python 作用域中才能被调用。 Taichi 函数只有在 Taichi 作用域中才能被调用。
+Taichi kernels must be called from the Python-scope. Taichi functions must be called from the Taichi-scope. ::: Taichi 函数只有在 Taichi 作用域中才能被调用。
 :::
 
 ::: note
 
-如果用 CUDA 做类比的话，`ti.func`就像是`__device__`，而`ti.kernel`就像是`__global__`。
+For those who come from the world of CUDA, `ti.func` corresponds to `__device__` while `ti.kernel` corresponds to `__global__`. :::
 :::
 
 ::: warning
@@ -136,14 +136,14 @@ Taichi**不支持**嵌套的内核。
 
 Taichi**支持**嵌套的函数。
 
-Taichi**目前暂时不支持**递归的函数。
+Recursive functions are **not supported for now**. :::
 :::
 
 ## 并行执行的for循环
 
-最外层作用域的 for 循环是被 **自动并行执行** 的。 Taichi 的 for 循环具有两种形式，_区间 for 循环_，和 _结构for 循环_。
+For loops at the outermost scope in a Taichi kernel is **automatically parallelized**. For loops can have two forms, i.e. _range-for loops_ and _struct-for loops_. Taichi 的 for 循环具有两种形式，_区间 for 循环_，和 _结构for 循环_。
 
-**区间 for 循环**和普通的 Python for 循环没多大区别，只是 Taichi 最外层的 for 会并行执行而已。 区间 for 循环可以嵌套。
+**Range-for loops** are no different from Python for loops, except that it will be parallelized when used at the outermost scope. Range-for loops can be nested. 区间 for 循环可以嵌套。
 
 ```python {3,7,14-15}
 @ti.kernel
@@ -166,7 +166,7 @@ def fill_3d():
 
 ::: note
 
-是最外层 **作用域** 的循环并行执行，而不是最外层的循环。
+It is the loop **at the outermost scope** that gets parallelized, not the outermost loop.
 
 ```python {3,9}
 @ti.kernel
@@ -175,26 +175,31 @@ def foo():
         ...
 
 @ti.kernel
+def foo():
+    for i in range(10): # Parallelized :-)
+        ...
+
+@ti.kernel
 def bar(k: ti.i32):
     if k > 42:
-        for i in range(10): # 串行 :-(
+        for i in range(10): # Serial :-(
             ...
 ```
 
 :::
 
-**结构 for 循环**在遍历（稀疏）场元素的时候很有用。 例如在上述的代码中，`for i, j in pixels`将遍历所有像素点坐标, 即`(0, 0), (0, 1), (0, 2), ... , (0, 319), (1, 0), ..., (639, 319)`。
+**Struct-for loops** are particularly useful when iterating over (sparse) field elements. In the code above, `for i, j in pixels` loops over all the pixel coordinates, i.e. `(0, 0), (0, 1), (0, 2), ... , (0, 319), (1, 0), ..., (639, 319)`. 例如在上述的代码中，`for i, j in pixels`将遍历所有像素点坐标, 即`(0, 0), (0, 1), (0, 2), ... , (0, 319), (1, 0), ..., (639, 319)`。
 
 ::: note
 
-结构 for 循环是 Taichi[稀疏计算](../advanced/sparse.md)的关键，它只会遍历稀疏场中的活跃元素。 对于稠密场而言，所有元素都是活跃元素。
+Struct-for is the key to [sparse computation](../advanced/sparse.md) in Taichi, as it will only loop over active elements in a sparse field. In dense fields, all elements are active. ::: 对于稠密场而言，所有元素都是活跃元素。
 :::
 
 ::: warning
 
 结构 for 循环只能使用在内核的最外层作用域。
 
-是最外层 **作用域** 的循环并行执行，而不是最外层的循环。
+It is the loop **at the outermost scope** that gets parallelized, not the outermost loop.
 
 ```python
 @ti.kernel
@@ -203,10 +208,16 @@ def foo():
         ...
 
 @ti.kernel
+def foo():
+    for i in x:
+        ...
+
+@ti.kernel
 def bar(k: ti.i32):
-    # 最外层作用域是 `if` 语句
+    # The outermost scope is a `if` statement
     if k > 42:
-        for i in x: # 语法错误。 结构 for 循环 只能用于最外层作用域。
+        for i in x: # Not allowed. Struct-fors must live in the outermost scope.
+            ... 结构 for 循环 只能用于最外层作用域。
             ...
 ```
 
@@ -230,8 +241,19 @@ def foo():
 @ti.kernel
 def foo():
   for i in x:
+      ...
+      break # Error!
+
+  for i in range(10):
+      ...
+      break # Error!
+
+@ti.kernel
+def foo():
+  for i in x:
       for j in range(10):
           ...
+          break # OK!
           break # 可以!
 ```
 
@@ -241,7 +263,7 @@ def foo():
 
 ### Python 作用域的数据访问
 
-所有在 Taichi 作用域（`ti.func` 和 `ti.kernel`）之外的部分都只是单纯的 Python 代码。 在 Python 作用域中，你可以通过一般的索引语法访问 Taichi 场元素。 例如，要在 Python 中访问渲染图像的某个像素，只需使用以下代码：
+Everything outside Taichi-scopes (`ti.func` and `ti.kernel`) is simply Python code. In Python-scopes, you can access Taichi field elements using plain indexing syntax. For example, to access a single pixel of the rendered image in Python-scope, simply use: 在 Python 作用域中，你可以通过一般的索引语法访问 Taichi 场元素。 例如，要在 Python 中访问渲染图像的某个像素，只需使用以下代码：
 
 ```python
 import taichi as ti
@@ -253,7 +275,7 @@ print(pixels[42, 11]) # 打印 0.7
 
 ### 与其他软件包共享数据
 
-Taichi 提供了诸如`from_numpy`和`to_numpy`等辅助函数来在 Taichi 场和 NumPy 数组之间传输数据。这样你就可以将最喜欢的 Python 软件包（例如`numpy`，`pytorch`， `matplotlib`等）与 Taichi 一起使用。 例如：
+Taichi provides helper functions such as `from_numpy` and `to_numpy` for transfer data between Taichi fields and NumPy arrays, So that you can also use your favorite Python packages (e.g. `numpy`, `pytorch`, `matplotlib`) together with Taichi. e.g.: 例如：
 
 ```python
 import taichi as ti
