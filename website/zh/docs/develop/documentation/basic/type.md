@@ -1,6 +1,6 @@
 # 类型系统
 
-Taichi 支持常见的数值数据类型。 每种类型都由：一个字符指明它的 _类别_ 和一个数字指明它的_精度位数_，例如`i32` 和 `f64`。
+Taichi 支持常见的数值数据类型。 Taichi supports common numerical data types. Each type is denoted as a character indicating its _category_ and a number of _precision bits_, e.g., `i32` and `f64`.
 
 数据的 _类别_ 可以是以下其中之一：
 
@@ -15,7 +15,7 @@ Taichi 支持常见的数值数据类型。 每种类型都由：一个字符指
 - `32`
 - `64`
 
-它表示存储数据时使用了多少 **位**。 位数值越大，则精度越高。
+It represents how many **bits** are used in storing the data. The larger the bit number, the higher the precision is. 位数值越大，则精度越高。
 
 例如，下面是两种最常用的数据类型：
 
@@ -57,23 +57,23 @@ Taichi 支持常见的数值数据类型。 每种类型都由：一个字符指
 （OK：已支持，EXT：需要扩展支持，N/A：目前不支持）
 
 ::: note
-布尔类型使用`ti.i32`表示。
+Boolean types are represented using `ti.i32`. :::
 :::
 
 ## 类型提升
 
-不同类型间的二元运算将会发生数据类型提升，提升遵循 C 语言下的转换规则，例如：
+Binary operations on different types will give you a promoted type, following the C programming language convention, e.g.:
 
 - `i32 + f32 = f32` (integer + float = float)
 - `i32 + i64 = i64` (less-bits + more-bits = more-bits)
 
-简单地说，在发生数据提升时会尝试选择更精确的数据类型来包含结果值。
+Basically it will try to choose the more precise type to contain the result value.
 
 ## 默认精度
 
-默认情况下，所有的数值都具有32位精度。 例如，`42`的类型为`ti.i32`而`3.14`的类型为`ti.f32`。
+By default, all numerical literals have 32-bit precisions. For example, `42` has type `ti.i32` and `3.14` has type `ti.f32`. 例如，`42`的类型为`ti.i32`而`3.14`的类型为`ti.f32`。
 
-可以在 Taichi 初始化时，（分别使用`default_ip`和 `default_fp`）指定默认的整数和浮点精度：
+Default integer and float-point precisions (`default_ip` and `default_fp`) can be specified when initializing Taichi:
 
 ```python
 ti.init(default_fp=ti.f32)
@@ -83,18 +83,22 @@ ti.init(default_ip=ti.i32)
 ti.init(default_ip=ti.i64)
 ```
 
-另外需要注意的是，你可以在类型定义时使用`float` 或 `int`作为默认精度的别名，例如：
+Also note that you may use `float` or `int` in type definitions as aliases for default precisions, e.g.:
 
 ```python
 ti.init(default_ip=ti.i64, default_fp=ti.f32)
 
 x = ti.field(float, 5)
 y = ti.field(int, 5)
-# 相当于:
+# is equivalent to:
 x = ti.field(ti.f32, 5)
 y = ti.field(ti.i64, 5)
 
 def func(a: float) -> int:
+    ...
+
+# is equivalent to:
+def func(a: ti.f32) -> ti.i64:
     ...
 
 # 相当于:
@@ -106,10 +110,11 @@ def func(a: ti.f32) -> ti.i64:
 
 ### 隐式类型转换
 
-变量的类型在它**初始化时决定**。
+::: warning
+The type of a variable is **determinated on it\'s initialization**. :::
 :::
 
-当一个_低精度_变量被赋值给_高精度_变量时，它将被隐式提升为_高精度_类型，并且不会发出警告：
+When a _low-precision_ variable is assigned to a _high-precision_ variable, it will be implicitly promoted to the _high-precision_ type and no warning will be raised:
 
 ```python {3}
 a = 1.7
@@ -117,7 +122,7 @@ a = 1
 print(a)  # 1.0
 ```
 
-当一个_高精度_变量被赋值给_低精度_类型时，它会被隐式向下转换为_低精度_类型，并且不会发出警告：
+When a _high-precision_ variable is assigned to a _low-precision_ type, it will be implicitly down-cast into the _low-precision_ type and Taichi will raise a warning:
 
 ```python {3}
 a = 1
@@ -127,7 +132,7 @@ print(a)  # 1
 
 ### 显式类型转换
 
-你可以使用`ti.cast`在不同类型之间显式地强制转换标量值：
+You may use `ti.cast` to explicitly cast scalar values between different types:
 
 ```python {2-3}
 a = 1.7
@@ -135,7 +140,7 @@ b = ti.cast(a, ti.i32)  # 1
 c = ti.cast(b, ti.f32)  # 1.0
 ```
 
-同样，可以使用 `int()` 和 `float()` 将标量值转换为默认精度的浮点或整数类型：
+Equivalently, use `int()` and `float()` to convert values to float-point or integer types of default precisions:
 
 ```python {2-3}
 a = 1.7
@@ -156,8 +161,8 @@ v = ti.cast(u, ti.i32)  # ti.Vector([2, 4])
 
 ### 位强制类型转换
 
-使用 `ti.bit_cast` 将一个值按位转换为另一种数据类型。 基础位将在此转换中保留。 新类型的宽度必须与旧类型的宽度相同。 例如，不允许将 `i32` 转换成 `f64`。 请谨慎使用此操作。
+Use `ti.bit_cast` to bit-cast a value into another data type. The underlying bits will be preserved in this cast. The new type must have the same width as the the old type. For example, bit-casting `i32` to `f64` is not allowed. Use this operation with caution. 基础位将在此转换中保留。 新类型的宽度必须与旧类型的宽度相同。 例如，不允许将 `i32` 转换成 `f64`。 请谨慎使用此操作。
 
 ::: note
-对于熟悉 C++ 的开发者来说，`ti.bit_cast` 相当于 `reinterpret_cast`。
+For people from C++, `ti.bit_cast` is equivalent to `reinterpret_cast`. :::
 :::
