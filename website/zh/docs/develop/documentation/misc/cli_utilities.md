@@ -1,28 +1,28 @@
 # 命令行工具使用指南
 
-Taichi 成功安装之后后会在系统中增加一个 CLI（命令行窗口）工具，这个工具可以帮助你快速地执行多个日常任务。 如要调用 CLI，请在 shell 中运行`ti` 或者 `python3 -m taichi`。
+A successful installation of Taichi should add a CLI (Command-Line Interface) to your system, which is helpful to perform several rountine tasks quickly. To invoke the CLI, please run `ti` or `python3 -m taichi`. 如要调用 CLI，请在 shell 中运行`ti` 或者 `python3 -m taichi`。
 
 ## 示例
 
-Taichi提供了一组捆绑示例。 你可以在命令行窗口中运行：`ti example -h`来打印帮助信息并获取可用示例名称的列表。
+Taichi提供了一组捆绑示例。 Taichi provides a set of bundled examples. You could run `ti example -h` to print the help message and get a list of available example names.
 
-例如，要运行基础的`fractal（分形）`示例，尝试在shell中运行`ti example fractal`。 （运行`ti example fractal.py`也同样奏效）
+For instance, to run the basic `fractal` example, try: `ti example fractal` from your shell. (`ti example fractal.py` should also work) （运行`ti example fractal.py`也同样奏效）
 
-你可以通过运行`ti example -p fractal`或`ti example -P fractal`来打印带语法高亮的示例源代码。
+You may print the source code of example by running `ti example -p fractal`, or `ti example -P fractal` for print with syntax highlight.
 
-你还可以通过运行`ti example -s fractal`来将示例保存到当前的工作目录中。
+You may also save the example to current work directory by running `ti example -s fractal`.
 
 ## 更新日志
 
-有时我们需要查看当前版本的Taichi的更新日志。 你可以通过在Shell中运行`ti changelog`来查看更新日志。
+Sometimes it's convenient to view the changelog of the current version of Taichi. To do so, you could run `ti changelog` in your shell. 你可以通过在Shell中运行`ti changelog`来查看更新日志。
 
 ## REPL Shell
 
-有时为了快速测试和验证，我们需要打开一个预加载了`import taichi as ti`的Python shell。 你可以通过在shell中运行`ti repl`来做到这一点。
+Sometimes it's convenient to start a Python shell with `import taichi as ti` as a pre-loaded module for fast testing and confirmation. To do so from your shell, you could run `ti repl`. 你可以通过在shell中运行`ti repl`来做到这一点。
 
 ## 系统信息
 
-当你试图报告一个潜在的bug时，请考虑运行`ti diagnose`并提供此命令的输出来作为问题报告的一个附件。 这会帮助维护者了解问题的来龙去脉和你所使用的环境的系统信息，这些信息能够使得bug修复过程更高效，进而更好地解决你的问题。
+When you try to report potential bugs in an issue, please consider running `ti diagnose` and offer its output as an attachment. This could help maintainers to learn more about the context and the system information of your environment to make the debugging process more efficient and solve your issue more easily. 这会帮助维护者了解问题的来龙去脉和你所使用的环境的系统信息，这些信息能够使得bug修复过程更高效，进而更好地解决你的问题。
 
 ::: warning
 **在发布你的系统信息之前，请再三确认你没有上传敏感的、或者关于你自己的信息。**
@@ -30,11 +30,11 @@ Taichi提供了一组捆绑示例。 你可以在命令行窗口中运行：`ti 
 
 ## 将PNG图片转换为视频
 
-有时候，为了更好地向别人呈现结果，我们需要将一系列的`png`文件转换为单个视频。
+Sometimes it's convenient to convert a series of `png` files into a single video when showing your result to others.
 
-例如，假设按照[导出你的结果](./export_results.md)章节的内容将`000000.png`，`000001.png`... 等一系列文件生成到了**你的当前工作目录中**。
+For example, suppose you have `000000.png`, `000001.png`, \... generated according to [Export your results](./export_results.md) in the **current working directory**.
 
-那么你可以通过运行`ti video`来创建一个包含了所有图片文件作为帧（按文件名排序）的名为`video.mp4`的视频文件。
+Then you could run `ti video` to create a file `video.mp4` containing all these images as frames (sorted by file name).
 
 使用`ti video -f40`来创建一个40 FPS的视频。
 
@@ -42,6 +42,6 @@ Taichi提供了一组捆绑示例。 你可以在命令行窗口中运行：`ti 
 
 有时为了将结果上传到论坛中，我们需要一些格式为`gif`的图片文件。
 
-你可以运行`ti gif -i video.mp4`来做到这一点，这里`video.mp4`是`mp4`视频文件（通过前一部分关于生成视频的指令生成）。
+To do so, you could run `ti gif -i video.mp4`, where `video.mp4` is the `mp4` video (generated with instructions above).
 
 使用`ti gif -i video.mp4 -f40`来创建一个40 FPS的GIF文件。
