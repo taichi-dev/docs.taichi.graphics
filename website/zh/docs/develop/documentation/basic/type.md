@@ -1,30 +1,30 @@
-# Type system
+# 类型系统
 
-Taichi supports common numerical data types. Each type is denoted as a character indicating its _category_ and a number of _precision bits_, e.g., `i32` and `f64`.
+Taichi 支持常见的数值数据类型。 Taichi supports common numerical data types. Each type is denoted as a character indicating its _category_ and a number of _precision bits_, e.g., `i32` and `f64`.
 
-The _category_ can be one of:
+数据的 _类别_ 可以是以下其中之一：
 
-- `i` for signed integers, e.g. 233, -666
-- `u` for unsigned integers, e.g. 233, 666
-- `f` for floating point numbers, e.g. 2.33, 1e-4
+- `i`用于有符号整数，例如233，-666
+- `u`用于无符号整数，例如233，666
+- `f`用于浮点数，例如2.33, 1e-4
 
-The _digital number_ can be one of:
+数据的 _精度位数_ 可以是以下其中之一：
 
 - `8`
 - `16`
 - `32`
 - `64`
 
-It represents how many **bits** are used in storing the data. The larger the bit number, the higher the precision is.
+It represents how many **bits** are used in storing the data. The larger the bit number, the higher the precision is. 位数值越大，则精度越高。
 
-For example, the two most commonly used types:
+例如，下面是两种最常用的数据类型：
 
-- `i32` represents a 32-bit signed integer.
-- `f32` represents a 32-bit floating pointer number.
+- `i32`表示一个32位有符号整数。
+- `f32`表示一个32位浮点数。
 
-## Supported types
+## 支持的类型
 
-Currently, supported basic types in Taichi are
+目前，Taichi支持的基本类型有
 
 - int8 `ti.i8`
 - int16 `ti.i16`
@@ -39,29 +39,28 @@ Currently, supported basic types in Taichi are
 
 ::: note
 
-Supported types on each backend:
+每种后端支持的类型分别有：
 
-| type | CPU/CUDA | OpenGL | Metal | C source |
-| ---- | -------- | ------ | ----- | -------- |
-| i8   | > OK     | > N/A  | > OK  | > OK     |
-| i16  | > OK     | > N/A  | > OK  | > OK     |
-| i32  | > OK     | > OK   | > OK  | > OK     |
-| i64  | > OK     | > EXT  | > N/A | > OK     |
-| u8   | > OK     | > N/A  | > OK  | > OK     |
-| u16  | > OK     | > N/A  | > OK  | > OK     |
-| u32  | > OK     | > N/A  | > OK  | > OK     |
-| u64  | > OK     | > N/A  | > N/A | > OK     |
-| f32  | > OK     | > OK   | > OK  | > OK     |
-| f64  | > OK     | > OK   | > N/A | > OK     |
+| 类型  | CPU/CUDA | OpenGL | Metal | C source |
+| --- | -------- | ------ | ----- | -------- |
+| i8  | > OK     | > N/A  | > OK  | > OK     |
+| i16 | > OK     | > N/A  | > OK  | > OK     |
+| i32 | > OK     | > OK   | > OK  | > OK     |
+| i64 | > OK     | > EXT  | > N/A | > OK     |
+| u8  | > OK     | > N/A  | > OK  | > OK     |
+| u16 | > OK     | > N/A  | > OK  | > OK     |
+| u32 | > OK     | > N/A  | > OK  | > OK     |
+| u64 | > OK     | > N/A  | > N/A | > OK     |
+| f32 | > OK     | > OK   | > OK  | > OK     |
+| f64 | > OK     | > OK   | > N/A | > OK     |
 
-(OK: supported, EXT: require extension, N/A: not available)
-:::
+（OK：已支持，EXT：需要扩展支持，N/A：目前不支持）
 
 ::: note
-Boolean types are represented using `ti.i32`.
+Boolean types are represented using `ti.i32`. :::
 :::
 
-## Type promotion
+## 类型提升
 
 Binary operations on different types will give you a promoted type, following the C programming language convention, e.g.:
 
@@ -70,9 +69,9 @@ Binary operations on different types will give you a promoted type, following th
 
 Basically it will try to choose the more precise type to contain the result value.
 
-## Default precisions
+## 默认精度
 
-By default, all numerical literals have 32-bit precisions. For example, `42` has type `ti.i32` and `3.14` has type `ti.f32`.
+By default, all numerical literals have 32-bit precisions. For example, `42` has type `ti.i32` and `3.14` has type `ti.f32`. 例如，`42`的类型为`ti.i32`而`3.14`的类型为`ti.f32`。
 
 Default integer and float-point precisions (`default_ip` and `default_fp`) can be specified when initializing Taichi:
 
@@ -101,14 +100,18 @@ def func(a: float) -> int:
 # is equivalent to:
 def func(a: ti.f32) -> ti.i64:
     ...
+
+# 相当于:
+def func(a: ti.f32) -> ti.i64:
+    ...
 ```
 
-## Type casts
+## 类型转换
 
-### Implicit casts
+### 隐式类型转换
 
 ::: warning
-The type of a variable is **determinated on it\'s initialization**.
+The type of a variable is **determinated on it\'s initialization**. :::
 :::
 
 When a _low-precision_ variable is assigned to a _high-precision_ variable, it will be implicitly promoted to the _high-precision_ type and no warning will be raised:
@@ -127,7 +130,7 @@ a = 1.7
 print(a)  # 1
 ```
 
-### Explicit casts
+### 显式类型转换
 
 You may use `ti.cast` to explicitly cast scalar values between different types:
 
@@ -145,21 +148,21 @@ b = int(a)    # 1
 c = float(a)  # 1.0
 ```
 
-### Casting vectors and matrices
+### 向量和矩阵的类型转换
 
-Type casts applied to vectors/matrices are element-wise:
+应用于向量/矩阵中的类型转换是逐元素的：
 
 ```python {2,4}
 u = ti.Vector([2.3, 4.7])
 v = int(u)              # ti.Vector([2, 4])
-# If you are using ti.i32 as default_ip, this is equivalent to:
+# 如果你使用的是 ti.i32 作为默认整型精度, 那么这相当于:
 v = ti.cast(u, ti.i32)  # ti.Vector([2, 4])
 ```
 
-### Bit casting
+### 位强制类型转换
 
-Use `ti.bit_cast` to bit-cast a value into another data type. The underlying bits will be preserved in this cast. The new type must have the same width as the the old type. For example, bit-casting `i32` to `f64` is not allowed. Use this operation with caution.
+Use `ti.bit_cast` to bit-cast a value into another data type. The underlying bits will be preserved in this cast. The new type must have the same width as the the old type. For example, bit-casting `i32` to `f64` is not allowed. Use this operation with caution. 基础位将在此转换中保留。 新类型的宽度必须与旧类型的宽度相同。 例如，不允许将 `i32` 转换成 `f64`。 请谨慎使用此操作。
 
 ::: note
-For people from C++, `ti.bit_cast` is equivalent to `reinterpret_cast`.
+For people from C++, `ti.bit_cast` is equivalent to `reinterpret_cast`. :::
 :::
