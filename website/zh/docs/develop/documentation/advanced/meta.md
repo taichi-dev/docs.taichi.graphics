@@ -45,7 +45,7 @@ def copy2d(x: ti.template(), y: ti.template()):
 @ti.kernel
 def copy(x: ti.template(), y: ti.template()):
     for I in ti.grouped(y):
-        # I 是与x相同维度的向量，类型为i32
+        # I是与x相同维度的、类型为i32向量
         # 如果y是0维的，则I = ti.Vector([])，其在x[I]中与`None`相同
         # 如果y是1维的，则I = ti.Vector([i])
         # 如果y是2维的，则I = ti.Vector([i, j])
@@ -66,7 +66,7 @@ def array_op(x: ti.template(), y: ti.template()):
 
 ## 场元数据
 
-Sometimes it is useful to get the data type (`field.dtype`) and shape (`field.shape`) of fields. These attributes can be accessed in both Taichi- and Python-scopes.
+有时获取场的数据类型（`field.dtype`）和形状（`field.shape`）是很有用的。 这些属性值在 Taichi 作用域和 Python 作用域中都可以访问到。
 
 ```python {2-6}
 @ti.func
@@ -77,17 +77,17 @@ def print_field_info(x: ti.template()):
     ti.static_print('Field data type is', x.dtype)
 ```
 
-See [Scalar fields](../api/scalar_field.md) for more details.
+参阅[标量场](../api/scalar_field.md)以了解更多细节。
 
 ::: note
-For sparse fields, the full domain shape will be returned.
+对于稀疏场，此处会返回其完整域的形状（full domain shape）。
 :::
 
-## Matrix & vector metadata
+## 矩阵 & 向量元数据
 
-Getting the number of matrix columns and rows will allow you to write dimensionality-independent code. For example, this can be used to unify 2D and 3D physical simulators.
+获得矩阵的行和列数将有利于你编写不依赖维度的代码。 例如，这可以用来统一2维和3维物理模拟器的编写。
 
-`matrix.m` equals to the number of columns of a matrix, while `matrix.n` equals to the number of rows of a matrix. Since vectors are considered as matrices with one column, `vector.n` is simply the dimensionality of the vector.
+`matrix.m`等于矩阵的列数，而`matrix.n`等于矩阵的行数。 同时向量被认为是只有一列的矩阵，，所以`vector.n`就是向量的维数。
 
 ```python {4-5,7-8}
 @ti.kernel
@@ -100,22 +100,22 @@ def foo():
     print(vector.m)  # 1
 ```
 
-## Compile-time evaluations
+## 编译时求值（Compile-time evaluations）
 
-Using compile-time evaluation will allow certain computations to happen when kernels are being instantiated. This saves the overhead of those computations at runtime.
+编译时计算的使用将允许在内核实例化时进行部分计算。 这节省了运行时计算的开销。
 
-- Use `ti.static` for compile-time branching (for those who come from C++17, this is [if constexpr](https://en.cppreference.com/w/cpp/language/if).):
+- 使用`ti.static`对编译时分支展开（对 C++17 的用户来说，这相当于是[if constexpr](https://en.cppreference.com/w/cpp/language/if)）：
 
 ```python {5}
 enable_projection = True
 
 @ti.kernel
 def static():
-  if ti.static(enable_projection): # No runtime overhead
+  if ti.static(enable_projection): # 没有运行时开销
     x[0] = 1
 ```
 
-- Use `ti.static` for forced loop unrolling:
+- 使用`ti.static`强制循环展开（forced loop unrolling）
 
 ```python {3}
 @ti.kernel
@@ -123,28 +123,28 @@ def func():
   for i in ti.static(range(4)):
       print(i)
 
-  # is equivalent to:
+  # 相当于：
   print(0)
   print(1)
   print(2)
   print(3)
 ```
 
-## When to use for loops with `ti.static`
+## 何时使用`ti.static`来进行for循环
 
-There are several reasons why `ti.static` for loops should be used.
+下面是一些为何应该在 for 循环时使用`ti.static`的原因。
 
-- Loop unrolling for performance.
-- Loop over vector/matrix elements. Indices into Taichi matrices must be a compile-time constant. Indexing into taichi fields can be run-time variables. For example, if you want to access a vector field `x`, accessed as `x[field_index][vector_component_index]`. The first index can be variable, yet the second must be a constant.
+- 循环展开以提高性能。
+- 对向量/矩阵的元素进行循环。 矩阵的索引必须为编译时常量。 场的索引可以为运行时变量。 例如，如果你想访问一个向量场`x`，并可以`x[field_index][vector_component_index]`的形式访问。 第一个索引（field_index）可以是变量，但是第二个索引（vector_component_index）必须是一个常量。
 
-For example, code for resetting this vector fields should be
+例如，向量场（vector fields）的重置代码应该为
 
 ```python {4}
 @ti.kernel
 def reset():
   for i in x:
     for j in ti.static(range(x.n)):
-      # The inner loop must be unrolled since j is a vector index instead
-      # of a global field index.
+      # 内部循环必须被展开， 因为 j 是向量索引
+      # 而不是全局场索引
       x[i][j] = 0
 ```
