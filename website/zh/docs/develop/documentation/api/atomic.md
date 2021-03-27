@@ -4,7 +4,7 @@ In Taichi, augmented assignments (e.g., `x[i] += 1`) are automatically [atomic](
 
 ::: warning
 
-When modifying global variables in parallel, make sure you use atomic operations. For example, to sum up all the elements in `x`, :
+When modifying global variables in parallel, make sure you use atomic operations. For example, to sum up all the elements in `x`, : For example, to sum up all the elements in `x`, :
 
     @ti.kernel
     def sum():
@@ -17,15 +17,16 @@ When modifying global variables in parallel, make sure you use atomic operations
     
             # Approach 3: Wrong result since the operation is not atomic.
             total[None] = total[None] + x[i]
+            total[None] = total[None] + x[i]
 
 :::
 
 ::: note
 
-When atomic operations are applied to local values, the Taichi compiler will try to demote these operations into their non-atomic counterparts.
+When atomic operations are applied to local values, the Taichi compiler will try to demote these operations into their non-atomic counterparts. :::
 :::
 
-Apart from the augmented assignments, explicit atomic operations, such as `ti.atomic_add`, also do read-modify-write atomically. These operations additionally return the **old value** of the first argument.
+Apart from the augmented assignments, explicit atomic operations, such as `ti.atomic_add`, also do read-modify-write atomically. These operations additionally return the **old value** of the first argument. These operations additionally return the **old value** of the first argument.
 
 Below is a list of all explicit atomic operations:
 
@@ -36,7 +37,7 @@ Below is a list of all explicit atomic operations:
 
 Atomically compute `x + y` or `x - y` and store the result in `x`.
 
-return
+return :
 :
 
 The old value of `x`.
@@ -50,20 +51,21 @@ For example, :
 
 :::
 
+::: {.function} ti.atomic_xor(x, y)
+
+::: {.function} ti.atomic_or(x, y)
+:::
+
 ::: {.function} ti.atomic_and(x, y)
 :::
 
 ::: {.function} ti.atomic_or(x, y)
 :::
 
-::: {.function} ti.atomic_xor(x, y)
-
-Atomically compute `x & y` (bitwise and), `x | y` (bitwise or), or `x ^ y` (bitwise xor), and store the result in `x`.
-
-return
+return :
 :
 
-The old value of `x`.
+The old value of `x`. :::
 :::
 
 ::: note
