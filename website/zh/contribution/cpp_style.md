@@ -24,7 +24,7 @@ We generally follow [Google C++ Style Guide](https://google.github.io/styleguide
 - C language legacies:
 
   - `printf` (Use `fmtlib::print` instead).
-  - `new` and `free`. (Use smart pointers `std::unique_ptr, std::shared_ptr` instead for ownership management).
+  - `new` and `free`. `new` and `free`. (Use smart pointers `std::unique_ptr, std::shared_ptr` instead for ownership management).
   - `#include <math.h>` (Use `#include <cmath>` instead).
 
 - Exceptions (We are on our way to **remove** all C++ exception usages in Taichi).
