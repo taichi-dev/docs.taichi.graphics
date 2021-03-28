@@ -1,16 +1,16 @@
-# 面向数据对象式编程
+# Objective data-oriented programming
 
-Taichi是一种[面向数据的](https://en.wikipedia.org/wiki/Data-oriented_design)编程(DOP) 语言。 但是，单纯的DOP会使模块化变得困难。
+Taichi is a [data-oriented](https://en.wikipedia.org/wiki/Data-oriented_design) programming (DOP) language. However, simple DOP makes modularization hard.
 
-为了允许代码模块化，Taichi从面向对象编程(OOP) 中借鉴了一些概念。
+To allow modularized code, Taichi borrow some concepts from object-oriented programming (OOP).
 
-为了方便起见，我们将称此混合方案为**面向数据对象式编程** (ODOP)。
+For convenience, let\'s call the hybrid scheme **objective data-oriented programming** (ODOP).
 
 ::: note
-待办事项：此处应有更多文档。
+More documentation on this topic is on the way ...
 :::
 
-一个简单的例子：
+A brief example:
 
 ```python
 import taichi as ti
