@@ -2,6 +2,6 @@
 sidebar: auto
 ---
 
-# 教程
+# Tutorials
 
-这是Taichi的教程页。 即将到来...
+This is the tutorial page of Taichi. Coming soon...
