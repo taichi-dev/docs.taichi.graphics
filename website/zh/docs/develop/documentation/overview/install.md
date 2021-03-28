@@ -1,6 +1,6 @@
-# 安装 Taichi
+# Installation
 
-通过 `pip` 可以很容易安装 Taichi：
+Taichi can be easily installed via `pip`:
 
 ```bash
 python3 -m pip install taichi
@@ -8,20 +8,20 @@ python3 -m pip install taichi
 
 ::: note
 
-Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit). :::
+Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit).
 :::
 
-- 对于Ubuntu 19.04+，请执行 `sudo apt install libtinfo5` 安装依赖项。
-- 对于Arch Linux，请执行 `yaourt -S ncurses5-compat-libs` 安装依赖项。
+- On Ubuntu 19.04+, please execute `sudo apt install libtinfo5`.
+- On Arch Linux, please execute `yaourt -S ncurses5-compat-libs`.
 - On Windows, please install [Microsoft Visual C++ Redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe) if you haven\'t.
 
-## 故障排除
+## Troubleshooting
 
-### Windows 相关问题
+### Windows issues
 
 - If Taichi crashes and reports `ImportError` on Windows: Please consider installing [Microsoft Visual C++ Redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe).
 
-### Python 相关问题
+### Python issues
 
 - If `pip` complains that it could not find a satisfying package, i.e.,
 
@@ -30,23 +30,23 @@ Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit). :::
   ERROR: No matching distribution found for taichi
   ```
 
-  - 确保你使用的 Python 版本是 3.6/3.7/3.8：
+  - Make sure you\'re using Python version 3.6/3.7/3.8:
 
     ```bash
     python3 -c "print(__import__('sys').version[:3])"
-    # 3.6, 3.7 或 3.8
+    # 3.6, 3.7 or 3.8
     ```
 
-  - 确保你安装的 Python 可执行文件是 64-bit：
+  - Make sure your Python executable is 64-bit:
 
     ```bash
     python3 -c "print(__import__('platform').architecture()[0])"
     # 64bit
     ```
 
-### CUDA 相关问题
+### CUDA issues
 
-- 如果 Taichi 报告以下崩溃信息：
+- If Taichi crashes with the following messages:
 
   ```
   [Taichi] mode=release
@@ -57,13 +57,13 @@ Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit). :::
 
   This might be due to the fact that your NVIDIA GPU is pre-Pascal and has limited support for [Unified Memory](https://www.nextplatform.com/2019/01/24/unified-memory-the-final-piece-of-the-gpu-programming-puzzle/).
 
-  - **Possible solution**: add `export TI_USE_UNIFIED_MEMORY=0` to your `~/.bashrc`. This disables unified memory usage in CUDA backend. 该操作将禁用CUDA后端使用统一内存。
+  - **Possible solution**: add `export TI_USE_UNIFIED_MEMORY=0` to your `~/.bashrc`. This disables unified memory usage in CUDA backend.
 
-- 如果你遇到了其他 CUDA 相关问题，不要气馁：
+- If you find other CUDA problems:
 
-  - **可能的解决方案**：尝试添加`export TI_ENABLE_CUDA=0`到你的`~/.bashrc`文件中。 **Possible solution**: add `export TI_ENABLE_CUDA=0` to your `~/.bashrc`. This disables the CUDA backend completely and Taichi will fall back on other GPU backends such as OpenGL.
+  - **Possible solution**: add `export TI_ENABLE_CUDA=0` to your `~/.bashrc`. This disables the CUDA backend completely and Taichi will fall back on other GPU backends such as OpenGL.
 
-### OpenGL 相关问题
+### OpenGL issues
 
 - If Taichi crashes with a stack backtrace containing a line of `glfwCreateWindow` (see [\#958](https://github.com/taichi-dev/taichi/issues/958)):
 
@@ -74,24 +74,24 @@ Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit). :::
   * Taichi Compiler Stack Traceback *
   ***********************************
 
-  ... (省略多行)
+  ... (many lines, omitted)
 
   /lib/python3.8/site-packages/taichi/core/../lib/taichi_core.so: _glfwPlatformCreateWindow
   /lib/python3.8/site-packages/taichi/core/../lib/taichi_core.so: glfwCreateWindow
   /lib/python3.8/site-packages/taichi/core/../lib/taichi_core.so: taichi::lang::opengl::initialize_opengl(bool)
 
-  ... (省略多行)
+  ... (many lines, omitted)
   ```
 
-  This is likely because you are running Taichi on a (virtual) machine with an old OpenGL API. Taichi requires OpenGL 4.3+ to work. Taichi 需要 OpenGL 4.3+ 才能正常工作。
+  This is likely because you are running Taichi on a (virtual) machine with an old OpenGL API. Taichi requires OpenGL 4.3+ to work.
 
-  - **Possible solution**: add `export TI_ENABLE_OPENGL=0` to your `~/.bashrc` even if you initialize Taichi with other backends than OpenGL. This disables the OpenGL backend detection to avoid incompatibilities. 该操作将禁用OpenGL后端检测，以避免OpenGL版本不兼容的问题。
+  - **Possible solution**: add `export TI_ENABLE_OPENGL=0` to your `~/.bashrc` even if you initialize Taichi with other backends than OpenGL. This disables the OpenGL backend detection to avoid incompatibilities.
 
-### Linux 相关问题
+### Linux issues
 
-- 如果 Taichi 崩溃并报告错误`libtinfo.so.5 not found`：
+- If Taichi crashes and reports `libtinfo.so.5 not found`:
 
-  - 对于 Ubuntu ，请执行 `sudo apt install libtinfo-dev` 安装依赖项。
+  - On Ubuntu, execute `sudo apt install libtinfo-dev`.
 
   - On Arch Linux, first edit `/etc/pacman.conf`, and append these lines:
 
@@ -100,7 +100,7 @@ Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit). :::
     Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
     ```
 
-    随后执行`sudo pacman -Syy ncurses5-compat-libs`。
+    Then execute `sudo pacman -Syy ncurses5-compat-libs`.
 
 - If Taichi crashes and reports ``/usr/lib/libstdc++.so.6: version `CXXABI_1.3.11' not found``:
 
@@ -112,6 +112,6 @@ Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit). :::
   sudo apt-get install libstdc++6
   ```
 
-### 其他问题
+### Other issues
 
-- If none of those above address your problem, please report this by [opening an issue](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md) on GitHub. This would help us improve user experiences and compatibility, many thanks! 这将帮助我们后续提高用户体验和兼容性，非常感谢！
+- If none of those above address your problem, please report this by [opening an issue](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md) on GitHub. This would help us improve user experiences and compatibility, many thanks!
