@@ -1,4 +1,4 @@
-# GUI 系统
+# GUI system
 
 Taichi has a built-in GUI system to help users visualize results.
 
@@ -6,27 +6,27 @@ Taichi has a built-in GUI system to help users visualize results.
 
 ::: {.function} ti.GUI(title = \'Taichi\', res = (512, 512), background_color = 0x000000, show_gui = True)
 
-parameter title :
+parameter title
 :
 
 (optional, string) the window title
 
-parameter res :
+parameter res
 :
 
 (optional, scalar or tuple) resolution / size of the window
 
-parameter background_color :
+parameter background_color
 :
 
 (optional, RGB hex) background color of the window
 
-parameter show_gui :
+parameter show_gui
 :
 
 (optional, bool) see the note below
 
-return :
+return
 :
 
 (GUI) an object represents the window
@@ -49,20 +49,19 @@ gui = ti.GUI('Window Title', (640, 360), show_gui=False)
 while gui.running:
     ...
     gui.show(f'{gui.frame:06d}.png')  # save a series of screenshot
-    gui.show(f'{gui.frame:06d}.png')  # save a series of screenshot
 ```
 
 :::
 :::
 
-::: {.function} gui.button(text, event_name=None)
+::: {.function} gui.show(filename = None)
 
-parameter gui :
+parameter gui
 :
 
 (GUI) the window object
 
-parameter filename :
+parameter filename
 :
 
 (optional, string) see notes below
@@ -83,14 +82,14 @@ If `filename` is specified, a screenshot will be saved to the file specified by 
 
 ## Paint on a window
 
-Create a window. If `res` is scalar, then width will be equal to height.
+::: {.function} gui.set_image(img)
 
-parameter gui :
+parameter gui
 :
 
 (GUI) the window object
 
-parameter img :
+parameter img
 :
 
 (np.array or ti.field) field containing the image, see notes below
@@ -119,34 +118,34 @@ The data type of `img` must be one of:
 - `float64`, range `[0, 1]`
 :::
 
-::: {.function} gui.show(filename = None)
+::: {.function} gui.get_image()
 
-return :
+return
 :
 
 (np.array) the current image shown on the GUI
 
-Get the 4-channel (RGBA) image shown in the current GUI system. :::
+Get the 4-channel (RGBA) image shown in the current GUI system.
 :::
 
 ::: {.function} gui.circle(pos, color = 0xFFFFFF, radius = 1)
 
-parameter gui :
+parameter gui
 :
 
 (GUI) the window object
 
-parameter pos :
+parameter pos
 :
 
 (tuple of 2) the position of the circle
 
-parameter color :
+parameter color
 :
 
 (optional, RGB hex) the color to fill the circle
 
-parameter radius :
+parameter radius
 :
 
 (optional, scalar) the radius of the circle
@@ -156,55 +155,55 @@ Draw a solid circle.
 
 ::: {.function} gui.circles(pos, color = 0xFFFFFF, radius = 1)
 
-parameter gui :
+parameter gui
 :
 
 (GUI) the window object
 
-parameter pos :
+parameter pos
 :
 
 (np.array) the positions of the circles
 
-parameter color :
+parameter color
 :
 
 (optional, RGB hex or np.array of uint32) the color(s) to fill the circles
 
-parameter a :
+parameter radius
 :
 
 (optional, scalar or np.array of float32) the radius (radii) of the circles
 
-Draw solid circles. :::
+Draw solid circles.
 :::
 
-::: ti NOTE If `color` is a numpy array, the circle at `pos[i]` will be colored with `color[i]`. In this case, `color` must have the same size as `pos`. ::: In this case, `color` must have the same size as `pos`.
+::: ti NOTE If `color` is a numpy array, the circle at `pos[i]` will be colored with `color[i]`. In this case, `color` must have the same size as `pos`.
 :::
 
-If `filename` is specified, a screenshot will be saved to the file specified by the name. For example, the following saves frames of the window to `.png`\'s:
+::: {.function} gui.line(begin, end, color = 0xFFFFFF, radius = 1)
 
-parameter gui :
+parameter gui
 :
 
 (GUI) the window object
 
-parameter begin :
+parameter begin
 :
 
 (tuple of 2) the first end point position of line
 
-parameter end :
+parameter end
 :
 
 (tuple of 2) the second end point position of line
 
-parameter color :
+parameter color
 :
 
 (optional, RGB hex) the color of line
 
-parameter a :
+parameter radius
 :
 
 (optional, scalar) the width of line
@@ -212,169 +211,169 @@ parameter a :
 Draw a line.
 :::
 
-::: {.function} gui.set_image(img)
+::: {.function} gui.lines(begin, end, color = 0xFFFFFF, radius = 1)
 
-parameter gui :
+parameter gui
 :
 
 (GUI) the window object
 
-parameter a :
+parameter begin
 :
 
 (np.array) the positions of the first end point of lines
 
-parameter a :
+parameter end
 :
 
 (np.array) the positions of the second end point of lines
 
-parameter color :
+parameter color
 :
 
 (optional, RGB hex or np.array of uint32) the color(s) of lines
 
-parameter channels :
+parameter radius
 :
 
 (optional, scalar or np.array of float32) the width(s) of the lines
 
-Draw lines. :::
+Draw lines.
 :::
 
 ::: {.function} gui.triangle(a, b, c, color = 0xFFFFFF)
 
-parameter gui :
+parameter gui
 :
 
 (GUI) the window object
 
-parameter w :
+parameter a
 :
 
 (tuple of 2) the first end point position of triangle
 
-parameter b :
+parameter b
 :
 
 (tuple of 2) the second end point position of triangle
 
-parameter c :
+parameter c
 :
 
 (tuple of 2) the third end point position of triangle
 
-parameter color :
+parameter color
 :
 
 (optional, RGB hex) the color to fill the triangle
 
-Draw a solid triangle. :::
+Draw a solid triangle.
 :::
 
 ::: {.function} gui.triangles(a, b, c, color = 0xFFFFFF)
 
-parameter gui :
+parameter gui
 :
 
 (GUI) the window object
 
-parameter gui :
+parameter a
 :
 
 (np.array) the positions of the first end point of triangles
 
-parameter gui :
+parameter b
 :
 
 (np.array) the positions of the second end point of triangles
 
-parameter gui :
+parameter c
 :
 
 (np.array) the positions of the third end point of triangles
 
-parameter color :
+parameter color
 :
 
 (optional, RGB hex or np.array of uint32) the color(s) to fill the triangles
 
-Draw solid triangles. :::
+Draw solid triangles.
 :::
 
-The image pixels are set from the values of `img[i, j]`, where `i` indicates the horizontal coordinates (from left to right) and `j` the vertical coordinates (from bottom to top).
+::: {.function} gui.rect(topleft, bottomright, radius = 1, color = 0xFFFFFF)
 
-parameter gui :
+parameter gui
 :
 
 (GUI) the window object
 
-parameter topleft :
+parameter topleft
 :
 
 (tuple of 2) the top-left point position of rectangle
 
-parameter bottomright :
+parameter bottomright
 :
 
 (tuple of 2) the bottom-right point position of rectangle
 
-parameter rgb :
+parameter color
 :
 
 (optional, RGB hex) the color of stroke line
 
-parameter gui :
+parameter radius
 :
 
 (optional, scalar) the width of stroke line
 
-Draw a hollow rectangle. :::
+Draw a hollow rectangle.
 :::
 
 ::: {.function} gui.text(content, pos, font_size = 15, color = 0xFFFFFF)
 
-parameter text :
+parameter gui
 :
 
 (GUI) the window object
 
-parameter content :
+parameter content
 :
 
 (str) the text to draw
 
-parameter minumum :
+parameter pos
 :
 
 (tuple of 2) the top-left point position of the fonts / texts
 
-parameter font_size :
+parameter font_size
 :
 
 (optional, scalar) the size of font (in height)
 
-parameter step :
+parameter color
 :
 
 (optional, RGB hex) the foreground color of text
 
-Draw a line of text on screen. :::
+Draw a line of text on screen.
 :::
 
-return :
-
 ::: {.function} ti.rgb_to_hex(rgb):
+
+parameter rgb
 :
 
 (tuple of 3 floats) The (R, G, B) float values, in range \[0, 1\]
 
-return :
+return
 :
 
 (RGB hex or np.array of uint32) The converted hex value
 
-Convert a (R, G, B) tuple of floats into a single integer value. E.g., E.g.,
+Convert a (R, G, B) tuple of floats into a single integer value. E.g.,
 
 ```python
 rgb = (0.4, 0.8, 1.0)
@@ -384,14 +383,14 @@ rgb = np.array([[0.4, 0.8, 1.0], [0.0, 0.5, 1.0]])
 hex = ti.rgb_to_hex(rgb)  # np.array([0x66ccff, 0x007fff])
 ```
 
-The return values can be used in GUI drawing APIs. :::
+The return values can be used in GUI drawing APIs.
 :::
 
 ## Event processing
 
 Every event have a key and type.
 
-parameter gui :
+_Event type_ is the type of event, for now, there are just three type of event:
 
     ti.GUI.RELEASE  # key up or mouse button up
     ti.GUI.PRESS    # key down or mouse button down
@@ -412,14 +411,8 @@ _Event key_ is the key that you pressed on keyboard or mouse, can be one of:
     # for ti.GUI.MOTION event:
     ti.GUI.MOVE    # Mouse Moved
     ti.GUI.WHEEL   # Mouse Wheel Scrolling
-    ti.GUI.LMB     # Left Mouse Button
-    ti.GUI.RMB     # Right Mouse Button
-    
-    # for ti.GUI.MOTION event:
-    ti.GUI.MOVE    # Mouse Moved
-    ti.GUI.WHEEL   # Mouse Wheel Scrolling
 
-parameter pos :
+A _event filter_ is a list combined of _key_, _type_ and _(type, key)_ tuple, e.g.:
 
 ```python
 # if ESC pressed or released:
@@ -434,17 +427,17 @@ gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, ti.GUI.SPACE))
 
 ::: {.attribute} gui.running
 
-parameter text :
+parameter gui
 :
 
 (GUI)
 
-return :
+return
 :
 
 (bool) `True` if `ti.GUI.EXIT` event occurred, vice versa
 
-`ti.GUI.EXIT` occurs when you click on the close (X) button of a window. So `gui.running` will obtain `False` when the GUI is being closed. So `gui.running` will obtain `False` when the GUI is being closed.
+`ti.GUI.EXIT` occurs when you click on the close (X) button of a window. So `gui.running` will obtain `False` when the GUI is being closed.
 
 For example, loop until the close button is clicked:
 
@@ -453,7 +446,7 @@ For example, loop until the close button is clicked:
         gui.set_image(pixels)
         gui.show()
 
-parameter radius :
+You can also close the window by manually setting `gui.running` to `False`:
 
     while gui.running:
         if gui.get_event(ti.GUI.ESCAPE):
@@ -465,20 +458,19 @@ parameter radius :
 
 :::
 
-Draw a solid circle.
-:::
+::: {.function} gui.get_event(a, \...)
 
-parameter text :
+parameter gui
 :
 
 (GUI)
 
-parameter h :
+parameter a
 :
 
 (optional, EventFilter) filter out matched events
 
-return :
+return
 :
 
 (bool) `False` if there is no pending event, vise versa
@@ -501,22 +493,22 @@ For example, loop until ESC is pressed:
 
 ::: {.function} gui.get_events(a, \...)
 
-parameter key :
+parameter gui
 :
 
 (GUI)
 
-parameter maxumum :
+parameter a
 :
 
 (optional, EventFilter) filter out matched events
 
-return :
+return
 :
 
 (generator) a python generator, see below
 
-parameter color :
+Basically the same as `gui.get_event`, except for this one returns a generator of events instead of storing into `gui.event`:
 
     for e in gui.get_events():
         if e.key == ti.GUI.ESCAPE:
@@ -528,9 +520,9 @@ parameter color :
 
 :::
 
-parameter radius :
+::: {.function} gui.is_pressed(key, \...)
 
-parameter img :
+parameter gui
 :
 
 (GUI)
@@ -540,14 +532,14 @@ parameter key
 
 (EventKey) keys you want to detect
 
-return :
+return
 :
 
 (bool) `True` if one of the keys pressed, vice versa
 
 ::: warning
 
-Must be used together with `gui.get_event`, or it won\'t be updated! For example: For example:
+Must be used together with `gui.get_event`, or it won\'t be updated! For example:
 
     while True:
         gui.get_event()  # must be called before is_pressed
@@ -555,20 +547,18 @@ Must be used together with `gui.get_event`, or it won\'t be updated! For example
             print('Go left!')
         elif gui.is_pressed('d', ti.GUI.RIGHT):
             print('Go right!')
-        elif gui.is_pressed('d', ti.GUI.RIGHT):
-            print('Go right!')
 
 :::
 :::
 
-::: {.function} gui.line(begin, end, color = 0xFFFFFF, radius = 1)
+::: {.function} gui.get_cursor_pos()
 
-parameter img :
+parameter gui
 :
 
 (GUI)
 
-return :
+return
 :
 
 (tuple of 2) current cursor position within the window
@@ -579,35 +569,35 @@ For example:
 
 :::
 
-parameter begin :
+::: {.attribute} gui.fps_limit
 
-parameter img :
+parameter gui
 :
 
 (GUI)
 
-return :
+return
 :
 
 (scalar or None) the maximum FPS, `None` for no limit
 
 The default value is 60.
 
-For example, to restrict FPS to be below 24, simply `gui.fps_limit = 24`. This helps reduce the overload on your hardware especially when you\'re using OpenGL on your intergrated GPU which could make desktop slow to response. ::: This helps reduce the overload on your hardware especially when you\'re using OpenGL on your intergrated GPU which could make desktop slow to response.
+For example, to restrict FPS to be below 24, simply `gui.fps_limit = 24`. This helps reduce the overload on your hardware especially when you\'re using OpenGL on your intergrated GPU which could make desktop slow to response.
 :::
 
 ## GUI Widgets
 
-Sometimes it\'s more intuitive to use widgets like slider, button to control program variables instead of chaotic keyboard bindings. Taichi GUI provides a set of widgets that hopefully could make variable control more intuitive: Taichi GUI provides a set of widgets that hopefully could make variable control more intuitive:
+Sometimes it\'s more intuitive to use widgets like slider, button to control program variables instead of chaotic keyboard bindings. Taichi GUI provides a set of widgets that hopefully could make variable control more intuitive:
 
-parameter color :
+::: {.function} gui.slider(text, minimum, maximum, step=1)
 
-parameter filename :
+parameter text
 :
 
 (str) the text to be displayed above this slider.
 
-parameter windname :
+parameter minumum
 :
 
 (float) the minimum value of the slider value.
@@ -622,53 +612,52 @@ parameter step
 
 (optional, float) the step between two separate value.
 
-return :
+return
 :
 
 (WidgetValue) a value getter / setter, see `WidgetValue`{.interpreted-text role="class"}.
 
-The widget will be display as: `{text}: {value:.3f}`, followed with a slider. :::
+The widget will be display as: `{text}: {value:.3f}`, followed with a slider.
 :::
 
-parameter radius :
+::: {.function} gui.label(text)
 
-parameter filename :
+parameter text
 :
 
 (str) the text to be displayed in the label.
 
-return :
+return
 :
 
 (WidgetValue) a value getter / setter, see `WidgetValue`{.interpreted-text role="class"}.
 
-The widget will be display as: `{text}: {value:.3f}`. :::
+The widget will be display as: `{text}: {value:.3f}`.
 :::
 
-Draw a line.
-:::
+::: {.function} gui.button(text, event_name=None)
 
 parameter text
 :
 
 (str) the text to be displayed in the button.
 
-parameter event_name :
+parameter event_name
 :
 
 (optional, str) customize the event name.
 
-return :
+return
 :
 
-(EventKey) the event key for this button, see `gui_event`{.interpreted-text role="ref"}. :::
+(EventKey) the event key for this button, see `gui_event`{.interpreted-text role="ref"}.
 :::
 
-::: {.function} gui.lines(begin, end, color = 0xFFFFFF, radius = 1)
+::: {.WidgetValue} A getter / setter for widget values.
 
-parameter gui :
+::: {.attribute} value
 
-Get / set the current value in the widget where we\'re returned from. :::
+Get / set the current value in the widget where we\'re returned from.
 :::
 
 For example:
@@ -681,15 +670,12 @@ For example:
         radius.value += 0.01
         ...
         gui.show()
-        radius.value += 0.01
-        ...
-        gui.show()
 
 :::
 
 ## Image I/O
 
-parameter end :
+::: {.function} ti.imwrite(img, filename)
 
 parameter img
 :
@@ -703,9 +689,9 @@ parameter filename
 
 Export a `np.ndarray` or Taichi field (`ti.Matrix.field`, `ti.Vector.field`, or `ti.field`) to a specified location `filename`.
 
-Same as `ti.GUI.show(filename)`, the format of the exported image is determined by **the suffix of** `filename` as well. Now `ti.imwrite` supports exporting images to `png`, `img` and `jpg` and we recommend using `png`. Now `ti.imwrite` supports exporting images to `png`, `img` and `jpg` and we recommend using `png`.
+Same as `ti.GUI.show(filename)`, the format of the exported image is determined by **the suffix of** `filename` as well. Now `ti.imwrite` supports exporting images to `png`, `img` and `jpg` and we recommend using `png`.
 
-Please make sure that the input image has **a valid shape**. If you want to export a grayscale image, the input shape of field should be `(height, weight)` or `(height, weight, 1)`. For example: If you want to export a grayscale image, the input shape of field should be `(height, weight)` or `(height, weight, 1)`. For example:
+Please make sure that the input image has **a valid shape**. If you want to export a grayscale image, the input shape of field should be `(height, weight)` or `(height, weight, 1)`. For example:
 
 ```python
 import taichi as ti
@@ -726,12 +712,12 @@ draw()
 ti.imwrite(pixels, f"export_u8.png")
 ```
 
-parameter radius :
+Besides, for RGB or RGBA images, `ti.imwrite` needs to receive a field which has shape `(height, width, 3)` and `(height, width, 4)` individually.
 
-Generally the value of the pixels on each channel of a `png` image is an integar in \[0, 255\]. Generally the value of the pixels on each channel of a `png` image is an integar in \[0, 255\]. For this reason, `ti.imwrite` will **cast fields** which has different datatypes all **into integars between \[0, 255\]**. As a result, `ti.imwrite` has the following requirements for different datatypes of input fields: As a result, `ti.imwrite` has the following requirements for different datatypes of input fields:
+Generally the value of the pixels on each channel of a `png` image is an integar in \[0, 255\]. For this reason, `ti.imwrite` will **cast fields** which has different datatypes all **into integars between \[0, 255\]**. As a result, `ti.imwrite` has the following requirements for different datatypes of input fields:
 
-- For float-type (`ti.f16`, `ti.f32`, etc) input fields, **the value of each pixel should be float between \[0.0, 1.0\]**. Otherwise `ti.imwrite` will first clip them into \[0.0, 1.0\]. Then they are multiplied by 256 and casted to integaters ranging from \[0, 255\]. Otherwise `ti.imwrite` will first clip them into \[0.0, 1.0\]. Then they are multiplied by 256 and casted to integaters ranging from \[0, 255\].
-- For int-type (`ti.u8`, `ti.u16`, etc) input fields, **the value of each pixel can be any valid integer in its own bounds**. These integers in this field will be scaled to \[0, 255\] by being divided over the upper bound of its basic type accordingly. These integers in this field will be scaled to \[0, 255\] by being divided over the upper bound of its basic type accordingly.
+- For float-type (`ti.f16`, `ti.f32`, etc) input fields, **the value of each pixel should be float between \[0.0, 1.0\]**. Otherwise `ti.imwrite` will first clip them into \[0.0, 1.0\]. Then they are multiplied by 256 and casted to integaters ranging from \[0, 255\].
+- For int-type (`ti.u8`, `ti.u16`, etc) input fields, **the value of each pixel can be any valid integer in its own bounds**. These integers in this field will be scaled to \[0, 255\] by being divided over the upper bound of its basic type accordingly.
 
 Here is another example:
 
@@ -758,7 +744,7 @@ ti.imwrite(pixels, f"export_f32.png")
 
 :::
 
-parameter gui :
+::: {.function} ti.imread(filename, channels=0)
 
 parameter filename
 :
@@ -768,16 +754,16 @@ parameter filename
 parameter channels
 :
 
-(optional int) the number of channels in your specified image. (optional int) the number of channels in your specified image. The default value `0` means the channels of the returned image is adaptive to the image file
+(optional int) the number of channels in your specified image. The default value `0` means the channels of the returned image is adaptive to the image file
 
-return :
+return
 :
 
 (np.ndarray) the image read from `filename`
 
 This function loads an image from the target filename and returns it as a `np.ndarray(dtype=np.uint8)`.
 
-Each value in this returned field is an integer in \[0, 255\]. :::
+Each value in this returned field is an integer in \[0, 255\].
 :::
 
 ::: {.function} ti.imshow(img, windname)
@@ -792,12 +778,12 @@ parameter windname
 
 (string) the name of the GUI window
 
-parameter b :
+This function will create an instance of `ti.GUI` and show the input image on the screen.
 
-It has the same logic as `ti.imwrite` for different datatypes. :::
+It has the same logic as `ti.imwrite` for different datatypes.
 :::
 
-parameter c :
+::: {.function} ti.imresize(img, w, h=None):
 
 parameter img
 :
@@ -821,5 +807,5 @@ return
 
 If `h` is not specified, it will be equal to `w` by default.
 
-The output image shape is: `(w, h, *img.shape[2:])`. :::
+The output image shape is: `(w, h, *img.shape[2:])`.
 :::
