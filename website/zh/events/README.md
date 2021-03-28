@@ -1,3 +1,3 @@
-# 活动
+# Events
 
-您可以在这里找到与Taichi相关的活动。
+You could find Taichi-related events in this section.
