@@ -2,6 +2,6 @@
 sidebar: auto
 ---
 
-# 画廊
+# Gallery
 
-这是Taichi的画廊页面。 即将到来...
+This is the gallery page of Taichi. Coming soon...
