@@ -1,10 +1,10 @@
-# 与外部数组进行交互
+# Interacting with external arrays
 
 Although Taichi fields are mainly used in Taichi-scope, in some cases efficiently manipulating Taichi field data in Python-scope could also be helpful.
 
-We provide various interfaces to copy the data between Taichi fields and external arrays. The most typical case maybe copying between Tachi fields and Numpy arrays. Let\'s take a look at two examples below. 最典型的案例可能是在 Taichi 场和 numpy 数组之间复制数据。 让我们来看一下接下来的两个例子。
+We provide various interfaces to copy the data between Taichi fields and external arrays. The most typical case maybe copying between Tachi fields and Numpy arrays. Let\'s take a look at two examples below.
 
-使用`to_numpy()`将**Taichi场中的数据导出至 Numpy 数组**。 **Export data in Taichi fields to a NumPy array** via `to_numpy()`. This allows us to export computation results to other Python packages that support NumPy, e.g. `matplotlib`.
+**Export data in Taichi fields to a NumPy array** via `to_numpy()`. This allows us to export computation results to other Python packages that support NumPy, e.g. `matplotlib`.
 
 ```python {8}
 @ti.kernel
@@ -18,7 +18,7 @@ x_np = x.to_numpy()
 print(x_np)  # np.array([0, 2, 4, 6])
 ```
 
-**Import data from NumPy array to Taichi fields** via `from_numpy()`. This allows people to initialize Taichi fields via NumPy arrays. E.g., 这允许我们使用 NumPy 数组来初始化 Taichi 场。 例如：
+**Import data from NumPy array to Taichi fields** via `from_numpy()`. This allows people to initialize Taichi fields via NumPy arrays. E.g.,
 
 ```python {3}
 x = ti.field(ti.f32, 4)
@@ -30,15 +30,15 @@ print(x[2])  # 3
 print(x[3])  # 5
 ```
 
-## API 参考
+## API reference
 
-We provide interfaces to copy data between Taichi field and **external arrays**. External arrays refers to NumPy arrays or PyTorch tensors. 此处外部数组（external arrays）是指 NumPy 数组或者 PyTorch 张量。
+We provide interfaces to copy data between Taichi field and **external arrays**. External arrays refers to NumPy arrays or PyTorch tensors.
 
-我们建议普通用户从 NumPy 数组开始。
+We suggest common users to start with NumPy arrays.
 
-欲了解更多细节，请查看[场的API参考手册](../api/field.md)。
+For details, check [Field in API references](../api/field.md)
 
-## 外部数组形状
+## External array shapes
 
 Shapes of Taichi fields (see [Scalar fields](../api/scalar_field.md)) and those of corresponding NumPy arrays are closely connected via the following rules:
 
@@ -51,7 +51,7 @@ field.shape  # (233, 666)
 array = field.to_numpy()
 array.shape  # (233, 666)
 
-field.from_numpy(array)  # 输入数组的形状必须为 (233, 666)
+field.from_numpy(array)  # the input array must be of shape (233, 666)
 ```
 
 - For vector fields, if the vector is `n`-D, then **the shape of NumPy array should be** `(*field_shape, vector_n)`:
@@ -64,7 +64,7 @@ field.n      # 3
 array = field.to_numpy()
 array.shape  # (233, 666, 3)
 
-field.from_numpy(array)  # 输入数组的形状必须为 (233, 666, 3)
+field.from_numpy(array)  # the input array must be of shape (233, 666, 3)
 ```
 
 - For matrix fields, if the matrix is `n*m`, then **the shape of NumPy array should be** `(*field_shape, matrix_n, matrix_m)`:
@@ -78,12 +78,12 @@ field.m      # 4
 array = field.to_numpy()
 array.shape  # (233, 666, 3, 4)
 
-field.from_numpy(array)  # 输入数组的形状必须为 (233, 666, 3, 4)
+field.from_numpy(array)  # the input array must be of shape (233, 666, 3, 4)
 ```
 
-## 使用外部数组作为 Taichi 内核的参数
+## Using external arrays as Taichi kernel arguments
 
-Use the type hint `ti.ext_arr()` for passing external arrays as kernel arguments. For example: 例如：
+Use the type hint `ti.ext_arr()` for passing external arrays as kernel arguments. For example:
 
 ```python {12}
 import taichi as ti
@@ -116,5 +116,5 @@ for i in range(n):
 ```
 
 ::: note
-Struct-for\'s are not supported on external arrays. :::
+Struct-for\'s are not supported on external arrays.
 :::
