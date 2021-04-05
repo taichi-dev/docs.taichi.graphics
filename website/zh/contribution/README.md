@@ -1,7 +1,7 @@
-# Contribution Guide
+# 贡献指南
 
-Welcome to the Taichi community! We really appreciate your contribution!
+欢迎来到 Taichi 社区 ！ 我们由衷地感谢你的贡献！
 
 ::: warning
-reminder Please take some time to familiarize yourself with this contribution guide before making any changes.
+reminder 在做任何更改之前，请花上一些时间来熟悉这份贡献指南。
 :::
