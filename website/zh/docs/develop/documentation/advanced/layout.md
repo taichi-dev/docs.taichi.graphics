@@ -1,77 +1,77 @@
-# Advanced dense layouts
+# 高级数据布局
 
-Fields ([Scalar fields](../api/scalar_field.md)) can be _placed_ in a specific shape and _layout_. Defining a proper layout can be critical to performance, especially for memory-bound applications. A carefully designed data layout can significantly improve cache/TLB-hit rates and cacheline utilization. Although when performance is not the first priority, you probably don\'t have to worry about it.
+场（[标量场](../api/scalar_field.md)）可以被_放置_在特定的形状和_布局_中。 构造适当的数据布局对性能来说非常关键，特别是对内存密集型的应用程序而言。 精心设计的数据布局可以显著提高缓存/转址旁路缓存(TLB) 命中率和缓存行(CacheLine) 利用率。 不过某些情况下性能不是最优先要考虑的因素，因此你可能不需要去担心它。
 
-Taichi decouples algorithms from data layouts, and the Taichi compiler automatically optimizes data accesses on a specific data layout. These Taichi features allow programmers to quickly experiment with different data layouts and figure out the most efficient one on a specific task and computer architecture.
+Taichi 将算法与数据布局解耦，并且 Taichi 编译器可以自动优化特定数据布局上的数据访问。 这些 Taichi 特性使得程序员可以快速尝试不同的数据布局，并找出针对特定任务和计算机体系结构的最有效布局。
 
-In Taichi, the layout is defined in a recursive manner. See [Structural nodes (SNodes)](../api/snode.md) for more details about how this works. We suggest starting with the default layout specification (simply by specifying `shape` when creating fields using `ti.field/ti.Vector.field/ti.Matrix.field`), and then migrate to more advanced layouts using the `ti.root.X` syntax if necessary.
+在 Taichi 中，布局是以递归的方式定义的。 请参阅[结构节点(SNodes)](../api/snode.md)获得更多关于其工作方式的细节。 我们建议从默认的布局规范开始（通过在 `ti.field/ti.Vector.field/ti.Matrix.field` 中指定 `shape` 来创建张量），如果需要的话，之后可以再使 `ti.root.X` 语法迁移到更高级的布局。
 
-## From `shape` to `ti.root.X`
+## 由 `shape` 到 `ti.root.X`
 
-For example, this declares a 0-D field:
+例如，这里声明了一个零维场：
 
 ```python {1-2}
 x = ti.field(ti.f32)
 ti.root.place(x)
-# is equivalent to:
+# 相当于：
 x = ti.field(ti.f32, shape=())
 ```
 
-This declares a 1D field of size `3`:
+这里声明了一个尺寸为 `3` 的一维场：
 
 ```python {1-2}
 x = ti.field(ti.f32)
 ti.root.dense(ti.i, 3).place(x)
-# is equivalent to:
+# 相当于：
 x = ti.field(ti.f32, shape=3)
 ```
 
-This declares a 2D field of shape `(3, 4)`:
+这里声明了一个尺寸为 `(3, 4)` 的二维场：
 
 ```python {1-2}
 x = ti.field(ti.f32)
 ti.root.dense(ti.ij, (3, 4)).place(x)
-# is equivalent to:
+# 相当于：
 x = ti.field(ti.f32, shape=(3, 4))
 ```
 
-You may wonder, why not simply specify the `shape` of the field? Why bother using the more complex version? Good question, let's move forward and figure out why.
+你可能会有些疑问，单纯的指定场的 `尺寸(shape)` 不就行了? 为什么还要使用更为复杂的放置方式？ 这是个相当好的问题，接着读下去让我们一起找出原因。
 
-## Row-major versus column-major
+## 行优先 v.s. 列优先
 
-Let\'s start with the simplest layout.
+让我们先从最简单的布局开始。
 
-Since address spaces are linear in modern computers, for 1D Taichi fields, the address of the `i`-th element is simply `i`.
+由于地址空间在现代计算机结构中是线性排列的，所以对于 Taichi 中的一维场，第 `i` 个元素的地址就是简单的处于第 `i` 号位置上。
 
-To store a multi-dimensional field, however, it has to be flattened, in order to fit into the 1D address space. For example, to store a 2D field of size `(3, 2)`, there are two ways to do this:
+为了存储一个多维场，必须将它扁平化(flatten)，以适应一维地址空间。 例如，要存储一个大小为 `(3, 2)` 的二维场，有两种方法：
 
-1.  The address of `(i, j)`-th is `base + i * 2 + j` (row-major).
-2.  The address of `(i, j)`-th is `base + j * 3 + i` (column-major).
+1.  第 `(i, j)` 位置的地址是 `起始位置 + i * 2 + j` （行优先）。
+2.  第 `(i, j)` 位置的地址是 `起始位置 + j * 3 + i` （列优先）。
 
-To specify which layout to use in Taichi:
+下面是在 Taichi 中指定使用以上哪种布局的方式：
 
 ```python
-ti.root.dense(ti.i, 3).dense(ti.j, 2).place(x)    # row-major (default)
-ti.root.dense(ti.j, 2).dense(ti.i, 3).place(y)    # column-major
+ti.root.dense(ti.i, 3).dense(ti.j, 2).place(x)    # （默认）行优先
+ti.root.dense(ti.j, 2).dense(ti.i, 3).place(y)    # 列优先
 ```
 
-Both `x` and `y` have the same shape of `(3, 2)`, and they can be accessed in the same manner, where `0 <= i < 3 && 0 <= j < 2`. They can be accessed in the same manner: `x[i, j]` and `y[i, j]`. However, they have a very different memory layouts:
+`x` 和 `y` 的形状都是 `(3, 2)`，访问它们的下标都满足 `0 <= i < 3 && 0 <= j < 2`的约束。 当然也可以通过相同的下标访问它们：`x[i, j]` 和 `y[i, j]`。 不过它们有着非常不同的内存布局：
 
 ```
-#     address low ........................... address high
+#     存储地址低 ————————————————————> 存储地址高
 # x:  x[0,0]   x[0,1]   x[0,2] | x[1,0]   x[1,1]   x[1,2]
 # y:  y[0,0]   y[1,0] | y[0,1]   y[1,1] | y[0,2]   y[1,2]
 ```
 
-What do we find here? `x` first increases the first index (i.e. row-major), while `y` first increases the second index (i.e. column-major).
+由此可见， `x` 的存储地址首先根据第一个索引下标（即行优先）增加，而 `y` 首先根据第二个索引下标（即列优先）增加。
 
 ::: note
 
-For those people from C/C++, here\'s what they look like:
+对于熟悉 C/C++ 的人来说，这可能看起来像是：
 
 ```c
-int x[3][2];  // row-major
-int y[2][3];  // column-major
+int x[3][2];  // 行优先
+int y[2][3];  // 列优先
 
 for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 2; j++) {
@@ -83,40 +83,40 @@ for (int i = 0; i < 3; i++) {
 
 :::
 
-## Array of Structures (AoS), Structure of Arrays (SoA)
+## 数组结构体(AoS)，结构体数组(SoA)
 
-Fields of same size can be placed together.
+同样大小的场可以被放置到一起。
 
-For example, this places two 1D fields of size `3` (array of structure, AoS):
+例如，这里在尺寸为 `3` 的一层中放置了两个一维场（数组结构体，AoS）:
 
 ```python
 ti.root.dense(ti.i, 3).place(x, y)
 ```
 
-Their memory layout:
+他们的内存布局：
 
 ```
-#  address low ............. address high
+#  存储地址低 ————————————————————> 存储地址高
 #  x[0]   y[0] | x[1]  y[1] | x[2]   y[2]
 ```
 
-By contrast, this places two field placed separately (structure of array, SoA):
+相反地，下列两个场则被分开放置（结构体数组，SoA）:
 
 ```python
 ti.root.dense(ti.i, 3).place(x)
 ti.root.dense(ti.i, 3).place(y)
 ```
 
-Now, their memory layout:
+与之对应，它们的内存布局是：
 
 ```
-#  address low ............. address high
+#  存储地址低 ————————————————————> 存储地址高
 #  x[0]  x[1]   x[2] | y[0]   y[1]   y[2]
 ```
 
-Normally, you don\'t have to worry about the performance nuances between different layouts, and should just define the simplest layout as a start. However, locality sometimes have a significant impact on the performance, especially when the field is huge.
+通常情况下，你不必担心不同布局之间的性能差别，可以从定义最简单的布局开始。 然而，局部性(locality) 有时会对性能产生重大影响，尤其是当场很大的时候。
 
-**To improve spatial locality of memory accesses (i.e. cache hit rate / cacheline utilization), it\'s sometimes helpful to place the data elements within relatively close storage locations if they are often accessed together.** Take a simple 1D wave equation solver for example:
+**为了改善内存访问的空间局部性(即缓存命中率/ 缓存行利用率)，有时将数据元素放置在相对较近的存储位置（如果它们经常一起被访问的话）会很有帮助。**以一个简单的一维波动方程的求解为例：
 
 ```python
 N = 200000
@@ -131,88 +131,88 @@ def step():
     vel[i] += -k * pos[i] * dt
 ```
 
-Here, we placed `pos` and `vel` seperately. So the distance in address space between `pos[i]` and `vel[i]` is `200000`. This will result in a poor spatial locality and lots of cache-misses, which damages the performance. A better placement is to place them together:
+这里，我们将 `pos` 和 `vel` 分开放置。 由此 `pos[i]` 和 `vel[i]` 之间地址空间的距离是 `200000`。 这将导致糟糕的空间局部性和大量的缓存缺失(Cache-Misses)，会在很大程度上降低性能。 一个更好的放置方案是把它们放置在一起：
 
 ```python
 ti.root.dense(ti.i, N).place(pos, vel)
 ```
 
-Then `vel[i]` is placed right next to `pos[i]`, this can increase the cache-hit rate and therefore increase the performance.
+将 `vel[i]` 放在 `pos[i]` 旁边，这样就可以提高缓存命中率，从而提高性能。
 
-## Flat layouts versus hierarchical layouts
+## 平面布局 v.s. 层次布局
 
-By default, when allocating a `ti.field`, it follows the simplest data layout.
+默认情况下，当分配一个 `ti.var` 时，它遵循的是最简单的数据布局。
 
 ```python
 val = ti.field(ti.f32, shape=(32, 64, 128))
 ```
 
-C++ equivalent:
+相当于 C++ 中的：
 
 ```cpp
 float val[32][64][128]
 ```
 
-However, at times this data layout can be suboptimal for certain types of computer graphics tasks. For example, `val[i, j, k]` and `val[i + 1, j, k]` are very far away (`32 KB`) from each other, and leads to poor access locality under certain computation tasks. Specifically, in tasks such as texture trilinear interpolation, the two elements are not even within the same `4KB` pages, creating a huge cache/TLB pressure.
+但是，对于计算机图形任务而言，有些时候这种数据布局不是最理想的。 例如，`val[i, j, k]` 和 `val[i + 1, j, k]` 彼此之间的距离非常远（`32 KB`），这导致对于某些计算任务会有着低效的地址访问。 具体而言，在诸如纹理的三线性插值之类任务中，这两个元素甚至不在同一 `4KB` 的页面内，这将产生巨大的缓存/转址旁路缓存压力。
 
-A better layout might be
+此时更好的布局可能是
 
 ```python
 val = ti.field(ti.f32)
 ti.root.dense(ti.ijk, (8, 16, 32)).dense(ti.ijk, (4, 4, 4)).place(val)
 ```
 
-This organizes `val` in `4x4x4` blocks, so that with high probability `val[i, j, k]` and its neighbours are close to each other (i.e., in the same cacheline or memory page).
+这会在 `4x4x4` 模块中放置 `val`，因此很有可能有 `val[i, j, k]` 及其邻居在存储上彼此靠近（即，在同一高速缓存行或内存页中））。
 
-## Struct-fors on advanced dense data layouts
+## 对高级稠密数据布局进行结构 for 循环
 
-Struct-fors on nested dense data structures will automatically follow their data order in memory. For example, if 2D scalar field `A` is stored in row-major order,
+在嵌套稠密数据结构上的结构 for 循环将会自动地遵循它们在内存中的数据顺序。 例如，如果二维标量场 `A` 是以行为主的顺序存储的，
 
 ```python
 for i, j in A:
     A[i, j] += 1
 ```
 
-will iterate over elements of `A` following row-major order. If `A` is column-major, then the iteration follows the column-major order.
+将按照行优先的顺序对 `A` 中的元素进行遍历。 如果 `A` 是列优先的，则按照列优先进行遍历。
 
-If `A` is hierarchical, it will be iterated level by level. This maximizes the memory bandwidth utilization in most cases.
+如果 `A` 是分层的，则迭代将在层级之间发生。 在大多数情况下，这可以最大化内存带宽利用率。
 
-Struct-for loops on sparse fields follow the same philosophy, and will be discussed further in [Sparse computation](./sparse.md).
+稀疏张量的结构 for 循环遵循相同的原理，这将在[稀疏计算](./sparse.md)章节中进一步讨论。
 
-## Examples
+## 示例
 
-2D matrix, row-major
+二维矩阵，行优先
 
 ```python
 A = ti.field(ti.f32)
 ti.root.dense(ti.ij, (256, 256)).place(A)
 ```
 
-2D matrix, column-major
+二维矩阵，列优先
 
 ```python
 A = ti.field(ti.f32)
-ti.root.dense(ti.ji, (256, 256)).place(A) # Note ti.ji instead of ti.ij
+ti.root.dense(ti.ji, (256, 256)).place(A) # 注意是 ti.ji 而不是 ti.ij
 ```
 
-_8x8_ blocked 2D array of size _1024x1024_
+_8x8_ 的大小将 _1024x1024_ 的二维数组分块
 
 ```python
 density = ti.field(ti.f32)
 ti.root.dense(ti.ij, (128, 128)).dense(ti.ij, (8, 8)).place(density)
 ```
 
-3D Particle positions and velocities, AoS
+三维粒子位置和速度，数组结构体(AoS)
 
 ```python
 pos = ti.Vector.field(3, dtype=ti.f32)
 vel = ti.Vector.field(3, dtype=ti.f32)
 ti.root.dense(ti.i, 1024).place(pos, vel)
-# equivalent to
+# 相当于
 ti.root.dense(ti.i, 1024).place(pos(0), pos(1), pos(2), vel(0), vel(1), vel(2))
 ```
 
-3D Particle positions and velocities, SoA
+三维粒子位置和速度，结构体数组(SoA)
 
 ```python
 pos = ti.Vector.field(3, dtype=ti.f32)
