@@ -348,7 +348,7 @@ not_buggy()
 
 ### Advanced Optimization
 
-Taichi has an advanced optimization engine to make your Taichi kernel to be as fast as it could. But like what `gcc -O3` does, advanced optimization may occasionally lead to bugs as it tries too hard. This includes runtime errors such as:
+Taichi有一个先进的优化引擎，可以使你的Taichi内核尽可能地快。 But like what `gcc -O3` does, advanced optimization may occasionally lead to bugs as it tries too hard. This includes runtime errors such as:
 
 `RuntimeError: [verify.cpp:basic_verify@40] stmt 8 cannot have operand 7.`
 

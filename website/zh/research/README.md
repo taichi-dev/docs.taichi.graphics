@@ -2,6 +2,6 @@
 sidebar: auto
 ---
 
-# 研究
+# Research
 
-这是Taichi的研究页面。 即将到来...
+This is the research page of Taichi. Coming soon...
