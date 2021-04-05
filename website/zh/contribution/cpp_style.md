@@ -1,44 +1,44 @@
-# C++ style
+# C++ 代码风格规范
 
-We generally follow [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html).
+我们大体上遵循 [Google C++ 代码风格规范](https://google.github.io/styleguide/cppguide.html)。
 
-## Naming
+## 命名规则
 
-- Variable names should consist of lowercase words connected by underscores, e.g. `llvm_context`.
+- 变量名称应当由小写词语通过下划线连接组成，例如 `llvm_context`。
 
-- Class and struct names should consist of words with first letters capitalized, e.g. `CodegenLLVM`.
+- 类和结构体应当由首字母大写的词语组成，例如 `CodegenLLVM`。
 
-- Macros should be capital start with `TI`, such as `TI_INFO`, `TI_IMPLEMENTATION`.
+- 请用由 `TI` 开头的形式来命名宏， 例如 `TI_INFO`，`TI_IMPLEMENTATION`。
 
-  - We do not encourage the use of macro, although there are cases where macros are inevitable.
+  - 在碰到不可避免的情况以外我们不提倡在代码中使用宏。
 
-- Filenames should consist of lowercase words connected by underscores, e.g. `ir_printer.cpp`.
+- 文件名称应当由小写词语通过下划线连接组成，例如 `ir_printer.cpp`。
 
-## Dos
+## 提倡的使用方法
 
-- Use `auto` for local variables when appropriate.
-- Mark `override` and `const` when necessary.
+- 在适当的情况下对局部变量添加 `auto` 关键字。
+- 在必要的情况下添加 `override` 和 `const` 关键字。
 
-## Don'ts
+## 不提倡的使用方法
 
-- C language legacies:
+- C语言中的既有范式：
 
-  - `printf` (Use `fmtlib::print` instead).
-  - `new` and `free`. (Use smart pointers `std::unique_ptr, std::shared_ptr` instead for ownership management).
-  - `#include <math.h>` (Use `#include <cmath>` instead).
+  - `printf`（请使用 `fmtlib::print` ）。
+  - `new` 和 `free`。 （请使用智能指针，例如 `std::unique_ptr，std::shared_ptr`，而不是手动管理所有关系）。
+  - `#include <math.h>` （请使用 `#include <cmath>` ）。
 
-- Exceptions (We are on our way to **remove** all C++ exception usages in Taichi).
+- 异常 （我们正在**移除** Taichi 中所有 C++ 异常的使用）。
 
-- Prefix member functions with `m_` or `_`.
+- 前缀成员函数，例如 `m_`，`_` 等。
 
-- Virtual function call in constructors/destructors.
+- 在构造函数和析构函数中调用虚函数。
 
-- `NULL` (Use `nullptr` instead).
+- 空指针 `NULL`（应当使用 `nullptr` ）。
 
-- `using namespace std;` in the global scope.
+- 在全局环境下使用 `using namespace std;`。
 
-- `typedef` (Use `using` instead).
+- `typedef`（应当使用 `using` ）。
 
-## Automatic code formatting
+## 自动格式化代码
 
-- Please run `ti format`
+- 请运行 `ti format`
