@@ -1,17 +1,17 @@
-# Workflow for writing a Python test
+# 编写 Python 测试的工作流程
 
-Normally we write functional tests in Python.
+通常，我们用 Python 编写功能测试。
 
-- We use [pytest](https://github.com/pytest-dev/pytest) for our Python test infrastructure.
-- Python tests should be added to `tests/python/test_xxx.py`.
+- 我们将 [pytest](https://github.com/pytest-dev/pytest) 作为 Python 测试的基础架构。
+- Python 测试应添加到 `tests/python/test_xxx.py` 中。
 
-For example, you've just added a utility function `ti.log10`. Now you want to write a **test**, to test if it functions properly.
+例如，你刚刚添加了一个功能函数 `ti.log10`。 现在想要编写一个 **test**，以测试其是否正常运行。
 
-## Adding a new test case
+## 添加一个新的测试用例
 
-Look into `tests/python`, see if there\'s already a file suit for your test. If not, feel free to create a new file for it :) So in this case let's create a new file `tests/python/test_logarithm.py` for simplicity.
+在 `tests/python` 中查看是否已经有适合你测试的文件。 如果没有，请随时为它创建一个新文件 :) 如此，为简化这个例子，按照上述示例创建一个新文件 `tests/python/test_logarithm.py`。
 
-Add a function, the function name **must** be started with `test_` so that `pytest` could find it. e.g:
+添加一个函数，函数名称**必须**以 `test_` 开头，以便 `pytest` 可以找到它。例如：
 
 ```python {3}
 import taichi as ti
@@ -20,7 +20,7 @@ def test_log10():
     pass
 ```
 
-Add some simple code make use of our `ti.log10` to make sure it works well. Hint: You may pass/return values to/from Taichi-scope using 0-D fields, i.e. `r[None]`.
+利用我们的 `ti.log10` 添加一些简单代码，以确保其正常工作。 提示：你可以使用 0 维场，（即 `r[None]`）向 Taichi-scop 传递值或从中返回。
 
 ```python
 import taichi as ti
@@ -39,16 +39,16 @@ def test_log10():
     assert r[None] == 2
 ```
 
-Execute `ti test logarithm`, and the functions starting with `test_` in `tests/python/test_logarithm.py` will be executed.
+执行 `ti test logarithm`，随后 `tests/python/test_logarithm.py` 中以 `test_` 开头的函数就会被运行。
 
-## Testing against multiple backends
+## 针对多个后端进行测试
 
-The above method is not good enough, for example, `ti.init(arch=ti.cpu)`, means that it will only test on the CPU backend. So do we have to write many tests `test_log10_cpu`, `test_log10_cuda`, ... with only the first line different? No worries, we provide a useful decorator `@ti.test`:
+上面的方法还不够好，例如，`ti.init(arch=ti.cpu)`，意味着它将仅在 CPU 后端进行测试。 那么，我们是否必须编写繁多的测试文件，诸如：`test_log10_cpu`， `test_log10_cuda`，...，而它们只有第一行的代码是不同的？ 为了解决此问题，我们提供了一个有用的装饰器 `@ti.test`：
 
 ```python
 import taichi as ti
 
-# will test against both CPU and CUDA backends
+# 将同时测试 CPU 和 CUDA 后端
 @ti.test(ti.cpu, ti.cuda)
 def test_log10():
     r = ti.field(ti.f32, ())
@@ -62,12 +62,12 @@ def test_log10():
     assert r[None] == 2
 ```
 
-And you may test against **all backends** by simply not specifying the argument:
+你可以通过不指定参数来针对**所有后端**进行测试：
 
 ```python
 import taichi as ti
 
-# will test against all backends available on your end
+# 将针对你的运行环境中可用的所有后端进行测试
 @ti.test()
 def test_log10():
     r = ti.field(ti.f32, ())
@@ -81,18 +81,18 @@ def test_log10():
     assert r[None] == 2
 ```
 
-Cool! Right? But that's still not good enough.
+这已经有所 改进， 但是还不够完美。
 
-## Using `ti.approx` for comparison with tolerance
+## 使用 `ti.approx` 与公差进行比较
 
-Sometimes the math percison could be poor on some backends like OpenGL, e.g. `ti.log10(100)` may return `2.001` or `1.999` in this case.
+有时，在某些后端（例如 OpenGL）上，数学精准度可能很差。在这种情况下，`ti.log10(100)` 可能会返回 `2.001` 或 `1.999`。
 
-To cope with this behavior, we provide `ti.approx` which can tolerate such errors on different backends, for example `2.001 == ti.approx(2)` will return `True` on the OpenGL backend.
+为了解决此问题，我们提供了 `ti.approx`，它可以在不同的后端上容忍此类错误，例如，`2.001 == ti.approx(2)` 将在 OpenGL 后端上返回`True`。
 
 ```python
 import taichi as ti
 
-# will test against all backends available on your end
+# 将针对你的运行环境中可用的所有后端进行测试
 @ti.test()
 def test_log10():
     r = ti.field(ti.f32, ())
@@ -107,18 +107,18 @@ def test_log10():
 ```
 
 ::: warning
-Simply using `pytest.approx` won't work well here, since it's tolerance won't vary among different Taichi backends. It'll be likely to fail on the OpenGL backend.
+直接使用 `pytest.approx` 在这里表现不是很好，因为它的公差在不同的 Taichi 后端之间不会有所不同。 而它在 OpenGL 后端上可能会失败。
 
-`ti.approx` also do treatments on boolean types, e.g.: `2 == ti.approx(True)`.
+`ti.approx` 也会对布尔类型进行处理，例如：`2 == ti.approx(True)`。
 :::
 
-Great on improving stability! But the test is still not good enough, yet.
+这已经极大地提高了测试的稳定性！ 但是测试到此还不够完美。
 
-## Parametrize test inputs
+## 参数化测试输入
 
-For example, `r[None] = 100`, means that it will only test the case of `ti.log10(100)`. What if `ti.log10(10)`? `ti.log10(1)`?
+例如，`r[None] = 100`，意味着它将仅仅测试 `ti.log10(100)` 的情况， 那如果我们需要测试 `ti.log10(10)` 怎么办？ 如果还需要测试 `ti.log10(1)` 呢？
 
-We may test against different input values using the `@pytest.mark.parametrize` decorator:
+我们可以使用 `@pytest.mark.parametrize` 装饰器针对不同的输入值进行测试：
 
 ```python {5}
 import taichi as ti
@@ -139,7 +139,7 @@ def test_log10(x):
     assert r[None] == math.log10(x)
 ```
 
-Use a comma-separated list for multiple input values:
+将逗号分隔的表用于多个输入值：
 
 ```python
 import taichi as ti
@@ -162,7 +162,7 @@ def test_atan2(x, y):
     assert r[None] == math.atan2(x, y)
 ```
 
-Use two separate `parametrize` to test **all combinations** of input arguments:
+使用两个独立的`参数`来测试输入参数的**所有组合**：
 
 ```python {5-6}
 import taichi as ti
@@ -171,7 +171,7 @@ import math
 
 @pytest.mark.parametrize('x', [1, 2])
 @pytest.mark.parametrize('y', [1, 2])
-# same as:  .parametrize('x,y', [(1, 1), (1, 2), (2, 1), (2, 2)])
+# 等同于：  .parametrize('x,y', [(1, 1), (1, 2), (2, 1), (2, 2)])
 @ti.test()
 def test_atan2(x, y):
     r = ti.field(ti.f32, ())
@@ -187,40 +187,40 @@ def test_atan2(x, y):
     assert r[None] == math.atan2(x, y)
 ```
 
-## Specifying `ti.init` configurations
+## 指定 `ti.init` 配置
 
-You may specify keyword arguments to `ti.init()` in `ti.test()`, e.g.:
+你可以在 `ti.test()` 中为 `ti.init()` 指定关键字参数，例如：
 
 ```python {1}
 @ti.test(ti.cpu, debug=True, log_level=ti.TRACE)
 def test_debugging_utils():
-    # ... (some tests have to be done in debug mode)
+    # ... （某些测试必须在调试模式下完成）
 ```
 
-is the same as:
+等同于：
 
 ```python {2}
 def test_debugging_utils():
     ti.init(arch=ti.cpu, debug=True, log_level=ti.TRACE)
-    # ... (some tests have to be done in debug mode)
+    # ... （某些测试必须在调试模式下完成）
 ```
 
-## Exclude some backends from test
+## 在测试时排除一些后端
 
-Sometimes some backends are not capable of specific tests, we have to exclude them from test:
+有时，一些后端无法执行特定的测试，我们必须将它们从测试中排除：
 
 ```python
-# Run this test on all backends except for OpenGL
+# 在除 OpenGL 之外的所有后端上运行此测试
 @ti.test(excludes=[ti.opengl])
 def test_sparse_field():
-    # ... (some tests that requires sparse feature which is not supported by OpenGL)
+    # ... （某些测试需要稀疏特征，而这是 OpenGL 所不支持的）
 ```
 
-You may also use the `extensions` keyword to exclude backends without specific feature:
+你也可以使用 `extensions` 关键字来排除没有特定功能的后端：
 
 ```python
-# Run this test on all backends except for OpenGL
+# 在除 OpenGL 之外的所有后端上运行此测试
 @ti.test(extensions=[ti.extension.sparse])
 def test_sparse_field():
-    # ... (some tests that requires sparse feature which is not supported by OpenGL)
+    # ...（某些测试需要稀疏特征，而这是 OpenGL 所不支持的)
 ```
