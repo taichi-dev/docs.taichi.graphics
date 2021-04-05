@@ -1,15 +1,15 @@
-# Profiler
+# 性能分析器
 
-Taichi's profiler can help you analyze the run-time cost of your program. There are two profiling systems in Taichi: `KernelProfiler` and `ScopedProfiler`.
+Taichi 的分析器可以帮助你分析程序的运行时开销。 在 Taichi 中有两个分析系统：`KernelProfiler` 和 `ScopedProfiler`。
 
-`KernelProfiler` is used to analyze the performance of user kernels.
+`KernelProfiler` 用于分析用户内核的性能。
 
-While `ScopedProfiler` is used by Taichi developers to analyze the performance of the compiler itself.
+而 `ScopedProfiler` 被 Taichi 开发者用来分析编译器本身的性能。
 
-## KernelProfiler
+## 内核性能分析器（KernelProfiler）
 
-1.  `KernelProfiler` records the costs of Taichi kernels on devices. To enable this profiler, set `kernel_profiler=True` in `ti.init`.
-2.  Call `ti.kernel_profiler_print()` to show the kernel profiling result. For example:
+1.  `KernelProfiler`记录了 Taichi 内核在设备上的开销。 如要开启该分析器，请在 `ti.init` 中设置 `kernel_profiler=True`。
+2.  通过调用 `ti.kernel_profiler_print()` 以显示内核分析器的结果。 例如：
 
 ```python {3,13}
 import taichi as ti
@@ -27,7 +27,7 @@ compute()
 ti.kernel_profiler_print()
 ```
 
-The outputs would be:
+输出将会是：
 
 ```
 [ 22.73%] jit_evaluator_0_kernel_0_serial             min   0.001 ms   avg   0.001 ms   max   0.001 ms   total   0.000 s [      1x]
@@ -36,13 +36,13 @@ The outputs would be:
 ```
 
 ::: note
-Currently the result of `KernelProfiler` could be incorrect on OpenGL backend due to its lack of support for `ti.sync()`.
+目前，由于缺乏 `ti.sync()` 的支持，`KernelProfiler` 的结果在 OpenGL 后端上可能会不准确。
 :::
 
-## ScopedProfiler
+## 基于作用域的性能分析器（ScopedProfiler）
 
-1.  `ScopedProfiler` measures time spent on the **host tasks** hierarchically.
-2.  This profiler is automatically on. To show its results, call `ti.print_profile_info()`. For example:
+1.  `ScopedProfiler` 能够有层次地度量**宿主机上**执行任务所花费的时间。
+2.  这个分析器是自动开启的。 如要显示它的结果，请调用 `ti.print_profile_info()`。 例如：
 
 ```python
 import taichi as ti
@@ -61,8 +61,8 @@ compute()
 ti.print_profile_info()
 ```
 
-`ti.print_profile_info()` prints profiling results in a hierarchical format.
+`ti.print_profile_info()` 会以有层次的格式打印分析结果。
 
 ::: note
-`ScopedProfiler` is a C++ class in the core of Taichi. It is not exposed to Python users.
+`ScopedProfiler` 是 Taichi 的一个核心 C++ 类。 它不会向 Python 用户公开。
 :::
