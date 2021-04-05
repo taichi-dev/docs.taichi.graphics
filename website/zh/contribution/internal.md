@@ -1,22 +1,22 @@
-# Internal designs (WIP)
+# 内部设计（WIP）
 
-## Intermediate representation
+## 中间表示（Intermediate representation）
 
-Use `ti.init(print_ir=True)` to print IR on the console.
+使用 `ti.init(print_ir=True)` 来将中间表示代码输出到控制台。
 
-See [Life of a Taichi kernel](./compilation.md) for more details about the JIT system of Taichi.
+查看 [Taichi 内核的生命周期](./compilation.md) 来了解更多关于 Taichi 的 JIT 系统的详细信息。
 
-## Data structure organization
+## 数据结构组织
 
-The internal organization of Taichi\'s data structure can be confusing. It is important to distinguish the concept of **containers**, **cells**, and **components**.
+Taichi 的数据结构的内部组织可能会令人困惑。 区分 **容器(containers)**、 **单元(cells)**、 和 **单元(components)** 的概念是很重要的。
 
-- A **container** can have multiple **cells**. The numbers of **cells** are recommended to be powers of two.
-- A **cell** can have multiple **components**.
-- Each **component** is a **container** of a lower-level SNode.
+- 一个**容器(container)** 可以有多个 **单元(cells)**。 我们推荐使用2的幂次方作为**单元(cells)** 的数量。
+- 一个**单元(cell)** 可以有多个**组件(components)**。
+- 每个**组件(component)**都是一个较低级别的 SNode 的一个**容器(container)**。
 
-Note that containers of `place` SNodes do have cells. Instead, they directly contain numerical values.
+请注意， `place` SNodes 的容器有单元。 相反，它们直接包含数值。
 
-Consider the following example:
+请考虑下面的示例：
 
 ```python
 # misc/listgen_demo.py
@@ -49,7 +49,7 @@ S5.place(z) # S6: z
 
 The following figure shows the hierarchy of the data structure. The numbers are `indices` of the containers and cells.
 
-![image](https://raw.githubusercontent.com/taichi-dev/public_files/fa03e63ca4e161318c8aa9a5db7f4a825604df88/taichi/data_structure_organization.png)
+![图像](https://raw.githubusercontent.com/taichi-dev/public_files/fa03e63ca4e161318c8aa9a5db7f4a825604df88/taichi/data_structure_organization.png)
 
 Note that the `S0root` container and cell do not have an `index`.
 
@@ -82,15 +82,15 @@ Note that **cells** are never exposed to end-users.
 We are on our way to remove usages of **children**, **instances**, and **elements** in Taichi. These are very ambiguous terms.
 :::
 
-## List generation (WIP)
+## 表生成 (WIP)
 
-Struct-fors in Taichi loop over all active elements of a (sparse) data structure **in parallel**. Evenly distributing work onto processor cores is challenging on sparse data structures: naively splitting an irregular tree into pieces can easily lead to partitions with drastically different numbers of leaf elements.
+Taichi 中的结构 for 循环会以**并行**的方式遍历一个稀疏数据结构中的所有活跃元素。 这把“在稀疏数据结构中均匀分配负载到处理器核心上”这一任务变得十分具有挑战性。具体来说，简单地把一个不规则树分片很容易产生数个叶节点数量严重不均衡的分区。
 
-Our strategy is to generate lists of active SNode elements layer by layer. The list generation computation happens on the same device as normal computation kernels, depending on the `arch` argument when the user calls `ti.init`.
+对此，我们的策略是循序渐进地对于每一层生成（对于该层）活跃的 SNode。 这个表的生成计算将发生在和正常计算内核相同的设备上，并且具体取决于在用户调用 `ti.init` 函数时所提供的 `arch` 参数。
 
-List generations flatten the data structure leaf elements into a 1D dense array, circumventing the irregularity of incomplete trees. Then we can simply invoke a regular **parallel for** over the list.
+表的生成将会把数据结构的叶节点展平成一维的稠密数组，并因此规避不完整树的不规则性。 然后，我们就可以直接在表上调用一个正常的**并行 for** 循环。
 
-For example,
+例如，
 
 ```python
 # misc/listgen_demo.py
@@ -114,7 +114,7 @@ def func():
 func()
 ```
 
-gives you the following IR:
+以上的代码会生成下面的中间表示（IR）
 
 ```
 $0 = offloaded clear_list S1dense
@@ -127,63 +127,63 @@ $4 = offloaded struct_for(S2bitmasked) block_dim=0 {
 }
 ```
 
-Note that `func` leads to two list generations:
+请注意， `func` 的使用会生成以下两个表：
 
-- (Tasks `$0` and `$1`) based on the list of `root` node (`S0`), generate the list of the `dense` nodes (`S1`);
-- (Tasks `$2` and `$3`) based on the list of `dense` nodes (`S1`), generate the list of `bitmasked` nodes (`S2`).
+- （任务 `$0` 和 `$1`）基于 `root` 节点 （`S0`）的表会生成一个关于 `dense` 节点们（`S1`）的表；
+- （任务 `$2` 和 `$3`）基于 `dense` 节点们（`S1`）的表会生成一个关于 `bitmasked` 节点们（`S2`）的表。
 
-The list of `root` node always has exactly one element (instance), so we never clear or re-generate this list.
+关于 `root` 节点的表总会有且仅有一个元素（实例），所以我们永远不会去清空或者重新生成这个表。
 
 ::: note
 
-The list of `place` (leaf) nodes (e.g., `S3` in this example) is never generated. Instead, we simply loop over the list of their parent nodes, and for each parent node we enumerate the `place` nodes on-the-fly (without actually generating a list).
+关于 `place` （叶）节点的表 （比如说，在这个例子里它是 `S3`)，永远不会被生成。 相反，我们可以遍历关于这些节点的父节点们的表，并且于每个父节点，我们（在不生成额外的表的情况下）直接遍历所有 `place`节点。
 
-The motivation for this design is to amortize list generation overhead. Generating one list element per leaf node (`place` SNode) element is too expensive, likely much more expensive than the essential computation happening on the leaf element. Therefore we only generate their parent element list, so that the list generation cost is amortized over multiple child elements of a second-to-last-level SNode element.
+这种设计的初衷是去平摊生成表所带来的额外开销。 因为去对于每个叶节点（`place` SNode）生成一个表元素会带来过多的开销，并且这些开销极有可能大大超过在叶元素本身上进行的必要的计算。 所以，我们选择只生成和这些叶节点的父节点相关的的元素表，这样就能把生成表所带来的开销平摊到多个倒数第二层的 SNode 元素的子元素上。
 
-In the example above, although we have `16` instances of `x`, we only generate a list of `4` `bitmasked` nodes (and `1` `dense` node).
+在上面的例子中，虽然我们有 `16` 个关于 `x` 的实例，但是我们只生成了 `4` 个 `bitmasked` 节点（和 `1` 个 `dense` 节点）。
 :::
 
-## Statistics
+## 统计量
 
-In some cases, it is helpful to gather certain quantitative information about internal events during Taichi program execution. The `Statistics` class is designed for this purpose.
+在某些情况下，在 Taichi 程序的执行过程中，收集关于内部事件的特定的量化信息是很用帮助的。 `Statistics` 类就是为此设计的。
 
-Usage:
+用法：
 
 ```cpp
 #include "taichi/util/statistics.h"
 
-// add 1.0 to counter "codegen_offloaded_tasks"
+// 将 1.0 加到计数器 "codegen_offloaded_tasks"
 taichi::stat.add("codegen_offloaded_tasks");
 
-// add the number of statements in "ir" to counter "codegen_statements"
+// 将“中间表示”中语句的数量加到计数器 "codegen_statements"
 taichi::stat.add("codegen_statements", irpass::analysis::count_statements(this->ir));
 ```
 
-Note the keys are `std::string` and values are `double`.
+注意键为 `std::string` 而值类型为 `double`。
 
-To print out all statistics in Python:
+在 Python 中使用如下方式来打印出所有的统计量：
 
 ```python
 ti.core.print_stat()
 ```
 
-## Why Python frontend
+## 为什么使用 Python 作为前端语言
 
-Embedding Taichi in `python` has the following advantages:
+将 Taichi 嵌入到 `Python` 中有以下优点：
 
-- Easy to learn. Taichi has a very similar syntax to Python.
-- Easy to run. No ahead-of-time compilation is needed.
-- This design allows people to reuse existing python infrastructure:
-  - IDEs. A python IDE mostly works for Taichi with syntax highlighting, syntax checking, and autocomplete.
-  - Package manager (pip). A developed Taichi application and be easily submitted to `PyPI` and others can easily set it up with `pip`.
-  - Existing packages. Interacting with other python components (e.g. `matplotlib` and `numpy`) is just trivial.
-- The built-in AST manipulation tools in `python` allow us to do magical things, as long as the kernel body can be parsed by the Python parser.
+- 易于学习。 Taichi 的语法与 Python 非常相似。
+- 易于运行。 不需要运行前编译（ahead-of-time compilation）。
+- 这样的设计使用户可以重复利用已有的 Python 基础架构：
+  - 集成开发环境（IDEs）。 大部分 Python 的集成开发环境提供的语法高亮，语法检查和自动补全功能可以用于 Taichi。
+  - 包管理器（pip）。 开发好的 Taichi 程序可以被简单地提交至 `PyPI` 并且其他用户可以轻松地使用 `pip` 安装它。
+  - 现有的包。 用户可以很轻松地与其他 Python 组件（例如 `matplotlib` 和 `numpy`）交互。
+- 只要内核主体可以被 Python 的解析器解析，那么 `Python` 内置的处理抽象语法树（AST）的工具让我们可以做一些奇妙的事情。
 
-However, this design has drawbacks as well:
+但是，这样的设计同样存在一些不足之处：
 
-- Taichi kernels must parse-able by Python parsers. This means Taichi syntax cannot go beyond Python syntax.
-  - For example, indexing is always needed when accessing elements in Taichi fields, even if the fields is 0D. Use `x[None] = 123` to set the value in `x` if `x` is 0D. This is because `x = 123` will set `x` itself (instead of its containing value) to be the constant `123` in python syntax, and, unfortunately, we cannot modify this behavior.
-- Python has relatively low performance. This can cause a performance issue when initializing large Taichi fields with pure python scripts. A Taichi kernel should be used to initialize a huge fields.
+- Taichi 内核必须能被 Python 解析器解析。 这意味着 Taichi 的语法不能超出 Python 的语法范畴。
+  - 例如，访问 Taichi 场时，即使场是 0 维度也必须使用索引来访问其元素。 如果 `x` 是 0 维的，需要使用 `x[None] = 123` 来给 `x` 中的量赋值。 这是因为在 Python 语法中， `x = 123` 将会将 `x` 本身（而不是它包含的值）设为常数 `123`，不幸的是，我们无法更改这种行为。
+- Python 的性能相对较为低下。 这在使用纯 Python 脚本初始化较大 Taichi 场时会导致一些性能问题。 初始化较大的场时必须使用 Taichi 内核。
 
 ## Virtual indices v.s. physical indices
 
