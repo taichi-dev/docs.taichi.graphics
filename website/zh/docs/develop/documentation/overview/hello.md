@@ -253,9 +253,10 @@ print(pixels[42, 11]) # 打印 0.7
 
 ### 与其他软件包共享数据
 
-Taichi 提供了诸如 `from_numpy` 和 `to_numpy` 等辅助函数来在 Taichi 场和 NumPy 数组之间传输数据。这样你就可以将最喜欢的 Python 软件包（例如 `numpy`，`pytorch`， `matplotlib</0 >等）与 Taichi 一起使用。 例如：</p>
+Taichi 提供了诸如 `from_numpy` 和 `to_numpy` 等辅助函数来在 Taichi 场和 NumPy 数组之间传输数据。这样你就可以将最喜欢的 Python 软件包（例如 `numpy`，`pytorch`， `matplotlib` 等）与 Taichi 一起使用。 例如：
 
-<pre><code class="python">import taichi as ti
+```python
+import taichi as ti
 pixels = ti.field(ti.f32, (1024, 512))
 
 import numpy as np
@@ -275,6 +276,6 @@ while gui.running:
     arr = pixels.to_numpy()
     gui.set_image(cmap(arr))
     gui.show()
-`</pre>
+```
 
 在 [external](../basic/external.md#interacting-with-external-arrays) 这一章节获得更多有关细节。
