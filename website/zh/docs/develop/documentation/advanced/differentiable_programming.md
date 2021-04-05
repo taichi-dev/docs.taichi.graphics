@@ -1,10 +1,10 @@
-# Differentiable programming
+# 可微编程
 
-We suggest starting with the `ti.Tape()`, and then migrate to more advanced differentiable programming using the `kernel.grad()` syntax if necessary.
+我们建议你从 `ti.Tape()` 开始，然后如有必要，再逐步迁移到更高阶的使用 `kernel.grad()` 语法的可微编程。
 
-## Introduction
+## 简介
 
-For example, you have the following kernel:
+例如，若你有如下内核：
 
 ```python
 x = ti.field(float, ())
@@ -15,7 +15,7 @@ def compute_y():
     y[None] = ti.sin(x[None])
 ```
 
-Now if you want to get the derivative of y corresponding to x, i.e., dy/dx. You may want to implement the derivative kernel by yourself:
+现在，如果你想要 y 对应 x 的导数，也即 dy/dx， 你可能想要自己实现导数内核：
 
 ```python
 x = ti.field(float, ())
@@ -27,15 +27,15 @@ def compute_dy_dx():
     dy_dx[None] = ti.cos(x[None])
 ```
 
-But wait, what if I changed the original `compute_y`? We will have to recalculate the derivative by hand and rewrite `compute_dy_dx` again, which is very error-prone and not convenient at all.
+但是如果我改变了 `compute_y` 的原始值怎么办？ 我们将会需要重新手动计算导数然后重新写入 `compute_dy_dx`，这是很容易出错，且很不方便的。
 
-If you run into this situation, don\'t worry! Taichi provides a handy autodiff system that can help you obtain the derivative of a kernel without any pain!
+如果你遇到这种情况，请不要担心！ Taichi 提供了一个便捷的自动微分系统来帮你获取一个内核的导数！
 
-## Using `ti.Tape()`
+## 使用 `ti.Tape()`
 
-Let\'s still take the `compute_y` in above example for explaination. What\'s the most convienent way to obtain a kernel that computes x to $dy/dx$?
+我们仍使用上面的 `compute_y` 作为例子。 有什么便捷的方法来获得一个从 x 计算 $dy/dx$ 的内核？
 
-1.  Use the `needs_grad=True` option when declaring fields involved in the derivative chain.
+1.  在声明需要求导的场时，使用 `needs_grad=True` 选项。
 2.  Use `with ti.Tape(y):` to embrace the invocation into kernel(s) you want to compute derivative.
 3.  Now `x.grad[None]` is the dy/dx value at current x.
 
@@ -197,11 +197,11 @@ Taichi programs that violate this rule will result in an error.
 
 The [DiffTaichi repo](https://github.com/yuanming-hu/difftaichi) contains 10 differentiable physical simulators built with Taichi differentiable programming. A few examples with neural network controllers optimized using differentiable simulators and brute-force gradient descent:
 
-![image](https://github.com/yuanming-hu/public_files/raw/master/learning/difftaichi/ms3_final-cropped.gif)
+![图像](https://github.com/yuanming-hu/public_files/raw/master/learning/difftaichi/ms3_final-cropped.gif)
 
-![image](https://github.com/yuanming-hu/public_files/raw/master/learning/difftaichi/rb_final2.gif)
+![图像](https://github.com/yuanming-hu/public_files/raw/master/learning/difftaichi/rb_final2.gif)
 
-![image](https://github.com/yuanming-hu/public_files/raw/master/learning/difftaichi/diffmpm3d.gif)
+![图像](https://github.com/yuanming-hu/public_files/raw/master/learning/difftaichi/diffmpm3d.gif)
 
 ::: tip
 Check out [the DiffTaichi paper](https://arxiv.org/pdf/1910.00935.pdf) and [video](https://www.youtube.com/watch?v=Z1xvAZve9aE) to learn more about Taichi differentiable programming.

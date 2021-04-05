@@ -1,4 +1,4 @@
-# Documentation Writing Guide
+# 文档撰写指南
 
 Thank you for your contribution! This article briefly introduces syntax that will help you write documentation on this website. Note, the documentation is written in an extended version of [Markdown](https://daringfireball.net/projects/markdown/syntax), so for most of the time, you don't need special syntax besides the basic markdown syntax.
 

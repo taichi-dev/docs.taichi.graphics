@@ -1,48 +1,48 @@
-# Versioning and releases
+# 版本管理与发布
 
-## Pre-1.0 versioning
+## 1.0 之前的版本
 
-Taichi follows [Semantic Versioning 2.0.0](https://semver.org/).
+Taichi 遵循 [Semantic Versioning 2.0.0](https://semver.org/) 的标准。
 
-Since Taichi is still under version 1.0.0, we use minor version bumps (e.g., `0.6.17->0.7.0`) for breaking API changes, and patch version bumps (e.g., `0.6.9->0.6.10`) for backward-compatible changes.
+目前 Taichi 还处在 1.0.0 版本以下的迭代，我们使用次版本变更（例如，`0.6.17->0.7.0`）来表示 API 的改版，使用补丁版本变更（例如，`0.6.9->0.6.10`）来代表向后兼容的变化。
 
-## Workflow: releasing a new version
+## 工作流：发布新版本
 
-- Trigger a Linux build on [Jenkins](http://f11.csail.mit.edu:8080/job/taichi/) to see if CUDA passes all tests. Note that Jenkins is the only build bot we have that tests CUDA. (This may take half an hour.)
+- 在 [Jenkins](http://f11.csail.mit.edu:8080/job/taichi/) 上触发 Linux 下的构建，以查看 CUDA 是否通过了所有测试。 请注意，我们仅用 Jenkins 进行 CUDA 构建测试。 （整个过程可能需要半个小时。）
 
-- Create a branch for the release PR, forking from the latest commit of the `master` branch.
+- 请克隆 `master` 分支的最新一次提交，并为提出 PR 新建一个协助分支。
 
-  - Update Taichi version number at the beginning of `CMakeLists.txt`. For example, change `SET(TI_VERSION_PATCH 9)` to `SET(TI_VERSION_PATCH 10)` for a patch release.
-  - commit with message "[release] vX.Y.Z", e.g. "[release] v0.6.10".
-  - You should see two changes in this commit: one line in `CMakeLists.txt` and one line in `docs/version`.
-  - Execute `ti changelog` and save its outputs. You will need this later.
+  - 更新 `CMakeLists.txt` 开头的 Taichi 版本号。 例如，将 `SET(TI_VERSION_PATCH 9)` 改为 `SET(TI_VERSION_PATCH 10)` 以进行补丁发布。
+  - 提交说明的格式应该为 "[release] vX.Y.Z"，例如 "[release] v0.6.10"。
+  - 你应该可以在这次提交中看到有两处更改：一处在 `CMakeLists.txt`，另一处在 `docs/version`。
+  - 执行 `ti changelog` 并保存其输出。 你将会在稍后用到它。
 
-- Open a PR titled "[release] vX.Y.Z" with the branch and commit you just now created.
+- 从你刚刚创建的分支发起一个 PR ，PR 的标题应该为 "[release] vX.Y.Z"。
 
-  - Use the `ti changelog` output you saved in the previous step as the content of the PR description.
-  - Wait for all the checks and build bots to complete. (This step may take up to two hours).
+  - 使用你在上一步保存的 `ti changelog` 输出，用它作为 PR 的描述内容。
+  - 等待所有检查和构建工具完成。 (这一步可能需要花费两个小时)。
 
-- Squash and merge the PR.
+- 使用 "Squash and merge" 压缩合并 PR。
 
-- Trigger the Linux build on Jenkins, again, so that Linux packages are uploaded to PyPI.
+- 再次触发 Jenkins 上的 Linux 构建，以便将 Linux 包上传到 PyPI。
 
-- Wait for all build bots to finish. This step uploads PyPI packages for OS X and Windows. You may have to wait for up to two hours.
+- 等待所有构建工具完成工作。 这一步将会为 OS X 和 Windows 上传 PyPI 包。 你可能需要等待两个小时。
 
-- Update the `stable` branch so that the head of that branch is your release commit on `master`.
+- 更新 `stable` 分支，使该分支的头(head) 指向你在 `master` 上刚发布的提交。
 
-- Draft a new release [(here)](https://github.com/taichi-dev/taichi/releases):
+- 起草新版本[(在这里进入)](https://github.com/taichi-dev/taichi/releases)：
 
-  - The title should be \"vX.Y.Z\".
-  - The tag should be \"vX.Y.Z\".
-  - Target should be \"recent commit\" -\> the release commit.
-  - The release description should be copy-pasted from the release PR description.
-  - Click the \"Publish release\" button.
+  - 标题格式应该为 "vX.Y.Z"。
+  - 标签格式应该为 "vX.Y.Z"。
+  - 目标(Target) 应该为 “recent commit” -> release commit。
+  - 发布描述应该从提交时的 PR 描述中复制粘贴过来。
+  - 点击 "Publish release" 按钮。
 
-## Release cycle
+## 发布周期
 
-Taichi releases new versions twice per week:
+目前 Taichi 每周会发布两次新版本:
 
-- The first release happens on Wednesdays.
-- The second release happens on Saturdays.
+- 第一次发布日期在周三。
+- 第二次发布日期在周六。
 
-Additional releases may happen if anything needs an urgent fix.
+另外，如果有任何 Bug 需要被紧急修复，可能会额外发布补丁。

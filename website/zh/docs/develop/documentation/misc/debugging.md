@@ -1,14 +1,14 @@
-# Debugging
+# 调试
 
-Debugging a parallel program is not easy, so Taichi provides builtin utilities that could hopefully help you debug your Taichi program.
+调试并行程序并不容易，因此 Taichi 提供了内置的支持，希望能帮助你更方便地调试 Taichi 程序。
 
-## Run-time `print` in kernels
+## 在内核中的运行时 `print`
 
 ```python
 print(arg1, ..., sep='', end='\n')
 ```
 
-Debug your program with `print()` in Taichi-scope. For example:
+在 Taichi 作用域内用 `print()` 调试程序。 例如：
 
 ```python {1}
 @ti.kernel
@@ -36,15 +36,15 @@ def inside_taichi_scope():
     #=> v = [3, 4]
 ```
 
-For now, Taichi-scope `print` supports string, scalar, vector, and matrix expressions as arguments. `print` in Taichi-scope may be a little different from `print` in Python-scope. Please see details below.
+目前，Taichi 作用域的 `print` 支持字符串、标量、向量和矩阵表达式作为参数。 Taichi 作用域中的 `print` 可能与 Python 作用域中的 `print` 略有不同。 请参阅下面的详细信息。
 
 ::: warning
-For the **CPU and CUDA backend**, `print` will not work in Graphical Python Shells including IDLE and Jupyter notebook. This is because these backends print the outputs to the console instead of the GUI. Use the **OpenGL or Metal backend** if you wish to use `print` in IDLE / Jupyter.
+对于 **CPU 和 CUDA 后端**, `print` 在图形化的 Python 界面中（包括 IDLE 和 Jupyter notebook）不起作用。 这是因为这些后端将输出打印到控制台而非 GUI。 如果你希望在 IDLE/ Jupyter 中使用 `print`，请使用 **OpenGL 或 Metal 后端**。
 :::
 
 ::: warning
 
-For the **CUDA backend**, the printed result will not show up until `ti.sync()` is called:
+对于 **CUDA 后端**，打印的结果不会显示，直到 `ti.sync()` 被调用“
 
 ```python
 import taichi as ti
@@ -61,7 +61,7 @@ ti.sync()
 print('after sync')
 ```
 
-results in:
+得到：
 
 ```
 before kernel
@@ -70,11 +70,11 @@ inside kernel
 after sync
 ```
 
-Note that host access or program end will also implicitly invoke `ti.sync()`.
+请注意，主机访问或程序终止也将隐式地触发 `ti.sync()`。
 :::
 
 ::: note
-Note that `print` in Taichi-scope can only receive **comma-separated parameter**. Neither f-string nor formatted string should be used. For example:
+注意 Taichi 作用域中的 `print` 只能接受**逗号分隔的参数**。 不应使用 f-字符串或格式化的字符串。 例如：
 
 ```python {9-11}
 import taichi as ti
@@ -85,18 +85,18 @@ a = ti.field(ti.f32, 4)
 @ti.kernel
 def foo():
     a[0] = 1.0
-    print('a[0] = ', a[0]) # right
-    print(f'a[0] = {a[0]}') # wrong, f-string is not supported
-    print("a[0] = %f" % a[0]) # wrong, formatted string is not supported
+    print('a[0] = ', a[0]) # 正确
+    print(f'a[0] = {a[0]}') # 错误, 不支持 f-字符创
+    print("a[0] = %f" % a[0]) # 错误, 不支持格式化的字符串
 
 foo()
 ```
 
 :::
 
-## Compile-time `ti.static_print`
+## 编译时 `ti.static_print`
 
-Sometimes it is useful to print Python-scope objects and constants like data types or SNodes in Taichi-scope. So, similar to `ti.static` we provide `ti.static_print` to print compile-time constants. It is similar to Python-scope `print`.
+有时，在 Taichi 作用域中打印 Python 作用域的对象和常量（如数据类型或 SNodes）非常有用。 因此，类似于 `ti.static`，我们提供 `ti.static_print` 来打印编译时常数。 它类似与 Python 作用域中的 `print`。
 
 ```python
 x = ti.field(ti.f32, (2, 3))
@@ -113,24 +113,24 @@ def inside_taichi_scope():
     for i in range(4):
             ti.static_print(i.dtype)
             # => DataType.int32
-            # will only print once
+            # 只会打印一次
 ```
 
-Unlike `print`, `ti.static_print` will only print the expression once at compile-time, and therefore it has no runtime cost.
+与 `print` 不同，`ti.static_print` 在编译时只打印一次表达式，因此没有运行时成本。
 
-## Serial execution
+## 串行执行
 
-The automatic parallelization feature of Taichi may lead to undeterministic behaviors. For debugging purposes, it may be useful to serialize program execution to get repeatable results and to diagnose data races. When running your Taichi program on CPUs, you can initialize Taichi to use a single thread using `cpu_max_num_threads=1`, so that the whole program becomes serial and deterministic. For example,
+Taichi 的自动并行化特性有时会导致不确定的行为。 为了方便调试，可能需要串行化程序的执行来获得可重复的结果并诊断数据竞争问题。 当在 CPU 上运行你的 Taichi 程序时，你可以使用 `cpu_max_num_threads=1` 来初始化 Taichi 来使用单线程，这样整个程序就变为串行的和确定性的。 例如，
 
 `ti.init(arch=ti.cpu, cpu_max_num_threads=1)`
 
-If you program works well in serial but not in parallel, check parallelization-related issues such as data races.
+如果你的程序在串行时表现良好但并行时出现了问题，请检查并行相关的问题，例如数据竞争。
 
-## Runtime `assert` in kernel
+## 在内核中的运行时 `assert`
 
-Programmers may use `assert` statements in Taichi-scope. When the assertion condition failed, a `RuntimeError` will be raised to indicate the error.
+程序员可以在 Taichi 作用域内使用 `assert` 语句。 当断言的条件失败时，一个 `RuntimeError` 会被触发以指示错误。
 
-To make `assert` work, first make sure you are using the **CPU backend**. For performance reason, `assert` only works when `debug` mode is on, For example:
+若要使 `assert` 正常工作，首先请确保使用 **CPU 后端**运行程序。 其次出于性能方面的考量，`assert` 仅在 `debug` 模式开启时有效，例如：
 
 ```python
 ti.init(arch=ti.cpu, debug=True)
@@ -144,17 +144,17 @@ def do_sqrt_all():
         x[i] = ti.sqrt(x)
 ```
 
-When you are done with debugging, simply set `debug=False`. Now `assert` will be ignored and there will be no runtime overhead.
+完成调试后，只需设置 `debug=False`。 此时，`assert` 将被忽略，并且不会产生运行时开销。
 
-## Compile-time `ti.static_assert`
+## 编译时 `ti.static_assert`
 
 ```python
 ti.static_assert(cond, msg=None)
 ```
 
-Like `ti.static_print`, we also provide a static version of `assert`: `ti.static_assert`. It can be useful to make assertions on data types, dimensionality, and shapes. It works whether `debug=True` is specified or not. When an assertion fails, it will raise an `AssertionError`, just like a Python-scope `assert`.
+与 `ti.static_print` 类似，我们还提供了 `assert` 的静态版本：`ti.static_assert`。 它对数据类型、维度和形状进行断言可能很有用。 无论是否指定 `debug=True`，它都有效。 当断言失败时，它将引发一个 `AssertionError`，就像 Python 作用域中的 `assert` 一样。
 
-For example:
+例如：
 
 ```python
 @ti.func
@@ -165,9 +165,9 @@ def copy(dst: ti.template(), src: ti.template()):
     return x % 2 == 1
 ```
 
-## Pretty Taichi-scope traceback
+## 优雅的 Taichi 作用域的堆栈回溯
 
-As we all know, Python provides a useful stack traceback system, which could help you locate the issue easily. But sometimes stack tracebacks from **Taichi-scope** could be extremely complicated and hard to read. For example:
+我们都知道，Python 提供了一个有用的堆栈回溯系统，它可以帮你轻松定位到问题。 但有时 **Taichi 作用域** 的堆栈回溯(stack traceback) 日志可能极其复杂且难以阅读。 例如：
 
 ```python
 import taichi as ti
@@ -192,7 +192,7 @@ def func0():
 func0()
 ```
 
-Running this code, of course, will result in an `AssertionError`:
+当然，运行此代码将导致 `AssertionError` 错误：
 
 ```
 Traceback (most recent call last):
@@ -233,17 +233,17 @@ Traceback (most recent call last):
 AssertionError
 ```
 
-You may already feel brain fried by the annoying `decorated`\'s and `__call__`\'s. These are the Taichi internal stack frames. They have almost no benefit for end-users but make the traceback hard to read.
+分析诸如 `decorated` 和 `__call__` 之类晦涩的信息有时会让人感到异常困难和烦躁。 其实这些是 Taichi 的内部堆栈帧。 直接暴露它们对普通用户几乎没有好处，并且会使回溯日志很难阅读。
 
-For this purpose, we may want to use `ti.init(excepthook=True)`, which _hooks_ on the exception handler, and make the stack traceback from Taichi-scope easier to read and intuitive. e.g.:
+为此，我们可能希望使用 `ti.init(excepthook=True)`，这会与异常处理程序_挂钩(hook)_，从而使 Taichi 作用域中的堆栈回溯日志更直观且易于阅读。 例如：
 
 ```python {2}
 import taichi as ti
-ti.init(excepthook=True)  # just add this option!
+ti.init(excepthook=True)  # 简单地传入这个选项!
 ...
 ```
 
-And the result will be:
+这样结果会是：
 
 ```python
 ========== Taichi Stack Traceback ==========
@@ -298,61 +298,61 @@ def func3():
 AssertionError
 ```
 
-See? Our exception hook has removed some useless Taichi internal frames from traceback. What's more, although not visible in the doc, the output is **colorful**!
+我们可以看到， 这里的异常挂钩(exception hook) 已经从回溯中删除了一些无用的 Taichi 内部堆栈帧。 更重要的是，虽然在文档中不可见，但这些输出都是**彩色**的！
 
 ::: note
-For IPython / Jupyter notebook users, the IPython stack traceback hook will be overriden by the Taichi one when `ti.enable_excepthook()`.
+对于 IPython / Jupyter notebook 的用户，当 `ti.enable_excepthook()` 触发时，IPython 原有的堆栈回溯挂钩将被 Taichi 取代。
 :::
 
-## Debugging Tips
+## 调试技巧
 
-Debugging a Taichi program can be hard even with the builtin tools above. Here we showcase some common bugs that one may encounter in a Taichi program.
+即使有上面的内置工具，调试 Taichi 程序也可能会很难。 在这里，我们展示了一些 Taichi 程序中可能会遇到的常见错误。
 
-### Static type system
+### 静态类型系统
 
-Python code in Taichi-scope is translated into a statically typed language for high performance. This means code in Taichi-scope can have a different behavior compared with that in Python-scope, especially when it comes to types.
+Taichi 作用域中的 Python 代码被翻译成静态类型语言以实现高性能。 这意味着 Taichi 作用域中的代码与 Python 作用域中的代码可以有不同的行为，尤其是在类型方面。
 
-The type of a variable is simply **determined at its initialization and never changes later**.
+变量的类型只**在初始化时确定，并且之后不会做更改**。
 
-Although Taichi\'s static type system provides better performance, it may lead to bugs if programmers carelessly used the wrong types. For example,
+虽然 Taichi 的静态类型系统提供更好的性能，但如果程序员不小心使用了错误的类型，它可能会导致错误。 例如，
 
 ```python
 @ti.kernel
 def buggy():
-    ret = 0  # 0 is an integer, so `ret` is typed as int32
+    ret = 0  # 0 是整数, 所以 `ret` 类型是 int32
     for i in range(3):
-        ret += 0.1 * i  # i32 += f32, the result is still stored in int32!
-    print(ret)  # will show 0
+        ret += 0.1 * i  # i32 += f32，结果依旧储存在 int32!
+    print(ret)  # 会显示 0
 
 buggy()
 ```
 
-The code above shows a common bug due to Taichi\'s static type system. The Taichi compiler should show a warning like:
+上面的代码显示了由于 Taichi 的静态类型系统而导致的常见错误。 Taichi 编译器应显示以下警告：
 
 ```
 [W 06/27/20 21:43:51.853] [type_check.cpp:visit@66] [$19] Atomic add (float32 to int32) may lose precision.
 ```
 
-This means that Taichi cannot store a `float32` result precisely to `int32`. The solution is to initialize `ret` as a float-point value:
+这意味着 Taichi 不能将 `float32` 结果精确存储到 `int32`。 解决方案是初始化 `ret` 作为浮点值：
 
 ```python
 @ti.kernel
 def not_buggy():
-    ret = 0.0  # 0 is a floating point number, so `ret` is typed as float32
+    ret = 0.0  # 0 是浮点数， 所以 `ret` 类型是 float32
     for i in range(3):
-        ret += 0.1 * i  # f32 += f32. OK!
-    print(ret)  # will show 0.6
+        ret += 0.1 * i  # f32 += f32. 成立！
+    print(ret)  # 会显示 0.6
 
 not_buggy()
 ```
 
-### Advanced Optimization
+### 高级优化
 
-Taichi有一个先进的优化引擎，可以使你的Taichi内核尽可能地快。 But like what `gcc -O3` does, advanced optimization may occasionally lead to bugs as it tries too hard. This includes runtime errors such as:
+Taichi 有一个先进的优化引擎，可以使你的 Taichi 内核尽可能地快。 但是，就像 `gcc -O3` 一样，高级优化偶尔也会导致错误，因为它过于努力了。 这包括运行时错误，例如：
 
 `RuntimeError: [verify.cpp:basic_verify@40] stmt 8 cannot have operand 7.`
 
-You may use `ti.init(advanced_optimization=False)` to turn off advanced optimization and see if the issue still exists:
+你可以使用 `ti.init(advanced_optimization=False)` 关闭高级优化，并查看问题是否仍然存在：
 
 ```python {3}
 import taichi as ti
@@ -361,4 +361,4 @@ ti.init(advanced_optimization=False)
 ...
 ```
 
-Whether or not turning off optimization fixes the issue, please feel free to report this bug on [GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md). Thank you!
+无论是否关闭优化修复了问题，请随时在 [GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md) 上报告此 Bug。 谢谢！

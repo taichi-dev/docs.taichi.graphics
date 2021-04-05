@@ -1,19 +1,19 @@
-# Export your results
+# 导出结果
 
-Taichi has functions that help you **export visual results to images or videos**. This tutorial demonstrates how to use them step by step.
+Taichi 提供的函数可以帮助你以**图像或视频的形式导出可视化结果**。 本节文档将对它们的使用方法逐步演示。
 
-## Export images
+## 导出图像
 
-- There are two ways to export visual results of your program to images.
-- The first and easier way is to make use of `ti.GUI`.
-- The second way is to call some Taichi functions such as `ti.imwrite`.
+- 这里有两种方法可以将程序的可视化结果导出为图像。
+- 第一种也是较简单的方式是使用 `ti.GUI`。
+- 第二种方式是调用一系列相关 Taichi 函数，比如 `ti.imwrite`。
 
-### Export images using `ti.GUI.show`
+### 通过 `ti.GUI.show` 导出图像
 
-- `ti.GUI.show(filename)` can not only display the GUI canvas on your screen, but also save the image to your specified `filename`.
-- Note that the format of the image is fully determined by the suffix of `filename`.
-- Taichi now supports saving to `png`, `jpg`, and `bmp` formats.
-- We recommend using `png` format. For example:
+- `ti.GUI.show(文件名)`不仅可以在屏幕上显示 GUI 画布，还可以将 GUI 中的图像保存到指定的`文件名`中。
+- 请注意，图像的格式完全由`文件名`中的后缀所决定。
+- Taichi 现在支持将图片保存为 `png`，`jpg`，和 `bmp` 格式。
+- 我们建议使用 `png` 格式。 例如：
 
 ```python {23}
 import taichi as ti
@@ -36,17 +36,17 @@ for i in range(iterations):
     paint()
     gui.set_image(pixels)
 
-    filename = f'frame_{i:05d}.png'   # create filename with suffix png
+    filename = f'frame_{i:05d}.png'   # 创建带有 png 后缀的文件名
     print(f'Frame {i} is recorded in {filename}')
-    gui.show(filename)  # export and show in GUI
+    gui.show(filename)  # 导出并显示在 GUI 中
 ```
 
-- After running the code above, you will get a series of images in the current folder.
-- To compose these images into a single `mp4` or `gif` file, see [Converting PNGs to video](./cli_utilities.md#converting-pngs-to-video).
+- 运行上述代码后，你将在当前文件夹中获得一系列 png 图像。
+- 若要将这些图像转换成单个的 `mp4` 视频或 `gif` 文件，请参阅[将 PNG 图片转换为视频](./cli_utilities.md#converting-pngs-to-video)章节。
 
-### Export images using `ti.imwrite`
+### 通过 `ti.imwrite` 导出图像
 
-To save images without invoking `ti.GUI.show(filename)`, use `ti.imwrite(filename)`. For example:
+如果不想通过调用 `ti.GUI.show(文件名)` 保存图像的话，可以使用 `ti.imwrite(文件名)`。 例如：
 
 ```python {14}
 import taichi as ti
@@ -66,25 +66,25 @@ ti.imwrite(pixels.to_numpy(), filename)
 print(f'The image has been saved to {filename}')
 ```
 
-- `ti.imwrite` can export Taichi fields (`ti.Matrix.field`, `ti.Vector.field`, `ti.field`) and numpy arrays `np.ndarray`.
-- Same as above `ti.GUI.show(filename)`, the image format (`png`, `jpg` and `bmp`) is also controlled by the suffix of `filename` in `ti.imwrite(filename)`.
-- Meanwhile, the resulted image type (grayscale, RGB, or RGBA) is determined by **the number of channels in the input field**, i.e., the length of the third dimension (`field.shape[2]`).
-- In other words, a field that has shape `(w, h)` or `(w, h, 1)` will be exported as a grayscale image.
-- If you want to export `RGB` or `RGBA` images instead, the input field should have a shape `(w, h, 3)` or `(w, h, 4)` respectively.
+- `ti.imwrite` 可以导出 Taichi 场（`ti.Matrix.field`，`ti.Vector.field`, `ti.field`）和 numpy 数组 `np.ndarray`。
+- 与之前提到的 `ti.GUI.show(文件名)` 一样，图像格式（`png`, `jpg` 和 `bmp`）也由 `ti.imwrite(文件名)` 中的`文件名`所决定。
+- 同时，得到的图像类型（灰度、RGB 或 RGBA）由**输入场的通道数**决定，也即，第三维的长度（`field.shape[2]`）。
+- 换言之，形状是 `(w, h)` 或 `(w, h, 1)`  的场会被导出成灰度图。
+- 如果你想导出 `RGB` 或 `RGBA` 的图像，输入的场形状应该分别是 `(w, h, 3)` 或 `(w, h, 4)`。
 
 ::: note
-All Taichi fields have their own data types, such as `ti.u8` and `ti.f32`. Different data types can lead to different behaviors of `ti.imwrite`. Please check out [GUI system](./gui.md) for more details.
+Taichi 中所有的场都有自己的数据类型，比如 `ti.u8` 和 `ti.f32`。 不同的数据类型会导致 `ti.imwrite` 产生不同的行为和输出。 请参阅 [GUI 系统](./gui.md)来了解更多细节。
 :::
 
-- Taichi offers other helper functions that read and show images in addition to `ti.imwrite`. They are also demonstrated in [GUI system](./gui.md).
+- 除了 `ti.imwrite` 之外，Taichi 还提供了其他读取和显示图像的辅助函数。 在 [GUI 系统](./gui.md)中也会有它们的示例。
 
-## Export videos
+## 导出视频
 
 ::: note
-The video export utilities of Taichi depend on `ffmpeg`. If `ffmpeg` is not installed on your machine, please follow the installation instructions of `ffmpeg` at the end of this page.
+Taichi 的视频导出工具依赖于 `ffmpeg`。 如果你的机器上还没有安装 `ffmpeg`，请按照本节末尾的 `ffmpeg` 安装说明进行操作。
 :::
 
-- `ti.VideoManager` can help you export results in `mp4` or `gif` format. For example,
+- `ti.VideoManager` 可以帮助你导出 `mp4` 或 `gif` 格式的结果。 例如，
 
 ```python {13,24}
 import taichi as ti
@@ -115,60 +115,60 @@ print(f'MP4 video is saved to {video_manager.get_output_filename(".mp4")}')
 print(f'GIF video is saved to {video_manager.get_output_filename(".gif")}')
 ```
 
-After running the code above, you will find the output videos in the `./results/` folder.
+运行上述代码后，你将在 `./results/` 文件夹中找到输出的视频。
 
-## Install ffmpeg
+## 安装 ffmpeg
 
-### Install ffmpeg on Windows
+### 在 Windows 上安装 ffmpeg
 
-- Download the `ffmpeg` archive(named `ffmpeg-2020xxx.zip`) from [ffmpeg](https://ffmpeg.org/download.html).
-- Unzip this archive to a folder, such as `D:/YOUR_FFMPEG_FOLDER`.
-- **Important:** add `D:/YOUR_FFMPEG_FOLDER/bin` to the `PATH` environment variable.
-- Open the Windows `cmd` or `PowerShell` and type the line of code below to test your installation. If `ffmpeg` is set up properly, the version information will be printed.
+- 从 [ffmpeg](https://ffmpeg.org/download.html) 上下载 `ffmpeg` 存档文件（具体名称为 `ffmpeg-2020xxx.zip`）。
+- 解压存档到指定文件夹中，比如，`D:/YOUR_FFMPEG_FOLDER`。
+- **关键步骤**：添加路径 `D:/YOUR_FFMPEG_FOLDER/bin` 到环境变量 `PATH` 中；
+- 打开 Windows 下的 `cmd` 或 `PowerShell`，然后输入下面这行命令来测试你的安装是否成功。 如果 `ffmpeg` 已经正确安装完毕，那么它的版本信息就会被打印出来。
 
 ```bash
 ffmpeg -version
 ```
 
-### Install `ffmpeg` on Linux
+### 在 Linux 上安装 `ffmpeg`
 
-- Most Linux distribution came with `ffmpeg` natively, so you do not need to read this part if the `ffmpeg` command is already there on your machine.
-- Install `ffmpeg` on Ubuntu
+- 大多数 Linux 发行版都会原生自带 `ffmpeg`，所以如果你的机器上已经有了 `ffmpeg` 命令，那么这部分可以直接跳过。
+- 在 Ubuntu 上安装 `ffmpeg`
 
 ```bash
 sudo apt-get update
 sudo apt-get install ffmpeg
 ```
 
-- Install `ffmpeg` on CentOS and RHEL
+- 在 CentOS 和 RHEL 上安装 `ffmpeg`
 
 ```bash
 sudo yum install ffmpeg ffmpeg-devel
 ```
 
-- Install `ffmpeg` on Arch Linux:
+- 在 Arch Linux 上安装 `ffmpeg`
 
 ```bash
 pacman -S ffmpeg
 ```
 
-- Test your installation using
+- 使用下面这行命令测试你的安装是否成功
 
 ```bash
 ffmpeg -h
 ```
 
-### Install `ffmpeg` on OS X
+### 在 OS X 上安装 `ffmpeg`
 
-- `ffmpeg` can be installed on OS X using `homebrew`:
+- 在 OS X 上可以使用 `homebrew` 来安装 `ffmpeg`
 
 ```bash
 brew install ffmpeg
 ```
 
-## Export PLY files
+## 导出 PLY 文件
 
-- `ti.PLYwriter` can help you export results in the `ply` format. Below is a short example of exporting 10 frames of a moving cube with vertices randomly colored,
+- `ti.PLYwriter` 可以帮助你将结果导出为 `ply` 格式。 下面是导出一个顶点随机着色的立方体动画中 10 帧画面的短例，
 
 ```python
 import taichi as ti
@@ -205,9 +205,9 @@ series_prefix = "example.ply"
 for frame in range(10):
     move_particles()
     fill_rgba()
-    # now adding each channel only supports passing individual np.array
-    # so converting into np.ndarray, reshape
-    # remember to use a temp var to store so you dont have to convert back
+    # 当前只支持通过传递单个 np.array 来添加通道
+    # 所以需要转换为 np.ndarray 并且 reshape
+    # 记住使用一个临时变量来存储，这样你就不必再转换回来
     np_pos = np.reshape(pos.to_numpy(), (num_vertices, 3))
     np_rgba = np.reshape(rgba.to_numpy(), (num_vertices, 4))
     # create a PLYWriter
@@ -218,27 +218,27 @@ for frame in range(10):
     writer.export_frame_ascii(frame, series_prefix)
 ```
 
-After running the code above, you will find the output sequence of `ply` files in the current working directory. Next, we will break down the usage of `ti.PLYWriter` into 4 steps and show some examples.
+运行上述代码后，你将在当前工作目录中找到一系列输出的 `ply` 文件。 接下来，我们将 `ti.PLYWriter` 的使用方式分解为 4 个步骤，并相应的展示一些示例。
 
-- Setup `ti.PLYWriter`
+- 设置 `ti.PLYWriter`
 
 ```python
-# num_vertices must be a positive int
-# num_faces is optional, default to 0
-# face_type can be either "tri" or "quad", default to "tri"
+# num_vertices 必须是正整数
+# num_faces 是可选的，默认为 0
+# face_type 可以是 "tri" 或 "quad", 默认为 "tri"
 
-# in our previous example, a writer with 1000 vertices and 0 triangle faces is created
+# 我们在之前的例子中，创建了一个带有 1000 个顶点和 0 个三角形面片的写入器(writer)
 num_vertices = 1000
 writer = ti.PLYWriter(num_vertices=num_vertices)
 
-# in the below example, a writer with 20 vertices and 5 quadrangle faces is created
+# 在下面的例子中，我们创建了一个带有 20 个顶点和 5 个四边形面片的写入器
 writer2 = ti.PLYWriter(num_vertices=20, num_faces=5, face_type="quad")
 ```
 
-- Add required channels
+- 添加必需的通道信息
 
 ```python
-# A 2D grid with quad faces
+# 一个由四边形面片组成的二维网格
 #     y
 #     |
 # z---/
@@ -253,79 +253,79 @@ writer2 = ti.PLYWriter(num_vertices=20, num_faces=5, face_type="quad")
 
 writer = ti.PLYWriter(num_vertices=20, num_faces=12, face_type="quad")
 
-# For the vertices, the only required channel is the position,
-# which can be added by passing 3 np.array x, y, z into the following function.
+# 对于顶点来说，唯一必需的通道信息就是位置,
+# 可以通过向下列函数中传递三个 np.array x,y,z 来添加
 
 x = np.zeros(20)
 y = np.array(list(np.arange(0, 4))*5)
 z = np.repeat(np.arange(5), 4)
 writer.add_vertex_pos(x, y, z)
 
-# For faces (if any), the only required channel is the list of vertex indices that each face contains.
+# 对于面来说（如果有的话），唯一必需的通道信息是每个面所包含的顶点索引列表。
 indices = np.array([0, 1, 5, 4]*12)+np.repeat(
     np.array(list(np.arange(0, 3))*4)+4*np.repeat(np.arange(4), 3), 4)
 writer.add_faces(indices)
 ```
 
-- Add optional channels
+- 添加可选的通道信息
 
 ```python
-# Add custome vertex channel, the input should include a key, a supported datatype and, the data np.array
+# 添加自定义顶点通道信息，输入应该包括一个键(key)，支持的数据类型，np.array 格式的数据
 vdata = np.random.rand(20)
 writer.add_vertex_channel("vdata1", "double", vdata)
 
-# Add custome face channel
+# 添加自定义面片通道信息
 foo_data = np.zeros(12)
 writer.add_face_channel("foo_key", "foo_data_type", foo_data)
-# error! because "foo_data_type" is not a supported datatype. Supported ones are
+# 错误! 因为 "foo_data_type" 并不是支持的数据类型。 支持的数据类型有如下
 # ['char', 'uchar', 'short', 'ushort', 'int', 'uint', 'float', 'double']
 
-# PLYwriter already defines several useful helper functions for common channels
-# Add vertex color, alpha, and rgba
-# using float/double r g b alpha to reprent color, the range should be 0 to 1
+# PLYwriter 已经为常用通道定义了几个有用的辅助函数
+# 添加顶点的颜色, alpha 通道, 及 rgba
+# 使用 float/double r g b alpha 来表示颜色值, 范围应该在 0 到 1 之间
 r = np.random.rand(20)
 g = np.random.rand(20)
 b = np.random.rand(20)
 alpha = np.random.rand(20)
 writer.add_vertex_color(r, g, b)
 writer.add_vertex_alpha(alpha)
-# equivilantly
+# 相当于
 # add_vertex_rgba(r, g, b, alpha)
 
-# vertex normal
+# 顶点法向
 writer.add_vertex_normal(np.ones(20), np.zeros(20), np.zeros(20))
 
-# vertex index, and piece (group id)
+# 顶点索引和块(组内 id)
 writer.add_vertex_id()
 writer.add_vertex_piece(np.ones(20))
 
-# Add face index, and piece (group id)
-# Indexing the existing faces in the writer and add this channel to face channels
+# 添加面片索引和块 (组内 id)
+# 在 writer 中索引已有面片并将其通道信息添加到面片通道信息中
 writer.add_face_id()
-# Set all the faces is in group 1
+# 将所有的面片都放到第一组
 writer.add_face_piece(np.ones(12))
 ```
 
-- Export files
+- 导出文件
 
 ```python
 series_prefix = "example.ply"
 series_prefix_ascii = "example_ascii.ply"
-# Export a single file
-# use ascii so you can read the content
+# 导出一个简单的文件
+# 使用 ascii 编码这样你可以对内容进行概览
 writer.export_ascii(series_prefix_ascii)
 
-# alternatively, use binary for a bit better performance
+# 或者，使用二进制编码以获得更好的性能
 # writer.export(series_prefix)
 
-# Export a sequence of files, ie in 10 frames
+# 导出文件序列，即10帧
 for frame in range(10):
-    # write each frame as i.e. "example_000000.ply" in your current running folder
+    # 将每一帧写入你的当前运行的文件夹中( 即， "example_000000.ply")
     writer.export_frame_ascii(frame, series_prefix_ascii)
-    # alternatively, use binary
+    # 或者相应的, 使用二进制编码这样写
     # writer.export_frame(frame, series_prefix)
 
-    # update location/color
+    # 更新 位置/颜色
     x = x + 0.1*np.random.rand(20)
     y = y + 0.1*np.random.rand(20)
     z = z + 0.1*np.random.rand(20)
@@ -333,7 +333,7 @@ for frame in range(10):
     g = np.random.rand(20)
     b = np.random.rand(20)
     alpha = np.random.rand(20)
-    # re-fill
+    #重新填充
     writer = ti.PLYWriter(num_vertices=20, num_faces=12, face_type="quad")
     writer.add_vertex_pos(x, y, z)
     writer.add_faces(indices)
@@ -347,10 +347,10 @@ for frame in range(10):
     writer.add_face_piece(np.ones(12))
 ```
 
-### Import `ply` files into Houdini and Blender
+### 将 `ply` 文件导出到 Houdini 和 Blender
 
-Houdini supports importing a series of `ply` files sharing the same prefix/post-fix. Our `export_frame` can achieve the requirement for you.
+Houdini 支持导入一组共享相同前缀/后缀的 `ply` 文件。 我们的 `export_frame` 就可以为你满足这种需求。
 
-In Houdini, click `File->Import->Geometry` and navigate to the folder containing your frame results, which should be collapsed into one single entry like `example_$F6.ply (0-9)`. Double-click this entry to finish the importing process.
+在Houdini 中，点击 `File->Import->Geometry` 并导航至包含你的框架输出的文件夹中，这些输出结果应该被梳理成一个单一的条目，比如 `example_$F6.ply (0-9)`。 双击该条目以完成导入过程。
 
-Blender requires an add-on called [Stop-motion-OBJ](https://github.com/neverhood311/Stop-motion-OBJ) to load the result sequences. [Detailed documentation](https://github.com/neverhood311/Stop-motion-OBJ/wiki) is provided by the author on how to install and use the add-on. If you\'re using the latest version of Blender (2.80+), download and install the [latest release](https://github.com/neverhood311/Stop-motion-OBJ/releases/latest) of Stop-motion-OBJ. For Blender 2.79 and older, use version `v1.1.1` of the add-on.
+Blender 需要一个名为 [Stop-motion-OBJ](https://github.com/neverhood311/Stop-motion-OBJ) 的插件来加载结果序列。 这里有一个[非常详尽的教程视频](https://github.com/neverhood311/Stop-motion-OBJ/wiki)，是由其作者提供的关于如何安装、授权和使用这个插件的演示。 如果你在使用最新版本的 Blender(2.80+)，请下载并安装[最新版本](https://github.com/neverhood311/Stop-motion-OBJ/releases/latest)的 Stop-motion-OBJ。 对于 Blender 2.79 或更早的版本，使用版本为 `v1.1.1` 的插件。
