@@ -1,8 +1,8 @@
-# GUI system
+# GUI 系统
 
-Taichi has a built-in GUI system to help users visualize results.
+Taichi 具有一个内置的 GUI 系统以帮助用户可视化结果。
 
-## Create a window
+## 创建一个窗口
 
 ::: {.function} ti.GUI(title = \'Taichi\', res = (512, 512), background_color = 0x000000, show_gui = True)
 
