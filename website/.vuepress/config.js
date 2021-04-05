@@ -79,10 +79,11 @@ module.exports = {
                 items: [
                   { text: "Gallery", link: "/gallery/" },
                   { text: "Research", link: "/research/" },
-                  {
-                    text: "Taichi Hub Playground",
-                    link: "http://hub.taichi.graphics/",
-                  },
+                  // TODO: Bring this back when Hub is back online
+                  // {
+                  //   text: "Taichi Hub Playground",
+                  //   link: "http://hub.taichi.graphics/",
+                  // },
                 ],
               },
               {
@@ -157,10 +158,11 @@ module.exports = {
                 items: [
                   { text: "画廊", link: "/zh/gallery/" },
                   { text: "研究", link: "/zh/research/" },
-                  {
-                    text: "Taichi Hub游乐场",
-                    link: "http://hub.taichi.graphics/",
-                  },
+                  // TODO: Bring this back when Hub is back online
+                  // {
+                  //   text: "Taichi Hub游乐场",
+                  //   link: "http://hub.taichi.graphics/",
+                  // },
                 ],
               },
               {
