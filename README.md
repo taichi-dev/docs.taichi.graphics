@@ -115,6 +115,9 @@ this site](./website/.vuepress/config.js)!
 
 ## Acknowledgements (documentation, website and i18n)
 
-- Thanks to all contributors who have contributed to the development of Taichi documentation, community and website. Please navigate to the [members page of Taichi website](https://taichi.graphics/community/members.html) to see the full acknowledgements.
+- Thanks to all contributors who have contributed to the development of Taichi documentation, community and website. Please navigate to the [members page of Taichi website](https://taichi.graphics/community/members.html) to see the full acknowledgements. Specifically, for whoever
+have contributed to the [taichi-docs-zh-cn](https://github.com/taichi-dev/taichi-docs-zh-cn) translations, please see the following chart!
 
-- Taichi中文文档及其社区、网站能够如此快速地成长，离不开每一位贡献者的工作和付出，感谢大家！请移步至 [Taichi网站的社区成员页面](https://taichi.graphics/community/members.html#simplified-chinese-documentation-contributors)来查看完整的鸣谢列表。
+- Taichi中文文档及其社区、网站能够如此快速地成长，离不开每一位贡献者的工作和付出，感谢大家！请移步至 [Taichi网站的社区成员页面](https://taichi.graphics/community/members.html#simplified-chinese-documentation-contributors)来查看完整的鸣谢列表。特别地，我们在这里将曾参与过 [taichi-docs-zh-cn](https://github.com/taichi-dev/taichi-docs-zh-cn) 仓库翻译文档的贡献者特别列出。
+
+![contributors](./assets/contributors_taichi-dev_taichi-docs-zh-cn_12.svg)
