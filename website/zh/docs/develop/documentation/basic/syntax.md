@@ -91,7 +91,7 @@ print(my_kernel())  # 233, 因为返回值类型是 ti.i32
 
 ::: note
 
-目前，内核只能返回一个标量。 返回 `ti.Matrix` 或 `ti.Vector` 是不被支持的。 Python 风格的元祖作为返回值也是不被支持的。 例如：
+目前，内核只能返回一个标量。 返回 `ti.Matrix` 或 `ti.Vector` 是不被支持的。 Python 风格的元组作为返回值也是不被支持的。 例如：
 
 ```python {3,9}
 @ti.kernel
