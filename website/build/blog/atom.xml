@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://docs.taichi.graphics/blog</id>
+    <title>Taichi Docs Blog</title>
+    <updated>2015-10-25T23:29:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="http://docs.taichi.graphics/blog"/>
+    <subtitle>Taichi Docs Blog</subtitle>
+    <icon>http://docs.taichi.graphics/img/favicon.ico</icon>
+</feed>
