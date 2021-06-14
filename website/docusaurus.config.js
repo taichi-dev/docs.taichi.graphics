@@ -4,8 +4,7 @@ module.exports = {
   tagline: 'Graphics programming for everyone',
   url: 'http://docs.taichi.graphics',
   baseUrl: '/',
-  // TODO: use 'throw' for production!!!
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'taichi-dev',
@@ -20,7 +19,7 @@ module.exports = {
       id: 'under-construction-banner',
       content:
         'Sorry for any inconvenience, this new docsite is still under construction and translation. Please help us by contributing docs, corrections and translations! Thank you 😃',
-      backgroundColor: '#d35400',
+      backgroundColor: '#0891b2',
       textColor: '#E5E7EB',
       isCloseable: false,
     },
@@ -29,6 +28,7 @@ module.exports = {
     },
     navbar: {
       title: null,
+      hideOnScroll: false,
       // style: 'dark',
       logo: {
         alt: 'Taichi Graphics',
@@ -39,28 +39,39 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'docs/get-started',
+          docId: 'lang/get-started',
           position: 'right',
           label: 'Docs',
+          className: 'animated-anchor-link',
         },
         {
           type: 'doc',
-          docId: 'api/index',
+          docId: 'lang-api/index',
           position: 'right',
           label: 'API',
+          className: 'animated-anchor-link',
         },
         {
-          to: '/community/index',
+          label: 'Explore',
           position: 'right',
-          label: 'Community',
-          activeBaseRegex: `/community/`,
+          items: [
+            {
+              to: '/community/index',
+              label: 'Community',
+              activeBaseRegex: '/community/',
+            },
+            {
+              to: '/acknowledgments',
+              label: 'Acknowledgments',
+            },
+          ],
         },
         {
           type: 'localeDropdown',
           position: 'right',
           dropdownItemsAfter: [
             {
-              to: 'https://docs.taichi.graphics/help-us-translate',
+              to: '/help-us-translate',
               label: 'Help us translate',
             },
           ],
@@ -68,9 +79,10 @@ module.exports = {
         {
           type: 'docsVersionDropdown',
           position: 'right',
-          // Add additional dropdown items at the beginning/end of the dropdown.
           dropdownItemsBefore: [],
-          dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+          dropdownItemsAfter: [
+            // {to: '/versions', label: 'All versions'}
+          ],
           dropdownActiveClassDisabled: true,
           docsPluginId: 'default',
         },
@@ -86,17 +98,25 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Products',
           items: [
             {
-              label: 'Get Started',
-              to: '/docs/docs/get-started',
+              label: 'Taichi Programming Language',
+              to: 'https://github.com/taichi-dev/taichi',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Resources',
           items: [
+            {
+              label: 'Community',
+              href: '/community/index',
+            },
+            {
+              label: 'Documentation',
+              href: '/',
+            },
             {
               label: 'Forum',
               href: 'https://forum.taichi.graphics',
@@ -104,16 +124,37 @@ module.exports = {
           ],
         },
         {
-          title: 'More',
+          title: 'Company',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/taichi-dev/docs.taichi.graphics',
+              label: 'About Us',
+              href: 'https://taichi.graphics',
+            },
+            {
+              label: 'Careers',
+              href: 'https://taichi.graphics/careers',
+            },
+            {
+              label: 'Contact',
+              href: 'https://taichi.graphics/contact',
+            },
+          ],
+        },
+        {
+          title: 'Legal',
+          items: [
+            {
+              label: 'Cookie Policy',
+              href: 'https://taichi.graphics/cookie-policy',
+            },
+            {
+              label: 'Privacy Policy',
+              href: 'https://taichi.graphics/privacy-policy',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Taichi Graphics Technology, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Taichi Graphics Technology, Inc. Built with Docusaurus and the Taichi community.`,
     },
     algolia: {
       apiKey: 'af0e5e752542b015cba900b98e25197d',
@@ -157,9 +198,10 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Turn on the `Docs-only mode`
+          // `Docs-only` mode, not working for now, see bug https://github.com/facebook/docusaurus/issues/4967
           routeBasePath: '/',
+          path: 'docs',
+          // TODO: use the main repo URL for `en` locale as the source of truth docs will live there!
           editUrl:
             'https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/',
           // editUrl: ({locale, versionDocsDirPath, docPath}) => {
@@ -168,8 +210,15 @@ module.exports = {
           //   }
           //   return `https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/${versionDocsDirPath}/${docPath}`;
           // },
+          editCurrentVersion: true,
+          sidebarPath: require.resolve('./sidebars.js'),
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
+          versions: {
+            current: {
+              label: 'develop',
+            },
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
