@@ -7,14 +7,33 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'taichi-dev',
+  projectName: 'docs.taichi.graphics',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh-Hans'],
+  },
   themeConfig: {
+    // Optional banner
+    announcementBar: {
+      id: 'under-construction-banner',
+      content:
+        'Sorry for any inconvenience, this new docsite is still under construction and translation. Please help us by contributing docs, corrections and translations! Thank you 😃',
+      backgroundColor: '#d35400',
+      textColor: '#E5E7EB',
+      isCloseable: false,
+    },
+    prism: {
+      defaultLanguage: 'python',
+    },
     navbar: {
-      title: 'My Site',
+      title: null,
+      // style: 'dark',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Taichi Graphics',
+        src: 'img/black_words.svg',
+        srcDark: 'img/white_words.svg',
+        href: 'https://taichi.graphics',
       },
       items: [
         {
@@ -25,8 +44,34 @@ module.exports = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          to: '/community/index',
+          position: 'right',
+          label: 'Community',
+          activeBaseRegex: `/community/`,
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+          dropdownItemsAfter: [
+            {
+              to: 'https://docs.taichi.graphics/help-us-translate',
+              label: 'Help us translate',
+            },
+          ],
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+          // Add additional dropdown items at the beginning/end of the dropdown.
+          dropdownItemsBefore: [],
+          dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+          dropdownActiveClassDisabled: true,
+          docsPluginId: 'default',
+        },
+        {
+          href: 'https://github.com/taichi-dev/taichi',
+          'aria-label': 'GitHub repository',
+          className: 'header-github-link',
           position: 'right',
         },
       ],
@@ -75,6 +120,20 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+    },
+    algolia: {
+      apiKey: 'af0e5e752542b015cba900b98e25197d',
+      indexName: 'taichi',
+      contextualSearch: true,
+      // Optional: required if using our own DocSearch crawler
+      // appId: 'YOUR_APP_ID',
+      searchParameters: {},
+    },
+    colorMode: {
+      switchConfig: {
+        darkIcon: '🌙',
+        lightIcon: '☀️',
+      }
     },
   },
   presets: [
