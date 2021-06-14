@@ -1,8 +1,8 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Taichi Docs',
+  tagline: 'Graphics programming for everyone',
+  url: 'http://docs.taichi.graphics',
   baseUrl: '/',
   // TODO: use 'throw' for production!!!
   onBrokenLinks: 'warn',
@@ -39,11 +39,16 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Tutorial',
+          docId: 'docs/get-started',
+          position: 'right',
+          label: 'Docs',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          type: 'doc',
+          docId: 'api/index',
+          position: 'right',
+          label: 'API',
+        },
         {
           to: '/community/index',
           position: 'right',
@@ -84,8 +89,8 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Get Started',
+              to: '/docs/docs/get-started',
             },
           ],
         },
@@ -93,16 +98,8 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Forum',
+              href: 'https://forum.taichi.graphics',
             },
           ],
         },
@@ -110,17 +107,13 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/taichi-dev/docs.taichi.graphics',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Taichi Graphics Technology, Inc. Built with Docusaurus.`,
     },
     algolia: {
       apiKey: 'af0e5e752542b015cba900b98e25197d',
@@ -137,21 +130,46 @@ module.exports = {
       }
     },
   },
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'community',
+        path: 'community',
+        routeBasePath: 'community',
+        editUrl:
+          'https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/',
+        // editUrl: ({locale, versionDocsDirPath, docPath}) => {
+        //   if (locale !== 'en') {
+        //     return `https://crowdin.com/project/taichi-programming-language/${locale}`;
+        //   }
+        //   return `https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/${versionDocsDirPath}/${docPath}`;
+        // },
+        editCurrentVersion: true,
+        sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
+          // Turn on the `Docs-only mode`
+          routeBasePath: '/',
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/',
+          // editUrl: ({locale, versionDocsDirPath, docPath}) => {
+          //   if (locale !== 'en') {
+          //     return `https://crowdin.com/project/taichi-programming-language/${locale}`;
+          //   }
+          //   return `https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/${versionDocsDirPath}/${docPath}`;
+          // },
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
