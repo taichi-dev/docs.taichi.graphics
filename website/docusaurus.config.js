@@ -26,6 +26,10 @@ module.exports = {
     prism: {
       defaultLanguage: 'python',
     },
+    gtag: {
+      trackingID: 'G-9K17QVGTR6',
+      anonymizeIP: true,
+    },
     navbar: {
       title: null,
       hideOnScroll: false,
