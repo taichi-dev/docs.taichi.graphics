@@ -111,11 +111,11 @@ module.exports = {
           items: [
             {
               label: 'Community',
-              href: '/community/index',
+              to: '/community/index',
             },
             {
               label: 'Documentation',
-              href: '/',
+              to: '/docs/',
             },
             {
               label: 'Forum',
@@ -198,8 +198,8 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // `Docs-only` mode, not working for now, see bug https://github.com/facebook/docusaurus/issues/4967
-          routeBasePath: '/',
+          // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
+          // routeBasePath: '/',
           path: 'docs',
           // TODO: use the main repo URL for `en` locale as the source of truth docs will live there!
           editUrl:
