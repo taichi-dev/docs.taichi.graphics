@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/sharp_black.svg',
   organizationName: 'taichi-dev',
   projectName: 'docs.taichi.graphics',
   i18n: {
