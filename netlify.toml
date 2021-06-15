@@ -10,3 +10,8 @@
   to = "/docs/"
   status = 301
   force = true
+[[redirects]]
+  from = "/docs"
+  to = "/docs/lang/basic/overview"
+  status = 301
+  force = true
