@@ -1,0 +1,12 @@
+[build]
+  base = "website/"
+  publish = "build"
+  command = "yarn build"
+  environment = { NODE_VERSION = "14" }
+
+# Temp solution due to https://github.com/facebook/docusaurus/issues/4967
+[[redirects]]
+  from = "/index.html"
+  to = "/docs/"
+  status = 301
+  force = true
