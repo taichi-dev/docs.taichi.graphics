@@ -36,8 +36,8 @@ module.exports = {
       // style: 'dark',
       logo: {
         alt: 'Taichi Graphics',
-        src: 'img/black_words.svg',
-        srcDark: 'img/white_words.svg',
+        src: 'img/sharp_black_words.svg',
+        srcDark: 'img/sharp_white_words.svg',
         href: 'https://taichi.graphics',
       },
       items: [
