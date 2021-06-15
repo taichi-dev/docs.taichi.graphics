@@ -6,7 +6,7 @@
 
 # Temp solution due to https://github.com/facebook/docusaurus/issues/4967
 [[redirects]]
-  from = "/index.html"
+  from = "/"
   to = "/docs/"
   status = 301
   force = true
