@@ -387,4 +387,4 @@ at any time!
 If you are interested in joining the Taichi community, we strongly recommend you take some time to
 familiarize yourself with our [contribution guide](lang/contribution/index).
 
-We hop you enjoy your adventure with Taichi!
+We hope you enjoy your adventure with Taichi!
