@@ -163,7 +163,8 @@ module.exports = {
     algolia: {
       apiKey: 'af0e5e752542b015cba900b98e25197d',
       indexName: 'taichi',
-      contextualSearch: true,
+      // TODO: turn this on once we version the docs
+      contextualSearch: false,
       // Optional: required if using our own DocSearch crawler
       // appId: 'YOUR_APP_ID',
       searchParameters: {},
