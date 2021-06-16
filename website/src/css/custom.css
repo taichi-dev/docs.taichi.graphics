@@ -1,0 +1,168 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Generated with https://docusaurus.io/docs/migration/manual#colors */
+/* fallback: d35400 */
+:root {
+  --ifm-color-primary: #0891b2;
+  --ifm-color-primary-dark: #0782a0;
+  --ifm-color-primary-darker: #077b97;
+  --ifm-color-primary-darkest: #06657d;
+  --ifm-color-primary-light: #099fc4;
+  --ifm-color-primary-lighter: #09a7cd;
+  --ifm-color-primary-lightest: #0abce7;
+  --ifm-code-font-size: 95%;
+
+  --ifm-color-info: #0891b2;
+  --ifm-color-success: #059619;
+  --ifm-color-warning: #F59E0B;
+  --ifm-color-danger: #B91C1C;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+/* For smooth scrolling */
+html {
+	scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+/* Cancel the ugly white when bouncing over navbar and footer */
+/* Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior */
+body {
+  overscroll-behavior: none;
+}
+
+/* Navbar */
+html[data-theme='dark'] .navbar {
+  /* Align with TailwindCSS bg-gray-900 */
+  --ifm-navbar-background-color: #111827;
+}
+
+.navbar--dark {
+  /* Align with TailwindCSS bg-gray-900 */
+  --ifm-navbar-background-color: #111827;
+}
+
+.header-github-link:hover {
+  opacity: 0.6;
+}
+
+.header-github-link:before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
+}
+
+html[data-theme='dark'] .header-github-link:before {
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
+}
+
+/* Align with main website's animated anchor text underline */
+/* Ref: https://paulund.co.uk/css-animation-link-underline */
+.animated-anchor-link {
+  position: relative;
+}
+
+.animated-anchor-link:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--ifm-navbar-link-color);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.animated-anchor-link:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+/* Footer */
+.footer--dark {
+  /* Align with TailwindCSS bg-gray-900 */
+  --ifm-footer-background-color: #111827;
+}
+.footer__title {
+  /* TailwindCSS text-gray-400 */
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+
+  /* TailwindCSS font-semibold */
+  font-weight: 600;
+
+  /* TailwindCSS tracking-wider */
+  letter-spacing: 0.05em;
+
+  /* TailwindCSS uppercase */
+  text-transform: uppercase;
+}
+.footer__item {
+  /* TailwindCSS text-gray-300 */
+  --tw-text-opacity: 1;
+  color: rgba(209,213,219,var(--tw-text-opacity));
+
+  /* TailwindCSS text-base */
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.footer__copyright {
+  --tw-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-text-opacity));
+  font-size: 14px;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.88;
+}
+
+/* Cancel zebra-strips of tables in admonitions */
+.admonition .admonition-content table tr:nth-child(2n) {
+  background: transparent;
+}
+
+/* Revert the code background and text in admonitions
+   to make them more clear */
+.admonition .admonition-content code {
+  background-color: var(--ifm-code-color);
+  color: var(--ifm-code-background)
+}
+
+/* Highlight text */
+#inline-blue {
+  background-color: #2780e3;
+  color: #fff;
+  font-size: 95%;
+}
+#inline-purple {
+  background-color: #9954bb;
+  color: #fff;
+  font-size: 95%;
+}
+#inline-yellow {
+  background-color: #f0ad4e;
+  color: #fff;
+  font-size: 95%;
+}
+#inline-green {
+  background-color: #5cb85c;
+  color: #fff;
+  font-size: 95%;
+}

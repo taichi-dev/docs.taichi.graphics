@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Structure
 
 The developer community consists of four roles:
