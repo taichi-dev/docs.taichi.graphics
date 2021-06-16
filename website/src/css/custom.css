@@ -33,6 +33,13 @@
 /* For smooth scrolling */
 html {
 	scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+/* Cancel the ugly white when bouncing over navbar and footer */
+/* Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior */
+body {
+  overscroll-behavior: none;
 }
 
 /* Navbar */
