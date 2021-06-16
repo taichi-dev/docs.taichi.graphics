@@ -10,3 +10,8 @@
   to = "/docs/"
   status = 301
   force = true
+[[redirects]]
+  from = "/get-started/"
+  to = "/docs/"
+  status = 301
+  force = true
