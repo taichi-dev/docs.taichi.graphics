@@ -165,9 +165,10 @@ module.exports = {
       indexName: 'taichi',
       // TODO: turn this on once we version the docs
       contextualSearch: false,
-      // Optional: required if using our own DocSearch crawler
-      // appId: 'YOUR_APP_ID',
-      searchParameters: {},
+      // TODO: turn this off once we version the docs && have i18n ready
+      searchParameters: {
+        facetFilters: ["language:en"]
+      },
     },
     colorMode: {
       switchConfig: {
