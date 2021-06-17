@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/sharp_black_or_white.svg',
+  favicon: 'img/black_or_white.svg',
   organizationName: 'taichi-dev',
   projectName: 'docs.taichi.graphics',
   i18n: {
@@ -36,8 +36,8 @@ module.exports = {
       // style: 'dark',
       logo: {
         alt: 'Taichi Graphics',
-        src: 'img/sharp_black_words.svg',
-        srcDark: 'img/sharp_white_words.svg',
+        src: 'img/black_words.svg',
+        srcDark: 'img/white_words.svg',
         href: 'https://taichi.graphics',
       },
       items: [
