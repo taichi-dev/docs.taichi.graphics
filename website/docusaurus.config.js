@@ -43,14 +43,14 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'lang/get-started',
+          docId: 'lang/articles/get-started',
           position: 'right',
           label: 'Docs',
           className: 'animated-anchor-link',
         },
         {
           type: 'doc',
-          docId: 'lang-api/index',
+          docId: 'lang/api/index',
           position: 'right',
           label: 'API',
           className: 'animated-anchor-link',
