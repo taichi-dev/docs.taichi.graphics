@@ -10,7 +10,7 @@ library](https://github.com/yuanming-hu/taichi/tree/legacy) (e.g.
 should always install Taichi using `pip`.
 
 If you are working on the Taichi compiler and need to build from source,
-see [Developer installation section of the Contribution Guide](../contribution/dev_install).
+see [Developer installation section of the Contribution Guide](../contribution/dev_install.md).
 
 :::
 

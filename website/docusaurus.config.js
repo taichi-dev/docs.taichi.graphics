@@ -2,11 +2,11 @@
 module.exports = {
   title: 'Taichi Docs',
   tagline: 'Graphics programming for everyone',
-  url: 'http://docs.taichi.graphics',
+  url: 'https://docs.taichi.graphics',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/sharp_black_or_white.svg',
+  favicon: 'img/black_or_white.svg',
   organizationName: 'taichi-dev',
   projectName: 'docs.taichi.graphics',
   i18n: {
@@ -14,6 +14,7 @@ module.exports = {
     locales: ['en', 'zh-Hans'],
   },
   themeConfig: {
+    hideableSidebar: true,
     // Optional banner
     announcementBar: {
       id: 'under-construction-banner',
@@ -36,21 +37,21 @@ module.exports = {
       // style: 'dark',
       logo: {
         alt: 'Taichi Graphics',
-        src: 'img/sharp_black_words.svg',
-        srcDark: 'img/sharp_white_words.svg',
+        src: 'img/black_words.svg',
+        srcDark: 'img/white_words.svg',
         href: 'https://taichi.graphics',
       },
       items: [
         {
           type: 'doc',
-          docId: 'lang/get-started',
+          docId: 'lang/articles/get-started',
           position: 'right',
           label: 'Docs',
           className: 'animated-anchor-link',
         },
         {
           type: 'doc',
-          docId: 'lang-api/index',
+          docId: 'lang/api/index',
           position: 'right',
           label: 'API',
           className: 'animated-anchor-link',
@@ -165,9 +166,10 @@ module.exports = {
       indexName: 'taichi',
       // TODO: turn this on once we version the docs
       contextualSearch: false,
-      // Optional: required if using our own DocSearch crawler
-      // appId: 'YOUR_APP_ID',
-      searchParameters: {},
+      // TODO: turn this off once we version the docs && have i18n ready
+      searchParameters: {
+        facetFilters: ["language:en"]
+      },
     },
     colorMode: {
       switchConfig: {

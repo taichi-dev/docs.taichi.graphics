@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Advanced dense layouts
 
-Fields ([Scalar fields](../../lang-api/scalar_field)) can be _placed_
+Fields ([Scalar fields](../../api/scalar_field.md)) can be _placed_
 in a specific shape and _layout_. Defining a proper layout can be
 critical to performance, especially for memory-bound applications. A
 carefully designed data layout can significantly improve cache/TLB-hit
@@ -18,7 +18,7 @@ data layouts and figure out the most efficient one on a specific task
 and computer architecture.
 
 In Taichi, the layout is defined in a recursive manner. See
-[Structural nodes (SNodes)](../../lang-api/snode) for more details about how this
+[Structural nodes (SNodes)](../../api/snode.md) for more details about how this
 works. We suggest starting with the default layout specification (simply
 by specifying `shape` when creating fields using
 `ti.field/ti.Vector.field/ti.Matrix.field`), and then migrate to more
@@ -227,7 +227,7 @@ If `A` is hierarchical, it will be iterated level by level. This
 maximizes the memory bandwidth utilization in most cases.
 
 Struct-for loops on sparse fields follow the same philosophy, and will
-be discussed further in [Sparse computation](./sparse).
+be discussed further in [Sparse computation](./sparse.md).
 
 ## Examples
 

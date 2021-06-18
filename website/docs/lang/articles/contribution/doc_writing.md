@@ -62,13 +62,13 @@ It's worth mentioning that [Tables Generator](https://www.tablesgenerator.com/ma
 
 ## 3. Cross-reference and anchor
 
-To link to another section within the same article, you would use `[Return to ## 1. Insert code blocks](#_1-insert-code-blocks)`: [Return to ## 1. Insert code blocks](#_1-insert-code-blocks).
+To link to another section within the same article, you would use `[Return to ## 1. Insert code blocks](#1-insert-code-blocks)`: [Return to ## 1. Insert code blocks](#1-insert-code-blocks).
 
-To link to sections in other articles, use the following syntax (note the relative and absolute paths):
+We follow the best practices suggested by [Docusaurus](https://docusaurus.io/docs/docs-markdown-features#referencing-other-documents) to cross-reference other documents, so to link to sections in other articles, please use the following relative-path based syntax, which
+is docs-versioning and IDE/Github friendly:
 
-- `[Return to Contribution guidelines](./contributor_guide)`: [Return to Contribution guidelines](./contributor_guide)
-- `[Return to Contribution guidelines](../contribution/contributor_guide)`: [Return to Contribution guidelines](../contribution/contributor_guide)
-- `[Return to The Documentation](/docs/#portability)`: [Return to The Documentation](/docs/#portability)
+- `[Return to Contribution guidelines](./contributor_guide.md)`: [Return to Contribution guidelines](./contributor_guide.md)
+- `[Return to The Documentation which is at root](/docs/#portability)`: [Return to The Documentation](/docs/#portability)
 
 ## 4. Centered text block
 

@@ -7,7 +7,7 @@ sidebar_position: 9999
 ## **Q:** Installing Taichi with `pip`, complains `package not found`.
 
 **A:** Is your Python version \>= 3.6, and 64-bit? See
-[Installation Troubleshooting](lang/misc/install.md).
+[Installation Troubleshooting](./misc/install.md).
 
 ## **Q:** Do we have something like `ti.pi`?
 
@@ -53,7 +53,7 @@ Or make use the extension library [Taichi THREE](https://github.com/taichi-dev/t
 
 ## **Q:** How do I declare a field with **dynamic length**?
 
-**A:** What you want may be the `dynamic` SNode, a kind of sparse field, see [Working with dynamic SNodes](../lang-api/snode#working-with-dynamic-snodes).
+**A:** What you want may be the `dynamic` SNode, a kind of sparse field, see [Working with dynamic SNodes](../api/snode.md#working-with-dynamic-snodes).
 
 :::tip
 Or simply allocate a dense field large enough, and another 0-D field
