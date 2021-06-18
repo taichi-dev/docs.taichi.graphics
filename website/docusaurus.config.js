@@ -14,6 +14,7 @@ module.exports = {
     locales: ['en', 'zh-Hans'],
   },
   themeConfig: {
+    hideableSidebar: true,
     // Optional banner
     announcementBar: {
       id: 'under-construction-banner',
