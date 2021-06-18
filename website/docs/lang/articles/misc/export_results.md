@@ -100,7 +100,7 @@ more details.
 
 - Taichi offers other helper functions that read and show images in
   addition to `ti.imwrite`. They are also demonstrated in
-  [GUI system](./gui.md).
+  [GUI system./gui.md).
 
 ## Export videos
 

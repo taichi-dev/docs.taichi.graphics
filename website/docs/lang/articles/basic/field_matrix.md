@@ -28,7 +28,7 @@ element being a matrix.
 
 - Sparse fields are initially inactive.
 
-- See [Scalar fields](lang-api/scalar_field.md) for more details.
+- See [Scalar fields](../../api/scalar_field.md) for more details.
 
 ## Matrix fields
 
@@ -47,7 +47,7 @@ a `3 x 2` matrix. To allocate a `128 x 64` matrix field which has a
   when you load an matrix element from a global matrix field: the
   first is for field indexing, the second for matrix indexing.
 - `ti.Vector` is simply an alias of `ti.Matrix`.
-- See [Matrices](lang-api/matrix.md) for more on matrices.
+- See [Matrices](../../api/matrix.md) for more on matrices.
 
 ## Matrix size
 

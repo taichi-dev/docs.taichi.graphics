@@ -54,13 +54,13 @@ There are a few of extra requirements depend on which operating system you are u
   </TabItem>
 </Tabs>
 
-Please refer to the [Installation Troubleshooting](lang/misc/install) section if you run into any issues when installing taichi.
+Please refer to the [Installation Troubleshooting](./misc/install.md) section if you run into any issues when installing taichi.
 
 ## Hello, world!
 
 We introduce the Taichi programming language through a very basic _fractal_ example.
 
-Running the Taichi code below using either `python3 fractal.py` or `ti example` _(you can find more information about the taichi CLI in the [Command line utilities](lang/misc/cli_utilities) section)_ will give you an animation of [Julia set](https://en.wikipedia.org/wiki/Julia_set):
+Running the Taichi code below using either `python3 fractal.py` or `ti example` _(you can find more information about the taichi CLI in the [Command line utilities](./misc/cli_utilities.md) section)_ will give you an animation of [Julia set](https://en.wikipedia.org/wiki/Julia_set):
 
 <center>
 
@@ -161,7 +161,7 @@ allocator to adaptively allocate memory.
 ### Fields
 
 Taichi is a data-oriented programming language where dense or
-spatially-sparse fields are the first-class citizens. See [Scalar fields](lang-api/scalar_field.md) for more details on fields.
+spatially-sparse fields are the first-class citizens. See [Scalar fields](../api/scalar_field.md) for more details on fields.
 
 In the code above, `pixels = ti.field(dtype=float, shape=(n * 2, n))`
 allocates a 2D dense field named `pixels` of size `(640, 320)` and
@@ -178,7 +178,7 @@ type-hinted (if any).
 Taichi **functions** are defined with the decorator `@ti.func`. They can
 be called by Taichi kernels or other Taichi functions.
 
-See [syntax](lang/basic/syntax) for more details about Taichi
+See [syntax](./basic/syntax.md) for more details about Taichi
 kernels and functions.
 
 The language used in Taichi kernels and functions looks exactly like
@@ -273,7 +273,7 @@ over all the pixel coordinates, i.e.
 
 :::note
 
-Struct-for is the key to [sparse computation](lang/advanced/sparse) in
+Struct-for is the key to [sparse computation](./advanced/sparse.md) in
 Taichi, as it will only loop over active elements in a sparse field. In
 dense fields, all elements are active.
 :::
@@ -373,18 +373,18 @@ while gui.running:
     gui.show()
 ```
 
-See [external](lang/basic/external.md#interacting-with-external-arrays) for more details.
+See [external](./basic/external.md#interacting-with-external-arrays) for more details.
 
 ## What's next?
 
 Now we have gone through the features of the
 Taichi programming language using fractal example,
 feel free to dive into the language concepts in
-the next section, or jump to the advanced topics, such as the [Metaprogramming](lang/advanced/meta) or [differentiable_programming](lang/advanced/differentiable_programming). Remember you can
+the next section, or jump to the advanced topics, such as the [Metaprogramming](./advanced/meta.md) or [differentiable_programming](./advanced/differentiable_programming.md). Remember you can
 use the search bar to search for topics or keywords
 at any time!
 
 If you are interested in joining the Taichi community, we strongly recommend you take some time to
-familiarize yourself with our [contribution guide](lang/contribution/index).
+familiarize yourself with our [contribution guide](./contribution/index.md).
 
 We hope you enjoy your adventure with Taichi!

@@ -344,7 +344,7 @@ Tests should be added to `tests/`.
 - Use `ti test` to run all the tests.
 - Use `ti test -v` for verbose outputs.
 - Use `ti test -C` to run tests and record code coverage, see
-  [Code coverage](./utilities.md#coverage) for more infomations.
+  [Code coverage](./utilities.md#coverage) for more information.
 - Use `ti test -a <arch(s)>` for testing against specified backend(s).
   e.g. `ti test -a cuda,metal`.
 - Use `ti test -na <arch(s)>` for testing all architectures excluding

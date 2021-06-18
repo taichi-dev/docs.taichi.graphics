@@ -50,7 +50,7 @@ For example, `1.0 / 2.0 = 0.5`, `1 / 2 = 0.5`, `1 // 2 = 0`,
 
 To avoid such implicit casting, you can manually cast your operands to
 desired types, using `ti.cast`. See
-[Default precisions](lang/basic/type.md#default-precisions) for more details on
+[Default precisions](../articles/basic/type.md#default-precisions) for more details on
 default numerical types.
 :::
 
@@ -116,7 +116,7 @@ ti.ceil(x)
 ti.cast(x, dtype)
 ```
 
-See [Type system](lang/basic/type.md#type-system) for more details.
+See [Type system](../articles/basic/type.md#type-system) for more details.
 
 ```python
 int(x)
@@ -150,7 +150,7 @@ ti.random(dtype = float)
 
 ## Element-wise arithmetics for vectors and matrices
 
-When these scalar functions are applied on [Matrices](./matrix) and [Vectors](./vector), they are applied in an element-wise manner. For example:
+When these scalar functions are applied on [Matrices](./matrix.md) and [Vectors](./vector.md), they are applied in an element-wise manner. For example:
 
 ```python
 B = ti.Matrix([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])

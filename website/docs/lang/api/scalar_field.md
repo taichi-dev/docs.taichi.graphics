@@ -1,4 +1,5 @@
 ---
+id: scalar_field
 sidebar_position: 1
 ---
 
@@ -7,7 +8,7 @@ sidebar_position: 1
 **Taichi fields** are used to store data.
 
 Field **elements** could be either a scalar, a vector, or a matrix (see
-[Matrices](./matrix)). In this paragraph, we will only
+[Matrices](../articles/basic/field_matrix.md)). In this paragraph, we will only
 talk about **scalar fields**, whose elements are simply scalars.
 
 Fields can have up to eight **dimensions**.
@@ -18,7 +19,7 @@ Fields can have up to eight **dimensions**.
   values. For example, a gray-scale image.
 - A 3D scalar field can be used for volumetric data.
 
-Fields could be either dense or sparse, see [Sparse Computation](../lang/advanced/sparse) for
+Fields could be either dense or sparse, see [Sparse Computation](../articles/advanced/sparse.md) for
 details on sparse fields. We will only talk about **dense fields** in
 this paragraph.
 
@@ -43,7 +44,7 @@ parameter shape
 
 parameter offset
 
-: (optional, scalar or tuple) see [coordinate offset](../lang/advanced/offset)
+: (optional, scalar or tuple) see [coordinate offset](../articles/advanced/offset.md)
 
 For example, this creates a _dense_ field with four `int32` as elements:
 :
@@ -74,7 +75,7 @@ it afterwards: :
 :::note
 
 Not providing `shape` allows you to _place_ the field in a layout other
-than the default _dense_, see [Advanced dense layouts](../lang/advanced/layout) for
+than the default _dense_, see [Advanced dense layouts](../articles/advanced/layout.md) for
 more details.
 :::
 
@@ -146,7 +147,7 @@ In Python, x[(exp1, exp2, …, expN)] is equivalent to x[exp1, exp2, …, expN];
 :::
 
 :::note
-The returned value can also be `Vector` / `Matrix` if `a` is a vector/matrix field, see [Vectors](./vector) for more details.
+The returned value can also be `Vector` / `Matrix` if `a` is a vector/matrix field, see [Vectors./vector.md) for more details.
 :::
 
 ## Meta data
@@ -228,5 +229,5 @@ return
     y.parent()   # blk2
     y.parent(2)  # blk1
 
-See [Structural nodes (SNodes)](./snode) for more details.
+See [Structural nodes (SNodes)](./snode.md) for more details.
 :::
