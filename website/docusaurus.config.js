@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Taichi Docs',
   tagline: 'Graphics programming for everyone',
-  url: 'http://docs.taichi.graphics',
+  url: 'https://docs.taichi.graphics',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
