@@ -138,13 +138,6 @@ html[data-theme='dark'] .header-github-link:before {
   background: transparent;
 }
 
-/* Revert the code background and text in admonitions
-   to make them more clear */
-.admonition .admonition-content code {
-  background-color: var(--ifm-code-color);
-  color: var(--ifm-code-background)
-}
-
 /* Highlight text */
 #inline-blue {
   background-color: #2780e3;
