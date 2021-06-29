@@ -6,14 +6,14 @@ sidebar_position: 5
 
 ## Backends
 
-- To specify which Arch to use: `ti.init(arch=ti.cuda)`.
-- To specify pre-allocated memory size for CUDA:
+- To specify which kind of architecture (Arch) to use: `ti.init(arch=ti.cuda)`.
+- To specify the pre-allocated memory size for CUDA:
   `ti.init(device_memory_GB=0.5)`.
-- To disable unified memory usage on CUDA:
+- To disable the unified memory usage on CUDA:
   `ti.init(use_unified_memory=False)`.
 - To specify which GPU to use for CUDA:
   `export CUDA_VISIBLE_DEVICES=[gpuid]`.
-- To disable a backend on start up, say, CUDA:
+- To disable a backend (`CUDA`, `METAL`, `OPENGL`) on start up, e.g. CUDA:
   `export TI_ENABLE_CUDA=0`.
 
 ## Compilation
