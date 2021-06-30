@@ -33,7 +33,6 @@ End users should use the pip packages instead of building from source.
 :::note 
 Note that on Linux, `clang` is the **only** supported compiler for
 compiling the Taichi compiler. 
-
 :::
 
 3. Make sure you have LLVM 10.0.0. Note that Taichi uses a **customized
