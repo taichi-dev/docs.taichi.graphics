@@ -53,7 +53,8 @@ infinitesimal point in a material exists a strain and a stress tensor. The strai
 ```python
 strain_tensor_field = taichi.Matrix.field(n = 3,m = 3, dtype=ti.f32, shape=(x,y,z))
 ```
-`x,y,z` is the size of each dimension of the 3D material respectively. `n, m` are the dimensions of the strain tensor.
+
+`x,y,z` are the sizes of each dimension of the 3D material respectively. `n, m` are the dimensions of the strain tensor.
 
 In general case, suppose you have a `128 x 64` field called `A`, each element containing
 a `3 x 2` matrix. To allocate a `128 x 64` matrix field which has a
