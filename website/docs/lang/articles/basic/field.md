@@ -27,7 +27,7 @@ heat_field = taichi.field(dtype=ti.f32, shape=(width_wok, height_wok))
 
   - Global `scalars` are treated as 0-D scalar fields.
 
-- Fields are always accessed using indices
+- Fields are always accessed by indices
 
   - E.g. `x[i, j, k]` if `x` is a 3D scalar field.
   - Even when accessing 0-D field `x`, use `x[None] = 0` instead of `x = 0`. Please **always** use indexing to access entries in fields. A 0-D field looks like `energy = ti.field(dtype=ti.f32, shape=())`.
