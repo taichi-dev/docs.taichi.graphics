@@ -216,6 +216,32 @@ installer.
   up to 5 minutes to run all tests.
 
 ## Windows
+### Setting up Taichi for development
+For precise build instructions on Windows, please check out
+[appveyor.yml](https://github.com/taichi-dev/taichi/blob/master/appveyor.yml),
+which does basically the same thing as the following instructions. We
+use MSBUILD.exe to build the generated project. Please note that Windows
+could have multiple instances of MSBUILD.exe shipped with different
+products. Please make sure you add the path for MSBUILD.exe within your
+MSVS directory and make it a higher priority (for instance than the one
+shipped with .NET).
+
+:::note
+On Windows, MSVC is the only supported compiler.
+:::
+
+- On Windows, please add these variables by accessing your system
+    settings:
+
+    1.  Add `TAICHI_REPO_DIR` whose value is the path to your taichi
+        repository so that Taichi knows you're a developer.
+    2.  Add or append `PYTHONPATH` with `%TAICHI_REPO_DIR%/python`
+        so that Python imports Taichi from the local repo.
+    3.  Add or append `PATH` with `%TAICHI_REPO_DIR%/bin` so that
+        you can use `ti` command.
+    4.  Add or append `PATH` with path to LLVM binary directory
+        installed in previous section.
+
 ### Installing Dependencies
 1. Make sure you are using Python 3.6/3.7/3.8
 
@@ -268,34 +294,6 @@ installer.
 
 - To check if CUDA is installed, run `nvcc --version` or
   `cat /usr/local/cuda/version.txt`.
-
-
-### Setting up Taichi for development
-For precise build instructions on Windows, please check out
-[appveyor.yml](https://github.com/taichi-dev/taichi/blob/master/appveyor.yml),
-which does basically the same thing as the following instructions. We
-use MSBUILD.exe to build the generated project. Please note that Windows
-could have multiple instances of MSBUILD.exe shipped with different
-products. Please make sure you add the path for MSBUILD.exe within your
-MSVS directory and make it a higher priority (for instance than the one
-shipped with .NET).
-
-:::note
-On Windows, MSVC is the only supported compiler.
-:::
-
-- On Windows, please add these variables by accessing your system
-    settings:
-
-    1.  Add `TAICHI_REPO_DIR` whose value is the path to your taichi
-        repository so that Taichi knows you're a developer.
-    2.  Add or append `PYTHONPATH` with `%TAICHI_REPO_DIR%/python`
-        so that Python imports Taichi from the local repo.
-    3.  Add or append `PATH` with `%TAICHI_REPO_DIR%/bin` so that
-        you can use `ti` command.
-    4.  Add or append `PATH` with path to LLVM binary directory
-        installed in previous section.
-
 
 ## Troubleshooting Developer Installation
 
