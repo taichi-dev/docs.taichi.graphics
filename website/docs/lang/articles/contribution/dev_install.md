@@ -24,6 +24,7 @@ End users should use the pip packages instead of building from source.
 
 
 2.  Make sure you have `clang` with version \>= 7:
+
   - On Ubuntu, execute `sudo apt install libtinfo-dev clang-8`.
   - On Arch Linux, execute `sudo pacman -S clang`. (This is
     `clang-10`).
