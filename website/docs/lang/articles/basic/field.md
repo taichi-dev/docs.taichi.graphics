@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Fields are global variables provided by Taichi. Currently, it can only be defined before launching any Taichi kernel. Fields can be either
 sparse or dense.  An element of a field can be either a scalar or a
-vector/matrix. We borrow this name from mathematics and physics. If you
+vector/matrix. This term is borrowed from mathematics and physics. If you
 have already known [scalar field](https://en.wikipedia.org/wiki/Scalar_field) (e.g., heat field), vector field (e.g., [gravitational field](https://en.wikipedia.org/wiki/Gravitational_field)) in mathematics and physics. It would be easy to understand the fields in Taichi. 
 
 :::note
