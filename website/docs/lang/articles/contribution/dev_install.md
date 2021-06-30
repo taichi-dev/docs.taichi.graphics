@@ -104,7 +104,7 @@ installer.
     won't be loaded by child processes.
     :::
 
-2. Clone the taichi repo **recursively**, and build:
+2. Clone the Taichi repo **recursively**, and build:
 
   ```bash
   git clone https://github.com/taichi-dev/taichi --depth=1 --branch=master
