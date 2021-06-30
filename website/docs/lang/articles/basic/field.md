@@ -48,7 +48,7 @@ gravitational_field = taichi.Vector.field(n = 3,dtype=ti.f32,shape=(x,y,z))
 
 ## Matrix fields
 
-Field elements can also be matrices. In the continus machanics, each 
+Field elements can also be matrices. In continuum mechanics, each 
 infinitesimal point in a material exist a strain and a stress tensor. The strain and stress tensor is a 3 by 3 matrix in 3D space. To represeent this tensor field we could use:
 ```python
 strain_tensor_field = taichi.Matrix.field(n = 3,m = 3, dtype=ti.f32, shape=(x,y,z))
