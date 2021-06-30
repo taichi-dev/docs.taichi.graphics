@@ -200,7 +200,7 @@ installer.
   mkdir build
   cd build
   cmake ..
-  # On OS X, if you do not set clang as the default compiler
+  # On macOS, if you do not set clang as the default compiler
   # use the line below:
   #   cmake .. -DCMAKE_CXX_COMPILER=clang
   #
