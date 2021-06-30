@@ -3,7 +3,7 @@ sidebar_position: 11
 ---
 
 # Developer installation
-This section documents how to configure the Taichi devolopment environment and build Taichi from source for the compiler developers. The installation is different for each operationg system.  We also provide a Dockerfile which helps setup the Taichi development environment with CUDA support based on Ubuntu docker image.
+This section documents how to configure the Taichi devolopment environment and build Taichi from source for the compiler developers. The installation instructions are highly varied between different operationg systems. We also provide a Dockerfile which may help setup a containerized Taichi development environment with CUDA support based on the Ubuntu base docker image.
 
 :::note
 End users should use the pip packages instead of building from source.
