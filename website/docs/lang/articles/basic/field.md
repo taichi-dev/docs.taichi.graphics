@@ -62,7 +62,7 @@ a `3 x 2` matrix. To allocate a `128 x 64` matrix field which has a
 `A = ti.Matrix.field(3, 2, dtype=ti.f32, shape=(128, 64))`.
 
 - If you want to get the matrix of grid node `i, j`, please use
-  `mat = A[i, j]`. `mat` is simply a `3 x 2` matrix
+  `mat = A[i, j]`. `mat` is simply a `3 x 2` matrix.
 - To get the element on the first row and second column of that
   matrix, use `mat[0, 1]` or `A[i, j][0, 1]`.
 - As you may have noticed, there are **two** indexing operators `[]`
