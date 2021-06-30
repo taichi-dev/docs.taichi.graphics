@@ -170,7 +170,7 @@ installer.
 
   - Please add the following script to your rc file
     (`~/.bashrc`, `~/.zshrc` or etc. , same for other occurrences in
-    this documentation):
+    this guide):
 
     ```bash
     export TAICHI_REPO_DIR=/path/to/taichi  # Path to your taichi repository
