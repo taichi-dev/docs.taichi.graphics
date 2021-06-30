@@ -42,7 +42,7 @@ We are all live in a gravitational field which is a vector field. At each positi
 ```python
 gravitational_field = taichi.Vector.field(n = 3,dtype=ti.f32,shape=(x,y,z))
 ```
-`x,y,z` is the size of each dimension of the 3D space respectively.  `n` is the number of elements of the gravity force vector.
+`x,y,z` are the sizes of each dimension of the 3D space respectively.  `n` is the number of elements of the gravity force vector.
 
 - See [Vector](../../api/vector.md) for more details.
 
