@@ -56,7 +56,7 @@ strain_tensor_field = taichi.Matrix.field(n = 3,m = 3, dtype=ti.f32, shape=(x,y,
 
 `x,y,z` are the sizes of each dimension of the 3D material respectively. `n, m` are the dimensions of the strain tensor.
 
-In general case, suppose you have a `128 x 64` field called `A`, each element containing
+In general case, suppose you have a `128 x 64` field called `A`, and each element contains
 a `3 x 2` matrix. To allocate a `128 x 64` matrix field which has a
 `3 x 2` matrix for each of its entry, use the statement
 `A = ti.Matrix.field(3, 2, dtype=ti.f32, shape=(128, 64))`.
