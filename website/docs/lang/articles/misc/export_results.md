@@ -192,9 +192,9 @@ pacman -S ffmpeg
 ffmpeg -h
 ```
 
-### Install `ffmpeg` on OS X
+### Install `ffmpeg` on macOS
 
-- `ffmpeg` can be installed on OS X using `homebrew`:
+- `ffmpeg` can be installed on macOS using `homebrew`:
 
 ```bash
 brew install ffmpeg

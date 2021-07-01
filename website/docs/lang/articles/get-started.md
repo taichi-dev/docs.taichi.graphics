@@ -119,7 +119,7 @@ ti.init(arch=ti.gpu)
 ti.init(arch=ti.cuda)
 # Run on GPU, with the OpenGL backend
 ti.init(arch=ti.opengl)
-# Run on GPU, with the Apple Metal backend, if you are on OS X
+# Run on GPU, with the Apple Metal backend, if you are on macOS
 ti.init(arch=ti.metal)
 
 # Run on CPU (default)
@@ -134,7 +134,7 @@ Supported backends on different platforms:
 | :----------: | :-----: | :------: | :--------: | :-------: | :----------: |
 |   Windows    |   OK    |    OK    |     OK     |    N/A    |     N/A      |
 |    Linux     |   OK    |    OK    |     OK     |    N/A    |      OK      |
-|   Mac OS X   |   OK    |   N/A    |    N/A     |    OK     |     N/A      |
+|    macOS     |   OK    |   N/A    |    N/A     |    OK     |     N/A      |
 
 (OK: supported; N/A: not available)
 

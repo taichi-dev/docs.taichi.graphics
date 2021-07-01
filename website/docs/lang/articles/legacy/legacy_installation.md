@@ -23,12 +23,12 @@ Instructions in this page are likely to be outdated!
 Supported platforms:
 
 - Ubuntu (gcc 5+)
-- Mac OS X (gcc 5+, clang 4.0+)
+- macOS (gcc 5+, clang 4.0+)
 - Windows (Microsoft Visual Studio 2017)
 
 Make sure you have `python 3.5+`.
 
-## Ubuntu, Arch Linux, and Mac OS X
+## Ubuntu, Arch Linux, and macOS
 
 ```bash
 wget https://raw.githubusercontent.com/yuanming-hu/taichi/legacy/install.py

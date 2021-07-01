@@ -8,7 +8,7 @@ sidebar_position: 1
 **Taichi fields** are used to store data.
 
 Field **elements** could be either a scalar, a vector, or a matrix (see
-[Matrices](../articles/basic/field_matrix.md)). In this paragraph, we will only
+[Matrices](../articles/basic/field.md)). In this paragraph, we will only
 talk about **scalar fields**, whose elements are simply scalars.
 
 Fields can have up to eight **dimensions**.
