@@ -24,7 +24,7 @@ project.
 
 :::caution
 Currently, this feature is only officially supported on the C backend on
-Linux. In the future, we will support OS X and Windows.
+Linux. In the future, we will support macOS and Windows.
 :::
 
 ## The workflow of exporting

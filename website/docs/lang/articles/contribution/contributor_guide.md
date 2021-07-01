@@ -146,7 +146,7 @@ This design is terrible.
 
 - Continuous Integration (CI), will **build** and **test** your
   commits in a PR against in environments.
-- Currently, Taichi uses [Travis CI](https://travis-ci.org) (for OS X
+- Currently, Taichi uses [Travis CI](https://travis-ci.org) (for macOS
   and Linux) and [AppVeyor](https://www.appveyor.com) (for Windows).
 - CI will be triggered every time you push commits to an open PR.
 - You can prepend `[skip ci]` to your commit message to avoid
@@ -213,7 +213,7 @@ Frequently used tags:
 - `[Example]`: examples under `examples/`;
 - `[Test]`: adding or improving tests under `tests/`;
 - `[Linux]`: Linux platform;
-- `[Mac]`: Mac OS X platform;
+- `[Mac]`: macOS platform;
 - `[Windows]`: Windows platform;
 - `[Perf]`: performance improvements;
 - `[Misc]`: something that doesn't belong to any category, such as
@@ -377,7 +377,7 @@ Documentations are put under the folder `docs/`.
 
 :::note
 
-On Linux/OS X, use `watch -n 1 ti doc` to continuously build the
+On Linux/macOS, use `watch -n 1 ti doc` to continuously build the
 documentation.
 
 If the OpenGL backend detector keeps creating new windows, execute

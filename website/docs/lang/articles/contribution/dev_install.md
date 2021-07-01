@@ -5,6 +5,14 @@ sidebar_position: 11
 # Developer installation
 This section documents how to configure the Taichi devolopment environment and build Taichi from source for the compiler developers. The installation instructions are highly varied between different operationg systems. We also provide a Dockerfile which may help setup a containerized Taichi development environment with CUDA support based on the Ubuntu base docker image.
 
+[Developer installation for Linux](#linux)  
+
+[Developer installation for macOS](#macos) 
+
+[Developer installation for Windows](#windows) 
+
+[Developer installation for Docker](#docker) 
+
 :::note
 End users should use the pip packages instead of building from source.
 :::
@@ -146,8 +154,7 @@ installer.
   other sources probably won't work. Here we provide LLVM binaries
   customized for Taichi, which may or may not work depending on your
   system environment:
-  - [LLVM 10.0.0 for OS
-    X](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/taichi-llvm-10.0.0-macos.zip)
+  - [LLVM 10.0.0 for macOS](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/taichi-llvm-10.0.0-macos.zip)
 
 - If the downloaded LLVM does not work, please build from source:
     ```bash
@@ -254,7 +261,7 @@ On Windows, MSVC is the only supported compiler.
   python3 -m pip install --user numpy GitPython coverage colorama autograd
   ```
 2. Make sure you have `clang` with version \>= 7:
-Download [clang-10](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/clang-10.0.0-win.zip).Make sure you add the `bin` folder containing `clang.exe` to the `PATH` environment variable.
+Download [clang-10](https://github.com/taichi-dev/taichi_assets/releases/download/llvm10/clang-10.0.0-win.zip). Make sure you add the `bin` folder containing `clang.exe` to the `PATH` environment variable.
 
 3. Make sure you have LLVM 10.0.0. Note that Taichi uses a **customized
   LLVM** so the pre-built binaries from the LLVM official website or
@@ -296,55 +303,6 @@ installer.
 - To check if CUDA is installed, run `nvcc --version` or
   `cat /usr/local/cuda/version.txt`.
 
-## Troubleshooting Developer Installation
-
-- If `make` fails to compile and reports
-  `fatal error: 'spdlog/XXX.h' file not found`, please try runing
-  `git submodule update --init --recursive --depth=1`.
-
-- If importing Taichi causes
-
-  ```
-  FileNotFoundError: [Errno 2] No such file or directory: '/root/taichi/python/taichi/core/../lib/taichi_core.so' -> '/root/taichi/python/taichi/core/../lib/libtaichi_core.so'``
-  ```
-
-  Please try adding `TAICHI_REPO_DIR` to environment variables, see
-  `dev_env_settings`{.interpreted-text role="ref"}.
-
-- If the build succeeded but running any Taichi code results in errors
-  like
-
-  ```
-  Bitcode file (/tmp/taichi-tero94pl/runtime//runtime_x64.bc) not found
-  ```
-
-  please double check `clang` is in your `PATH`:
-
-  ```bash
-  clang --version
-  # version should be >= 7
-  ```
-
-  and our **Taichi configured** `llvm-as`:
-
-  ```bash
-  llvm-as --version
-  # version should be >= 8
-  which llvm-as
-  # should be /usr/local/bin/llvm-as or /opt/XXX/bin/llvm-as, which is our configured installation
-  ```
-
-  If not, please install `clang` and **build LLVM from source** with
-  instructions above in `dev_install`{.interpreted-text role="ref"},
-  then add their path to environment variable `PATH`.
-
-- If you encounter other issues, feel free to report (please include the details) by [opening an
-  issue on
-  GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md).
-  We are willing to help!
-
-- See also [Installation Troubleshooting](../misc/install.md) for issues
-  that may share with end-user installation.
 
 ## Docker
 
@@ -433,3 +391,54 @@ sudo systemctl restart docker
 7.  Exit from the container with `exit` or `ctrl+D`
 8.  **[To keep your xhost safe]** Re-enable the xhost access-control:
     `xhost -`
+
+
+## Troubleshooting Developer Installation
+
+- If `make` fails to compile and reports
+  `fatal error: 'spdlog/XXX.h' file not found`, please try runing
+  `git submodule update --init --recursive --depth=1`.
+
+- If importing Taichi causes
+
+  ```
+  FileNotFoundError: [Errno 2] No such file or directory: '/root/taichi/python/taichi/core/../lib/taichi_core.so' -> '/root/taichi/python/taichi/core/../lib/libtaichi_core.so'``
+  ```
+
+  Please try adding `TAICHI_REPO_DIR` to environment variables, see
+  [dev_env_settings](/docs/lang/articles/misc/global_settings).
+
+- If the build succeeded but running any Taichi code results in errors
+  like
+
+  ```
+  Bitcode file (/tmp/taichi-tero94pl/runtime//runtime_x64.bc) not found
+  ```
+
+  please double check `clang` is in your `PATH`:
+
+  ```bash
+  clang --version
+  # version should be >= 7
+  ```
+
+  and our **Taichi configured** `llvm-as`:
+
+  ```bash
+  llvm-as --version
+  # version should be >= 8
+  which llvm-as
+  # should be /usr/local/bin/llvm-as or /opt/XXX/bin/llvm-as, which is our configured installation
+  ```
+
+  If not, please install `clang` and **build LLVM from source** with
+  instructions above in [dev_install](#installing-dependencies-1),
+  then add their path to environment variable `PATH`.
+
+- If you encounter other issues, feel free to report (please include the details) by [opening an
+  issue on
+  GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md).
+  We are willing to help!
+
+- See also [Installation Troubleshooting](../misc/install.md) for issues
+  that may share with end-user installation.

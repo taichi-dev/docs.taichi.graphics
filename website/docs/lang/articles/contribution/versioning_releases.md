@@ -47,7 +47,7 @@ bumps (e.g., `0.6.9->0.6.10`) for backward-compatible changes.
   are uploaded to PyPI.
 
 - Wait for all build bots to finish. This step uploads PyPI packages
-  for OS X and Windows. You may have to wait for up to two hours.
+  for macOS and Windows. You may have to wait for up to two hours.
 
 - Update the `stable` branch so that the head of that branch is your
   release commit on `master`.
