@@ -4,7 +4,7 @@ sidebar_position: 9999
 
 # Frequently Asked Questions
 
-## My `pip` complains `package not found` when installing Taichi
+## Why does my `pip` complain `package not found` when installing Taichi?
 
 You may have a Python interpreter with an unsupported version. Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit) . For more information about installation related issues, please check [Installation Troubleshooting](./misc/install.md).
 
@@ -12,35 +12,35 @@ You may have a Python interpreter with an unsupported version. Currently, Taichi
 
 There is no built-in type for `pi` currently, `math.pi` is recommended to use in Taichi.
 
-## How to **force** an outer-most loop to be serialized , i.e.,  **not parallelized**
+## Outer-most loops in Taichi kernels are by default parallel. How can I **serialize** one of them?
 
-A good practice is adding an additional `ghost` loop with only one iteration outside the loop you care about.
+A good practice is adding an additional `ghost` loop with only one iteration outside the loop you want to serialize.
 
 ```python {1}
-for _ in range(1):  # The 'ghost' loop will be parallelized, but with only one thread i.e., serialized execution
-    for i in range(100):  # The loop you actually cares about will not be parallelized
+for _ in range(1):  # This "ghost" loop will be "parallelized", but with only one thread. Therefore, the containing loop below is serialized.
+    for i in range(100):  # The loop you want to serialize
         ...
 ```
 
-## What's the most convenient way to load images or textures into Taichi fields
+## What is the most convenient way to load images or textures into Taichi fields?
 
 One feasible solution is `field.from_numpy(ti.imread('filename.png'))`.
 
 ## Can Taichi interact with **other Python packages** such as `matplotlib`?
 
-Yes, Taichi supports various popular Python packages, please check [Interacting with other Python packages](/docs/#interacting-with-other-python-packages).
+Yes, Taichi supports various popular Python packages. Please check out [Interacting with other Python packages](/docs/#interacting-with-other-python-packages).
 
-## How to declare a field with **dynamic length**
+## How do I declare a field with a **dynamic length**?
 
-The `dynamic` SNode supports variable-length fields. It serves as the role of `std::vector` in C++ or `list` in Python, please check [Working with dynamic SNodes](../api/snode.md#working-with-dynamic-snodes) for more details.
+The `dynamic` SNode supports variable-length fields. It acts similarly to `std::vector` in C++ or `list` in Python. Please check out [Working with dynamic SNodes](../api/snode.md#working-with-dynamic-snodes) for more details.
 
 :::tip
-An alternative solution is allocating a large enough `dense` field, with another 0-D field
+An alternative solution is to allocate a large enough `dense` field, with a corresponding 0-D field
 `field_len[None]` tracking its length. In practice, programs allocating memory using `dynamic`
-SNode may be less efficient than using `dense` SNode, due to the overhead of
-maintaining the sparsity information.
+SNodes may be less efficient than using `dense` SNodes, due to dynamic data structure
+maintainance overheads.
 :::
 
-## How to  interact with irregular topologies (e.g., graphs or tetrahedral meshes) 
+## How do I interact with less structured data structures (such as graphs or tetrahedral meshes) in Taichi? 
 
-These structures have to be stored in 1D fields in Taichi. You can traversal them using either `for element in x` or `for index in range(n)`.
+These structures have to be decomposed into 1D Taichi fields. For example, when representing a graph, you can allocate two fields, one for the vertices and the other for the edges. You can then traverse the elements using `for v in vertices` or `for v in range(n)`.
