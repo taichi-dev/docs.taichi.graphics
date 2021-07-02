@@ -4,66 +4,43 @@ sidebar_position: 9999
 
 # Frequently Asked Questions
 
-## **Q:** Installing Taichi with `pip`, complains `package not found`.
+## My `pip` complains `package not found` when installing Taichi
 
-**A:** Is your Python version \>= 3.6, and 64-bit? See
-[Installation Troubleshooting](./misc/install.md).
+You may have a Python interpreter with an unsupported version. Currently, Taichi only supports Python 3.6/3.7/3.8 (64-bit) . For more information about installation related issues, please check [Installation Troubleshooting](./misc/install.md).
 
-## **Q:** Do we have something like `ti.pi`?
+## Does Taichi provide built-in constants such as `ti.pi`
 
-**A:** No, but you may use `math.pi` or `numpy.pi` instead. Taichi is
-able to bake in these constants during JIT, so your kernels incur no
-runtime cost.
+There is no built-in type for `pi` currently, `math.pi` is recommended to use in Taichi.
 
-## **Q:** How do I **force** an outermost loop to be serial, i.e. **not parallelized**?
+## How to **force** an outer-most loop to be serialized , i.e.,  **not parallelized**
 
-**A:** Try this trick:
+A good practice is adding an additional `ghost` loop with only one iteration outside the loop you care about.
 
 ```python {1}
-for _ in range(1):  # I'm the outer-most loop!
-    for i in range(100):  # This loop will not be parallelized
+for _ in range(1):  # The 'ghost' loop will be parallelized, but with only one thread i.e., serialized execution
+    for i in range(100):  # The loop you actually cares about will not be parallelized
         ...
 ```
 
-## **Q:** What's the most convenient way to load images or textures into Taichi fields?
+## What's the most convenient way to load images or textures into Taichi fields
 
-**A:** Simply use `field.from_numpy(ti.imread('filename.png'))`.
+One feasible solution is `field.from_numpy(ti.imread('filename.png'))`.
 
-## **Q:** Can Taichi co-operate with **other Python packages** like `matplotlib`?
+## Can Taichi interact with **other Python packages** such as `matplotlib`?
 
-**A:** Yes, as long as that _package_ provides an interface with
-`numpy`, see [Interacting with other Python packages](/docs/#interacting-with-other-python-packages).
+Yes, Taichi supports various popular Python packages, please check [Interacting with other Python packages](/docs/#interacting-with-other-python-packages).
 
-## **Q:** Shall we add some handy functions like `ti.smoothstep` or `ti.vec3`?
+## How to declare a field with **dynamic length**
 
-**A:** No, but we provide them in an extension library [Taichi
-GLSL](https://taichi-glsl.readthedocs.io) , install it using:
-
-```bash
-python -m pip install taichi_glsl
-```
-
-## **Q:** How can I **render 3D results** without writing a ray tracer myself?
-
-**A:** You may export it with [Export PLY files](./misc/export_results#export-ply-files) so that you could view it in Houdini or Blender.
+The `dynamic` SNode supports variable-length fields. It serves as the role of `std::vector` in C++ or `list` in Python, please check [Working with dynamic SNodes](../api/snode.md#working-with-dynamic-snodes) for more details.
 
 :::tip
-Or make use the extension library [Taichi THREE](https://github.com/taichi-dev/taichi_glsl) to render images and update to GUI in real-time.
-:::
-
-## **Q:** How do I declare a field with **dynamic length**?
-
-**A:** What you want may be the `dynamic` SNode, a kind of sparse field, see [Working with dynamic SNodes](../api/snode.md#working-with-dynamic-snodes).
-
-:::tip
-Or simply allocate a dense field large enough, and another 0-D field
-`field_len[None]` for length record. But in fact, the `dynamic`
-SNode could be slower than the latter solution, due to the cost of
+An alternative solution is allocating a large enough `dense` field, with another 0-D field
+`field_len[None]` tracking its length. In practice, programs allocating memory using `dynamic`
+SNode may be less efficient than using `dense` SNode, due to the overhead of
 maintaining the sparsity information.
 :::
 
-## **Q:** Can a user iterate over irregular topologies (e.g., graphs or tetrahedral meshes) instead of regular grids?
+## How to  interact with irregular topologies (e.g., graphs or tetrahedral meshes) 
 
-**A:** These structures have to be represented using 1D arrays in Taichi. You can still iterate over them using `for i in x` or `for i in range(n)`.
-
-However, at compile time, there's little the Taichi compiler can do for you to optimize it. You can still tweak the data layout to get different runtime cache behaviors and performance numbers.
+These structures have to be stored in 1D fields in Taichi. You can traversal them using either `for element in x` or `for index in range(n)`.
