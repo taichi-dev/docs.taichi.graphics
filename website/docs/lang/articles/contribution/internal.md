@@ -71,7 +71,7 @@ SNode **cells**, and SNode **components**.
 - Note that each SNode **component** is a SNode **container** of a lower-level SNode.
 
 A hierarchical data structure in Taichi, dense or sparse, is essentially a tree with interleaved container and cell levels.
-Note that containers of `place` SNodes do have cells. Instead, they
+Note that containers of `place` SNodes do not have cells. Instead, they
 directly contain numerical values.
 
 Consider the following example:
@@ -94,7 +94,7 @@ S5.place(z) # S6: z
 ```
 
 - The whole data structure is an `S0root` **container**, containing
-  - `1x` `S0root` **cell**, which has only one **component**, which
+  - 1x `S0root` **cell**, which has only one **component**, which
     is
     - An `S1pointer` **container**, containing
       - 4x `S1pointer` **cells**, each with two **components**,
@@ -121,20 +121,20 @@ Note that the `S0root` container and cell do not have an `index`.
 
 In summary, we will have the following containers:
 
-- 1 x `S0root` container
-- 1 x `S1pointer` container
-- 4 x `S2dense` containers
-- 4 x `S5dense` containers
-- 8 x `S3place_x` containers, each directly containing an `i32` value
-- 8 x `S4place_y` containers, each directly containing an `i32` value
-- 8 x `S6place_z` containers, each directly containing an `i32` value
+- 1x `S0root` container
+- 1x `S1pointer` container
+- 4x `S2dense` containers
+- 4x `S5dense` containers
+- 8x `S3place_x` containers, each directly containing an `i32` value
+- 8x `S4place_y` containers, each directly containing an `i32` value
+- 8x `S6place_z` containers, each directly containing an `i32` value
 
 ... and the following cells:
 
-- 1 x `S0root` cell
-- 4 x `S1pointer` cells
-- 8 x `S2dense` cells
-- 8 x `S5dense` cells
+- 1x `S0root` cell
+- 4x `S1pointer` cells
+- 8x `S2dense` cells
+- 8x `S5dense` cells
 
 Again, note that `S3place_x`, `S4place_y` and `S6place_z` containers do **not**
 have corresponding cells.
