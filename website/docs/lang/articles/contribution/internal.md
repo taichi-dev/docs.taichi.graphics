@@ -209,13 +209,15 @@ $4 = offloaded struct_for(S2bitmasked) block_dim=0 {
 
 Note that `func` leads to two list generations:
 
-- (Tasks `$0` and `$1`) based on the list of (the only) `S0root` container,
-  generate the list of the `S1dense` containers;
+- (Tasks `$0` and `$1`) based on the list of the (only) `S0root` container,
+  generate the list of the (only) `S1dense` container;
 - (Tasks `$2` and `$3`) based on the list of `S1dense` containers,
   generate the list of `S2bitmasked` containers.
 
 The list of `S0root` SNode always has exactly one container, so we
-never clear or re-generate this list.
+never clear or re-generate this list. Although the list of `S1dense` always
+has only one container, we still regenerate the list for uniformity.
+The list of `S2bitmasked` has 4 containers.
 
 :::note
 The list of `place` (leaf) nodes (e.g., `S3` in this example) is never
