@@ -3,15 +3,3 @@
   publish = "build"
   command = "yarn build"
   environment = { NODE_VERSION = "14" }
-
-# Temp solution due to https://github.com/facebook/docusaurus/issues/4967
-[[redirects]]
-  from = "/"
-  to = "/docs/"
-  status = 301
-  force = true
-[[redirects]]
-  from = "/get-started/"
-  to = "/docs/"
-  status = 301
-  force = true
