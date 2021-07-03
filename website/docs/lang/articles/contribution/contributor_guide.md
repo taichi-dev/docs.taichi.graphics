@@ -17,8 +17,8 @@ all forms, including but not limited to
 - High-quality blog posts and tutorials
 - Participation in the [Taichi forum](https://forum.taichi.graphics/)
 - Introduce Taichi to your friends or simply star [the
-  project](https://github.com/taichi-dev/taichi).
-- Typo fixes in the documentation, code or comments (please directly
+  project on Github](https://github.com/taichi-dev/taichi).
+- Typo fixes in the documentation, code or comments (please go ahead and
   make a pull request for minor issues like these)
 
 ## How to contribute bug fixes and new features
