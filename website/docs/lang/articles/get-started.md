@@ -377,7 +377,7 @@ See [Interacting with external arrays](./basic/external.md#interacting-with-exte
 
 ## What's next?
 
-Now we have gone through the features of the
+Now we have gone through core features of the
 Taichi programming language using the fractal example,
 feel free to dive into the language concepts in
 the next section, or jump to the advanced topics, such as the [Metaprogramming](./advanced/meta.md) or [Differentiable programming](./advanced/differentiable_programming.md). Remember that you can
