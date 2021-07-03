@@ -346,7 +346,7 @@ print(pixels[42, 11]) # prints 0.7
 ### Sharing data with other packages
 
 Taichi provides helper functions such as `from_numpy` and `to_numpy` to
-transferring data between Taichi fields and NumPy arrays, so that you can
+transfer data between Taichi fields and NumPy arrays, so that you can
 also use your favorite Python packages (e.g., `numpy`, `pytorch`,
 `matplotlib`) together with Taichi as below:
 
