@@ -381,7 +381,7 @@ Now we have gone through core features of the
 Taichi programming language using the fractal example,
 feel free to dive into the language concepts in
 the next section, or jump to the advanced topics, such as the [Metaprogramming](./advanced/meta.md) or [Differentiable programming](./advanced/differentiable_programming.md). Remember that you can
-use the search bar at the  top right corner to search for topics or keywords
+use the search bar at the top right corner to search for topics or keywords
 at any time!
 
 If you are interested in joining the Taichi community, we strongly recommend you take some time to
