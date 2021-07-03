@@ -4,7 +4,7 @@ module.exports = {
   tagline: 'Graphics programming for everyone',
   url: 'https://docs.taichi.graphics',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/black_or_white.svg',
   organizationName: 'taichi-dev',
