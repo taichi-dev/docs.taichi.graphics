@@ -182,9 +182,8 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'community',
-        path: 'community',
-        routeBasePath: 'community',
+        path: 'docs',
+        routeBasePath: '/',
         editUrl:
           'https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/',
         // editUrl: ({locale, versionDocsDirPath, docPath}) => {
@@ -194,9 +193,14 @@ module.exports = {
         //   return `https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/${versionDocsDirPath}/${docPath}`;
         // },
         editCurrentVersion: true,
-        sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        versions: {
+          current: {
+            label: 'develop',
+          },
+        },
       },
     ],
   ],
@@ -205,9 +209,9 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
-          // routeBasePath: '/',
-          path: 'docs',
+          id: 'community',
+          routeBasePath: '/community',
+          path: 'community',
           // TODO: use the main repo URL for `en` locale as the source of truth docs will live there!
           editUrl:
             'https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/',
@@ -218,14 +222,9 @@ module.exports = {
           //   return `https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/${versionDocsDirPath}/${docPath}`;
           // },
           editCurrentVersion: true,
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebarsCommunity.js'),
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          versions: {
-            current: {
-              label: 'develop',
-            },
-          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
