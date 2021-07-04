@@ -44,7 +44,7 @@ while gui.running:
 
 ## Paint on a window
 
-`gui.set_image(pixels)` set an image to display on the window.
+`gui.set_image(pixels)` sets an image to display on the window.
 
 The image pixels are set from the values of `img[i, j]`, where `i` indicates the horizontal coordinates (from left to right) and `j` the vertical coordinates (from bottom to top).
 
