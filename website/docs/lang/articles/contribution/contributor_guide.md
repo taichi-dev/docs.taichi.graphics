@@ -358,8 +358,7 @@ For more details on how to write a test case, see
 ## Documentation
 
 Documentation source files are under the `docs/` folder of [**the main Taichi repo**](https://github.com/taichi-dev/taichi).
-An automatic service deploys updated documentation at
-[the Taichi documentation site](https://docs.taichi.graphics) ([repo](https://github.com/taichi-dev/docs.taichi.graphics)).
+An automatic service syncs the updated content with our [documentation repo](https://github.com/taichi-dev/docs.taichi.graphics) and deploys the documentation at [the Taichi documentation site](https://docs.taichi.graphics).
 
 We use [Markdown](https://www.markdownguide.org/getting-started/) (.md) to write documentation.
 Please see [the documentation writing guide](./doc_writing) for more tips.
