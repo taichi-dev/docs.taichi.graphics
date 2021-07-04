@@ -51,9 +51,9 @@ The image pixels are set from the values of `img[i, j]`, where `i` indicates the
 If the window size is `(x, y)`, then `img` must be one of:
 
 - `ti.field(shape=(x, y))`, a gray-scale image
-- `ti.field(shape=(x, y, 3))`, where [3]{.title-ref} is for
+- `ti.field(shape=(x, y, 3))`, where `3` is for
   `(r, g, b)` channels
-- `ti.field(shape=(x, y, 2))`, where [2]{.title-ref} is for `(r, g)`
+- `ti.field(shape=(x, y, 2))`, where `2` is for `(r, g)`
   channels
 - `ti.Vector.field(3, shape=(x, y))` `(r, g, b)` channels on each
   component (see `vector`{.interpreted-text role="ref"})
