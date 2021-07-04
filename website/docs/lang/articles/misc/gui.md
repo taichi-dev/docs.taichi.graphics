@@ -33,7 +33,7 @@ while gui.running:
 
 ## Display a window
 
-`gui.show(filename)` helps display a window. If `filename` is specified, a screenshot will be saved to the file specified by the name. For example, the following saves frames of the window to `.png`'s:
+`gui.show(filename)` helps display a window. If `filename` is specified, a screenshot will be saved to the file specified by the name. For example, the following saves frames of the window to `.png`s:
 
     for frame in range(10000):
         render(img)
