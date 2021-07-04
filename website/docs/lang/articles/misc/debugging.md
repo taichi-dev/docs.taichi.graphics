@@ -157,9 +157,12 @@ Programmers may use `assert` statements in Taichi-scope. When the
 assertion condition failed, a `RuntimeError` will be raised to indicate
 the error.
 
-To make `assert` work, first make sure you are using the **CPU
-backend**. For performance reason, `assert` only works when `debug` mode
-is on, For example:
+:::note
+`assert` is currently supported on the CPU, CUDA, and Metal backends.
+:::
+
+For performance reason, `assert` only works when `debug` mode
+is on. For example:
 
 ```python
 ti.init(arch=ti.cpu, debug=True)
@@ -201,10 +204,8 @@ def copy(dst: ti.template(), src: ti.template()):
 
 ## Pretty Taichi-scope traceback
 
-As we all know, Python provides a useful stack traceback system, which
-could help you locate the issue easily. But sometimes stack tracebacks
-from **Taichi-scope** could be extremely complicated and hard to read.
-For example:
+Sometimes the Python stack tracebacks resulted from **Taichi-scope** errors
+could be too complicated to read. For example:
 
 ```python
 import taichi as ti
@@ -229,7 +230,7 @@ def func0():
 func0()
 ```
 
-Running this code, of course, will result in an `AssertionError`:
+The above snippet would result in an `AssertionError`:
 
 ```
 Traceback (most recent call last):
@@ -270,17 +271,14 @@ Traceback (most recent call last):
 AssertionError
 ```
 
-You may already feel brain fried by the annoying `decorated`'s and
-`__call__`'s. These are the Taichi internal stack frames. They have
-almost no benefit for end-users but make the traceback hard to read.
-
-For this purpose, we may want to use `ti.init(excepthook=True)`, which
-_hooks_ on the exception handler, and make the stack traceback from
-Taichi-scope easier to read and intuitive. e.g.:
+Many of the stack frames are the Taichi compiler implementation details, which
+could be noisy to read. You could choose to elide them by enabling
+`ti.init(excepthook=True)`, which _hooks_ on the exception handler, and makes
+the stack traceback from Taichi-scope more intuitive.
 
 ```python {2}
 import taichi as ti
-ti.init(excepthook=True)  # just add this option!
+ti.init(excepthook=True)
 ...
 ```
 
@@ -339,13 +337,9 @@ def func3():
 AssertionError
 ```
 
-See? Our exception hook has removed some useless Taichi internal frames
-from traceback. What's more, although not visible in the doc, the
-output is **colorful**!
-
 :::note
 For IPython / Jupyter notebook users, the IPython stack traceback hook
-will be overriden by the Taichi one when `ti.enable_excepthook()`.
+will be overriden by the Taichi one when `ti.enable_excepthook()` is called.
 :::
 
 ## Debugging Tips
@@ -402,24 +396,13 @@ not_buggy()
 
 ### Advanced Optimization
 
-Taichi has an advanced optimization engine to make your Taichi kernel to
-be as fast as it could. But like what `gcc -O3` does, advanced
-optimization may occasionally lead to bugs as it tries too hard. This
-includes runtime errors such as:
+By default, Taichi runs a handful of advanced IR optimizations to make your
+Taichi kernels as performant as possible. Unfortunately, advanced
+optimization may occasionally lead to compilation errors, such as the following:
 
 `RuntimeError: [verify.cpp:basic_verify@40] stmt 8 cannot have operand 7.`
 
-You may use `ti.init(advanced_optimization=False)` to turn off advanced
-optimization and see if the issue still exists:
-
-```python {3}
-import taichi as ti
-
-ti.init(advanced_optimization=False)
-...
-```
-
-Whether or not turning off optimization fixes the issue, please feel
-free to report this bug on
+You can turn off the advanced optimizations with
+`ti.init(advanced_optimization=False)` and see if this makes a difference. If
+the issue persists, please feel free to report this bug on
 [GitHub](https://github.com/taichi-dev/taichi/issues/new?labels=potential+bug&template=bug_report.md).
-Thank you!
