@@ -8,27 +8,30 @@ sidebar_position: 4
 
 ### Arithmetic operators
 
-- `-a`
-- `a + b`
-- `a - b`
-- `a * b`
-- `a / b`
-- `a // b`
-- `a % b`
-- `a ** b`
+|     Operation   |               Result            |
+| :-------------- | :-------------------------------|
+|      `-a`       |  `a`negated                     |
+|      `+a`       |  `a`unchanged                   |
+|      `a + b`    |  sum of `a` and `b`             |
+|      `a - b`    |  difference of `a` and `b`      |
+|      `a * b`    |  product of `a` and `b`         |
+|      `a / b`    |  quotient of `a` and `b`        |
+|      `a // b`   |  floored quotient of `a` and `b`|
+|      `a % b`    |  remainder of `a` / `b`         |
+|      `a ** b`   |  `a` to the power `b`           |
 
 :::note
 
 The `%` operator in Taichi follows the Python style instead of C style,
-e.g.:
+e.g.,
 
 ```python
-# no matter Taichi-scope or Python-scope:
+# In Taichi-scope or Python-scope:
 print(2 % 3)   # 2
 print(-2 % 3)  # 1
 ```
 
-For C-style mod, please use `ti.raw_mod`:
+For C-style mod (`%`), please use `ti.raw_mod`:
 
 ```python
 print(ti.raw_mod(2, 3))   # 2
@@ -49,30 +52,34 @@ For example, `1.0 / 2.0 = 0.5`, `1 / 2 = 0.5`, `1 // 2 = 0`,
   operands to the default integer type.
 
 To avoid such implicit casting, you can manually cast your operands to
-desired types, using `ti.cast`. See
+desired types, using `ti.cast`. Please see
 [Default precisions](../articles/basic/type.md#default-precisions) for more details on
 default numerical types.
 :::
 
 ### Logic operators
 
-- `~a`
-- `a == b`
-- `a != b`
-- `a > b`
-- `a < b`
-- `a >= b`
-- `a <= b`
-- `not a`
-- `a or b`
-- `a and b`
-- `a if cond else b`
+|      Operation    |               Result            |
+| :---------------  | :----------- ----------------------------------------|
+| `a == b`          | if `a` equal `b`, then True, else False              |  
+| `a != b`          | if `a` not equal `b`, then True, else False          |        
+| `a > b`           | if `a` strictly greater than `b`, then True, else False  |     
+| `a < b`           | if `a` strictly less than `b`, then True, else False |    
+| `a >= b`          | if `a` greater than or equal `b`, then True, else False |         
+| `a <= b`          | if `a` less than or equal `b`, then True, else False |            
+| `not a`           | if `a` is False, then True, else False               |     
+| `a or b`          | if `a` is False, then `b`, else `a`                  |  
+| `a and b`         | if `a` is False, then `a`, else `b`                  |        
+| `a if cond else b`| if `cond` is True, then `a`, else `b`                |
 
 ### Bitwise operators
+|      Operation    |               Result            |
+| :---------------  | :----------- ----------------------------------------|
+| `~a`              | the bits of `a` inverted               |
+| `a & b`|  bitwise and of `a` and  `b`                      |
+| `a ^ b`|  bitwise exclusive or of `a` and `b`             |
+| `a \| b`|  bitwise or of `a` and `b`                      |
 
-- `a & b`
-- `a ^ b`
-- `a | b`
 
 ## Functions
 
