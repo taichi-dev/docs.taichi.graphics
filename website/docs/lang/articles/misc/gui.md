@@ -17,7 +17,7 @@ The following codes show how to create a window of resolution `640x360`:
 gui = ti.GUI('Window Title', (640, 360))
 ```
 
-::: note
+:::note
 
 If you are running Taichi on a machine without a GUI environment, consider setting `show_gui` to `False`:
 
