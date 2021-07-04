@@ -190,13 +190,13 @@ example:
 
     mouse_x, mouse_y = gui.get_cursor_pos()
 
-`gui.fps_limit` set the FPS limit for a window. For example, to restrict FPS to be below 24, simply `gui.fps_limit = 24`. This helps reduce the overload on your hardware especially when you're using OpenGL on your integrated GPU which could make desktop slow to response.
+`gui.fps_limit` sets the FPS limit for a window. For example, to cap FPS at 24, simply use `gui.fps_limit = 24`. This helps reduce the overload on your hardware especially when you're using OpenGL on your integrated GPU which could make desktop slow to response.
 
 
 
 ## GUI Widgets
 
-Sometimes it's more intuitive to use widgets like slider, button to control program variables instead of chaotic keyboard bindings. Taichi GUI provides a set of widgets that hopefully could make variable control more intuitive:
+Sometimes it's more intuitive to use widgets like slider or button to control the program variables instead of using chaotic keyboard bindings. Taichi GUI provides a set of widgets for that reason:
 
 For example:
 
