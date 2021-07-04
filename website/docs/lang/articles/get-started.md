@@ -385,6 +385,6 @@ use the search bar to search for topics or keywords
 at any time!
 
 If you are interested in joining the Taichi community, we strongly recommend you take some time to
-familiarize yourself with our [contribution guide](./contribution/index.md).
+familiarize yourself with our [contribution guide](./contribution/contributor_guide.md).
 
 We hope you enjoy your adventure with Taichi!
