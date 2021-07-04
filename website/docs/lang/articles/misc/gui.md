@@ -166,7 +166,7 @@ For example, loop until ESC is pressed:
         gui.set_image(img)
         gui.show()
 
-`gui.get_events(a, ...)` is basically the same as `gui.get_event`, except for this one returns a generator of events instead of storing into `gui.event`:
+`gui.get_events(a, ...)` is basically the same as `gui.get_event`, except that it returns a generator of events instead of storing into `gui.event`:
 
     for e in gui.get_events():
         if e.key == ti.GUI.ESCAPE:
