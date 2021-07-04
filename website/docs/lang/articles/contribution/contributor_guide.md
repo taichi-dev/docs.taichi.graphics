@@ -21,6 +21,10 @@ all forms, including but not limited to
 - Typo fixes in the documentation, code or comments (please go ahead and
   make a pull request for minor issues like these)
 
+:::tip reminder
+Please take some time to familiarize yourself with this contribution guide before making any changes.
+:::
+
 ## How to contribute bug fixes and new features
 
 Issues marked with ["good first
