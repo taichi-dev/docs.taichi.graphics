@@ -152,7 +152,7 @@ You can also close the window by manually setting `gui.running` to`False`:
         gui.set_image(pixels)
         gui.show()
 
-`gui.get_event(a, ...)` tries to pop a event from the queue, and store it in `gui.event`.
+`gui.get_event(a, ...)` tries to pop an event from the queue, and stores it into `gui.event`.
 
 For example:
 
