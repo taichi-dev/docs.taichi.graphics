@@ -62,7 +62,7 @@ If you are using `ubuntu`, you might get errors as below:
 Usage: yarn [options]
 yarn: error: no such option: --cwd
 ```
-That is because yarn is too old. You could install new version yarn with `npm`:
+which indicates your  `yarn` is too old. You could install new version yarn with `npm`:
 ```
 sudo apt install nodejs npm
 sudo npm install -g yarn
