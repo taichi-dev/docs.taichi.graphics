@@ -132,7 +132,7 @@ fail on the OpenGL backend.
 
 ## Parametrize test inputs
 
-In the test above, `r[None] = 100` means that it will only test that `ti.log10` works correctly for the input `100`. In order to test against different input values, we may use the `@pytest.mark.parametrize` decorator:
+In the test above, `r[None] = 100` means that it will only test that `ti.log10` works correctly for the input `100`. In order to test against different input values, you may use the `@pytest.mark.parametrize` decorator:
 
 ```python {5}
 import taichi as ti
