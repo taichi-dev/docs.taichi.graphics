@@ -11,16 +11,16 @@ Normally we write functional tests in Python.
 - Python tests should be added to `tests/python/test_xxx.py`.
 
 For example, you've just added a utility function `ti.log10`. Now you
-want to write a **test**, to test if it functions properly.
+want to write a **test** to ensure that it functions properly.
 
 ## Adding a new test case
 
-Look into `tests/python`, see if there's already a file suit for your
-test. If not, feel free to create a new file for it :) So in this case
+Look into `tests/python`, see if there is already a file suitable for your
+test. If not, create a new file for it. In this case,
 let's create a new file `tests/python/test_logarithm.py` for
 simplicity.
 
-Add a function, the function name **must** be started with `test_` so
+Add a function, the function name **must** start with `test_` so
 that `pytest` could find it. e.g:
 
 ```python {3}
@@ -30,7 +30,7 @@ def test_log10():
     pass
 ```
 
-Add some simple code make use of our `ti.log10` to make sure it works
+Add some simple code that makes use of `ti.log10` to ensure it works
 well. Hint: You may pass/return values to/from Taichi-scope using 0-D
 fields, i.e. `r[None]`.
 
@@ -56,11 +56,7 @@ Execute `ti test logarithm`, and the functions starting with `test_` in
 
 ## Testing against multiple backends
 
-The above method is not good enough, for example,
-`ti.init(arch=ti.cpu)`, means that it will only test on the CPU backend.
-So do we have to write many tests `test_log10_cpu`, `test_log10_cuda`,
-... with only the first line different? No worries, we provide a useful
-decorator `@ti.test`:
+The line `ti.init(arch=ti.cpu)` in the test above means that it will only test on the CPU backend. In order to test against multiple backends, please use the `@ti.test` decorator, as illustrated below:
 
 ```python
 import taichi as ti
@@ -99,14 +95,12 @@ def test_log10():
     assert r[None] == 2
 ```
 
-Cool! Right? But that's still not good enough.
-
 ## Using `ti.approx` for comparison with tolerance
 
-Sometimes the math percison could be poor on some backends like OpenGL,
+Sometimes the precision of math operations could be relatively low on certain backends such as OpenGL,
 e.g. `ti.log10(100)` may return `2.001` or `1.999` in this case.
 
-To cope with this behavior, we provide `ti.approx` which can tolerate
+Adding tolerance with `ti.approx` can be helpful to mitigate
 such errors on different backends, for example `2.001 == ti.approx(2)`
 will return `True` on the OpenGL backend.
 
@@ -129,23 +123,16 @@ def test_log10():
 
 :::caution
 Simply using `pytest.approx` won't work well here, since it's
-tolerance won't vary among different Taichi backends. It'll be likely
-to fail on the OpenGL backend.
+tolerance won't vary among different Taichi backends. It'll likely
+fail on the OpenGL backend.
 
-`ti.approx` also do treatments on boolean types, e.g.:
+`ti.approx` also correctly treats boolean types, e.g.:
 `2 == ti.approx(True)`.
 :::
 
-Great on improving stability! But the test is still not good enough,
-yet.
-
 ## Parametrize test inputs
 
-For example, `r[None] = 100`, means that it will only test the case of
-`ti.log10(100)`. What if `ti.log10(10)`? `ti.log10(1)`?
-
-We may test against different input values using the
-`@pytest.mark.parametrize` decorator:
+In the test above, `r[None] = 100` means that it will only test that `ti.log10` works correctly for the input `100`. In order to test against different input values, you may use the `@pytest.mark.parametrize` decorator:
 
 ```python {5}
 import taichi as ti
@@ -235,8 +222,8 @@ def test_debugging_utils():
 
 ## Exclude some backends from test
 
-Sometimes some backends are not capable of specific tests, we have to
-exclude them from test:
+Some backends are not capable of executing certain tests, you may have to
+exclude them from the test in order to move forward:
 
 ```python
 # Run this test on all backends except for OpenGL
@@ -246,7 +233,7 @@ def test_sparse_field():
 ```
 
 You may also use the `extensions` keyword to exclude backends without
-specific feature:
+a specific feature:
 
 ```python
 # Run this test on all backends except for OpenGL
