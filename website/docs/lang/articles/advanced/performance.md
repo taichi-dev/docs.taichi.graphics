@@ -20,7 +20,7 @@ For example, specifying a suitable `ti.block_dim` could yield an almost
 [examples/mpm3d.py](https://github.com/taichi-dev/taichi/blob/master/examples/mpm3d.py).
 
 :::note
-For performance profiling utilities, see [**Profiler** section of the Contribution Guide](../contribution/profiler.md).
+For performance profiling utilities, see [**Profiler** section of the Contribution Guide](../misc/profiler.md).
 :::
 
 ### Thread hierarchy of GPUs

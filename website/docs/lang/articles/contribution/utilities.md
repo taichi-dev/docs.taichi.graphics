@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 ---
 
 # Developer utilities
@@ -181,14 +181,6 @@ coverage report  # generate a coverage report on terminal output
 coverage html    # generate a HTML form report in htmlcov/index.html
 ```
 
-## Interface system (legacy)
-
-Print all interfaces and units
-
-```python
-ti.core.print_all_units()
-```
-
 ## Serialization (legacy)
 
 The serialization module of taichi allows you to serialize/deserialize
@@ -227,14 +219,4 @@ struct Particle {
 }
 
 // TI_IO_DEF_VIRT();
-```
-
-## Progress notification (legacy)
-
-The Taichi messenger can send an email to `$TI_MONITOR_EMAIL` when the
-task finishes or crashes. To enable:
-
-```python
-from taichi.tools import messenger
-messenger.enable(task_id='test')
 ```

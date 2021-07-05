@@ -55,6 +55,19 @@ Install all of the dependencies by:
 yarn --cwd=website install
 ```
 
+### Trouble shooting
+
+If you are using `ubuntu`, you might get errors as below:
+```
+Usage: yarn [options]
+yarn: error: no such option: --cwd
+```
+which indicates your  `yarn` is too old. You could install new version yarn with `npm`:
+```
+sudo apt install nodejs npm
+sudo npm install -g yarn
+```
+
 ## Local Development
 
 In order to spin up the dev server locally for development:
