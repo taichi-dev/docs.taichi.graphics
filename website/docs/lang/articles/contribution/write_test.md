@@ -123,8 +123,8 @@ def test_log10():
 
 :::caution
 Simply using `pytest.approx` won't work well here, since it's
-tolerance won't vary among different Taichi backends. It'll be likely
-to fail on the OpenGL backend.
+tolerance won't vary among different Taichi backends. It'll likely
+fail on the OpenGL backend.
 
 `ti.approx` also correctly treats boolean types, e.g.:
 `2 == ti.approx(True)`.
