@@ -51,16 +51,22 @@ The image pixels are set from the values of `img[i, j]`, where `i` indicates the
 If the window size is `(x, y)`, then `img` must be one of:
 
 - `ti.field(shape=(x, y))`, a gray-scale image
-- `ti.field(shape=(x, y, 3))`, where `3` is for
-  `(r, g, b)` channels
-- `ti.field(shape=(x, y, 2))`, where `2` is for `(r, g)`
-  channels
+
+- `ti.field(shape=(x, y, 3))`, where `3` is for `(r, g, b)` channels
+  
+- `ti.field(shape=(x, y, 2))`, where `2` is for `(r, g)` channels
+  
 - `ti.Vector.field(3, shape=(x, y))` `(r, g, b)` channels on each
-  component (see `vector`{.interpreted-text role="ref"})
-- `ti.Vector.field(2, shape=(x, y))` `(r, g)` channels on each
-  component
+  component (see 
+  
+  [`vector`]: https://docs.taichi.graphics/docs/lang/articles/basic/field#vector-fields)	"vector link"
+  
+- `ti.Vector.field(2, shape=(x, y))` `(r, g)` channels on each component
+  
 - `np.ndarray(shape=(x, y))`
+
 - `np.ndarray(shape=(x, y, 3))`
+
 - `np.ndarray(shape=(x, y, 2))`
 
 The data type of `img` must be one of:
