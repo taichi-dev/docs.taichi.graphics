@@ -97,7 +97,7 @@ def test_log10():
 
 ## Using `ti.approx` for comparison with tolerance
 
-Sometimes the precision of maths operations could be poor on certain backends such as OpenGL,
+Sometimes the precision of math operations could be relatively low on certain backends such as OpenGL,
 e.g. `ti.log10(100)` may return `2.001` or `1.999` in this case.
 
 To cope with this behavior, we provide `ti.approx` which can tolerate
