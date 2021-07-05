@@ -2,27 +2,76 @@
 sidebar_position: 9
 ---
 
-# Internal designs (WIP)
+# Internal designs
 
-## Intermediate representation
+## Intermediate representation (IR)
 
-Use `ti.init(print_ir=True)` to print IR on the console.
+Taichi's computation IR is designed to be
+- Static-single assignment;
+- Hierarchical, instead of LLVM-style control-flow graph + basic blocks;
+- Differentiable;
+- Statically and strongly typed.
 
+For example, a simple Taichi kernel
+```python {4-8} title=show_ir.py
+import taichi as ti
+ti.init(print_ir=True)
+
+@ti.kernel
+def foo():
+    for i in range(10):
+        if i < 4:
+            print(i)
+
+foo()
+```
+
+may be compiled into
+
+```
+kernel {
+  $0 = offloaded range_for(0, 10) grid_dim=0 block_dim=32
+  body {
+    <i32> $1 = loop $0 index 0
+    <i32> $2 = const [4]
+    <i32> $3 = cmp_lt $1 $2
+    <i32> $4 = const [1]
+    <i32> $5 = bit_and $3 $4
+    $6 : if $5 {
+      print $1, "\n"
+    }
+  }
+}
+
+```
+
+:::note
+Use `ti.init(print_ir=True)` to print IR of all instantiated kernels.
+:::
+
+:::note
 See [Life of a Taichi kernel](./compilation.md) for more details about
-the JIT system of Taichi.
+the JIT compilation system of Taichi.
+:::
 
 ## Data structure organization
 
-The internal organization of Taichi's data structure can be confusing.
-It is important to distinguish the concept of **containers**, **cells**,
-and **components**.
+The internal organization of Taichi's data structure is defined using the **Structural Node**
+("SNode", /snōd/) tree system. The SNode system might be confusing for new developers:
+it is important to distinguish three concepts: SNode **containers**,
+SNode **cells**, and SNode **components**.
 
-- A **container** can have multiple **cells**. The numbers of
+- A SNode **container** can have multiple SNode **cells**. The numbers of
   **cells** are recommended to be powers of two.
-- A **cell** can have multiple **components**.
-- Each **component** is a **container** of a lower-level SNode.
 
-Note that containers of `place` SNodes do have cells. Instead, they
+  - For example, `S = ti.root.dense(ti.i, 128)` creates an SNode `S`, and each `S` container has `128` `S` cells.
+- A SNode **cell** can have multiple SNode **components**.
+
+  - For example, `P = S.dense(ti.i, 4); Q = S.dense(ti.i, 4)` inserts two components (one `P` container and one `Q` container) into each `S` cell.
+- Note that each SNode **component** is a SNode **container** of a lower-level SNode.
+
+A hierarchical data structure in Taichi, dense or sparse, is essentially a tree with interleaved container and cell levels.
+Note that containers of `place` SNodes do not have cells. Instead, they
 directly contain numerical values.
 
 Consider the following example:
@@ -45,7 +94,7 @@ S5.place(z) # S6: z
 ```
 
 - The whole data structure is an `S0root` **container**, containing
-  - `1x` `S0root` **cell**, which has only one **component**, which
+  - 1x `S0root` **cell**, which has only one **component**, which
     is
     - An `S1pointer` **container**, containing
       - 4x `S1pointer` **cells**, each with two **components**,
@@ -72,26 +121,26 @@ Note that the `S0root` container and cell do not have an `index`.
 
 In summary, we will have the following containers:
 
-- `1 S0root` container
-- `1 S1pointer` container
-- `4 S2dense` containers
-- `4 S5dense` containers
-- `8 S3place_x` containers, each directly contains an `i32` value
-- `8 S4place_y` containers, each directly contains an `i32` value
-- `8 S6place_z` containers, each directly contains an `i32` value
+- 1x `S0root` container
+- 1x `S1pointer` container
+- 4x `S2dense` containers
+- 4x `S5dense` containers
+- 8x `S3place_x` containers, each directly containing an `i32` value
+- 8x `S4place_y` containers, each directly containing an `i32` value
+- 8x `S6place_z` containers, each directly containing an `i32` value
 
 ... and the following cells:
 
-- `1 S0root` cell
-- `4 S1pointer` cells
-- `8 S2dense` cells
-- `8 S5dense` cells
+- 1x `S0root` cell
+- 4x `S1pointer` cells
+- 8x `S2dense` cells
+- 8x `S5dense` cells
 
-Again, note that `S3place_x, S4place_x, S6place_x` SNodes do **not**
+Again, note that `S3place_x`, `S4place_y` and `S6place_z` containers do **not**
 have corresponding cells.
 
-In struct compilers, each SNode has two types: `container` type and
-`cell` type. **Components** of a higher level SNode **cell** are
+In struct compilers of supported backends, each SNode has two types: `container` type and
+`cell` type. Again, **components** of a higher level SNode **cell** are
 **containers** of a lower level SNode.
 
 Note that **cells** are never exposed to end-users.
@@ -101,10 +150,10 @@ SNode **cells**).
 
 :::note
 We are on our way to remove usages of **children**, **instances**, and
-**elements** in Taichi. These are very ambiguous terms.
+**elements** in Taichi. These are very ambiguous terms and should be replaced with standardized terms: **container**, **cell**, and **component**.
 :::
 
-## List generation (WIP)
+## List generation
 
 Struct-fors in Taichi loop over all active elements of a (sparse) data
 structure **in parallel**. Evenly distributing work onto processor cores
@@ -112,18 +161,18 @@ is challenging on sparse data structures: naively splitting an irregular
 tree into pieces can easily lead to partitions with drastically
 different numbers of leaf elements.
 
-Our strategy is to generate lists of active SNode elements layer by
+Our strategy is to generate lists of active **SNode containers**, layer by
 layer. The list generation computation happens on the same device as
 normal computation kernels, depending on the `arch` argument when the
-user calls `ti.init`.
+user calls `ti.init()`.
 
 List generations flatten the data structure leaf elements into a 1D
-dense array, circumventing the irregularity of incomplete trees. Then we
-can simply invoke a regular **parallel for** over the list.
+list, circumventing the irregularity of incomplete trees. Then we
+can simply invoke a regular **parallel for** over the 1D list.
 
 For example,
 
-```python
+```python {14-17}
 # misc/listgen_demo.py
 
 import taichi as ti
@@ -160,16 +209,17 @@ $4 = offloaded struct_for(S2bitmasked) block_dim=0 {
 
 Note that `func` leads to two list generations:
 
-- (Tasks `$0` and `$1`) based on the list of `root` node (`S0`),
-  generate the list of the `dense` nodes (`S1`);
-- (Tasks `$2` and `$3`) based on the list of `dense` nodes (`S1`),
-  generate the list of `bitmasked` nodes (`S2`).
+- (Tasks `$0` and `$1`) based on the list of the (only) `S0root` container,
+  generate the list of the (only) `S1dense` container;
+- (Tasks `$2` and `$3`) based on the list of `S1dense` containers,
+  generate the list of `S2bitmasked` containers.
 
-The list of `root` node always has exactly one element (instance), so we
-never clear or re-generate this list.
+The list of `S0root` SNode always has exactly one container, so we
+never clear or re-generate this list. Although the list of `S1dense` always
+has only one container, we still regenerate the list for uniformity.
+The list of `S2bitmasked` has 4 containers.
 
 :::note
-
 The list of `place` (leaf) nodes (e.g., `S3` in this example) is never
 generated. Instead, we simply loop over the list of their parent nodes,
 and for each parent node we enumerate the `place` nodes on-the-fly
@@ -182,8 +232,8 @@ happening on the leaf element. Therefore we only generate their parent
 element list, so that the list generation cost is amortized over
 multiple child elements of a second-to-last-level SNode element.
 
-In the example above, although we have `16` instances of `x`, we only
-generate a list of `4` `bitmasked` nodes (and `1` `dense` node).
+In the example above, although we have 16 instances of `x`, we only
+generate a list of 4 x `S2bitmasked` nodes (and 1 x `S1dense` node).
 :::
 
 ## Statistics
@@ -226,23 +276,23 @@ Embedding Taichi in `python` has the following advantages:
     `pip`.
   - Existing packages. Interacting with other python components
     (e.g. `matplotlib` and `numpy`) is just trivial.
-- The built-in AST manipulation tools in `python` allow us to do
-  magical things, as long as the kernel body can be parsed by the
-  Python parser.
+- The built-in AST manipulation tools in `python` allow us to flexibly
+manipulate and analyze Python ASTs,
+as long as the kernel body function is parse-able by the Python parser.
 
-However, this design has drawbacks as well:
+However, this design has drawbacks too:
 
-- Taichi kernels must parse-able by Python parsers. This means Taichi
+- Taichi kernels must be parse-able by Python parsers. This means Taichi
   syntax cannot go beyond Python syntax.
   - For example, indexing is always needed when accessing elements
     in Taichi fields, even if the fields is 0D. Use `x[None] = 123`
     to set the value in `x` if `x` is 0D. This is because `x = 123`
     will set `x` itself (instead of its containing value) to be the
-    constant `123` in python syntax, and, unfortunately, we cannot
-    modify this behavior.
+    constant `123` in Python syntax. For code consistency in Python-
+    and Taichi-scope, we have to use the more verbose `x[None] = 123` syntax.
 - Python has relatively low performance. This can cause a performance
   issue when initializing large Taichi fields with pure python
-  scripts. A Taichi kernel should be used to initialize a huge fields.
+  scripts. A Taichi kernel should be used to initialize huge fields.
 
 ## Virtual indices v.s. physical indices
 
