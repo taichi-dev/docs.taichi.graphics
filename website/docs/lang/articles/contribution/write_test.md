@@ -222,8 +222,8 @@ def test_debugging_utils():
 
 ## Exclude some backends from test
 
-Sometimes some backends are not capable of certain tests, so we have to
-exclude them from the test:
+Some backends are not capable of executing certain tests, you may have to
+exclude them from the test in order to move forward:
 
 ```python
 # Run this test on all backends except for OpenGL
