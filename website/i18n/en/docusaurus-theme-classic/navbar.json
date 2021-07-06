@@ -1,0 +1,22 @@
+{
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Explore": {
+    "message": "Explore",
+    "description": "Navbar item with label Explore"
+  },
+  "item.label.Community": {
+    "message": "Community",
+    "description": "Navbar item with label Community"
+  },
+  "item.label.Acknowledgments": {
+    "message": "Acknowledgments",
+    "description": "Navbar item with label Acknowledgments"
+  }
+}
