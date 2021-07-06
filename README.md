@@ -5,27 +5,18 @@
 
 A static documentation website built with [docusaurus](https://docusaurus.io/) for [Taichi](https://taichi.graphics) documentation.
 
-## For documentation contributors
+---
 
-To update existing documentation or create new documentation, **please do not work on this repo**, this repo uses the
-[main repo](https://github.com/taichi-dev/taichi) as the source of truth and regularly pulls the source documentation
-from the main repo here.
+💡 **Please make sure you understand the following before moving forward:**
 
-However, this repo hosts the un-versioned non-doc pages, such as the `community` page, you can edit those pages directly
-in this repo.
-
-## For translation contributors
-
-We use Crowdin as our primary translation collaboration platform:
-
-- Please kindly visit our [Crowdin Translation Page](https://translate.taichi.graphics) for translation progress and contribution opportunities!
-- Please refer to our detailed [translation guide](https://docs.taichi.graphics/help-us-translate) to learn more
-about the translation collaboration workflow!
-
-**Note**: we don't support deploy-previews for translations for performance reason, and usually you don't need to preview the full website for translations strings.
+- If you want to **update any Taichi documentation**, go to [the main repository](https://github.com/taichi-dev/taichi/tree/master/docs) instead and **please do not work on this repo**! This repo only hosts the mirrored version of the docs in order to build and deploy the documentation website.
+- If you want to **contribute to the translations** of any Taichi documentation, go to [Our Translation Page](https://translate.taichi.graphics) instead! Our [help-us-translate](https://docs.taichi.graphics/help-us-translate) page has more details about the i18n workflow. _Note: we don't support deploy-previews for translations for performance reason, and usually you don't need to preview the full website for translations strings._
+- If you want to **update any un-versioned non-doc pages**, such as the `community` or `help-us-translate` page, you are at the right place, we welcome a Pull Request directly against this repo!
+- If you want to **make a functional change to the website**, such as updating the styles or adding a new React
+component, you are at the right place, we welcome a Pull Request directly against this repo!
 
 <details>
-  <summary>Documentation Website Maintainers Tips</summary>
+  <summary>Tips for Documentation Website Maintainers</summary>
 
   We follow the corresponding
   [docusaurus guide](https://docusaurus.io/docs/i18n/crowdin#crowdin-tutorial) for the translation setup. Please refer to the guide for technical details.
@@ -43,12 +34,14 @@ about the translation collaboration workflow!
   yarn --cwd=website run crowdin download
   ```
 
-  to download both **translated** and **approved** translations to your local disk and run `start` listed above to preview the website in your desired locale locally. Note you may need to set the corresponding environment variable
-  `CROWDIN_PERSONAL_TOKEN` locally. It can be generated from the Crowdin settings page, assuming you have the right permission.
+  to download **approved** translations to your local disk and run the `start` command listed above to preview the website in your desired locale locally. Note you may need to set the corresponding environment variable
+  `CROWDIN_TOKEN` locally. It can be generated from the Crowdin settings page, assuming you have the right permission.
 
   You need to periodically check/refactor the file structure on Crowdin for any
   source file refactor, check details [here](https://docusaurus.io/docs/i18n/crowdin#maintaining-your-site).
 </details>
+
+---
 
 ## Prerequisites
 
