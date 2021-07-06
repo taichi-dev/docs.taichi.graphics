@@ -1,6 +1,6 @@
 # created under instructions on https://docusaurus.io/docs/i18n/crowdin
 project_id: '429534'
-api_token_env: 'CROWDIN_PERSONAL_TOKEN'
+api_token_env: 'CROWDIN_TOKEN'
 preserve_hierarchy: true
 files:
   # default EN JSON/metadata translation files
