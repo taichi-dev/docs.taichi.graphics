@@ -1,6 +1,7 @@
 # Taichi Documentation Site
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6825e411-c5f7-4148-ab43-023663f41b6a/deploy-status)](https://app.netlify.com/sites/docs-taichi-graphics/deploys)
+[![Crowdin](https://badges.crowdin.net/taichi-programming-language/localized.svg)](https://crowdin.com/project/taichi-programming-language)
 
 A static documentation website built with [docusaurus](https://docusaurus.io/) for [Taichi](https://taichi.graphics) documentation.
 
@@ -15,10 +16,36 @@ in this repo.
 
 ## For translation contributors
 
-**(Still under construction, coming soon...)**
+We use Crowdin as our primary translation collaboration platform:
 
-We plan to use Crowdin as our primary translation collaboration platform. Please
-visit our [Crowdin project page](https://crowdin.com/project/taichi-programming-language) for translation progress and contribution opportunities!
+- Please kindly visit our [Crowdin project page](https://crowdin.com/project/taichi-programming-language) for translation progress and contribution opportunities!
+- Please refer to our detailed [translation guide](https://docs.taichi.graphics/help-us-translate) to learn more
+about the translation collaboration workflow!
+
+**Note**: we don't support deploy-previews for translations for performance reason, and usually you don't need to preview the full website for translations strings.
+
+<details>
+  <summary>Documentation Website Maintainers Tips</summary>
+
+  We follow the corresponding
+  [docusaurus guide](https://docusaurus.io/docs/i18n/crowdin#crowdin-tutorial) for the translation setup. Please refer to the guide for technical details.
+
+  If you want to spin up the development server locally for a specific locale,
+  add `--locale TARGET_LOCALE` after the command, for example, in order to start
+  the server for `zh-Hans`:
+
+  ```bash
+  yarn --cwd=website start --locale zh-Hans
+  ```
+  In order to preview the translated website, you can use:
+
+  ```bash
+  yarn --cwd=website run crowdin download
+  ```
+
+  to download **approved** translations to your local disk and run `start` listed above to preview the website in your desired locale locally. Note you may need to set the corresponding environment variable
+  `CROWDIN_PERSONAL_TOKEN` locally. It can be generated from the Crowdin settings page, assuming you have the right permission.
+</details>
 
 ## Prerequisites
 
@@ -57,6 +84,8 @@ yarn --cwd=website install
 
 ### Trouble shooting
 
+#### Ubuntu issues
+
 If you are using `ubuntu`, you might get errors as below:
 ```
 Usage: yarn [options]
@@ -67,6 +96,12 @@ which indicates your  `yarn` is too old. You could install new version yarn with
 sudo apt install nodejs npm
 sudo npm install -g yarn
 ```
+
+#### Development server issues
+
+If you run into `TypeError: Cannot read property 'latest' of undefined` error,
+try to remove both of `website/node_modules` and `website/yarn.lock` and re-run the
+install command. This has been reported to [this issue](https://github.com/facebook/docusaurus/issues/5106)
 
 ## Local Development
 
