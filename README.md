@@ -18,7 +18,7 @@ in this repo.
 
 We use Crowdin as our primary translation collaboration platform:
 
-- Please kindly visit our [Crowdin project page](https://crowdin.com/project/taichi-programming-language) for translation progress and contribution opportunities!
+- Please kindly visit our [Crowdin Translation Page](https://translate.taichi.graphics) for translation progress and contribution opportunities!
 - Please refer to our detailed [translation guide](https://docs.taichi.graphics/help-us-translate) to learn more
 about the translation collaboration workflow!
 
@@ -43,8 +43,11 @@ about the translation collaboration workflow!
   yarn --cwd=website run crowdin download
   ```
 
-  to download **approved** translations to your local disk and run `start` listed above to preview the website in your desired locale locally. Note you may need to set the corresponding environment variable
+  to download both **translated** and **approved** translations to your local disk and run `start` listed above to preview the website in your desired locale locally. Note you may need to set the corresponding environment variable
   `CROWDIN_PERSONAL_TOKEN` locally. It can be generated from the Crowdin settings page, assuming you have the right permission.
+
+  You need to periodically check/refactor the file structure on Crowdin for any
+  source file refactor, check details [here](https://docusaurus.io/docs/i18n/crowdin#maintaining-your-site).
 </details>
 
 ## Prerequisites
