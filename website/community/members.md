@@ -58,7 +58,7 @@ sidebar_position: 4
 - [cjim8889](https://github.com/cjim8889/)
 - [jackalcooper](https://github.com/jackalcooper)
 
-## [Simplified Chinese documentation](https://github.com/taichi-dev/taichi-docs-zh-cn) contributors
+## Simplified Chinese (`zh-Hans`) documentation contributors
 
 - [StephenArk30](https://github.com/StephenArk30) (Creator)
 - [archibate](https://github.com/archibate)
