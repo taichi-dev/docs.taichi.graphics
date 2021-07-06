@@ -4,6 +4,12 @@
   command = "yarn build"
   environment = { NODE_VERSION = "14" }
 
+[context.production]
+  command = "yarn run crowdin:sync && yarn build"
+
+[context.deploy-preview]
+  command = "yarn build --locale en"
+
 # Temp solution due to https://github.com/facebook/docusaurus/issues/4967
 [[redirects]]
   from = "/"
