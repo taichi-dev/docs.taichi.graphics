@@ -43,6 +43,7 @@ canvas.triangles(a,b,c,color)
 canvas.triangles_indexed(positions,indices,color)
 canvas.circles(centers,radius,colors)
 canvas.lines(start_positions,end_positions,colors)
+canvas.set_image(image)
 ```
 
 The positions/centers of geometries will be represented as floats between 0 and 1, which indicate relative positions on the canvas.
@@ -90,9 +91,10 @@ scene.clear()
 ```
 
 
-### Rendering the scene on the window
+### Rendering the scene 
+a scene is rendered by first rendering it on a canvas.
 ```python
-window.render(scene)
+canvas.render(scene)
 ```
 
 
@@ -160,12 +162,13 @@ while window.running:
 
   window.clear()
 
-  scene.clear()
-  scene.mesh(...)
-  window.render(scene)
-
   canvas.clear(...)
   canvas.triangles(...)
+
+  scene.clear()
+  scene.mesh(...)
+  canvas.render(scene)
+
   window.render(canvas)
   
   window.GUI.begin(name,x,y,width,height)
