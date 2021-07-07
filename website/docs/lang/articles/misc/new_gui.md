@@ -61,10 +61,12 @@ scene = ti.ui.Scene()
 ```
 ### Configuring camera
 ```python
-scene.camera_center(pos)
-scene.camera_lookat(pos)
-scene.camera_up(dir)
-scene.camera_projection(mode) 
+camera = ti.ui.make_camera()
+camera.lookat(pos)
+camera.up(dir)
+camera.center(pos)
+camera.projection_mode(mode)
+scene.set_camera(camera)
 ```
 where `mode` is either `ti.ui.Scene.PROJECTION_PERSPECTIVE` or `ti.ui.Scene.PROJECTION_ORTHOGONAL`
 
@@ -139,10 +141,14 @@ import taichi as ti
 window = ti.ui.Window("Amazing Window",res)
 
 scene = ti.ui.Scene()
-scene.camera_center(pos)
-scene.camera_lookat(pos)
-scene.camera_up(dir)
-scene.camera_projection(mode) 
+
+camera = ti.ui.make_camera()
+camera.lookat(pos)
+camera.up(dir)
+camera.center(pos)
+camera.projection_mode(mode)
+scene.set_camera(camera)
+
 light = scene.add_point_light(pos,color) 
 
 canvas = ti.ui.Canvas(x,y,width,height)
