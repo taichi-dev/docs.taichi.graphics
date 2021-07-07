@@ -3,261 +3,171 @@ sidebar_position: 1
 
 ---
 
-# New GUI system
+# New UI system
 
-A new GUI system is to be added to Taichi. The new GUI system will use GPU for rendering, which will enable it to be much faster and to render 3d scenes. This doc describes the APIs to be implemented.
+A new UI system is to be added to Taichi. The new GUI system will use GPU for rendering, which will enable it to be much faster and to render 3d scenes. This doc describes the APIs to be implemented.
 
-## Create a window
+A few design principles (to be expanded):
 
-`ti.ui.GUI(name, res)` creates a window. If `res` is scalar, then the width will be equal to the height.
+* Immediate mode GUI components. 
+* When rendering geometries, users will supply `taichi` fields as input. The implementation will avoid any GPU<->CPU memcpy. 
 
-The following codes show how to create a window of resolution `640x360`:
+## Creating a window
+
+`ti.ui.Window(name, res)` creates a window. If `res` is scalar, then the width will be equal to the height.Example:
 
 ```python
-gui = ti.ui.GUI('Window Title', (640, 360))
+window = ti.ui.Window('Window Title', (640, 360))
+```
+
+There're three types of objects that can be displayed on a `ti.ui.Window`:
+
+* 2D Canvas, which can be used to draw simple 2D geometries such as circles, triangles, etc.
+* 3D Scene, which can be used to render 3D meshes and particles, with a configurable camera and light sources.
+* Immediate mode GUI components, buttons, textboxes, etc.
+
+## 2D Canvas
+
+### Creating a canvas
+
+```python
+canvas = ti.ui.Canvas(x,y,width,height)
+```
+where `x`,`y`,`width`,`height` are floats between 0 and 1 that indicate the relative position and size of the canvas relative to the window.
+
+### Drawing on the canvas
+
+```python
+canvas.clear(color)
+canvas.triangles(a,b,c,color)
+canvas.triangles_indexed(positions,indices,color)
+canvas.circles(centers,radius,colors)
+canvas.lines(start_positions,end_positions,colors)
+```
+
+The positions/centers of geometries will be represented as floats between 0 and 1, which indicate relative positions on the canvas.
+
+### Drawing the canvas on the window
+```python
+window.render(canvas)
+```
+
+
+## 3D Scene
+
+### Creating a scene
+```python
+scene = ti.ui.Scene()
+```
+### Configuring camera
+```python
+scene.camera_center(pos)
+scene.camera_lookat(pos)
+scene.camera_up(dir)
+scene.camera_projection(mode) 
+```
+where `mode` is either `ti.ui.Scene.PROJECTION_PERSPECTIVE` or `ti.ui.Scene.PROJECTION_ORTHOGONAL`
+
+
+### Configuring light sources
+#### adding a light source
+```python
+light = scene.add_point_light(pos,color) 
+```
+#### removing a light source
+```python
+scene.remove_light(light)
+```
+
+
+### 3d Geometries
+```python
+scene.mesh(vertices,indices,color)
+scene.particles(positions,radius,color)
+scene.clear()
+```
+
+
+### Rendering the scene on the window
+```python
+window.render(scene)
 ```
 
 
 
 
+## GUI components
 
-## Display a window
-
-`gui.show(filename)` helps display a window. If `filename` is specified, a screenshot will be saved to the file specified by the name. For example, the following saves frames of the window to `.png`s:
-
-    for frame in range(10000):
-        render(img)
-        gui.set_image(img)
-        gui.show(f'{frame:06d}.png')
-
-
-
-## Paint on a window
-
-`gui.set_image(pixels)` sets an image to display on the window.
-
-The image pixels are set from the values of `img[i, j]`, where `i` indicates the horizontal coordinates (from left to right) and `j` the vertical coordinates (from bottom to top).
-
-If the window size is `(x, y)`, then `img` must be one of:
-
-- `ti.field(shape=(x, y))`, a gray-scale image
-
-- `ti.field(shape=(x, y, 3))`, where `3` is for `(r, g, b)` channels
-  
-- `ti.field(shape=(x, y, 2))`, where `2` is for `(r, g)` channels
-  
-- `ti.Vector.field(3, shape=(x, y))` `(r, g, b)` channels on each
-  component (see [vector](../../api/vector.md#vector-fields) for details)
-  
-- `ti.Vector.field(2, shape=(x, y))` `(r, g)` channels on each component
-  
-- `np.ndarray(shape=(x, y))`
-
-- `np.ndarray(shape=(x, y, 3))`
-
-- `np.ndarray(shape=(x, y, 2))`
-
-The data type of `img` must be one of:
-
-- `uint8`, range `[0, 255]`
-
-- `uint16`, range `[0, 65535]`
-
-- `uint32`, range `[0, 4294967295]`
-
-- `float32`, range `[0, 1]`
-
-- `float64`, range `[0, 1]`
-
-  
-
-## Convert RGB to Hex
-
-`ti.rgb_to_hex(rgb)` can convert a (R, G, B) tuple of floats into a single integer value, e.g.,
+The support for GUI components will closely follow Dear IMGUI (and will likely be implemented using it..).
 
 ```python
-rgb = (0.4, 0.8, 1.0)
-hex = ti.rgb_to_hex(rgb)  # 0x66ccff
-
-rgb = np.array([[0.4, 0.8, 1.0], [0.0, 0.5, 1.0]])
-hex = ti.rgb_to_hex(rgb)  # np.array([0x66ccff, 0x007fff])
+window.GUI.begin(name,x,y,width,height)
+window.GUI.text(...)
+window.GUI.button(...)
+window.GUI.end()
 ```
 
-The return values can be used in GUI drawing APIs.
+
+## Clearing and showing a window
+```python
+window.clear(color)
+...
+window.show()
+```
 
 
-
-## Event processing
-
-Every event have a key and type.
-
-_Event type_ is the type of event, for now, there are just three type of event:
-
-    ti.GUI.RELEASE  # key up or mouse button up
-    ti.GUI.PRESS    # key down or mouse button down
-    ti.GUI.MOTION   # mouse motion or mouse wheel
-
-_Event key_ is the key that you pressed on keyboard or mouse, can be one of:
-
-    # for ti.GUI.PRESS and ti.GUI.RELEASE event:
-    ti.GUI.ESCAPE  # Esc
-    ti.GUI.SHIFT   # Shift
-    ti.GUI.LEFT    # Left Arrow
-    'a'            # we use lowercase for alphabet
-    'b'
-    ...
-    ti.GUI.LMB     # Left Mouse Button
-    ti.GUI.RMB     # Right Mouse Button
-    
-    # for ti.GUI.MOTION event:
-    ti.GUI.MOVE    # Mouse Moved
-    ti.GUI.WHEEL   # Mouse Wheel Scrolling
-
-A _event filter_ is a list combined of _key_, _type_ and _(type, key)_ tuple, e.g.:
+## Events Processing
+To obtain the events that have occurred since the previous poll:
 
 ```python
-# if ESC pressed or released:
-gui.get_event(ti.GUI.ESCAPE)
-
-# if any key is pressed:
-gui.get_event(ti.GUI.PRESS)
-
-# if ESC pressed or SPACE released:
-gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, ti.GUI.SPACE))
+events = window.get_events()
 ```
 
-`gui.running` can help check the state of the window. `ti.GUI.EXIT` occurs when you click on the close (X) button of a window.
- `gui.running` will obtain `False` when the GUI is being closed.
+Each `event` in `events` is an instance of `ti.ui.Event`. It has the following properties:
+* `event.action`, which could be `ti.ui.ACTION_PRESSED`, `ti.ui.ACTION_RELEASED`, ...
+* `event.key`, which is `ti.ui.KEY_XXXX`
 
-For example, loop until the close button is clicked:
-
-    while gui.running:
-        render()
-        gui.set_image(pixels)
-        gui.show()
-
-You can also close the window by manually setting `gui.running` to`False`:
-
-    while gui.running:
-        if gui.get_event(ti.GUI.ESCAPE):
-            gui.running = False
-    
-        render()
-        gui.set_image(pixels)
-        gui.show()
-
-`gui.get_event(a, ...)` tries to pop an event from the queue, and stores it into `gui.event`.
-
-For example:
-
-    if gui.get_event():
-        print('Got event, key =', gui.event.key)
-
-For example, loop until ESC is pressed:
-
-    gui = ti.GUI('Title', (640, 480))
-    while not gui.get_event(ti.GUI.ESCAPE):
-        gui.set_image(img)
-        gui.show()
-
-`gui.get_events(a, ...)` is basically the same as `gui.get_event`, except that it returns a generator of events instead of storing into `gui.event`:
-
-    for e in gui.get_events():
-        if e.key == ti.GUI.ESCAPE:
-            exit()
-        elif e.key == ti.GUI.SPACE:
-            do_something()
-        elif e.key in ['a', ti.GUI.LEFT]:
-            ...
-
-`gui.is_pressed(key, ...)` can detect the keys you pressed. It must be used together with `gui.get_event`, or it won't be updated! For
-example:
-
-    while True:
-        gui.get_event()  # must be called before is_pressed
-        if gui.is_pressed('a', ti.GUI.LEFT):
-            print('Go left!')
-        elif gui.is_pressed('d', ti.GUI.RIGHT):
-            print('Go right!')
-
-`gui.get_cursor_pos()` can return current cursor position within the window. For example:
-
-    mouse_x, mouse_y = gui.get_cursor_pos()
-
-`gui.fps_limit` sets the FPS limit for a window. For example, to cap FPS at 24, simply use `gui.fps_limit = 24`. This helps reduce the overload on your hardware especially when you're using OpenGL on your integrated GPU which could make desktop slow to response.
+To obtain mouse position:
+* `window.get_mouse_position()`
 
 
-
-## GUI Widgets
-
-Sometimes it's more intuitive to use widgets like slider or button to control the program variables instead of using chaotic keyboard bindings. Taichi GUI provides a set of widgets for that reason:
-
-For example:
-
-    radius = gui.slider('Radius', 1, 50)
-    
-    while gui.running:
-        print('The radius now is', radius.value)
-        ...
-        radius.value += 0.01
-        ...
-        gui.show()
-
-
-
-## Image I/O
-
-`ti.imwrite(img, filename)` can export a `np.ndarray` or Taichi field (`ti.Matrix.field`,  `ti.Vector.field`, or `ti.field`) to a specified location `filename`.
-
-Same as `ti.GUI.show(filename)`, the format of the exported image is determined by **the suffix of** `filename` as well. Now `ti.imwrite` supports exporting images to `png`, `img` and `jpg` and we recommend using `png`.
-
-Please make sure that the input image has **a valid shape**. If you want to export a grayscale image, the input shape of field should be `(height, weight)` or `(height, weight, 1)`. For example:
+## Example Application
 
 ```python
 import taichi as ti
 
-ti.init()
+window = ti.ui.Window("Amazing Window",res)
 
-shape = (512, 512)
-type = ti.u8
-pixels = ti.field(dtype=type, shape=shape)
+scene = ti.ui.Scene()
+scene.camera_center(pos)
+scene.camera_lookat(pos)
+scene.camera_up(dir)
+scene.camera_projection(mode) 
+light = scene.add_point_light(pos,color) 
 
-@ti.kernel
-def draw():
-    for i, j in pixels:
-        pixels[i, j] = ti.random() * 255    # integars between [0, 255] for ti.u8
+canvas = ti.ui.Canvas(x,y,width,height)
 
-draw()
+while window.running:
+  events = window.get_event()
+  if ev.action == ti.ui.ACTION_PRESSED and ev.key == ti.ui.KEY_SHIFT:
+      ...
 
-ti.imwrite(pixels, f"export_u8.png")
-```
+  window.clear()
 
-Besides, for RGB or RGBA images, `ti.imwrite` needs to receive a field which has shape `(height, width, 3)` and `(height, width, 4)` individually.
+  scene.clear()
+  scene.mesh(...)
+  window.render(scene)
 
-Generally the value of the pixels on each channel of a `png` image is an integer in \[0, 255\]. For this reason, `ti.imwrite` will **cast fields** which has different data types all **into integers between \[0, 255\]**. As a result, `ti.imwrite` has the following requirements for different data types of input fields:
+  canvas.clear(...)
+  canvas.triangles(...)
+  window.render(canvas)
+  
+  window.GUI.begin(name,x,y,width,height)
+  window.GUI.text(...)
+  window.GUI.button(...)
+  window.GUI.end()
 
-- For float-type (`ti.f16`, `ti.f32`, etc) input fields, **the value of each pixel should be float between \[0.0, 1.0\]**. Otherwise `ti.imwrite` will first clip them into \[0.0, 1.0\]. Then they are multiplied by 256 and casted to integers ranging from \[0, 255\].
-- For int-type (`ti.u8`, `ti.u16`, etc) input fields, **the value of each pixel can be any valid integer in its own bounds**. These integers in this field will be scaled to \[0, 255\] by being divided over the upper bound of its basic type accordingly.
-
-Here is another example:
-
-```python
-import taichi as ti
-
-ti.init()
-
-shape = (512, 512)
-channels = 3
-type = ti.f32
-pixels = ti.Matrix.field(channels, dtype=type, shape=shape)
-
-@ti.kernel
-def draw():
-    for i, j in pixels:
-        for k in ti.static(range(channels)):
-            pixels[i, j][k] = ti.random()   # floats between [0, 1] for ti.f32
-
-draw()
-
-ti.imwrite(pixels, f"export_f32.png")
+  window.show()
+  
+    
 ```
