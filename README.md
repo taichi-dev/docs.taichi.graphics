@@ -10,10 +10,10 @@ A static documentation website built with [docusaurus](https://docusaurus.io/) f
 💡 **Please make sure you understand the following before moving forward:**
 
 - If you want to **update any Taichi documentation**, go to [the main repository](https://github.com/taichi-dev/taichi/tree/master/docs) instead and **please do not work on this repo**! This repo only hosts the mirrored version of the docs in order to build and deploy the documentation website.
-- If you want to **contribute to the translations** of any Taichi documentation, go to [Our Translation Page](https://translate.taichi.graphics) instead! Our [help-us-translate](https://docs.taichi.graphics/help-us-translate) page has more details about the i18n workflow. _Note: we don't support deploy-previews for translations for performance reason, and usually you don't need to preview the full website for translations strings._
-- If you want to **update any un-versioned non-doc pages**, such as the `community` or `help-us-translate` page, you are at the right place, we welcome a Pull Request directly against this repo!
+- If you want to **contribute to the translations** of any Taichi documentation, go to **[Our Translation Page](https://translate.taichi.graphics)** instead. Our [help-us-translate](https://docs.taichi.graphics/help-us-translate) page has more details about the i18n workflow. _Note: we don't support deploy-previews for translations for performance reasons, and usually you don't need to preview the full website for translation strings._
+- If you want to **update any non-doc pages that are not versioned** (e.g., the `community` and `help-us-translate` pages), you are at the right place. We welcome pull requests directly to this repo!
 - If you want to **make a functional change to the website**, such as updating the styles or adding a new React
-component, you are at the right place, we welcome a Pull Request directly against this repo!
+component, you are at the right place. We welcome related pull requests directly to this repo!
 
 <details>
   <summary>Tips for Documentation Website Maintainers</summary>
@@ -22,23 +22,23 @@ component, you are at the right place, we welcome a Pull Request directly agains
   [docusaurus guide](https://docusaurus.io/docs/i18n/crowdin#crowdin-tutorial) for the translation setup. Please refer to the guide for technical details.
 
   If you want to spin up the development server locally for a specific locale,
-  add `--locale TARGET_LOCALE` after the command, for example, in order to start
+  add `--locale TARGET_LOCALE` after the command. For example, in order to start
   the server for `zh-Hans`:
 
   ```bash
   yarn --cwd=website start --locale zh-Hans
   ```
-  In order to preview the translated website, you can use:
+  To preview the translated website, you can use
 
   ```bash
   yarn --cwd=website run crowdin download
   ```
 
-  to download **approved** translations to your local disk and run the `start` command listed above to preview the website in your desired locale locally. Note you may need to set the corresponding environment variable
-  `CROWDIN_TOKEN` locally. It can be generated from the Crowdin settings page, assuming you have the right permission.
+  to download **approved** translations to your local disk, and run the `start` command listed above to preview the website in your desired locale locally. Note you may need to set the corresponding environment variable
+  `CROWDIN_TOKEN` locally. It can be generated from the Crowdin settings page, if you have the right permission.
 
   You need to periodically check/refactor the file structure on Crowdin for any
-  source file refactor, check details [here](https://docusaurus.io/docs/i18n/crowdin#maintaining-your-site).
+  source file refactor. Please see more details [here](https://docusaurus.io/docs/i18n/crowdin#maintaining-your-site).
 </details>
 
 ---
@@ -97,7 +97,7 @@ sudo npm install -g yarn
 
 If you run into `TypeError: Cannot read property 'latest' of undefined` error,
 try to remove both of `website/node_modules` and `website/yarn.lock` and re-run the
-install command. This has been reported to [this issue](https://github.com/facebook/docusaurus/issues/5106)
+`install` command. This issue has been reported [here](https://github.com/facebook/docusaurus/issues/5106).
 
 ## Local Development
 
