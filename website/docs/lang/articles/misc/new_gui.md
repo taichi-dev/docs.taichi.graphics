@@ -31,7 +31,7 @@ There're three types of objects that can be displayed on a `ti.ui.Window`:
 ### Creating a canvas
 
 ```python
-canvas = ti.ui.Canvas(x,y,width,height)
+canvas = window.make_canvas(x,y,width,height)
 ```
 where `x`,`y`,`width`,`height` are floats between 0 and 1 that indicate the relative position and size of the canvas relative to the window.
 
@@ -58,7 +58,7 @@ window.render(canvas)
 
 ### Creating a scene
 ```python
-scene = ti.ui.Scene()
+scene =  canvas.make_scene()
 ```
 ### Configuring camera
 ```python
@@ -141,8 +141,8 @@ To obtain mouse position:
 import taichi as ti
 
 window = ti.ui.Window("Amazing Window",res)
-
-scene = ti.ui.Scene()
+canvas = window.make_canvas(x,y,width,height)
+scene = canvas.make_scene()
 
 camera = ti.ui.make_camera()
 camera.lookat(pos)
@@ -152,8 +152,6 @@ camera.projection_mode(mode)
 scene.set_camera(camera)
 
 light = scene.add_point_light(pos,color) 
-
-canvas = ti.ui.Canvas(x,y,width,height)
 
 while window.running:
   events = window.get_event()
