@@ -1,24 +1,47 @@
 # Taichi Documentation Site
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6825e411-c5f7-4148-ab43-023663f41b6a/deploy-status)](https://app.netlify.com/sites/docs-taichi-graphics/deploys)
+[![Crowdin](https://badges.crowdin.net/taichi-programming-language/localized.svg)](https://crowdin.com/project/taichi-programming-language)
 
 A static documentation website built with [docusaurus](https://docusaurus.io/) for [Taichi](https://taichi.graphics) documentation.
 
-## For documentation contributors
+---
 
-To update existing documentation or create new documentation, **please do not work on this repo**, this repo uses the
-[main repo](https://github.com/taichi-dev/taichi) as the source of truth and regularly pulls the source documentation
-from the main repo here.
+💡 **Please make sure you understand the following before moving forward:**
 
-However, this repo hosts the un-versioned non-doc pages, such as the `community` page, you can edit those pages directly
-in this repo.
+- If you want to **update any Taichi documentation**, go to [the main repository](https://github.com/taichi-dev/taichi/tree/master/docs) instead and **please do not work on this repo**! This repo only hosts the mirrored version of the docs in order to build and deploy the documentation website.
+- If you want to **contribute to the translations** of any Taichi documentation, go to **[Our Translation Page](https://translate.taichi.graphics)** instead. Our [help-us-translate](https://docs.taichi.graphics/help-us-translate) page has more details about the i18n workflow. _Note: we don't support deploy-previews for translations for performance reasons, and usually you don't need to preview the full website for translation strings._
+- If you want to **update any non-doc pages that are not versioned** (e.g., the `community` and `help-us-translate` pages), you are at the right place. We welcome pull requests directly to this repo!
+- If you want to **make a functional change to the website**, such as updating the styles or adding a new React
+component, you are at the right place. We welcome related pull requests directly to this repo!
 
-## For translation contributors
+<details>
+  <summary>Tips for Documentation Website Maintainers</summary>
 
-**(Still under construction, coming soon...)**
+  We follow the corresponding
+  [docusaurus guide](https://docusaurus.io/docs/i18n/crowdin#crowdin-tutorial) for the translation setup. Please refer to the guide for technical details.
 
-We plan to use Crowdin as our primary translation collaboration platform. Please
-visit our [Crowdin project page](https://crowdin.com/project/taichi-programming-language) for translation progress and contribution opportunities!
+  If you want to spin up the development server locally for a specific locale,
+  add `--locale TARGET_LOCALE` after the command. For example, in order to start
+  the server for `zh-Hans`:
+
+  ```bash
+  yarn --cwd=website start --locale zh-Hans
+  ```
+  To preview the translated website, you can use
+
+  ```bash
+  yarn --cwd=website run crowdin download
+  ```
+
+  to download **approved** translations to your local disk, and run the `start` command listed above to preview the website in your desired locale locally. Note you may need to set the corresponding environment variable
+  `CROWDIN_TOKEN` locally. It can be generated from the Crowdin settings page, if you have the right permission.
+
+  You need to periodically check/refactor the file structure on Crowdin for any
+  source file refactor. Please see more details [here](https://docusaurus.io/docs/i18n/crowdin#maintaining-your-site).
+</details>
+
+---
 
 ## Prerequisites
 
@@ -57,6 +80,8 @@ yarn --cwd=website install
 
 ### Trouble shooting
 
+#### Ubuntu issues
+
 If you are using `ubuntu`, you might get errors as below:
 ```
 Usage: yarn [options]
@@ -67,6 +92,12 @@ which indicates your  `yarn` is too old. You could install new version yarn with
 sudo apt install nodejs npm
 sudo npm install -g yarn
 ```
+
+#### Development server issues
+
+If you run into `TypeError: Cannot read property 'latest' of undefined` error,
+try to remove both of `website/node_modules` and `website/yarn.lock` and re-run the
+`install` command. This issue has been reported [here](https://github.com/facebook/docusaurus/issues/5106).
 
 ## Local Development
 

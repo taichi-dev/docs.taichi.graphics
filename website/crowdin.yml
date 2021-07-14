@@ -1,0 +1,40 @@
+# created under instructions on https://docusaurus.io/docs/i18n/crowdin
+project_id: '429534'
+api_token_env: 'CROWDIN_TOKEN'
+preserve_hierarchy: true
+files:
+  # default EN JSON/metadata translation files
+  - source: /i18n/en/**/*
+    translation: '/i18n/%locale%/**/%original_file_name%'
+    languages_mapping:
+      locale:
+        zh-CN: zh-Hans
+
+  # the `latest` documentation
+  - source: /docs/**/*
+    translation: /i18n/%locale%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    languages_mapping:
+      locale:
+        zh-CN: zh-Hans
+
+  # TODO: uncomment this block for versioned docs
+  # the versioned documentation
+  # - source: /versioned_docs/**/*
+  #   translation: /i18n/%locale%/docusaurus-plugin-content-docs/**/%original_file_name%
+  #   languages_mapping:
+  #     locale:
+  #       zh-CN: zh-Hans
+
+  # the community pages
+  - source: /community/**/*
+    translation: /i18n/%locale%/docusaurus-plugin-content-docs-community/current/**/%original_file_name%
+    languages_mapping:
+      locale:
+        zh-CN: zh-Hans
+
+  # other pages
+  - source: /src/pages/**/*
+    translation: /i18n/%locale%/docusaurus-plugin-content-pages/**/%original_file_name%
+    languages_mapping:
+      locale:
+        zh-CN: zh-Hans

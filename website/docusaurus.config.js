@@ -1,3 +1,15 @@
+// For i18n
+const DefaultLocale = 'en';
+const mapLocaleCodeToCrowdin = (locale) => {
+  switch (locale) {
+    case 'zh-Hans':
+      return 'zh-CN';
+      break;
+    default:
+      return locale;
+  }
+}
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Taichi Docs',
@@ -10,20 +22,20 @@ module.exports = {
   organizationName: 'taichi-dev',
   projectName: 'docs.taichi.graphics',
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'zh-Hans'],
+    defaultLocale: DefaultLocale,
+    locales: [DefaultLocale, 'zh-Hans'],
   },
   themeConfig: {
     hideableSidebar: true,
     // Optional banner
-    announcementBar: {
-      id: 'under-construction-banner',
-      content:
-        'Sorry for any inconvenience, this new docsite is still under construction and translation. Please help us by contributing docs, corrections and translations! Thank you 😃',
-      backgroundColor: '#0891b2',
-      textColor: '#E5E7EB',
-      isCloseable: false,
-    },
+    // announcementBar: {
+    //   id: 'under-construction-banner',
+    //   content:
+    //     'Please help us by contributing documentation, corrections and translations! Thank you 😃',
+    //   backgroundColor: '#0891b2',
+    //   textColor: '#E5E7EB',
+    //   isCloseable: false,
+    // },
     prism: {
       defaultLanguage: 'python',
     },
@@ -168,7 +180,7 @@ module.exports = {
       contextualSearch: false,
       // TODO: turn this off once we version the docs && have i18n ready
       searchParameters: {
-        facetFilters: ["language:en"]
+        facetFilters: [`language:${DefaultLocale}`]
       },
     },
     colorMode: {
@@ -185,14 +197,14 @@ module.exports = {
         id: 'community',
         path: 'community',
         routeBasePath: 'community',
-        editUrl:
-          'https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/',
-        // editUrl: ({locale, versionDocsDirPath, docPath}) => {
-        //   if (locale !== 'en') {
-        //     return `https://crowdin.com/project/taichi-programming-language/${locale}`;
-        //   }
-        //   return `https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/${versionDocsDirPath}/${docPath}`;
-        // },
+        editUrl: ({locale, versionDocsDirPath, docPath}) => {
+          if (locale !== DefaultLocale) {
+            return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(locale)}`;
+          }
+          // here we enforce contributors to not be able to edit versioned docs
+          // also redirect them to the main repository
+          return `https://github.com/taichi-dev/taichi/edit/master/docs/${docPath}`;
+        },
         editCurrentVersion: true,
         sidebarPath: require.resolve('./sidebarsCommunity.js'),
         showLastUpdateAuthor: true,
@@ -208,15 +220,14 @@ module.exports = {
           // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
           // routeBasePath: '/',
           path: 'docs',
-          // TODO: use the main repo URL for `en` locale as the source of truth docs will live there!
-          editUrl:
-            'https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/',
-          // editUrl: ({locale, versionDocsDirPath, docPath}) => {
-          //   if (locale !== 'en') {
-          //     return `https://crowdin.com/project/taichi-programming-language/${locale}`;
-          //   }
-          //   return `https://github.com/taichi-dev/docs.taichi.graphics/edit/master/website/${versionDocsDirPath}/${docPath}`;
-          // },
+          editUrl: ({locale, versionDocsDirPath, docPath}) => {
+            if (locale !== DefaultLocale) {
+              return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(locale)}`;
+            }
+            // here we enforce contributors to not be able to edit versioned docs
+            // also redirect them to the main repository
+            return `https://github.com/taichi-dev/taichi/edit/master/docs/${docPath}`;
+          },
           editCurrentVersion: true,
           sidebarPath: require.resolve('./sidebars.js'),
           showLastUpdateAuthor: true,
