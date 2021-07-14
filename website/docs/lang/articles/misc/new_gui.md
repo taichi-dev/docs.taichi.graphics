@@ -31,9 +31,9 @@ There're three types of objects that can be displayed on a `ti.ui.Window`:
 ### Creating a canvas
 
 ```python
-canvas = window.make_canvas(x,y,width,height)
+canvas = window.get_canvas()
 ```
-where `x`,`y`,`width`,`height` are floats between 0 and 1 that indicate the relative position and size of the canvas relative to the window.
+this retrieves a `Canvas` object that covers the entire window.
 
 ### Drawing on the canvas
 
@@ -48,17 +48,13 @@ canvas.set_image(image)
 
 The positions/centers of geometries will be represented as floats between 0 and 1, which indicate relative positions on the canvas.
 
-### Drawing the canvas on the window
-```python
-window.render(canvas)
-```
 
 
 ## 3D Scene
 
 ### Creating a scene
 ```python
-scene =  canvas.make_scene()
+scene =  ti.ui.Scene()
 ```
 ### Configuring camera
 ```python
@@ -75,11 +71,7 @@ where `mode` is either `ti.ui.Scene.PROJECTION_PERSPECTIVE` or `ti.ui.Scene.PROJ
 ### Configuring light sources
 #### adding a light source
 ```python
-light = scene.add_point_light(pos,color) 
-```
-#### removing a light source
-```python
-scene.remove_light(light)
+scene.point_light(pos,color) 
 ```
 
 
@@ -87,7 +79,6 @@ scene.remove_light(light)
 ```python
 scene.mesh(vertices,indices,color)
 scene.particles(positions,radius,color)
-scene.clear()
 ```
 
 
@@ -96,9 +87,6 @@ a scene is rendered by first rendering it on a canvas.
 ```python
 canvas.render(scene)
 ```
-
-
-
 
 ## GUI components
 
@@ -114,7 +102,6 @@ window.GUI.end()
 
 ## Clearing and showing a window
 ```python
-window.clear(color)
 ...
 window.show()
 ```
@@ -141,33 +128,28 @@ To obtain mouse position:
 import taichi as ti
 
 window = ti.ui.Window("Amazing Window",res)
-canvas = window.make_canvas(x,y,width,height)
-scene = canvas.make_scene()
+canvas = window.get_canvas()
+scene = ti.ui.Scene()
 
-camera = ti.ui.make_camera()
-camera.lookat(pos)
-camera.up(dir)
-camera.center(pos)
-camera.projection_mode(mode)
-scene.set_camera(camera)
-
-light = scene.add_point_light(pos,color) 
 
 while window.running:
   events = window.get_event()
   if ev.action == ti.ui.ACTION_PRESSED and ev.key == ti.ui.KEY_SHIFT:
       ...
 
-  window.clear()
-
   canvas.clear(...)
   canvas.triangles(...)
 
   scene.clear()
+  camera = ti.ui.make_camera()
+  camera.lookat(pos)
+  camera.up(dir)
+  camera.center(pos)
+  camera.projection_mode(mode)
+  scene.set_camera(camera)
+  scene.point_light(pos,color) 
   scene.mesh(...)
   canvas.render(scene)
-
-  window.render(canvas)
   
   window.GUI.begin(name,x,y,width,height)
   window.GUI.text(...)
