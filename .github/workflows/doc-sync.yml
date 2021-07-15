@@ -1,0 +1,68 @@
+name: Sync and update docs from the main repo
+
+on:
+  schedule:
+    # update it every day at 00:00
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync-docs:
+    runs-on: "ubuntu-20.04"
+    steps:
+      - name: Checkout Taichi main repo
+        uses: actions/checkout@v2
+        with:
+          repository: taichi-dev/taichi
+          path: source
+
+      - name: Checkout Taichi docs repo
+        uses: actions/checkout@v2
+        with:
+          repository: taichi-dev/docs.taichi.graphics
+          path: target
+
+      - name: Sync and stage changes
+        run: |
+          # faithfully copy source docs to target
+          # remove extra files to make them identical
+          # also print the logs in human readable format
+          rsync -avh --delete source/docs/lang/ target/website/docs/lang
+
+      - name: Create a Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GARDENER_PAT }}
+          path: target
+          commit-message: Sync and update documentation content.
+          committer: Taichi Gardener <taichigardener@gmail.com>
+          author: Taichi Gardener <taichi-gardener@users.noreply.github.com>
+          signoff: false
+          base: master
+          branch: sync-documentation
+          delete-branch: true
+          draft: false
+          title: '[Cron] Sync and update documentation content'
+          body: |
+            - Synced with *today's* date.
+            - Auto-generated.
+            - Will be auto-merged.
+          labels: |
+            automation
+
+      - name: Enable auto-merge on the Pull Request
+        if: steps.create-pr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v1
+        with:
+          token: ${{ secrets.GARDENER_PAT }}
+          pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
+          merge-method: squash
+
+      - name: Auto approve the Pull Request
+        if: steps.create-pr.outputs.pull-request-operation == 'created'
+        uses: juliangruber/approve-pull-request-action@v1
+        with:
+          # we use Action Bot to approve since you can't approve your own PR
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ steps.create-pr.outputs.pull-request-number }}
