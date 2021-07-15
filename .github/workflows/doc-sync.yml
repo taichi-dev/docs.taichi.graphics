@@ -33,7 +33,7 @@ jobs:
         id: create-pr
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GardenerPAT }}
+          token: ${{ secrets.GARDENER_PAT }}
           path: target
           commit-message: Sync and update documentation content.
           committer: Taichi Gardener <taichigardener@gmail.com>
@@ -55,7 +55,7 @@ jobs:
         if: steps.create-pr.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v1
         with:
-          token: ${{ secrets.GardenerPAT }}
+          token: ${{ secrets.GARDENER_PAT }}
           pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
           merge-method: squash
 
