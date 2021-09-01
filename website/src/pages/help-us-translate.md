@@ -3,9 +3,9 @@
 ## Welcome
 
 As of today, Taichi is used by people from all over the world, and we always hope that
-Taichi can bring graphics programming to everyone, so one of the most important tasks is
+Taichi can bring graphics programming to **everyone**, so one of the most important tasks is
 to make sure people can read Taichi documentation in their preferred natural languages,
-which is `i18n` (_internationalization_).
+i.e. `i18n` (_internationalization_).
 
 You may have noticed that this Taichi documentation website is built and maintained by
 core developers and the Taichi community together, and when it comes to i18n, we really
@@ -43,5 +43,5 @@ translation managers don't respond to you on Crowdin.
 :::tip Acknowledgement
 We are working on a special acknowledgement section to shout out for people who have helped
 and contributed to the `i18n` effort of Taichi language, thank you all for driving and owning
-the `i18n` effort as well as helping on making graphics for **everyone**!
+the `i18n` effort as well as helping on bringing graphics programming to **everyone**!
 :::
