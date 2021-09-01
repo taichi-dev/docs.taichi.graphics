@@ -37,8 +37,8 @@ to the project managers on the right side of the page.
 
 Right now, translations of Taichi will show up automatically when we sync the content from
 main repo to the docs repo, please feel free to contact us (create issues in the main repo)
-at anytime if you don't see your contribution show up after more than 24 hours, or translation
-managers don't respond to you on Crowdin.
+at anytime if you don't see your contribution show up after more than 24 hours, or if the 
+translation managers don't respond to you on Crowdin.
 
 :::tip Acknowledgement
 We are working on a special acknowledgement section to shout out for people who have helped
