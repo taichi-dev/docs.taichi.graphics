@@ -16,11 +16,6 @@
   --ifm-color-primary-lighter: #09a7cd;
   --ifm-color-primary-lightest: #0abce7;
   --ifm-code-font-size: 95%;
-
-  --ifm-color-info: #0891b2;
-  --ifm-color-success: #059619;
-  --ifm-color-warning: #F59E0B;
-  --ifm-color-danger: #B91C1C;
 }
 
 .docusaurus-highlight-code-line {
@@ -32,7 +27,8 @@
 
 /* For smooth scrolling */
 html {
-	scroll-behavior: smooth;
+  /* this is conflicting with Docusaurus's built-in BackToTop button */
+	/* scroll-behavior: smooth; */
   overscroll-behavior: none;
 }
 
