@@ -3,6 +3,11 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6825e411-c5f7-4148-ab43-023663f41b6a/deploy-status)](https://app.netlify.com/sites/docs-taichi-graphics/deploys)
 [![Crowdin](https://badges.crowdin.net/taichi-programming-language/localized.svg)](https://crowdin.com/project/taichi-programming-language)
 
+[English]:./README.md
+[中文]:./README-zh_CN.md
+
+English | [中文]
+
 A static documentation website built with [docusaurus](https://docusaurus.io/) for [Taichi](https://taichi.graphics) documentation.
 
 ---
