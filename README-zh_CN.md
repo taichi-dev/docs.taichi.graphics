@@ -110,8 +110,6 @@ sudo npm install -g yarn
 yarn --cwd=website start
 ```
 
-(目前我们没有做客户端的重定向, dev server 启动后, 默认你会根路径看到 404. 请手动添加 `/docs/` 跳转)
-
 ### 编译
 
 要编译静态站点, 请在项目根目录运行:

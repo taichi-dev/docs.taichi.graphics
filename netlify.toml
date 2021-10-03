@@ -10,14 +10,8 @@
 [context.deploy-preview]
   command = "yarn build --locale en"
 
-# Temp solution due to https://github.com/facebook/docusaurus/issues/4967
-[[redirects]]
-  from = "/"
-  to = "/docs/"
-  status = 301
-  force = true
 [[redirects]]
   from = "/get-started/"
-  to = "/docs/"
+  to = "/"
   status = 301
   force = true
