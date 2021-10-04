@@ -2,6 +2,8 @@
 
 Join our community to sharpen your programming skills and interact with other Taichi developers across the world!
 
+[![](https://raw.githubusercontent.com/taichi-dev/public_files/master/taichi/contributors_taichi-dev_taichi_12.png)](https://github.com/taichi-dev/taichi/graphs/contributors)
+
 ## 1. Code of conduct
 
 ### Pragmatic
