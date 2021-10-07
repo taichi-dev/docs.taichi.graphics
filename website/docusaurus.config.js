@@ -73,7 +73,7 @@ module.exports = {
           position: 'right',
           items: [
             {
-              to: '/community/index',
+              to: '/community',
               label: 'Community',
               activeBaseRegex: '/community/',
             },
@@ -128,11 +128,11 @@ module.exports = {
           items: [
             {
               label: 'Community',
-              to: '/community/index',
+              to: '/community',
             },
             {
               label: 'Documentation',
-              to: '/docs/',
+              to: '/',
             },
             {
               label: 'Forum',
@@ -190,35 +190,13 @@ module.exports = {
       }
     },
   },
-  plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'community',
-        path: 'community',
-        routeBasePath: 'community',
-        editUrl: ({locale, versionDocsDirPath, docPath}) => {
-          if (locale !== DefaultLocale) {
-            return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(locale)}`;
-          }
-          // here we enforce contributors to not be able to edit versioned docs
-          // also redirect them to the main repository
-          return `https://github.com/taichi-dev/taichi/edit/master/docs/${docPath}`;
-        },
-        editCurrentVersion: true,
-        sidebarPath: require.resolve('./sidebarsCommunity.js'),
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-      },
-    ],
-  ],
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
           // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
-          // routeBasePath: '/',
+          routeBasePath: '/',
           path: 'docs',
           editUrl: ({locale, versionDocsDirPath, docPath}) => {
             if (locale !== DefaultLocale) {

@@ -112,8 +112,6 @@ In order to spin up the dev server locally for development:
 yarn --cwd=website start
 ```
 
-(Currently we don't have the client-side redirect setup which means you will get 404 on root locally. Simply go to `/docs/` if you run into this)
-
 ### Build
 
 To build the static site, from the root, run:
