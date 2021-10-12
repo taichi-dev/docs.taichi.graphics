@@ -18,6 +18,6 @@
 
 [[redirects]]
   from = "/docs/*"
-  to = "/"
+  to = "/:splat"
   status = 302
   force = true
