@@ -15,3 +15,9 @@
   to = "/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/:splat"
+  status = 302
+  force = true
