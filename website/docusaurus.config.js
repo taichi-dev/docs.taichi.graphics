@@ -69,6 +69,12 @@ module.exports = {
           className: 'animated-anchor-link',
         },
         {
+          to: 'blog',
+          label: 'Blogs',
+          position: 'right',
+          className: 'animated-anchor-link',
+        },
+        {
           label: 'Explore',
           position: 'right',
           items: [
@@ -215,6 +221,9 @@ module.exports = {
               label: 'develop',
             },
           },
+        },
+        blog: {
+          postsPerPage: 10,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
