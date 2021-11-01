@@ -75,6 +75,16 @@ module.exports = {
           className: 'animated-anchor-link',
         },
         {
+          label: 'Training',
+          position: 'right',
+          items:[
+            {
+              to: '/tgc01',
+              label: 'Taichi Graphics Course 01'
+            }
+          ],
+        },
+        {
           label: 'Explore',
           position: 'right',
           items: [
