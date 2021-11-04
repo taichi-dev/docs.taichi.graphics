@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 
   [**哔哩哔哩直播链接**](https://live.bilibili.com/23526804)
 
-  **微信直播链接**：请关注 **太极图形科技** 微信公众号，二维码如下：
+  **微信直播链接**：请关注 **太极图形** 微信公众号，二维码如下：
 
   <center>
 
@@ -57,7 +57,7 @@ import TabItem from '@theme/TabItem';
 
 
 
-本季课程将通过 **太极图形科技** 微信公众号、[**太极图形**](https://space.bilibili.com/1779922645) bilibili账号，[**太极图形**](https://www.zhihu.com/org/tai-ji-tu-xing) 知乎机构号进行直播。
+本季课程将通过 **太极图形** 微信公众号、[**太极图形**](https://space.bilibili.com/1779922645) bilibili账号，[**太极图形**](https://www.zhihu.com/org/tai-ji-tu-xing) 知乎机构号进行直播。
 课程直播时间为每周二晚7点（中秋顺延），答疑时间则为每周四晚7点，详细时间表如图所示。
 
 | 直播时间 	| 回放视频 (B 站) 	| 课件 | 直播答疑时间 	| 作业分享|
