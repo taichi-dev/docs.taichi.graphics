@@ -3,7 +3,7 @@ name: Sync and update docs from the main repo
 on:
   schedule:
     # update it every day at 00:00
-    - cron: '0 0 * * *'
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 jobs:
