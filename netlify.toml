@@ -5,7 +5,7 @@
   environment = { NODE_VERSION = "14" }
 
 [context.production]
-  command = "yarn run crowdin:sync && yarn build"
+  command = "yarn run crowdin:upload && yarn build"
 
 [context.deploy-preview]
   command = "yarn build --locale en"
