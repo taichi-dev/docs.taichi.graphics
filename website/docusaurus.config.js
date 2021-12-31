@@ -1,3 +1,5 @@
+const path = require("path");
+
 // For i18n
 const DefaultLocale = 'en';
 const mapLocaleCodeToCrowdin = (locale) => {
@@ -21,6 +23,9 @@ module.exports = {
   favicon: 'img/black_or_white.svg',
   organizationName: 'taichi-dev',
   projectName: 'docs.taichi.graphics',
+  plugins: [
+    path.resolve(__dirname, 'plugins/docusaurus-plugin-hotjar')
+  ],
   i18n: {
     defaultLocale: DefaultLocale,
     locales: [DefaultLocale, 'zh-Hans'],
@@ -42,6 +47,9 @@ module.exports = {
     gtag: {
       trackingID: 'G-9K17QVGTR6',
       anonymizeIP: true,
+    },
+    hotjar: {
+      siteId: '2765142',
     },
     navbar: {
       title: null,
