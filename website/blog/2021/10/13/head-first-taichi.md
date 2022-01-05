@@ -85,7 +85,7 @@ v = ti.Vector.field(3, float, (n, n))
 dt = 4e-2 / n
 substeps = int(1 / 60 // dt)
 ```
-These three lines declare `x` and `v` to be 2D arrays of size `n` by `n`, where each element of the array is a 3-dimensional vector of floating-point numbers. In Taichi, arrays are referred to as "field"s, and these two fields respectively record the position and velocity of the point masses. Notice that, if you initialized Taichi to run on a CUDA GPU, these fields/arrays will be automatically stored in GPU memory.
+The first three lines declare `x` and `v` to be 2D arrays of size `n` by `n`, where each element of the array is a 3-dimensional vector of floating-point numbers. In Taichi, arrays are referred to as "field"s, and these two fields respectively record the position and velocity of the point masses. Notice that, if you initialized Taichi to run on a CUDA GPU, these fields/arrays will be automatically stored in GPU memory.
 
 Apart from the cloth, we also need to define the ball. Here we simply set its radius to `0.3` and place it at the origin:
 ```python
