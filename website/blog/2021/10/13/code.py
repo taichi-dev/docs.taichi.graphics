@@ -96,30 +96,27 @@ def update_vertices():
         vertices[i * n + j] = x[i, j]
 
 
-window = ti.ui.Window("Taichi Cloth Simulation on GGUI", (1024, 1024),
-                      vsync=True)
+window = ti.ui.Window("Taichi Cloth Simulation on GGUI", (1024, 1024), vsync=True)
 canvas = window.get_canvas()
 scene = ti.ui.Scene()
 camera = ti.ui.make_camera()
-
 current_t = 0.0
 initialize_mass_points()
 
 while window.running:
-    if current_t > 1.5:
-        # Reset
+    if current_t > 1.5:  # Reset
         initialize_mass_points()
         current_t = 0
 
     for i in range(substeps):
         substep()
         current_t += dt
+
     update_vertices()
 
     camera.position(0.0, 0.0, 3)
     camera.lookat(0.0, 0.0, 0)
     scene.set_camera(camera)
-
     scene.point_light(pos=(0.5, 1, 2), color=(1, 1, 1))
     scene.mesh(vertices,
                indices=indices,
@@ -130,5 +127,3 @@ while window.running:
     scene.particles(ball_center, radius=ball_radius * 0.95, color=(0.5, 0, 0))
     canvas.scene(scene)
     window.show()
-
-#TODO: include self-collision handling
