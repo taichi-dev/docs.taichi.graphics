@@ -6,7 +6,6 @@ const mapLocaleCodeToCrowdin = (locale) => {
   switch (locale) {
     case 'zh-Hans':
       return 'zh-CN';
-      break;
     default:
       return locale;
   }
@@ -24,7 +23,16 @@ module.exports = {
   organizationName: 'taichi-dev',
   projectName: 'docs.taichi.graphics',
   plugins: [
-    path.resolve(__dirname, 'plugins/docusaurus-plugin-hotjar')
+    'docusaurus-plugin-sass',
+    path.resolve(__dirname, 'plugins/docusaurus-plugin-hotjar'),
+    [
+      path.resolve(__dirname, 'plugins/autoapi-plugin'),
+      {
+        path: 'src/pages/api',
+        include: '**/*.html',
+        route: 'api/',
+      },
+    ],
   ],
   i18n: {
     defaultLocale: DefaultLocale,
@@ -70,8 +78,7 @@ module.exports = {
           className: 'animated-anchor-link',
         },
         {
-          type: 'doc',
-          docId: 'lang/api/index',
+          to: '/api/index.html',
           position: 'right',
           label: 'API',
           className: 'animated-anchor-link',
