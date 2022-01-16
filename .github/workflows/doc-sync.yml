@@ -16,6 +16,12 @@ jobs:
           repository: taichi-dev/taichi
           path: source
 
+      - name: Checkout Taichi Autoapi Gen
+        uses: actions/checkout@v2
+        with:
+          repository: taichi-dev/docstring-gen
+          path: docsgen
+
       - name: Checkout Taichi docs repo
         uses: actions/checkout@v2
         with:
@@ -28,6 +34,19 @@ jobs:
           # remove extra files to make them identical
           # also print the logs in human readable format
           rsync -avh --delete source/docs/lang/ target/website/docs/lang
+
+      - name: Set API Gen Env
+        run: |
+          echo "DOCSTRING_GEN_PATH=${GITHUB_WORKSPACE}/docstring-gen" >> $GITHUB_ENV
+          echo "TAICHI_PATH=${GITHUB_WORKSPACE}/taichi/python/taichi" >> $GITHUB_ENV
+          echo "TAICHI_WEBSITE=${GITHUB_WORKSPACE}/docs.taichi.graphics" >> $GITHUB_ENV
+
+      - name: Generate New API Docs AND Sync To Docs Website
+        run: |
+          export DOCSTRING_GEN_PATH=${{ env.DOCSTRING_GEN_PATH }}
+          export TAICHI_PATH=${{ env.TAICHI_PATH }}
+          export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
+          $DOCSTRING_GEN_PATH/multi_version_build.sh
 
       - name: Create a Pull Request
         id: create-pr
