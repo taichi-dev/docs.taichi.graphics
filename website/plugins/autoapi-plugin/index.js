@@ -41,9 +41,9 @@ module.exports = function (context, options) {
         if (linkurl.endsWith('/index.html')) {
           linkurl = linkurl.substring(0, linkurl.length - 11)
         }
-
-        if (linkurl.startsWith(`${routeprefix}master`)) {
-          linkurl = routeprefix + linkurl.substring(12)
+        const start = `${routeprefix}master`
+        if (linkurl.startsWith(start)) {
+          linkurl = routeprefix + linkurl.substring(start.length + 1)
         }
         if (isHTML(relativeSource)) {
           return {
