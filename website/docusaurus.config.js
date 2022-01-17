@@ -29,7 +29,7 @@ module.exports = {
     [
       path.resolve(__dirname, 'plugins/autoapi-plugin'),
       {
-        path: 'src/pages/api',
+        path: path.resolve(__dirname, 'src/pages/api'),
         include: '**/*.html',
         route: 'api/',
       },
