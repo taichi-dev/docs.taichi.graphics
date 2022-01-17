@@ -39,7 +39,7 @@ jobs:
         run: |
           echo "DOCSTRING_GEN_PATH=${GITHUB_WORKSPACE}/docstring-gen" >> $GITHUB_ENV
           echo "TAICHI_PATH=${GITHUB_WORKSPACE}/taichi/python/taichi" >> $GITHUB_ENV
-          echo "TAICHI_WEBSITE=${GITHUB_WORKSPACE}/docs.taichi.graphics" >> $GITHUB_ENV
+          echo "TAICHI_WEBSITE=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
 
       - name: Generate New API Docs AND Sync To Docs Website
         run: |
