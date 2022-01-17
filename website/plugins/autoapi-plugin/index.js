@@ -45,6 +45,7 @@ module.exports = function (context, options) {
         if (linkurl.startsWith(start)) {
           linkurl = routeprefix + linkurl.substring(start.length + 1)
         }
+        console.log(linkurl, ' -> ', source)
         if (isHTML(relativeSource)) {
           return {
             permalink: linkurl,
