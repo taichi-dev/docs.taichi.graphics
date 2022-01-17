@@ -1,0 +1,1693 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>taichi.lang.struct &#8212; taichi-api-docstring  documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../">
+  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="ml-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../">
+  API Reference
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://docs.taichi.graphics">Taichi Documentation Site<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/taichi-dev/taichi" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl autoapi-container">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items">
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Taichi</span>
+      <span class="dropdown show">
+        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          master
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          
+             <strong> 
+            <a class="dropdown-item" href="/api/">master</a>
+             </strong> 
+          
+            
+            <a class="dropdown-item" href="/api/v0.8.9/">v0.8.9</a>
+            
+          
+        </div>
+      </span>
+    </span>
+  </div>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_lib/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._lib
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../_lib/core/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi._lib.core
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../_lib/utils/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi._lib.utils
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../aot/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.aot
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aot/module/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.aot.module
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aot/record/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.aot.record
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.lang
+    </span>
+   </code>
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../ast/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.ast
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ast/ast_transformer/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.ast_transformer
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ast/ast_transformer_utils/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.ast_transformer_utils
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ast/checkers/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.checkers
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ast/symbol_resolver/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.symbol_resolver
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ast/transform/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.transform
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_ndarray/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang._ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_ndrange/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang._ndrange
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../any_array/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.any_array
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../common_ops/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.common_ops
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../enums/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.enums
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exception/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.exception
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../expr/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.expr
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../field/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.field
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kernel_arguments/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.kernel_arguments
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kernel_impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.kernel_impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../matrix/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.matrix
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mesh/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.mesh
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ops/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.ops
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quant_impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.quant_impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../runtime_ops/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.runtime_ops
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../shell/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.shell
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../snode/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.snode
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sort/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.sort
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../source_builder/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.source_builder
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.struct
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tape/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.tape
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../type_factory_impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.type_factory_impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../util/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.util
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../linalg/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.linalg
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../linalg/sparse_matrix/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.linalg.sparse_matrix
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../linalg/sparse_solver/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.linalg.sparse_solver
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../profiler/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.profiler
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../profiler/kernelmetrics/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.kernelmetrics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../profiler/kernelprofiler/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.kernelprofiler
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../snode/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.snode
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../snode/fields_builder/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.snode.fields_builder
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../snode/snode_tree/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.snode.snode_tree
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tools/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.tools
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/cc_compose/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.cc_compose
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/diagnose/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.diagnose
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/image/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.image
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/np2ply/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.np2ply
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/patterns/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.patterns
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/util/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.util
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/video/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.video
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../types/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.types
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/annotations/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.types.annotations
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/compound_types/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.types.compound_types
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/primitive_types/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.types.primitive_types
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ui/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.ui
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/camera/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.camera
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/canvas/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.canvas
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/constants/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.constants
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/gui/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.gui
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/imgui/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.imgui
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/scene/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.scene
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/staging_buffer/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.staging_buffer
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/ui/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.ui
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/utils/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.utils
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/window/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.window
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../__main__/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.__main__
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../_funcs/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._funcs
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../_kernels/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._kernels
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../_logging/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._logging
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../_misc/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._misc
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../_testing/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._testing
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ad/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.ad
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../main/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.main
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-contents">
+   Module Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classes">
+     Classes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.struct.Struct">
+       Struct
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.is_taichi_class">
+         is_taichi_class
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.keys">
+         keys
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.members">
+         members
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.items">
+         items
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.register_members">
+         register_members
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.__getitem__">
+         __getitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.__setitem__">
+         __setitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.set_entries">
+         set_entries
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.make_getter">
+         make_getter
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.make_setter">
+         make_setter
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.element_wise_unary">
+         element_wise_unary
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.element_wise_binary">
+         element_wise_binary
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.broadcast_copy">
+         broadcast_copy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.element_wise_writeback_binary">
+         element_wise_writeback_binary
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.element_wise_ternary">
+         element_wise_ternary
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.fill">
+         fill
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.__len__">
+         __len__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.__iter__">
+         __iter__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.__str__">
+         __str__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.__repr__">
+         __repr__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.to_dict">
+         to_dict
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.field">
+         field
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.struct._IntermediateStruct">
+       _IntermediateStruct
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.struct.StructField">
+       StructField
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.name">
+         name
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.keys">
+         keys
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.members">
+         members
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.items">
+         items
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.make_getter">
+         make_getter
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.make_setter">
+         make_setter
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.register_fields">
+         register_fields
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.get_field_members">
+         get_field_members
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.snode">
+         snode
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.loop_range">
+         loop_range
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.copy_from">
+         copy_from
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.fill">
+         fill
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.initialize_host_accessors">
+         initialize_host_accessors
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.get_member_field">
+         get_member_field
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.from_numpy">
+         from_numpy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.from_torch">
+         from_torch
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.to_numpy">
+         to_numpy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.to_torch">
+         to_torch
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.__setitem__">
+         __setitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.__getitem__">
+         __getitem__
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.struct.StructType">
+       StructType
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructType.__call__">
+         __call__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructType.cast">
+         cast
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructType.filled_with_scalar">
+         filled_with_scalar
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.struct.StructType.field">
+         field
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-taichi.lang.struct">
+<span id="taichi-lang-struct"></span><h1><a class="reference internal" href="#module-taichi.lang.struct" title="taichi.lang.struct"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.struct</span></code></a><a class="headerlink" href="#module-taichi.lang.struct" title="Permalink to this headline">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.struct.Struct" title="taichi.lang.struct.Struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Struct</span></code></a></p></td>
+<td><p>The Struct type class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.struct._IntermediateStruct" title="taichi.lang.struct._IntermediateStruct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_IntermediateStruct</span></code></a></p></td>
+<td><p>Intermediate struct class for compiler internal use only.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.struct.StructField" title="taichi.lang.struct.StructField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StructField</span></code></a></p></td>
+<td><p>Taichi struct field with SNode implementation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.struct.StructType" title="taichi.lang.struct.StructType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StructType</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.struct.</span></span><span class="sig-name descname"><span class="pre">Struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../common_ops/#taichi.lang.common_ops.TaichiOperations" title="taichi.lang.common_ops.TaichiOperations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.common_ops.TaichiOperations</span></code></a></p>
+<p>The Struct type class.
+:param entries: keys and values for struct members.
+:type entries: Dict[str, Union[Dict, Expr, Matrix, Struct]]</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.is_taichi_class">
+<span class="sig-name descname"><span class="pre">is_taichi_class</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#taichi.lang.struct.Struct.is_taichi_class" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.keys">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.keys" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.members">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">members</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.members" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.items">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.items" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.register_members">
+<span class="sig-name descname"><span class="pre">register_members</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.register_members" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.__getitem__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.__setitem__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.set_entries">
+<span class="sig-name descname"><span class="pre">set_entries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.set_entries" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.make_getter">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_getter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.make_getter" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.make_setter">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_setter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.make_setter" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.element_wise_unary">
+<span class="sig-name descname"><span class="pre">element_wise_unary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.element_wise_unary" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.element_wise_binary">
+<span class="sig-name descname"><span class="pre">element_wise_binary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.element_wise_binary" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.broadcast_copy">
+<span class="sig-name descname"><span class="pre">broadcast_copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.broadcast_copy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.element_wise_writeback_binary">
+<span class="sig-name descname"><span class="pre">element_wise_writeback_binary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.element_wise_writeback_binary" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.element_wise_ternary">
+<span class="sig-name descname"><span class="pre">element_wise_ternary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.element_wise_ternary" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills the Struct with a specific value in Taichi scope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.__len__" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the number of entries in a custom struct</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.__iter__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.__str__" title="Permalink to this definition">#</a></dt>
+<dd><p>Python scope struct array print support.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.__repr__" title="Permalink to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.to_dict" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts the Struct to a dictionary.</p>
+<p>Args:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The result dictionary.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.field">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">members</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;Struct&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.field" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.struct._IntermediateStruct">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.struct.</span></span><span class="sig-name descname"><span class="pre">_IntermediateStruct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entries</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct._IntermediateStruct" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.lang.struct.Struct" title="taichi.lang.struct.Struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Struct</span></code></a></p>
+<p>Intermediate struct class for compiler internal use only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entries</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><a class="reference internal" href="../expr/#taichi.lang.expr.Expr" title="taichi.lang.expr.Expr"><em>Expr</em></a><em>, </em><a class="reference internal" href="../#taichi.lang.Matrix" title="taichi.lang.Matrix"><em>Matrix</em></a><em>, </em><a class="reference internal" href="#taichi.lang.struct.Struct" title="taichi.lang.struct.Struct"><em>Struct</em></a><em>]</em><em>]</em>) – keys and values for struct members.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.struct.</span></span><span class="sig-name descname"><span class="pre">StructField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../field/#taichi.lang.field.Field" title="taichi.lang.field.Field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.field.Field</span></code></a></p>
+<dl class="simple">
+<dt>Taichi struct field with SNode implementation.</dt><dd><p>Instead of directly contraining Expr entries, the StructField object
+directly hosts members as <cite>Field</cite> instances to support nested structs.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../field/#taichi.lang.field.Field" title="taichi.lang.field.Field"><em>Field</em></a><em>]</em>) – Struct field members.</p></li>
+<li><p><strong>name</strong> (<em>string</em><em>, </em><em>optional</em>) – The custom name of the field.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.name" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets field name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Field name.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.keys">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.keys" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.members">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">members</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.members" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.items">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.items" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.make_getter">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_getter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.make_getter" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.make_setter">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_setter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.make_setter" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.register_fields">
+<span class="sig-name descname"><span class="pre">register_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.register_fields" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.get_field_members">
+<span class="sig-name descname"><span class="pre">get_field_members</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.get_field_members" title="Permalink to this definition">#</a></dt>
+<dd><p>Get A flattened list of all struct elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of struct elements.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.snode">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.snode" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets representative SNode for info purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.loop_range">
+<span class="sig-name descname"><span class="pre">loop_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.loop_range" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets representative field member for loop range info.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Representative (first) field member.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>taichi_core.Expr</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.copy_from">
+<span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.copy_from" title="Permalink to this definition">#</a></dt>
+<dd><p>Copies all elements from another field.</p>
+<p>The shape of the other field needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../field/#taichi.lang.field.Field" title="taichi.lang.field.Field"><em>Field</em></a>) – The source field.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills <cite>self</cite> with a specific value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.initialize_host_accessors">
+<span class="sig-name descname"><span class="pre">initialize_host_accessors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.initialize_host_accessors" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.get_member_field">
+<span class="sig-name descname"><span class="pre">get_member_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.get_member_field" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates a ScalarField using a specific field member. Only used for quant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – Specified key of the field member.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The result ScalarField.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../field/#taichi.lang.field.ScalarField" title="taichi.lang.field.ScalarField">ScalarField</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.from_numpy">
+<span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.from_numpy" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads all elements from a numpy array.</p>
+<p>The shape of the numpy array needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>numpy.ndarray</em>) – The source numpy array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.from_torch">
+<span class="sig-name descname"><span class="pre">from_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.from_torch" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads all elements from a torch tensor.</p>
+<p>The shape of the torch tensor needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>torch.tensor</em>) – The source torch tensor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.to_numpy">
+<span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.to_numpy" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Converts the Struct field instance to a dictionary of NumPy arrays. The dictionary may be nested when converting</dt><dd><p>nested structs.</p>
+</dd>
+</dl>
+<p>Args:
+:returns: The result NumPy array.
+:rtype: Dict[str, Union[numpy.ndarray, Dict]]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.to_torch">
+<span class="sig-name descname"><span class="pre">to_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.to_torch" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Converts the Struct field instance to a dictionary of PyTorch tensors. The dictionary may be nested when converting</dt><dd><p>nested structs.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The desired device of returned tensor.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The result PyTorch tensor.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, Union[torch.Tensor, Dict]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.__setitem__" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets field element in Python scope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>int</em><em>, </em><em>None</em><em>]</em>) – Coordinates of the field element.</p></li>
+<li><p><strong>value</strong> (<em>element type</em>) – Value to set.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.__getitem__" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets field element in Python scope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>int</em><em>, </em><em>None</em><em>]</em>) – Coordinates of the field element.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value retrieved.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>element type</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.struct.</span></span><span class="sig-name descname"><span class="pre">StructType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructType" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../types/#taichi.types.CompoundType" title="taichi.types.CompoundType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.types.CompoundType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructType.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructType.__call__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructType.cast">
+<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">struct</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructType.cast" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructType.filled_with_scalar">
+<span class="sig-name descname"><span class="pre">filled_with_scalar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructType.filled_with_scalar" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructType.field">
+<span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructType.field" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Taichi Graphics.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

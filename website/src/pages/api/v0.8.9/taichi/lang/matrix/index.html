@@ -1,0 +1,2673 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>taichi.lang.matrix &#8212; taichi-api-docstring  documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../">
+  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="ml-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../">
+  API Reference
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://docs.taichi.graphics">Taichi Documentation Site<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/taichi-dev/taichi" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl autoapi-container">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items">
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Taichi</span>
+      <span class="dropdown show">
+        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          v0.8.9
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          
+            
+            <a class="dropdown-item" href="/api/">master</a>
+            
+          
+             <strong> 
+            <a class="dropdown-item" href="/api/v0.8.9/">v0.8.9</a>
+             </strong> 
+          
+        </div>
+      </span>
+    </span>
+  </div>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_lib/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._lib
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../_lib/core/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi._lib.core
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../_lib/utils/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi._lib.utils
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../aot/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.aot
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aot/module/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.aot.module
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aot/record/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.aot.record
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.lang
+    </span>
+   </code>
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../ast/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.ast
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ast/ast_transformer/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.ast_transformer
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ast/ast_transformer_utils/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.ast_transformer_utils
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ast/checkers/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.checkers
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ast/symbol_resolver/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.symbol_resolver
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ast/transform/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.transform
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_ndarray/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang._ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../any_array/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.any_array
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../common_ops/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.common_ops
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../enums/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.enums
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exception/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.exception
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../expr/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.expr
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../field/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.field
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kernel_arguments/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.kernel_arguments
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kernel_impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.kernel_impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.matrix
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mesh/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.mesh
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../meta/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.meta
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ndrange/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.ndrange
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ops/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.ops
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quant_impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.quant_impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../runtime_ops/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.runtime_ops
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../shell/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.shell
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../snode/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.snode
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sort/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.sort
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../source_builder/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.source_builder
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../struct/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.struct
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tape/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.tape
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../type_factory_impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.type_factory_impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../util/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.util
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../linalg/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.linalg
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../linalg/sparse_matrix/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.linalg.sparse_matrix
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../linalg/sparse_solver/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.linalg.sparse_solver
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../profiler/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.profiler
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../profiler/kernelmetrics/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.kernelmetrics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../profiler/kernelprofiler/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.kernelprofiler
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../snode/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.snode
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../snode/fields_builder/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.snode.fields_builder
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../snode/snode_tree/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.snode.snode_tree
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tools/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.tools
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/cc_compose/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.cc_compose
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/diagnose/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.diagnose
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/image/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.image
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/np2ply/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.np2ply
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/patterns/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.patterns
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/util/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.util
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/video/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.video
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../types/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.types
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/annotations/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.types.annotations
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/compound_types/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.types.compound_types
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/primitive_types/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.types.primitive_types
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ui/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.ui
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/camera/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.camera
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/canvas/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.canvas
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/constants/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.constants
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/gui/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.gui
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/imgui/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.imgui
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/scene/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.scene
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/staging_buffer/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.staging_buffer
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/ui/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.ui
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/utils/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.utils
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/window/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.window
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../__main__/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.__main__
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../_funcs/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._funcs
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../_logging/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._logging
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../_misc/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._misc
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../_testing/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._testing
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ad/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.ad
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../main/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.main
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-contents">
+   Module Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classes">
+     Classes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attributes">
+     Attributes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix">
+       Matrix
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.is_taichi_class">
+         is_taichi_class
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.element_wise_binary">
+         element_wise_binary
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.broadcast_copy">
+         broadcast_copy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.element_wise_ternary">
+         element_wise_ternary
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.element_wise_writeback_binary">
+         element_wise_writeback_binary
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.element_wise_unary">
+         element_wise_unary
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.__matmul__">
+         __matmul__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.linearize_entry_id">
+         linearize_entry_id
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.__call__">
+         __call__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.set_entry">
+         set_entry
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.subscript">
+         subscript
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.x">
+         x
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.y">
+         y
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.z">
+         z
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.w">
+         w
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.value">
+         value
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.to_list">
+         to_list
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.__getitem__">
+         __getitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.__setitem__">
+         __setitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.__len__">
+         __len__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.__iter__">
+         __iter__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.set_entries">
+         set_entries
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.cast">
+         cast
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.trace">
+         trace
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.inverse">
+         inverse
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.normalized">
+         normalized
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.transpose">
+         transpose
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.determinant">
+         determinant
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.diag">
+         diag
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.sum">
+         sum
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.norm">
+         norm
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.norm_inv">
+         norm_inv
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.norm_sqr">
+         norm_sqr
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.max">
+         max
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.min">
+         min
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.any">
+         any
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.all">
+         all
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.fill">
+         fill
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.to_numpy">
+         to_numpy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.__ti_repr__">
+         __ti_repr__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.__str__">
+         __str__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.__repr__">
+         __repr__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.zero">
+         zero
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.one">
+         one
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.unit">
+         unit
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.identity">
+         identity
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.rotation2d">
+         rotation2d
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.field">
+         field
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix._Vector_field">
+         _Vector_field
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.ndarray">
+         ndarray
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix._Vector_ndarray">
+         _Vector_ndarray
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.rows">
+         rows
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.cols">
+         cols
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.__hash__">
+         __hash__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.dot">
+         dot
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix._cross3d">
+         _cross3d
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix._cross2d">
+         _cross2d
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.cross">
+         cross
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.outer_product">
+         outer_product
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector">
+       Vector
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.field">
+       field
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.ndarray">
+       ndarray
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.zero">
+       zero
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.one">
+       one
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.dot">
+       dot
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.cross">
+       cross
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.outer_product">
+       outer_product
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.unit">
+       unit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.normalized">
+       normalized
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix._IntermediateMatrix">
+       _IntermediateMatrix
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix._MatrixFieldElement">
+       _MatrixFieldElement
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField">
+       MatrixField
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.get_scalar_field">
+         get_scalar_field
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.calc_dynamic_index_stride">
+         calc_dynamic_index_stride
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.fill">
+         fill
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.to_numpy">
+         to_numpy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.to_torch">
+         to_torch
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.from_numpy">
+         from_numpy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.__setitem__">
+         __setitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.__getitem__">
+         __getitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.__repr__">
+         __repr__
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixType">
+       MatrixType
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixType.__call__">
+         __call__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixType.cast">
+         cast
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixType.filled_with_scalar">
+         filled_with_scalar
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixType.field">
+         field
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray">
+       MatrixNdarray
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.element_shape">
+         element_shape
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.__setitem__">
+         __setitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.__getitem__">
+         __getitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.to_numpy">
+         to_numpy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.from_numpy">
+         from_numpy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.__deepcopy__">
+         __deepcopy__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.fill_by_kernel">
+         fill_by_kernel
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.__repr__">
+         __repr__
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray">
+       VectorNdarray
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.element_shape">
+         element_shape
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.__setitem__">
+         __setitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.__getitem__">
+         __getitem__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.to_numpy">
+         to_numpy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.from_numpy">
+         from_numpy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.__deepcopy__">
+         __deepcopy__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.fill_by_kernel">
+         fill_by_kernel
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.__repr__">
+         __repr__
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-taichi.lang.matrix">
+<span id="taichi-lang-matrix"></span><h1><a class="reference internal" href="#module-taichi.lang.matrix" title="taichi.lang.matrix"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.matrix</span></code></a><a class="headerlink" href="#module-taichi.lang.matrix" title="Permalink to this headline">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matrix</span></code></a></p></td>
+<td><p>The matrix class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.matrix._IntermediateMatrix" title="taichi.lang.matrix._IntermediateMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_IntermediateMatrix</span></code></a></p></td>
+<td><p>Intermediate matrix class for compiler internal use only.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.matrix._MatrixFieldElement" title="taichi.lang.matrix._MatrixFieldElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_MatrixFieldElement</span></code></a></p></td>
+<td><p>Matrix field element class for compiler internal use only.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.matrix.MatrixField" title="taichi.lang.matrix.MatrixField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatrixField</span></code></a></p></td>
+<td><p>Taichi matrix field with SNode implementation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.matrix.MatrixType" title="taichi.lang.matrix.MatrixType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatrixType</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.matrix.MatrixNdarray" title="taichi.lang.matrix.MatrixNdarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatrixNdarray</span></code></a></p></td>
+<td><p>Taichi ndarray with matrix elements.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.matrix.VectorNdarray" title="taichi.lang.matrix.VectorNdarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VectorNdarray</span></code></a></p></td>
+<td><p>Taichi ndarray with vector elements.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.matrix.Vector" title="taichi.lang.matrix.Vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector</span></code></a>(n, dt=None, **kwargs)</p></td>
+<td><p>Construct a <cite>Vector</cite> instance i.e. 1-D Matrix.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">#</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.matrix.field" title="taichi.lang.matrix.field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">field</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.matrix.ndarray" title="taichi.lang.matrix.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.matrix.zero" title="taichi.lang.matrix.zero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zero</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.matrix.one" title="taichi.lang.matrix.one"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.matrix.dot" title="taichi.lang.matrix.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.matrix.cross" title="taichi.lang.matrix.cross"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.matrix.outer_product" title="taichi.lang.matrix.outer_product"><code class="xref py py-obj docutils literal notranslate"><span class="pre">outer_product</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.matrix.unit" title="taichi.lang.matrix.unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.matrix.normalized" title="taichi.lang.matrix.normalized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalized</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppress_warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../common_ops/#taichi.lang.common_ops.TaichiOperations" title="taichi.lang.common_ops.TaichiOperations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.common_ops.TaichiOperations</span></code></a></p>
+<p>The matrix class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>list</em><em>, </em><em>tuple</em><em>, </em><em>np.ndarray</em><em>]</em>) – the first dimension of a matrix.</p></li>
+<li><p><strong>m</strong> (<em>int</em>) – the second dimension of a matrix.</p></li>
+<li><p><strong>dt</strong> (<em>DataType</em>) – the element data type.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.is_taichi_class">
+<span class="sig-name descname"><span class="pre">is_taichi_class</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#taichi.lang.matrix.Matrix.is_taichi_class" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.element_wise_binary">
+<span class="sig-name descname"><span class="pre">element_wise_binary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.element_wise_binary" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.broadcast_copy">
+<span class="sig-name descname"><span class="pre">broadcast_copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.broadcast_copy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.element_wise_ternary">
+<span class="sig-name descname"><span class="pre">element_wise_ternary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.element_wise_ternary" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.element_wise_writeback_binary">
+<span class="sig-name descname"><span class="pre">element_wise_writeback_binary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.element_wise_writeback_binary" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.element_wise_unary">
+<span class="sig-name descname"><span class="pre">element_wise_unary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.element_wise_unary" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.__matmul__">
+<span class="sig-name descname"><span class="pre">__matmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.__matmul__" title="Permalink to this definition">#</a></dt>
+<dd><p>Matrix-matrix or matrix-vector multiply.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><em>Matrix</em></a><em>, </em><em>Vector</em><em>]</em>) – a matrix or a vector.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The matrix-matrix product or matrix-vector product.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.linearize_entry_id">
+<span class="sig-name descname"><span class="pre">linearize_entry_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.linearize_entry_id" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.__call__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.set_entry">
+<span class="sig-name descname"><span class="pre">set_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.set_entry" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.subscript">
+<span class="sig-name descname"><span class="pre">subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.subscript" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.x">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.x" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the first element of a matrix.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.y">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.y" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the second element of a matrix.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.z">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">z</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.z" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the third element of a matrix.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.w">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">w</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.w" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the fourth element of a matrix.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.value" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.to_list">
+<span class="sig-name descname"><span class="pre">to_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.to_list" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.__getitem__" title="Permalink to this definition">#</a></dt>
+<dd><p>Access to the element at the given indices in a matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>indices</strong> (<em>Sequence</em><em>[</em><a class="reference internal" href="../expr/#taichi.lang.expr.Expr" title="taichi.lang.expr.Expr"><em>Expr</em></a><em>]</em>) – the indices of the element.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the element at a specific position of a matrix.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.__setitem__" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the element value at the given indices in a matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>indices</strong> (<em>Sequence</em><em>[</em><a class="reference internal" href="../expr/#taichi.lang.expr.Expr" title="taichi.lang.expr.Expr"><em>Expr</em></a><em>]</em>) – the indices of a element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.__len__" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the length of each row of a matrix</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.__iter__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.set_entries">
+<span class="sig-name descname"><span class="pre">set_entries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.set_entries" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.cast">
+<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.cast" title="Permalink to this definition">#</a></dt>
+<dd><p>Cast the matrix element data type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dtype</strong> (<em>DataType</em>) – the data type of the casted matrix element.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new matrix with each element’s type is dtype.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.trace">
+<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.trace" title="Permalink to this definition">#</a></dt>
+<dd><p>The sum of a matrix diagonal elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The sum of a matrix diagonal elements.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.inverse">
+<span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.inverse" title="Permalink to this definition">#</a></dt>
+<dd><p>The inverse of a matrix.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The matrix dimension should be less than or equal to 4.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The inverse of a matrix.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Inversions of matrices with sizes &gt;= 5 are not supported.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.normalized">
+<span class="sig-name descname"><span class="pre">normalized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.normalized" title="Permalink to this definition">#</a></dt>
+<dd><p>Normalize a vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>eps</strong> (<em>Number</em>) – a safe-guard value for sqrt, usually 0.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a = ti.Vector([3, 4])
+a.normalized() # [3 / 5, 4 / 5]
+# `a.normalized()` is equivalent to `a / a.norm()`.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only vector normalization is supported.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.transpose">
+<span class="sig-name descname"><span class="pre">transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.transpose" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the transpose of a matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Get the transpose of a matrix.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.determinant">
+<span class="sig-name descname"><span class="pre">determinant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.determinant" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the determinant of a matrix.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The matrix dimension should be less than or equal to 4.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The determinant of a matrix.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Determinants of matrices with sizes &gt;= 5 are not supported.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.diag">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">diag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.diag" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a diagonal square matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<em>int</em>) – the dimension of a square matrix.</p></li>
+<li><p><strong>val</strong> (<em>TypeVar</em>) – the diagonal element value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The constructed diagonal square matrix.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.sum">
+<span class="sig-name descname"><span class="pre">sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.sum" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the sum of all elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.norm" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the square root of the sum of the absolute squares of its elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>eps</strong> (<em>Number</em>) – a safe-guard value for sqrt, usually 0.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a = ti.Vector([3, 4])
+a.norm() # sqrt(3*3 + 4*4 + 0) = 5
+# `a.norm(eps)` is equivalent to `ti.sqrt(a.dot(a) + eps).`
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The square root of the sum of the absolute squares of its elements.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.norm_inv">
+<span class="sig-name descname"><span class="pre">norm_inv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.norm_inv" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the inverse of the matrix/vector <cite>norm</cite>. For <cite>norm</cite>: please see <a class="reference internal" href="#taichi.lang.matrix.Matrix.norm" title="taichi.lang.matrix.Matrix.norm"><code class="xref py py-func docutils literal notranslate"><span class="pre">norm()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>eps</strong> (<em>Number</em>) – a safe-guard value for sqrt, usually 0.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The inverse of the matrix/vector <cite>norm</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.norm_sqr">
+<span class="sig-name descname"><span class="pre">norm_sqr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.norm_sqr" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the sum of the absolute squares of its elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.max">
+<span class="sig-name descname"><span class="pre">max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.max" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the maximum element value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.min">
+<span class="sig-name descname"><span class="pre">min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.min" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the minimum element value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.any">
+<span class="sig-name descname"><span class="pre">any</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.any" title="Permalink to this definition">#</a></dt>
+<dd><p>Test whether any element not equal zero.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if any element is not equal zero, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.all">
+<span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.all" title="Permalink to this definition">#</a></dt>
+<dd><p>Test whether all element not equal zero.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if all elements are not equal zero, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills the matrix with a specific value in Taichi scope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.to_numpy">
+<span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.to_numpy" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts the Matrix to a numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keep_dims</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to keep the dimension after conversion.
+When keep_dims=False, the resulting numpy array should skip the matrix dims with size 1.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The result numpy array.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.__ti_repr__">
+<span class="sig-name descname"><span class="pre">__ti_repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.__ti_repr__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.__str__" title="Permalink to this definition">#</a></dt>
+<dd><p>Python scope matrix print support.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.__repr__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.zero">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.zero" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a Matrix filled with zeros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The first dimension (row) of the matrix.</p></li>
+<li><p><strong>m</strong> (<em>int</em><em>, </em><em>optional</em>) – The second dimension (column) of the matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> instance filled with zeros.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.one">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.one" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a Matrix filled with ones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The first dimension (row) of the matrix.</p></li>
+<li><p><strong>m</strong> (<em>int</em><em>, </em><em>optional</em>) – The second dimension (column) of the matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> instance filled with ones.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.unit">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.unit" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct an unit Vector (1-D matrix) i.e., a vector with only one entry filled with one and all other entries zeros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – The length of the vector.</p></li>
+<li><p><strong>i</strong> (<em>int</em>) – The index of the entry that will be filled with one.</p></li>
+<li><p><strong>dt</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An 1-D unit <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> instance.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.identity">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.identity" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct an identity Matrix with shape (n, n).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The number of rows/columns.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A n x n identity <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> instance.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.rotation2d">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.rotation2d" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.field">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.field" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a data container to hold all elements of the Matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – The desired number of rows of the Matrix.</p></li>
+<li><p><strong>m</strong> (<em>int</em>) – The desired number of columns of the Matrix.</p></li>
+<li><p><strong>dtype</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of the Matrix.</p></li>
+<li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple of int</em><em>]</em><em>, </em><em>optional</em>) – The desired shape of the Matrix.</p></li>
+<li><p><strong>name</strong> (<em>string</em><em>, </em><em>optional</em>) – The custom name of the field.</p></li>
+<li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple of int</em><em>]</em><em>, </em><em>optional</em>) – The coordinate offset of all elements in a field.</p></li>
+<li><p><strong>needs_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the Matrix need gradients.</p></li>
+<li><p><strong>layout</strong> (<a class="reference internal" href="../enums/#taichi.lang.enums.Layout" title="taichi.lang.enums.Layout"><em>Layout</em></a><em>, </em><em>optional</em>) – The field layout, i.e., Array Of Structure (AOS) or Structure Of Array (SOA).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> instance serves as the data container.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix._Vector_field">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_Vector_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix._Vector_field" title="Permalink to this definition">#</a></dt>
+<dd><p>ti.Vector.field</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.ndarray">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.ndarray" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines a Taichi ndarray with matrix elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – Number of rows of the matrix.</p></li>
+<li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
+<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
+<li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
+<li><p><strong>layout</strong> (<a class="reference internal" href="../enums/#taichi.lang.enums.Layout" title="taichi.lang.enums.Layout"><em>Layout</em></a><em>, </em><em>optional</em>) – Memory layout, AOS by default.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>The code below shows how a Taichi ndarray with matrix elements can be declared and defined:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.Matrix.ndarray(4, 5, ti.f32, shape=(16, 8))
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix._Vector_ndarray">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_Vector_ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix._Vector_ndarray" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines a Taichi ndarray with vector elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – Size of the vector.</p></li>
+<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
+<li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
+<li><p><strong>layout</strong> (<a class="reference internal" href="../enums/#taichi.lang.enums.Layout" title="taichi.lang.enums.Layout"><em>Layout</em></a><em>, </em><em>optional</em>) – Memory layout, AOS by default.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>The code below shows how a Taichi ndarray with vector elements can be declared and defined:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.Vector.ndarray(3, ti.f32, shape=(16, 8))
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.rows">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.rows" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a Matrix instance by concatenating Vectors/lists row by row.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rows</strong> (<em>List</em>) – A list of Vector (1-D Matrix) or a list of list.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> instance filled with the Vectors/lists row by row.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.cols">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cols</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.cols" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a Matrix instance by concatenating Vectors/lists column by column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cols</strong> (<em>List</em>) – A list of Vector (1-D Matrix) or a list of list.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> instance filled with the Vectors/lists column by column.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.__hash__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.dot">
+<span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.dot" title="Permalink to this definition">#</a></dt>
+<dd><p>Perform the dot product with the input Vector (1-D Matrix).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>) – The input Vector (1-D Matrix) to perform the dot product.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The dot product result (scalar) of the two Vectors.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DataType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix._cross3d">
+<span class="sig-name descname"><span class="pre">_cross3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix._cross3d" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix._cross2d">
+<span class="sig-name descname"><span class="pre">_cross2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix._cross2d" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.cross">
+<span class="sig-name descname"><span class="pre">cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.cross" title="Permalink to this definition">#</a></dt>
+<dd><p>Perform the cross product with the input Vector (1-D Matrix).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>) – The input Vector (1-D Matrix) to perform the cross product.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The cross product result (1-D Matrix) of the two Vectors.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.outer_product">
+<span class="sig-name descname"><span class="pre">outer_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.outer_product" title="Permalink to this definition">#</a></dt>
+<dd><p>Perform the outer product with the input Vector (1-D Matrix).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>) – The input Vector (1-D Matrix) to perform the outer product.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The outer product result (Matrix) of the two Vectors.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix.Vector">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">Vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Vector" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a <cite>Vector</cite> instance i.e. 1-D Matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>list</em><em>, </em><em>tuple</em><em>]</em><em>, </em><em>np.ndarray</em>) – The desired number of entries of the Vector.</p></li>
+<li><p><strong>dt</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of the Vector.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A Vector instance (1-D <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.matrix.field">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">field</span></span><a class="headerlink" href="#taichi.lang.matrix.field" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.matrix.ndarray">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><a class="headerlink" href="#taichi.lang.matrix.ndarray" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.matrix.zero">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">zero</span></span><a class="headerlink" href="#taichi.lang.matrix.zero" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.matrix.one">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">one</span></span><a class="headerlink" href="#taichi.lang.matrix.one" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.matrix.dot">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">dot</span></span><a class="headerlink" href="#taichi.lang.matrix.dot" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.matrix.cross">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">cross</span></span><a class="headerlink" href="#taichi.lang.matrix.cross" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.matrix.outer_product">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">outer_product</span></span><a class="headerlink" href="#taichi.lang.matrix.outer_product" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.matrix.unit">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#taichi.lang.matrix.unit" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.matrix.normalized">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">normalized</span></span><a class="headerlink" href="#taichi.lang.matrix.normalized" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.matrix._IntermediateMatrix">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">_IntermediateMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entries</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix._IntermediateMatrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+<p>Intermediate matrix class for compiler internal use only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – Number of rows of the matrix.</p></li>
+<li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
+<li><p><strong>entries</strong> (<em>List</em><em>[</em><a class="reference internal" href="../expr/#taichi.lang.expr.Expr" title="taichi.lang.expr.Expr"><em>Expr</em></a><em>]</em>) – All entries of the matrix.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.matrix._MatrixFieldElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">_MatrixFieldElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix._MatrixFieldElement" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.lang.matrix._IntermediateMatrix" title="taichi.lang.matrix._IntermediateMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_IntermediateMatrix</span></code></a></p>
+<p>Matrix field element class for compiler internal use only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field</strong> (<a class="reference internal" href="#taichi.lang.matrix.MatrixField" title="taichi.lang.matrix.MatrixField"><em>MatrixField</em></a>) – The matrix field.</p></li>
+<li><p><strong>indices</strong> (<em>taichi_core.ExprGroup</em>) – Indices of the element.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">MatrixField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_vars</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../field/#taichi.lang.field.Field" title="taichi.lang.field.Field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.field.Field</span></code></a></p>
+<p>Taichi matrix field with SNode implementation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vars</strong> (<em>List</em><em>[</em><a class="reference internal" href="../expr/#taichi.lang.expr.Expr" title="taichi.lang.expr.Expr"><em>Expr</em></a><em>]</em>) – Field members.</p></li>
+<li><p><strong>n</strong> (<em>Int</em>) – Number of rows.</p></li>
+<li><p><strong>m</strong> (<em>Int</em>) – Number of columns.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField.get_scalar_field">
+<span class="sig-name descname"><span class="pre">get_scalar_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.get_scalar_field" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates a ScalarField using a specific field member. Only used for quant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>indices</strong> (<em>Tuple</em><em>[</em><em>Int</em><em>]</em>) – Specified indices of the field member.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The result ScalarField.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../field/#taichi.lang.field.ScalarField" title="taichi.lang.field.ScalarField">ScalarField</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField.calc_dynamic_index_stride">
+<span class="sig-name descname"><span class="pre">calc_dynamic_index_stride</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.calc_dynamic_index_stride" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills <cite>self</cite> with specific values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>List</em><em>, </em><em>Tuple</em><em>, </em><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><em>Matrix</em></a><em>]</em>) – Values to fill, which should have dimension consistent with <cite>self</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField.to_numpy">
+<span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.to_numpy" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts the field instance to a NumPy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keep_dims</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to keep the dimension after conversion.
+When keep_dims=True, on an n-D matrix field, the numpy array always has n+2 dims, even for 1x1, 1xn, nx1 matrix fields.
+When keep_dims=False, the resulting numpy array should skip the matrix dims with size 1.
+For example, a 4x1 or 1x4 matrix field with 5x6x7 elements results in an array of shape 5x6x7x4.</p></li>
+<li><p><strong>dtype</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of returned numpy array.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The result NumPy array.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField.to_torch">
+<span class="sig-name descname"><span class="pre">to_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.to_torch" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts the field instance to a PyTorch tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The desired device of returned tensor.</p></li>
+<li><p><strong>keep_dims</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to keep the dimension after conversion.
+See <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_numpy()</span></code> for more detailed explanation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The result torch tensor.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>torch.tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField.from_numpy">
+<span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.from_numpy" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads all elements from a numpy array.</p>
+<p>The shape of the numpy array needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>numpy.ndarray</em>) – The source numpy array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.__setitem__" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets field element in Python scope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>int</em><em>, </em><em>None</em><em>]</em>) – Coordinates of the field element.</p></li>
+<li><p><strong>value</strong> (<em>element type</em>) – Value to set.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.__getitem__" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets field element in Python scope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>int</em><em>, </em><em>None</em><em>]</em>) – Coordinates of the field element.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value retrieved.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>element type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.__repr__" title="Permalink to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">MatrixType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixType" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../types/#taichi.types.CompoundType" title="taichi.types.CompoundType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.types.CompoundType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixType.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixType.__call__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixType.cast">
+<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixType.cast" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixType.filled_with_scalar">
+<span class="sig-name descname"><span class="pre">filled_with_scalar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixType.filled_with_scalar" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixType.field">
+<span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixType.field" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">MatrixNdarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../_ndarray/#taichi.lang._ndarray.Ndarray" title="taichi.lang._ndarray.Ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang._ndarray.Ndarray</span></code></a></p>
+<p>Taichi ndarray with matrix elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – Number of rows of the matrix.</p></li>
+<li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
+<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
+<li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
+<li><p><strong>layout</strong> (<a class="reference internal" href="../enums/#taichi.lang.enums.Layout" title="taichi.lang.enums.Layout"><em>Layout</em></a>) – Memory layout.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.element_shape">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.element_shape" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.__setitem__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.__getitem__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.to_numpy">
+<span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.to_numpy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.from_numpy">
+<span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.from_numpy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.__deepcopy__">
+<span class="sig-name descname"><span class="pre">__deepcopy__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.__deepcopy__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.fill_by_kernel">
+<span class="sig-name descname"><span class="pre">fill_by_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.fill_by_kernel" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.__repr__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">VectorNdarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../_ndarray/#taichi.lang._ndarray.Ndarray" title="taichi.lang._ndarray.Ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang._ndarray.Ndarray</span></code></a></p>
+<p>Taichi ndarray with vector elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – Size of the vector.</p></li>
+<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
+<li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – Shape of the ndarray.</p></li>
+<li><p><strong>layout</strong> (<a class="reference internal" href="../enums/#taichi.lang.enums.Layout" title="taichi.lang.enums.Layout"><em>Layout</em></a>) – Memory layout.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.element_shape">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.element_shape" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.__setitem__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.__getitem__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.to_numpy">
+<span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.to_numpy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.from_numpy">
+<span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.from_numpy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.__deepcopy__">
+<span class="sig-name descname"><span class="pre">__deepcopy__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.__deepcopy__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.fill_by_kernel">
+<span class="sig-name descname"><span class="pre">fill_by_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.fill_by_kernel" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.__repr__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Taichi Graphics.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
