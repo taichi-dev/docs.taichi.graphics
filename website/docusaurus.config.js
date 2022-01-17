@@ -79,8 +79,7 @@ module.exports = {
           className: 'animated-anchor-link',
         },
         {
-          type: 'doc',
-          docId: 'lang/api/index',
+          to: '/api/',
           position: 'right',
           label: 'API',
           className: 'animated-anchor-link',
