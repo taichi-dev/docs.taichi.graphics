@@ -37,7 +37,7 @@ jobs:
           export DOCSTRING_GEN_PATH=${{ env.DOCSTRING_GEN_PATH }}
           export TAICHI_PATH=${{ env.TAICHI_PATH }}
           export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
-          cd $DOCSTRING_GEN_PATH && git fetch origin pull/8/head:MASTER
+          cd $DOCSTRING_GEN_PATH && git fetch origin pull/8/head:pr-8 && git checkout pr-8
           $DOCSTRING_GEN_PATH/multi_version_build.sh
 
       - name: Cache node_modules
