@@ -18,13 +18,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: taichi-dev/taichi
-          path: source
+          path: taichi
 
       - name: Checkout Taichi Autoapi Gen
         uses: actions/checkout@v2
         with:
           repository: taichi-dev/docstring-gen
-          path: docsgen
+          path: docstring-gen
 
       - name: Set API Gen Env
         run: |
@@ -37,7 +37,7 @@ jobs:
           export DOCSTRING_GEN_PATH=${{ env.DOCSTRING_GEN_PATH }}
           export TAICHI_PATH=${{ env.TAICHI_PATH }}
           export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
-          git fetch origin pull/8/head:MASTER
+          cd DOCSTRING_GEN_PATH && git fetch origin pull/8/head:MASTER
           $DOCSTRING_GEN_PATH/multi_version_build.sh
 
       - name: Cache node_modules
