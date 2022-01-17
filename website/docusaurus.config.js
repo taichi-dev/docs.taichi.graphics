@@ -17,6 +17,7 @@ module.exports = {
   tagline: 'Graphics programming for everyone',
   url: 'https://docs.taichi.graphics',
   baseUrl: '/',
+  // trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/black_or_white.svg',
@@ -78,7 +79,8 @@ module.exports = {
           className: 'animated-anchor-link',
         },
         {
-          to: '/api/index.html',
+          type: 'doc',
+          docId: 'lang/api/index',
           position: 'right',
           label: 'API',
           className: 'animated-anchor-link',

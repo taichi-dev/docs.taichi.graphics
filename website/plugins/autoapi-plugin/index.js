@@ -39,7 +39,7 @@ module.exports = function (context, options) {
         );
         let linkurl = permalink
         if (linkurl.endsWith('/index.html')) {
-          linkurl = linkurl.substring(0, linkurl.length - 11)
+          linkurl = linkurl.substring(0, linkurl.length - 10)
         }
         const start = `${routeprefix}master`
         if (linkurl.startsWith(start)) {
