@@ -27,9 +27,7 @@
   * Font family
   **/
   /* These are adapted from https://systemfontstack.com/ */
-  --pst-font-family-base-system: -apple-system, BlinkMacSystemFont, Segoe UI,
-    'Helvetica Neue', Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-    Segoe UI Symbol;
+  --pst-font-family-base-system: var(--ifm-font-family-base);
   --pst-font-family-monospace-system: 'SFMono-Regular', Menlo, Consolas, Monaco,
     Liberation Mono, Lucida Console, monospace;
 
@@ -58,7 +56,7 @@
   --pst-color-paragraph: var(--pst-color-text-base);
   --pst-color-link: var(--ifm-font-color-base);
   --pst-color-link-hover: var(--ifm-link-color);
-  --pst-color-headerlink: 198, 15, 15;
+  --pst-color-headerlink: var(--ifm-link-color);;
   --pst-color-headerlink-hover: 255, 255, 255;
   --pst-color-preformatted-text: 34, 34, 34;
   --pst-color-preformatted-background: 250, 250, 250;
@@ -70,24 +68,12 @@
   --pst-color-navbar-link-active: var(--pst-color-active-navigation);
   --pst-color-sidebar-link: var(--ifm-menu-color);
   --pst-color-sidebar-link-hover: var(--pst-color-active-navigation);
-  --pst-color-sidebar-link-active: var(--pst-color-active-navigation);
+  --pst-color-sidebar-link-active: var(--ifm-menu-color-active);
   --pst-color-sidebar-expander-background-hover: 244, 244, 244;
   --pst-color-sidebar-caption: 77, 77, 77;
   --pst-color-toc-link: 119, 117, 122;
   --pst-color-toc-link-hover: var(--pst-color-active-navigation);
   --pst-color-toc-link-active: var(--pst-color-active-navigation);
-
-  /*****************************************************************************
-  * Icon
-  **/
-
-  /* font awesome icons*/
-  --pst-icon-check-circle: '\f058';
-  --pst-icon-info-circle: '\f05a';
-  --pst-icon-exclamation-triangle: '\f071';
-  --pst-icon-exclamation-circle: '\f06a';
-  --pst-icon-times-circle: '\f057';
-  --pst-icon-lightbulb: '\f0eb';
 
   /*****************************************************************************
   * Admonitions
@@ -139,41 +125,31 @@
   @import 'bootstrap/scss/_variables';
   @import 'bootstrap/scss/_mixins';
   @import 'bootstrap/scss/_grid'; //  引入栅格
-  @import 'bootstrap/scss/_reboot'; //  引入样式重置
   @import 'bootstrap/scss/_tables';
-  @import 'bootstrap/scss/_nav';
+  // @import 'bootstrap/scss/_nav';
   @import 'bootstrap/scss/_utilities';
   @import 'bootstrap/scss/_dropdown';
 
-  color: var(--ifm-font-color-base);
-
   width: 100%;
-
-  table td,
-  table th {
-    border: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
-    padding: var(--ifm-table-cell-padding);
-  }
-
-  table td {
-    color: var(--ifm-table-cell-color);
-  }
 
   a > code {
     color: var(--ifm-menu-color);
   }
 
-  pre code {
-    font-size: inherit;
-    color: var(--ifm-font-color-base);
-    word-break: normal;
+  .autoapi-container .nav {
+    display: block;
   }
 
-  p {
+  table p {
     margin-bottom: 0;
-    font-size: 1em;
-    color: var(--ifm-font-color-base);
   }
+
+  ul.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+
   p.rubric {
     border-bottom: 1px solid #c9c9c9;
   }
@@ -197,7 +173,7 @@
     text-decoration: underline;
   }
   a.headerlink {
-    color: rgba(var(--pst-color-headerlink), 1);
+    color: var(--pst-color-headerlink);
     font-size: 0.8em;
     padding: 0 4px;
     text-decoration: none;
@@ -461,6 +437,8 @@
   .bd-links {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-right: -15px;
     margin-left: -15px;
   }
@@ -527,7 +505,7 @@
     margin-top: 0;
   }
   .bd-sidebar .nav {
-    font-size: var(--pst-sidebar-font-size);
+    // font-size: var(--pst-sidebar-font-size);
   }
   .bd-sidebar .nav ul {
     list-style: none;
@@ -535,8 +513,9 @@
   }
   .bd-sidebar .nav li > a {
     display: block;
-    padding: 0.25rem 1.5rem;
+    padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
     color: rgba(var(--pst-color-sidebar-link), 1);
+    line-height: 1.25;
   }
   .bd-sidebar .nav li > a:hover {
     color: rgba(var(--pst-color-sidebar-link-hover), 1);
@@ -551,9 +530,12 @@
     margin-left: 0.3em;
   }
   .bd-sidebar .nav .active:hover > a,
-  .bd-sidebar .nav .active > a {
+  .bd-sidebar .nav .active > a code {
     font-weight: 600;
-    color: rgba(var(--pst-color-sidebar-link-active), 1);
+    color: var(--pst-color-sidebar-link-active);
+  }
+  .bd-sidebar .nav .active:not(.has-children) > a {
+    background: var(--ifm-menu-color-background-active);
   }
   .toc-h2 {
     font-size: 0.85rem;
@@ -915,11 +897,12 @@
     visibility: visible;
   }
   dt:target {
-    background-color: #fbe54e;
+    background-color: var(--ifm-color-gray-200);
   }
   .rst-current-version {
     .dropdown {
       margin-left: 1rem;
+      cursor: pointer;
     }
     .dropdown-menu {
       top: 1.5rem;
@@ -929,5 +912,8 @@
         display: block;
       }
     }
+  }
+  .rst-versions {
+    padding: 0 var(--ifm-menu-link-padding-horizontal);
   }
 }

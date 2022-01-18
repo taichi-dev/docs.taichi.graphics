@@ -86,7 +86,7 @@ export default ({ __content }) => {
     <Layout
       wrapperClassName={ThemeClassNames.wrapper.docsPages}
       pageClassName={ThemeClassNames.page.docsDocPage}>
-      <div className='autoapi-container'>
+      <div className='autoapi-container markdown'>
         <BackToTopButton />
         <div style={{ width: '100%', paddingLeft: 15, paddingRight: 15 }} dangerouslySetInnerHTML={{ __html: __content }}></div>
       </div>
