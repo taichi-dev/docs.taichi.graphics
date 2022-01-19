@@ -116,7 +116,6 @@
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
-      <span class="fa fa-book"> Taichi</span>
       <span class="dropdown show">
         <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           master
@@ -128,7 +127,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/v0.8.9/">v0.8.9</a>
+            <a class="dropdown-item" href="/api/v0.8.10/">v0.8.10</a>
             
           
         </div>
@@ -920,9 +919,6 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
@@ -1073,31 +1069,28 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.is_ci" title="taichi._lib.utils.is_ci"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_ci</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils.package_root" title="taichi._lib.utils.package_root"><code class="xref py py-obj docutils literal notranslate"><span class="pre">package_root</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils.get_core_shared_object" title="taichi._lib.utils.get_core_shared_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_core_shared_object</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.get_core_shared_object" title="taichi._lib.utils.get_core_shared_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_core_shared_object</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.print_red_bold" title="taichi._lib.utils.print_red_bold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_red_bold</span></code></a>(*args, **kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils.print_red_bold" title="taichi._lib.utils.print_red_bold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_red_bold</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils.check_exists" title="taichi._lib.utils.check_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_exists</span></code></a>(src)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.check_exists" title="taichi._lib.utils.check_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_exists</span></code></a>(src)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.get_dll_name" title="taichi._lib.utils.get_dll_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_dll_name</span></code></a>(name)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils.get_dll_name" title="taichi._lib.utils.get_dll_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_dll_name</span></code></a>(name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils.at_startup" title="taichi._lib.utils.at_startup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">at_startup</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.at_startup" title="taichi._lib.utils.at_startup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">at_startup</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.require_version" title="taichi._lib.utils.require_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">require_version</span></code></a>(major, minor=None, patch=None)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils.require_version" title="taichi._lib.utils.require_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">require_version</span></code></a>(major, minor=None, patch=None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils.compare_version" title="taichi._lib.utils.compare_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compare_version</span></code></a>(latest, current)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.compare_version" title="taichi._lib.utils.compare_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compare_version</span></code></a>(latest, current)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils._print_taichi_header" title="taichi._lib.utils._print_taichi_header"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_print_taichi_header</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils._print_taichi_header" title="taichi._lib.utils._print_taichi_header"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_print_taichi_header</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -1111,10 +1104,13 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.ti_core" title="taichi._lib.utils.ti_core"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ti_core</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.package_root" title="taichi._lib.utils.package_root"><code class="xref py py-obj docutils literal notranslate"><span class="pre">package_root</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils.log_level" title="taichi._lib.utils.log_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_level</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi._lib.utils.ti_core" title="taichi._lib.utils.ti_core"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ti_core</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._lib.utils.log_level" title="taichi._lib.utils.log_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_level</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -1144,9 +1140,9 @@
 <span class="sig-prename descclassname"><span class="pre">taichi._lib.utils.</span></span><span class="sig-name descname"><span class="pre">is_ci</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi._lib.utils.is_ci" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py function">
+<dl class="py data">
 <dt class="sig sig-object py" id="taichi._lib.utils.package_root">
-<span class="sig-prename descclassname"><span class="pre">taichi._lib.utils.</span></span><span class="sig-name descname"><span class="pre">package_root</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi._lib.utils.package_root" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi._lib.utils.</span></span><span class="sig-name descname"><span class="pre">package_root</span></span><a class="headerlink" href="#taichi._lib.utils.package_root" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">

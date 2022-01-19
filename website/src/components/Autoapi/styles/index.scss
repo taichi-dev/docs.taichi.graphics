@@ -299,7 +299,7 @@
     color: rgba(var(--pst-color-text-base), 1);
   }
   .sig-name {
-    color: rgba(var(--pst-color-inline-code), 1);
+    color: #383FFF;
   }
   blockquote {
     padding: 0 1em;
@@ -901,7 +901,6 @@
   }
   .rst-current-version {
     .dropdown {
-      margin-left: 1rem;
       cursor: pointer;
     }
     .dropdown-menu {

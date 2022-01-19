@@ -74,9 +74,7 @@ export default ({ __content }) => {
         if (!flag) {
           node.classList.add('language-python')
         }
-        Prism.highlightElement(node, 0, (e) => {
-          console.log(e)
-        })
+        Prism.highlightElement(node)
       })
       window.addEventListener('scroll', throttledOnScroll);
       // unbind

@@ -116,7 +116,6 @@
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
-      <span class="fa fa-book"> Taichi</span>
       <span class="dropdown show">
         <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           master
@@ -128,7 +127,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/v0.8.9/">v0.8.9</a>
+            <a class="dropdown-item" href="/api/v0.8.10/">v0.8.10</a>
             
           
         </div>
@@ -920,9 +919,6 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
@@ -962,8 +958,13 @@
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.lang.ast.ASTTransformerContext.non_static_scope_guard">
-         non_static_scope_guard
+        <a class="reference internal nav-link" href="#taichi.lang.ast.ASTTransformerContext.non_static_control_flow_guard">
+         non_static_control_flow_guard
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.ast.ASTTransformerContext.static_scope_guard">
+         static_scope_guard
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
@@ -992,8 +993,13 @@
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.lang.ast.ASTTransformerContext.is_in_non_static">
-         is_in_non_static
+        <a class="reference internal nav-link" href="#taichi.lang.ast.ASTTransformerContext.is_in_non_static_control_flow">
+         is_in_non_static_control_flow
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.ast.ASTTransformerContext.is_in_static_scope">
+         is_in_static_scope
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
@@ -1192,8 +1198,13 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.ast.ASTTransformerContext.non_static_scope_guard">
-<span class="sig-name descname"><span class="pre">non_static_scope_guard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ASTTransformerContext.non_static_scope_guard" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.lang.ast.ASTTransformerContext.non_static_control_flow_guard">
+<span class="sig-name descname"><span class="pre">non_static_control_flow_guard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ASTTransformerContext.non_static_control_flow_guard" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.ast.ASTTransformerContext.static_scope_guard">
+<span class="sig-name descname"><span class="pre">static_scope_guard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ASTTransformerContext.static_scope_guard" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1222,8 +1233,13 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.ast.ASTTransformerContext.is_in_non_static">
-<span class="sig-name descname"><span class="pre">is_in_non_static</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ASTTransformerContext.is_in_non_static" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.lang.ast.ASTTransformerContext.is_in_non_static_control_flow">
+<span class="sig-name descname"><span class="pre">is_in_non_static_control_flow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ASTTransformerContext.is_in_non_static_control_flow" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.ast.ASTTransformerContext.is_in_static_scope">
+<span class="sig-name descname"><span class="pre">is_in_static_scope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ASTTransformerContext.is_in_static_scope" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">

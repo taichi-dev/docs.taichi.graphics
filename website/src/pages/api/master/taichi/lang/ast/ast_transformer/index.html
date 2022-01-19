@@ -116,7 +116,6 @@
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
-      <span class="fa fa-book"> Taichi</span>
       <span class="dropdown show">
         <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           master
@@ -128,7 +127,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/v0.8.9/">v0.8.9</a>
+            <a class="dropdown-item" href="/api/v0.8.10/">v0.8.10</a>
             
           
         </div>
@@ -920,9 +919,6 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
@@ -1032,11 +1028,6 @@
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_comprehension">
-         build_comprehension
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_ListComp">
          build_ListComp
         </a>
@@ -1089,6 +1080,16 @@
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_JoinedStr">
          build_JoinedStr
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_call_if_is_builtin">
+         build_call_if_is_builtin
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.warn_if_is_external_func">
+         warn_if_is_external_func
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
@@ -1476,11 +1477,6 @@ The function should be called only if the node target is a tuple.</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_comprehension">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_comprehension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_comprehension" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_ListComp">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_ListComp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_ListComp" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -1533,6 +1529,16 @@ The function should be called only if the node target is a tuple.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_JoinedStr">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_JoinedStr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_JoinedStr" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_call_if_is_builtin">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_call_if_is_builtin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_call_if_is_builtin" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.warn_if_is_external_func">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">warn_if_is_external_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.warn_if_is_external_func" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
