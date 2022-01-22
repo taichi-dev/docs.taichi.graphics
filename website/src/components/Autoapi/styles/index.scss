@@ -28,8 +28,7 @@
   **/
   /* These are adapted from https://systemfontstack.com/ */
   --pst-font-family-base-system: var(--ifm-font-family-base);
-  --pst-font-family-monospace-system: 'SFMono-Regular', Menlo, Consolas, Monaco,
-    Liberation Mono, Lucida Console, monospace;
+  --pst-font-family-monospace-system: var(--ifm-font-family-monospace);
 
   --pst-font-family-base: var(--pst-font-family-base-system);
   --pst-font-family-heading: var(--pst-font-family-base);
@@ -114,6 +113,8 @@
   --pst-icon-versionmodified-added: var(--pst-icon-exclamation-circle);
   --pst-icon-versionmodified-changed: var(--pst-icon-exclamation-circle);
   --pst-icon-versionmodified-deprecated: var(--pst-icon-exclamation-circle);
+
+  --pst-sig-color: #3578e5;
 }
 
 // html[data-theme='dark'] {
@@ -134,6 +135,8 @@
 
   a > code {
     color: var(--ifm-menu-color);
+    font: var(--ifm-font-size-base)/var(--ifm-line-height-base) var(--ifm-font-family-base);
+    font-weight: 500;
   }
 
   .autoapi-container .nav {
@@ -230,9 +233,9 @@
   samp {
     font-family: var(--pst-font-family-monospace);
   }
-  code {
-    color: rgba(var(--pst-color-inline-code), 1);
-  }
+  // code {
+  //   padding: var(--ifm-code-padding-vertical) var(--ifm-code-padding-horizontal);
+  // }
   pre {
     // margin: 1.5em 0;
     // padding: 10px;
@@ -245,7 +248,7 @@
     padding: 1em;
     margin: 0.5em 0px;
     overflow: auto;
-    border: 0.3em solid rgb(122, 102, 82);
+    // border: 0.3em solid rgb(122, 102, 82);
     border-radius: 0.5em;
     box-shadow: black 1px 1px 0.5em inset;
   }
@@ -299,7 +302,7 @@
     color: rgba(var(--pst-color-text-base), 1);
   }
   .sig-name {
-    color: #383FFF;
+    color: var(--pst-sig-color);
   }
   blockquote {
     padding: 0 1em;
@@ -389,9 +392,11 @@
   .bd-toc .onthispage {
     color: #a4a6a7;
   }
+  #bd-toc-nav {
+    border-left: 1px solid var(--ifm-toc-border-color);
+  }
   .section-nav {
     padding-left: 0;
-    border-left: 1px solid #eee;
     border-bottom: none;
   }
   .section-nav ul {
@@ -441,6 +446,12 @@
     padding-right: 15px;
     margin-right: -15px;
     margin-left: -15px;
+    font-weight: 500;
+
+    a > code {
+      padding: 0;
+      line-height: 1.25;
+    }
   }
   @media (min-width: 720px) {
     .bd-links {
@@ -905,6 +916,39 @@
     }
     .dropdown-menu {
       top: 1.5rem;
+      background-color: var(--ifm-dropdown-background-color);
+      border-radius: var(--ifm-global-radius);
+      box-shadow: var(--ifm-global-shadow-md);
+      color: var(--ifm-dropdown-link-color);
+
+      .dropdown-item {
+        background-color: var(--ifm-dropdown-background-color);
+        color: var(--ifm-dropdown-link-color);
+        text-decoration: none;
+      }
+      strong .dropdown-item{
+        color: var(--ifm-link-color);
+        background-color: var(--ifm-dropdown-hover-background-color);
+      }
+      .dropdown-item:hover {
+        background-color: var(--ifm-dropdown-hover-background-color);
+        color: var(--ifm-dropdown-link-color);
+      }
+      // left: 0;
+      // list-style: none;
+      // max-height: calc(100vh - var(--ifm-navbar-height));
+      // min-width: 10rem;
+      // opacity: 0;
+      // overflow-y: auto;
+      // padding: 0.5rem;
+      // position: absolute;
+      // // top: calc(100% - var(--ifm-navbar-item-padding-vertical));
+      // transform: translateY(-0.625rem);
+      // visibility: hidden;
+      // z-index: var(--ifm-z-index-dropdown);
+      // transition-property: opacity, transform, visibility;
+      // transition-duration: var(--ifm-transition-fast);
+      // transition-timing-function: var(--ifm-transition-timing-default);
     }
     .dropdown:hover {
       .dropdown-menu {
@@ -914,5 +958,21 @@
   }
   .rst-versions {
     padding: 0 var(--ifm-menu-link-padding-horizontal);
+  }
+  dl {
+    border: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  dl > dt {
+    background-color: var(--ifm-table-stripe-background);
+    border-radius: inherit;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: .5rem 1rem .5rem 1rem;
+  }
+  dd.field-odd {
+    margin-left: 0;
   }
 }
