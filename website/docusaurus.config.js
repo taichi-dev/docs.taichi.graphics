@@ -32,6 +32,7 @@ module.exports = {
         path: path.resolve(__dirname, 'src/pages/api'),
         include: '**/*.html',
         route: 'api/',
+        defaultVersion: 'v0.8.10', // cd $TAICHI_PATH && git describe --tags --abbrev=0
       },
     ],
   ],

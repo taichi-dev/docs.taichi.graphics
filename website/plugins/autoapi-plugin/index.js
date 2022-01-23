@@ -18,7 +18,7 @@ module.exports = function (context, options) {
   return {
     name: 'autoapi-plugin',
     async loadContent() {
-      const { include } = options;
+      const { include, defaultVersion } = options;
       const pagesDir = contentPath;
       if (!fs.existsSync(pagesDir)) {
         return null;
@@ -41,7 +41,7 @@ module.exports = function (context, options) {
         if (linkurl.endsWith('/index.html')) {
           linkurl = linkurl.substring(0, linkurl.length - 10)
         }
-        const start = `${routeprefix}master`
+        const start = `${routeprefix}${defaultVersion}`
         if (linkurl.startsWith(start)) {
           linkurl = routeprefix + linkurl.substring(start.length + 1)
         }
