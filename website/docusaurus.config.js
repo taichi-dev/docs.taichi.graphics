@@ -1,4 +1,5 @@
 const path = require("path");
+const shell = require('shelljs')
 
 // For i18n
 const DefaultLocale = 'en';
@@ -9,6 +10,14 @@ const mapLocaleCodeToCrowdin = (locale) => {
     default:
       return locale;
   }
+}
+
+const getApiDefaultVersion = () => {
+  const v = shell.exec('cd $TAICHI_PATH && git describe --tags --abbrev=0').stdout.trim()
+  if (v.startsWith('v')) {
+    return v
+  }
+  return 'v0.8.10'
 }
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
@@ -32,7 +41,7 @@ module.exports = {
         path: path.resolve(__dirname, 'src/pages/api'),
         include: '**/*.html',
         route: 'api/',
-        defaultVersion: 'v0.8.10', // cd $TAICHI_PATH && git describe --tags --abbrev=0
+        defaultVersion: getApiDefaultVersion(), // cd $TAICHI_PATH && git describe --tags --abbrev=0
       },
     ],
   ],
