@@ -107,7 +107,7 @@ def initialize_mass_points():
         ]
         v[i, j] = [0, 0, 0]
 ```
-Note that all the mass points have their `y` components equal to `0.6`, we also added a little perturbations between range `[-0.1, 0.1]` to the initial position of the cloth in the `x` and `z` direction. This would make our animation look more random.
+Note that all the mass points have their `y` components equal to `0.6`. We also add little perturbations in the range `[-0.1, 0.1]` to the initial positions of the points in the `x` and `z` directions, which makes the animation look more randomized and natural.
 
 ### Simulation
 At each timestep, our program simulates 4 things that affect the motion of the cloth: gravity, internal forces of springs, damping, and collision with the red ball.
