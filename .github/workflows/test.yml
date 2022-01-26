@@ -14,6 +14,32 @@ jobs:
         with:
           persist-credentials: false
 
+      # - name: Checkout Taichi main repo
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: taichi-dev/taichi
+      #     path: taichi
+
+      # - name: Checkout Taichi Autoapi Gen
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: taichi-dev/docstring-gen
+      #     path: docstring-gen
+
+      # - name: Set API Gen Env
+      #   run: |
+      #     echo "DOCSTRING_GEN_PATH=${GITHUB_WORKSPACE}/docstring-gen" >> $GITHUB_ENV
+      #     echo "TAICHI_PATH=${GITHUB_WORKSPACE}/taichi/python/taichi" >> $GITHUB_ENV
+      #     echo "TAICHI_WEBSITE=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
+
+      # - name: Generate New API Docs AND Sync To Docs Website
+      #   run: |
+      #     export DOCSTRING_GEN_PATH=${{ env.DOCSTRING_GEN_PATH }}
+      #     export TAICHI_PATH=${{ env.TAICHI_PATH }}
+      #     export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
+      #     cd $DOCSTRING_GEN_PATH && git fetch origin pull/8/head:pr-8 && git checkout pr-8
+      #     $DOCSTRING_GEN_PATH/multi_version_build.sh
+
       - name: Cache node_modules
         uses: actions/cache@v2
         with:

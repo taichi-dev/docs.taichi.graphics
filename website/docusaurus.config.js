@@ -1,4 +1,5 @@
 const path = require("path");
+const shell = require('shelljs')
 
 // For i18n
 const DefaultLocale = 'en';
@@ -6,10 +7,17 @@ const mapLocaleCodeToCrowdin = (locale) => {
   switch (locale) {
     case 'zh-Hans':
       return 'zh-CN';
-      break;
     default:
       return locale;
   }
+}
+
+const getApiDefaultVersion = () => {
+  const v = shell.exec('cd $TAICHI_PATH && git describe --tags --abbrev=0').stdout.trim()
+  if (v.startsWith('v')) {
+    return v
+  }
+  return 'v0.8.10'
 }
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
@@ -18,13 +26,24 @@ module.exports = {
   tagline: 'Graphics programming for everyone',
   url: 'https://docs.taichi.graphics',
   baseUrl: '/',
+  // trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/black_or_white.svg',
   organizationName: 'taichi-dev',
   projectName: 'docs.taichi.graphics',
   plugins: [
-    path.resolve(__dirname, 'plugins/docusaurus-plugin-hotjar')
+    'docusaurus-plugin-sass',
+    path.resolve(__dirname, 'plugins/docusaurus-plugin-hotjar'),
+    [
+      path.resolve(__dirname, 'plugins/autoapi-plugin'),
+      {
+        path: path.resolve(__dirname, 'src/pages/api'),
+        include: '**/*.html',
+        route: 'api/',
+        defaultVersion: getApiDefaultVersion(), // cd $TAICHI_PATH && git describe --tags --abbrev=0
+      },
+    ],
   ],
   i18n: {
     defaultLocale: DefaultLocale,
@@ -70,8 +89,7 @@ module.exports = {
           className: 'animated-anchor-link',
         },
         {
-          type: 'doc',
-          docId: 'lang/api/index',
+          to: '/api/',
           position: 'right',
           label: 'API',
           className: 'animated-anchor-link',

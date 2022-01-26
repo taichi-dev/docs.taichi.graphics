@@ -1,0 +1,2250 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>taichi.ui &#8212; taichi-api-docstring  documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../">
+  <img src="../../../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="ml-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../">
+  Welcome to Taichi Language’s API reference!
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://docs.taichi.graphics">Taichi Documentation Site<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/taichi-dev/taichi" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl autoapi-container">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items">
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="dropdown show">
+        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          master
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          
+             <strong> 
+            <a class="dropdown-item" href="/api/master/">master</a>
+             </strong> 
+          
+            
+            <a class="dropdown-item" href="/api/">v0.8.10</a>
+            
+          
+        </div>
+      </span>
+    </span>
+  </div>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../_lib/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._lib
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_lib/core/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi._lib.core
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_lib/utils/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi._lib.utils
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../aot/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.aot
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aot/module/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.aot.module
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aot/record/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.aot.record
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lang/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.lang
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../lang/ast/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.ast
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lang/ast/ast_transformer/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.ast_transformer
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lang/ast/ast_transformer_utils/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.ast_transformer_utils
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lang/ast/checkers/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.checkers
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lang/ast/symbol_resolver/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.symbol_resolver
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lang/ast/transform/">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         taichi.lang.ast.transform
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/_ndarray/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang._ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/_ndrange/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang._ndrange
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/any_array/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.any_array
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/common_ops/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.common_ops
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/enums/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.enums
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/exception/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.exception
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/expr/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.expr
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/field/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.field
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/kernel_arguments/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.kernel_arguments
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/kernel_impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.kernel_impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/matrix/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.matrix
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/mesh/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.mesh
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/ops/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.ops
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/quant_impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.quant_impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/runtime_ops/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.runtime_ops
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/shell/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.shell
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/snode/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.snode
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/sort/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.sort
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/source_builder/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.source_builder
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/struct/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.struct
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/tape/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.tape
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/type_factory_impl/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.type_factory_impl
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lang/util/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.lang.util
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linalg/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.linalg
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/sparse_matrix/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.linalg.sparse_matrix
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/sparse_solver/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.linalg.sparse_solver
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../profiler/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.profiler
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../profiler/kernelmetrics/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.kernelmetrics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../profiler/kernelprofiler/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.kernelprofiler
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../snode/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.snode
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../snode/fields_builder/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.snode.fields_builder
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../snode/snode_tree/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.snode.snode_tree
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tools/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.tools
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/cc_compose/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.cc_compose
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/diagnose/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.diagnose
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/image/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.image
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/np2ply/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.np2ply
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/patterns/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.patterns
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/util/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.util
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/video/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.video
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../types/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.types
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../types/annotations/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.types.annotations
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../types/compound_types/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.types.compound_types
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../types/primitive_types/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.types.primitive_types
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.ui
+    </span>
+   </code>
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="camera/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.camera
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="canvas/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.canvas
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="constants/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.constants
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gui/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.gui
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="imgui/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.imgui
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="scene/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.scene
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="staging_buffer/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.staging_buffer
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ui/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.ui
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="utils/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.utils
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="window/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.ui.window
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../__main__/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.__main__
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../_funcs/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._funcs
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../_kernels/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._kernels
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../_logging/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._logging
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../_misc/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._misc
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../_testing/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi._testing
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ad/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.ad
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../main/">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     taichi.main
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package-contents">
+   Package Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classes">
+     Classes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attributes">
+     Attributes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.ui.GUI">
+       GUI
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.Event">
+         Event
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.WidgetValue">
+         WidgetValue
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#taichi.ui.GUI.WidgetValue.value">
+           value
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.EventFilter">
+         EventFilter
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#taichi.ui.GUI.EventFilter.match">
+           match
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.SHIFT">
+         SHIFT
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.ALT">
+         ALT
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.CTRL">
+         CTRL
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.ESCAPE">
+         ESCAPE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.RETURN">
+         RETURN
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.TAB">
+         TAB
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.BACKSPACE">
+         BACKSPACE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.SPACE">
+         SPACE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.UP">
+         UP
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.DOWN">
+         DOWN
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.LEFT">
+         LEFT
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.RIGHT">
+         RIGHT
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.CAPSLOCK">
+         CAPSLOCK
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.LMB">
+         LMB
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.MMB">
+         MMB
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.RMB">
+         RMB
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.EXIT">
+         EXIT
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.WHEEL">
+         WHEEL
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.MOVE">
+         MOVE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.MOTION">
+         MOTION
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.PRESS">
+         PRESS
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.RELEASE">
+         RELEASE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.__enter__">
+         __enter__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.__exit__">
+         __exit__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.__del__">
+         __del__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.close">
+         close
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.get_bool_environ">
+         get_bool_environ
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.slider">
+         slider
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.label">
+         label
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.button">
+         button
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.clear">
+         clear
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.cook_image">
+         cook_image
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.get_image">
+         get_image
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.set_image">
+         set_image
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.circle">
+         circle
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.circles">
+         circles
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.triangles">
+         triangles
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.triangle">
+         triangle
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.lines">
+         lines
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.line">
+         line
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI._arrow_to_lines">
+         _arrow_to_lines
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.arrows">
+         arrows
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.arrow">
+         arrow
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.rect">
+         rect
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.text">
+         text
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI._make_field_base">
+         _make_field_base
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.point_field">
+         point_field
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.arrow_field">
+         arrow_field
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.show">
+         show
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.has_key_event">
+         has_key_event
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.get_event">
+         get_event
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.get_events">
+         get_events
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.get_key_event">
+         get_key_event
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.is_pressed">
+         is_pressed
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.get_cursor_pos">
+         get_cursor_pos
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.running">
+         running
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.GUI.fps_limit">
+         fps_limit
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.ui.rgb_to_hex">
+       rgb_to_hex
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.ui.hex_to_rgb">
+       hex_to_rgb
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.ui.Gui">
+       Gui
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.Gui.sub_window">
+         sub_window
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.Gui.begin">
+         begin
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.Gui.end">
+         end
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.Gui.text">
+         text
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.Gui.checkbox">
+         checkbox
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.Gui.slider_float">
+         slider_float
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.Gui.color_edit_3">
+         color_edit_3
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#taichi.ui.Gui.button">
+         button
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.ui.GGUI_AVAILABLE">
+       GGUI_AVAILABLE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.ui.make_camera">
+       make_camera
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-taichi.ui">
+<span id="taichi-ui"></span><h1><a class="reference internal" href="#module-taichi.ui" title="taichi.ui"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui</span></code></a><a class="headerlink" href="#module-taichi.ui" title="Permalink to this headline">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="camera/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.camera</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.canvas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="constants/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.constants</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.gui</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="imgui/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.imgui</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="scene/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.scene</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="staging_buffer/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.staging_buffer</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.ui</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="window/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.window</span></code></a></li>
+</ul>
+</div>
+</section>
+<section id="package-contents">
+<h2>Package Contents<a class="headerlink" href="#package-contents" title="Permalink to this headline">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.ui.GUI" title="taichi.ui.GUI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GUI</span></code></a></p></td>
+<td><p>Taichi Graphical User Interface class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.ui.Gui" title="taichi.ui.Gui"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gui</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.ui.rgb_to_hex" title="taichi.ui.rgb_to_hex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rgb_to_hex</span></code></a>(c)</p></td>
+<td><p>Convert rgb color format to hex color format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.ui.hex_to_rgb" title="taichi.ui.hex_to_rgb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hex_to_rgb</span></code></a>(color)</p></td>
+<td><p>Convert hex color format to rgb color format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.ui.make_camera" title="taichi.ui.make_camera"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_camera</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">#</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.ui.GGUI_AVAILABLE" title="taichi.ui.GGUI_AVAILABLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GGUI_AVAILABLE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.ui.GUI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">GUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Taichi'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_gui</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fullscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fast_gui</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI" title="Permalink to this definition">#</a></dt>
+<dd><p>Taichi Graphical User Interface class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the GUI to be constructed.
+Default is ‘Taichi’.</p></li>
+<li><p><strong>res</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – The resolution of created
+GUI. Default is 512*512. If <cite>res</cite> is scalar, then width will be equal to height.</p></li>
+<li><p><strong>background_color</strong> (<em>int</em><em>, </em><em>optional</em>) – The background color of created GUI.
+Default is 0x000000.</p></li>
+<li><p><strong>show_gui</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specify whether to render the GUI. Default is True.</p></li>
+<li><p><strong>fullscreen</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specify whether to render the GUI in
+fullscreen mode. Default is False.</p></li>
+<li><p><strong>fast_gui</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specify whether to use fast gui mode of
+Taichi. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created taichi GUI object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">GUI</span></code></p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.ui.GUI.Event">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Event</span></span><a class="headerlink" href="#taichi.ui.GUI.Event" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.ui.GUI.WidgetValue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WidgetValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gui</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.WidgetValue" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.WidgetValue.value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.WidgetValue.value" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.ui.GUI.EventFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">e_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.EventFilter" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.EventFilter.match">
+<span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.EventFilter.match" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.SHIFT">
+<span class="sig-name descname"><span class="pre">SHIFT</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Shift</span></em><a class="headerlink" href="#taichi.ui.GUI.SHIFT" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.ALT">
+<span class="sig-name descname"><span class="pre">ALT</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Alt</span></em><a class="headerlink" href="#taichi.ui.GUI.ALT" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.CTRL">
+<span class="sig-name descname"><span class="pre">CTRL</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Control</span></em><a class="headerlink" href="#taichi.ui.GUI.CTRL" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.ESCAPE">
+<span class="sig-name descname"><span class="pre">ESCAPE</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Escape</span></em><a class="headerlink" href="#taichi.ui.GUI.ESCAPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.RETURN">
+<span class="sig-name descname"><span class="pre">RETURN</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Return</span></em><a class="headerlink" href="#taichi.ui.GUI.RETURN" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.TAB">
+<span class="sig-name descname"><span class="pre">TAB</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Tab</span></em><a class="headerlink" href="#taichi.ui.GUI.TAB" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.BACKSPACE">
+<span class="sig-name descname"><span class="pre">BACKSPACE</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">BackSpace</span></em><a class="headerlink" href="#taichi.ui.GUI.BACKSPACE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.SPACE">
+<span class="sig-name descname"><span class="pre">SPACE</span></span><em class="property"><span class="w"> </span><span class="pre">=</span></em><a class="headerlink" href="#taichi.ui.GUI.SPACE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.UP">
+<span class="sig-name descname"><span class="pre">UP</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Up</span></em><a class="headerlink" href="#taichi.ui.GUI.UP" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.DOWN">
+<span class="sig-name descname"><span class="pre">DOWN</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Down</span></em><a class="headerlink" href="#taichi.ui.GUI.DOWN" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.LEFT">
+<span class="sig-name descname"><span class="pre">LEFT</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Left</span></em><a class="headerlink" href="#taichi.ui.GUI.LEFT" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.RIGHT">
+<span class="sig-name descname"><span class="pre">RIGHT</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Right</span></em><a class="headerlink" href="#taichi.ui.GUI.RIGHT" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.CAPSLOCK">
+<span class="sig-name descname"><span class="pre">CAPSLOCK</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Caps_Lock</span></em><a class="headerlink" href="#taichi.ui.GUI.CAPSLOCK" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.LMB">
+<span class="sig-name descname"><span class="pre">LMB</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">LMB</span></em><a class="headerlink" href="#taichi.ui.GUI.LMB" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.MMB">
+<span class="sig-name descname"><span class="pre">MMB</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">MMB</span></em><a class="headerlink" href="#taichi.ui.GUI.MMB" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.RMB">
+<span class="sig-name descname"><span class="pre">RMB</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">RMB</span></em><a class="headerlink" href="#taichi.ui.GUI.RMB" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.EXIT">
+<span class="sig-name descname"><span class="pre">EXIT</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">WMClose</span></em><a class="headerlink" href="#taichi.ui.GUI.EXIT" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.WHEEL">
+<span class="sig-name descname"><span class="pre">WHEEL</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Wheel</span></em><a class="headerlink" href="#taichi.ui.GUI.WHEEL" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.MOVE">
+<span class="sig-name descname"><span class="pre">MOVE</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">Motion</span></em><a class="headerlink" href="#taichi.ui.GUI.MOVE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.MOTION">
+<span class="sig-name descname"><span class="pre">MOTION</span></span><a class="headerlink" href="#taichi.ui.GUI.MOTION" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.PRESS">
+<span class="sig-name descname"><span class="pre">PRESS</span></span><a class="headerlink" href="#taichi.ui.GUI.PRESS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.ui.GUI.RELEASE">
+<span class="sig-name descname"><span class="pre">RELEASE</span></span><a class="headerlink" href="#taichi.ui.GUI.RELEASE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.__enter__">
+<span class="sig-name descname"><span class="pre">__enter__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.__enter__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.__exit__">
+<span class="sig-name descname"><span class="pre">__exit__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.__exit__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.__del__">
+<span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.__del__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.close" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.get_bool_environ">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_bool_environ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_bool_environ" title="Permalink to this definition">#</a></dt>
+<dd><p>Get an environment variable and cast to bool.
+:param key: The environment variable key.
+:type key: str
+:param default: The default value.
+:type default: bool</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The environment variable value cast to bool. If the value is not found, directly return argument ‘default’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.slider">
+<span class="sig-name descname"><span class="pre">slider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.slider" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a slider object on canvas to be manipulated with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – The title of slider.</p></li>
+<li><p><strong>minimum</strong> (<em>Number</em>) – The minimum value of slider.</p></li>
+<li><p><strong>maximum</strong> (<em>Number</em>) – The maximum value of slider.</p></li>
+<li><p><strong>step</strong> (<em>Number</em><em>, </em><em>optional</em>) – The changing step of slider. Default is 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created slider object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">WidgetValue</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.label">
+<span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.label" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a label object on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – The title of label.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created label object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">WidgetValue</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.button">
+<span class="sig-name descname"><span class="pre">button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.button" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a button object on canvas to be manipulated with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – The title of button.</p></li>
+<li><p><strong>event_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The event name associated with button.
+Default is WidgetButton_{text}</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The event name associated with created button.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.clear" title="Permalink to this definition">#</a></dt>
+<dd><p>Clear the canvas with the color provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – Specify the color to clear the canvas. Default
+is the background color of GUI.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.cook_image">
+<span class="sig-name descname"><span class="pre">cook_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.cook_image" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.get_image">
+<span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_image" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the image data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The image data in numpy contiguous array type.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.array</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.set_image">
+<span class="sig-name descname"><span class="pre">set_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.set_image" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw an image on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>img</strong> (<em>Union</em><em>[</em><em>ti.field</em><em>, </em><em>numpy.array</em><em>]</em>) – The color array representing the
+image to be drawn. Support greyscale, RG, RGB, and RGBA color
+representations. Its shape must match GUI resolution.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.circle">
+<span class="sig-name descname"><span class="pre">circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.circle" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a single circle on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>numpy.array</em><em>]</em>) – The position of the circle.</p></li>
+<li><p><strong>color</strong> (<em>int</em><em>, </em><em>Optional</em>) – The color of the circle. Default is 0xFFFFFF.</p></li>
+<li><p><strong>radius</strong> (<em>Number</em><em>, </em><em>Optional</em>) – The radius of the circle. Default is 1.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.circles">
+<span class="sig-name descname"><span class="pre">circles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.circles" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a list of circles on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> (<em>numpy.array</em>) – The positions of the circles.</p></li>
+<li><p><strong>radius</strong> (<em>Number</em><em>, </em><em>optional</em>) – The radius of the circles. Default is 1.</p></li>
+<li><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – The color of the circles. Default is 0xFFFFFF.</p></li>
+<li><p><strong>palette</strong> (<em>list</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The List of colors from which to
+choose to draw. Default is None.</p></li>
+<li><p><strong>palette_indices</strong> (<em>Union</em><em>[</em><em>list</em><em>[</em><em>int</em><em>]</em><em>, </em><em>ti.field</em><em>, </em><em>numpy.array</em><em>]</em><em>, </em><em>optional</em>) – The List of indices that choose color from palette for each
+circle. Shape must match pos. Default is None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.triangles">
+<span class="sig-name descname"><span class="pre">triangles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.triangles" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a list of triangles on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.array</em>) – The positions of the first points of triangles.</p></li>
+<li><p><strong>b</strong> (<em>numpy.array</em>) – The positions of the second points of triangles.</p></li>
+<li><p><strong>c</strong> (<em>numpy.array</em>) – The positions of the thrid points of triangles.</p></li>
+<li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>numpy.array</em><em>]</em><em>, </em><em>optional</em>) – The color or colors of triangles.
+Can be either a single color or a list of colors whose shape matches
+the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.triangle">
+<span class="sig-name descname"><span class="pre">triangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.triangle" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a single triangle on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of the first point of triangle. Shape must be 2.</p></li>
+<li><p><strong>b</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of the second point of triangle. Shape must be 2.</p></li>
+<li><p><strong>c</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of the third point of triangle. Shape must be 2.</p></li>
+<li><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – The color of the triangle. Default is 0xFFFFFF.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.lines">
+<span class="sig-name descname"><span class="pre">lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.lines" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a list of lines on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>begin</strong> (<em>numpy.array</em>) – The positions of one end of lines.</p></li>
+<li><p><strong>end</strong> (<em>numpy.array</em>) – The positions of the other end of lines.</p></li>
+<li><p><strong>radius</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>numpy.array</em><em>]</em><em>, </em><em>optional</em>) – The width of lines.
+Can be either a single width or a list of width whose shape matches
+the shape of begin &amp; end. Default is 1.</p></li>
+<li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>numpy.array</em><em>]</em><em>, </em><em>optional</em>) – The color or colors of lines.
+Can be either a single color or a list of colors whose shape matches
+the shape of begin &amp; end. Default is 0xFFFFFF.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.line">
+<span class="sig-name descname"><span class="pre">line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.line" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a single line on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>begin</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of one end of line. Shape must be 2.</p></li>
+<li><p><strong>end</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of the other end of line. Shape must be 2.</p></li>
+<li><p><strong>radius</strong> (<em>Number</em><em>, </em><em>optional</em>) – The width of line. Default is 1.</p></li>
+<li><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – The color of line. Default is 0xFFFFFF.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI._arrow_to_lines">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_arrow_to_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">major</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tip_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">45</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI._arrow_to_lines" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.arrows">
+<span class="sig-name descname"><span class="pre">arrows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.arrows" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a list arrows on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orig</strong> (<em>numpy.array</em>) – The positions where arrows start.</p></li>
+<li><p><strong>direction</strong> (<em>numpy.array</em>) – The directions where arrows point to.</p></li>
+<li><p><strong>radius</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>np.array</em><em>]</em><em>, </em><em>optional</em>) – The width of arrows. Default is 1.</p></li>
+<li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>np.array</em><em>]</em><em>, </em><em>optional</em>) – The color or colors of arrows. Default is 0xffffff.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.arrow">
+<span class="sig-name descname"><span class="pre">arrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.arrow" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a single arrow on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orig</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position where arrow starts. Shape must be 2.</p></li>
+<li><p><strong>direction</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The direction where arrow points to. Shape must be 2.</p></li>
+<li><p><strong>radius</strong> (<em>Number</em><em>, </em><em>optional</em>) – The width of arrow. Default is 1.</p></li>
+<li><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – The color of arrow. Default is 0xFFFFFF.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.rect">
+<span class="sig-name descname"><span class="pre">rect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topleft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottomright</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.rect" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a single rectangle on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topleft</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of the topleft corner of rectangle.
+Shape must be 2.</p></li>
+<li><p><strong>bottomright</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of the bottomright corner
+of rectangle. Shape must be 2.</p></li>
+<li><p><strong>radius</strong> (<em>Number</em><em>, </em><em>optional</em>) – The width of rectangle’s sides. Default is 1.</p></li>
+<li><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – The color of rectangle. Default is 0xFFFFFF.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.text">
+<span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.text" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw texts on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>content</strong> (<em>str</em>) – The text to be drawn on canvas.</p></li>
+<li><p><strong>pos</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position where the text is to be put.</p></li>
+<li><p><strong>font_size</strong> (<em>Number</em><em>, </em><em>optional</em>) – The font size of the text.</p></li>
+<li><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – The color of the text. Default is 0xFFFFFF.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI._make_field_base">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_make_field_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bound</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI._make_field_base" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.point_field">
+<span class="sig-name descname"><span class="pre">point_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.point_field" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a field of points on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>np.array</em>) – The pattern and radius of the field of points.</p></li>
+<li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>np.array</em><em>]</em><em>, </em><em>optional</em>) – The color or colors of points.
+Default is 0xFFFFFF.</p></li>
+<li><p><strong>bound</strong> (<em>Number</em><em>, </em><em>optional</em>) – The boundary of the field. Default is 0.5.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.arrow_field">
+<span class="sig-name descname"><span class="pre">arrow_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.arrow_field" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a field of arrows on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>direction</strong> (<em>np.array</em>) – The pattern and direction of the field of arrows.</p></li>
+<li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>np.array</em><em>]</em><em>, </em><em>optional</em>) – The color or colors of arrows.
+Default is 0xFFFFFF.</p></li>
+<li><p><strong>bound</strong> (<em>Number</em><em>, </em><em>optional</em>) – The boundary of the field. Default is 0.5.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.show" title="Permalink to this definition">#</a></dt>
+<dd><p>Show the frame or save current frame as a picture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em><em>, </em><em>optional</em>) – The path &amp; name of the picture to be saved.
+Default is None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.has_key_event">
+<span class="sig-name descname"><span class="pre">has_key_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.has_key_event" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if there are any key event registered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Bool to indicate whether there is any key event registered.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.get_event">
+<span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">e_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_event" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the specific event is triggered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>*e_filter</strong> (<em>ti.GUI.EVENT</em>) – The specific event to be checked.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bool to indicate whether the specific event is triggered.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.get_events">
+<span class="sig-name descname"><span class="pre">get_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">e_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_events" title="Permalink to this definition">#</a></dt>
+<dd><p>Get a list of events that are triggered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>*e_filter</strong> (<em>List</em><em>[</em><em>ti.GUI.EVENT</em><em>]</em>) – The type of events to be filtered.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of events that are triggered.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">EVENT</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.get_key_event">
+<span class="sig-name descname"><span class="pre">get_key_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_key_event" title="Permalink to this definition">#</a></dt>
+<dd><p>Get keyboard triggered event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The keyboard triggered event.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">EVENT</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.is_pressed">
+<span class="sig-name descname"><span class="pre">is_pressed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.is_pressed" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the specific key or keys are pressed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>*keys</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – The string that stands for keys in keyboard.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bool to indicate whether the key or keys are pressed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.get_cursor_pos">
+<span class="sig-name descname"><span class="pre">get_cursor_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_cursor_pos" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the current position of mouse.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The current position of mouse.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.running">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.running" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the property of whether the gui is running.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The running property of gui(bool).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.fps_limit">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fps_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.fps_limit" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the property of fps limit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The property of fps limit of gui.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.ui.rgb_to_hex">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">rgb_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.rgb_to_hex" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert rgb color format to hex color format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>c</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – The rgb representation of color.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The hex representation of color.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.ui.hex_to_rgb">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">hex_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.hex_to_rgb" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert hex color format to rgb color format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>int</em>) – The hex representation of color.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The rgb representation of color.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.ui.Gui">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">Gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gui</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Gui.sub_window">
+<span class="sig-name descname"><span class="pre">sub_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.sub_window" title="Permalink to this definition">#</a></dt>
+<dd><p>Creating a context manager for subwindow</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All args of this method should align with <cite>begin</cite>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – The x-coordinate (between 0 and 1) of the top-left corner of the subwindow, relative to the full window.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – The y-coordinate (between 0 and 1) of the top-left corner of the subwindow, relative to the full window.</p></li>
+<li><p><strong>width</strong> (<em>float</em>) – The width of the subwindow relative to the full window.</p></li>
+<li><p><strong>height</strong> (<em>float</em>) – The height of the subwindow relative to the full window.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Usage:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; with gui.sub_window(name, x, y, width, height) as g:
+&gt;&gt;&gt;     g.text(&quot;Hello, World!&quot;)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Gui.begin">
+<span class="sig-name descname"><span class="pre">begin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.begin" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates a subwindow that holds imgui widgets.</p>
+<p>All widget function calls (e.g. <cite>text</cite>, <cite>button</cite>) after the <cite>begin</cite> and before the next <cite>end</cite> will describe the widgets within this subwindow.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – The x-coordinate (between 0 and 1) of the top-left corner of the subwindow, relative to the full window.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – The y-coordinate (between 0 and 1) of the top-left corner of the subwindow, relative to the full window.</p></li>
+<li><p><strong>width</strong> (<em>float</em>) – The width of the subwindow relative to the full window.</p></li>
+<li><p><strong>height</strong> (<em>float</em>) – The height of the subwindow relative to the full window.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Gui.end">
+<span class="sig-name descname"><span class="pre">end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.end" title="Permalink to this definition">#</a></dt>
+<dd><p>End the description of the current subwindow.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Gui.text">
+<span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.text" title="Permalink to this definition">#</a></dt>
+<dd><p>Declares a line of text.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Gui.checkbox">
+<span class="sig-name descname"><span class="pre">checkbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.checkbox" title="Permalink to this definition">#</a></dt>
+<dd><p>Declares a checkbox, and returns whether or not it has been checked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the checkbox</p></li>
+<li><p><strong>old_value</strong> (<em>bool</em>) – whether the checkbox is currently checked</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Gui.slider_float">
+<span class="sig-name descname"><span class="pre">slider_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.slider_float" title="Permalink to this definition">#</a></dt>
+<dd><p>Declares a slider, and returns its newest value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the slider</p></li>
+<li><p><strong>old_value</strong> (<em>float</em>) – the current value of the slider.</p></li>
+<li><p><strong>minimum</strong> (<em>float</em>) – the minimum value of the slider.</p></li>
+<li><p><strong>maximum</strong> (<em>float</em>) – the maximum value of the slider.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Gui.color_edit_3">
+<span class="sig-name descname"><span class="pre">color_edit_3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.color_edit_3" title="Permalink to this definition">#</a></dt>
+<dd><p>Declares a color edit palate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the palate</p></li>
+<li><p><strong>old_value</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – the current value of the color, this should be a tuple of floats in [0,1] that indicates RGB values.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Gui.button">
+<span class="sig-name descname"><span class="pre">button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.button" title="Permalink to this definition">#</a></dt>
+<dd><p>Declares a button, and returns whether or not it had just been clicked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the button</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.ui.GGUI_AVAILABLE">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">GGUI_AVAILABLE</span></span><a class="headerlink" href="#taichi.ui.GGUI_AVAILABLE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.ui.make_camera">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">make_camera</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.make_camera" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Taichi Graphics.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
