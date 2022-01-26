@@ -37,9 +37,9 @@ jobs:
 
       - name: Set API Gen Env
         run: |
-          echo "DOCSTRING_GEN_PATH=${GITHUB_WORKSPACE}/docstring-gen" >> $GITHUB_ENV
-          echo "TAICHI_PATH=${GITHUB_WORKSPACE}/taichi/python/taichi" >> $GITHUB_ENV
-          echo "TAICHI_WEBSITE=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
+          echo "DOCSTRING_GEN_PATH=${GITHUB_WORKSPACE}/docsgen" >> $GITHUB_ENV
+          echo "TAICHI_PATH=${GITHUB_WORKSPACE}/source/python/taichi" >> $GITHUB_ENV
+          echo "TAICHI_WEBSITE=${GITHUB_WORKSPACE}/target" >> $GITHUB_ENV
 
       - name: Generate New API Docs AND Sync To Docs Website
         run: |
@@ -47,6 +47,7 @@ jobs:
           export TAICHI_PATH=${{ env.TAICHI_PATH }}
           export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
           $DOCSTRING_GEN_PATH/multi_version_build.sh
+          cd $TAICHI_WEBSITE/website && yarn run apiversion
 
       - name: Create a Pull Request
         id: create-pr
