@@ -521,6 +521,15 @@
      </code>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../profiler/scoped_profiler/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.scoped_profiler
+      </span>
+     </code>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -959,16 +968,6 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.print_profile_info">
-       print_profile_info
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.clear_profile_info">
-       clear_profile_info
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.tools.dump_dot">
        dump_dot
       </a>
@@ -1117,12 +1116,6 @@
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.set_gdb_trigger" title="taichi.tools.set_gdb_trigger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gdb_trigger</span></code></a>(on=True)</p></td>
 <td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.print_profile_info" title="taichi.tools.print_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_profile_info</span></code></a>()</p></td>
-<td><p>Print time elapsed on the host tasks in a hierarchical format.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.clear_profile_info" title="taichi.tools.clear_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_profile_info</span></code></a>()</p></td>
-<td><p>Clear profiler's records about time elapsed on the host tasks.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.dump_dot" title="taichi.tools.dump_dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dump_dot</span></code></a>(filepath=None, rankdir=None, embed_states_threshold=0)</p></td>
 <td><p></p></td>
@@ -1367,33 +1360,6 @@
 <dt class="sig sig-object py" id="taichi.tools.set_gdb_trigger">
 <span class="sig-prename descclassname"><span class="pre">taichi.tools.</span></span><span class="sig-name descname"><span class="pre">set_gdb_trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.set_gdb_trigger" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.print_profile_info">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.</span></span><span class="sig-name descname"><span class="pre">print_profile_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.print_profile_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Print time elapsed on the host tasks in a hierarchical format.</p>
-<p>This profiler is automatically on.</p>
-<p>Call function imports from C++ : _ti_core.print_profile_info()</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
-&gt;&gt;&gt; ti.init(arch=ti.cpu)
-&gt;&gt;&gt; var = ti.field(ti.f32, shape=1)
-&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def compute():
-&gt;&gt;&gt;     var[0] = 1.0
-&gt;&gt;&gt;     print(&quot;Setting var[0] =&quot;, var[0])
-&gt;&gt;&gt; compute()
-&gt;&gt;&gt; ti.print_profile_info()
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.clear_profile_info">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.</span></span><span class="sig-name descname"><span class="pre">clear_profile_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.clear_profile_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Clear profiler’s records about time elapsed on the host tasks.</p>
-<p>Call function imports from C++ : _ti_core.clear_profile_info()</p>
-</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.tools.dump_dot">
