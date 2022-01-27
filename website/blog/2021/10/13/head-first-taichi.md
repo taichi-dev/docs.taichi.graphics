@@ -420,7 +420,7 @@ I hope you enjoyed this program! If you did, I have a few challenges for you:
 As an example of what the last two challenges may look like:
 
 <p align="center">
-  <img width="400" height="225" src="https://github.com/taichi-dev/public_files/raw/master/taichi.graphics/cloth_2.gif" />
+  <img width="500" src="https://github.com/taichi-dev/public_files/raw/master/taichi.graphics/cloth_2.gif" />
 </p>
 
 
