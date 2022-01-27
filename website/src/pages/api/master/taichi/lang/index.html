@@ -1498,6 +1498,16 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.abs">
+       abs
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.pow">
+       pow
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.lang.quant">
        quant
       </a>
@@ -1876,23 +1886,6 @@
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#taichi.lang.StructField.to_torch">
          to_torch
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.TapeImpl">
-       TapeImpl
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.lang.TapeImpl.insert">
-         insert
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.lang.TapeImpl.grad">
-         grad
         </a>
        </li>
       </ul>
@@ -2485,13 +2478,10 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.StructField" title="taichi.lang.StructField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StructField</span></code></a></p></td>
 <td><p>Taichi struct field with SNode implementation.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.TapeImpl" title="taichi.lang.TapeImpl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TapeImpl</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.KernelProfiler" title="taichi.lang.KernelProfiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.KernelProfiler" title="taichi.lang.KernelProfiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a></p></td>
 <td><p>Kernel profiler of Taichi.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.CuptiMetric" title="taichi.lang.CuptiMetric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CuptiMetric</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.CuptiMetric" title="taichi.lang.CuptiMetric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CuptiMetric</span></code></a></p></td>
 <td><p>A class to add CUPTI metric for <a class="reference internal" href="#taichi.lang.KernelProfiler" title="taichi.lang.KernelProfiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a>.</p></td>
 </tr>
 </tbody>
@@ -2657,6 +2647,12 @@
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.select" title="taichi.lang.select"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select</span></code></a>(cond, a, b)</p></td>
 <td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.abs" title="taichi.lang.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a>(a)</p></td>
+<td><p>The absolute value function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.pow" title="taichi.lang.pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pow</span></code></a>(a, b)</p></td>
+<td><p>The power function.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.async_flush" title="taichi.lang.async_flush"><code class="xref py py-obj docutils literal notranslate"><span class="pre">async_flush</span></code></a>()</p></td>
 <td><p></p></td>
@@ -4558,6 +4554,37 @@ When keep_dims=False, the resulting numpy array should skip the matrix dims with
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cond</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.select" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.abs">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.abs" title="Permalink to this definition">#</a></dt>
+<dd><p>The absolute value function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The absolute value of <cite>a</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.pow">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.pow" title="Permalink to this definition">#</a></dt>
+<dd><p>The power function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p></li>
+<li><p><strong>b</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>a</cite> to the <cite>b</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.quant">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">quant</span></span><a class="headerlink" href="#taichi.lang.quant" title="Permalink to this definition">#</a></dt>
@@ -5272,21 +5299,6 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 </dd>
 </dl>
 </dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="taichi.lang.TapeImpl">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TapeImpl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">runtime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.TapeImpl" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.TapeImpl.insert">
-<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.TapeImpl.insert" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.TapeImpl.grad">
-<span class="sig-name descname"><span class="pre">grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.TapeImpl.grad" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 
