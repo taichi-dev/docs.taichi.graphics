@@ -521,6 +521,15 @@
      </code>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="scoped_profiler/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.scoped_profiler
+      </span>
+     </code>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -878,6 +887,16 @@
        get_default_kernel_profiler
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.profiler.print_scoped_profiler_info">
+       print_scoped_profiler_info
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.profiler.clear_scoped_profiler_info">
+       clear_scoped_profiler_info
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -911,6 +930,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="kernelmetrics/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernelmetrics</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="kernelprofiler/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernelprofiler</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="scoped_profiler/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.scoped_profiler</span></code></a></li>
 </ul>
 </div>
 </section>
@@ -940,6 +960,12 @@
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.get_default_kernel_profiler" title="taichi.profiler.get_default_kernel_profiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_default_kernel_profiler</span></code></a>()</p></td>
 <td><p>We have only one <a class="reference internal" href="kernelprofiler/#taichi.profiler.kernelprofiler.KernelProfiler" title="taichi.profiler.kernelprofiler.KernelProfiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a> instance(i.e. <code class="docutils literal notranslate"><span class="pre">_ti_kernel_profiler</span></code>) now.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.profiler.print_scoped_profiler_info" title="taichi.profiler.print_scoped_profiler_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_scoped_profiler_info</span></code></a>()</p></td>
+<td><p>Print time elapsed on the host tasks in a hierarchical format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.clear_scoped_profiler_info" title="taichi.profiler.clear_scoped_profiler_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_scoped_profiler_info</span></code></a>()</p></td>
+<td><p>Clear profiler's records about time elapsed on the host tasks.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1049,6 +1075,33 @@ its counter registers to collect specific metrics.
 So if there are multiple instances of <code class="docutils literal notranslate"><span class="pre">KernelProfiler</span></code>, the device will work in the latest configuration,
 the profiling configuration of other instances will be changed as a result.
 For data retention purposes, multiple instances will be considered in the future.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.profiler.print_scoped_profiler_info">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.</span></span><span class="sig-name descname"><span class="pre">print_scoped_profiler_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.print_scoped_profiler_info" title="Permalink to this definition">#</a></dt>
+<dd><p>Print time elapsed on the host tasks in a hierarchical format.</p>
+<p>This profiler is automatically on.</p>
+<p>Call function imports from C++ : _ti_core.print_profile_info()</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
+&gt;&gt;&gt; ti.init(arch=ti.cpu)
+&gt;&gt;&gt; var = ti.field(ti.f32, shape=1)
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def compute():
+&gt;&gt;&gt;     var[0] = 1.0
+&gt;&gt;&gt;     print(&quot;Setting var[0] =&quot;, var[0])
+&gt;&gt;&gt; compute()
+&gt;&gt;&gt; ti.profiler.print_scoped_profiler_info()
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.profiler.clear_scoped_profiler_info">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.</span></span><span class="sig-name descname"><span class="pre">clear_scoped_profiler_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.clear_scoped_profiler_info" title="Permalink to this definition">#</a></dt>
+<dd><p>Clear profiler’s records about time elapsed on the host tasks.</p>
+<p>Call function imports from C++ : _ti_core.clear_profile_info()</p>
 </dd></dl>
 
 </section>
