@@ -858,6 +858,16 @@
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError">
+       TaichiSyntaxError
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.TaichiTypeError">
+       TaichiTypeError
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.lang.TaichiCompilationError">
        TaichiCompilationError
       </a>
@@ -868,13 +878,13 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError">
-       TaichiSyntaxError
+      <a class="reference internal nav-link" href="#taichi.lang.TaichiRuntimeError">
+       TaichiRuntimeError
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.TaichiTypeError">
-       TaichiTypeError
+      <a class="reference internal nav-link" href="#taichi.lang.TaichiRuntimeTypeError">
+       TaichiRuntimeTypeError
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -938,16 +948,6 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.KernelArgError">
-       KernelArgError
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.KernelDefError">
-       KernelDefError
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.lang.data_oriented">
        data_oriented
       </a>
@@ -960,11 +960,6 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.lang.kernel">
        kernel
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.pyfunc">
-       pyfunc
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -1995,11 +1990,6 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.warning">
-       warning
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.lang.any_arr">
        any_arr
       </a>
@@ -2214,209 +2204,203 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.kernel" title="taichi.lang.kernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kernel</span></code></a>(fn)</p></td>
 <td><p>Marks a function as a Taichi kernel.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.pyfunc" title="taichi.lang.pyfunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pyfunc</span></code></a>(fn)</p></td>
-<td><p>Marks a function as callable in both Taichi and Python scopes.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.Vector" title="taichi.lang.Vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector</span></code></a>(n, dt=None, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.Vector" title="taichi.lang.Vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector</span></code></a>(n, dt=None, **kwargs)</p></td>
 <td><p>Construct a <cite>Vector</cite> instance i.e. 1-D Matrix.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.TetMesh" title="taichi.lang.TetMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TetMesh</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.TetMesh" title="taichi.lang.TetMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TetMesh</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.TriMesh" title="taichi.lang.TriMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TriMesh</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.TriMesh" title="taichi.lang.TriMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TriMesh</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.Tape" title="taichi.lang.Tape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tape</span></code></a>(loss, clear_gradients=True)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.Tape" title="taichi.lang.Tape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tape</span></code></a>(loss, clear_gradients=True)</p></td>
 <td><p>Return a context manager of <a class="reference internal" href="tape/#taichi.lang.tape.TapeImpl" title="taichi.lang.tape.TapeImpl"><code class="xref py py-class docutils literal notranslate"><span class="pre">TapeImpl</span></code></a>. The</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.assume_in_range" title="taichi.lang.assume_in_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assume_in_range</span></code></a>(val, base, low, high)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.assume_in_range" title="taichi.lang.assume_in_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assume_in_range</span></code></a>(val, base, low, high)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.benchmark" title="taichi.lang.benchmark"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark</span></code></a>(_func, repeat=300, args=())</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.benchmark" title="taichi.lang.benchmark"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark</span></code></a>(_func, repeat=300, args=())</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.benchmark_plot" title="taichi.lang.benchmark_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark_plot</span></code></a>(fn=None, cases=None, columns=None, column_titles=None, archs=None, title=None, bars='sync_vs_async', bar_width=0.4, bar_distance=0, left_margin=0, size=(12, 8))</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.benchmark_plot" title="taichi.lang.benchmark_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark_plot</span></code></a>(fn=None, cases=None, columns=None, column_titles=None, archs=None, title=None, bars='sync_vs_async', bar_width=0.4, bar_distance=0, left_margin=0, size=(12, 8))</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.block_local" title="taichi.lang.block_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">block_local</span></code></a>(*args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.block_local" title="taichi.lang.block_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">block_local</span></code></a>(*args)</p></td>
 <td><p>Hints Taichi to cache the fields and to enable the BLS optimization.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.cache_read_only" title="taichi.lang.cache_read_only"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cache_read_only</span></code></a>(*args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.cache_read_only" title="taichi.lang.cache_read_only"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cache_read_only</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.clear_all_gradients" title="taichi.lang.clear_all_gradients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_all_gradients</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.clear_all_gradients" title="taichi.lang.clear_all_gradients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_all_gradients</span></code></a>()</p></td>
 <td><p>Set all fields' gradients to 0.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.clear_kernel_profile_info" title="taichi.lang.clear_kernel_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_kernel_profile_info</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.clear_kernel_profile_info" title="taichi.lang.clear_kernel_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_kernel_profile_info</span></code></a>()</p></td>
 <td><p>Clear all KernelProfiler records.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.collect_kernel_profile_metrics" title="taichi.lang.collect_kernel_profile_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_kernel_profile_metrics</span></code></a>(metric_list=default_cupti_metrics)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.collect_kernel_profile_metrics" title="taichi.lang.collect_kernel_profile_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_kernel_profile_metrics</span></code></a>(metric_list=default_cupti_metrics)</p></td>
 <td><p>Set temporary metrics that will be collected by the CUPTI toolkit within this context.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.init" title="taichi.lang.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(arch=None, default_fp=None, default_ip=None, _test_mode=False, enable_fallback=True, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.init" title="taichi.lang.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(arch=None, default_fp=None, default_ip=None, _test_mode=False, enable_fallback=True, **kwargs)</p></td>
 <td><p>Initializes the Taichi runtime.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.kernel_profiler_total_time" title="taichi.lang.kernel_profiler_total_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kernel_profiler_total_time</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.kernel_profiler_total_time" title="taichi.lang.kernel_profiler_total_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kernel_profiler_total_time</span></code></a>()</p></td>
 <td><p>Get elapsed time of all kernels recorded in KernelProfiler.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.mesh_local" title="taichi.lang.mesh_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mesh_local</span></code></a>(*args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.mesh_local" title="taichi.lang.mesh_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mesh_local</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.no_activate" title="taichi.lang.no_activate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">no_activate</span></code></a>(*args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.no_activate" title="taichi.lang.no_activate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">no_activate</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.print_memory_profile_info" title="taichi.lang.print_memory_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_memory_profile_info</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.print_memory_profile_info" title="taichi.lang.print_memory_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_memory_profile_info</span></code></a>()</p></td>
 <td><p>Memory profiling tool for LLVM backends with full sparse support.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.print_kernel_profile_info" title="taichi.lang.print_kernel_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_kernel_profile_info</span></code></a>(mode='count')</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.print_kernel_profile_info" title="taichi.lang.print_kernel_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_kernel_profile_info</span></code></a>(mode='count')</p></td>
 <td><p>Print the profiling results of Taichi kernels.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.query_kernel_profile_info" title="taichi.lang.query_kernel_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_kernel_profile_info</span></code></a>(name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.query_kernel_profile_info" title="taichi.lang.query_kernel_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_kernel_profile_info</span></code></a>(name)</p></td>
 <td><p>Query kernel elapsed time(min,avg,max) on devices using the kernel name.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.reset" title="taichi.lang.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.reset" title="taichi.lang.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>()</p></td>
 <td><p>Resets Taichi to its initial state.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.set_kernel_profile_metrics" title="taichi.lang.set_kernel_profile_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_kernel_profile_metrics</span></code></a>(metric_list=default_cupti_metrics)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.set_kernel_profile_metrics" title="taichi.lang.set_kernel_profile_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_kernel_profile_metrics</span></code></a>(metric_list=default_cupti_metrics)</p></td>
 <td><p>Set metrics that will be collected by the CUPTI toolkit.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.set_kernel_profiler_toolkit" title="taichi.lang.set_kernel_profiler_toolkit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_kernel_profiler_toolkit</span></code></a>(toolkit_name='default')</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.set_kernel_profiler_toolkit" title="taichi.lang.set_kernel_profiler_toolkit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_kernel_profiler_toolkit</span></code></a>(toolkit_name='default')</p></td>
 <td><p>Set the toolkit used by KernelProfiler.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.acos" title="taichi.lang.acos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">acos</span></code></a>(a)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.acos" title="taichi.lang.acos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">acos</span></code></a>(a)</p></td>
 <td><p>The inverses function of cosine.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.asin" title="taichi.lang.asin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asin</span></code></a>(a)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.asin" title="taichi.lang.asin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asin</span></code></a>(a)</p></td>
 <td><p>The inverses function of sine.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.atan2" title="taichi.lang.atan2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atan2</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.atan2" title="taichi.lang.atan2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atan2</span></code></a>(a, b)</p></td>
 <td><p>The inverses of the tangent function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.atomic_and" title="taichi.lang.atomic_and"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_and</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.atomic_and" title="taichi.lang.atomic_and"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_and</span></code></a>(a, b)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.atomic_or" title="taichi.lang.atomic_or"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_or</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.atomic_or" title="taichi.lang.atomic_or"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_or</span></code></a>(a, b)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.atomic_xor" title="taichi.lang.atomic_xor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_xor</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.atomic_xor" title="taichi.lang.atomic_xor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_xor</span></code></a>(a, b)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.atomic_max" title="taichi.lang.atomic_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_max</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.atomic_max" title="taichi.lang.atomic_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_max</span></code></a>(a, b)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.atomic_sub" title="taichi.lang.atomic_sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_sub</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.atomic_sub" title="taichi.lang.atomic_sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_sub</span></code></a>(a, b)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.atomic_min" title="taichi.lang.atomic_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_min</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.atomic_min" title="taichi.lang.atomic_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_min</span></code></a>(a, b)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.atomic_add" title="taichi.lang.atomic_add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_add</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.atomic_add" title="taichi.lang.atomic_add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_add</span></code></a>(a, b)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.bit_cast" title="taichi.lang.bit_cast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bit_cast</span></code></a>(obj, dtype)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.bit_cast" title="taichi.lang.bit_cast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bit_cast</span></code></a>(obj, dtype)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.bit_shr" title="taichi.lang.bit_shr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bit_shr</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.bit_shr" title="taichi.lang.bit_shr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bit_shr</span></code></a>(a, b)</p></td>
 <td><p>Compute bitwise shift right (in taichi scope)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.cast" title="taichi.lang.cast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cast</span></code></a>(obj, dtype)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.cast" title="taichi.lang.cast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cast</span></code></a>(obj, dtype)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.ceil" title="taichi.lang.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ceil</span></code></a>(a)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.ceil" title="taichi.lang.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ceil</span></code></a>(a)</p></td>
 <td><p>The ceil function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.cos" title="taichi.lang.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a>(a)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.cos" title="taichi.lang.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a>(a)</p></td>
 <td><p>The cosine function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.exp" title="taichi.lang.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a>(a)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.exp" title="taichi.lang.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a>(a)</p></td>
 <td><p>The exp function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.floor" title="taichi.lang.floor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floor</span></code></a>(a)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.floor" title="taichi.lang.floor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floor</span></code></a>(a)</p></td>
 <td><p>The floor function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.log" title="taichi.lang.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(a)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.log" title="taichi.lang.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(a)</p></td>
 <td><p>The natural logarithm function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.random" title="taichi.lang.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>(dtype=float)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.random" title="taichi.lang.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>(dtype=float)</p></td>
 <td><p>The random function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.raw_mod" title="taichi.lang.raw_mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_mod</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.raw_mod" title="taichi.lang.raw_mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_mod</span></code></a>(a, b)</p></td>
 <td><p>Raw_mod function. Both <cite>a</cite> and <cite>b</cite> can be <cite>float</cite>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.raw_div" title="taichi.lang.raw_div"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_div</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.raw_div" title="taichi.lang.raw_div"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_div</span></code></a>(a, b)</p></td>
 <td><p>Raw_div function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.round" title="taichi.lang.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(a)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.round" title="taichi.lang.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(a)</p></td>
 <td><p>The round function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.rsqrt" title="taichi.lang.rsqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsqrt</span></code></a>(a)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.rsqrt" title="taichi.lang.rsqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsqrt</span></code></a>(a)</p></td>
 <td><p>The reciprocal of the square root function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.sin" title="taichi.lang.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a>(a)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.sin" title="taichi.lang.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a>(a)</p></td>
 <td><p>The sine function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.sqrt" title="taichi.lang.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a>(a)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.sqrt" title="taichi.lang.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a>(a)</p></td>
 <td><p>The square root function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.tan" title="taichi.lang.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a>(a)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.tan" title="taichi.lang.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a>(a)</p></td>
 <td><p>The tangent function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.tanh" title="taichi.lang.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a>(a)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.tanh" title="taichi.lang.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a>(a)</p></td>
 <td><p>The hyperbolic tangent function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.max" title="taichi.lang.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(*args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.max" title="taichi.lang.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.min" title="taichi.lang.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(*args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.min" title="taichi.lang.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.select" title="taichi.lang.select"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select</span></code></a>(cond, a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.select" title="taichi.lang.select"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select</span></code></a>(cond, a, b)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.abs" title="taichi.lang.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a>(a)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.abs" title="taichi.lang.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a>(a)</p></td>
 <td><p>The absolute value function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.pow" title="taichi.lang.pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pow</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.pow" title="taichi.lang.pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pow</span></code></a>(a, b)</p></td>
 <td><p>The power function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.sync" title="taichi.lang.sync"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sync</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.sync" title="taichi.lang.sync"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sync</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.activate" title="taichi.lang.activate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">activate</span></code></a>(l, indices)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.activate" title="taichi.lang.activate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">activate</span></code></a>(l, indices)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.append" title="taichi.lang.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(l, indices, val)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.append" title="taichi.lang.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(l, indices, val)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.deactivate" title="taichi.lang.deactivate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deactivate</span></code></a>(l, indices)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.deactivate" title="taichi.lang.deactivate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deactivate</span></code></a>(l, indices)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.get_addr" title="taichi.lang.get_addr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_addr</span></code></a>(f, indices)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.get_addr" title="taichi.lang.get_addr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_addr</span></code></a>(f, indices)</p></td>
 <td><p>Query the memory address (on CUDA/x64) of field <cite>f</cite> at index <cite>indices</cite>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.is_active" title="taichi.lang.is_active"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_active</span></code></a>(l, indices)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.is_active" title="taichi.lang.is_active"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_active</span></code></a>(l, indices)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.length" title="taichi.lang.length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">length</span></code></a>(l, indices)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.length" title="taichi.lang.length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">length</span></code></a>(l, indices)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.rescale_index" title="taichi.lang.rescale_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rescale_index</span></code></a>(a, b, I)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.rescale_index" title="taichi.lang.rescale_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rescale_index</span></code></a>(a, b, I)</p></td>
 <td><p>Rescales the index 'I' of field (or SNode) 'a' to match the shape of SNode 'b'</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.parallel_sort" title="taichi.lang.parallel_sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parallel_sort</span></code></a>(keys, values=None)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.parallel_sort" title="taichi.lang.parallel_sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parallel_sort</span></code></a>(keys, values=None)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.get_default_kernel_profiler" title="taichi.lang.get_default_kernel_profiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_default_kernel_profiler</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.get_default_kernel_profiler" title="taichi.lang.get_default_kernel_profiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_default_kernel_profiler</span></code></a>()</p></td>
 <td><p>We have only one <a class="reference internal" href="../profiler/kernelprofiler/#taichi.profiler.kernelprofiler.KernelProfiler" title="taichi.profiler.kernelprofiler.KernelProfiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a> instance(i.e. <code class="docutils literal notranslate"><span class="pre">_ti_kernel_profiler</span></code>) now.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.get_predefined_cupti_metrics" title="taichi.lang.get_predefined_cupti_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_predefined_cupti_metrics</span></code></a>(name='')</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.get_predefined_cupti_metrics" title="taichi.lang.get_predefined_cupti_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_predefined_cupti_metrics</span></code></a>(name='')</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.set_gdb_trigger" title="taichi.lang.set_gdb_trigger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gdb_trigger</span></code></a>(on=True)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.set_gdb_trigger" title="taichi.lang.set_gdb_trigger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gdb_trigger</span></code></a>(on=True)</p></td>
 <td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.warning" title="taichi.lang.warning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warning</span></code></a>(msg, warning_type=UserWarning, stacklevel=1)</p></td>
-<td><p>Print warning message</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.ext_arr" title="taichi.lang.ext_arr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ext_arr</span></code></a>()</p></td>
 <td><p>Type annotation for external arrays.</p></td>
@@ -2598,6 +2582,20 @@
 </dd></dl>
 
 <dl class="py exception">
+<dt class="sig sig-object py" id="taichi.lang.TaichiSyntaxError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiSyntaxError</span></span><a class="headerlink" href="#taichi.lang.TaichiSyntaxError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiCompilationError" title="taichi.lang.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">SyntaxError</span></code></p>
+<p>Common base class for all non-exit exceptions.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="taichi.lang.TaichiTypeError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiTypeError</span></span><a class="headerlink" href="#taichi.lang.TaichiTypeError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiCompilationError" title="taichi.lang.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
+<p>Common base class for all non-exit exceptions.</p>
+</dd></dl>
+
+<dl class="py exception">
 <dt class="sig sig-object py" id="taichi.lang.TaichiCompilationError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiCompilationError</span></span><a class="headerlink" href="#taichi.lang.TaichiCompilationError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
@@ -2612,17 +2610,17 @@
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="taichi.lang.TaichiSyntaxError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiSyntaxError</span></span><a class="headerlink" href="#taichi.lang.TaichiSyntaxError" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiCompilationError" title="taichi.lang.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">SyntaxError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<dt class="sig sig-object py" id="taichi.lang.TaichiRuntimeError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeError</span></span><a class="headerlink" href="#taichi.lang.TaichiRuntimeError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></p>
+<p>Unspecified run-time error.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="taichi.lang.TaichiTypeError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiTypeError</span></span><a class="headerlink" href="#taichi.lang.TaichiTypeError" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiCompilationError" title="taichi.lang.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<dt class="sig sig-object py" id="taichi.lang.TaichiRuntimeTypeError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeTypeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provided</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.TaichiRuntimeTypeError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiRuntimeError" title="taichi.lang.TaichiRuntimeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiRuntimeError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
+<p>Unspecified run-time error.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -2816,20 +2814,6 @@ condition check.</p>
 </dl>
 </dd></dl>
 
-<dl class="py exception">
-<dt class="sig sig-object py" id="taichi.lang.KernelArgError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">KernelArgError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provided</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.KernelArgError" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="taichi.lang.KernelDefError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">KernelDefError</span></span><a class="headerlink" href="#taichi.lang.KernelDefError" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
-</dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.data_oriented">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">data_oriented</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.data_oriented" title="Permalink to this definition">#</a></dt>
@@ -2922,27 +2906,6 @@ to either a CPU thread pool or massively parallel GPUs.</p>
 &gt;&gt;&gt;         x[i] = i
 </pre></div>
 </div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.pyfunc">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">pyfunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.pyfunc" title="Permalink to this definition">#</a></dt>
-<dd><p>Marks a function as callable in both Taichi and Python scopes.</p>
-<p>When called inside the Taichi scope, Taichi will JIT compile it into
-native instructions. Otherwise it will be invoked directly as a
-Python function.</p>
-<p>See also <a class="reference internal" href="kernel_impl/#taichi.lang.kernel_impl.func" title="taichi.lang.kernel_impl.func"><code class="xref py py-func docutils literal notranslate"><span class="pre">func()</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – The Python function to be decorated</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The decorated function</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Callable</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py class">
@@ -5013,21 +4976,6 @@ For usage of this class, see examples in func <a class="reference internal" href
 <dt class="sig sig-object py" id="taichi.lang.set_gdb_trigger">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">set_gdb_trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.set_gdb_trigger" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.warning">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warning_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">UserWarning</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stacklevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.warning" title="Permalink to this definition">#</a></dt>
-<dd><p>Print warning message</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>msg</strong> (<em>str</em>) – massage to print.</p></li>
-<li><p><strong>warning_type</strong> (<em>builtin warning type</em>) – type of warning.</p></li>
-<li><p><strong>stacklevel</strong> (<em>int</em>) – warning stack level from the caller.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.any_arr">

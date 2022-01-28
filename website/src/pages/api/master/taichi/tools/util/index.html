@@ -811,26 +811,6 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.util.warning">
-       warning
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.util.deprecated">
-       deprecated
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.util.obsolete">
-       obsolete
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.util.get_traceback">
-       get_traceback
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.tools.util.set_gdb_trigger">
        set_gdb_trigger
       </a>
@@ -887,18 +867,6 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.util.warning" title="taichi.tools.util.warning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warning</span></code></a>(msg, warning_type=UserWarning, stacklevel=1)</p></td>
-<td><p>Print warning message</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.util.deprecated" title="taichi.tools.util.deprecated"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deprecated</span></code></a>(old, new, warning_type=DeprecationWarning)</p></td>
-<td><p>Mark an API as deprecated.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.util.obsolete" title="taichi.tools.util.obsolete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">obsolete</span></code></a>(old, new)</p></td>
-<td><p>Mark an API as obsolete. Usage:</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.util.get_traceback" title="taichi.tools.util.get_traceback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_traceback</span></code></a>(stacklevel=1)</p></td>
-<td><p></p></td>
-</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.util.set_gdb_trigger" title="taichi.tools.util.set_gdb_trigger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gdb_trigger</span></code></a>(on=True)</p></td>
 <td><p></p></td>
 </tr>
@@ -913,59 +881,6 @@
 </tr>
 </tbody>
 </table>
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.util.warning">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.util.</span></span><span class="sig-name descname"><span class="pre">warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warning_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">UserWarning</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stacklevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.util.warning" title="Permalink to this definition">#</a></dt>
-<dd><p>Print warning message</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>msg</strong> (<em>str</em>) – massage to print.</p></li>
-<li><p><strong>warning_type</strong> (<em>builtin warning type</em>) – type of warning.</p></li>
-<li><p><strong>stacklevel</strong> (<em>int</em>) – warning stack level from the caller.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.util.deprecated">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.util.</span></span><span class="sig-name descname"><span class="pre">deprecated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warning_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DeprecationWarning</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.util.deprecated" title="Permalink to this definition">#</a></dt>
-<dd><p>Mark an API as deprecated.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>old</strong> (<em>str</em>) – old method.</p></li>
-<li><p><strong>new</strong> (<em>str</em>) – new method.</p></li>
-<li><p><strong>warning_type</strong> (<em>builtin warning type</em>) – type of warning.</p></li>
-</ul>
-</dd>
-</dl>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @deprecated(&#39;ti.sqr(x)&#39;, &#39;x**2&#39;)
-&gt;&gt;&gt; def sqr(x):
-&gt;&gt;&gt;     return x**2
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Decorated fuction with warning message</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.util.obsolete">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.util.</span></span><span class="sig-name descname"><span class="pre">obsolete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.util.obsolete" title="Permalink to this definition">#</a></dt>
-<dd><p>Mark an API as obsolete. Usage:</p>
-<p>sqr = obsolete(‘ti.sqr(x)’, ‘x**2’)</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.util.get_traceback">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.util.</span></span><span class="sig-name descname"><span class="pre">get_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stacklevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.util.get_traceback" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.tools.util.set_gdb_trigger">
 <span class="sig-prename descclassname"><span class="pre">taichi.tools.util.</span></span><span class="sig-name descname"><span class="pre">set_gdb_trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.util.set_gdb_trigger" title="Permalink to this definition">#</a></dt>

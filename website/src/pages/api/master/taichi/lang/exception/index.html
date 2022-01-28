@@ -825,6 +825,16 @@
      TaichiTypeError
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.exception.TaichiRuntimeError">
+     TaichiRuntimeError
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.exception.TaichiRuntimeTypeError">
+     TaichiRuntimeTypeError
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -878,6 +888,20 @@
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.exception.</span></span><span class="sig-name descname"><span class="pre">TaichiTypeError</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiTypeError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.exception.TaichiCompilationError" title="taichi.lang.exception.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
 <p>Common base class for all non-exit exceptions.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="taichi.lang.exception.TaichiRuntimeError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.exception.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeError</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiRuntimeError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></p>
+<p>Unspecified run-time error.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="taichi.lang.exception.TaichiRuntimeTypeError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.exception.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeTypeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provided</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.exception.TaichiRuntimeTypeError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.lang.exception.TaichiRuntimeError" title="taichi.lang.exception.TaichiRuntimeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiRuntimeError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
+<p>Unspecified run-time error.</p>
 </dd></dl>
 
 </section>
