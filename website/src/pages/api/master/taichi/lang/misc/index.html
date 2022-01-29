@@ -504,19 +504,19 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../profiler/kernelmetrics/">
+    <a class="reference internal" href="../../profiler/kernel_metrics/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
-       taichi.profiler.kernelmetrics
+       taichi.profiler.kernel_metrics
       </span>
      </code>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../profiler/kernelprofiler/">
+    <a class="reference internal" href="../../profiler/kernel_profiler/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
-       taichi.profiler.kernelprofiler
+       taichi.profiler.kernel_profiler
       </span>
      </code>
     </a>
@@ -965,41 +965,6 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.misc.print_kernel_profile_info">
-       print_kernel_profile_info
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.misc.query_kernel_profile_info">
-       query_kernel_profile_info
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.misc.clear_kernel_profile_info">
-       clear_kernel_profile_info
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.misc.kernel_profiler_total_time">
-       kernel_profiler_total_time
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.misc.set_kernel_profiler_toolkit">
-       set_kernel_profiler_toolkit
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.misc.set_kernel_profile_metrics">
-       set_kernel_profile_metrics
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.misc.collect_kernel_profile_metrics">
-       collect_kernel_profile_metrics
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.lang.misc.print_memory_profile_info">
        print_memory_profile_info
       </a>
@@ -1116,61 +1081,40 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.print_kernel_profile_info" title="taichi.lang.misc.print_kernel_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_kernel_profile_info</span></code></a>(mode='count')</p></td>
-<td><p>Print the profiling results of Taichi kernels.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.query_kernel_profile_info" title="taichi.lang.misc.query_kernel_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_kernel_profile_info</span></code></a>(name)</p></td>
-<td><p>Query kernel elapsed time(min,avg,max) on devices using the kernel name.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.clear_kernel_profile_info" title="taichi.lang.misc.clear_kernel_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_kernel_profile_info</span></code></a>()</p></td>
-<td><p>Clear all KernelProfiler records.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.kernel_profiler_total_time" title="taichi.lang.misc.kernel_profiler_total_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kernel_profiler_total_time</span></code></a>()</p></td>
-<td><p>Get elapsed time of all kernels recorded in KernelProfiler.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.set_kernel_profiler_toolkit" title="taichi.lang.misc.set_kernel_profiler_toolkit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_kernel_profiler_toolkit</span></code></a>(toolkit_name='default')</p></td>
-<td><p>Set the toolkit used by KernelProfiler.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.set_kernel_profile_metrics" title="taichi.lang.misc.set_kernel_profile_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_kernel_profile_metrics</span></code></a>(metric_list=default_cupti_metrics)</p></td>
-<td><p>Set metrics that will be collected by the CUPTI toolkit.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.collect_kernel_profile_metrics" title="taichi.lang.misc.collect_kernel_profile_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_kernel_profile_metrics</span></code></a>(metric_list=default_cupti_metrics)</p></td>
-<td><p>Set temporary metrics that will be collected by the CUPTI toolkit within this context.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.print_memory_profile_info" title="taichi.lang.misc.print_memory_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_memory_profile_info</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.print_memory_profile_info" title="taichi.lang.misc.print_memory_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_memory_profile_info</span></code></a>()</p></td>
 <td><p>Memory profiling tool for LLVM backends with full sparse support.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.reset" title="taichi.lang.misc.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.reset" title="taichi.lang.misc.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>()</p></td>
 <td><p>Resets Taichi to its initial state.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.init" title="taichi.lang.misc.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(arch=None, default_fp=None, default_ip=None, _test_mode=False, enable_fallback=True, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.init" title="taichi.lang.misc.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(arch=None, default_fp=None, default_ip=None, _test_mode=False, enable_fallback=True, **kwargs)</p></td>
 <td><p>Initializes the Taichi runtime.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.no_activate" title="taichi.lang.misc.no_activate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">no_activate</span></code></a>(*args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.no_activate" title="taichi.lang.misc.no_activate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">no_activate</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.block_local" title="taichi.lang.misc.block_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">block_local</span></code></a>(*args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.block_local" title="taichi.lang.misc.block_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">block_local</span></code></a>(*args)</p></td>
 <td><p>Hints Taichi to cache the fields and to enable the BLS optimization.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.mesh_local" title="taichi.lang.misc.mesh_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mesh_local</span></code></a>(*args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.mesh_local" title="taichi.lang.misc.mesh_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mesh_local</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.cache_read_only" title="taichi.lang.misc.cache_read_only"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cache_read_only</span></code></a>(*args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.cache_read_only" title="taichi.lang.misc.cache_read_only"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cache_read_only</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.assume_in_range" title="taichi.lang.misc.assume_in_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assume_in_range</span></code></a>(val, base, low, high)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.assume_in_range" title="taichi.lang.misc.assume_in_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assume_in_range</span></code></a>(val, base, low, high)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.Tape" title="taichi.lang.misc.Tape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tape</span></code></a>(loss, clear_gradients=True)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.Tape" title="taichi.lang.misc.Tape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tape</span></code></a>(loss, clear_gradients=True)</p></td>
 <td><p>Return a context manager of <a class="reference internal" href="../tape/#taichi.lang.tape.TapeImpl" title="taichi.lang.tape.TapeImpl"><code class="xref py py-class docutils literal notranslate"><span class="pre">TapeImpl</span></code></a>. The</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.clear_all_gradients" title="taichi.lang.misc.clear_all_gradients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_all_gradients</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.clear_all_gradients" title="taichi.lang.misc.clear_all_gradients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_all_gradients</span></code></a>()</p></td>
 <td><p>Set all fields' gradients to 0.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.benchmark" title="taichi.lang.misc.benchmark"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark</span></code></a>(_func, repeat=300, args=())</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.benchmark" title="taichi.lang.misc.benchmark"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark</span></code></a>(_func, repeat=300, args=())</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.benchmark_plot" title="taichi.lang.misc.benchmark_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark_plot</span></code></a>(fn=None, cases=None, columns=None, column_titles=None, archs=None, title=None, bars='sync_vs_async', bar_width=0.4, bar_distance=0, left_margin=0, size=(12, 8))</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.benchmark_plot" title="taichi.lang.misc.benchmark_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark_plot</span></code></a>(fn=None, cases=None, columns=None, column_titles=None, archs=None, title=None, bars='sync_vs_async', bar_width=0.4, bar_distance=0, left_margin=0, size=(12, 8))</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -1434,253 +1378,6 @@ GPU is detected, Taichi falls back to the CPU backend.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">cpu</span></span><a class="headerlink" href="#taichi.lang.misc.cpu" title="Permalink to this definition">#</a></dt>
 <dd><p>A list of CPU backends supported on the current system.</p>
 <p>When this is used, Taichi automatically picks the matching CPU backend.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.misc.print_kernel_profile_info">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">print_kernel_profile_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'count'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.print_kernel_profile_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Print the profiling results of Taichi kernels.</p>
-<p>To enable this profiler, set <code class="docutils literal notranslate"><span class="pre">kernel_profiler=True</span></code> in <code class="docutils literal notranslate"><span class="pre">ti.init()</span></code>.
-<code class="docutils literal notranslate"><span class="pre">'count'</span></code> mode: print the statistics (min,max,avg time) of launched kernels,
-<code class="docutils literal notranslate"><span class="pre">'trace'</span></code> mode: print the records of launched kernels with specific profiling metrics (time, memory load/store and core utilization etc.),
-and defaults to <code class="docutils literal notranslate"><span class="pre">'count'</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – the way to print profiling results.</p>
-</dd>
-</dl>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
-
-&gt;&gt;&gt; ti.init(ti.cpu, kernel_profiler=True)
-&gt;&gt;&gt; var = ti.field(ti.f32, shape=1)
-
-&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def compute():
-&gt;&gt;&gt;     var[0] = 1.0
-
-&gt;&gt;&gt; compute()
-&gt;&gt;&gt; ti.print_kernel_profile_info()
-&gt;&gt;&gt; # equivalent calls :
-&gt;&gt;&gt; # ti.print_kernel_profile_info(&#39;count&#39;)
-
-&gt;&gt;&gt; ti.print_kernel_profile_info(&#39;trace&#39;)
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Currently the result of <cite>KernelProfiler</cite> could be incorrect on OpenGL
-backend due to its lack of support for <cite>ti.sync()</cite>.</p>
-<p>For advanced mode of <cite>KernelProfiler</cite>, please visit <a class="reference external" href="https://docs.taichi.graphics/docs/lang/articles/misc/profiler#advanced-mode">https://docs.taichi.graphics/docs/lang/articles/misc/profiler#advanced-mode</a>.</p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.misc.query_kernel_profile_info">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">query_kernel_profile_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.query_kernel_profile_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Query kernel elapsed time(min,avg,max) on devices using the kernel name.</p>
-<p>To enable this profiler, set <cite>kernel_profiler=True</cite> in <cite>ti.init</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – kernel name.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>with member variables(counter, min, max, avg)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>KernelProfilerQueryResult (class)</p>
-</dd>
-</dl>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
-
-&gt;&gt;&gt; ti.init(ti.cpu, kernel_profiler=True)
-&gt;&gt;&gt; n = 1024*1024
-&gt;&gt;&gt; var = ti.field(ti.f32, shape=n)
-
-&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def fill():
-&gt;&gt;&gt;     for i in range(n):
-&gt;&gt;&gt;         var[i] = 0.1
-
-&gt;&gt;&gt; fill()
-&gt;&gt;&gt; ti.clear_kernel_profile_info() #[1]
-&gt;&gt;&gt; for i in range(100):
-&gt;&gt;&gt;     fill()
-&gt;&gt;&gt; query_result = ti.query_kernel_profile_info(fill.__name__) #[2]
-&gt;&gt;&gt; print(&quot;kernel excuted times =&quot;,query_result.counter)
-&gt;&gt;&gt; print(&quot;kernel elapsed time(min_in_ms) =&quot;,query_result.min)
-&gt;&gt;&gt; print(&quot;kernel elapsed time(max_in_ms) =&quot;,query_result.max)
-&gt;&gt;&gt; print(&quot;kernel elapsed time(avg_in_ms) =&quot;,query_result.avg)
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>[1] To get the correct result, query_kernel_profile_info() must be used in conjunction with
-clear_kernel_profile_info().</p>
-<p>[2] Currently the result of <cite>KernelProfiler</cite> could be incorrect on OpenGL
-backend due to its lack of support for <cite>ti.sync()</cite>.</p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.misc.clear_kernel_profile_info">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">clear_kernel_profile_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.clear_kernel_profile_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Clear all KernelProfiler records.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.misc.kernel_profiler_total_time">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">kernel_profiler_total_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.kernel_profiler_total_time" title="Permalink to this definition">#</a></dt>
-<dd><p>Get elapsed time of all kernels recorded in KernelProfiler.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>total time in second.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>time (float)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.misc.set_kernel_profiler_toolkit">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">set_kernel_profiler_toolkit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toolkit_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.set_kernel_profiler_toolkit" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the toolkit used by KernelProfiler.</p>
-<p>Currently, we only support toolkits: <code class="docutils literal notranslate"><span class="pre">'default'</span></code> and <code class="docutils literal notranslate"><span class="pre">'cupti'</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>toolkit_name</strong> (<em>str</em>) – string of toolkit name.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>whether the setting is successful or not.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>status (bool)</p>
-</dd>
-</dl>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
-
-&gt;&gt;&gt; ti.init(arch=ti.cuda, kernel_profiler=True)
-&gt;&gt;&gt; x = ti.field(ti.f32, shape=1024*1024)
-
-&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def fill():
-&gt;&gt;&gt;     for i in x:
-&gt;&gt;&gt;         x[i] = i
-
-&gt;&gt;&gt; ti.set_kernel_profiler_toolkit(&#39;cupti&#39;)
-&gt;&gt;&gt; for i in range(100):
-&gt;&gt;&gt;     fill()
-&gt;&gt;&gt; ti.print_kernel_profile_info()
-
-&gt;&gt;&gt; ti.set_kernel_profiler_toolkit(&#39;default&#39;)
-&gt;&gt;&gt; for i in range(100):
-&gt;&gt;&gt;     fill()
-&gt;&gt;&gt; ti.print_kernel_profile_info()
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.misc.set_kernel_profile_metrics">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">set_kernel_profile_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">default_cupti_metrics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.set_kernel_profile_metrics" title="Permalink to this definition">#</a></dt>
-<dd><p>Set metrics that will be collected by the CUPTI toolkit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>metric_list</strong> (<em>list</em>) – a list of <a class="reference internal" href="../#taichi.lang.CuptiMetric" title="taichi.lang.CuptiMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">CuptiMetric()</span></code></a> instances, default value: <a class="reference internal" href="../#taichi.lang.default_cupti_metrics" title="taichi.lang.default_cupti_metrics"><code class="xref py py-data docutils literal notranslate"><span class="pre">default_cupti_metrics</span></code></a>.</p>
-</dd>
-</dl>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
-
-&gt;&gt;&gt; ti.init(kernel_profiler=True, arch=ti.cuda)
-&gt;&gt;&gt; ti.set_kernel_profiler_toolkit(&#39;cupti&#39;)
-&gt;&gt;&gt; num_elements = 128*1024*1024
-
-&gt;&gt;&gt; x = ti.field(ti.f32, shape=num_elements)
-&gt;&gt;&gt; y = ti.field(ti.f32, shape=())
-&gt;&gt;&gt; y[None] = 0
-
-&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def reduction():
-&gt;&gt;&gt;     for i in x:
-&gt;&gt;&gt;         y[None] += x[i]
-
-&gt;&gt;&gt; # In the case of not pramater, Taichi will print its pre-defined metrics list
-&gt;&gt;&gt; ti.get_predefined_cupti_metrics()
-&gt;&gt;&gt; # get Taichi pre-defined metrics
-&gt;&gt;&gt; profiling_metrics = ti.get_predefined_cupti_metrics(&#39;shared_access&#39;)
-
-&gt;&gt;&gt; global_op_atom = ti.CuptiMetric(
-&gt;&gt;&gt;     name=&#39;l1tex__t_set_accesses_pipe_lsu_mem_global_op_atom.sum&#39;,
-&gt;&gt;&gt;     header=&#39; global.atom &#39;,
-&gt;&gt;&gt;     format=&#39;    {:8.0f} &#39;)
-&gt;&gt;&gt; # add user defined metrics
-&gt;&gt;&gt; profiling_metrics += [global_op_atom]
-
-&gt;&gt;&gt; # metrics setting will be retained until the next configuration
-&gt;&gt;&gt; ti.set_kernel_profile_metrics(profiling_metrics)
-&gt;&gt;&gt; for i in range(16):
-&gt;&gt;&gt;     reduction()
-&gt;&gt;&gt; ti.print_kernel_profile_info(&#39;trace&#39;)
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Metrics setting will be retained until the next configuration.</p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.misc.collect_kernel_profile_metrics">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">collect_kernel_profile_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">default_cupti_metrics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.collect_kernel_profile_metrics" title="Permalink to this definition">#</a></dt>
-<dd><p>Set temporary metrics that will be collected by the CUPTI toolkit within this context.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>metric_list</strong> (<em>list</em>) – a list of <a class="reference internal" href="../#taichi.lang.CuptiMetric" title="taichi.lang.CuptiMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">CuptiMetric()</span></code></a> instances, default value: <a class="reference internal" href="../#taichi.lang.default_cupti_metrics" title="taichi.lang.default_cupti_metrics"><code class="xref py py-data docutils literal notranslate"><span class="pre">default_cupti_metrics</span></code></a>.</p>
-</dd>
-</dl>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
-
-&gt;&gt;&gt; ti.init(kernel_profiler=True, arch=ti.cuda)
-&gt;&gt;&gt; ti.set_kernel_profiler_toolkit(&#39;cupti&#39;)
-&gt;&gt;&gt; num_elements = 128*1024*1024
-
-&gt;&gt;&gt; x = ti.field(ti.f32, shape=num_elements)
-&gt;&gt;&gt; y = ti.field(ti.f32, shape=())
-&gt;&gt;&gt; y[None] = 0
-
-&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def reduction():
-&gt;&gt;&gt;     for i in x:
-&gt;&gt;&gt;         y[None] += x[i]
-
-&gt;&gt;&gt; # In the case of not pramater, Taichi will print its pre-defined metrics list
-&gt;&gt;&gt; ti.get_predefined_cupti_metrics()
-&gt;&gt;&gt; # get Taichi pre-defined metrics
-&gt;&gt;&gt; profiling_metrics = ti.get_predefined_cupti_metrics(&#39;device_utilization&#39;)
-
-&gt;&gt;&gt; global_op_atom = ti.CuptiMetric(
-&gt;&gt;&gt;     name=&#39;l1tex__t_set_accesses_pipe_lsu_mem_global_op_atom.sum&#39;,
-&gt;&gt;&gt;     header=&#39; global.atom &#39;,
-&gt;&gt;&gt;     format=&#39;    {:8.0f} &#39;)
-&gt;&gt;&gt; # add user defined metrics
-&gt;&gt;&gt; profiling_metrics += [global_op_atom]
-
-&gt;&gt;&gt; # metrics setting is temporary, and will be clear when exit from this context.
-&gt;&gt;&gt; with ti.collect_kernel_profile_metrics(profiling_metrics):
-&gt;&gt;&gt;     for i in range(16):
-&gt;&gt;&gt;         reduction()
-&gt;&gt;&gt;     ti.print_kernel_profile_info(&#39;trace&#39;)
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The configuration of the <code class="docutils literal notranslate"><span class="pre">metric_list</span></code> will be clear when exit from this context.</p>
-</div>
 </dd></dl>
 
 <dl class="py function">

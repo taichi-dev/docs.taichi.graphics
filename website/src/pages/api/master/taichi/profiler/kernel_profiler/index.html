@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>taichi.tools.np2ply &#8212; taichi-api-docstring  documentation</title>
+    <title>taichi.profiler.kernel_profiler &#8212; taichi-api-docstring  documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -489,22 +489,22 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../profiler/">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../">
    <code class="xref py py-mod docutils literal notranslate">
     <span class="pre">
      taichi.profiler
     </span>
    </code>
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../profiler/kernel_metrics/">
+    <a class="reference internal" href="../kernel_metrics/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.profiler.kernel_metrics
@@ -512,8 +512,8 @@
      </code>
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../profiler/kernel_profiler/">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.profiler.kernel_profiler
@@ -522,7 +522,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../profiler/scoped_profiler/">
+    <a class="reference internal" href="../scoped_profiler/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.profiler.scoped_profiler
@@ -532,22 +532,22 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tools/">
    <code class="xref py py-mod docutils literal notranslate">
     <span class="pre">
      taichi.tools
     </span>
    </code>
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../cc_compose/">
+    <a class="reference internal" href="../../tools/cc_compose/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.tools.cc_compose
@@ -556,7 +556,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../diagnose/">
+    <a class="reference internal" href="../../tools/diagnose/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.tools.diagnose
@@ -565,7 +565,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../image/">
+    <a class="reference internal" href="../../tools/image/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.tools.image
@@ -573,8 +573,8 @@
      </code>
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/np2ply/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.tools.np2ply
@@ -583,7 +583,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../patterns/">
+    <a class="reference internal" href="../../tools/patterns/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.tools.patterns
@@ -592,7 +592,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../util/">
+    <a class="reference internal" href="../../tools/util/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.tools.util
@@ -601,7 +601,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../video/">
+    <a class="reference internal" href="../../tools/video/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.tools.video
@@ -815,106 +815,44 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#classes">
-     Classes
+    <a class="reference internal nav-link" href="#functions">
+     Functions
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter">
-       PLYWriter
+      <a class="reference internal nav-link" href="#taichi.profiler.kernel_profiler.print_kernel_profiler_info">
+       print_kernel_profiler_info
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_vertex_channel">
-         add_vertex_channel
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_vertex_pos">
-         add_vertex_pos
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_vertex_normal">
-         add_vertex_normal
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_vertex_color">
-         add_vertex_color
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_vertex_alpha">
-         add_vertex_alpha
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_vertex_rgba">
-         add_vertex_rgba
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_vertex_id">
-         add_vertex_id
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_vertex_piece">
-         add_vertex_piece
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_faces">
-         add_faces
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_face_channel">
-         add_face_channel
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_face_id">
-         add_face_id
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.add_face_piece">
-         add_face_piece
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.sanity_check">
-         sanity_check
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.print_header">
-         print_header
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.export">
-         export
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.export_ascii">
-         export_ascii
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.export_frame_ascii">
-         export_frame_ascii
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.tools.np2ply.PLYWriter.export_frame">
-         export_frame
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.profiler.kernel_profiler.query_kernel_profiler_info">
+       query_kernel_profiler_info
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.profiler.kernel_profiler.clear_kernel_profiler_info">
+       clear_kernel_profiler_info
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.profiler.kernel_profiler.get_kernel_profiler_total_time">
+       get_kernel_profiler_total_time
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.profiler.kernel_profiler.set_kernel_profiler_toolkit">
+       set_kernel_profiler_toolkit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.profiler.kernel_profiler.set_kernel_profiler_metrics">
+       set_kernel_profiler_metrics
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.profiler.kernel_profiler.collect_kernel_profiler_metrics">
+       collect_kernel_profiler_metrics
+      </a>
      </li>
     </ul>
    </li>
@@ -941,116 +879,286 @@
               
               <div>
                 
-  <section id="module-taichi.tools.np2ply">
-<span id="taichi-tools-np2ply"></span><h1><a class="reference internal" href="#module-taichi.tools.np2ply" title="taichi.tools.np2ply"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.tools.np2ply</span></code></a><a class="headerlink" href="#module-taichi.tools.np2ply" title="Permalink to this headline">#</a></h1>
+  <section id="module-taichi.profiler.kernel_profiler">
+<span id="taichi-profiler-kernel-profiler"></span><h1><a class="reference internal" href="#module-taichi.profiler.kernel_profiler" title="taichi.profiler.kernel_profiler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernel_profiler</span></code></a><a class="headerlink" href="#module-taichi.profiler.kernel_profiler" title="Permalink to this headline">#</a></h1>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">#</a></h2>
-<section id="classes">
-<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h3>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.np2ply.PLYWriter" title="taichi.tools.np2ply.PLYWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLYWriter</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.kernel_profiler.print_kernel_profiler_info" title="taichi.profiler.kernel_profiler.print_kernel_profiler_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_kernel_profiler_info</span></code></a>(mode='count')</p></td>
+<td><p>Print the profiling results of Taichi kernels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.profiler.kernel_profiler.query_kernel_profiler_info" title="taichi.profiler.kernel_profiler.query_kernel_profiler_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_kernel_profiler_info</span></code></a>(name)</p></td>
+<td><p>Query kernel elapsed time(min,avg,max) on devices using the kernel name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.kernel_profiler.clear_kernel_profiler_info" title="taichi.profiler.kernel_profiler.clear_kernel_profiler_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_kernel_profiler_info</span></code></a>()</p></td>
+<td><p>Clear all KernelProfiler records.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.profiler.kernel_profiler.get_kernel_profiler_total_time" title="taichi.profiler.kernel_profiler.get_kernel_profiler_total_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kernel_profiler_total_time</span></code></a>()</p></td>
+<td><p>Get elapsed time of all kernels recorded in KernelProfiler.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.kernel_profiler.set_kernel_profiler_toolkit" title="taichi.profiler.kernel_profiler.set_kernel_profiler_toolkit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_kernel_profiler_toolkit</span></code></a>(toolkit_name='default')</p></td>
+<td><p>Set the toolkit used by KernelProfiler.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.profiler.kernel_profiler.set_kernel_profiler_metrics" title="taichi.profiler.kernel_profiler.set_kernel_profiler_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_kernel_profiler_metrics</span></code></a>(metric_list=default_cupti_metrics)</p></td>
+<td><p>Set metrics that will be collected by the CUPTI toolkit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.kernel_profiler.collect_kernel_profiler_metrics" title="taichi.profiler.kernel_profiler.collect_kernel_profiler_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_kernel_profiler_metrics</span></code></a>(metric_list=default_cupti_metrics)</p></td>
+<td><p>Set temporary metrics that will be collected by the CUPTI toolkit within this context.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py class">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.tools.np2ply.</span></span><span class="sig-name descname"><span class="pre">PLYWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_faces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">face_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tri'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'created</span> <span class="pre">by</span> <span class="pre">PLYWriter'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_channel">
-<span class="sig-name descname"><span class="pre">add_vertex_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_channel" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.profiler.kernel_profiler.print_kernel_profiler_info">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">print_kernel_profiler_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'count'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.print_kernel_profiler_info" title="Permalink to this definition">#</a></dt>
+<dd><p>Print the profiling results of Taichi kernels.</p>
+<p>To enable this profiler, set <code class="docutils literal notranslate"><span class="pre">kernel_profiler=True</span></code> in <code class="docutils literal notranslate"><span class="pre">ti.init()</span></code>.
+<code class="docutils literal notranslate"><span class="pre">'count'</span></code> mode: print the statistics (min,max,avg time) of launched kernels,
+<code class="docutils literal notranslate"><span class="pre">'trace'</span></code> mode: print the records of launched kernels with specific profiling metrics (time, memory load/store and core utilization etc.),
+and defaults to <code class="docutils literal notranslate"><span class="pre">'count'</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – the way to print profiling results.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_pos">
-<span class="sig-name descname"><span class="pre">add_vertex_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_pos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; ti.init(ti.cpu, kernel_profiler=True)
+&gt;&gt;&gt; var = ti.field(ti.f32, shape=1)
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_normal">
-<span class="sig-name descname"><span class="pre">add_vertex_normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nz</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_normal" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def compute():
+&gt;&gt;&gt;     var[0] = 1.0
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_color">
-<span class="sig-name descname"><span class="pre">add_vertex_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_color" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; compute()
+&gt;&gt;&gt; ti.profiler.print_kernel_profiler_info()
+&gt;&gt;&gt; # equivalent calls :
+&gt;&gt;&gt; # ti.profiler.print_kernel_profiler_info(&#39;count&#39;)
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_alpha">
-<span class="sig-name descname"><span class="pre">add_vertex_alpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_alpha" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; ti.profiler.print_kernel_profiler_info(&#39;trace&#39;)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently the result of <cite>KernelProfiler</cite> could be incorrect on OpenGL
+backend due to its lack of support for <cite>ti.sync()</cite>.</p>
+<p>For advanced mode of <cite>KernelProfiler</cite>, please visit <a class="reference external" href="https://docs.taichi.graphics/docs/lang/articles/misc/profiler#advanced-mode">https://docs.taichi.graphics/docs/lang/articles/misc/profiler#advanced-mode</a>.</p>
+</div>
+</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_rgba">
-<span class="sig-name descname"><span class="pre">add_vertex_rgba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_rgba" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.profiler.kernel_profiler.query_kernel_profiler_info">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">query_kernel_profiler_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.query_kernel_profiler_info" title="Permalink to this definition">#</a></dt>
+<dd><p>Query kernel elapsed time(min,avg,max) on devices using the kernel name.</p>
+<p>To enable this profiler, set <cite>kernel_profiler=True</cite> in <cite>ti.init</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – kernel name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>with member variables(counter, min, max, avg)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>KernelProfilerQueryResult (class)</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_id">
-<span class="sig-name descname"><span class="pre">add_vertex_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; ti.init(ti.cpu, kernel_profiler=True)
+&gt;&gt;&gt; n = 1024*1024
+&gt;&gt;&gt; var = ti.field(ti.f32, shape=n)
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_piece">
-<span class="sig-name descname"><span class="pre">add_vertex_piece</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">piece</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_piece" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def fill():
+&gt;&gt;&gt;     for i in range(n):
+&gt;&gt;&gt;         var[i] = 0.1
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_faces">
-<span class="sig-name descname"><span class="pre">add_faces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_faces" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; fill()
+&gt;&gt;&gt; ti.profiler.clear_kernel_profiler_info() #[1]
+&gt;&gt;&gt; for i in range(100):
+&gt;&gt;&gt;     fill()
+&gt;&gt;&gt; query_result = ti.profiler.query_kernel_profiler_info(fill.__name__) #[2]
+&gt;&gt;&gt; print(&quot;kernel excuted times =&quot;,query_result.counter)
+&gt;&gt;&gt; print(&quot;kernel elapsed time(min_in_ms) =&quot;,query_result.min)
+&gt;&gt;&gt; print(&quot;kernel elapsed time(max_in_ms) =&quot;,query_result.max)
+&gt;&gt;&gt; print(&quot;kernel elapsed time(avg_in_ms) =&quot;,query_result.avg)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[1] To get the correct result, query_kernel_profiler_info() must be used in conjunction with
+clear_kernel_profiler_info().</p>
+<p>[2] Currently the result of <cite>KernelProfiler</cite> could be incorrect on OpenGL
+backend due to its lack of support for <cite>ti.sync()</cite>.</p>
+</div>
+</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_face_channel">
-<span class="sig-name descname"><span class="pre">add_face_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_face_channel" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.profiler.kernel_profiler.clear_kernel_profiler_info">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">clear_kernel_profiler_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.clear_kernel_profiler_info" title="Permalink to this definition">#</a></dt>
+<dd><p>Clear all KernelProfiler records.</p>
+</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_face_id">
-<span class="sig-name descname"><span class="pre">add_face_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_face_id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.profiler.kernel_profiler.get_kernel_profiler_total_time">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">get_kernel_profiler_total_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.get_kernel_profiler_total_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Get elapsed time of all kernels recorded in KernelProfiler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>total time in second.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>time (float)</p>
+</dd>
+</dl>
+</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_face_piece">
-<span class="sig-name descname"><span class="pre">add_face_piece</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">piece</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_face_piece" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.profiler.kernel_profiler.set_kernel_profiler_toolkit">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">set_kernel_profiler_toolkit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toolkit_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.set_kernel_profiler_toolkit" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the toolkit used by KernelProfiler.</p>
+<p>Currently, we only support toolkits: <code class="docutils literal notranslate"><span class="pre">'default'</span></code> and <code class="docutils literal notranslate"><span class="pre">'cupti'</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>toolkit_name</strong> (<em>str</em>) – string of toolkit name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>whether the setting is successful or not.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>status (bool)</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.sanity_check">
-<span class="sig-name descname"><span class="pre">sanity_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.sanity_check" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; ti.init(arch=ti.cuda, kernel_profiler=True)
+&gt;&gt;&gt; x = ti.field(ti.f32, shape=1024*1024)
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.print_header">
-<span class="sig-name descname"><span class="pre">print_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.print_header" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def fill():
+&gt;&gt;&gt;     for i in x:
+&gt;&gt;&gt;         x[i] = i
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.export">
-<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.export" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; ti.profiler.set_kernel_profiler_toolkit(&#39;cupti&#39;)
+&gt;&gt;&gt; for i in range(100):
+&gt;&gt;&gt;     fill()
+&gt;&gt;&gt; ti.profiler.print_kernel_profiler_info()
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.export_ascii">
-<span class="sig-name descname"><span class="pre">export_ascii</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.export_ascii" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; ti.profiler.set_kernel_profiler_toolkit(&#39;default&#39;)
+&gt;&gt;&gt; for i in range(100):
+&gt;&gt;&gt;     fill()
+&gt;&gt;&gt; ti.profiler.print_kernel_profiler_info()
+</pre></div>
+</div>
+</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.export_frame_ascii">
-<span class="sig-name descname"><span class="pre">export_frame_ascii</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.export_frame_ascii" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.profiler.kernel_profiler.set_kernel_profiler_metrics">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">set_kernel_profiler_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">default_cupti_metrics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.set_kernel_profiler_metrics" title="Permalink to this definition">#</a></dt>
+<dd><p>Set metrics that will be collected by the CUPTI toolkit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>metric_list</strong> (<em>list</em>) – a list of <a class="reference internal" href="../#taichi.profiler.CuptiMetric" title="taichi.profiler.CuptiMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">CuptiMetric()</span></code></a> instances, default value: <code class="xref py py-data docutils literal notranslate"><span class="pre">default_cupti_metrics</span></code>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.export_frame">
-<span class="sig-name descname"><span class="pre">export_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.export_frame" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+&gt;&gt;&gt; ti.init(kernel_profiler=True, arch=ti.cuda)
+&gt;&gt;&gt; ti.profiler.set_kernel_profiler_toolkit(&#39;cupti&#39;)
+&gt;&gt;&gt; num_elements = 128*1024*1024
 
+&gt;&gt;&gt; x = ti.field(ti.f32, shape=num_elements)
+&gt;&gt;&gt; y = ti.field(ti.f32, shape=())
+&gt;&gt;&gt; y[None] = 0
+
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def reduction():
+&gt;&gt;&gt;     for i in x:
+&gt;&gt;&gt;         y[None] += x[i]
+
+&gt;&gt;&gt; # In the case of not pramater, Taichi will print its pre-defined metrics list
+&gt;&gt;&gt; ti.profiler.get_predefined_cupti_metrics()
+&gt;&gt;&gt; # get Taichi pre-defined metrics
+&gt;&gt;&gt; profiling_metrics = ti.profiler.get_predefined_cupti_metrics(&#39;shared_access&#39;)
+
+&gt;&gt;&gt; global_op_atom = ti.profiler.CuptiMetric(
+&gt;&gt;&gt;     name=&#39;l1tex__t_set_accesses_pipe_lsu_mem_global_op_atom.sum&#39;,
+&gt;&gt;&gt;     header=&#39; global.atom &#39;,
+&gt;&gt;&gt;     format=&#39;    {:8.0f} &#39;)
+&gt;&gt;&gt; # add user defined metrics
+&gt;&gt;&gt; profiling_metrics += [global_op_atom]
+
+&gt;&gt;&gt; # metrics setting will be retained until the next configuration
+&gt;&gt;&gt; ti.profiler.set_kernel_profile_metrics(profiling_metrics)
+&gt;&gt;&gt; for i in range(16):
+&gt;&gt;&gt;     reduction()
+&gt;&gt;&gt; ti.profiler.print_kernel_profiler_info(&#39;trace&#39;)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Metrics setting will be retained until the next configuration.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.profiler.kernel_profiler.collect_kernel_profiler_metrics">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">collect_kernel_profiler_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">default_cupti_metrics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.collect_kernel_profiler_metrics" title="Permalink to this definition">#</a></dt>
+<dd><p>Set temporary metrics that will be collected by the CUPTI toolkit within this context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>metric_list</strong> (<em>list</em>) – a list of <a class="reference internal" href="../#taichi.profiler.CuptiMetric" title="taichi.profiler.CuptiMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">CuptiMetric()</span></code></a> instances, default value: <code class="xref py py-data docutils literal notranslate"><span class="pre">default_cupti_metrics</span></code>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
+
+&gt;&gt;&gt; ti.init(kernel_profiler=True, arch=ti.cuda)
+&gt;&gt;&gt; ti.profiler.set_kernel_profiler_toolkit(&#39;cupti&#39;)
+&gt;&gt;&gt; num_elements = 128*1024*1024
+
+&gt;&gt;&gt; x = ti.field(ti.f32, shape=num_elements)
+&gt;&gt;&gt; y = ti.field(ti.f32, shape=())
+&gt;&gt;&gt; y[None] = 0
+
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def reduction():
+&gt;&gt;&gt;     for i in x:
+&gt;&gt;&gt;         y[None] += x[i]
+
+&gt;&gt;&gt; # In the case of not pramater, Taichi will print its pre-defined metrics list
+&gt;&gt;&gt; ti.profiler.get_predefined_cupti_metrics()
+&gt;&gt;&gt; # get Taichi pre-defined metrics
+&gt;&gt;&gt; profiling_metrics = ti.profiler.get_predefined_cupti_metrics(&#39;device_utilization&#39;)
+
+&gt;&gt;&gt; global_op_atom = ti.profiler.CuptiMetric(
+&gt;&gt;&gt;     name=&#39;l1tex__t_set_accesses_pipe_lsu_mem_global_op_atom.sum&#39;,
+&gt;&gt;&gt;     header=&#39; global.atom &#39;,
+&gt;&gt;&gt;     format=&#39;    {:8.0f} &#39;)
+&gt;&gt;&gt; # add user defined metrics
+&gt;&gt;&gt; profiling_metrics += [global_op_atom]
+
+&gt;&gt;&gt; # metrics setting is temporary, and will be clear when exit from this context.
+&gt;&gt;&gt; with ti.profiler.collect_kernel_profiler_metrics(profiling_metrics):
+&gt;&gt;&gt;     for i in range(16):
+&gt;&gt;&gt;         reduction()
+&gt;&gt;&gt;     ti.profiler.print_kernel_profiler_info(&#39;trace&#39;)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The configuration of the <code class="docutils literal notranslate"><span class="pre">metric_list</span></code> will be clear when exit from this context.</p>
+</div>
 </dd></dl>
 
 </section>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>taichi.profiler.kernelprofiler &#8212; taichi-api-docstring  documentation</title>
+    <title>taichi.profiler.kernel_metrics &#8212; taichi-api-docstring  documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -503,20 +503,20 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../kernelmetrics/">
-     <code class="xref py py-mod docutils literal notranslate">
-      <span class="pre">
-       taichi.profiler.kernelmetrics
-      </span>
-     </code>
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
-       taichi.profiler.kernelprofiler
+       taichi.profiler.kernel_metrics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kernel_profiler/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.kernel_profiler
       </span>
      </code>
     </a>
@@ -825,82 +825,13 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.StatisticalResult">
-       StatisticalResult
+      <a class="reference internal nav-link" href="#taichi.profiler.kernel_metrics.CuptiMetric">
+       CuptiMetric
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.StatisticalResult.insert_record">
-         insert_record
-        </a>
-       </li>
-      </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler">
-       KernelProfiler
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.COUNT">
-         COUNT
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.TRACE">
-         TRACE
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.set_kernel_profiler_mode">
-         set_kernel_profiler_mode
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.get_kernel_profiler_mode">
-         get_kernel_profiler_mode
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.set_toolkit">
-         set_toolkit
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.get_total_time">
-         get_total_time
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.clear_info">
-         clear_info
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.query_info">
-         query_info
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.set_metrics">
-         set_metrics
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.collect_metrics_in_context">
-         collect_metrics_in_context
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.KernelProfiler.print_info">
-         print_info
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.profiler.kernelprofiler.get_default_kernel_profiler">
-       get_default_kernel_profiler
+      <a class="reference internal nav-link" href="#taichi.profiler.kernel_metrics.get_predefined_cupti_metrics">
+       get_predefined_cupti_metrics
       </a>
      </li>
     </ul>
@@ -928,8 +859,8 @@
               
               <div>
                 
-  <section id="module-taichi.profiler.kernelprofiler">
-<span id="taichi-profiler-kernelprofiler"></span><h1><a class="reference internal" href="#module-taichi.profiler.kernelprofiler" title="taichi.profiler.kernelprofiler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernelprofiler</span></code></a><a class="headerlink" href="#module-taichi.profiler.kernelprofiler" title="Permalink to this headline">#</a></h1>
+  <section id="module-taichi.profiler.kernel_metrics">
+<span id="taichi-profiler-kernel-metrics"></span><h1><a class="reference internal" href="#module-taichi.profiler.kernel_metrics" title="taichi.profiler.kernel_metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernel_metrics</span></code></a><a class="headerlink" href="#module-taichi.profiler.kernel_metrics" title="Permalink to this headline">#</a></h1>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">#</a></h2>
 <section id="classes">
@@ -940,11 +871,8 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.kernelprofiler.StatisticalResult" title="taichi.profiler.kernelprofiler.StatisticalResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StatisticalResult</span></code></a></p></td>
-<td><p>Statistical result of records.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.profiler.kernelprofiler.KernelProfiler" title="taichi.profiler.kernelprofiler.KernelProfiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a></p></td>
-<td><p>Kernel profiler of Taichi.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.kernel_metrics.CuptiMetric" title="taichi.profiler.kernel_metrics.CuptiMetric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CuptiMetric</span></code></a></p></td>
+<td><p>A class to add CUPTI metric for <code class="xref py py-class docutils literal notranslate"><span class="pre">KernelProfiler</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -957,133 +885,67 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.kernelprofiler.get_default_kernel_profiler" title="taichi.profiler.kernelprofiler.get_default_kernel_profiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_default_kernel_profiler</span></code></a>()</p></td>
-<td><p>We have only one <a class="reference internal" href="#taichi.profiler.kernelprofiler.KernelProfiler" title="taichi.profiler.kernelprofiler.KernelProfiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a> instance(i.e. <code class="docutils literal notranslate"><span class="pre">_ti_kernel_profiler</span></code>) now.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.kernel_metrics.get_predefined_cupti_metrics" title="taichi.profiler.kernel_metrics.get_predefined_cupti_metrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_predefined_cupti_metrics</span></code></a>(name='')</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py class">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.StatisticalResult">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernelprofiler.</span></span><span class="sig-name descname"><span class="pre">StatisticalResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.StatisticalResult" title="Permalink to this definition">#</a></dt>
-<dd><p>Statistical result of records.</p>
-<p>Profiling records with the same kernel name will be counted in a <code class="docutils literal notranslate"><span class="pre">StatisticalResult</span></code> instance via function <code class="docutils literal notranslate"><span class="pre">insert_record(time)</span></code>.
-Currently, only the kernel elapsed time is counted, other statistics related to the kernel will be added in the feature.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.StatisticalResult.insert_record">
-<span class="sig-name descname"><span class="pre">insert_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.StatisticalResult.insert_record" title="Permalink to this definition">#</a></dt>
-<dd><p>Insert records with the same kernel name.</p>
-<p>Currently, only the kernel elapsed time is counted.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="taichi.profiler.kernel_metrics.CuptiMetric">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_metrics.</span></span><span class="sig-name descname"><span class="pre">CuptiMetric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed_header'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span>&#160;&#160;&#160;&#160; <span class="pre">{:8.0f}</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_metrics.CuptiMetric" title="Permalink to this definition">#</a></dt>
+<dd><p>A class to add CUPTI metric for <code class="xref py py-class docutils literal notranslate"><span class="pre">KernelProfiler</span></code>.</p>
+<p>This class is designed to add user selected CUPTI metrics.
+Only available for the CUDA backend now, i.e. you need <code class="docutils literal notranslate"><span class="pre">ti.init(kernel_profiler=True,</span> <span class="pre">arch=ti.cuda)</span></code>.
+For usage of this class, see examples in func <a class="reference internal" href="../#taichi.profiler.set_kernel_profiler_metrics" title="taichi.profiler.set_kernel_profiler_metrics"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_kernel_profiler_metrics()</span></code></a> and <a class="reference internal" href="../#taichi.profiler.collect_kernel_profiler_metrics" title="taichi.profiler.collect_kernel_profiler_metrics"><code class="xref py py-func docutils literal notranslate"><span class="pre">collect_kernel_profiler_metrics()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of metric that collected by CUPTI toolkit. used by <a class="reference internal" href="../#taichi.profiler.set_kernel_profiler_metrics" title="taichi.profiler.set_kernel_profiler_metrics"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_kernel_profiler_metrics()</span></code></a> and <a class="reference internal" href="../#taichi.profiler.collect_kernel_profiler_metrics" title="taichi.profiler.collect_kernel_profiler_metrics"><code class="xref py py-func docutils literal notranslate"><span class="pre">collect_kernel_profiler_metrics()</span></code></a>.</p></li>
+<li><p><strong>header</strong> (<em>str</em>) – column header of this metric, used by <a class="reference internal" href="../#taichi.profiler.print_kernel_profiler_info" title="taichi.profiler.print_kernel_profiler_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">print_kernel_profiler_info()</span></code></a>.</p></li>
+<li><p><strong>val_format</strong> (<em>str</em>) – format for print metric value (and unit of this value), used by <a class="reference internal" href="../#taichi.profiler.print_kernel_profiler_info" title="taichi.profiler.print_kernel_profiler_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">print_kernel_profiler_info()</span></code></a>.</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – scale of metric value, used by <a class="reference internal" href="../#taichi.profiler.print_kernel_profiler_info" title="taichi.profiler.print_kernel_profiler_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">print_kernel_profiler_info()</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import taichi as ti
 
-</dd></dl>
+&gt;&gt;&gt; ti.init(kernel_profiler=True, arch=ti.cuda)
+&gt;&gt;&gt; num_elements = 128*1024*1024
 
-<dl class="py class">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernelprofiler.</span></span><span class="sig-name descname"><span class="pre">KernelProfiler</span></span><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler" title="Permalink to this definition">#</a></dt>
-<dd><p>Kernel profiler of Taichi.</p>
-<p>Kernel profiler acquires kernel profiling records from backend, counts records in Python scope,
-and prints the results to the console by <a class="reference internal" href="#taichi.profiler.kernelprofiler.KernelProfiler.print_info" title="taichi.profiler.kernelprofiler.KernelProfiler.print_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">print_info()</span></code></a>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">KernelProfiler</span></code> now support detailed low-level performance metrics (such as memory bandwidth consumption) in its advanced mode.
-This mode is only available for the CUDA backend with CUPTI toolkit, i.e. you need <code class="docutils literal notranslate"><span class="pre">ti.init(kernel_profiler=True,</span> <span class="pre">arch=ti.cuda)</span></code>.</p>
+&gt;&gt;&gt; x = ti.field(ti.f32, shape=num_elements)
+&gt;&gt;&gt; y = ti.field(ti.f32, shape=())
+&gt;&gt;&gt; y[None] = 0
+
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def reduction():
+&gt;&gt;&gt;     for i in x:
+&gt;&gt;&gt;         y[None] += x[i]
+
+&gt;&gt;&gt; global_op_atom = ti.profiler.CuptiMetric(
+&gt;&gt;&gt;     name=&#39;l1tex__t_set_accesses_pipe_lsu_mem_global_op_atom.sum&#39;,
+&gt;&gt;&gt;     header=&#39; global.atom &#39;,
+&gt;&gt;&gt;     val_format=&#39;    {:8.0f} &#39;)
+
+&gt;&gt;&gt; # add and set user defined metrics
+&gt;&gt;&gt; profiling_metrics = ti.profiler.get_predefined_cupti_metrics(&#39;global_access&#39;) + [global_op_atom]
+&gt;&gt;&gt; ti.profiler.set_kernel_profile_metrics(profiling_metrics)
+
+&gt;&gt;&gt; for i in range(16):
+&gt;&gt;&gt;     reduction()
+&gt;&gt;&gt; ti.profiler.print_kernel_profiler_info(&#39;trace&#39;)
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For details about using CUPTI in Taichi, please visit <a class="reference external" href="https://docs.taichi.graphics/docs/lang/articles/misc/profiler#advanced-mode">https://docs.taichi.graphics/docs/lang/articles/misc/profiler#advanced-mode</a>.</p>
 </div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.COUNT">
-<span class="sig-name descname"><span class="pre">COUNT</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">count</span></em><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.COUNT" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.TRACE">
-<span class="sig-name descname"><span class="pre">TRACE</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">trace</span></em><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.TRACE" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.set_kernel_profiler_mode">
-<span class="sig-name descname"><span class="pre">set_kernel_profiler_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.set_kernel_profiler_mode" title="Permalink to this definition">#</a></dt>
-<dd><p>Turn on or off <a class="reference internal" href="#taichi.profiler.kernelprofiler.KernelProfiler" title="taichi.profiler.kernelprofiler.KernelProfiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.get_kernel_profiler_mode">
-<span class="sig-name descname"><span class="pre">get_kernel_profiler_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.get_kernel_profiler_mode" title="Permalink to this definition">#</a></dt>
-<dd><p>Get status of <a class="reference internal" href="#taichi.profiler.kernelprofiler.KernelProfiler" title="taichi.profiler.kernelprofiler.KernelProfiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.set_toolkit">
-<span class="sig-name descname"><span class="pre">set_toolkit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toolkit_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.set_toolkit" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.get_total_time">
-<span class="sig-name descname"><span class="pre">get_total_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.get_total_time" title="Permalink to this definition">#</a></dt>
-<dd><p>Get elapsed time of all kernels recorded in KernelProfiler.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>total time in second.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>time (float)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.clear_info">
-<span class="sig-name descname"><span class="pre">clear_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.clear_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Clear all records both in front-end <a class="reference internal" href="#taichi.profiler.kernelprofiler.KernelProfiler" title="taichi.profiler.kernelprofiler.KernelProfiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a> and back-end instance <code class="docutils literal notranslate"><span class="pre">KernelProfilerBase</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The values of <code class="docutils literal notranslate"><span class="pre">self._profiling_mode</span></code> and <code class="docutils literal notranslate"><span class="pre">self._metric_list</span></code> will not be cleared.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.query_info">
-<span class="sig-name descname"><span class="pre">query_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.query_info" title="Permalink to this definition">#</a></dt>
-<dd><p>For docsting of this function, see <a class="reference internal" href="../../lang/#taichi.lang.query_kernel_profile_info" title="taichi.lang.query_kernel_profile_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">query_kernel_profile_info()</span></code></a>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.set_metrics">
-<span class="sig-name descname"><span class="pre">set_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">default_cupti_metrics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.set_metrics" title="Permalink to this definition">#</a></dt>
-<dd><p>For docsting of this function, see <a class="reference internal" href="../../lang/#taichi.lang.set_kernel_profile_metrics" title="taichi.lang.set_kernel_profile_metrics"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_kernel_profile_metrics()</span></code></a>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.collect_metrics_in_context">
-<span class="sig-name descname"><span class="pre">collect_metrics_in_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">default_cupti_metrics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.collect_metrics_in_context" title="Permalink to this definition">#</a></dt>
-<dd><p>This function is not exposed to user now.</p>
-<p>For usage of this function, see <a class="reference internal" href="../../lang/#taichi.lang.collect_kernel_profile_metrics" title="taichi.lang.collect_kernel_profile_metrics"><code class="xref py py-func docutils literal notranslate"><span class="pre">collect_kernel_profile_metrics()</span></code></a>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.KernelProfiler.print_info">
-<span class="sig-name descname"><span class="pre">print_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">COUNT</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.KernelProfiler.print_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Print the profiling results of Taichi kernels.</p>
-<p>For usage of this function, see <a class="reference internal" href="../../lang/#taichi.lang.print_kernel_profile_info" title="taichi.lang.print_kernel_profile_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">print_kernel_profile_info()</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – the way to print profiling results.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.profiler.kernelprofiler.get_default_kernel_profiler">
-<span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernelprofiler.</span></span><span class="sig-name descname"><span class="pre">get_default_kernel_profiler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernelprofiler.get_default_kernel_profiler" title="Permalink to this definition">#</a></dt>
-<dd><p>We have only one <a class="reference internal" href="#taichi.profiler.kernelprofiler.KernelProfiler" title="taichi.profiler.kernelprofiler.KernelProfiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelProfiler</span></code></a> instance(i.e. <code class="docutils literal notranslate"><span class="pre">_ti_kernel_profiler</span></code>) now.</p>
-<p>For <code class="docutils literal notranslate"><span class="pre">KernelProfiler</span></code> using <code class="docutils literal notranslate"><span class="pre">CuptiToolkit</span></code>, GPU devices can only work in a certain configuration.
-Profiling mode and metrics are configured by the host(CPU) via CUPTI APIs, and device(GPU) will use
-its counter registers to collect specific metrics.
-So if there are multiple instances of <code class="docutils literal notranslate"><span class="pre">KernelProfiler</span></code>, the device will work in the latest configuration,
-the profiling configuration of other instances will be changed as a result.
-For data retention purposes, multiple instances will be considered in the future.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="taichi.profiler.kernel_metrics.get_predefined_cupti_metrics">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_metrics.</span></span><span class="sig-name descname"><span class="pre">get_predefined_cupti_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_metrics.get_predefined_cupti_metrics" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 </section>
 </section>
