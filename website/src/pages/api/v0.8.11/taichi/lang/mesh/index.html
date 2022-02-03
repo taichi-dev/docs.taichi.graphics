@@ -1184,7 +1184,7 @@
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.mesh.MeshReorderedMatrixFieldProxy" title="taichi.lang.mesh.MeshReorderedMatrixFieldProxy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MeshReorderedMatrixFieldProxy</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Taichi matrix field with SNode implementation.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.mesh.MeshElementField" title="taichi.lang.mesh.MeshElementField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MeshElementField</span></code></a></p></td>
 <td><p></p></td>
@@ -1335,6 +1335,16 @@
 <dt class="sig sig-object py" id="taichi.lang.mesh.MeshReorderedMatrixFieldProxy">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.mesh.</span></span><span class="sig-name descname"><span class="pre">MeshReorderedMatrixFieldProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../matrix/#taichi.lang.matrix.MatrixField" title="taichi.lang.matrix.MatrixField"><span class="pre">taichi.lang.matrix.MatrixField</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_ptr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi._lib.core.MeshPtr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MeshElementType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g2r_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../field/#taichi.lang.field.ScalarField" title="taichi.lang.field.ScalarField"><span class="pre">taichi.lang.field.ScalarField</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.mesh.MeshReorderedMatrixFieldProxy" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../matrix/#taichi.lang.matrix.MatrixField" title="taichi.lang.matrix.MatrixField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.matrix.MatrixField</span></code></a></p>
+<p>Taichi matrix field with SNode implementation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vars</strong> (<em>List</em><em>[</em><a class="reference internal" href="../expr/#taichi.lang.expr.Expr" title="taichi.lang.expr.Expr"><em>Expr</em></a><em>]</em>) – Field members.</p></li>
+<li><p><strong>n</strong> (<em>Int</em>) – Number of rows.</p></li>
+<li><p><strong>m</strong> (<em>Int</em>) – Number of columns.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py class">
