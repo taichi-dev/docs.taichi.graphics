@@ -270,6 +270,16 @@
        snode_deactivate_dynamic
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi._kernels.sort_stage">
+       sort_stage
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi._kernels.parallel_sort">
+       parallel_sort
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -368,6 +378,12 @@
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#taichi._kernels.snode_deactivate_dynamic" title="taichi._kernels.snode_deactivate_dynamic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">snode_deactivate_dynamic</span></code></a>(b: template())</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi._kernels.sort_stage" title="taichi._kernels.sort_stage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_stage</span></code></a>(keys: template(), use_values: int, values: template(), N: int, p: int, k: int, invocations: int)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._kernels.parallel_sort" title="taichi._kernels.parallel_sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parallel_sort</span></code></a>(keys, values=None)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -475,6 +491,16 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi._kernels.snode_deactivate_dynamic">
 <span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">snode_deactivate_dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.snode_deactivate_dynamic" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.sort_stage">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">sort_stage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invocations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.sort_stage" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.parallel_sort">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">parallel_sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.parallel_sort" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </section>
