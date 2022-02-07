@@ -400,15 +400,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../lang/sort/">
-     <code class="xref py py-mod docutils literal notranslate">
-      <span class="pre">
-       taichi.lang.sort
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../../lang/source_builder/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
@@ -809,52 +800,7 @@
     <a class="reference internal nav-link" href="#classes">
      Classes
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions">
-     Functions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#attributes">
-     Attributes
-    </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.video.FRAME_FN_TEMPLATE">
-       FRAME_FN_TEMPLATE
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.video.FRAME_DIR">
-       FRAME_DIR
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.video.scale_video">
-       scale_video
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.video.crop_video">
-       crop_video
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.video.accelerate_video">
-       accelerate_video
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.video.get_ffmpeg_path">
-       get_ffmpeg_path
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.video.mp4_to_gif">
-       mp4_to_gif
-      </a>
-     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager">
        VideoManager
@@ -891,21 +837,6 @@
         </a>
        </li>
       </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.video.interpolate_frames">
-       interpolate_frames
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.video.ffmpeg_common_args">
-       ffmpeg_common_args
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.video.make_video">
-       make_video
-      </a>
      </li>
     </ul>
    </li>
@@ -949,93 +880,6 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h3>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.video.scale_video" title="taichi.tools.video.scale_video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_video</span></code></a>(input_fn, output_fn, ratiow, ratioh)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.video.crop_video" title="taichi.tools.video.crop_video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crop_video</span></code></a>(input_fn, output_fn, x_begin, x_end, y_begin, y_end)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.video.accelerate_video" title="taichi.tools.video.accelerate_video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">accelerate_video</span></code></a>(input_fn, output_fn, speed)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.video.get_ffmpeg_path" title="taichi.tools.video.get_ffmpeg_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ffmpeg_path</span></code></a>()</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.video.mp4_to_gif" title="taichi.tools.video.mp4_to_gif"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mp4_to_gif</span></code></a>(input_fn, output_fn, framerate)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.video.interpolate_frames" title="taichi.tools.video.interpolate_frames"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate_frames</span></code></a>(frame_dir, mul=4)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.video.ffmpeg_common_args" title="taichi.tools.video.ffmpeg_common_args"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ffmpeg_common_args</span></code></a>(frame_rate, input_fn, width, height, crf, output_path)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.video.make_video" title="taichi.tools.video.make_video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_video</span></code></a>(input_files, width=0, height=0, frame_rate=24, crf=20, output_path='video.mp4')</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">#</a></h3>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.video.FRAME_FN_TEMPLATE" title="taichi.tools.video.FRAME_FN_TEMPLATE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FRAME_FN_TEMPLATE</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.video.FRAME_DIR" title="taichi.tools.video.FRAME_DIR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FRAME_DIR</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.tools.video.FRAME_FN_TEMPLATE">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">FRAME_FN_TEMPLATE</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">%06d.png</span></em><a class="headerlink" href="#taichi.tools.video.FRAME_FN_TEMPLATE" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.tools.video.FRAME_DIR">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">FRAME_DIR</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">frames</span></em><a class="headerlink" href="#taichi.tools.video.FRAME_DIR" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.video.scale_video">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">scale_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratiow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratioh</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.scale_video" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.video.crop_video">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">crop_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.crop_video" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.video.accelerate_video">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">accelerate_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.accelerate_video" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.video.get_ffmpeg_path">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">get_ffmpeg_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.get_ffmpeg_path" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.video.mp4_to_gif">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">mp4_to_gif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">framerate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.mp4_to_gif" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.tools.video.VideoManager">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">VideoManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_processor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">framerate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">automatic_build</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager" title="Permalink to this definition">#</a></dt>
@@ -1070,21 +914,6 @@
 <dd></dd></dl>
 
 </dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.video.interpolate_frames">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">interpolate_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mul</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.interpolate_frames" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.video.ffmpeg_common_args">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">ffmpeg_common_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.ffmpeg_common_args" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.video.make_video">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">make_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'video.mp4'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.make_video" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 </section>
 </section>

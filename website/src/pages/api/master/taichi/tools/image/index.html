@@ -400,15 +400,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../lang/sort/">
-     <code class="xref py py-mod docutils literal notranslate">
-      <span class="pre">
-       taichi.lang.sort
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../../lang/source_builder/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
@@ -811,11 +802,6 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.image.cook_image_to_bytes">
-       cook_image_to_bytes
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.tools.image.imdisplay">
        imdisplay
       </a>
@@ -877,34 +863,23 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.cook_image_to_bytes" title="taichi.tools.image.cook_image_to_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cook_image_to_bytes</span></code></a>(img)</p></td>
-<td><p>Takes a NumPy array or Taichi field of any type.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.image.imdisplay" title="taichi.tools.image.imdisplay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imdisplay</span></code></a>(img)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.imdisplay" title="taichi.tools.image.imdisplay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imdisplay</span></code></a>(img)</p></td>
 <td><p>Try to display image in interactive shell.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.imresize" title="taichi.tools.image.imresize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imresize</span></code></a>(img, w, h=None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.image.imresize" title="taichi.tools.image.imresize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imresize</span></code></a>(img, w, h=None)</p></td>
 <td><p>Resize an image to a specific size.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.image.imwrite" title="taichi.tools.image.imwrite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imwrite</span></code></a>(img, filename)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.imwrite" title="taichi.tools.image.imwrite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imwrite</span></code></a>(img, filename)</p></td>
 <td><p>Save a field to a a specific file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.imread" title="taichi.tools.image.imread"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imread</span></code></a>(filename, channels=0)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.image.imread" title="taichi.tools.image.imread"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imread</span></code></a>(filename, channels=0)</p></td>
 <td><p>Load image from a specific file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.image.imshow" title="taichi.tools.image.imshow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imshow</span></code></a>(img, window_name='imshow')</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.imshow" title="taichi.tools.image.imshow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imshow</span></code></a>(img, window_name='imshow')</p></td>
 <td><p>Show image in a Taichi GUI.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.image.cook_image_to_bytes">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.image.</span></span><span class="sig-name descname"><span class="pre">cook_image_to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.image.cook_image_to_bytes" title="Permalink to this definition">#</a></dt>
-<dd><p>Takes a NumPy array or Taichi field of any type.
-Returns a NumPy array of uint8.
-This is used by ti.imwrite and ti.imdisplay.</p>
-</dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.tools.image.imdisplay">
 <span class="sig-prename descclassname"><span class="pre">taichi.tools.image.</span></span><span class="sig-name descname"><span class="pre">imdisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.image.imdisplay" title="Permalink to this definition">#</a></dt>
