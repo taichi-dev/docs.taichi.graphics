@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>taichi.tools.util &#8212; taichi-api-docstring  documentation</title>
+    <title>taichi.tools.async_utils &#8212; taichi-api-docstring  documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -546,6 +546,15 @@
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.tools.async_utils
+      </span>
+     </code>
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../cc_compose/">
      <code class="xref py py-mod docutils literal notranslate">
@@ -587,15 +596,6 @@
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.tools.patterns
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     <code class="xref py py-mod docutils literal notranslate">
-      <span class="pre">
-       taichi.tools.util
       </span>
      </code>
     </a>
@@ -808,38 +808,7 @@
                 
 
 <nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-contents">
-   Module Contents
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions">
-     Functions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.util.dump_dot">
-       dump_dot
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.util.dot_to_pdf">
-       dot_to_pdf
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.util.get_kernel_stats">
-       get_kernel_stats
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
+    
 </nav>
               </div>
               
@@ -859,46 +828,8 @@
               
               <div>
                 
-  <section id="module-taichi.tools.util">
-<span id="taichi-tools-util"></span><h1><a class="reference internal" href="#module-taichi.tools.util" title="taichi.tools.util"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.tools.util</span></code></a><a class="headerlink" href="#module-taichi.tools.util" title="Permalink to this headline">#</a></h1>
-<section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">#</a></h2>
-<section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h3>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.util.dump_dot" title="taichi.tools.util.dump_dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dump_dot</span></code></a>(filepath=None, rankdir=None, embed_states_threshold=0)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.util.dot_to_pdf" title="taichi.tools.util.dot_to_pdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot_to_pdf</span></code></a>(dot, filepath)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.util.get_kernel_stats" title="taichi.tools.util.get_kernel_stats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kernel_stats</span></code></a>()</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.util.dump_dot">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.util.</span></span><span class="sig-name descname"><span class="pre">dump_dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rankdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embed_states_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.util.dump_dot" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.util.dot_to_pdf">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.util.</span></span><span class="sig-name descname"><span class="pre">dot_to_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.util.dot_to_pdf" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.util.get_kernel_stats">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.util.</span></span><span class="sig-name descname"><span class="pre">get_kernel_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.util.get_kernel_stats" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</section>
-</section>
+  <section id="module-taichi.tools.async_utils">
+<span id="taichi-tools-async-utils"></span><h1><a class="reference internal" href="#module-taichi.tools.async_utils" title="taichi.tools.async_utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.tools.async_utils</span></code></a><a class="headerlink" href="#module-taichi.tools.async_utils" title="Permalink to this headline">#</a></h1>
 </section>
 
 
