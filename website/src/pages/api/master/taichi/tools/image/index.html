@@ -811,11 +811,6 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.tools.image.imdisplay">
-       imdisplay
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.tools.image.imresize">
        imresize
       </a>
@@ -872,34 +867,20 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.imdisplay" title="taichi.tools.image.imdisplay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imdisplay</span></code></a>(img)</p></td>
-<td><p>Try to display image in interactive shell.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.image.imresize" title="taichi.tools.image.imresize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imresize</span></code></a>(img, w, h=None)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.imresize" title="taichi.tools.image.imresize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imresize</span></code></a>(img, w, h=None)</p></td>
 <td><p>Resize an image to a specific size.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.imwrite" title="taichi.tools.image.imwrite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imwrite</span></code></a>(img, filename)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.image.imwrite" title="taichi.tools.image.imwrite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imwrite</span></code></a>(img, filename)</p></td>
 <td><p>Save a field to a a specific file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.image.imread" title="taichi.tools.image.imread"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imread</span></code></a>(filename, channels=0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.imread" title="taichi.tools.image.imread"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imread</span></code></a>(filename, channels=0)</p></td>
 <td><p>Load image from a specific file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.tools.image.imshow" title="taichi.tools.image.imshow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imshow</span></code></a>(img, window_name='imshow')</p></td>
-<td><p>Show image in a Taichi GUI.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.tools.image.imshow" title="taichi.tools.image.imshow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imshow</span></code></a>(img, title='imshow')</p></td>
+<td><p>Display a taichi.field or a numpy.ndarray in a Taichi GUI window or an interative Ipython notebook.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.tools.image.imdisplay">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.image.</span></span><span class="sig-name descname"><span class="pre">imdisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.image.imdisplay" title="Permalink to this definition">#</a></dt>
-<dd><p>Try to display image in interactive shell.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>img</strong> (<em>Union</em><em>[</em><em>ti.field</em><em>, </em><em>np.ndarray</em><em>]</em>) – A field of of array with shape <cite>(width, height)</cite> or <cite>(height, width, 3)</cite> or <cite>(height, width, 4)</cite>.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.tools.image.imresize">
 <span class="sig-prename descclassname"><span class="pre">taichi.tools.image.</span></span><span class="sig-name descname"><span class="pre">imresize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.image.imresize" title="Permalink to this definition">#</a></dt>
@@ -957,13 +938,14 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.tools.image.imshow">
-<span class="sig-prename descclassname"><span class="pre">taichi.tools.image.</span></span><span class="sig-name descname"><span class="pre">imshow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'imshow'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.image.imshow" title="Permalink to this definition">#</a></dt>
-<dd><p>Show image in a Taichi GUI.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.tools.image.</span></span><span class="sig-name descname"><span class="pre">imshow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'imshow'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.image.imshow" title="Permalink to this definition">#</a></dt>
+<dd><p>Display a taichi.field or a numpy.ndarray in a Taichi GUI window or an interative Ipython notebook.
+For interactive Ipython environment the image will be shown in the notebook.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>img</strong> (<em>Union</em><em>[</em><em>ti.field</em><em>, </em><em>np.ndarray</em><em>]</em>) – A field of of array with shape <cite>(width, height)</cite> or <cite>(height, width, 3)</cite> or <cite>(height, width, 4)</cite>.</p></li>
-<li><p><strong>window_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The title of GUI window. Default to <cite>imshow</cite>.</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – The title of GUI window. Default to <cite>imshow</cite>.</p></li>
 </ul>
 </dd>
 </dl>
