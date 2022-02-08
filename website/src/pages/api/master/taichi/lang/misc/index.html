@@ -513,6 +513,15 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../profiler/memory_profiler/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.memory_profiler
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../profiler/scoped_profiler/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
@@ -947,11 +956,6 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.misc.print_memory_profile_info">
-       print_memory_profile_info
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.lang.misc.extension">
        extension
       </a>
@@ -1063,40 +1067,37 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.print_memory_profile_info" title="taichi.lang.misc.print_memory_profile_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_memory_profile_info</span></code></a>()</p></td>
-<td><p>Memory profiling tool for LLVM backends with full sparse support.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.reset" title="taichi.lang.misc.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.reset" title="taichi.lang.misc.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>()</p></td>
 <td><p>Resets Taichi to its initial state.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.init" title="taichi.lang.misc.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(arch=None, default_fp=None, default_ip=None, _test_mode=False, enable_fallback=True, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.init" title="taichi.lang.misc.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(arch=None, default_fp=None, default_ip=None, _test_mode=False, enable_fallback=True, **kwargs)</p></td>
 <td><p>Initializes the Taichi runtime.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.no_activate" title="taichi.lang.misc.no_activate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">no_activate</span></code></a>(*args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.no_activate" title="taichi.lang.misc.no_activate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">no_activate</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.block_local" title="taichi.lang.misc.block_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">block_local</span></code></a>(*args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.block_local" title="taichi.lang.misc.block_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">block_local</span></code></a>(*args)</p></td>
 <td><p>Hints Taichi to cache the fields and to enable the BLS optimization.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.mesh_local" title="taichi.lang.misc.mesh_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mesh_local</span></code></a>(*args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.mesh_local" title="taichi.lang.misc.mesh_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mesh_local</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.cache_read_only" title="taichi.lang.misc.cache_read_only"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cache_read_only</span></code></a>(*args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.cache_read_only" title="taichi.lang.misc.cache_read_only"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cache_read_only</span></code></a>(*args)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.assume_in_range" title="taichi.lang.misc.assume_in_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assume_in_range</span></code></a>(val, base, low, high)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.assume_in_range" title="taichi.lang.misc.assume_in_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assume_in_range</span></code></a>(val, base, low, high)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.Tape" title="taichi.lang.misc.Tape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tape</span></code></a>(loss, clear_gradients=True)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.Tape" title="taichi.lang.misc.Tape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tape</span></code></a>(loss, clear_gradients=True)</p></td>
 <td><p>Return a context manager of <a class="reference internal" href="../tape/#taichi.lang.tape.TapeImpl" title="taichi.lang.tape.TapeImpl"><code class="xref py py-class docutils literal notranslate"><span class="pre">TapeImpl</span></code></a>. The</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.clear_all_gradients" title="taichi.lang.misc.clear_all_gradients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_all_gradients</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.clear_all_gradients" title="taichi.lang.misc.clear_all_gradients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_all_gradients</span></code></a>()</p></td>
 <td><p>Set all fields' gradients to 0.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.benchmark" title="taichi.lang.misc.benchmark"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark</span></code></a>(_func, repeat=300, args=())</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.benchmark" title="taichi.lang.misc.benchmark"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark</span></code></a>(_func, repeat=300, args=())</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.lang.misc.benchmark_plot" title="taichi.lang.misc.benchmark_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark_plot</span></code></a>(fn=None, cases=None, columns=None, column_titles=None, archs=None, title=None, bars='sync_vs_async', bar_width=0.4, bar_distance=0, left_margin=0, size=(12, 8))</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.lang.misc.benchmark_plot" title="taichi.lang.misc.benchmark_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark_plot</span></code></a>(fn=None, cases=None, columns=None, column_titles=None, archs=None, title=None, bars='sync_vs_async', bar_width=0.4, bar_distance=0, left_margin=0, size=(12, 8))</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -1360,13 +1361,6 @@ GPU is detected, Taichi falls back to the CPU backend.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">cpu</span></span><a class="headerlink" href="#taichi.lang.misc.cpu" title="Permalink to this definition">#</a></dt>
 <dd><p>A list of CPU backends supported on the current system.</p>
 <p>When this is used, Taichi automatically picks the matching CPU backend.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.misc.print_memory_profile_info">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">print_memory_profile_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.print_memory_profile_info" title="Permalink to this definition">#</a></dt>
-<dd><p>Memory profiling tool for LLVM backends with full sparse support.</p>
-<p>This profiler is automatically on.</p>
 </dd></dl>
 
 <dl class="py data">

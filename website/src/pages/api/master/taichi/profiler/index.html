@@ -513,6 +513,15 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="memory_profiler/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.profiler.memory_profiler
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="scoped_profiler/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
@@ -857,6 +866,11 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.profiler.print_memory_profiler_info">
+       print_memory_profiler_info
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.profiler.print_scoped_profiler_info">
        print_scoped_profiler_info
       </a>
@@ -899,6 +913,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="kernel_metrics/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernel_metrics</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="kernel_profiler/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernel_profiler</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory_profiler/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.memory_profiler</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="scoped_profiler/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.scoped_profiler</span></code></a></li>
 </ul>
 </div>
@@ -951,10 +966,13 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#taichi.profiler.set_kernel_profiler_toolkit" title="taichi.profiler.set_kernel_profiler_toolkit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_kernel_profiler_toolkit</span></code></a>(toolkit_name='default')</p></td>
 <td><p>Set the toolkit used by KernelProfiler.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.print_scoped_profiler_info" title="taichi.profiler.print_scoped_profiler_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_scoped_profiler_info</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.print_memory_profiler_info" title="taichi.profiler.print_memory_profiler_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_memory_profiler_info</span></code></a>()</p></td>
+<td><p>Memory profiling tool for LLVM backends with full sparse support.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#taichi.profiler.print_scoped_profiler_info" title="taichi.profiler.print_scoped_profiler_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_scoped_profiler_info</span></code></a>()</p></td>
 <td><p>Print time elapsed on the host tasks in a hierarchical format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.profiler.clear_scoped_profiler_info" title="taichi.profiler.clear_scoped_profiler_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_scoped_profiler_info</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.profiler.clear_scoped_profiler_info" title="taichi.profiler.clear_scoped_profiler_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_scoped_profiler_info</span></code></a>()</p></td>
 <td><p>Clear profiler's records about time elapsed on the host tasks.</p></td>
 </tr>
 </tbody>
@@ -1261,6 +1279,13 @@ backend due to its lack of support for <cite>ti.sync()</cite>.</p>
 &gt;&gt;&gt; ti.profiler.print_kernel_profiler_info()
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.profiler.print_memory_profiler_info">
+<span class="sig-prename descclassname"><span class="pre">taichi.profiler.</span></span><span class="sig-name descname"><span class="pre">print_memory_profiler_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.print_memory_profiler_info" title="Permalink to this definition">#</a></dt>
+<dd><p>Memory profiling tool for LLVM backends with full sparse support.</p>
+<p>This profiler is automatically on.</p>
 </dd></dl>
 
 <dl class="py function">
