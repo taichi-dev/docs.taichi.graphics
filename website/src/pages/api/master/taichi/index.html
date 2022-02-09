@@ -364,15 +364,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lang/quant_impl/">
-     <code class="xref py py-mod docutils literal notranslate">
-      <span class="pre">
-       taichi.lang.quant_impl
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="lang/runtime_ops/">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
@@ -422,15 +413,6 @@
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.lang.tape
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="lang/type_factory_impl/">
-     <code class="xref py py-mod docutils literal notranslate">
-      <span class="pre">
-       taichi.lang.type_factory_impl
       </span>
      </code>
     </a>
@@ -639,6 +621,15 @@
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
        taichi.types.primitive_types
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="types/quantized_types/">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       taichi.types.quantized_types
       </span>
      </code>
     </a>
@@ -1003,16 +994,6 @@
         </a>
        </li>
       </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.quant">
-       quant
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.type_factory">
-       type_factory
-      </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.any_arr">
@@ -2431,14 +2412,12 @@
 <li class="toctree-l2"><a class="reference internal" href="lang/mesh/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.mesh</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang/misc/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.misc</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang/ops/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.ops</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="lang/quant_impl/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.quant_impl</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang/runtime_ops/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.runtime_ops</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang/shell/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.shell</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang/snode/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.snode</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang/source_builder/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.source_builder</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang/struct/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.struct</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang/tape/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.tape</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="lang/type_factory_impl/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.type_factory_impl</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang/util/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.util</span></code></a></li>
 </ul>
 </li>
@@ -2467,6 +2446,7 @@
 <li class="toctree-l2"><a class="reference internal" href="types/annotations/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.annotations</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="types/compound_types/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.compound_types</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="types/primitive_types/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="types/quantized_types/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.quantized_types</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="types/utils/"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.utils</span></code></a></li>
 </ul>
 </li>
@@ -2801,12 +2781,6 @@
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#taichi.CRITICAL" title="taichi.CRITICAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CRITICAL</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi.quant" title="taichi.quant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quant</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.type_factory" title="taichi.type_factory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_factory</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#id5" title="taichi.any_arr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">any_arr</span></code></a></p></td>
@@ -3337,16 +3311,6 @@ fb.finalize()
 <dd></dd></dl>
 
 </dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.quant">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">quant</span></span><a class="headerlink" href="#taichi.quant" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.type_factory">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">type_factory</span></span><a class="headerlink" href="#taichi.type_factory" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.any_arr">
