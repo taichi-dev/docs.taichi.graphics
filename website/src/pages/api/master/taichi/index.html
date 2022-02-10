@@ -2342,18 +2342,6 @@
        rgb_to_hex
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.test">
-       test
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi.ti.test">
-         test
-        </a>
-       </li>
-      </ul>
-     </li>
     </ul>
    </li>
   </ul>
@@ -2750,9 +2738,6 @@
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#taichi.rgb_to_hex" title="taichi.rgb_to_hex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rgb_to_hex</span></code></a>(c)</p></td>
 <td><p>Convert rgb color format to hex color format.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi.test" title="taichi.test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test</span></code></a>(arch=None, exclude=None, require=None, **options)</p></td>
-<td><p>Performs tests on archs in <cite>expected_archs()</cite> which are in <cite>arch</cite> and not in <cite>exclude</cite> and satisfy <cite>require</cite></p></td>
 </tr>
 </tbody>
 </table>
@@ -5961,29 +5946,6 @@ Default is None.</p>
 <dd class="field-even"><p>The hex representation of color.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.test">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.test" title="Permalink to this definition">#</a></dt>
-<dd><blockquote>
-<div><p>Performs tests on archs in <cite>expected_archs()</cite> which are in <cite>arch</cite> and not in <cite>exclude</cite> and satisfy <cite>require</cite></p>
-</div></blockquote>
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.ti.test">
-<span class="sig-prename descclassname"><span class="pre">ti.</span></span><span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ti.test" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>arch</strong> – backends to include</p></li>
-<li><p><strong>exclude</strong> – backends to exclude</p></li>
-<li><p><strong>require</strong> – extensions required</p></li>
-<li><p><strong>options</strong> – other options to be passed into <code class="docutils literal notranslate"><span class="pre">ti.init</span></code></p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
