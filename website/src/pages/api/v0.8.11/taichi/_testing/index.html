@@ -156,48 +156,34 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-contents">
-   Module Contents
+  <a class="reference internal nav-link" href="#taichi._testing.allclose">
+   allclose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._testing.approx">
+   approx
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._testing.get_rel_eps">
+   get_rel_eps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._testing.make_temp_file">
+   make_temp_file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._testing.test">
+   test
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions">
-     Functions
+    <a class="reference internal nav-link" href="#taichi._testing.ti.test">
+     test
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi._testing.get_rel_eps">
-       get_rel_eps
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi._testing.approx">
-       approx
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi._testing.allclose">
-       allclose
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi._testing.make_temp_file">
-       make_temp_file
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi._testing.test">
-       test
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#taichi._testing.ti.test">
-         test
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -224,37 +210,11 @@
                 
   <section id="module-taichi._testing">
 <span id="taichi-testing"></span><h1><a class="reference internal" href="#module-taichi._testing" title="taichi._testing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi._testing</span></code></a><a class="headerlink" href="#module-taichi._testing" title="Permalink to this headline">#</a></h1>
-<section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">#</a></h2>
-<section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h3>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._testing.get_rel_eps" title="taichi._testing.get_rel_eps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_rel_eps</span></code></a>()</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi._testing.approx" title="taichi._testing.approx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">approx</span></code></a>(expected, **kwargs)</p></td>
-<td><p>Tweaked pytest.approx for OpenGL low precisions</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._testing.allclose" title="taichi._testing.allclose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allclose</span></code></a>(x, y, **kwargs)</p></td>
-<td><p>Same as: x == approx(y, <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs)</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi._testing.make_temp_file" title="taichi._testing.make_temp_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_temp_file</span></code></a>(*args, **kwargs)</p></td>
-<td><p>Create a temporary file</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._testing.test" title="taichi._testing.test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test</span></code></a>(arch=None, exclude=None, require=None, **options)</p></td>
-<td><p>Performs tests on archs in <cite>expected_archs()</cite> which are in <cite>arch</cite> and not in <cite>exclude</cite> and satisfy <cite>require</cite></p></td>
-</tr>
-</tbody>
-</table>
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi._testing.get_rel_eps">
-<span class="sig-prename descclassname"><span class="pre">taichi._testing.</span></span><span class="sig-name descname"><span class="pre">get_rel_eps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi._testing.get_rel_eps" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="taichi._testing.allclose">
+<span class="sig-prename descclassname"><span class="pre">taichi._testing.</span></span><span class="sig-name descname"><span class="pre">allclose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._testing.allclose" title="Permalink to this definition">#</a></dt>
+<dd><p>Same as: x == approx(y, <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs)</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi._testing.approx">
@@ -263,10 +223,9 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi._testing.allclose">
-<span class="sig-prename descclassname"><span class="pre">taichi._testing.</span></span><span class="sig-name descname"><span class="pre">allclose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._testing.allclose" title="Permalink to this definition">#</a></dt>
-<dd><p>Same as: x == approx(y, <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs)</p>
-</dd></dl>
+<dt class="sig sig-object py" id="taichi._testing.get_rel_eps">
+<span class="sig-prename descclassname"><span class="pre">taichi._testing.</span></span><span class="sig-name descname"><span class="pre">get_rel_eps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi._testing.get_rel_eps" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi._testing.make_temp_file">
@@ -297,8 +256,6 @@
 
 </dd></dl>
 
-</section>
-</section>
 </section>
 
 
