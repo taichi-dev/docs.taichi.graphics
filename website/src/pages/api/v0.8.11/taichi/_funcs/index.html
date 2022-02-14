@@ -156,43 +156,29 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-contents">
-   Module Contents
+  <a class="reference internal nav-link" href="#taichi._funcs.eig">
+   eig
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions">
-     Functions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi._funcs.randn">
-       randn
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi._funcs.polar_decompose">
-       polar_decompose
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi._funcs.svd">
-       svd
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi._funcs.eig">
-       eig
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi._funcs.sym_eig">
-       sym_eig
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._funcs.polar_decompose">
+   polar_decompose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._funcs.randn">
+   randn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._funcs.svd">
+   svd
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._funcs.sym_eig">
+   sym_eig
+  </a>
  </li>
 </ul>
 
@@ -217,44 +203,25 @@
                 
   <section id="module-taichi._funcs">
 <span id="taichi-funcs"></span><h1><a class="reference internal" href="#module-taichi._funcs" title="taichi._funcs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi._funcs</span></code></a><a class="headerlink" href="#module-taichi._funcs" title="Permalink to this headline">#</a></h1>
-<section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">#</a></h2>
-<section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h3>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._funcs.randn" title="taichi._funcs.randn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">randn</span></code></a>(dt=None)</p></td>
-<td><p>Generates a random number from standard normal distribution.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi._funcs.polar_decompose" title="taichi._funcs.polar_decompose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polar_decompose</span></code></a>(A, dt=None)</p></td>
-<td><p>Perform polar decomposition (A=UP) for arbitrary size matrix.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._funcs.svd" title="taichi._funcs.svd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">svd</span></code></a>(A, dt=None)</p></td>
-<td><p>Perform singular value decomposition (A=USV^T) for arbitrary size matrix.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#taichi._funcs.eig" title="taichi._funcs.eig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eig</span></code></a>(A, dt=None)</p></td>
-<td><p>Compute the eigenvalues and right eigenvectors of a real matrix.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#taichi._funcs.sym_eig" title="taichi._funcs.sym_eig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sym_eig</span></code></a>(A, dt=None)</p></td>
-<td><p>Compute the eigenvalues and right eigenvectors of a real symmetric matrix.</p></td>
-</tr>
-</tbody>
-</table>
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi._funcs.randn">
-<span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">randn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.randn" title="Permalink to this definition">#</a></dt>
-<dd><p>Generates a random number from standard normal distribution.</p>
-<p>Implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.random.randn()</span></code>.</p>
+<dt class="sig sig-object py" id="taichi._funcs.eig">
+<span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">eig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.eig" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the eigenvalues and right eigenvectors of a real matrix.</p>
+<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.
+2D implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.eig2x2()</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the generated random number.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – 2D Matrix for which the eigenvalues and right eigenvectors will be computed.</p></li>
+<li><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the eigenvalues and right eigenvectors.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The generated random number.</p>
+<dd class="field-even"><p>The eigenvalues in complex form. Each row stores one eigenvalue. The first number of the eigenvalue represents the real part and the second number represents the imaginary part.
+eigenvectors (ti.Matrix(n*2, n)): The eigenvectors in complex form. Each column stores one eigenvector. Each eigenvector consists of n entries, each of which is represented by two numbers for its real part and imaginary part.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>eigenvalues (ti.Matrix(n, 2))</p>
 </dd>
 </dl>
 </dd></dl>
@@ -279,6 +246,21 @@ This is only a wrapper for <code class="xref py py-func docutils literal notrans
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi._funcs.randn">
+<span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">randn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.randn" title="Permalink to this definition">#</a></dt>
+<dd><p>Generates a random number from standard normal distribution.</p>
+<p>Implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.random.randn()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the generated random number.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The generated random number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi._funcs.svd">
 <span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.svd" title="Permalink to this definition">#</a></dt>
 <dd><p>Perform singular value decomposition (A=USV^T) for arbitrary size matrix.</p>
@@ -293,29 +275,6 @@ This is only a wrappers for <code class="xref py py-func docutils literal notran
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Decomposed nxn matrices <cite>U</cite>, ‘S’ and <cite>V</cite>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi._funcs.eig">
-<span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">eig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.eig" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the eigenvalues and right eigenvectors of a real matrix.</p>
-<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.
-2D implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.eig2x2()</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – 2D Matrix for which the eigenvalues and right eigenvectors will be computed.</p></li>
-<li><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the eigenvalues and right eigenvectors.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The eigenvalues in complex form. Each row stores one eigenvalue. The first number of the eigenvalue represents the real part and the second number represents the imaginary part.
-eigenvectors (ti.Matrix(n*2, n)): The eigenvectors in complex form. Each column stores one eigenvector. Each eigenvector consists of n entries, each of which is represented by two numbers for its real part and imaginary part.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>eigenvalues (ti.Matrix(n, 2))</p>
 </dd>
 </dl>
 </dd></dl>
@@ -343,8 +302,6 @@ eigenvectors (ti.Matrix(n, n)): The eigenvectors. Each column stores one eigenve
 </dl>
 </dd></dl>
 
-</section>
-</section>
 </section>
 
 
