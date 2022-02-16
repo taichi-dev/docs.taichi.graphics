@@ -191,28 +191,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.empty">
-     empty
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.finalize">
      finalize
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.finalized">
-     finalized
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.finalized_roots">
-     finalized_roots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.hash">
-     hash
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -228,16 +208,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.pointer">
      pointer
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.ptr">
-     ptr
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.root">
-     root
     </a>
    </li>
   </ul>
@@ -325,11 +295,6 @@ fb.finalize()
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.empty">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">empty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.empty" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.finalize">
 <span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.finalize" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructs the SNodeTree and finalizes this builder.</p>
@@ -338,28 +303,6 @@ fb.finalize()
 <dd class="field-odd"><p><strong>raise_warning</strong> (<em>bool</em>) – Raise warning or not.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.finalized">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">finalized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.finalized" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.finalized_roots">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">finalized_roots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.finalized_roots" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets all the roots of the finalized SNodeTree.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A list of the roots of the finalized SNodeTree.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.hash">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.hash" title="Permalink to this definition">#</a></dt>
-<dd><p>Same as <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.hash()</span></code></p>
 </dd></dl>
 
 <dl class="py method">
@@ -379,16 +322,6 @@ fb.finalize()
 <span class="sig-name descname"><span class="pre">pointer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.pointer" title="Permalink to this definition">#</a></dt>
 <dd><p>Same as <a class="reference internal" href="../../lang/snode/#taichi.lang.snode.SNode.pointer" title="taichi.lang.snode.SNode.pointer"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.pointer()</span></code></a></p>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.ptr">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ptr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.ptr" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.root">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.root" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 
