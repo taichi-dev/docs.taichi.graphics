@@ -168,7 +168,6 @@ reference: https://gist.github.com/uditalias/3969a20ef759bf3a8757499429b30063
   content: counter(line-number);
 }
 
-/* .token-line.docusaurus-highlight-code-line.token.comment */
 .prism-code .token-line .comment {
   color: rgb(106,153,85) !important;
 }
