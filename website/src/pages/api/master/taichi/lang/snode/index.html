@@ -176,11 +176,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.cell_size_bytes">
-     cell_size_bytes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.deactivate_all">
      deactivate_all
     </a>
@@ -201,33 +196,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.get_children">
-     get_children
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.hash">
-     hash
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.id">
-     id
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.lazy_grad">
      lazy_grad
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.loop_range">
-     loop_range
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.name">
-     name
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -236,28 +206,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.num_dynamically_allocated">
-     num_dynamically_allocated
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.offset_bytes_in_parent_cell">
-     offset_bytes_in_parent_cell
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.parent">
      parent
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.path_from_root">
-     path_from_root
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.physical_index_position">
-     physical_index_position
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -404,11 +354,6 @@ these references:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.snode.SNode.cell_size_bytes">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cell_size_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.cell_size_bytes" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.snode.SNode.deactivate_all">
 <span class="sig-name descname"><span class="pre">deactivate_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.deactivate_all" title="Permalink to this definition">#</a></dt>
 <dd><p>Recursively deactivate all children components of <cite>self</cite>.</p>
@@ -464,40 +409,6 @@ these references:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.snode.SNode.get_children">
-<span class="sig-name descname"><span class="pre">get_children</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.get_children" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets all children components of <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>All children components of <cite>self</cite>.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>List[<a class="reference internal" href="#taichi.lang.snode.SNode" title="taichi.lang.snode.SNode">SNode</a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.snode.SNode.hash">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.hash" title="Permalink to this definition">#</a></dt>
-<dd><p>Not supported.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.snode.SNode.id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.id" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the id of <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The id of <cite>self</cite>.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.snode.SNode.lazy_grad">
 <span class="sig-name descname"><span class="pre">lazy_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.lazy_grad" title="Permalink to this definition">#</a></dt>
 <dd><p>Automatically place the adjoint fields following the layout of their primal fields.</p>
@@ -506,34 +417,6 @@ When all the primal fields are defined, using <code class="docutils literal notr
 their corresponding adjoint fields (gradient field).</p>
 <p>To know more details about primal, adjoint fields and <code class="docutils literal notranslate"><span class="pre">lazy_grad()</span></code>,
 please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference external" href="https://arxiv.org/pdf/1910.00935.pdf">https://arxiv.org/pdf/1910.00935.pdf</a></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.snode.SNode.loop_range">
-<span class="sig-name descname"><span class="pre">loop_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.loop_range" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the taichi_core.Expr wrapping the taichi_core.GlobalVariableExpression corresponding to <cite>self</cite> to serve as loop range.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>See above.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>taichi_core.Expr</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.snode.SNode.name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.name" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the name of <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The name of <cite>self</cite>.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -551,16 +434,6 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.snode.SNode.num_dynamically_allocated">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_dynamically_allocated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.num_dynamically_allocated" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.snode.SNode.offset_bytes_in_parent_cell">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">offset_bytes_in_parent_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.offset_bytes_in_parent_cell" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.snode.SNode.parent">
 <span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.parent" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets an ancestor of <cite>self</cite> in the SNode tree.</p>
@@ -573,34 +446,6 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>Union[None, _Root, <a class="reference internal" href="#taichi.lang.snode.SNode" title="taichi.lang.snode.SNode">SNode</a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.snode.SNode.path_from_root">
-<span class="sig-name descname"><span class="pre">path_from_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.path_from_root" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the path from root to <cite>self</cite> in the SNode tree.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The list of SNodes on the path from root to <cite>self</cite>.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>List[Union[_Root, <a class="reference internal" href="#taichi.lang.snode.SNode" title="taichi.lang.snode.SNode">SNode</a>]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.snode.SNode.physical_index_position">
-<span class="sig-name descname"><span class="pre">physical_index_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.physical_index_position" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets mappings from virtual axes to physical axes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Mappings from virtual axes to physical axes.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Dict[int, int]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -657,15 +502,9 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.snode.SNode.snode">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.snode" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>self</cite>.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#taichi.lang.snode.SNode" title="taichi.lang.snode.SNode">SNode</a></p>
-</dd>
-</dl>
+<dd><p>Gets <cite>self</cite>.
+:returns: <cite>self</cite>.
+:rtype: SNode</p>
 </dd></dl>
 
 </dd></dl>
