@@ -166,6 +166,41 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.assign">
+     assign
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.atomic_add">
+     atomic_add
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.atomic_and">
+     atomic_and
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.atomic_or">
+     atomic_or
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.atomic_sub">
+     atomic_sub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.atomic_xor">
+     atomic_xor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.augassign">
+     augassign
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.broadcast_copy">
      broadcast_copy
     </a>
@@ -208,6 +243,16 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.keys">
      keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.logical_and">
+     logical_and
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.logical_or">
+     logical_or
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -375,6 +420,122 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.assign" title="Permalink to this definition">#</a></dt>
+<dd><p>Assign the expression of the given operand to self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>Any</em>) – Given operand.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The expression after assigning.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.atomic_add">
+<span class="sig-name descname"><span class="pre">atomic_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.atomic_add" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the new expression of computing atomic add between self and a given operand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>Any</em>) – Given operand.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computing expression of atomic add.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.atomic_and">
+<span class="sig-name descname"><span class="pre">atomic_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.atomic_and" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the new expression of computing atomic and between self and a given operand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>Any</em>) – Given operand.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computing expression of atomic and.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.atomic_or">
+<span class="sig-name descname"><span class="pre">atomic_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.atomic_or" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the new expression of computing atomic or between self and a given operand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>Any</em>) – Given operand.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computing expression of atomic or.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.atomic_sub">
+<span class="sig-name descname"><span class="pre">atomic_sub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.atomic_sub" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the new expression of computing atomic sub between self and a given operand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>Any</em>) – Given operand.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computing expression of atomic sub.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.atomic_xor">
+<span class="sig-name descname"><span class="pre">atomic_xor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.atomic_xor" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the new expression of computing atomic xor between self and a given operand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>Any</em>) – Given operand.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computing expression of atomic xor.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.augassign">
+<span class="sig-name descname"><span class="pre">augassign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.augassign" title="Permalink to this definition">#</a></dt>
+<dd><p>Generate the computing expression between self and the given operand of given operator and assigned to self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>Any</em>) – Given operand.</p></li>
+<li><p><strong>op</strong> (<em>str</em>) – The name of operator.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct.broadcast_copy">
 <span class="sig-name descname"><span class="pre">broadcast_copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.broadcast_copy" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -424,6 +585,40 @@
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct.keys">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.keys" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.logical_and">
+<span class="sig-name descname"><span class="pre">logical_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.logical_and" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the new expression of computing logical and between self and a given operand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>Any</em>) – Given operand.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computing expression of logical and.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.Struct.logical_or">
+<span class="sig-name descname"><span class="pre">logical_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.logical_or" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the new expression of computing logical or between self and a given operand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>Any</em>) – Given operand.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computing expression of logical or.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct.make_getter">
