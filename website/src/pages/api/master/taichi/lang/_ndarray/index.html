@@ -166,11 +166,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.data_handle">
-     data_handle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.element_shape">
      element_shape
     </a>
@@ -178,26 +173,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.fill">
      fill
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.fill_by_kernel">
-     fill_by_kernel
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.get_element_size">
-     get_element_size
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.get_nelement">
-     get_nelement
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.initialize_host_accessor">
-     initialize_host_accessor
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -238,11 +213,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.ScalarNdarray.data_handle">
-     data_handle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang._ndarray.ScalarNdarray.element_shape">
      element_shape
     </a>
@@ -253,28 +223,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.ScalarNdarray.fill_by_kernel">
-     fill_by_kernel
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang._ndarray.ScalarNdarray.from_numpy">
      from_numpy
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.ScalarNdarray.get_element_size">
-     get_element_size
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.ScalarNdarray.get_nelement">
-     get_nelement
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.ScalarNdarray.initialize_host_accessor">
-     initialize_host_accessor
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -357,20 +307,6 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.Ndarray.data_handle">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.Ndarray.data_handle" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the pointer to underlying data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The pointer to underlying data.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang._ndarray.Ndarray.element_shape">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.Ndarray.element_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets ndarray element shape.</p>
@@ -394,44 +330,6 @@
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.Ndarray.fill_by_kernel">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fill_by_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.Ndarray.fill_by_kernel" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills ndarray with a specific scalar value using a ti.kernel.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.Ndarray.get_element_size">
-<span class="sig-name descname"><span class="pre">get_element_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.Ndarray.get_element_size" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the size of one element in bytes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Size in bytes.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.Ndarray.get_nelement">
-<span class="sig-name descname"><span class="pre">get_nelement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.Ndarray.get_nelement" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the total number of elements.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Total number of elements.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.Ndarray.initialize_host_accessor">
-<span class="sig-name descname"><span class="pre">initialize_host_accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.Ndarray.initialize_host_accessor" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang._ndarray.Ndarray.ndarray_from_numpy">
@@ -516,20 +414,6 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.ScalarNdarray.data_handle">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.ScalarNdarray.data_handle" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the pointer to underlying data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The pointer to underlying data.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang._ndarray.ScalarNdarray.element_shape">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.ScalarNdarray.element_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets ndarray element shape.</p>
@@ -555,46 +439,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.ScalarNdarray.fill_by_kernel">
-<span class="sig-name descname"><span class="pre">fill_by_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.ScalarNdarray.fill_by_kernel" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills ndarray with a specific scalar value using a ti.kernel.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang._ndarray.ScalarNdarray.from_numpy">
 <span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.ScalarNdarray.from_numpy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.ScalarNdarray.get_element_size">
-<span class="sig-name descname"><span class="pre">get_element_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.ScalarNdarray.get_element_size" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the size of one element in bytes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Size in bytes.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.ScalarNdarray.get_nelement">
-<span class="sig-name descname"><span class="pre">get_nelement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.ScalarNdarray.get_nelement" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the total number of elements.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Total number of elements.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.ScalarNdarray.initialize_host_accessor">
-<span class="sig-name descname"><span class="pre">initialize_host_accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.ScalarNdarray.initialize_host_accessor" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
