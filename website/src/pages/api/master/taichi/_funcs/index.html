@@ -248,16 +248,27 @@ This is only a wrapper for <a class="reference internal" href="../#taichi.polar_
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi._funcs.randn">
 <span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">randn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.randn" title="Permalink to this definition">#</a></dt>
-<dd><p>Generates a random number from standard normal distribution.</p>
-<p>Implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.random.randn()</span></code>.</p>
+<dd><p>Generate a random float sampled from univariate standard normal
+(Gaussian) distribution of mean 0 and variance 1, using the
+Box-Muller transformation. Must be called in Taichi scope.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the generated random number.</p>
+<dd class="field-odd"><p><strong>dt</strong> (<em>DataType</em>) – Data type of the required random number. Default to <cite>None</cite>.
+If set to <cite>None</cite> <cite>dt</cite> will be determined dynamically in runtime.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The generated random number.</p>
+<dd class="field-even"><p>The generated random float.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def main():
+&gt;&gt;&gt;     print(ti.randn())
+&gt;&gt;&gt;
+&gt;&gt;&gt; main()
+-0.463608
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
