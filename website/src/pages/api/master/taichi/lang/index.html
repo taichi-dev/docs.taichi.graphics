@@ -590,11 +590,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.SNode.dtype">
-     dtype
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.SNode.dynamic">
      dynamic
     </a>
@@ -602,11 +597,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.SNode.lazy_grad">
      lazy_grad
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.SNode.needs_grad">
-     needs_grad
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1186,11 +1176,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.ceil">
    ceil
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.cfg">
-   cfg
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -2674,20 +2659,6 @@ these references:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.SNode.dtype">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.dtype" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the data type of <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The data type of <cite>self</cite>.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>DataType</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.SNode.dynamic">
 <span class="sig-name descname"><span class="pre">dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.dynamic" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds a dynamic SNode as a child component of <cite>self</cite>.</p>
@@ -2714,20 +2685,6 @@ When all the primal fields are defined, using <code class="docutils literal notr
 their corresponding adjoint fields (gradient field).</p>
 <p>To know more details about primal, adjoint fields and <code class="docutils literal notranslate"><span class="pre">lazy_grad()</span></code>,
 please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference external" href="https://arxiv.org/pdf/1910.00935.pdf">https://arxiv.org/pdf/1910.00935.pdf</a></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.SNode.needs_grad">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">needs_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.needs_grad" title="Permalink to this definition">#</a></dt>
-<dd><p>Checks whether <cite>self</cite> has a corresponding gradient <a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Whether <cite>self</cite> has a corresponding gradient <a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -3789,11 +3746,6 @@ for how BLS is used.</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang.cfg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">cfg</span></span><a class="headerlink" href="#taichi.lang.cfg" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.clear_all_gradients">
