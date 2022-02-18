@@ -166,8 +166,23 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.destroy">
+     destroy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.event">
+     event
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_canvas">
      get_canvas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_cursor_pos">
+     get_cursor_pos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -188,6 +203,16 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.window.Window.running">
      running
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.show">
+     show
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.write_image">
+     write_image
     </a>
    </li>
   </ul>
@@ -218,8 +243,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.window.Window">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.window.</span></span><span class="sig-name descname"><span class="pre">Window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vsync</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi._lib.core.PyWindow</span></code></p>
-<p>The window class.</p>
+<dd><p>The window class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -236,10 +260,25 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.window.Window.destroy">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.destroy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.window.Window.event">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.event" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.get_canvas">
 <span class="sig-name descname"><span class="pre">get_canvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_canvas" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a canvas handle. See :class`~taichi.ui.canvas.Canvas`</p>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.window.Window.get_cursor_pos">
+<span class="sig-name descname"><span class="pre">get_cursor_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_cursor_pos" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.get_event">
@@ -267,6 +306,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.running">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.running" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.window.Window.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.show" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.window.Window.write_image">
+<span class="sig-name descname"><span class="pre">write_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.write_image" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
