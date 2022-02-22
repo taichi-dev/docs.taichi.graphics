@@ -76,7 +76,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'lang/articles/get-started',
+          docId: 'lang/articles/get-started/index',
           position: 'right',
           label: 'Docs',
           className: 'animated-anchor-link',
