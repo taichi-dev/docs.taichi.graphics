@@ -1,6 +1,6 @@
 ---
 title: "Head First Taichi: A Beginner's Guide to High Performance Computing in Python"
-date: "2021-10-12T12:00:00.000Z"
+date: "2021-10-12"
 slug: "head-first-taichi"
 authors:
   - AmesingFlank

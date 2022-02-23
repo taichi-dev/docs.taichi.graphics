@@ -56,10 +56,6 @@ module.exports = {
     prism: {
       defaultLanguage: 'python',
     },
-    gtag: {
-      trackingID: 'G-9K17QVGTR6',
-      anonymizeIP: true,
-    },
     hotjar: {
       siteId: '2765142',
     },
@@ -188,7 +184,7 @@ module.exports = {
             },
             {
               label: 'Contact',
-              href: 'https://taichi.graphics/contact',
+              href: 'https://taichi.graphics/about#contact',
             },
           ],
         },
@@ -209,7 +205,8 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Taichi Graphics Technology, Inc. Built with Docusaurus and the Taichi community.`,
     },
     algolia: {
-      apiKey: 'af0e5e752542b015cba900b98e25197d',
+      appId: '6NDEOARB8Z',
+      apiKey: '423ce169fbf3df5464895dc686a697b0',
       indexName: 'taichi',
       // TODO: turn this on once we version the docs
       contextualSearch: false,
@@ -253,6 +250,10 @@ module.exports = {
         },
         blog: {
           postsPerPage: 10,
+        },
+        gtag: {
+          trackingID: 'G-9K17QVGTR6',
+          anonymizeIP: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
