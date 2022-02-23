@@ -11,12 +11,6 @@
   command = "yarn build --locale en"
 
 [[redirects]]
-  from = "/get-started/"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/docs/*"
   to = "/:splat"
   status = 302
