@@ -2,6 +2,10 @@ const path = require("path");
 
 const version = require('./apiversion.json')
 
+const variablePlugin = require('./plugins/remark-plugins/variables')
+const fragmentPlugin = require('./plugins/remark-plugins/fragments')
+const variables = require('./variables')
+
 // For i18n
 const DefaultLocale = 'en';
 const mapLocaleCodeToCrowdin = (locale) => {
@@ -247,6 +251,10 @@ module.exports = {
               label: 'develop',
             },
           },
+          remarkPlugins: [
+            [variablePlugin, { data: variables }],
+            [fragmentPlugin, { prefix: 'fragments', baseUrl: __dirname + '/fragments' }]
+          ],
         },
         blog: {
           postsPerPage: 10,
