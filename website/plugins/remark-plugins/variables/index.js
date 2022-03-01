@@ -10,9 +10,9 @@ function locator (opening) {
 }
 
 module.exports = function variable(options) {
-  const { data, name, fence } = utils.withDefaultOption(options)
+  const { data, name, fence, quiet, fail } = utils.withDefaultOption(options)
   const { inlineTokenizers, inlineMethods } = this.Parser.prototype
-  inlineTokenizers[name] = tokenizer(name, data, fence, false, false)
+  inlineTokenizers[name] = tokenizer(name, data, fence, quiet, fail)
   inlineMethods.splice(inlineMethods.indexOf('url'), 0, name)
   inlineTokenizers[name].locator = locator(fence[0])
   function visitor(node) {

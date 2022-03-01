@@ -3,6 +3,8 @@ const defaultOption = {
   name: 'taichi_inline_variable',
   data: {},
   fence: [ '{{', '}}' ],
+  quiet: false,
+  fail: true,
 }
 
 function withDefaultOption(options) {

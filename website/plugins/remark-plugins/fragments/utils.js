@@ -3,6 +3,8 @@ const defaultOption = {
   name: 'taichi_fragment',
   baseUrl: '',
   prefix: 'fragments',
+  quiet: false,
+  fail: true,
 }
 
 function withDefaultOption(options) {
