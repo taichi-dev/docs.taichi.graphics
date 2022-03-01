@@ -4764,7 +4764,31 @@ for how BLS is used.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.cast">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.cast" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Copy and cast a scalar or a matrix to a specified data type.
+Must be called in Taichi scope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (Union[<a class="reference internal" href="types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Input scalar or matrix.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="types/#module-taichi.types" title="taichi.types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a>) – A primitive type defined in <a class="reference internal" href="types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A copy of <cite>obj</cite>, casted to the specified data type <cite>dtype</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Matrix([0, 1, 2], ti.i32)
+&gt;&gt;&gt;     y = ti.cast(x, ti.f32)
+&gt;&gt;&gt;     print(y)
+&gt;&gt;&gt;
+&gt;&gt;&gt; test()
+[0.0, 1.0, 2.0]
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.cc">
