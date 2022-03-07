@@ -5,18 +5,18 @@ slug: /
 
 # Getting Started
 
-Welcome to the {{var.orgName}} Language documentation!
+Welcome to the Taichi Language documentation!
 
 ## Installation
 
-To get started with the {{var.orgName}} Language, simply install it with `pip`:
+To get started with the Taichi Language, simply install it with `pip`:
 
 ```shell
 python3 -m pip install taichi
 ```
 
 :::note
-Currently, {{var.orgName}} only supports Python 3.6/3.7/3.8/3.9 (64-bit).
+Currently, Taichi only supports Python 3.6/3.7/3.8/3.9 (64-bit).
 :::
 
 import Tabs from '@theme/Tabs';
@@ -44,13 +44,13 @@ There are a few of extra requirements depend on which operating system you are u
   </TabItem>
 </Tabs>
 
-Please refer to the [Installation Troubleshooting](../misc/install.md) section if you run into any issues when installing {{var.orgName}}.
+Please refer to the [Installation Troubleshooting](../misc/install.md) section if you run into any issues when installing Taichi.
 
 ## Hello, world!
 
-We introduce the {{var.orgName}} programming language through a very basic _fractal_ example.
+We introduce the Taichi programming language through a very basic _fractal_ example.
 
-Running the {{var.orgName}} code below using either `python3 fractal.py` or `ti example fractal` _(you can find more information about the {{var.orgName}} CLI in the [Command line utilities](../misc/cli_utilities.md) section)_ will give you an animation of [Julia set](https://en.wikipedia.org/wiki/Julia_set):
+Running the Taichi code below using either `python3 fractal.py` or `ti example fractal` _(you can find more information about the Taichi CLI in the [Command line utilities](../misc/cli_utilities.md) section)_ will give you an animation of [Julia set](https://en.wikipedia.org/wiki/Julia_set):
 
 <center>
 
@@ -89,17 +89,17 @@ for i in range(1000000):
     gui.show()
 ```
 
-Let's dive into this simple {{var.orgName}} program.
+Let's dive into this simple Taichi program.
 
 ### import taichi as ti
 
-{{var.orgName}} is a domain-specific language (DSL) embedded in Python.
+Taichi is a domain-specific language (DSL) embedded in Python.
 
-To make {{var.orgName}} as easy to use as a Python package, we have done heavy
+To make Taichi as easy to use as a Python package, we have done heavy
 engineering with this goal in mind - letting every Python programmer
-write {{var.orgName}} programs with minimal learning effort.
+write Taichi programs with minimal learning effort.
 
-You can even use your favorite Python package management system, Python IDEs and other Python packages in conjunction with {{var.orgName}}.
+You can even use your favorite Python package management system, Python IDEs and other Python packages in conjunction with Taichi.
 
 ```python
 # Run on GPU, automatically detect backend
@@ -118,26 +118,39 @@ ti.init(arch=ti.cpu)
 
 :::info
 
-{{fragments/support-backend-platform.md}}
+Supported backends on different platforms:
+
+| **platform** | **CPU** | **CUDA** | **OpenGL** | **Metal** | **C source** |
+| :----------: | :-----: | :------: | :--------: | :-------: | :----------: |
+|   Windows    |   OK    |    OK    |     OK     |    N/A    |     N/A      |
+|    Linux     |   OK    |    OK    |     OK     |    N/A    |      OK      |
+|    macOS     |   OK    |   N/A    |    N/A     |    OK     |     N/A      |
+
+(OK: supported; N/A: not available)
+
+With `arch=ti.gpu`, Taichi will first try to run with CUDA. If CUDA is
+not supported on your machine, Taichi will fall back on Metal or OpenGL.
+If no GPU backend (CUDA, Metal, or OpenGL) is supported, Taichi will
+fall back on CPUs.
 :::
 
 :::note
 
 When used with the CUDA backend on Windows or ARM devices (e.g., NVIDIA
-Jetson), {{var.orgName}} allocates 1 GB GPU memory for field storage by default.
+Jetson), Taichi allocates 1 GB GPU memory for field storage by default.
 
 You can override this behavior by initializing with
 `ti.init(arch=ti.cuda, device_memory_GB=3.4)` to allocate `3.4` GB GPU
 memory, or `ti.init(arch=ti.cuda, device_memory_fraction=0.3)` to
 allocate `30%` of the total GPU memory.
 
-On other platforms, {{var.orgName}} will make use of its on-demand memory
+On other platforms, Taichi will make use of its on-demand memory
 allocator to allocate memory adaptively.
 :::
 
 ### Fields
 
-{{var.orgName}} is a **data**-oriented programming language where dense or
+Taichi is a **data**-oriented programming language where dense or
 spatially-sparse fields are the first-class citizens.
 
 In the code above, `pixels = ti.field(dtype=float, shape=(n * 2, n))`
@@ -146,37 +159,37 @@ element data type `float`.
 
 ### Functions and kernels
 
-Computation resides in {{var.orgName}} **kernels** and {{var.orgName}} **functions**.
+Computation resides in Taichi **kernels** and Taichi **functions**.
 
-{{var.orgName}} **kernels** are defined with the decorator `@ti.kernel`. They can
+Taichi **kernels** are defined with the decorator `@ti.kernel`. They can
 be called from Python to perform computation. Kernel arguments must be
 type-hinted (if any).
 
-{{var.orgName}} **functions** are defined with the decorator `@ti.func`. They can
-**only** be called by {{var.orgName}} kernels or other {{var.orgName}} functions.
+Taichi **functions** are defined with the decorator `@ti.func`. They can
+**only** be called by Taichi kernels or other Taichi functions.
 
-See [syntax](../basic/syntax.md) for more details about {{var.orgName}}
+See [syntax](../basic/syntax.md) for more details about Taichi
 kernels and functions.
 
-The language used in {{var.orgName}} kernels and functions looks exactly like
-Python, yet the {{var.orgName}} frontend compiler converts it into a language
+The language used in Taichi kernels and functions looks exactly like
+Python, yet the Taichi frontend compiler converts it into a language
 that is **compiled, statically-typed, lexically-scoped, parallel and
 differentiable**.
 
 :::info
 
-**{{var.orgName}}-scopes v.s. Python-scopes**:
+**Taichi-scopes v.s. Python-scopes**:
 
-Everything decorated with `@ti.kernel` and `@ti.func` is in {{var.orgName}}-scope
-and hence will be compiled by the {{var.orgName}} compiler.
+Everything decorated with `@ti.kernel` and `@ti.func` is in Taichi-scope
+and hence will be compiled by the Taichi compiler.
 
 Everything else is in Python-scope. They are simply Python native code.
 :::
 
 :::caution
 
-{{var.orgName}} kernels must be called from the Python-scope. {{var.orgName}} functions
-must be called from the {{var.orgName}}-scope.
+Taichi kernels must be called from the Python-scope. Taichi functions
+must be called from the Taichi-scope.
 :::
 
 :::tip
@@ -196,7 +209,7 @@ Recursive functions are **not supported for now**.
 
 ### Parallel for-loops
 
-For loops at the outermost scope in a {{var.orgName}} kernel is **automatically
+For loops at the outermost scope in a Taichi kernel is **automatically
 parallelized**. For loops can have two forms, i.e. _range-for
 loops_ and _struct-for loops_.
 
@@ -251,7 +264,7 @@ over all the pixel coordinates, i.e.,
 :::note
 
 Struct-for is the key to [sparse computation](../advanced/sparse.md) in
-{{var.orgName}}, as it will only loop over active elements in a sparse field. In
+Taichi, as it will only loop over active elements in a sparse field. In
 dense fields, all elements are active.
 :::
 
@@ -305,7 +318,7 @@ def foo():
 
 ### GUI system
 
-{{var.orgName}} provides a cpu-based [GUI system](../gui/gui.md) for users to render
+Taichi provides a cpu-based [GUI system](../gui/gui.md) for users to render
 their results on the screen.
 
 ```python
@@ -321,8 +334,8 @@ for i in range(1000000):
 
 #### Python-scope data access
 
-Everything outside {{var.orgName}}-scopes (`ti.func` and `ti.kernel`) is simply
-Python code. In Python-scopes, you can access {{var.orgName}} field elements
+Everything outside Taichi-scopes (`ti.func` and `ti.kernel`) is simply
+Python code. In Python-scopes, you can access Taichi field elements
 using plain indexing syntax. For example, to access a single pixel of
 the rendered image in Python-scope, you can simply use:
 
@@ -336,10 +349,10 @@ print(pixels[42, 11]) # prints 0.7
 
 ### Sharing data with other packages
 
-{{var.orgName}} provides helper functions such as `from_numpy` and `to_numpy` to
-transfer data between {{var.orgName}} fields and NumPy arrays, so that you can
+Taichi provides helper functions such as `from_numpy` and `to_numpy` to
+transfer data between Taichi fields and NumPy arrays, so that you can
 also use your favorite Python packages (e.g., `numpy`, `pytorch`,
-`matplotlib`) together with {{var.orgName}} as below:
+`matplotlib`) together with Taichi as below:
 
 ```python
 import taichi as ti
@@ -369,13 +382,13 @@ See [Interacting with external arrays](../basic/external.md#interacting-with-ext
 ## What's next?
 
 Now we have gone through core features of the
-{{var.orgName}} programming language using the fractal example,
+Taichi programming language using the fractal example,
 feel free to dive into the language concepts in
 the next section, or jump to the advanced topics, such as the [Metaprogramming](../advanced/meta.md) or [Differentiable programming](../advanced/differentiable_programming.md). Remember that you can
 use the search bar at the top right corner to search for topics or keywords
 at any time!
 
-If you are interested in joining the {{var.orgName}} community, we strongly recommend you take some time to
+If you are interested in joining the Taichi community, we strongly recommend you take some time to
 familiarize yourself with our [contribution guide](../contribution/contributor_guide.md).
 
-We hope you enjoy your adventure with {{var.orgName}}!
+We hope you enjoy your adventure with Taichi!
