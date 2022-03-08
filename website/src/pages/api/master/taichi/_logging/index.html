@@ -375,61 +375,65 @@
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi._logging.CRITICAL">
 <span class="sig-prename descclassname"><span class="pre">taichi._logging.</span></span><span class="sig-name descname"><span class="pre">CRITICAL</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">critical</span></em><a class="headerlink" href="#taichi._logging.CRITICAL" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The <cite>str</cite> ‘critical’, used for the <cite>critical</cite> logging level.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi._logging.DEBUG">
 <span class="sig-prename descclassname"><span class="pre">taichi._logging.</span></span><span class="sig-name descname"><span class="pre">DEBUG</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">debug</span></em><a class="headerlink" href="#taichi._logging.DEBUG" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The <cite>str</cite> ‘debug’, used for the <cite>debug</cite> logging level.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi._logging.ERROR">
 <span class="sig-prename descclassname"><span class="pre">taichi._logging.</span></span><span class="sig-name descname"><span class="pre">ERROR</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">error</span></em><a class="headerlink" href="#taichi._logging.ERROR" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The <cite>str</cite> ‘error’, used for the <cite>error</cite> logging level.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi._logging.INFO">
 <span class="sig-prename descclassname"><span class="pre">taichi._logging.</span></span><span class="sig-name descname"><span class="pre">INFO</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">info</span></em><a class="headerlink" href="#taichi._logging.INFO" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The <cite>str</cite> ‘info’, used for the <cite>info</cite> logging level.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi._logging.TRACE">
 <span class="sig-prename descclassname"><span class="pre">taichi._logging.</span></span><span class="sig-name descname"><span class="pre">TRACE</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">trace</span></em><a class="headerlink" href="#taichi._logging.TRACE" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The <cite>str</cite> ‘trace’, used for the <cite>debug</cite> logging level.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi._logging.WARN">
 <span class="sig-prename descclassname"><span class="pre">taichi._logging.</span></span><span class="sig-name descname"><span class="pre">WARN</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">warn</span></em><a class="headerlink" href="#taichi._logging.WARN" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The <cite>str</cite> ‘warn’, used for the <cite>warn</cite> logging level.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi._logging.is_logging_effective">
 <span class="sig-prename descclassname"><span class="pre">taichi._logging.</span></span><span class="sig-name descname"><span class="pre">is_logging_effective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._logging.is_logging_effective" title="Permalink to this definition">#</a></dt>
-<dd><dl class="simple">
-<dt>Check if the level is effective. The level below current level will be effective.</dt><dd><p>If not set by manual, the pre-set logging level is ‘info’.</p>
-</dd>
-</dl>
+<dd><p>Check if the specified logging level is effective.
+All levels below current level will be effective.
+The default level is ‘info’.</p>
 <p>See also <a class="reference external" href="https://docs.taichi.graphics/lang/articles/contribution/utilities#logging">https://docs.taichi.graphics/lang/articles/contribution/utilities#logging</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>level</strong> (<em>str</em>) – The string represents logging level.
-Effective levels include: ‘trace’, ‘debug’, ‘info’, ‘warn’, ‘error’, ‘critical’.</p>
+<dd class="field-odd"><p><strong>level</strong> (<em>str</em>) – The string represents logging level.             Effective levels include: ‘trace’, ‘debug’, ‘info’, ‘warn’, ‘error’, ‘critical’.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Indicate whether the logging level is supported.</p>
+<dd class="field-even"><p>Indicate whether the logging level is effective.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>Bool</p>
 </dd>
 </dl>
-<p class="rubric">Example</p>
-<p>If current level is ‘info’:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">is_logging_effective</span><span class="p">(</span><span class="s2">&quot;trace&quot;</span><span class="p">))</span>     <span class="c1"># False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">is_logging_effective</span><span class="p">(</span><span class="s2">&quot;debug&quot;</span><span class="p">))</span>     <span class="c1"># False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">is_logging_effective</span><span class="p">(</span><span class="s2">&quot;info&quot;</span><span class="p">))</span>      <span class="c1"># True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">is_logging_effective</span><span class="p">(</span><span class="s2">&quot;warn&quot;</span><span class="p">))</span>      <span class="c1"># True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">is_logging_effective</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">))</span>     <span class="c1"># True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">is_logging_effective</span><span class="p">(</span><span class="s2">&quot;critical&quot;</span><span class="p">))</span>  <span class="c1"># True</span>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; # assume current level is &#39;info&#39;
+&gt;&gt;&gt; print(ti.is_logging_effective(&quot;trace&quot;))     # False
+&gt;&gt;&gt; print(ti.is_logging_effective(&quot;debug&quot;))     # False
+&gt;&gt;&gt; print(ti.is_logging_effective(&quot;info&quot;))      # True
+&gt;&gt;&gt; print(ti.is_logging_effective(&quot;warn&quot;))      # True
+&gt;&gt;&gt; print(ti.is_logging_effective(&quot;error&quot;))     # True
+&gt;&gt;&gt; print(ti.is_logging_effective(&quot;critical&quot;))  # True
 </pre></div>
 </div>
 </dd></dl>
@@ -437,22 +441,21 @@ Effective levels include: ‘trace’, ‘debug’, ‘info’, ‘warn’, ‘e
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi._logging.set_logging_level">
 <span class="sig-prename descclassname"><span class="pre">taichi._logging.</span></span><span class="sig-name descname"><span class="pre">set_logging_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._logging.set_logging_level" title="Permalink to this definition">#</a></dt>
-<dd><p>Controls the level of detail in logs.</p>
+<dd><p>Setting the logging level to a specified value.
+Available levels are: ‘trace’, ‘debug’, ‘info’, ‘warn’, ‘error’, ‘critical’.</p>
+<p>Note that after calling this function, logging levels below the specified one will
+also be effective. For example if <cite>level</cite> is set to ‘warn’, then the levels below
+it, which are ‘error’ and ‘critical’ in this case, will also be effective.</p>
 <p>See also <a class="reference external" href="https://docs.taichi.graphics/lang/articles/contribution/utilities#logging">https://docs.taichi.graphics/lang/articles/contribution/utilities#logging</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>level</strong> (<em>str</em>) – The string represents logging level.
-Effective levels include: ‘trace’, ‘debug’, ‘info’, ‘warn’, ‘error’, ‘critical’.</p>
+<dd class="field-odd"><p><strong>level</strong> (<em>str</em>) – Logging level.</p>
 </dd>
 </dl>
-<p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">set_logging_level</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">)</span>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; set_logging_level(&#39;debug&#39;)
 </pre></div>
 </div>
-<blockquote>
-<div><p>If call this function, then everything below ‘debug’ will be effective,
-and ‘trace’ won’t since it’s above debug.</p>
-</div></blockquote>
 </dd></dl>
 
 </section>
