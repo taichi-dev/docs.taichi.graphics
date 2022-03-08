@@ -3120,7 +3120,7 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <dt class="sig sig-object py" id="taichi.lang.TaichiCompilationError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiCompilationError</span></span><a class="headerlink" href="#taichi.lang.TaichiCompilationError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Base class for all compilation exceptions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiCompilationError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiCompilationError.args" title="Permalink to this definition">#</a></dt>
@@ -3139,7 +3139,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.TaichiNameError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiNameError</span></span><a class="headerlink" href="#taichi.lang.TaichiNameError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiCompilationError" title="taichi.lang.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">NameError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Thrown when an undefine name is found during compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiNameError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiNameError.args" title="Permalink to this definition">#</a></dt>
@@ -3158,7 +3158,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.TaichiRuntimeError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeError</span></span><a class="headerlink" href="#taichi.lang.TaichiRuntimeError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></p>
-<p>Unspecified run-time error.</p>
+<p>Thrown when the compiled program cannot be executed due to unspecified reasons.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiRuntimeError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiRuntimeError.args" title="Permalink to this definition">#</a></dt>
@@ -3177,7 +3177,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.TaichiRuntimeTypeError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeTypeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provided</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.TaichiRuntimeTypeError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiRuntimeError" title="taichi.lang.TaichiRuntimeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiRuntimeError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
-<p>Unspecified run-time error.</p>
+<p>Thrown when the compiled program cannot be executed due to unspecified reasons.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiRuntimeTypeError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiRuntimeTypeError.args" title="Permalink to this definition">#</a></dt>
@@ -3196,7 +3196,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.TaichiSyntaxError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiSyntaxError</span></span><a class="headerlink" href="#taichi.lang.TaichiSyntaxError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiCompilationError" title="taichi.lang.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">SyntaxError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Thrown when a syntax error is found during compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiSyntaxError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiSyntaxError.args" title="Permalink to this definition">#</a></dt>
@@ -3251,7 +3251,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.TaichiTypeError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiTypeError</span></span><a class="headerlink" href="#taichi.lang.TaichiTypeError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiCompilationError" title="taichi.lang.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Thrown when a type mismatch is found during compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiTypeError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiTypeError.args" title="Permalink to this definition">#</a></dt>
@@ -3649,8 +3649,9 @@ This is a scalar if both <cite>x1</cite> and <cite>x2</cite> are scalars.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.block_dim">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">block_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.block_dim" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">block_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.block_dim" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the number of threads in a block to <cite>dim</cite>.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.block_local">
@@ -3730,7 +3731,7 @@ Must be called in Taichi scope.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.clear_all_gradients">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">clear_all_gradients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.clear_all_gradients" title="Permalink to this definition">#</a></dt>
-<dd><p>Set all fields’ gradients to 0.</p>
+<dd><p>Set the gradients of all fields to zero.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -3862,7 +3863,9 @@ For now, Taichi supports numpy and pytorch.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.extension">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#taichi.lang.extension" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>An instance of Taichi extension.</p>
+<p>The list of currently available extensions is [‘sparse’, ‘async_mode’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.f16">
@@ -4451,8 +4454,20 @@ This is the C-style <cite>mod</cite> function.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.reset">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.reset" title="Permalink to this definition">#</a></dt>
-<dd><p>Resets Taichi to its initial state.</p>
-<p>This would destroy all the fields and kernels.</p>
+<dd><p>Resets Taichi to its initial state.
+This will destroy all the allocated fields and kernels, and restore
+the runtime to its default configuration.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.field(ti.i32, shape=())
+&gt;&gt;&gt; a[None] = 1
+&gt;&gt;&gt; print(&quot;before reset: &quot;, a)
+before rest: 1
+&gt;&gt;&gt;
+&gt;&gt;&gt; ti.reset()
+&gt;&gt;&gt; print(&quot;after reset: &quot;, a)
+# will raise error because a is unavailable after reset.
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py data">

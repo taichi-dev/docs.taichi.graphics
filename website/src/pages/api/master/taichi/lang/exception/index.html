@@ -468,7 +468,7 @@
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiCompilationError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.exception.</span></span><span class="sig-name descname"><span class="pre">TaichiCompilationError</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiCompilationError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Base class for all compilation exceptions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiCompilationError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiCompilationError.args" title="Permalink to this definition">#</a></dt>
@@ -487,7 +487,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiNameError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.exception.</span></span><span class="sig-name descname"><span class="pre">TaichiNameError</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiNameError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.exception.TaichiCompilationError" title="taichi.lang.exception.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">NameError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Thrown when an undefine name is found during compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiNameError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiNameError.args" title="Permalink to this definition">#</a></dt>
@@ -506,7 +506,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiRuntimeError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.exception.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeError</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiRuntimeError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></p>
-<p>Unspecified run-time error.</p>
+<p>Thrown when the compiled program cannot be executed due to unspecified reasons.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiRuntimeError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiRuntimeError.args" title="Permalink to this definition">#</a></dt>
@@ -525,7 +525,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiRuntimeTypeError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.exception.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeTypeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provided</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.exception.TaichiRuntimeTypeError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.exception.TaichiRuntimeError" title="taichi.lang.exception.TaichiRuntimeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiRuntimeError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
-<p>Unspecified run-time error.</p>
+<p>Thrown when the compiled program cannot be executed due to unspecified reasons.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiRuntimeTypeError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiRuntimeTypeError.args" title="Permalink to this definition">#</a></dt>
@@ -544,7 +544,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiSyntaxError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.exception.</span></span><span class="sig-name descname"><span class="pre">TaichiSyntaxError</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiSyntaxError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.exception.TaichiCompilationError" title="taichi.lang.exception.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">SyntaxError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Thrown when a syntax error is found during compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiSyntaxError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiSyntaxError.args" title="Permalink to this definition">#</a></dt>
@@ -599,7 +599,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiTypeError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.exception.</span></span><span class="sig-name descname"><span class="pre">TaichiTypeError</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiTypeError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.exception.TaichiCompilationError" title="taichi.lang.exception.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Thrown when a type mismatch is found during compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.exception.TaichiTypeError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.exception.TaichiTypeError.args" title="Permalink to this definition">#</a></dt>

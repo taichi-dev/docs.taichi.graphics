@@ -588,8 +588,9 @@ statement ended.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.block_dim">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">block_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.block_dim" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">block_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.block_dim" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the number of threads in a block to <cite>dim</cite>.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.block_local">
@@ -617,7 +618,7 @@ for how BLS is used.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.clear_all_gradients">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">clear_all_gradients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.clear_all_gradients" title="Permalink to this definition">#</a></dt>
-<dd><p>Set all fields’ gradients to 0.</p>
+<dd><p>Set the gradients of all fields to zero.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -642,7 +643,9 @@ for how BLS is used.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.extension">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#taichi.lang.misc.extension" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>An instance of Taichi extension.</p>
+<p>The list of currently available extensions is [‘sparse’, ‘async_mode’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.global_thread_idx">
@@ -815,8 +818,20 @@ lower dimension d-2, it’s the second axis of this cell.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.reset">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.reset" title="Permalink to this definition">#</a></dt>
-<dd><p>Resets Taichi to its initial state.</p>
-<p>This would destroy all the fields and kernels.</p>
+<dd><p>Resets Taichi to its initial state.
+This will destroy all the allocated fields and kernels, and restore
+the runtime to its default configuration.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.field(ti.i32, shape=())
+&gt;&gt;&gt; a[None] = 1
+&gt;&gt;&gt; print(&quot;before reset: &quot;, a)
+before rest: 1
+&gt;&gt;&gt;
+&gt;&gt;&gt; ti.reset()
+&gt;&gt;&gt; print(&quot;after reset: &quot;, a)
+# will raise error because a is unavailable after reset.
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py data">
