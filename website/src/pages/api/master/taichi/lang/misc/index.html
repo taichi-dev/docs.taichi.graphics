@@ -201,7 +201,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v0.9.0</a>
+            <a class="dropdown-item" href="/api/">v0.9.1</a>
             
           
             
@@ -588,8 +588,9 @@ statement ended.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.block_dim">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">block_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.block_dim" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">block_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.block_dim" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the number of threads in a block to <cite>dim</cite>.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.block_local">
@@ -617,7 +618,7 @@ for how BLS is used.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.clear_all_gradients">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">clear_all_gradients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.clear_all_gradients" title="Permalink to this definition">#</a></dt>
-<dd><p>Set all fields’ gradients to 0.</p>
+<dd><p>Set the gradients of all fields to zero.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -642,7 +643,9 @@ for how BLS is used.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.extension">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#taichi.lang.misc.extension" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>An instance of Taichi extension.</p>
+<p>The list of currently available extensions is [‘sparse’, ‘async_mode’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.global_thread_idx">
@@ -660,42 +663,51 @@ GPU is detected, Taichi falls back to the CPU backend.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.i">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">i</span></span><a class="headerlink" href="#taichi.lang.misc.i" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axis 0. For multi-dimensional arrays it’s the direction downward the rows.
+For a 1d array it’s the direction along this array.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.ij">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ij</span></span><a class="headerlink" href="#taichi.lang.misc.ij" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 1).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.ijk">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ijk</span></span><a class="headerlink" href="#taichi.lang.misc.ijk" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 1, 2).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.ijkl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ijkl</span></span><a class="headerlink" href="#taichi.lang.misc.ijkl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 1, 2, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.ijl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ijl</span></span><a class="headerlink" href="#taichi.lang.misc.ijl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 1, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.ik">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ik</span></span><a class="headerlink" href="#taichi.lang.misc.ik" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 2).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.ikl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ikl</span></span><a class="headerlink" href="#taichi.lang.misc.ikl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 2, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.il">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">il</span></span><a class="headerlink" href="#taichi.lang.misc.il" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 3).</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.init">
@@ -730,37 +742,46 @@ complete list, please check out
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.j">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">j</span></span><a class="headerlink" href="#taichi.lang.misc.j" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axis 1. For multi-dimensional arrays it’s the direction across the columns.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.jk">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">jk</span></span><a class="headerlink" href="#taichi.lang.misc.jk" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (1, 2).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.jkl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">jkl</span></span><a class="headerlink" href="#taichi.lang.misc.jkl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (1, 2, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.jl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">jl</span></span><a class="headerlink" href="#taichi.lang.misc.jl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (1, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.k">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">k</span></span><a class="headerlink" href="#taichi.lang.misc.k" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axis 2. For arrays of dimension <cite>d</cite> &gt;= 3, view each cell as an array of
+lower dimension d-2, it’s the first axis of this cell.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.kl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">kl</span></span><a class="headerlink" href="#taichi.lang.misc.kl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (2, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.l">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">l</span></span><a class="headerlink" href="#taichi.lang.misc.l" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axis 3. For arrays of dimension <cite>d</cite> &gt;= 4, view each cell as an array of
+lower dimension d-2, it’s the second axis of this cell.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.mesh_local">
@@ -797,8 +818,20 @@ complete list, please check out
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.reset">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.reset" title="Permalink to this definition">#</a></dt>
-<dd><p>Resets Taichi to its initial state.</p>
-<p>This would destroy all the fields and kernels.</p>
+<dd><p>Resets Taichi to its initial state.
+This will destroy all the allocated fields and kernels, and restore
+the runtime to its default configuration.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.field(ti.i32, shape=())
+&gt;&gt;&gt; a[None] = 1
+&gt;&gt;&gt; print(&quot;before reset: &quot;, a)
+before rest: 1
+&gt;&gt;&gt;
+&gt;&gt;&gt; ti.reset()
+&gt;&gt;&gt; print(&quot;after reset: &quot;, a)
+# will raise error because a is unavailable after reset.
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py data">

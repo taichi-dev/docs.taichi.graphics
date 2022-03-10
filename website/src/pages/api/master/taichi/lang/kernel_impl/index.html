@@ -201,7 +201,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v0.9.0</a>
+            <a class="dropdown-item" href="/api/">v0.9.1</a>
             
           
             
@@ -381,13 +381,16 @@ Taichi kernels can be defined inside a class.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.kernel_impl.func">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_impl.</span></span><span class="sig-name descname"><span class="pre">func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_impl.func" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_impl.</span></span><span class="sig-name descname"><span class="pre">func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_real_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_impl.func" title="Permalink to this definition">#</a></dt>
 <dd><p>Marks a function as callable in Taichi-scope.</p>
 <p>This decorator transforms a Python function into a Taichi one. Taichi
 will JIT compile it into native instructions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – The Python function to be decorated</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fn</strong> (<em>Callable</em>) – The Python function to be decorated</p></li>
+<li><p><strong>is_real_function</strong> (<em>bool</em>) – Whether the function is a real function</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The decorated function</p>

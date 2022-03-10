@@ -201,7 +201,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v0.9.0</a>
+            <a class="dropdown-item" href="/api/">v0.9.1</a>
             
           
             
@@ -376,12 +376,12 @@
 <span id="taichi-lang-kernel-arguments"></span><h1><a class="reference internal" href="#module-taichi.lang.kernel_arguments" title="taichi.lang.kernel_arguments"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.kernel_arguments</span></code></a><a class="headerlink" href="#module-taichi.lang.kernel_arguments" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.kernel_arguments.SparseMatrixEntry">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">SparseMatrixEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixEntry" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">SparseMatrixEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixEntry" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.kernel_arguments.SparseMatrixProxy">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">SparseMatrixProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixProxy" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">SparseMatrixProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixProxy" title="Permalink to this definition">#</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.kernel_arguments.SparseMatrixProxy.subscript">
 <span class="sig-name descname"><span class="pre">subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixProxy.subscript" title="Permalink to this definition">#</a></dt>
@@ -411,7 +411,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_sparse_matrix">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_sparse_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_sparse_matrix" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_sparse_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_sparse_matrix" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </section>

@@ -33,6 +33,7 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -201,7 +202,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v0.9.0</a>
+            <a class="dropdown-item" href="/api/">v0.9.1</a>
             
           
             
@@ -2963,9 +2964,10 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <dt class="sig sig-object py" id="taichi.lang.Struct">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">Struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="common_ops/#taichi.lang.common_ops.TaichiOperations" title="taichi.lang.common_ops.TaichiOperations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.common_ops.TaichiOperations</span></code></a></p>
-<p>The Struct type class.
-:param entries: keys and values for struct members.
-:type entries: Dict[str, Union[Dict, Expr, Matrix, Struct]]</p>
+<p>The Struct type class.</p>
+<p>A struct is a dictionary-like data structure that stores members as
+(key, value) pairs. Valid data members of a struct can be scalars,
+matrices or other dictionary-like stuctures.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Struct.field">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">members</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;Struct&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct.field" title="Permalink to this definition">#</a></dt>
@@ -3119,7 +3121,7 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <dt class="sig sig-object py" id="taichi.lang.TaichiCompilationError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiCompilationError</span></span><a class="headerlink" href="#taichi.lang.TaichiCompilationError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Base class for all compilation exceptions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiCompilationError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiCompilationError.args" title="Permalink to this definition">#</a></dt>
@@ -3138,7 +3140,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.TaichiNameError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiNameError</span></span><a class="headerlink" href="#taichi.lang.TaichiNameError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiCompilationError" title="taichi.lang.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">NameError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Thrown when an undefine name is found during compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiNameError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiNameError.args" title="Permalink to this definition">#</a></dt>
@@ -3157,7 +3159,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.TaichiRuntimeError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeError</span></span><a class="headerlink" href="#taichi.lang.TaichiRuntimeError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></p>
-<p>Unspecified run-time error.</p>
+<p>Thrown when the compiled program cannot be executed due to unspecified reasons.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiRuntimeError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiRuntimeError.args" title="Permalink to this definition">#</a></dt>
@@ -3176,7 +3178,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.TaichiRuntimeTypeError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeTypeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provided</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.TaichiRuntimeTypeError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiRuntimeError" title="taichi.lang.TaichiRuntimeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiRuntimeError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
-<p>Unspecified run-time error.</p>
+<p>Thrown when the compiled program cannot be executed due to unspecified reasons.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiRuntimeTypeError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiRuntimeTypeError.args" title="Permalink to this definition">#</a></dt>
@@ -3195,7 +3197,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.TaichiSyntaxError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiSyntaxError</span></span><a class="headerlink" href="#taichi.lang.TaichiSyntaxError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiCompilationError" title="taichi.lang.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">SyntaxError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Thrown when a syntax error is found during compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiSyntaxError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiSyntaxError.args" title="Permalink to this definition">#</a></dt>
@@ -3250,7 +3252,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="taichi.lang.TaichiTypeError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TaichiTypeError</span></span><a class="headerlink" href="#taichi.lang.TaichiTypeError" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#taichi.lang.TaichiCompilationError" title="taichi.lang.TaichiCompilationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
-<p>Common base class for all non-exit exceptions.</p>
+<p>Thrown when a type mismatch is found during compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.TaichiTypeError.args">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.lang.TaichiTypeError.args" title="Permalink to this definition">#</a></dt>
@@ -3399,30 +3401,49 @@ statement ended.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.abs">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.abs" title="Permalink to this definition">#</a></dt>
-<dd><p>The absolute value function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.abs" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the absolute value <span class="math notranslate nohighlight">\(|x|\)</span> of <cite>x</cite>, element-wise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Input scalar or matrix.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The absolute value of <cite>a</cite>.</p>
+<dd class="field-even"><p>The absolute value of each element in <cite>x</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Vector([-1.0, 0.0, 1.0])
+&gt;&gt;&gt;     y = ti.abs(x)
+&gt;&gt;&gt;     print(y)
+&gt;&gt;&gt;
+&gt;&gt;&gt; test()
+[1.0, 0.0, 1.0]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.acos">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">acos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.acos" title="Permalink to this definition">#</a></dt>
-<dd><p>The inverses function of cosine.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">acos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.acos" title="Permalink to this definition">#</a></dt>
+<dd><p>Trigonometric inverse cosine, element-wise.</p>
+<p>The inverse of <cite>cos</cite> so that, if <cite>y = cos(x)</cite>, then <cite>x = acos(y)</cite>.</p>
+<p>For input <cite>x</cite> not in the domain <cite>[-1, 1]</cite>, this function returns <cite>nan</cite> if         it’s called in taichi scope, or raises exception if it’s called in python scope.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix with elements in [-1,1].</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A scalar or a matrix with elements in [-1, 1].</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The inverses function of cosine of <cite>a</cite>.</p>
+<dd class="field-even"><p>The inverse cosine of each element in <cite>x</cite>, in radians and in the closed             interval <cite>[0, pi]</cite>. This is a scalar if <cite>x</cite> is a scalar.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from math import pi
+&gt;&gt;&gt; ti.acos(ti.Matrix([-1.0, 0.0, 1.0])) * 180 / pi
+[180., 90., 0.]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -3461,16 +3482,24 @@ statement ended.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.asin">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">asin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.asin" title="Permalink to this definition">#</a></dt>
-<dd><p>The inverses function of sine.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">asin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.asin" title="Permalink to this definition">#</a></dt>
+<dd><p>Trigonometric inverse sine, element-wise.</p>
+<p>The inverse of <cite>sin</cite> so that, if <cite>y = sin(x)</cite>, then <cite>x = asin(y)</cite>.</p>
+<p>For input <cite>x</cite> not in the domain <cite>[-1, 1]</cite>, this function returns <cite>nan</cite> if         it’s called in taichi scope, or raises exception if it’s called in python scope.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix with elements in [-1,1].</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A scalar or a matrix with elements in [-1, 1].</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The inverses function of sine of <cite>a</cite>.</p>
+<dd class="field-even"><p>The inverse sine of each element in <cite>x</cite>, in radians and in the closed             interval <cite>[-pi/2, pi/2]</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from math import pi
+&gt;&gt;&gt; ti.asin(ti.Matrix([-1.0, 0.0, 1.0])) * 180 / pi
+[-90., 0., 90.]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -3480,55 +3509,258 @@ statement ended.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.atan2">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atan2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atan2" title="Permalink to this definition">#</a></dt>
-<dd><p>The inverses of the tangent function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atan2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atan2" title="Permalink to this definition">#</a></dt>
+<dd><p>Element-wise arc tangent of <cite>x1/x2</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p></li>
-<li><p><strong>b</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix with elements not equal to zero.</p></li>
+<li><p><strong>x1</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – y-coordinates.</p></li>
+<li><p><strong>x2</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – x-coordinates.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The inverses function of tangent of <cite>b/a</cite>.</p>
+<dd class="field-even"><p>Angles in radians, in the range <cite>[-pi, pi]</cite>.
+This is a scalar if both <cite>x1</cite> and <cite>x2</cite> are scalars.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from math import pi
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Matrix([-1.0, 1.0, -1.0, 1.0])
+&gt;&gt;&gt;     y = ti.Matrix([-1.0, -1.0, 1.0, 1.0])
+&gt;&gt;&gt;     z = ti.atan2(y, x) * 180 / pi
+&gt;&gt;&gt;     print(z)
+&gt;&gt;&gt;
+&gt;&gt;&gt; test()
+[-135.0, -45.0, 135.0, 45.0]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.atomic_add">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_add" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_add" title="Permalink to this definition">#</a></dt>
+<dd><p>Atomically compute <cite>x + y</cite>, store the result in <cite>x</cite>,
+and return the old value of <cite>x</cite>.</p>
+<p><cite>x</cite> must be a writable target, constant expressions or scalars
+are not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+<li><p><strong>y</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The old value of <cite>x</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Vector([0, 0, 0])
+&gt;&gt;&gt;     y = ti.Vector([1, 2, 3])
+&gt;&gt;&gt;     z = ti.atomic_add(x, y)
+&gt;&gt;&gt;     print(x)  # [1, 2, 3]  the new value of x
+&gt;&gt;&gt;     print(z)  # [0, 0, 0], the old value of x
+&gt;&gt;&gt;
+&gt;&gt;&gt;     ti.atomic_add(1, x)  # will raise TaichiSyntaxError
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.atomic_and">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_and" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_and" title="Permalink to this definition">#</a></dt>
+<dd><p>Atomically compute the bit-wise AND of <cite>x</cite> and <cite>y</cite>, element-wise.
+Store the result in <cite>x</cite>, and return the old value of <cite>x</cite>.</p>
+<p><cite>x</cite> must be a writable target, constant expressions or scalars
+are not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input. When both are matrices they must have the same shape.</p></li>
+<li><p><strong>y</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input. When both are matrices they must have the same shape.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The old value of <cite>x</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Vector([-1, 0, 1])
+&gt;&gt;&gt;     y = ti.Vector([1, 2, 3])
+&gt;&gt;&gt;     z = ti.atomic_and(x, y)
+&gt;&gt;&gt;     print(x)  # [1, 0, 1]  the new value of x
+&gt;&gt;&gt;     print(z)  # [-1, 0, 1], the old value of x
+&gt;&gt;&gt;
+&gt;&gt;&gt;     ti.atomic_and(1, x)  # will raise TaichiSyntaxError
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.atomic_max">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_max" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_max" title="Permalink to this definition">#</a></dt>
+<dd><p>Atomically compute the maximum of <cite>x</cite> and <cite>y</cite>, element-wise.
+Store the result in <cite>x</cite>, and return the old value of <cite>x</cite>.</p>
+<p><cite>x</cite> must be a writable target, constant expressions or scalars
+are not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+<li><p><strong>y</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The old value of <cite>x</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = 1
+&gt;&gt;&gt;     y = 2
+&gt;&gt;&gt;     z = ti.atomic_max(x, y)
+&gt;&gt;&gt;     print(x)  # 2  the new value of x
+&gt;&gt;&gt;     print(z)  # 1, the old value of x
+&gt;&gt;&gt;
+&gt;&gt;&gt;     ti.atomic_max(1, x)  # will raise TaichiSyntaxError
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.atomic_min">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_min" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_min" title="Permalink to this definition">#</a></dt>
+<dd><p>Atomically compute the minimum of <cite>x</cite> and <cite>y</cite>, element-wise.
+Store the result in <cite>x</cite>, and return the old value of <cite>x</cite>.</p>
+<p><cite>x</cite> must be a writable target, constant expressions or scalars
+are not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+<li><p><strong>y</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The old value of <cite>x</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = 2
+&gt;&gt;&gt;     y = 1
+&gt;&gt;&gt;     z = ti.atomic_min(x, y)
+&gt;&gt;&gt;     print(x)  # 1  the new value of x
+&gt;&gt;&gt;     print(z)  # 2, the old value of x
+&gt;&gt;&gt;
+&gt;&gt;&gt;     ti.atomic_min(1, x)  # will raise TaichiSyntaxError
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.atomic_or">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_or" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_or" title="Permalink to this definition">#</a></dt>
+<dd><p>Atomically compute the bit-wise OR of <cite>x</cite> and <cite>y</cite>, element-wise.
+Store the result in <cite>x</cite>, and return the old value of <cite>x</cite>.</p>
+<p><cite>x</cite> must be a writable target, constant expressions or scalars
+are not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input. When both are matrices they must have the same shape.</p></li>
+<li><p><strong>y</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input. When both are matrices they must have the same shape.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The old value of <cite>x</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Vector([-1, 0, 1])
+&gt;&gt;&gt;     y = ti.Vector([1, 2, 3])
+&gt;&gt;&gt;     z = ti.atomic_or(x, y)
+&gt;&gt;&gt;     print(x)  # [-1, 2, 3]  the new value of x
+&gt;&gt;&gt;     print(z)  # [-1, 0, 1], the old value of x
+&gt;&gt;&gt;
+&gt;&gt;&gt;     ti.atomic_or(1, x)  # will raise TaichiSyntaxError
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.atomic_sub">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_sub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_sub" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_sub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_sub" title="Permalink to this definition">#</a></dt>
+<dd><p>Atomically subtract <cite>x</cite> by <cite>y</cite>, store the result in <cite>x</cite>,
+and return the old value of <cite>x</cite>.</p>
+<p><cite>x</cite> must be a writable target, constant expressions or scalars
+are not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+<li><p><strong>y</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The old value of <cite>x</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Vector([0, 0, 0])
+&gt;&gt;&gt;     y = ti.Vector([1, 2, 3])
+&gt;&gt;&gt;     z = ti.atomic_sub(x, y)
+&gt;&gt;&gt;     print(x)  # [-1, -2, -3]  the new value of x
+&gt;&gt;&gt;     print(z)  # [0, 0, 0], the old value of x
+&gt;&gt;&gt;
+&gt;&gt;&gt;     ti.atomic_sub(1, x)  # will raise TaichiSyntaxError
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.atomic_xor">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_xor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_xor" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_xor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_xor" title="Permalink to this definition">#</a></dt>
+<dd><p>Atomically compute the bit-wise XOR of <cite>x</cite> and <cite>y</cite>, element-wise.
+Store the result in <cite>x</cite>, and return the old value of <cite>x</cite>.</p>
+<p><cite>x</cite> must be a writable target, constant expressions or scalars
+are not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input. When both are matrices they must have the same shape.</p></li>
+<li><p><strong>y</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input. When both are matrices they must have the same shape.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The old value of <cite>x</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Vector([-1, 0, 1])
+&gt;&gt;&gt;     y = ti.Vector([1, 2, 3])
+&gt;&gt;&gt;     z = ti.atomic_xor(x, y)
+&gt;&gt;&gt;     print(x)  # [-2, 2, 2]  the new value of x
+&gt;&gt;&gt;     print(z)  # [-1, 0, 1], the old value of x
+&gt;&gt;&gt;
+&gt;&gt;&gt;     ti.atomic_xor(1, x)  # will raise TaichiSyntaxError
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.axes">
@@ -3546,32 +3778,70 @@ statement ended.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.bit_cast">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">bit_cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.bit_cast" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.bit_shr">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">bit_shr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.bit_shr" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute bitwise shift right (in taichi scope)</p>
+<dd><p>Copy and cast a scalar to a specified data type with its underlying
+bits preserved. Must be called in taichi scope.</p>
+<p>This function is equivalent to <cite>reinterpret_cast</cite> in C++.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – value LHS</p></li>
-<li><p><strong>b</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – value RHS</p></li>
+<li><p><strong>obj</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – Input scalar.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – Target data type, must have             the same precision bits as the input (hence <cite>f32</cite> -&gt; <cite>f64</cite> is not allowed).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>LHS &gt;&gt; RHS</p>
+<dd class="field-even"><p>A copy of <cite>obj</cite>, casted to the specified data type <cite>dtype</cite>.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, int]</p>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = 3.14
+&gt;&gt;&gt;     y = ti.bit_cast(x, ti.i32)
+&gt;&gt;&gt;     print(y)  # 1078523331
+&gt;&gt;&gt;
+&gt;&gt;&gt;     z = ti.bit_cast(y, ti.f32)
+&gt;&gt;&gt;     print(z)  # 3.14
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.bit_shr">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">bit_shr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.bit_shr" title="Permalink to this definition">#</a></dt>
+<dd><p>Elements in <cite>x1</cite> shifted to the right by number of bits in <cite>x2</cite>.
+Both <cite>x1</cite>, <cite>x2</cite> must have integer type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Input data.</p></li>
+<li><p><strong>x2</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Number of bits to remove at the right of <cite>x1</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return <cite>x1</cite> with bits shifted <cite>x2</cite> times to the right.
+This is a scalar if both <cite>x1</cite> and <cite>x2</cite> are scalars.</p>
+</dd>
+</dl>
+<dl>
+<dt>Example::</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@ti</span><span class="o">.</span><span class="n">kernel</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">x</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">y</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">bit_shr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">main</span><span class="p">()</span>
+<span class="go">[3, 2]</span>
+</pre></div>
+</div>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.block_dim">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">block_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.block_dim" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">block_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.block_dim" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the number of threads in a block to <cite>dim</cite>.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.block_local">
@@ -3600,7 +3870,7 @@ Must be called in Taichi scope.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Input scalar or matrix.</p></li>
-<li><p><strong>dtype</strong> (<a class="reference internal" href="../types/#module-taichi.types" title="taichi.types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a>) – A primitive type defined in <a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – A primitive type defined in <a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -3627,36 +3897,52 @@ Must be called in Taichi scope.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.ceil">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">ceil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ceil" title="Permalink to this definition">#</a></dt>
-<dd><p>The ceil function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">ceil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ceil" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the ceiling of the input, element-wise.</p>
+<p>The ceil of the scalar <cite>x</cite> is the smallest integer <cite>k</cite>, such that <cite>k &gt;= x</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Input scalar or matrix.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The least integer greater than or equal to <cite>a</cite>.</p>
+<dd class="field-even"><p>The ceiling of each element in <cite>x</cite>, with float dtype.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Matrix([3.14, -1.5])
+&gt;&gt;&gt;     y = ti.ceil(x)
+&gt;&gt;&gt;     print(y)  # [4.0, -1.0]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.clear_all_gradients">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">clear_all_gradients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.clear_all_gradients" title="Permalink to this definition">#</a></dt>
-<dd><p>Set all fields’ gradients to 0.</p>
+<dd><p>Set the gradients of all fields to zero.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.cos">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">cos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.cos" title="Permalink to this definition">#</a></dt>
-<dd><p>The cosine function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">cos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.cos" title="Permalink to this definition">#</a></dt>
+<dd><p>Trigonometric cosine, element-wise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Angle, in radians.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Cosine of <cite>a</cite>.</p>
+<dd class="field-even"><p>The cosine of each element of <cite>x</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from math import pi
+&gt;&gt;&gt; x = ti.Matrix([-pi, 0, pi/2.])
+&gt;&gt;&gt; ti.cos(x)
+[-1., 1., 0.]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -3723,16 +4009,27 @@ Taichi kernels can be defined inside a class.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.exp">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.exp" title="Permalink to this definition">#</a></dt>
-<dd><p>The exp function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.exp" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the exponential of all elements in <cite>x</cite>, element-wise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Input scalar or matrix.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><cite>e</cite> to the <cite>a</cite>.</p>
+<dd class="field-even"><p>Element-wise exponential of <cite>x</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Matrix([-1.0, 0.0, 1.0])
+&gt;&gt;&gt;     y = ti.exp(x)
+&gt;&gt;&gt;     print(y)
+&gt;&gt;&gt;
+&gt;&gt;&gt; test()
+[0.367879, 1.000000, 2.718282]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -3756,7 +4053,9 @@ For now, Taichi supports numpy and pytorch.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.extension">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#taichi.lang.extension" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>An instance of Taichi extension.</p>
+<p>The list of currently available extensions is [‘sparse’, ‘async_mode’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.f16">
@@ -3810,27 +4109,39 @@ and thus needs an adjoint field to store the gradients.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.floor">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">floor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.floor" title="Permalink to this definition">#</a></dt>
-<dd><p>The floor function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">floor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.floor" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the floor of the input, element-wise.</p>
+<p>The floor of the scalar <cite>x</cite> is the largest integer <cite>k</cite>, such that <cite>k &lt;= x</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Input scalar or matrix.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The greatest integer less than or equal to <cite>a</cite>.</p>
+<dd class="field-even"><p>The floor of each element in <cite>x</cite>, with float type.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Matrix([3.14, -1.5])
+&gt;&gt;&gt;     y = ti.floor(x)
+&gt;&gt;&gt;     print(y)  # [3.0, -2.0]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.func">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.func" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_real_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.func" title="Permalink to this definition">#</a></dt>
 <dd><p>Marks a function as callable in Taichi-scope.</p>
 <p>This decorator transforms a Python function into a Taichi one. Taichi
 will JIT compile it into native instructions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – The Python function to be decorated</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fn</strong> (<em>Callable</em>) – The Python function to be decorated</p></li>
+<li><p><strong>is_real_function</strong> (<em>bool</em>) – Whether the function is a real function</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The decorated function</p>
@@ -3904,7 +4215,9 @@ GPU is detected, Taichi falls back to the CPU backend.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.i">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">i</span></span><a class="headerlink" href="#taichi.lang.i" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axis 0. For multi-dimensional arrays it’s the direction downward the rows.
+For a 1d array it’s the direction along this array.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.i32">
@@ -3921,37 +4234,44 @@ GPU is detected, Taichi falls back to the CPU backend.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.ij">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">ij</span></span><a class="headerlink" href="#taichi.lang.ij" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 1).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.ijk">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">ijk</span></span><a class="headerlink" href="#taichi.lang.ijk" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 1, 2).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.ijkl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">ijkl</span></span><a class="headerlink" href="#taichi.lang.ijkl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 1, 2, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.ijl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">ijl</span></span><a class="headerlink" href="#taichi.lang.ijl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 1, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.ik">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">ik</span></span><a class="headerlink" href="#taichi.lang.ik" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 2).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.ikl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">ikl</span></span><a class="headerlink" href="#taichi.lang.ikl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 2, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.il">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">il</span></span><a class="headerlink" href="#taichi.lang.il" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (0, 3).</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.init">
@@ -3991,27 +4311,33 @@ complete list, please check out
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.j">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">j</span></span><a class="headerlink" href="#taichi.lang.j" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axis 1. For multi-dimensional arrays it’s the direction across the columns.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.jk">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">jk</span></span><a class="headerlink" href="#taichi.lang.jk" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (1, 2).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.jkl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">jkl</span></span><a class="headerlink" href="#taichi.lang.jkl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (1, 2, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.jl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">jl</span></span><a class="headerlink" href="#taichi.lang.jl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (1, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.k">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">k</span></span><a class="headerlink" href="#taichi.lang.k" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axis 2. For arrays of dimension <cite>d</cite> &gt;= 3, view each cell as an array of
+lower dimension d-2, it’s the first axis of this cell.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.kernel">
@@ -4049,12 +4375,15 @@ to either a CPU thread pool or massively parallel GPUs.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.kl">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">kl</span></span><a class="headerlink" href="#taichi.lang.kl" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axes (2, 3).</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.l">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">l</span></span><a class="headerlink" href="#taichi.lang.l" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Axis 3. For arrays of dimension <cite>d</cite> &gt;= 4, view each cell as an array of
+lower dimension d-2, it’s the second axis of this cell.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.length">
@@ -4063,22 +4392,56 @@ to either a CPU thread pool or massively parallel GPUs.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.log">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.log" title="Permalink to this definition">#</a></dt>
-<dd><p>The natural logarithm function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.log" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the natural logarithm, element-wise.</p>
+<p>The natural logarithm <cite>log</cite> is the inverse of the exponential function,
+so that <cite>log(exp(x)) = x</cite>. The natural logarithm is logarithm in base <cite>e</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix with elements greater than zero.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Input scalar or matrix.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The natural logarithm of <cite>a</cite>.</p>
+<dd class="field-even"><p>The natural logarithm of <cite>x</cite>, element-wise.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Vector([-1.0, 0.0, 1.0])
+&gt;&gt;&gt;     y = ti.log(x)
+&gt;&gt;&gt;     print(y)
+&gt;&gt;&gt;
+&gt;&gt;&gt; test()
+[-nan, -inf, 0.000000]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.max">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.max" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Compute the maximum of the arguments, element-wise.</p>
+<p>This function takes no effect on a single argument, even it’s array-like.
+When there are both scalar and matrix arguments in <cite>args</cite>, the matrices
+must have the same shape, and scalars will be broadcasted to the same shape as the matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> – (List[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]):             The input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Maximum of the inputs.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def foo():
+&gt;&gt;&gt;     x = ti.Vector([0, 1, 2])
+&gt;&gt;&gt;     y = ti.Vector([3, 4, 5])
+&gt;&gt;&gt;     z = ti.max(x, y, 4)
+&gt;&gt;&gt;     print(z)  # [4, 4, 5]
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.mesh_local">
@@ -4099,7 +4462,28 @@ to either a CPU thread pool or massively parallel GPUs.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.min">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.min" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Compute the minimum of the arguments, element-wise.</p>
+<p>This function takes no effect on a single argument, even it’s array-like.
+When there are both scalar and matrix arguments in <cite>args</cite>, the matrices
+must have the same shape, and scalars will be broadcasted to the same shape as the matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> – (List[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]):             The input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Minimum of the inputs.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def foo():
+&gt;&gt;&gt;     x = ti.Vector([0, 1, 2])
+&gt;&gt;&gt;     y = ti.Vector([3, 4, 5])
+&gt;&gt;&gt;     z = ti.min(x, y, 1)
+&gt;&gt;&gt;     print(z)  # [0, 1, 1]
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.ndarray">
@@ -4160,67 +4544,122 @@ to either a CPU thread pool or massively parallel GPUs.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.pow">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.pow" title="Permalink to this definition">#</a></dt>
-<dd><p>The power function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.pow" title="Permalink to this definition">#</a></dt>
+<dd><p>First array elements raised to powers from second array <span class="math notranslate nohighlight">\(x^a\)</span>, element-wise.</p>
+<p>Negative values raised to a non-integral value will return <cite>nan</cite>.
+A zero value raised to a negative value will return <cite>inf</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p></li>
-<li><p><strong>b</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p></li>
+<li><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The bases.</p></li>
+<li><p><strong>a</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The exponents.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><cite>a</cite> to the <cite>b</cite>.</p>
+<dd class="field-even"><p>The bases in <cite>x1</cite> raised to the exponents in <cite>x2</cite>. This is a scalar if both             <cite>x1</cite> and <cite>x2</cite> are scalars.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Matrix([-2.0, 0.0, 2.0])
+&gt;&gt;&gt;     y = -2.2
+&gt;&gt;&gt;     z = ti.pow(x, y)
+&gt;&gt;&gt;     print(z)
+&gt;&gt;&gt;
+&gt;&gt;&gt; test()
+[-nan, inf, 0.217638]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.random">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.random" title="Permalink to this definition">#</a></dt>
-<dd><p>The random function.</p>
+<dd><p>Return a single random float/integer according to the specified data type.
+Must be called in taichi scope.</p>
+<p>If the required <cite>dtype</cite> is float type, this function returns a random number
+sampled from the uniform distribution in the half-open interval [0, 1).</p>
+<p>For integer types this function returns a random integer in the
+half-open interval [0, 2^32) if a 32-bit integer is required,
+or a random integer in the half-open interval [0, 2^64) if a
+64-bit integer is required.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype</strong> (<em>DataType</em>) – Type of the random variable.</p>
+<dd class="field-odd"><p><strong>dtype</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – Type of the required random value.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A random variable whose type is <cite>dtype</cite>.</p>
+<dd class="field-even"><p>A random value with type <cite>dtype</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.random(float)
+&gt;&gt;&gt;     print(x)  # 0.090257
+&gt;&gt;&gt;
+&gt;&gt;&gt;     y = ti.random(ti.f64)
+&gt;&gt;&gt;     print(y)  # 0.716101627301
+&gt;&gt;&gt;
+&gt;&gt;&gt;     i = ti.random(ti.i32)
+&gt;&gt;&gt;     print(i)  # -963722261
+&gt;&gt;&gt;
+&gt;&gt;&gt;     j = ti.random(ti.i64)
+&gt;&gt;&gt;     print(j)  # 73412986184350777
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.raw_div">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">raw_div</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.raw_div" title="Permalink to this definition">#</a></dt>
-<dd><p>Raw_div function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">raw_div</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.raw_div" title="Permalink to this definition">#</a></dt>
+<dd><p>Return <cite>x1 // x2</cite> if both <cite>x1</cite>, <cite>x2</cite> are integers, otherwise return <cite>x1/x2</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p></li>
-<li><p><strong>b</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix with elements not equal to zero.</p></li>
+<li><p><strong>x1</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Dividend.</p></li>
+<li><p><strong>x2</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Divisor.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>If <cite>a</cite> is a <cite>int</cite> and <cite>b</cite> is a <cite>int</cite>, then return <cite>a//b</cite>. Else return <cite>a/b</cite>.</p>
+<dd class="field-even"><p>Return <cite>x1 // x2</cite> if both <cite>x1</cite>, <cite>x2</cite> are integers, otherwise return <cite>x1/x2</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def main():
+&gt;&gt;&gt;     x = 5
+&gt;&gt;&gt;     y = 3
+&gt;&gt;&gt;     print(raw_div(x, y))  # 1
+&gt;&gt;&gt;     z = 4.0
+&gt;&gt;&gt;     print(raw_div(x, z))  # 1.25
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.raw_mod">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">raw_mod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.raw_mod" title="Permalink to this definition">#</a></dt>
-<dd><p>Raw_mod function. Both <cite>a</cite> and <cite>b</cite> can be <cite>float</cite>.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">raw_mod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.raw_mod" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the remainder of <cite>x1/x2</cite>, element-wise.
+This is the C-style <cite>mod</cite> function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p></li>
-<li><p><strong>b</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix with elements not equal to zero.</p></li>
+<li><p><strong>x1</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The dividend.</p></li>
+<li><p><strong>x2</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The divisor.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The remainder of <cite>a</cite> divided by <cite>b</cite>.</p>
+<dd class="field-even"><p>The remainder of <cite>x1</cite> divided by <cite>x2</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def main():
+&gt;&gt;&gt;     print(ti.mod(-4, 3))  # 2
+&gt;&gt;&gt;     print(ti.raw_mod(-4, 3))  # -1
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -4247,8 +4686,20 @@ to either a CPU thread pool or massively parallel GPUs.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.reset">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.reset" title="Permalink to this definition">#</a></dt>
-<dd><p>Resets Taichi to its initial state.</p>
-<p>This would destroy all the fields and kernels.</p>
+<dd><p>Resets Taichi to its initial state.
+This will destroy all the allocated fields and kernels, and restore
+the runtime to its default configuration.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.field(ti.i32, shape=())
+&gt;&gt;&gt; a[None] = 1
+&gt;&gt;&gt; print(&quot;before reset: &quot;, a)
+before rest: 1
+&gt;&gt;&gt;
+&gt;&gt;&gt; ti.reset()
+&gt;&gt;&gt; print(&quot;after reset: &quot;, a)
+# will raise error because a is unavailable after reset.
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -4265,63 +4716,113 @@ to either a CPU thread pool or massively parallel GPUs.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.round">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.round" title="Permalink to this definition">#</a></dt>
-<dd><p>The round function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.round" title="Permalink to this definition">#</a></dt>
+<dd><p>Round to the nearest integer, element-wise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A scalar or a matrix.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The nearest integer of <cite>a</cite>.</p>
+<dd class="field-even"><p>The nearest integer of <cite>x</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Vector([-1.5, 1.2, 2.7])
+&gt;&gt;&gt;     print(ti.round(x))
+[-2., 1., 3.]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.rsqrt">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">rsqrt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.rsqrt" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">rsqrt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.rsqrt" title="Permalink to this definition">#</a></dt>
 <dd><p>The reciprocal of the square root function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A scalar or a matrix.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The reciprocal of <cite>sqrt(a)</cite>.</p>
+<dd class="field-even"><p>The reciprocal of <cite>sqrt(x)</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.select">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cond</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.select" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cond</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.select" title="Permalink to this definition">#</a></dt>
+<dd><p>Return an array drawn from elements in <cite>x1</cite> or <cite>x2</cite>,
+depending on the conditions in <cite>cond</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The array of conditions.</p></li>
+<li><p><strong>x1</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The arrays where the output elements are taken from.</p></li>
+<li><p><strong>x2</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The arrays where the output elements are taken from.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The output at position <cite>k</cite> is the k-th element of <cite>x1</cite> if the k-th element
+in <cite>cond</cite> is <cite>True</cite>, otherwise it’s the k-th element of <cite>x2</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def main():
+&gt;&gt;&gt;     cond = ti.Matrix([0, 1, 0, 1])
+&gt;&gt;&gt;     x = ti.Matrix([1, 2, 3, 4])
+&gt;&gt;&gt;     y = ti.Matrix([-1, -2, -3, -4])
+&gt;&gt;&gt;     print(ti.select(cond, x, y))
+&gt;&gt;&gt;
+&gt;&gt;&gt; main()
+[-1, 2, -3, 4]
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.sin">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">sin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.sin" title="Permalink to this definition">#</a></dt>
-<dd><p>The sine function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">sin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.sin" title="Permalink to this definition">#</a></dt>
+<dd><p>Trigonometric sine, element-wise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Angle, in radians.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Sine of <cite>a</cite>.</p>
+<dd class="field-even"><p>The sine of each element of <cite>x</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from math import pi
+&gt;&gt;&gt; x = ti.Matrix([-pi/2., 0, pi/2.])
+&gt;&gt;&gt; ti.sin(x)
+[-1., 0., 1.]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.sqrt">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">sqrt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.sqrt" title="Permalink to this definition">#</a></dt>
-<dd><p>The square root function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">sqrt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.sqrt" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the non-negative square-root of a scalar or a matrix,
+element wise. If <cite>x &lt; 0</cite> an exception is raised.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix with elements not less than zero.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The scalar or matrix whose square-roots are required.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><cite>x</cite> such that <cite>x&gt;=0</cite> and <cite>x^2=a</cite>.</p>
+<dd class="field-even"><p>The square-root <cite>y</cite> so that <cite>y &gt;= 0</cite> and <cite>y^2 = x</cite>. <cite>y</cite> has the same type as <cite>x</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.Matrix([1., 4., 9.])
+&gt;&gt;&gt; y = ti.sqrt(x)
+&gt;&gt;&gt; y
+[1.0, 2.0, 3.0]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -4390,30 +4891,54 @@ condition check.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.tan">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">tan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.tan" title="Permalink to this definition">#</a></dt>
-<dd><p>The tangent function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">tan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.tan" title="Permalink to this definition">#</a></dt>
+<dd><p>Trigonometric tangent function, element-wise.</p>
+<p>Equivalent to <cite>ti.sin(x)/ti.cos(x)</cite> element-wise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Input scalar or matrix.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Tangent of <cite>a</cite>.</p>
+<dd class="field-even"><p>The tangent values of <cite>x</cite>.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from math import pi
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Matrix([-pi, pi/2, pi])
+&gt;&gt;&gt;     y = ti.tan(x)
+&gt;&gt;&gt;     print(y)
+&gt;&gt;&gt;
+&gt;&gt;&gt; test()
+[-0.0, -22877334.0, 0.0]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.tanh">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">tanh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.tanh" title="Permalink to this definition">#</a></dt>
-<dd><p>The hyperbolic tangent function.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">tanh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.tanh" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the hyperbolic tangent of <cite>x</cite>, element-wise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>a</strong> (Union[<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>, <a class="reference internal" href="matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – A number or a matrix.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – Input scalar or matrix.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><cite>(e**x - e**(-x)) / (e**x + e**(-x))</cite>.</p>
+<dd class="field-even"><p>The corresponding hyperbolic tangent values.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Matrix([-1.0, 0.0, 1.0])
+&gt;&gt;&gt;     y = ti.tanh(x)
+&gt;&gt;&gt;     print(y)
+&gt;&gt;&gt;
+&gt;&gt;&gt; test()
+[-0.761594, 0.000000, 0.761594]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py data">
