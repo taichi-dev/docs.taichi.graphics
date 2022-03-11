@@ -34,6 +34,8 @@ jobs:
           # remove extra files to make them identical
           # also print the logs in human readable format
           rsync -avh --delete source/docs/lang/ target/website/docs/lang
+          rsync -avh --delete source/docs/variable.json target/website/variables/variable.json
+          rsync -avh --delete source/docs/fragments/ target/website/fragments
 
       - name: Set API Gen Env
         run: |
