@@ -236,22 +236,7 @@
   // code {
   //   padding: var(--ifm-code-padding-vertical) var(--ifm-code-padding-horizontal);
   // }
-  pre {
-    // margin: 1.5em 0;
-    // padding: 10px;
-    // background-color: rgba(var(--pst-color-preformatted-background), 1);
-    // color: rgba(var(--pst-color-preformatted-text), 1);
-    // line-height: 1.2em;
-    // border: 1px solid #c9c9c9;
-    // border-radius: 0.2rem;
-    // box-shadow: 1px 1px 1px #d8d8d8;
-    padding: 1em;
-    margin: 0.5em 0px;
-    overflow: auto;
-    // border: 0.3em solid rgb(122, 102, 82);
-    border-radius: 0.5em;
-    box-shadow: black 1px 1px 0.5em inset;
-  }
+
   dd {
     margin-top: 3px;
     margin-bottom: 10px;
