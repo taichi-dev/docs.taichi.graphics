@@ -1,4 +1,4 @@
-import React, { useEffect, useImperativeHandle, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Layout from '@theme/Layout';
 import LayoutProviders from '@theme/LayoutProviders';
 import _ from 'lodash'
