@@ -37,7 +37,7 @@ Taichi also provides an automatic differentiation module via source code transfo
 
 One huge advantange of Taichi lies in its portability, thanks to the support for a wide variety of backends. During the development process, we have also recognized the increasing demands from our industry users for multi-platform packaging and deployment. Below shows an experimental demo of integrating Taichi with Unity. By exporting Taichi kernels as SPIR-V shaders, we can easily import them into a Unity project.
 
-![](https://github.com/taichi-dev/taichi_assets/blob/master/static/imgs/unity_fluid.gif?raw=true)
+![](https://github.com/taichi-dev/public_files/blob/master/taichi/unity_fluid.gif?raw=true)
 
 **General-purpose computing**
 
