@@ -340,7 +340,83 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang._ndrange.ndrange">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang._ndrange.</span></span><span class="sig-name descname"><span class="pre">ndrange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndrange.ndrange" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Return an immutable iterator object for looping over multi-dimensional indices.</p>
+<p>This returned set of multi-dimensional indices is the direct product (in the set-theory sense)
+of n groups of integers, where n equals the number of arguments in the input list, and looks like</p>
+<p>range(x1, y1) x range(x2, y2) x … x range(xn, yn)</p>
+<p>The k-th argument corresponds to the k-th <cite>range()</cite> factor in the above product, and each
+argument must be an integer or a pair of two integers. An integer argument n will be intepreted
+as <cite>range(0, n)</cite>, and a pair of two integers (start, end) will be interpreted as <cite>range(start, end)</cite>.</p>
+<p>You can loop over these multi-dimensonal indices in different ways, see the examples below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entries</strong> – (int, tuple): Must be either an integer, or a tuple/list of two integers.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An immutable iterator object.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>You can loop over 1-D integers in range [start, end), as in native Python
+
+    &gt;&gt;&gt; @ti.kernel
+    &gt;&gt;&gt; def loop_1d():
+    &gt;&gt;&gt;     start = 2
+    &gt;&gt;&gt;     end = 5
+    &gt;&gt;&gt;     for i in ti.ndrange((start, end)):
+    &gt;&gt;&gt;         print(i)  # will print 2 3 4
+
+Note the braces around `(start, end)` in the above code. If without them,
+the parameter `2` will be interpreted as `range(0, 2)`, `5` will be
+interpreted as `range(0, 5)`, and you will get a set of 2-D indices which
+contains 2x5=10 elements, and need two indices i, j to loop over them:
+
+    &gt;&gt;&gt; @ti.kernel
+    &gt;&gt;&gt; def loop_2d():
+    &gt;&gt;&gt;     for i, j in ti.ndrange(2, 5):
+    &gt;&gt;&gt;         print(i, j)
+    0 0
+    ...
+    0 4
+    ...
+    1 4
+
+But you do can use a single index i to loop over these 2-D indices, in this case
+the indices are returned as a 1-D array `(0, 1, ..., 9)`:
+
+    &gt;&gt;&gt; @ti.kernel
+    &gt;&gt;&gt; def loop_2d_as_1d():
+    &gt;&gt;&gt;     for i in ti.ndrange(2, 5):
+    &gt;&gt;&gt;         print(i)
+    will print 0 1 2 3 4 5 6 7 8 9
+
+In general, you can use any `1 &lt;= k &lt;= n` iterators to loop over a set of n-D
+indices. For `k=n` all the indices are n-dimensional, and they are returned in
+lexical order, but for `k&lt;n` iterators the last n-k+1 dimensions will be collapsed into
+a 1-D array of consecutive integers `(0, 1, 2, ...)` whose length equals the
+total number of indices in the last n-k+1 dimensions:
+
+    &gt;&gt;&gt; @ti.kernel
+    &gt;&gt;&gt; def loop_3d_as_2d():
+    &gt;&gt;&gt;     # use two iterators to loop over a set of 3-D indices
+    &gt;&gt;&gt;     # the last two dimensions for 4, 5 will collapse into
+    &gt;&gt;&gt;     # the array [0, 1, 2, ..., 19]
+    &gt;&gt;&gt;     for i, j in ti.ndrange(3, 4, 5):
+    &gt;&gt;&gt;         print(i, j)
+    will print 0 0, 0 1, ..., 0 19, ..., 2 19.
+
+A typical usage of `ndrange` is when you want to loop over a tensor and process
+its entries in parallel. You should avoid writing nested `for` loops here since
+only top level `for` loops are paralleled in taichi, instead you can use `ndrange`
+to hold all entries in one top level loop:
+
+    &gt;&gt;&gt; @ti.kernel
+    &gt;&gt;&gt; def loop_tensor():
+    &gt;&gt;&gt;     for row, col, channel in ti.ndrange(image_height, image_width, channels):
+    &gt;&gt;&gt;         image[row, col, channel] = ...
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 
