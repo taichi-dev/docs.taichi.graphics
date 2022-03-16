@@ -584,7 +584,37 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.tools.VideoManager">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.tools.</span></span><span class="sig-name descname"><span class="pre">VideoManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_processor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">framerate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">automatic_build</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.VideoManager" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><p>Utility class for exporting results to <cite>mp4</cite> and <cite>gif</cite> formats.
+This class relies on <cite>ffmpeg</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_dir</strong> (<em>str</em>) – directory to save the frames.</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – resolution of the video.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – resolution of the video.</p></li>
+<li><p><strong>post_processor</strong> (<em>object</em>) – any object that implements the <cite>process(img)</cite> method, which accepts
+an image as a numpy.ndarray and returns the process image.</p></li>
+<li><p><strong>framerate</strong> (<em>int</em>) – frame rate of the video.</p></li>
+<li><p><strong>automatic_build</strong> (<em>bool</em>) – automatically generate the resulting video or not.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; video_manager = ti.tools.VideoManager(output_dir=&quot;./output&quot;, framerate=24, automatic_build=False)
+&gt;&gt;&gt; for i in range(50):
+&gt;&gt;&gt;     render()
+&gt;&gt;&gt;     img = pixels.to_numpy()
+&gt;&gt;&gt;     video_manager.write_frame(img)
+&gt;&gt;&gt;
+&gt;&gt;&gt; video_manager.make_video(gif=True, mp4=True)
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An instance of <a class="reference internal" href="#taichi.tools.VideoManager" title="taichi.tools.VideoManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">taichi.tools.VideoManager</span></code></a> class.</p>
+</dd>
+</dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.VideoManager.clean_frames">
 <span class="sig-name descname"><span class="pre">clean_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.VideoManager.clean_frames" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>

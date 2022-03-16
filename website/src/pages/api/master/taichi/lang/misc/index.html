@@ -613,7 +613,8 @@ for how BLS is used.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.cpu">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">cpu</span></span><a class="headerlink" href="#taichi.lang.misc.cpu" title="Permalink to this definition">#</a></dt>
-<dd><p>A list of CPU backends supported on the current system.</p>
+<dd><p>A list of CPU backends supported on the current system.
+Currently contains ‘x64’, ‘x86_64’, ‘arm64’, ‘cc’, ‘wasm’.</p>
 <p>When this is used, Taichi automatically picks the matching CPU backend.</p>
 </dd></dl>
 
@@ -644,7 +645,8 @@ for how BLS is used.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.gpu">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">gpu</span></span><a class="headerlink" href="#taichi.lang.misc.gpu" title="Permalink to this definition">#</a></dt>
-<dd><p>A list of GPU backends supported on the current system.</p>
+<dd><p>A list of GPU backends supported on the current system.
+Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’.</p>
 <p>When this is used, Taichi automatically picks the matching GPU backend. If no
 GPU is detected, Taichi falls back to the CPU backend.</p>
 </dd></dl>

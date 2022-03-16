@@ -3136,14 +3136,45 @@ the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppress_warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="lang/common_ops/#taichi.lang.common_ops.TaichiOperations" title="taichi.lang.common_ops.TaichiOperations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.common_ops.TaichiOperations</span></code></a></p>
 <p>The matrix class.</p>
+<p>A matrix is a 2-D rectangular array with scalar entries, it’s row-majored, and is
+aligned continously. We recommend only use matrix with no more than 32 elements for
+efficiency considerations.</p>
+<p>Note: in taichi a matrix is strictly two-dimensional and only stores scalars.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>arr</strong> (<em>Union</em><em>[</em><em>list</em><em>, </em><em>tuple</em><em>, </em><em>np.ndarray</em><em>]</em>) – the initial values of a matrix.</p></li>
-<li><p><strong>dt</strong> (<em>DataType</em>) – the element data type.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – the element data type.</p></li>
+<li><p><strong>suppress_warning</strong> (<em>bool</em>) – whether raise warning or not when the matrix contains more             than 32 elements.</p></li>
 </ul>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>use a 2d list to initialize a matrix
+
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     n = 5
+&gt;&gt;&gt;     M = ti.Matrix([[0] * n for _ in range(n)], ti.i32)
+&gt;&gt;&gt;     print(M)  # a 5x5 matrix with integer elements
+
+get the number of rows and columns via the `n`, `m` property:
+
+&gt;&gt;&gt; M = ti.Matrix([[0, 1], [2, 3], [4, 5]], ti.i32)
+&gt;&gt;&gt; M.n  # number of rows
+3
+&gt;&gt;&gt; M.m  # number of cols
+&gt;&gt;&gt; 2
+
+you can even initialize a matrix with an empty list:
+
+&gt;&gt;&gt; M = ti.Matrix([[], []], ti.i32)
+&gt;&gt;&gt; M.n
+2
+&gt;&gt;&gt; M.m
+0
+</pre></div>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Matrix.all">
 <span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.all" title="Permalink to this definition">#</a></dt>
@@ -4262,6 +4293,25 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <p>A struct is a dictionary-like data structure that stores members as
 (key, value) pairs. Valid data members of a struct can be scalars,
 matrices or other dictionary-like stuctures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entries</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>Dict</em><em>, </em><em>Expr</em><em>, </em><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><em>Matrix</em></a><em>, </em><a class="reference internal" href="#taichi.Struct" title="taichi.Struct"><em>Struct</em></a><em>]</em><em>]</em>) – keys and values for struct members.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An instance of this struct.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
+&gt;&gt;&gt; a = ti.Struct(v=vec3([0, 0, 0]), t=1.0)
+&gt;&gt;&gt; print(a.items)
+dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0)])
+&gt;&gt;&gt;
+&gt;&gt;&gt; B = ti.Struct(v=vec3([0., 0., 0.]), t=1.0, A=a)
+&gt;&gt;&gt; print(B.items)
+dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v&#39;: [[0.], [0.], [0.]], &#39;t&#39;: 1.0})])
+</pre></div>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Struct.field">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">members</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;Struct&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Struct.field" title="Permalink to this definition">#</a></dt>
@@ -4618,19 +4668,31 @@ statement ended.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.Vector">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">Vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a <cite>Vector</cite> instance i.e. 1-D Matrix.</p>
+<dd><p>Construct a vector from given array.</p>
+<p>A vector is an instance of a 2-D matrix with the second dimension being equal to 1.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>arr</strong> (<em>Union</em><em>[</em><em>list</em><em>, </em><em>tuple</em><em>, </em><em>np.ndarray</em>) – The initial values of the Vector.</p></li>
-<li><p><strong>dt</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of the Vector.</p></li>
+<li><p><strong>arr</strong> (<em>Union</em><em>[</em><em>list</em><em>, </em><em>tuple</em><em>, </em><em>np.ndarray</em><em>]</em>) – The initial values of the Vector.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – data type of the vector.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A Vector instance (1-D <a class="reference internal" href="lang/matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>).</p>
+<dd class="field-even"><p>A vector instance.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="lang/matrix/#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
+</dd>
+</dl>
+<dl>
+<dt>Example::</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># verify a vector is a matrix of shape (n, 1)</span>
+<span class="go">2 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">+</span> <span class="n">v</span>
+<span class="go">[4 6]</span>
+</pre></div>
+</div>
 </dd>
 </dl>
 </dd></dl>
@@ -4754,8 +4816,17 @@ statement ended.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.activate">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">activate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.activate" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">activate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.activate" title="Permalink to this definition">#</a></dt>
+<dd><p>Explicitly activate a cell of <cite>node</cite> at location <cite>indices</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference internal" href="#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – Must be a pointer, hash or bitmasked node.</p></li>
+<li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to activate.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.any_arr">
@@ -4795,8 +4866,18 @@ statement ended.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.append">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.append" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.append" title="Permalink to this definition">#</a></dt>
+<dd><p>Append a value <cite>val</cite> to a SNode <cite>node</cite> at index <cite>indices</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference internal" href="#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – Input SNode.</p></li>
+<li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to visit.</p></li>
+<li><p><strong>val</strong> (<a class="reference internal" href="types/#module-taichi.types" title="taichi.types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a>) – the data to be appended.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.arm64">
@@ -5266,7 +5347,8 @@ Must be called in Taichi scope.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.cpu">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">cpu</span></span><a class="headerlink" href="#taichi.cpu" title="Permalink to this definition">#</a></dt>
-<dd><p>A list of CPU backends supported on the current system.</p>
+<dd><p>A list of CPU backends supported on the current system.
+Currently contains ‘x64’, ‘x86_64’, ‘arm64’, ‘cc’, ‘wasm’.</p>
 <p>When this is used, Taichi automatically picks the matching CPU backend.</p>
 </dd></dl>
 
@@ -5310,8 +5392,19 @@ Taichi kernels can be defined inside a class.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.deactivate">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">deactivate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.deactivate" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">deactivate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.deactivate" title="Permalink to this definition">#</a></dt>
+<dd><p>Explicitly deactivate a cell of <cite>node</cite> at location <cite>indices</cite>.</p>
+<p>After deactivation, the Taichi runtime automatically recycles and zero-fills
+the memory of the deactivated cell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference internal" href="#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – Must be a pointer, hash or bitmasked node.</p></li>
+<li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to deactivate.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.deactivate_all_snodes">
@@ -5455,7 +5548,7 @@ For now, Taichi supports numpy and pytorch.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.field">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.field" title="Permalink to this definition">#</a></dt>
-<dd><p>Defines a Taichi field</p>
+<dd><p>Defines a Taichi field.</p>
 <p>A Taichi field can be viewed as an abstract N-dimensional array, hiding away
 the complexity of how its underlying <a class="reference internal" href="lang/snode/#taichi.lang.snode.SNode" title="taichi.lang.snode.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> are
 actually defined. The data in a Taichi field can be directly accessed by
@@ -5465,21 +5558,22 @@ a Taichi <a class="reference internal" href="lang/kernel_impl/#taichi.lang.kerne
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dtype</strong> (<em>DataType</em>) – data type of the field.</p></li>
-<li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – shape of the field</p></li>
-<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – name of the field</p></li>
-<li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – offset of the field domain</p></li>
+<li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – shape of the field.</p></li>
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – name of the field.</p></li>
+<li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – offset of the field domain.</p></li>
 <li><p><strong>needs_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether this field participates in autodiff
 and thus needs an adjoint field to store the gradients.</p></li>
 </ul>
 </dd>
 </dl>
-<p class="rubric">Example</p>
-<p>The code below shows how a Taichi field can be declared and defined:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x1 = ti.field(ti.f32, shape=(16, 8))
-&gt;&gt;&gt;
-&gt;&gt;&gt; # Equivalently
-&gt;&gt;&gt; x2 = ti.field(ti.f32)
-&gt;&gt;&gt; ti.root.dense(ti.ij, shape=(16, 8)).place(x2)
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The code below shows how a Taichi field can be declared and defined::
+
+    &gt;&gt;&gt; x1 = ti.field(ti.f32, shape=(16, 8))
+    &gt;&gt;&gt;
+    &gt;&gt;&gt; # Equivalently
+    &gt;&gt;&gt; x2 = ti.field(ti.f32)
+    &gt;&gt;&gt; ti.root.dense(ti.ij, shape=(16, 8)).place(x2)
 </pre></div>
 </div>
 </dd></dl>
@@ -5565,8 +5659,8 @@ will JIT compile it into native instructions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<em>Union</em><em>[</em><em>ti.field</em><em>, </em><em>ti.Vector.field</em><em>, </em><em>ti.Matrix.field</em><em>]</em>) – Input taichi field for memory address query.</p></li>
-<li><p><strong>indices</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>ti.Vector</em><em>(</em><em>)</em><em>]</em>) – The specified field indices of the query.</p></li>
+<li><p><strong>f</strong> (Union[<a class="reference internal" href="#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>, <a class="reference internal" href="#taichi.MatrixField" title="taichi.MatrixField"><code class="xref py py-class docutils literal notranslate"><span class="pre">MatrixField</span></code></a>]) – Input taichi field for memory address query.</p></li>
+<li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – The specified field indices of the query.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -5586,7 +5680,8 @@ will JIT compile it into native instructions.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.gpu">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">gpu</span></span><a class="headerlink" href="#taichi.gpu" title="Permalink to this definition">#</a></dt>
-<dd><p>A list of GPU backends supported on the current system.</p>
+<dd><p>A list of GPU backends supported on the current system.
+Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’.</p>
 <p>When this is used, Taichi automatically picks the matching GPU backend. If no
 GPU is detected, Taichi falls back to the CPU backend.</p>
 </dd></dl>
@@ -5594,17 +5689,29 @@ GPU is detected, Taichi falls back to the CPU backend.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.grouped">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">grouped</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.grouped" title="Permalink to this definition">#</a></dt>
-<dd><p>Groups a list of independent loop indices into a <a class="reference internal" href="lang/matrix/#taichi.lang.matrix.Vector" title="taichi.lang.matrix.Vector"><code class="xref py py-func docutils literal notranslate"><span class="pre">Vector()</span></code></a>.</p>
+<dd><p>Groups the indices in the iterator returned by <cite>ndrange()</cite> into a 1-D vector.</p>
+<p>This is often used when you want to iterate over all indices returned by <cite>ndrange()</cite>
+in one <cite>for</cite> loop and a single index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>Any</em>) – does the grouping only if <cite>x</cite> is a <a class="reference internal" href="lang/#taichi.lang.ndrange" title="taichi.lang.ndrange"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndrange</span></code></a>.</p>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="#taichi.ndrange" title="taichi.ndrange"><code class="xref py py-func docutils literal notranslate"><span class="pre">ndrange()</span></code></a>) – an iterator object returned by <cite>ti.ndrange</cite>.</p>
 </dd>
 </dl>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; for I in ti.grouped(ndrange(8, 16)):
-&gt;&gt;&gt;     print(I[0] + I[1])
+<dl>
+<dt>Example::</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># without ti.grouped</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="n">ti</span><span class="o">.</span><span class="n">ndrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="go">prints 0, 1, 2, 3, 4, 5</span>
 </pre></div>
 </div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># with ti.grouped</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="n">ti</span><span class="o">.</span><span class="n">grouped</span><span class="p">(</span><span class="n">ndrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="go">prints [0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]</span>
+</pre></div>
+</div>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -5762,8 +5869,24 @@ complete list, please check out
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.is_active">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">is_active</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.is_active" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">is_active</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.is_active" title="Permalink to this definition">#</a></dt>
+<dd><p>Explicitly query whether a cell in a SNode <cite>node</cite> at location
+<cite>indices</cite> is active or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference internal" href="#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – Must be a pointer, hash or bitmasked node.</p></li>
+<li><p><strong>indices</strong> (Union[int, list, <a class="reference internal" href="#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to visit.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the cell <cite>node[indices]</cite> is active or not.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.is_logging_effective">
@@ -5874,8 +5997,23 @@ lower dimension d-2, it’s the second axis of this cell.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.length">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.length" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.length" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the length of the dynamic SNode <cite>node</cite> at index <cite>indices</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference internal" href="#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – a dynamic SNode.</p></li>
+<li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to query.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the length of cell <cite>node[indices]</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.log">
@@ -5999,7 +6137,83 @@ must have the same shape, and scalars will be broadcasted to the same shape as t
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ndrange">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">ndrange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ndrange" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Return an immutable iterator object for looping over multi-dimensional indices.</p>
+<p>This returned set of multi-dimensional indices is the direct product (in the set-theory sense)
+of n groups of integers, where n equals the number of arguments in the input list, and looks like</p>
+<p>range(x1, y1) x range(x2, y2) x … x range(xn, yn)</p>
+<p>The k-th argument corresponds to the k-th <cite>range()</cite> factor in the above product, and each
+argument must be an integer or a pair of two integers. An integer argument n will be intepreted
+as <cite>range(0, n)</cite>, and a pair of two integers (start, end) will be interpreted as <cite>range(start, end)</cite>.</p>
+<p>You can loop over these multi-dimensonal indices in different ways, see the examples below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entries</strong> – (int, tuple): Must be either an integer, or a tuple/list of two integers.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An immutable iterator object.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>You can loop over 1-D integers in range [start, end), as in native Python
+
+    &gt;&gt;&gt; @ti.kernel
+    &gt;&gt;&gt; def loop_1d():
+    &gt;&gt;&gt;     start = 2
+    &gt;&gt;&gt;     end = 5
+    &gt;&gt;&gt;     for i in ti.ndrange((start, end)):
+    &gt;&gt;&gt;         print(i)  # will print 2 3 4
+
+Note the braces around `(start, end)` in the above code. If without them,
+the parameter `2` will be interpreted as `range(0, 2)`, `5` will be
+interpreted as `range(0, 5)`, and you will get a set of 2-D indices which
+contains 2x5=10 elements, and need two indices i, j to loop over them:
+
+    &gt;&gt;&gt; @ti.kernel
+    &gt;&gt;&gt; def loop_2d():
+    &gt;&gt;&gt;     for i, j in ti.ndrange(2, 5):
+    &gt;&gt;&gt;         print(i, j)
+    0 0
+    ...
+    0 4
+    ...
+    1 4
+
+But you do can use a single index i to loop over these 2-D indices, in this case
+the indices are returned as a 1-D array `(0, 1, ..., 9)`:
+
+    &gt;&gt;&gt; @ti.kernel
+    &gt;&gt;&gt; def loop_2d_as_1d():
+    &gt;&gt;&gt;     for i in ti.ndrange(2, 5):
+    &gt;&gt;&gt;         print(i)
+    will print 0 1 2 3 4 5 6 7 8 9
+
+In general, you can use any `1 &lt;= k &lt;= n` iterators to loop over a set of n-D
+indices. For `k=n` all the indices are n-dimensional, and they are returned in
+lexical order, but for `k&lt;n` iterators the last n-k+1 dimensions will be collapsed into
+a 1-D array of consecutive integers `(0, 1, 2, ...)` whose length equals the
+total number of indices in the last n-k+1 dimensions:
+
+    &gt;&gt;&gt; @ti.kernel
+    &gt;&gt;&gt; def loop_3d_as_2d():
+    &gt;&gt;&gt;     # use two iterators to loop over a set of 3-D indices
+    &gt;&gt;&gt;     # the last two dimensions for 4, 5 will collapse into
+    &gt;&gt;&gt;     # the array [0, 1, 2, ..., 19]
+    &gt;&gt;&gt;     for i, j in ti.ndrange(3, 4, 5):
+    &gt;&gt;&gt;         print(i, j)
+    will print 0 0, 0 1, ..., 0 19, ..., 2 19.
+
+A typical usage of `ndrange` is when you want to loop over a tensor and process
+its entries in parallel. You should avoid writing nested `for` loops here since
+only top level `for` loops are paralleled in taichi, instead you can use `ndrange`
+to hold all entries in one top level loop:
+
+    &gt;&gt;&gt; @ti.kernel
+    &gt;&gt;&gt; def loop_tensor():
+    &gt;&gt;&gt;     for row, col, channel in ti.ndrange(image_height, image_width, channels):
+    &gt;&gt;&gt;         image[row, col, channel] = ...
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.no_activate">
@@ -6009,18 +6223,25 @@ must have the same shape, and scalars will be broadcasted to the same shape as t
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.one">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.one" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill the input field with one.</p>
+<dd><p>Return an array of ones with the same shape and type as the input. It’s also a scalar
+if the input is a scalar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>DataType</em>) – The input field to fill.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The output field, which keeps the shape but filled with one.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>DataType</p>
+<dd class="field-even"><p>A new copy of the input but filled with ones.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.Vector([0, 0])
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     y = ti.one(x)
+&gt;&gt;&gt;     print(y)
+[1, 1]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -6197,20 +6418,20 @@ This is the C-style <cite>mod</cite> function.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.rescale_index">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">rescale_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">I</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.rescale_index" title="Permalink to this definition">#</a></dt>
-<dd><p>Rescales the index ‘I’ of field (or SNode) ‘a’ to match the shape of SNode ‘b’</p>
+<dd><p>Rescales the index ‘I’ of field (or SNode) ‘a’ to match the shape of SNode ‘b’.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> (<em>ti.field</em><em>(</em><em>)</em><em>, </em><em>ti.Vector.field</em><em>, </em><em>ti.Matrix.field</em><em>(</em><em>)</em>) – input taichi field or snode</p></li>
-<li><p><strong>b</strong> (<em>ti.field</em><em>(</em><em>)</em><em>, </em><em>ti.Vector.field</em><em>, </em><em>ti.Matrix.field</em><em>(</em><em>)</em>) – output taichi field or snode</p></li>
-<li><p><strong>I</strong> (<em>ti.Vector</em><em>(</em><em>)</em>) – grouped loop index</p></li>
+<li><p><strong>a</strong> (Union[<a class="reference internal" href="#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>, <a class="reference internal" href="#taichi.MatrixField" title="taichi.MatrixField"><code class="xref py py-class docutils literal notranslate"><span class="pre">MatrixField</span></code></a>) – Input taichi fields or snodes.</p></li>
+<li><p><strong>b</strong> (Union[<a class="reference internal" href="#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>, <a class="reference internal" href="#taichi.MatrixField" title="taichi.MatrixField"><code class="xref py py-class docutils literal notranslate"><span class="pre">MatrixField</span></code></a>) – Input taichi fields or snodes.</p></li>
+<li><p><strong>I</strong> (Union[list, <a class="reference internal" href="#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – grouped loop index.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>Ib</strong> – rescaled grouped loop index</p>
+<dd class="field-even"><p>rescaled grouped loop index</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ti.Vector()</p>
+<dd class="field-odd"><p>Ib (<a class="reference internal" href="#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -6401,7 +6622,7 @@ element wise. If <cite>x &lt; 0</cite> an exception is raised.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">static</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">xs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.static" title="Permalink to this definition">#</a></dt>
 <dd><p>Evaluates a Taichi-scope expression at compile time.</p>
 <p><cite>static()</cite> is what enables the so-called metaprogramming in Taichi. It is
-in many ways similar to <code class="docutils literal notranslate"><span class="pre">constexpr</span></code> in C++11.</p>
+in many ways similar to <code class="docutils literal notranslate"><span class="pre">constexpr</span></code> in C++.</p>
 <p>See also <a class="reference external" href="https://docs.taichi.graphics/lang/articles/advanced/meta">https://docs.taichi.graphics/lang/articles/advanced/meta</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -6413,15 +6634,17 @@ in many ways similar to <code class="docutils literal notranslate"><span class="
 </dl>
 <p class="rubric">Example</p>
 <p>The most common usage of <cite>static()</cite> is for compile-time evaluation:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; cond = False
+&gt;&gt;&gt;
+&gt;&gt;&gt; @ti.kernel
 &gt;&gt;&gt; def run():
-&gt;&gt;&gt;     if ti.static(FOO):
+&gt;&gt;&gt;     if ti.static(cond):
 &gt;&gt;&gt;         do_a()
 &gt;&gt;&gt;     else:
 &gt;&gt;&gt;         do_b()
 </pre></div>
 </div>
-<p>Depending on the value of <code class="docutils literal notranslate"><span class="pre">FOO</span></code>, <code class="docutils literal notranslate"><span class="pre">run()</span></code> will be directly compiled
+<p>Depending on the value of <code class="docutils literal notranslate"><span class="pre">cond</span></code>, <code class="docutils literal notranslate"><span class="pre">run()</span></code> will be directly compiled
 into either <code class="docutils literal notranslate"><span class="pre">do_a()</span></code> or <code class="docutils literal notranslate"><span class="pre">do_b()</span></code>. Thus there won’t be a runtime
 condition check.</p>
 <p>Another common usage is for compile-time loop unrolling:</p>
@@ -6430,7 +6653,7 @@ condition check.</p>
 &gt;&gt;&gt;     for i in ti.static(range(3)):
 &gt;&gt;&gt;         print(i)
 &gt;&gt;&gt;
-&gt;&gt;&gt; # The above is equivalent to:
+&gt;&gt;&gt; # The above will be unrolled to:
 &gt;&gt;&gt; @ti.kernel
 &gt;&gt;&gt; def run():
 &gt;&gt;&gt;     print(0)
@@ -6443,7 +6666,25 @@ condition check.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.static_assert">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">static_assert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cond</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.static_assert" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Throw AssertionError when <cite>cond</cite> is False.
+The bool value in <cite>cond</cite> must can be determined at compile time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond</strong> (<em>bool</em>) – an expression with a bool value.</p></li>
+<li><p><strong>msg</strong> (<em>str</em>) – assertion message.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; year = 2001
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     ti.static_assert(year % 4 == 0, &quot;the year must be a lunar year&quot;)
+AssertionError: the year must be a lunar year
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.static_print">
@@ -6653,18 +6894,25 @@ eigenvectors (ti.Matrix(n, n)): The eigenvectors. Each column stores one eigenve
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.zero">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.zero" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill the input field with zero.</p>
+<dd><p>Return an array of zeros with the same shape and type as the input. It’s also a scalar
+if the input is a scalar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>DataType</em>) – The input field to fill.</p>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The output field, which keeps the shape but filled with zero.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>DataType</p>
+<dd class="field-even"><p>A new copy of the input but filled with zeros.</p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.Vector([1, 1])
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     y = ti.zero(x)
+&gt;&gt;&gt;     print(y)
+[0, 0]
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
