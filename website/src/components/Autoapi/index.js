@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Layout from '@theme/Layout';
+import LayoutProviders from '@theme/LayoutProviders';
 import _ from 'lodash'
 import {
   ThemeClassNames,
+  useColorMode,
 } from '@docusaurus/theme-common';
-import Prism from "prismjs";
+
+import CodeBlock from '@theme/CodeBlock'
+
+import ReactDOM from 'react-dom'
 
 import BackToTopButton from '@theme/BackToTopButton';
-require("prismjs/components/prism-python");
-
-import 'prismjs/themes/prism-okaidia.css'
 
 import './styles/index.scss'
 
@@ -49,7 +51,40 @@ const spyScroll = (scrollParent) => {
 
 const lang = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i;
 
-export default ({ __content }) => {
+const CodeContainer = ({ code, className }) => {
+  const { setDarkTheme, setLightTheme } = useColorMode()
+  useEffect(() => {
+    const html = document.getElementsByTagName('html')[0]
+    const callback = function(mutationsList) {
+      for(let mutation of mutationsList) {
+        if (mutation.type === 'attributes') {
+          if (mutation.attributeName === 'data-theme') {
+            const v = html.getAttribute(mutation.attributeName)
+            if (v === 'light') {
+              setLightTheme()
+            }
+            if (v === 'dark') {
+              setDarkTheme()
+            }
+          }
+        }
+      }
+    };
+    const observer = new MutationObserver(callback);
+    observer.observe(document.getElementsByTagName('html')[0], { attributes: true });
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+  return <CodeBlock className={className} children={code} />
+}
+
+const AutoApiContainer = ({ content }) => {
+  const value = useRef()
+  const { isDarkTheme } = useColorMode()
+  useEffect(() => {
+    value.current = isDarkTheme
+  }, [isDarkTheme])
   const throttledOnScroll = _.throttle(
     e => {
       const navLinks = document.querySelectorAll("#bd-toc-nav a");
@@ -74,19 +109,25 @@ export default ({ __content }) => {
         if (!flag) {
           node.classList.add('language-python')
         }
-        Prism.highlightElement(node)
+        const p = node.parentElement
+        node.remove()
+        ReactDOM.render(<LayoutProviders><CodeContainer className={node.className} code={node.textContent} /></LayoutProviders>, p)
       })
       window.addEventListener('scroll', throttledOnScroll);
       // unbind
       return () => window.removeEventListener('scroll', throttledOnScroll)
   }, [])
+  return <div style={{ width: '100%', paddingLeft: 15, paddingRight: 15 }} dangerouslySetInnerHTML={{ __html: content }}></div>
+}
+
+export default ({ __content }) => {
   return (
     <Layout
       wrapperClassName={ThemeClassNames.wrapper.docsPages}
       pageClassName={ThemeClassNames.page.docsDocPage}>
       <div className='autoapi-container markdown'>
         <BackToTopButton />
-        <div style={{ width: '100%', paddingLeft: 15, paddingRight: 15 }} dangerouslySetInnerHTML={{ __html: __content }}></div>
+        <AutoApiContainer content={__content} />
       </div>
     </Layout>
   );
