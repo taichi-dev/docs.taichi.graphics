@@ -228,6 +228,7 @@ module.exports = {
       }
     },
   },
+  themes: [path.join(__dirname, './plugins/docusaurus-theme-extends/src')],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -254,8 +255,8 @@ module.exports = {
             },
           },
           remarkPlugins: [
-            [variablePlugin, { data: variables }],
-            [fragmentPlugin, { prefix: 'fragments', baseUrl: __dirname + '/fragments' }]
+            [variablePlugin, { data: variables, fail: false }],
+            [fragmentPlugin, { prefix: 'fragments', fail: false, baseUrl: __dirname + '/fragments' }]
           ],
         },
         blog: {

@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "yarn run validateplugin && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -15,7 +15,8 @@
     "crowdin": "crowdin",
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
     "crowdin:upload": "docusaurus write-translations && crowdin upload",
-    "apiversion": "node ./apiversion.js"
+    "apiversion": "node ./apiversion.js",
+    "validateplugin": "node ./scripts/validation/index.js"
   },
   "dependencies": {
     "@crowdin/cli": "^3.6.4",
