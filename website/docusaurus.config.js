@@ -59,6 +59,8 @@ module.exports = {
     // },
     prism: {
       defaultLanguage: 'python',
+      theme: require('prism-react-renderer/themes/github'),
+      darkTheme: require('prism-react-renderer/themes/palenight')
     },
     hotjar: {
       siteId: '2765142',
