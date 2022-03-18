@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 
-function tokenizer (prefix, baseUrl, quiet, fail) {
+function tokenizer (prefix, baseUrl, quiet, fail, onError) {
   return function (eat, value, silent) {
 
     if (!value.startsWith('{{')) return
@@ -21,7 +21,6 @@ function tokenizer (prefix, baseUrl, quiet, fail) {
       if (silent) {
         return true
       }
-
       sub = sub.substring(prefix.length)
       const fileAbsPath = path.join(baseUrl, sub);
       let content
@@ -31,8 +30,9 @@ function tokenizer (prefix, baseUrl, quiet, fail) {
       try {
         content = fs.readFileSync(fileAbsPath, 'utf8');
       } catch (e) {
+        const message = 'Could not resolve fragment `' + fileAbsPath + '`'
+        onError?.(message, start)
         if (!quiet) {
-          const message = 'Could not resolve fragment `' + fileAbsPath + '`'
           if (fail) {
             return file.fail(message, start, 'fragment:undef-fragment')
           } else {

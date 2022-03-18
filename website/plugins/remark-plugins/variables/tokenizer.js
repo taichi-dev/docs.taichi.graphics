@@ -1,6 +1,6 @@
 module.exports = tokenizer
 
-function tokenizer (name, data, fence, quiet, fail) {
+function tokenizer (name, data, fence, quiet, fail, onError) {
   return function (eat, value, silent) {
 
     if (!value.startsWith(fence[0])) return
@@ -41,7 +41,7 @@ function tokenizer (name, data, fence, quiet, fail) {
       if (!found && !quiet) {
         sub = sub.indexOf('.') === 0 ? sub : '.' + sub
         const message = 'Could not resolve `var' + sub + '`'
-
+        onError?.(message, now)
         if (fail) {
           return file.fail(message, now, 'variables:undef-variable')
         } else {
