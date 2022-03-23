@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>taichi.lang.kernel_arguments &#8212; taichi-api-docstring  documentation</title>
+    <title>taichi.types.ndarray_type &#8212; taichi-api-docstring  documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -132,7 +132,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../types/">
+ <a class="reference internal nav-link" href="../">
   <code class="xref py py-mod docutils literal notranslate">
    <span class="pre">
     taichi.types
@@ -272,7 +272,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../types/">
+  <a class="reference internal" href="../">
    <code class="xref py py-mod docutils literal notranslate">
     <span class="pre">
      taichi.types
@@ -310,45 +310,8 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.SparseMatrixEntry">
-   SparseMatrixEntry
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.SparseMatrixProxy">
-   SparseMatrixProxy
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.SparseMatrixProxy.subscript">
-     subscript
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_matrix_arg">
-   decl_matrix_arg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_ndarray_arg">
-   decl_ndarray_arg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_ret">
-   decl_ret
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_scalar_arg">
-   decl_scalar_arg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_sparse_matrix">
-   decl_sparse_matrix
+  <a class="reference internal nav-link" href="#taichi.types.ndarray_type.ndarray">
+   ndarray
   </a>
  </li>
 </ul>
@@ -372,47 +335,25 @@
               
               <div>
                 
-  <section id="module-taichi.lang.kernel_arguments">
-<span id="taichi-lang-kernel-arguments"></span><h1><a class="reference internal" href="#module-taichi.lang.kernel_arguments" title="taichi.lang.kernel_arguments"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.kernel_arguments</span></code></a><a class="headerlink" href="#module-taichi.lang.kernel_arguments" title="Permalink to this headline">#</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.SparseMatrixEntry">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">SparseMatrixEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixEntry" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.SparseMatrixProxy">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">SparseMatrixProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixProxy" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.SparseMatrixProxy.subscript">
-<span class="sig-name descname"><span class="pre">subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixProxy.subscript" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
+  <section id="module-taichi.types.ndarray_type">
+<span id="taichi-types-ndarray-type"></span><h1><a class="reference internal" href="#module-taichi.types.ndarray_type" title="taichi.types.ndarray_type"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.ndarray_type</span></code></a><a class="headerlink" href="#module-taichi.types.ndarray_type" title="Permalink to this headline">#</a></h1>
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.ndarray_type.ndarray">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.ndarray_type.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><a class="headerlink" href="#taichi.types.ndarray_type.ndarray" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <code class="xref py py-class docutils literal notranslate"><span class="pre">NdarrayType</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def to_numpy(x: ti.types.ndarray(), y: ti.types.ndarray()):
+&gt;&gt;&gt;     for i in range(n):
+&gt;&gt;&gt;         x[i] = y[i]
+&gt;&gt;&gt;
+&gt;&gt;&gt; y = ti.ndarray(ti.f64, shape=n)
+&gt;&gt;&gt; ... # calculate y
+&gt;&gt;&gt; x = numpy.zeros(n)
+&gt;&gt;&gt; to_numpy(x, y)  # `x` will be filled with `y`&#39;s data.
+</pre></div>
+</div>
 </dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_matrix_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_matrix_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrixtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_matrix_arg" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_ndarray_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_ndarray_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_ndarray_arg" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_ret">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_ret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_ret" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_scalar_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_scalar_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_scalar_arg" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_sparse_matrix">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_sparse_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_sparse_matrix" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 </section>
 
