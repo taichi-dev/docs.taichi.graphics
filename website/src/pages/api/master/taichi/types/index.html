@@ -310,16 +310,6 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.types.any_arr">
-   any_arr
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.types.ext_arr">
-   ext_arr
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.types.f16">
    f16
   </a>
@@ -405,6 +395,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.ndarray">
+   ndarray
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.types.sparse_matrix_builder">
    sparse_matrix_builder
   </a>
@@ -487,42 +482,6 @@
                 
   <section id="module-taichi.types">
 <span id="taichi-types"></span><h1><a class="reference internal" href="#module-taichi.types" title="taichi.types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types</span></code></a><a class="headerlink" href="#module-taichi.types" title="Permalink to this headline">#</a></h1>
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.types.any_arr">
-<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">any_arr</span></span><a class="headerlink" href="#taichi.types.any_arr" title="Permalink to this definition">#</a></dt>
-<dd><p>Alias for <code class="xref py py-class docutils literal notranslate"><span class="pre">ArgAnyArray</span></code>.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def to_numpy(x: ti.any_arr(), y: ti.any_arr()):
-&gt;&gt;&gt;     for i in range(n):
-&gt;&gt;&gt;         x[i] = y[i]
-&gt;&gt;&gt;
-&gt;&gt;&gt; y = ti.ndarray(ti.f64, shape=n)
-&gt;&gt;&gt; ... # calculate y
-&gt;&gt;&gt; x = numpy.zeros(n)
-&gt;&gt;&gt; to_numpy(x, y)  # `x` will be filled with `y`&#39;s data.
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.types.ext_arr">
-<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">ext_arr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.ext_arr" title="Permalink to this definition">#</a></dt>
-<dd><p>Type annotation for external arrays.</p>
-<p>External arrays are formally defined as the data from other Python frameworks.
-For now, Taichi supports numpy and pytorch.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def to_numpy(arr: ti.ext_arr()):
-&gt;&gt;&gt;     for i in x:
-&gt;&gt;&gt;         arr[i] = x[i]
-&gt;&gt;&gt;
-&gt;&gt;&gt; arr = numpy.zeros(...)
-&gt;&gt;&gt; to_numpy(arr)  # `arr` will be filled with `x`&#39;s data.
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.types.f16">
 <span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">f16</span></span><a class="headerlink" href="#taichi.types.f16" title="Permalink to this definition">#</a></dt>
@@ -621,6 +580,24 @@ For now, Taichi supports numpy and pytorch.</p>
 <dt class="sig sig-object py" id="taichi.types.matrix">
 <span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.matrix" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.ndarray">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><a class="headerlink" href="#taichi.types.ndarray" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <code class="xref py py-class docutils literal notranslate"><span class="pre">NdarrayType</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def to_numpy(x: ti.types.ndarray(), y: ti.types.ndarray()):
+&gt;&gt;&gt;     for i in range(n):
+&gt;&gt;&gt;         x[i] = y[i]
+&gt;&gt;&gt;
+&gt;&gt;&gt; y = ti.ndarray(ti.f64, shape=n)
+&gt;&gt;&gt; ... # calculate y
+&gt;&gt;&gt; x = numpy.zeros(n)
+&gt;&gt;&gt; to_numpy(x, y)  # `x` will be filled with `y`&#39;s data.
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.types.sparse_matrix_builder">

@@ -1114,11 +1114,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.any_arr">
-   any_arr
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.append">
    append
   </a>
@@ -1264,28 +1259,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.ext_arr">
-   ext_arr
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.extension">
    extension
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.f16">
-   f16
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.f32">
-   f32
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.f64">
-   f64
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1326,16 +1301,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.i">
    i
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.i32">
-   i32
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.i64">
-   i64
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1581,21 +1546,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.tanh">
    tanh
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.template">
-   template
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.u32">
-   u32
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.u64">
-   u64
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -3516,24 +3466,6 @@ statement ended.</p>
 </dl>
 </dd></dl>
 
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang.any_arr">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">any_arr</span></span><a class="headerlink" href="#taichi.lang.any_arr" title="Permalink to this definition">#</a></dt>
-<dd><p>Alias for <code class="xref py py-class docutils literal notranslate"><span class="pre">ArgAnyArray</span></code>.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def to_numpy(x: ti.any_arr(), y: ti.any_arr()):
-&gt;&gt;&gt;     for i in range(n):
-&gt;&gt;&gt;         x[i] = y[i]
-&gt;&gt;&gt;
-&gt;&gt;&gt; y = ti.ndarray(ti.f64, shape=n)
-&gt;&gt;&gt; ... # calculate y
-&gt;&gt;&gt; x = numpy.zeros(n)
-&gt;&gt;&gt; to_numpy(x, y)  # `x` will be filled with `y`&#39;s data.
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.append">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.append" title="Permalink to this definition">#</a></dt>
@@ -4113,47 +4045,11 @@ the memory of the deactivated cell.</p>
 </div>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.ext_arr">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">ext_arr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ext_arr" title="Permalink to this definition">#</a></dt>
-<dd><p>Type annotation for external arrays.</p>
-<p>External arrays are formally defined as the data from other Python frameworks.
-For now, Taichi supports numpy and pytorch.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def to_numpy(arr: ti.ext_arr()):
-&gt;&gt;&gt;     for i in x:
-&gt;&gt;&gt;         arr[i] = x[i]
-&gt;&gt;&gt;
-&gt;&gt;&gt; arr = numpy.zeros(...)
-&gt;&gt;&gt; to_numpy(arr)  # `arr` will be filled with `x`&#39;s data.
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.extension">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#taichi.lang.extension" title="Permalink to this definition">#</a></dt>
 <dd><p>An instance of Taichi extension.</p>
 <p>The list of currently available extensions is [‘sparse’, ‘async_mode’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang.f16">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">f16</span></span><a class="headerlink" href="#taichi.lang.f16" title="Permalink to this definition">#</a></dt>
-<dd><p>Alias for <a class="reference internal" href="../types/primitive_types/#taichi.types.primitive_types.float16" title="taichi.types.primitive_types.float16"><code class="xref py py-const docutils literal notranslate"><span class="pre">float16</span></code></a></p>
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang.f32">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">f32</span></span><a class="headerlink" href="#taichi.lang.f32" title="Permalink to this definition">#</a></dt>
-<dd><p>Alias for <a class="reference internal" href="../types/primitive_types/#taichi.types.primitive_types.float32" title="taichi.types.primitive_types.float32"><code class="xref py py-const docutils literal notranslate"><span class="pre">float32</span></code></a></p>
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang.f64">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">f64</span></span><a class="headerlink" href="#taichi.lang.f64" title="Permalink to this definition">#</a></dt>
-<dd><p>Alias for <a class="reference internal" href="../types/primitive_types/#taichi.types.primitive_types.float64" title="taichi.types.primitive_types.float64"><code class="xref py py-const docutils literal notranslate"><span class="pre">float64</span></code></a></p>
 </dd></dl>
 
 <dl class="py function">
@@ -4312,18 +4208,6 @@ in one <cite>for</cite> loop and a single index.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">i</span></span><a class="headerlink" href="#taichi.lang.i" title="Permalink to this definition">#</a></dt>
 <dd><p>Axis 0. For multi-dimensional arrays it’s the direction downward the rows.
 For a 1d array it’s the direction along this array.</p>
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang.i32">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">i32</span></span><a class="headerlink" href="#taichi.lang.i32" title="Permalink to this definition">#</a></dt>
-<dd><p>Alias for <a class="reference internal" href="../types/primitive_types/#taichi.types.primitive_types.int32" title="taichi.types.primitive_types.int32"><code class="xref py py-const docutils literal notranslate"><span class="pre">int32</span></code></a></p>
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang.i64">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">i64</span></span><a class="headerlink" href="#taichi.lang.i64" title="Permalink to this definition">#</a></dt>
-<dd><p>Alias for <a class="reference internal" href="../types/primitive_types/#taichi.types.primitive_types.int64" title="taichi.types.primitive_types.int64"><code class="xref py py-const docutils literal notranslate"><span class="pre">int64</span></code></a></p>
 </dd></dl>
 
 <dl class="py data">
@@ -5168,24 +5052,6 @@ AssertionError: the year must be a lunar year
 [-0.761594, 0.000000, 0.761594]
 </pre></div>
 </div>
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang.template">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">template</span></span><a class="headerlink" href="#taichi.lang.template" title="Permalink to this definition">#</a></dt>
-<dd><p>Alias for <code class="xref py py-class docutils literal notranslate"><span class="pre">Template</span></code>.</p>
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang.u32">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">u32</span></span><a class="headerlink" href="#taichi.lang.u32" title="Permalink to this definition">#</a></dt>
-<dd><p>Alias for <a class="reference internal" href="../types/primitive_types/#taichi.types.primitive_types.uint32" title="taichi.types.primitive_types.uint32"><code class="xref py py-const docutils literal notranslate"><span class="pre">uint32</span></code></a></p>
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang.u64">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">u64</span></span><a class="headerlink" href="#taichi.lang.u64" title="Permalink to this definition">#</a></dt>
-<dd><p>Alias for <a class="reference internal" href="../types/primitive_types/#taichi.types.primitive_types.uint64" title="taichi.types.primitive_types.uint64"><code class="xref py py-const docutils literal notranslate"><span class="pre">uint64</span></code></a></p>
 </dd></dl>
 
 <dl class="py data">
