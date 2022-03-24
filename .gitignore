@@ -10,6 +10,7 @@ build
 # Generated files
 .docusaurus
 .cache-loader
+.flatdocs
 
 # Misc
 .DS_Store
