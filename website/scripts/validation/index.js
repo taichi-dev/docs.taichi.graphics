@@ -3,6 +3,12 @@ const variablePlugin = require('../../plugins/remark-plugins/variables');
 const variables = require('../..//variables');
 const docutils = require('../flaturl/doc');
 
+const myArgs = process.argv.slice(2);
+let baseurl = './.flatdocs'
+if (myArgs.length >= 1) {
+  baseurl = myArgs[0]
+}
+
 const mdxLoader = require('@docusaurus/mdx-loader').default;
 const {
   reportMessage,
@@ -43,4 +49,4 @@ async function validateFragmentsAndVariables(contentPath) {
   }
 }
 
-validateFragmentsAndVariables('./docs')
+validateFragmentsAndVariables(baseurl)

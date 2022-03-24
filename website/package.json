@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "yarn run validateplugin && docusaurus build",
+    "start": "yarn run flaturl && docusaurus start",
+    "build": "yarn run flaturl && yarn run validateplugin && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -16,7 +16,8 @@
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
     "crowdin:upload": "docusaurus write-translations && crowdin upload",
     "apiversion": "node ./apiversion.js",
-    "validateplugin": "node ./scripts/validation/index.js"
+    "validateplugin": "node ./scripts/validation/index.js",
+    "flaturl": "rm -rf .flatdocs && cp -r docs .flatdocs && node ./scripts/flaturl"
   },
   "dependencies": {
     "@crowdin/cli": "^3.6.4",
