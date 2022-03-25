@@ -382,16 +382,24 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.imgui.Gui">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.imgui.</span></span><span class="sig-name descname"><span class="pre">Gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gui</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.imgui.Gui" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><p>For declaring IMGUI components in a <a class="reference internal" href="../#taichi.ui.Window" title="taichi.ui.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">taichi.ui.Window</span></code></a>
+created by the GGUI system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gui</strong> – reference to a <cite>PyGui</cite>.</p>
+</dd>
+</dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.imgui.Gui.begin">
 <span class="sig-name descname"><span class="pre">begin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.imgui.Gui.begin" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a subwindow that holds imgui widgets.</p>
-<p>All widget function calls (e.g. <cite>text</cite>, <cite>button</cite>) after the <cite>begin</cite> and before the next <cite>end</cite> will describe the widgets within this subwindow.</p>
+<p>All widget function calls (e.g. <cite>text</cite>, <cite>button</cite>) after the <cite>begin</cite>
+and before the next <cite>end</cite> will describe the widgets within this subwindow.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>float</em>) – The x-coordinate (between 0 and 1) of the top-left corner of the subwindow, relative to the full window.</p></li>
-<li><p><strong>y</strong> (<em>float</em>) – The y-coordinate (between 0 and 1) of the top-left corner of the subwindow, relative to the full window.</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – The x-coordinate (between 0 and 1) of the top-left                 corner of the subwindow, relative to the full window.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – The y-coordinate (between 0 and 1) of the top-left                 corner of the subwindow, relative to the full window.</p></li>
 <li><p><strong>width</strong> (<em>float</em>) – The width of the subwindow relative to the full window.</p></li>
 <li><p><strong>height</strong> (<em>float</em>) – The height of the subwindow relative to the full window.</p></li>
 </ul>
@@ -405,7 +413,7 @@
 <dd><p>Declares a button, and returns whether or not it had just been clicked.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the button</p>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the button.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -417,8 +425,8 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the checkbox</p></li>
-<li><p><strong>old_value</strong> (<em>bool</em>) – whether the checkbox is currently checked</p></li>
+<li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the checkbox.</p></li>
+<li><p><strong>old_value</strong> (<em>bool</em>) – whether the checkbox is currently checked.</p></li>
 </ul>
 </dd>
 </dl>
@@ -431,8 +439,8 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the palate</p></li>
-<li><p><strong>old_value</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – the current value of the color, this should be a tuple of floats in [0,1] that indicates RGB values.</p></li>
+<li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the palate.</p></li>
+<li><p><strong>old_value</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – the current value of the color, this                 should be a tuple of floats in [0,1] that indicates RGB values.</p></li>
 </ul>
 </dd>
 </dl>
@@ -463,7 +471,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.imgui.Gui.sub_window">
 <span class="sig-name descname"><span class="pre">sub_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.imgui.Gui.sub_window" title="Permalink to this definition">#</a></dt>
-<dd><p>Creating a context manager for subwindow</p>
+<dd><p>Creating a context manager for subwindow.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>All args of this method should align with <cite>begin</cite>.</p>
@@ -471,14 +479,14 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>float</em>) – The x-coordinate (between 0 and 1) of the top-left corner of the subwindow, relative to the full window.</p></li>
-<li><p><strong>y</strong> (<em>float</em>) – The y-coordinate (between 0 and 1) of the top-left corner of the subwindow, relative to the full window.</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – The x-coordinate (between 0 and 1) of the top-left                 corner of the subwindow, relative to the full window.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – The y-coordinate (between 0 and 1) of the top-left                 corner of the subwindow, relative to the full window.</p></li>
 <li><p><strong>width</strong> (<em>float</em>) – The width of the subwindow relative to the full window.</p></li>
 <li><p><strong>height</strong> (<em>float</em>) – The height of the subwindow relative to the full window.</p></li>
 </ul>
 </dd>
 </dl>
-<p>Usage:</p>
+<p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; with gui.sub_window(name, x, y, width, height) as g:
 &gt;&gt;&gt;     g.text(&quot;Hello, World!&quot;)
 </pre></div>

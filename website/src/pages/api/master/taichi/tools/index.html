@@ -512,7 +512,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_alpha">
 <span class="sig-name descname"><span class="pre">add_vertex_alpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_alpha" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the alpha-channel (transparent) of the vertex colors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>alpha</strong> (<cite>numpy.array(float)</cite>) – the alpha-channel (transparent) of the colors.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_channel">
@@ -522,17 +528,43 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_color">
 <span class="sig-name descname"><span class="pre">add_vertex_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_color" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the (r, g, b) channels of the colors at the vertices.</p>
+<p>The three arguments are all numpy arrays of float type and have
+the same length.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r</strong> (<cite>numpy.array(float)</cite>) – the r-channel (red) of the colors.</p></li>
+<li><p><strong>g</strong> (<cite>numpy.array(float)</cite>) – the g-channel (green) of the color.</p></li>
+<li><p><strong>b</strong> (<cite>numpy.array(float)</cite>) – the b-channel (blue) of the colors.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_id">
 <span class="sig-name descname"><span class="pre">add_vertex_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the ids of the vertices.</p>
+<p>The id of a vertex is equal to its index in the vertex array.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_normal">
 <span class="sig-name descname"><span class="pre">add_vertex_normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nz</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_normal" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Add normal vectors at the vertices.</p>
+<p>The three arguments are all numpy arrays of float type and have
+the same length.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nx</strong> (<cite>numpy.array(float)</cite>) – x-coordinates of the normal vectors.</p></li>
+<li><p><strong>ny</strong> (<cite>numpy.array(float)</cite>) – y-coordinates of the normal vectors.</p></li>
+<li><p><strong>nz</strong> (<cite>numpy.array(float)</cite>) – z-coordinates of the normal vectors.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_piece">
@@ -542,12 +574,33 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_pos">
 <span class="sig-name descname"><span class="pre">add_vertex_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_pos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the (x, y, z) coordinates of the vertices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<cite>numpy.array(float)</cite>) – x-coordinates of the vertices.</p></li>
+<li><p><strong>y</strong> (<cite>numpy.array(float)</cite>) – y-coordinates of the vertices.</p></li>
+<li><p><strong>z</strong> (<cite>numpy.array(float)</cite>) – z-coordinates of the vertices.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_rgba">
 <span class="sig-name descname"><span class="pre">add_vertex_rgba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_rgba" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the (r, g, b, a) channels of the colors at the vertices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r</strong> (<cite>numpy.array(float)</cite>) – the r-channel (red) of the colors.</p></li>
+<li><p><strong>g</strong> (<cite>numpy.array(float)</cite>) – the g-channel (green) of the color.</p></li>
+<li><p><strong>b</strong> (<cite>numpy.array(float)</cite>) – the b-channel (blue) of the colors.</p></li>
+<li><p><strong>a</strong> (<cite>numpy.array(float)</cite>) – the a-channel (alpha) of the colors.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.export">
@@ -592,8 +645,9 @@ This class relies on <cite>ffmpeg</cite>.</p>
 <li><p><strong>output_dir</strong> (<em>str</em>) – directory to save the frames.</p></li>
 <li><p><strong>width</strong> (<em>int</em>) – resolution of the video.</p></li>
 <li><p><strong>height</strong> (<em>int</em>) – resolution of the video.</p></li>
-<li><p><strong>post_processor</strong> (<em>object</em>) – any object that implements the <cite>process(img)</cite> method, which accepts
-an image as a numpy.ndarray and returns the process image.</p></li>
+<li><p><strong>post_processor</strong> (<em>object</em>) – any object that implements the <cite>process(img)</cite>
+method, which accepts an image as a <cite>numpy.ndarray</cite> and returns
+the process image.</p></li>
 <li><p><strong>framerate</strong> (<em>int</em>) – frame rate of the video.</p></li>
 <li><p><strong>automatic_build</strong> (<em>bool</em>) – automatically generate the resulting video or not.</p></li>
 </ul>
@@ -617,12 +671,14 @@ an image as a numpy.ndarray and returns the process image.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.VideoManager.clean_frames">
 <span class="sig-name descname"><span class="pre">clean_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.VideoManager.clean_frames" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Delete all previous image files in the saved directory.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.VideoManager.get_frame_directory">
 <span class="sig-name descname"><span class="pre">get_frame_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.VideoManager.get_frame_directory" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns path to the directory where the image files are located in.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.VideoManager.get_output_filename">
@@ -632,17 +688,22 @@ an image as a numpy.ndarray and returns the process image.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.VideoManager.make_video">
 <span class="sig-name descname"><span class="pre">make_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mp4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gif</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.VideoManager.make_video" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Convert the image files to a <cite>mp4</cite> or <cite>gif</cite> animation.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.VideoManager.write_frame">
 <span class="sig-name descname"><span class="pre">write_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.VideoManager.write_frame" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Write an <cite>numpy.ndarray</cite> <cite>img</cite> to an image file.</p>
+<p>The filename will be automatically determined by this manager
+and the frame counter.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.VideoManager.write_frames">
 <span class="sig-name descname"><span class="pre">write_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">images</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.VideoManager.write_frames" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Write a list of <cite>numpy.ndarray</cite> <cite>images</cite> to image files.</p>
+</dd></dl>
 
 </dd></dl>
 
