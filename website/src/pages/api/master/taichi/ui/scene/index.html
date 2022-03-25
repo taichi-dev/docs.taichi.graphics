@@ -392,11 +392,18 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.scene.Scene">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.scene.</span></span><span class="sig-name descname"><span class="pre">Scene</span></span><a class="headerlink" href="#taichi.ui.scene.Scene" title="Permalink to this definition">#</a></dt>
-<dd><p>A 3D scene, which can contain meshes and particles, and can be rendered on a canvas</p>
+<dd><p>The 3D scene class, which can contain meshes and particles,
+and can be rendered on a canvas.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.scene.Scene.ambient_light">
 <span class="sig-name descname"><span class="pre">ambient_light</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.ambient_light" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the ambient color of this scene.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; scene = ti.ui.Scene()
+&gt;&gt;&gt; scene.ambient_light([0.2, 0.2, 0.2])
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.scene.Scene.mesh">
@@ -405,12 +412,20 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vertices</strong> – a taichi 3D Vector field, where each element indicate the 3D location of a vertex.</p></li>
-<li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which indicate the vertex indices of the triangles. If this is None, then it is assumed that the vertices are already arranged in triangles order.</p></li>
-<li><p><strong>normals</strong> – a taichi 3D Vector field, where each element indicate the normal of a vertex. If this is none, normals will be automatically inferred from vertex positions.</p></li>
-<li><p><strong>color</strong> – a global color of the mesh as 3 floats representing RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
-<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each element indicate the RGB color of a vertex.</p></li>
-<li><p><strong>two_sided</strong> (<em>bool</em>) – whether or not the triangles should be able to be seen from both sides.</p></li>
+<li><p><strong>vertices</strong> – a taichi 3D Vector field, where each element indicate the
+3D location of a vertex.</p></li>
+<li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which indicate
+the vertex indices of the triangles. If this is None, then it is
+assumed that the vertices are already arranged in triangles order.</p></li>
+<li><p><strong>normals</strong> – a taichi 3D Vector field, where each element indicate the
+normal of a vertex. If this is none, normals will be automatically
+inferred from vertex positions.</p></li>
+<li><p><strong>color</strong> – a global color of the mesh as 3 floats representing RGB values.
+If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
+<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each
+element indicate the RGB color of a vertex.</p></li>
+<li><p><strong>two_sided</strong> (<em>bool</em>) – whether or not the triangles should be able to be
+seen from both sides.</p></li>
 </ul>
 </dd>
 </dl>
@@ -423,10 +438,14 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>centers</strong> – a taichi 3D Vector field, where each element indicate the 3D location of the center of a triangle.</p></li>
-<li><p><strong>color</strong> – a global color for the particles as 3 floats representing RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
-<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each element indicate the RGB color of a particle.</p></li>
-<li><p><strong>two_sided</strong> (<em>bool</em>) – whether or not the triangles should be able to be seen from both sides.</p></li>
+<li><p><strong>centers</strong> – a taichi 3D Vector field, where each element indicate the
+3D location of the center of a triangle.</p></li>
+<li><p><strong>color</strong> – a global color for the particles as 3 floats representing RGB
+values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
+<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each
+element indicate the RGB color of a particle.</p></li>
+<li><p><strong>two_sided</strong> (<em>bool</em>) – whether or not the triangles should be able to be
+seen from both sides.</p></li>
 </ul>
 </dd>
 </dl>
@@ -435,12 +454,27 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.scene.Scene.point_light">
 <span class="sig-name descname"><span class="pre">point_light</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.point_light" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set a point light in this scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> (list, tuple, <code class="xref py py-class docutils literal notranslate"><span class="pre">vector(3,</span> <span class="pre">float)</span></code>) – 3D vector for light position.</p></li>
+<li><p><strong>color</strong> (list, tuple, <code class="xref py py-class docutils literal notranslate"><span class="pre">vector(3,</span> <span class="pre">float)</span></code>) – (r, g, b) triple for the color of the light, in the range [0, 1].</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.scene.Scene.set_camera">
 <span class="sig-name descname"><span class="pre">set_camera</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.set_camera" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the camera for this scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>camera</strong> (<a class="reference internal" href="../#taichi.ui.Camera" title="taichi.ui.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a>) – A camera instance.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

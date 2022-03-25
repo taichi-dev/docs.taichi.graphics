@@ -380,8 +380,9 @@ This class relies on <cite>ffmpeg</cite>.</p>
 <li><p><strong>output_dir</strong> (<em>str</em>) – directory to save the frames.</p></li>
 <li><p><strong>width</strong> (<em>int</em>) – resolution of the video.</p></li>
 <li><p><strong>height</strong> (<em>int</em>) – resolution of the video.</p></li>
-<li><p><strong>post_processor</strong> (<em>object</em>) – any object that implements the <cite>process(img)</cite> method, which accepts
-an image as a numpy.ndarray and returns the process image.</p></li>
+<li><p><strong>post_processor</strong> (<em>object</em>) – any object that implements the <cite>process(img)</cite>
+method, which accepts an image as a <cite>numpy.ndarray</cite> and returns
+the process image.</p></li>
 <li><p><strong>framerate</strong> (<em>int</em>) – frame rate of the video.</p></li>
 <li><p><strong>automatic_build</strong> (<em>bool</em>) – automatically generate the resulting video or not.</p></li>
 </ul>
@@ -405,12 +406,14 @@ an image as a numpy.ndarray and returns the process image.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.video.VideoManager.clean_frames">
 <span class="sig-name descname"><span class="pre">clean_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.clean_frames" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Delete all previous image files in the saved directory.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.video.VideoManager.get_frame_directory">
 <span class="sig-name descname"><span class="pre">get_frame_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.get_frame_directory" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns path to the directory where the image files are located in.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.video.VideoManager.get_output_filename">
@@ -420,17 +423,22 @@ an image as a numpy.ndarray and returns the process image.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.video.VideoManager.make_video">
 <span class="sig-name descname"><span class="pre">make_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mp4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gif</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.make_video" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Convert the image files to a <cite>mp4</cite> or <cite>gif</cite> animation.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.video.VideoManager.write_frame">
 <span class="sig-name descname"><span class="pre">write_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.write_frame" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Write an <cite>numpy.ndarray</cite> <cite>img</cite> to an image file.</p>
+<p>The filename will be automatically determined by this manager
+and the frame counter.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.video.VideoManager.write_frames">
 <span class="sig-name descname"><span class="pre">write_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">images</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.write_frames" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Write a list of <cite>numpy.ndarray</cite> <cite>images</cite> to image files.</p>
+</dd></dl>
 
 </dd></dl>
 

@@ -372,17 +372,21 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.canvas.Canvas">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.canvas.</span></span><span class="sig-name descname"><span class="pre">Canvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">canvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><p>The Canvas class.</p>
+<p>This is the context manager for managing drawing commands on a window.
+You should not instantiate this class directly via <cite>__init__</cite>, instead
+please call the <cite>get_canvas()</cite> method of <a class="reference internal" href="../#taichi.ui.Window" title="taichi.ui.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code></a>.</p>
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.canvas.Canvas.circles">
 <span class="sig-name descname"><span class="pre">circles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.circles" title="Permalink to this definition">#</a></dt>
-<dd><p>Declare a set of 2D circles inside the scene.</p>
+<dd><p>Draw a set of 2D circles on this canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>centers</strong> – a taichi 2D Vector field, where each element indicate the 3D location of a vertex.</p></li>
+<li><p><strong>centers</strong> – a taichi 2D Vector field, where each element indicate the                 3D location of a vertex.</p></li>
 <li><p><strong>radius</strong> (<em>float</em>) – radius of the circles, relative to the height of the screen.</p></li>
-<li><p><strong>color</strong> – a global color for the triangles as 3 floats representing RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
-<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each element indicate the RGB color of a circle.</p></li>
+<li><p><strong>color</strong> – a global color for the triangles as 3 floats representing                 RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
+<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where                 each element indicate the RGB color of a circle.</p></li>
 </ul>
 </dd>
 </dl>
@@ -391,15 +395,15 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.canvas.Canvas.lines">
 <span class="sig-name descname"><span class="pre">lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.lines" title="Permalink to this definition">#</a></dt>
-<dd><p>Declare a set of 2D lines inside the scene.</p>
+<dd><p>Draw a set of 2D lines on this canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vertices</strong> – a taichi 2D Vector field, where each element indicate the 3D location of a vertex.</p></li>
+<li><p><strong>vertices</strong> – a taichi 2D Vector field, where each element indicate the                 3D location of a vertex.</p></li>
 <li><p><strong>width</strong> (<em>float</em>) – width of the lines, relative to the height of the screen.</p></li>
-<li><p><strong>indices</strong> – a taichi int field of shape (2 * #lines), which indicate the vertex indices of the lines. If this is None, then it is assumed that the vertices are already arranged in lines order.</p></li>
-<li><p><strong>color</strong> – a global color for the triangles as 3 floats representing RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
-<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each element indicate the RGB color of a vertex.</p></li>
+<li><p><strong>indices</strong> – a taichi int field of shape (2 * #lines), which indicate                 the vertex indices of the lines. If this is None, then it is                 assumed that the vertices are already arranged in lines order.</p></li>
+<li><p><strong>color</strong> – a global color for the triangles as 3 floats representing                 RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
+<li><p><strong>per_vertex_color</strong> (<em>tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where                 each element indicate the RGB color of a vertex.</p></li>
 </ul>
 </dd>
 </dl>
@@ -409,29 +413,46 @@
 <dt class="sig sig-object py" id="taichi.ui.canvas.Canvas.scene">
 <span class="sig-name descname"><span class="pre">scene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scene</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.scene" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a 3D scene on the canvas</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>scene</strong> (<a class="reference internal" href="../#taichi.ui.Scene" title="taichi.ui.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code></a>) – an instance of <a class="reference internal" href="../#taichi.ui.Scene" title="taichi.ui.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code></a>.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.canvas.Canvas.set_background_color">
 <span class="sig-name descname"><span class="pre">set_background_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.set_background_color" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the background color of this canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>tuple</em><em>(</em><em>float</em><em>)</em>) – RGB triple in the range [0, 1].</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.canvas.Canvas.set_image">
 <span class="sig-name descname"><span class="pre">set_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.set_image" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the content of this canvas to an <cite>img</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>img</strong> (numpy.ndarray, <a class="reference internal" href="../../#taichi.MatrixField" title="taichi.MatrixField"><code class="xref py py-class docutils literal notranslate"><span class="pre">MatrixField</span></code></a>, <a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>) – the image to be shown.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.canvas.Canvas.triangles">
 <span class="sig-name descname"><span class="pre">triangles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.triangles" title="Permalink to this definition">#</a></dt>
-<dd><p>Declare a set of 2D triangles inside the scene.</p>
+<dd><p>Draw a set of 2D triangles on this canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vertices</strong> – a taichi 2D Vector field, where each element indicate the 3D location of a vertex.</p></li>
-<li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which indicate the vertex indices of the triangles. If this is None, then it is assumed that the vertices are already arranged in triangles order.</p></li>
-<li><p><strong>color</strong> – a global color for the triangles as 3 floats representing RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
-<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each element indicate the RGB color of a vertex.</p></li>
+<li><p><strong>vertices</strong> – a taichi 2D Vector field, where each element indicate                 the 3D location of a vertex.</p></li>
+<li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which                 indicate the vertex indices of the triangles. If this is None,                 then it is assumed that the vertices are already arranged in                 triangles order.</p></li>
+<li><p><strong>color</strong> – a global color for the triangles as 3 floats representing                 RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
+<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field,                 where each element indicate the RGB color of a vertex.</p></li>
 </ul>
 </dd>
 </dl>
