@@ -893,7 +893,7 @@
     visibility: visible;
   }
   dt:target {
-    background-color: var(--ifm-color-gray-200);
+    scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
   }
   .rst-current-version {
     .dropdown {
