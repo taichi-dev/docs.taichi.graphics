@@ -4,10 +4,10 @@ date: "2022-03-26"
 slug: "Taichi-torch-data-containers"
 authors:
   - Ailzhang
-tags: [Taichi, Torch, data container, field, tensor, array, elements, data transfer]
+tags: [Taichi, Torch, data container, field, tensor, array, elements, data transfer, abstraction]
 ---
 
-In this blog post I'll briefly talk about the data containers in Taichi and Torch. As you might have already known, both Taichi and Torch have a core concept of multi-dimensional array containers, called taichi.field and torch.Tensor respectively. They, as well as numpy.arrays , share a lot in common so users might think they're exactly the same. Therefore, we want to share a few interesting differences in this blog so that new users don't get confused by similar names or usages. 
+In this blog post I'll briefly talk about the data containers in Taichi and Torch. As you might have already known, both Taichi and Torch have a core concept of multi-dimensional array containers, called taichi.field and torch.Tensor respectively. They, as well as numpy.arrays, share a lot in common so users might think they're exactly the same. Therefore, we want to share a few interesting differences in this blog so that new users don't get confused by similar names or usages. 
 
 <!--truncate-->
 
