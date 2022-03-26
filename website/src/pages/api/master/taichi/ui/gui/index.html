@@ -201,7 +201,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v0.9.1</a>
+            <a class="dropdown-item" href="/api/">v0.9.2</a>
             
           
             
@@ -869,7 +869,7 @@ Default is WidgetButton_{text}</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.circle">
 <span class="sig-name descname"><span class="pre">circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.circle" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw a single circle on canvas.</p>
+<dd><p>Draw a circle on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -925,10 +925,13 @@ is the background color of GUI.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.fps_limit">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fps_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.fps_limit" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the property of fps limit.</p>
+<dd><p>Get the maximum fps of this gui.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The property of fps limit of gui.</p>
+<dd class="field-odd"><p>the maximum fps.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
 </dd>
 </dl>
 </dd></dl>
@@ -936,14 +939,16 @@ is the background color of GUI.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.get_bool_environ">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_bool_environ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.get_bool_environ" title="Permalink to this definition">#</a></dt>
-<dd><p>Get an environment variable and cast to bool.
-:param key: The environment variable key.
-:type key: str
-:param default: The default value.
-:type default: bool</p>
+<dd><p>Get an environment variable and cast it to <cite>bool</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The environment variable value cast to bool. If the value is not found, directly return argument ‘default’.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – The environment variable key.</p></li>
+<li><p><strong>default</strong> (<em>bool</em>) – The default value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The environment variable value cast to bool.             If the value is not found, directly return argument ‘default’.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -951,7 +956,11 @@ is the background color of GUI.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.get_cursor_pos">
 <span class="sig-name descname"><span class="pre">get_cursor_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.get_cursor_pos" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the current position of mouse.</p>
+<dd><p>Return the current position of mouse as a pair of floats
+in the range <cite>[0, 1] x [0, 1]</cite>.</p>
+<p>The origin of the coordinates system is located at the lower left
+corner, with <cite>+x</cite> direction points to the right, and <cite>+y</cite> direcntion
+points upward.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The current position of mouse.</p>
@@ -962,13 +971,16 @@ is the background color of GUI.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.get_event">
 <span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">e_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.get_event" title="Permalink to this definition">#</a></dt>
-<dd><p>Check if the specific event is triggered.</p>
+<dd><p>Check if the specified event is triggered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>*e_filter</strong> (<em>ti.GUI.EVENT</em>) – The specific event to be checked.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Bool to indicate whether the specific event is triggered.</p>
+<dd class="field-even"><p>whether or not the specified event is triggered.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -993,7 +1005,7 @@ is the background color of GUI.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.get_image">
 <span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.get_image" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the image data.</p>
+<dd><p>Return the window content as an <cite>numpy.ndarray</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The image data in numpy contiguous array type.</p>
@@ -1021,10 +1033,13 @@ is the background color of GUI.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.has_key_event">
 <span class="sig-name descname"><span class="pre">has_key_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.has_key_event" title="Permalink to this definition">#</a></dt>
-<dd><p>Check if there are any key event registered.</p>
+<dd><p>Check if there is any key event registered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Bool to indicate whether there is any key event registered.</p>
+<dd class="field-odd"><p>whether or not there is any key event registered.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1032,13 +1047,16 @@ is the background color of GUI.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.is_pressed">
 <span class="sig-name descname"><span class="pre">is_pressed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.is_pressed" title="Permalink to this definition">#</a></dt>
-<dd><p>Check if the specific key or keys are pressed.</p>
+<dd><p>Check if any key among a set of specified keys is pressed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>*keys</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – The string that stands for keys in keyboard.</p>
+<dd class="field-odd"><p><strong>*keys</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – The keys to be listened to.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Bool to indicate whether the key or keys are pressed.</p>
+<dd class="field-even"><p>whether or not any key among the specified keys is pressed.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1133,10 +1151,13 @@ of rectangle. Shape must be 2.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.running">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.running" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the property of whether the gui is running.</p>
+<dd><p>Return whether this gui is running or not.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The running property of gui(bool).</p>
+<dd class="field-odd"><p>whether this gui is running or not.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1145,11 +1166,11 @@ of rectangle. Shape must be 2.</p></li>
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.set_image">
 <span class="sig-name descname"><span class="pre">set_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.set_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets an image to display on the window.</p>
-<blockquote>
-<div><p>The image pixels are set from the values of <cite>img[i, j]</cite>, where <cite>i</cite> indicates the horizontal coordinates (from left to right) and <cite>j</cite> the vertical coordinates (from bottom to top).
-If the window size is <cite>(x, y)</cite>, then <cite>img</cite> must be one of:</p>
-<blockquote>
-<div><ul class="simple">
+<p>The image pixels are set from the values of <cite>img[i, j]</cite>, where <cite>i</cite> indicates
+the horizontal coordinates (from left to right) and <cite>j</cite> the vertical coordinates
+(from bottom to top).</p>
+<dl class="simple">
+<dt>If the window size is <cite>(x, y)</cite>, then <cite>img</cite> must be one of:</dt><dd><ul class="simple">
 <li><p><cite>ti.field(shape=(x, y))</cite>, a gray-scale image</p></li>
 <li><p><cite>ti.field(shape=(x, y, 3))</cite>, where <cite>3</cite> is for <cite>(r, g, b)</cite> channels</p></li>
 <li><p><cite>ti.field(shape=(x, y, 2))</cite>, where <cite>2</cite> is for <cite>(r, g)</cite> channels</p></li>
@@ -1159,8 +1180,7 @@ If the window size is <cite>(x, y)</cite>, then <cite>img</cite> must be one of:
 <li><p><cite>np.ndarray(shape=(x, y, 3))</cite></p></li>
 <li><p><cite>np.ndarray(shape=(x, y, 2))</cite></p></li>
 </ul>
-</div></blockquote>
-<dl class="simple">
+</dd>
 <dt>The data type of <cite>img</cite> must be one of:</dt><dd><ul class="simple">
 <li><p><cite>uint8</cite>, range <cite>[0, 255]</cite></p></li>
 <li><p><cite>uint16</cite>, range <cite>[0, 65535]</cite></p></li>
@@ -1170,12 +1190,9 @@ If the window size is <cite>(x, y)</cite>, then <cite>img</cite> must be one of:
 </ul>
 </dd>
 </dl>
-</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>img</strong> (<em>Union</em><em>[</em><em>ti.field</em><em>, </em><em>numpy.array</em><em>]</em>) – The color array representing the
-image to be drawn. Support greyscale, RG, RGB, and RGBA color
-representations. Its shape must match GUI resolution.</p>
+<dd class="field-odd"><p><strong>img</strong> (Union[<a class="reference internal" href="../../#taichi.field" title="taichi.field"><code class="xref py py-class docutils literal notranslate"><span class="pre">taichi.field</span></code></a>, <cite>numpy.array</cite>]) – The color array                 representing the image to be drawn. Support greyscale, RG, RGB,                 and RGBA color representations. Its shape must match GUI resolution.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1183,11 +1200,13 @@ representations. Its shape must match GUI resolution.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.show">
 <span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.show" title="Permalink to this definition">#</a></dt>
-<dd><p>Show the frame or save current frame as a picture.</p>
+<dd><p>Show the frame content in the gui window, or save the content to an
+image file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>file</strong> (<em>str</em><em>, </em><em>optional</em>) – The path &amp; name of the picture to be saved.
-Default is None.</p>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em><em>, </em><em>optional</em>) – output filename. The default is <cite>None</cite>, and
+the frame content is displayed in the gui window. If it’s a valid
+image filename the frame will be saved as the specified image.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1200,9 +1219,9 @@ Default is None.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>text</strong> (<em>str</em>) – The title of slider.</p></li>
-<li><p><strong>minimum</strong> (<em>Number</em>) – The minimum value of slider.</p></li>
-<li><p><strong>maximum</strong> (<em>Number</em>) – The maximum value of slider.</p></li>
-<li><p><strong>step</strong> (<em>Number</em><em>, </em><em>optional</em>) – The changing step of slider. Default is 1.</p></li>
+<li><p><strong>minimum</strong> (<em>int</em><em>, </em><em>float</em>) – The minimum value of slider.</p></li>
+<li><p><strong>maximum</strong> (<em>int</em><em>, </em><em>float</em>) – The maximum value of slider.</p></li>
+<li><p><strong>step</strong> (<em>int</em><em>, </em><em>float</em>) – The changing step of slider. Optional and default to 1.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

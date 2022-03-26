@@ -201,7 +201,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v0.9.1</a>
+            <a class="dropdown-item" href="/api/">v0.9.2</a>
             
           
             
@@ -401,9 +401,10 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – name of the window.</p></li>
-<li><p><strong>res</strong> (<em>Tuple</em><em>[</em><em>Int</em><em>]</em>) – resolution (width, height) of the window, in pixels.</p></li>
-<li><p><strong>layout</strong> (<em>vsync</em>) – whether or not vertical sync should be enabled.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Window title.</p></li>
+<li><p><strong>res</strong> (<em>tuple</em><em>[</em><em>int</em><em>]</em>) – resolution (width, height) of the window, in pixels.</p></li>
+<li><p><strong>vsync</strong> (<em>bool</em>) – whether or not vertical sync should be enabled.</p></li>
+<li><p><strong>show_window</strong> (<em>bool</em>) – where or not display the window after initialization.</p></li>
 </ul>
 </dd>
 </dl>
@@ -416,12 +417,14 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.destroy">
 <span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.destroy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Destroy this window. The window will be unavailable then.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.event">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.event" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get the current unprocessed event.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.get_canvas">
@@ -432,22 +435,25 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.get_cursor_pos">
 <span class="sig-name descname"><span class="pre">get_cursor_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_cursor_pos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get current cursor position, in the range <cite>[0, 1] x [0, 1]</cite>.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.get_event">
 <span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_event" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns whether or not a event that matches tag has occurred.</p>
-<p>If tag is None, then no filters are applied. If this function returns <cite>True</cite>, the <cite>event</cite> property of the window will be set to the corresponding event.</p>
+<p>If tag is None, then no filters are applied. If this function
+returns <cite>True</cite>, the <cite>event</cite> property of the window will be set
+to the corresponding event.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.get_events">
 <span class="sig-name descname"><span class="pre">get_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_events" title="Permalink to this definition">#</a></dt>
-<dd><p>Obtain a list of unprocessed events.</p>
+<dd><p>Get the current list of unprocessed events.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tag</strong> (<em>str</em>) – A tag used for filtering events. If it is None, then all events are returned.</p>
+<dd class="field-odd"><p><strong>tag</strong> (<em>str</em>) – A tag used for filtering events.                 If it is None, then all events are returned.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -455,22 +461,42 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.is_pressed">
 <span class="sig-name descname"><span class="pre">is_pressed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.is_pressed" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Checks if any of a set of specified keys is pressed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keys</strong> (list[<a class="reference internal" href="../constants/#module-taichi.ui.constants" title="taichi.ui.constants"><code class="xref py py-mod docutils literal notranslate"><span class="pre">constants</span></code></a>]) – The keys to be matched.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>True</cite> if any key among <cite>keys</cite> is pressed, else <cite>False</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.running">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.running" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Check whether this window is running or not.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.show">
 <span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.show" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Display this window.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.write_image">
 <span class="sig-name descname"><span class="pre">write_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.write_image" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Save the window content to an image file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – output filename.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
