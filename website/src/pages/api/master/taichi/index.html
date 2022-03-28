@@ -6068,8 +6068,42 @@ so that <cite>log(exp(x)) = x</cite>. The natural logarithm is logarithm in base
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.loop_config">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">loop_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serialize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallelize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.loop_config" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">loop_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serialize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallelize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.loop_config" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets directives for the next loop</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block_dim</strong> (<em>int</em>) – The number of threads in a block on GPU</p></li>
+<li><p><strong>serialize</strong> (<em>bool</em>) – Whether to let the for loop execute serially, <cite>serialize=True</cite> equals to <cite>parallelize=1</cite></p></li>
+<li><p><strong>parallelize</strong> (<em>int</em>) – The number of threads to use on CPU</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@ti.kernel
+def break_in_serial_for() -&gt; ti.i32:
+    a = 0
+    ti.loop_config(serialize=True)
+    for i in range(100):  # This loop runs serially
+        a += i
+        if i == 10:
+            break
+    return a
+
+break_in_serial_for()  # returns 55
+
+n = 128
+val = ti.field(ti.i32, shape=n)
+@ti.kernel
+def fill():
+    ti.loop_config(parallelize=8, block_dim=16)
+    # If the kernel is run on the CPU backend, 8 threads will be used to run it
+    # If the kernel is run on the CUDA backend, each block will have 16 threads.
+    for i in range(n):
+        val[i] = i
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.max">
