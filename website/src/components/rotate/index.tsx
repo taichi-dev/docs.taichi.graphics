@@ -1,0 +1,63 @@
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+export const UserStory = (items: any) => {
+  return (
+    <Swiper
+      spaceBetween={30}
+      centeredSlides={true}
+      navigation={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[Autoplay, Navigation, Pagination]}
+      className="mySwiper"
+    >
+      {items && items.map((val) => <SwiperSlide>{val}</SwiperSlide>)}
+    </Swiper>
+  );
+};
+
+export const Efficient = (props: any) => {
+  return (
+    <div>
+      <Swiper
+        direction={'vertical'}
+        loop={true}
+        spaceBetween={300}
+        speed={300}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2000,
+          stopOnLastSlide: false,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
+        style={{
+          height: '38px',
+          paddingLeft: '8px',
+          color: '#677CE5',
+        }}
+      >
+        <SwiperSlide>
+          <div>Develop elegantly.</div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>Run rapidly.</div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>Deploy universally.</div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  );
+};
