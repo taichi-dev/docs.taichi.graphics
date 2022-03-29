@@ -353,7 +353,7 @@
 <dd><p>Marks a class as Taichi compatible.</p>
 <p>To allow for modularized code, Taichi provides this decorator so that
 Taichi kernels can be defined inside a class.</p>
-<p>See also <a class="reference external" href="https://docs.taichi.graphics/lang/articles/advanced/odop">https://docs.taichi.graphics/lang/articles/advanced/odop</a></p>
+<p>See also <a class="reference external" href="https://docs.taichi.graphics/lang/articles/odop">https://docs.taichi.graphics/lang/articles/odop</a></p>
 <p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.data_oriented
 &gt;&gt;&gt; class TiArray:
@@ -420,7 +420,7 @@ Taichi into native CPU/GPU instructions (e.g. a series of CUDA kernels).
 The top-level <code class="docutils literal notranslate"><span class="pre">for</span></code> loops are automatically parallelized, and distributed
 to either a CPU thread pool or massively parallel GPUs.</p>
 <p>Kernel’s gradient kernel would be generated automatically by the AutoDiff system.</p>
-<p>See also <a class="reference external" href="https://docs.taichi.graphics/lang/articles/basic/syntax#kernels">https://docs.taichi.graphics/lang/articles/basic/syntax#kernels</a>.</p>
+<p>See also <a class="reference external" href="https://docs.taichi.graphics/lang/articles/syntax#kernel">https://docs.taichi.graphics/lang/articles/syntax#kernel</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – the Python function to be decorated</p>
