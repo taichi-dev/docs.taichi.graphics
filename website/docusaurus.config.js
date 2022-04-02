@@ -239,7 +239,7 @@ module.exports = {
           // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
           routeBasePath: '/',
           path: '.flatdocs',
-          editUrl: ({ locale, versionDocsDirPath, docPath }) => {
+          editUrl: ({locale, versionDocsDirPath, docPath}) => {
             if (locale !== DefaultLocale) {
               return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(
                 locale,
