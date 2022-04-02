@@ -418,6 +418,14 @@
                 
   <section id="module-taichi.types">
 <span id="taichi-types"></span><h1><a class="reference internal" href="#module-taichi.types" title="taichi.types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types</span></code></a><a class="headerlink" href="#module-taichi.types" title="Permalink to this headline">#</a></h1>
+<p>This module defines data types in Taichi:</p>
+<ul class="simple">
+<li><p>primitive: int, float, etc.</p></li>
+<li><p>compound: matrix, vector, struct.</p></li>
+<li><p>template: for reference types.</p></li>
+<li><p>ndarray: for arbitrary arrays.</p></li>
+<li><p>quantized: for quantized types, see “<a class="reference external" href="https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf">https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf</a>”</p></li>
+</ul>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.types.f16">
 <span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">f16</span></span><a class="headerlink" href="#taichi.types.f16" title="Permalink to this definition">#</a></dt>
@@ -515,7 +523,25 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.types.matrix">
 <span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.matrix" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Creates a matrix type with given shape and data type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – number of rows of the matrix.</p></li>
+<li><p><strong>m</strong> (<em>int</em>) – number of columns of the matrix.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – matrix data type.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A matrix type.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; mat2x2 = ti.types.matrix(2, 2, ti.f32)  # 2x2 matrix type
+&gt;&gt;&gt; M = mat2x2([[1., 2.], [3., 4.]])  # an instance of this type
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.types.ndarray">
@@ -543,7 +569,23 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.types.struct">
 <span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.struct" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Creates a struct type with given members.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> (<em>dict</em>) – a dictionay contains the names and types of the
+struct members.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A struct type.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
+&gt;&gt;&gt; sphere = ti.types.strcut(center=vec3, radius=float)
+&gt;&gt;&gt; s = sphere(center=vec3([0., 0., 0.]), radius=1.0)
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.types.template">
@@ -602,7 +644,24 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.types.vector">
 <span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.vector" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Creates a vector type with given shape and data type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – dimension of the vector.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – vector data type.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A vector type.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)  # 3d vector type
+&gt;&gt;&gt; v = vec3([1., 2., 3.])  # an instance of this type
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 
