@@ -604,22 +604,34 @@ Taichi. Default is False.</p></li>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.Event">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Event</span></span><a class="headerlink" href="#taichi.ui.gui.GUI.Event" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Class for holding a gui event.</p>
+<p>An event is represented by:</p>
+<ul class="simple">
+<li><p>type (PRESS, MOTION, RELEASE)</p></li>
+<li><p>modifier (modifier keys like ctrl, shift, etc)</p></li>
+<li><p>pos (mouse position)</p></li>
+<li><p>key (event key)</p></li>
+<li><p>delta (for holding mouse wheel)</p></li>
+</ul>
+</dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.EventFilter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">e_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.EventFilter" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><p>A set to store detected user events.</p>
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.EventFilter.match">
 <span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.EventFilter.match" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Check if a specified event <cite>e</cite> is among the detected events.</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.WidgetValue">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WidgetValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gui</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.WidgetValue" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><p>Class for maintaining id of gui widgets.</p>
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.WidgetValue.value">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.WidgetValue.value" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -739,7 +751,7 @@ Taichi. Default is False.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.arrow">
 <span class="sig-name descname"><span class="pre">arrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.arrow" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw a single arrow on canvas.</p>
+<dd><p>Draws a single arrow on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -805,7 +817,7 @@ Default is WidgetButton_{text}</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.circle">
 <span class="sig-name descname"><span class="pre">circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.circle" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw a circle on canvas.</p>
+<dd><p>Draws a circle on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -820,7 +832,7 @@ Default is WidgetButton_{text}</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.circles">
 <span class="sig-name descname"><span class="pre">circles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.circles" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw a list of circles on canvas.</p>
+<dd><p>Draws a list of circles on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -839,7 +851,7 @@ circle. Shape must match pos. Default is None.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.clear">
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.clear" title="Permalink to this definition">#</a></dt>
-<dd><p>Clear the canvas with the color provided.</p>
+<dd><p>Clears the canvas with the color provided.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – Specify the color to clear the canvas. Default
@@ -851,17 +863,29 @@ is the background color of GUI.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.close">
 <span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.close" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Close this GUI.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; while gui.running:
+&gt;&gt;&gt;     if gui.get_event(gui.PRESS, ti.GUI.ESCAPE):
+&gt;&gt;&gt;         gui.close()
+&gt;&gt;&gt;     gui.show()
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.cook_image">
 <span class="sig-name descname"><span class="pre">cook_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.cook_image" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Converts an img to range [0, 1] for display.</p>
+<p>The input image is stored in a <cite>numpy.ndarray</cite>, if it’s dtype
+is <cite>int</cite> it will be rescaled and mapped into range [0, 1]. If
+the dtype is <cite>float</cite> it will be directly casted to 32-bit float type.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.fps_limit">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fps_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.fps_limit" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the maximum fps of this gui.</p>
+<dd><p>Gets the maximum fps of this gui.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>the maximum fps.</p>
@@ -892,7 +916,7 @@ is the background color of GUI.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.get_cursor_pos">
 <span class="sig-name descname"><span class="pre">get_cursor_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.get_cursor_pos" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the current position of mouse as a pair of floats
+<dd><p>Returns the current position of mouse as a pair of floats
 in the range <cite>[0, 1] x [0, 1]</cite>.</p>
 <p>The origin of the coordinates system is located at the lower left
 corner, with <cite>+x</cite> direction points to the right, and <cite>+y</cite> direcntion
@@ -907,7 +931,7 @@ points upward.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.get_event">
 <span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">e_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.get_event" title="Permalink to this definition">#</a></dt>
-<dd><p>Check if the specified event is triggered.</p>
+<dd><p>Checks if the specified event is triggered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>*e_filter</strong> (<em>ti.GUI.EVENT</em>) – The specific event to be checked.</p>
@@ -924,7 +948,7 @@ points upward.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.get_events">
 <span class="sig-name descname"><span class="pre">get_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">e_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.get_events" title="Permalink to this definition">#</a></dt>
-<dd><p>Get a list of events that are triggered.</p>
+<dd><p>Gets a list of events that are triggered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>*e_filter</strong> (<em>List</em><em>[</em><em>ti.GUI.EVENT</em><em>]</em>) – The type of events to be filtered.</p>
@@ -955,7 +979,7 @@ points upward.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.get_key_event">
 <span class="sig-name descname"><span class="pre">get_key_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.get_key_event" title="Permalink to this definition">#</a></dt>
-<dd><p>Get keyboard triggered event.</p>
+<dd><p>Gets keyboard triggered event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The keyboard triggered event.</p>
@@ -983,7 +1007,7 @@ points upward.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.is_pressed">
 <span class="sig-name descname"><span class="pre">is_pressed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.is_pressed" title="Permalink to this definition">#</a></dt>
-<dd><p>Check if any key among a set of specified keys is pressed.</p>
+<dd><p>Checks if any key among a set of specified keys is pressed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>*keys</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – The keys to be listened to.</p>
@@ -1000,7 +1024,7 @@ points upward.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.label">
 <span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.label" title="Permalink to this definition">#</a></dt>
-<dd><p>Create a label object on canvas.</p>
+<dd><p>Creates a label object on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – The title of label.</p>
@@ -1017,7 +1041,7 @@ points upward.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.line">
 <span class="sig-name descname"><span class="pre">line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.line" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw a single line on canvas.</p>
+<dd><p>Draws a single line on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1053,7 +1077,7 @@ the shape of begin &amp; end. Default is 0xFFFFFF.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.point_field">
 <span class="sig-name descname"><span class="pre">point_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.point_field" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw a field of points on canvas.</p>
+<dd><p>Draws a field of points on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1069,7 +1093,7 @@ Default is 0xFFFFFF.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.rect">
 <span class="sig-name descname"><span class="pre">rect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topleft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottomright</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.rect" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw a single rectangle on canvas.</p>
+<dd><p>Draws a single rectangle on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1087,7 +1111,7 @@ of rectangle. Shape must be 2.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.running">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.running" title="Permalink to this definition">#</a></dt>
-<dd><p>Return whether this gui is running or not.</p>
+<dd><p>Returns whether this gui is running or not.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>whether this gui is running or not.</p>
@@ -1136,7 +1160,7 @@ the horizontal coordinates (from left to right) and <cite>j</cite> the vertical 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.show">
 <span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.show" title="Permalink to this definition">#</a></dt>
-<dd><p>Show the frame content in the gui window, or save the content to an
+<dd><p>Shows the frame content in the gui window, or save the content to an
 image file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1150,7 +1174,7 @@ image filename the frame will be saved as the specified image.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.slider">
 <span class="sig-name descname"><span class="pre">slider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.slider" title="Permalink to this definition">#</a></dt>
-<dd><p>Create a slider object on canvas to be manipulated with.</p>
+<dd><p>Creates a slider object on canvas to be manipulated with.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1172,7 +1196,7 @@ image filename the frame will be saved as the specified image.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.text">
 <span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.text" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw texts on canvas.</p>
+<dd><p>Draws texts on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1188,7 +1212,7 @@ image filename the frame will be saved as the specified image.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.triangle">
 <span class="sig-name descname"><span class="pre">triangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.triangle" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw a single triangle on canvas.</p>
+<dd><p>Draws a single triangle on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1204,7 +1228,7 @@ image filename the frame will be saved as the specified image.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.triangles">
 <span class="sig-name descname"><span class="pre">triangles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.triangles" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw a list of triangles on canvas.</p>
+<dd><p>Draws a list of triangles on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1224,7 +1248,7 @@ the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ui.gui.hex_to_rgb">
 <span class="sig-prename descclassname"><span class="pre">taichi.ui.gui.</span></span><span class="sig-name descname"><span class="pre">hex_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.hex_to_rgb" title="Permalink to this definition">#</a></dt>
-<dd><p>Convert hex color format to rgb color format.</p>
+<dd><p>Converts hex color format to rgb color format.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>color</strong> (<em>int</em>) – The hex representation of color.</p>
@@ -1238,7 +1262,7 @@ the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ui.gui.rgb_to_hex">
 <span class="sig-prename descclassname"><span class="pre">taichi.ui.gui.</span></span><span class="sig-name descname"><span class="pre">rgb_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.rgb_to_hex" title="Permalink to this definition">#</a></dt>
-<dd><p>Convert rgb color format to hex color format.</p>
+<dd><p>Converts rgb color format to hex color format.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>c</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – The rgb representation of color.</p>
