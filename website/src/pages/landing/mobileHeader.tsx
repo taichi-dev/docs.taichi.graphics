@@ -1,8 +1,8 @@
 import React from 'react';
-import { Switch } from 'antd';
-import HeadMenu from './Menu';
 import { NAV_IMG } from '../../config';
 import { generateUrl } from '../../utils';
+
+import { Collapse } from 'antd-mobile'
 import styles from './index.module.scss';
 
 interface CallbackFunc {
@@ -54,14 +54,14 @@ class Header extends React.Component<ComponentProps> {
           className={theme === 'light' ? 'lightTheme' : 'nightTheme'}
           style={{ display: 'flex', alignItems: 'center' }}
         >
-          <HeadMenu />
+          {/* <HeadMenu />
           <Switch
             className={styles['custom-switch']}
             style={{ fontSize: '20px' }}
             checkedChildren={< img style={{width: "14px", marginTop: "4px"}} src ="/img/landingpage/Moon.svg"/>}
             unCheckedChildren={< img style={{width: "14px", marginTop: "4px"}} src ="/img/landingpage/Sun.svg"/>}
             onChange={this.handleChange}
-          />
+          /> */}
         </div>
       </div>
     );

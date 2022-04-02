@@ -156,11 +156,11 @@ const DeployOptions = [
       marginTop: '209px',
     },
     leftComponent: {
-      child: (context) => {
+      child: (context, index) => {
         return (
           <img
             style={{ width: '632px', height: '312px' }}
-            src={generateUrl(DEPLOY_IMG.earth, context.theme)}
+            src={generateUrl(DEPLOY_IMG.earth, context.theme, index, '')}
           />
         );
       },

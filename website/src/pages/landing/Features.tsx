@@ -45,7 +45,7 @@ const ApplicationOptions = [
     component: (
       <video
         style={{ width: '100%', marginTop: '-20px' }}
-        src="/img/video/taichislam.mp4"
+        src="https://taichi-graphics-prod-official-website.oss-cn-beijing.aliyuncs.com/taichislam.mp4"
         autoPlay
         loop
         controls
@@ -64,7 +64,7 @@ const ApplicationOptions = [
         loop
         preload="auto"
         style={{ width: '100%', marginTop: '-20px' }}
-        src="/img/video/mpm_235M.mp4"
+        src="https://taichi-graphics-prod-official-website.oss-cn-beijing.aliyuncs.com/mpm_235M.mp4"
       ></video>
     ),
   },
@@ -79,7 +79,7 @@ const ApplicationOptions = [
         loop
         preload="auto"
         style={{ height: '100%' }}
-        src="/img/video/graphics-course-collection.mp4"
+        src="https://taichi-graphics-prod-official-website.oss-cn-beijing.aliyuncs.com/graphics-course-collection.mp4"
       ></video>
     ),
   },

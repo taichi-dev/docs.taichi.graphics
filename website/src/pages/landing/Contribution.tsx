@@ -6,6 +6,13 @@ import styles from './index.module.scss';
 
 export default function Application(props: FeatureSectionProps) {
   const { theme } = props;
+  const [indexKey, setIndex ] = useState('')
+  const onMouseEnter = (index) => {
+    setIndex(index);
+  }
+  const onMouseLeave = () => {
+    setIndex('');
+  }
   return (
     <div className={styles['contribution']}>
       <div className={styles['title']}>Thrive through open-source</div>
@@ -22,11 +29,17 @@ export default function Application(props: FeatureSectionProps) {
       >
         <div className={styles['community']}>Community</div>
         <div>
-          {communityImg.map((item) => (
+          {communityImg.map((item, index) => (
             <a href={item.url} target="_blank">
               <img
+                onMouseEnter={() => {
+                    onMouseEnter(index)
+                }}
+                onMouseLeave={() => {
+                    onMouseLeave();
+                }}
                 style={{ width: '90px', marginLeft: '60px' }}
-                src={generateUrl(item, theme)}
+                src={generateUrl(item, theme, index, indexKey)}
                 alt=""
               />
             </a>

@@ -49,21 +49,25 @@ export const communityImg = [
   {
     light: '/img/landingpage/Github footer.png',
     night: '/img/landingpage/night/Github footer.png',
+    hover: '/img/landingpage/Github_hover.svg',
     url: 'https://github.com/taichi-dev/taichi',
   },
   {
     light: '/img/landingpage/Slack footer.png',
     night: 'img/landingpage//night/Slack footer.png',
+    hover: '/img/landingpage/Slack_hover.svg',
     url: 'https://taichicommunity.slack.com/join/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg#/shared-invite/email',
   },
   {
     light: '/img/landingpage/Forum footer.png',
     night: '/img/landingpage/night/Forum footer.png',
+    hover: '/img/landingpage/Forum_hover.svg',
     url: 'https://github.com/taichi-dev/taichi/discussions',
   },
   {
     light: '/img/landingpage/论坛 footer.png',
     night: '/img/landingpage/night/论坛 footer.png',
+    hover: '/img/landingpage/论坛_hover.svg',
     url: 'https://forum.taichi.graphics/',
   },
 ];

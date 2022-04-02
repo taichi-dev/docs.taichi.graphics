@@ -19,7 +19,7 @@ export const UserStory = (items: any) => {
       pagination={{
         clickable: true,
       }}
-      modules={[Autoplay, Navigation, Pagination]}
+      modules={[Autoplay, Navigation]}
       className="mySwiper"
     >
       {items && items.map((val) => <SwiperSlide>{val}</SwiperSlide>)}
@@ -34,7 +34,7 @@ export const Efficient = (props: any) => {
         direction={'vertical'}
         loop={true}
         spaceBetween={300}
-        speed={300}
+        speed={150}
         centeredSlides={true}
         autoplay={{
           delay: 2000,

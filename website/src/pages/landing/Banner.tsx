@@ -65,7 +65,7 @@ const Lists = () => {
           </p>
           <p className={styles['sub-banner']}>
             <p style={{ paddingTop: '19px' }}>
-              &nbsp;Programming for everyone:
+              &nbsp;Paralle Programming for everyone:
             </p>
             <Efficient />
           </p>
