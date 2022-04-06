@@ -3,7 +3,6 @@ const version = require('./apiversion.json');
 
 const variablePlugin = require('./plugins/remark-plugins/variables');
 const fragmentPlugin = require('./plugins/remark-plugins/fragments');
-// const wasmLoader = require("./docusaurus-plugin/src/index");
 const wasmLoader = require('./plugins/wasm-loader');
 const variables = require('./variables');
 
@@ -32,6 +31,7 @@ module.exports = {
   projectName: 'docs.taichi.graphics',
   plugins: [
     wasmLoader,
+    // fontLoader,
     'docusaurus-plugin-sass',
     path.resolve(__dirname, 'plugins/docusaurus-plugin-hotjar'),
     [
@@ -283,22 +283,4 @@ module.exports = {
       },
     ],
   ],
-  //   configureWebpack(_config, isServer) {
-  //     _config.module.rules[0].use[0].options.limit = false;
-  //     return {
-  //       mergeStrategy: {
-  //         "module.rules": "prepend",
-  //       },
-  //       module: {
-  //         rules: {
-  //           test: /\.wasm$/,
-  //           type: "javascript/auto",
-  //           use: {
-  //             loader: "file-loader",
-  //             options: { limit: 8192, name: "[name].[ext]" },
-  //           },
-  //         },
-  //       },
-  //     };
-  //   },
 };

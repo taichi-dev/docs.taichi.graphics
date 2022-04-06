@@ -14,7 +14,7 @@ export default class LandingPage extends React.Component<any, StateProps> {
     };
     this.onChange = this.onChange.bind(this);
   }
-  // 切换主题
+  // switch themes
   onChange(val) {
     this.setTheme(val);
     this.setState({ theme: val ? 'night' : 'light' });

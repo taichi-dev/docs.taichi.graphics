@@ -36,7 +36,7 @@ pre[class*="language-"] {
 }
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #111b27;
+  background: #242C34;
 }
 :not(pre) > code[class*="language-"] {
   padding: 0.1em 0.3em;
@@ -166,21 +166,21 @@ pre[class*="language-"] {
 }
 div.code-toolbar > .toolbar a,
 div.code-toolbar > .toolbar button {
-  color: #111b27;
+  color: #242C34;
   background: #6cb8e6;
 }
 div.code-toolbar > .toolbar a:focus,
 div.code-toolbar > .toolbar a:hover,
 div.code-toolbar > .toolbar button:focus,
 div.code-toolbar > .toolbar button:hover {
-  color: #111b27;
+  color: #242C34;
   background: #6cb8e6da;
   text-decoration: none;
 }
 div.code-toolbar > .toolbar span,
 div.code-toolbar > .toolbar span:focus,
 div.code-toolbar > .toolbar span:hover {
-  color: #111b27;
+  color: #242C34;
   background: #8da1b9;
 }
 .line-highlight {
@@ -190,7 +190,7 @@ div.code-toolbar > .toolbar span:hover {
 .line-highlight:before,
 .line-highlight[data-end]:after {
   background-color: #8da1b9;
-  color: #111b27;
+  color: #242C34;
   box-shadow: 0 1px #3c526d;
 }
 pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
@@ -236,4 +236,20 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
 }
 .command-line-prompt > span:before {
   color: #8da1b9da;
+}
+
+
+.terminal_src-pages-landing-AnimatedTaichiFractal-terminal-window-module {
+    min-width: 519px;
+    min-height: 785px;
+    padding: 10px;
+    border-radius: 7px;
+    position: relative;
+    background: #242C34 !important;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 0 30px 1px rgb(0 0 0 / 15%);
+}
+
+.text-sm {
+    text-align: center;
+    color: #fff;
 }
