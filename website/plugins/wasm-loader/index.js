@@ -7,9 +7,9 @@ async function myPlugin(context, opts) {
         module: {
           rules: [
             {
-              test: /\.wasm$/,
-              use: ["file-loader"],
-            },
+                test: /\.wasm$/,
+                use: ["file-loader"],
+              },
           ],
         },
       };

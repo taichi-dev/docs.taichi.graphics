@@ -62,7 +62,7 @@ const DevelopOptions = [
           title="fractal.py"
         />
       ),
-      styles: genStyle('547px', '777px'),
+      styles: Object.assign(genStyle('547px', '777px'), { marginRight: '20px' }),
       type: 'module',
     },
   },
@@ -72,7 +72,7 @@ const DevelopOptions = [
     },
     leftComponent: {
       child: <img src={Run_rapidly_img} />,
-      styles: genStyle('698px', '385px'),
+      styles: Object.assign(genStyle('698px', '385px'), { marginTop: '60px' }),
       type: 'module',
     },
     rightComponent: {
@@ -208,7 +208,7 @@ export default function IndexPage(props: ComponentProps) {
           </div>
           <div
             className={styles['deploy-background-img']}
-            style={{ marginTop: '150px' }}
+            style={{ marginTop: '168px' }}
           >
             <Deploy features={DeployOptions} theme={theme} />
           </div>

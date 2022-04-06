@@ -1,3 +1,5 @@
+
+
 $light-color-primary: #000;
 $night-color-primary: #fff;
 $active-color-primary: #687de5;
@@ -56,6 +58,7 @@ $active-documentation: #677ce5;
   @media screen and (min-width: 1200px) {
     width: 1200px;
     margin: auto;
+    overflow: hidden;
   }
   @media only screen and (min-width: 904px) and (max-width: 1199px) {
     width: 100%;
@@ -205,7 +208,7 @@ $active-documentation: #677ce5;
     height: 300px;
     position: absolute;
     left: 0;
-    top: 200px;
+    top: 300px;
     z-index: -1;
     background-image: url('/img/landingpage/lines.png');
     background-size: cover;
@@ -217,7 +220,7 @@ $active-documentation: #677ce5;
     .command {
       display: flex;
       justify-content: flex-end;
-      margin-top: 70px;
+      margin-top: 200px;
       .input {
         width: 292px;
         height: 44px;
@@ -268,12 +271,12 @@ $active-documentation: #677ce5;
 .list-content {
   @include content_layout();
   .lists {
-    margin-top: 112px;
+    margin: 112px 0 0 0 ;
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 400;
     font-size: 48px;
-    letter-spacing: 0.05em;
+    line-height: 1;
     @include text_color_primary();
     span {
       font-size: 60px;
@@ -283,12 +286,10 @@ $active-documentation: #677ce5;
     }
   }
   .sub-banner {
-    margin-top: 30px;
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
-    letter-spacing: 0.05em;
     @include text_color_primary();
     display: flex;
     align-items: center;
@@ -320,10 +321,10 @@ $active-documentation: #677ce5;
       z-index: 2;
       padding-bottom: 80px;
       .develop-background-img {
-        background-image: url('/img/landingpage/Triangle.png');
+        background-image: url('/img/landingpage/Triangle.svg');
         background-size: 620px 690px;
         background-repeat: no-repeat;
-        background-position: -30px 350px;
+        background-position: 0 350px;
       }
       .deploy-background-img {
         background-image: url('/img/landingpage/Round.svg');
@@ -370,7 +371,7 @@ $active-documentation: #677ce5;
     line-height: 32px;
     letter-spacing: 0.02em;
     @include text_color_primary();
-    margin-top: 50px;
+    margin-top: 80px;
   }
   .item {
     display: flex;
@@ -381,7 +382,7 @@ $active-documentation: #677ce5;
       top: 1062px;
       border-radius: 50%;
       background: #687de6;
-      margin: 10px 0 0 20px;
+      margin: 25px 0 0 20px;
     }
     .item-text {
       width: 380px;
@@ -390,6 +391,7 @@ $active-documentation: #677ce5;
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
+      margin-top: 16px;
       @include text_color_primary();
       margin-left: 12px;
       word-wrap: break-word;
@@ -574,6 +576,6 @@ ul > li {
     font-weight: 600;
     font-size: 36px;
     color: #687de6;
-    margin-top: 267px;
+    margin-top: 160px;
   }
 }
