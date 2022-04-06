@@ -81,15 +81,15 @@ $active-documentation: #677ce5;
 .custom-header {
   display: flex;
   width: 100%;
-  height: 68px;
+  padding: 36px 20px;
+  display: flex;
   align-items: center;
-  padding: 0 27px;
   justify-content: space-between;
   .custom-switch {
     @include documentation_color_primary();
   }
   .logo {
-    width: 200px;
+    width: 120px;
   }
 }
 // menu component style
@@ -215,11 +215,9 @@ $active-documentation: #677ce5;
     @include content_layout();
     margin-top: 38px;
     .command {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 70px;
+      width: 100%;
       .input {
-        width: 292px;
+        width: 100%;
         height: 44px;
         border: 0.5px solid #cdd2eb;
         border-right: none;
@@ -254,10 +252,11 @@ $active-documentation: #677ce5;
       .documentation {
         display: flex;
         align-items: center;
-        padding: 0 25px;
+        justify-content: center;
+        padding: 10px 25px;
+        margin-top: 20px;
         @include documentation_color_primary();
         cursor: pointer;
-        margin-left: 10px;
       }
       .documentation:hover {
         @include documentation_color_primary_hover();
@@ -272,8 +271,7 @@ $active-documentation: #677ce5;
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 400;
-    font-size: 48px;
-    letter-spacing: 0.05em;
+    font-size: 24px;
     @include text_color_primary();
     span {
       font-size: 60px;
@@ -287,11 +285,11 @@ $active-documentation: #677ce5;
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: 0.05em;
     @include text_color_primary();
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
   }
   .launchs {
     margin-left: 0;
@@ -443,7 +441,6 @@ $active-documentation: #677ce5;
 .feature-content {
   @media screen and (max-width: 764px) {
     width: 100%;
-    // display: flex;
     flex-direction: column;
   }
 }
@@ -576,4 +573,19 @@ ul > li {
     color: #687de6;
     margin-top: 267px;
   }
+}
+
+///////////
+.Popup-close {
+  width: 100%;
+  height: 20px;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: end;
+}
+.menu-line {
+  width: 100%;
+  display: inline-block;
+  padding: 20px 20px;
+  @include text_color_primary();
 }

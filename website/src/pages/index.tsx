@@ -2,6 +2,9 @@ import React from 'react';
 import Nav from './landing/header';
 import Banner from './landing/Banner';
 import Content from './landing/taichi';
+
+import MobileHeader from './landing/mobileHeader';
+import MobileBanner from './landing/mobileBanner';
 import 'animate.css';
 interface StateProps {
   theme: string;
@@ -36,6 +39,21 @@ export default class LandingPage extends React.Component<any, StateProps> {
       Content,
     );
   }
+  //   render() {
+  //     const { theme } = this.state;
+  //     return layoutTemplate(
+  //       theme,
+  //       { onChange: this.onChange },
+  //       MobileHeader,
+  //       MobileBanner,
+  //       Content,
+  //     );
+  //   }
+
+  //   render() {
+  //     const { theme } = this.state;
+  //     return layoutTemplate(theme,{ onChange: this.onChange }, MobileHeader)
+  //   }
 }
 
 function layoutTemplate(theme, callback, ...Component: any) {
