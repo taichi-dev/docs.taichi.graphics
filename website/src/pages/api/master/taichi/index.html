@@ -2005,6 +2005,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.solve">
+   solve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.sparse_matrix_builder">
    sparse_matrix_builder
   </a>
@@ -6979,6 +6984,27 @@ it, which are ‘error’ and ‘critical’ in this case, will also be effectiv
 [-1., 0., 1.]
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.solve">
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.solve" title="Permalink to this definition">#</a></dt>
+<dd><p>Solve a matrix using Gauss elimination method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – input nxn matrix <cite>A</cite>.</p></li>
+<li><p><strong>b</strong> (<em>ti.Vector</em><em>(</em><em>n</em><em>, </em><em>1</em><em>)</em>) – input nx1 vector <cite>b</cite>.</p></li>
+<li><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the <cite>A</cite> and <cite>b</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the solution of Ax=b.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>x (ti.Vector(n, 1))</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py class">
