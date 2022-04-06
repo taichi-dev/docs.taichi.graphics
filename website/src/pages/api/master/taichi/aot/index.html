@@ -305,6 +305,9 @@
                 
   <section id="module-taichi.aot">
 <span id="taichi-aot"></span><h1><a class="reference internal" href="#module-taichi.aot" title="taichi.aot"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.aot</span></code></a><a class="headerlink" href="#module-taichi.aot" title="Permalink to this headline">#</a></h1>
+<p>Taichi’s AOT (ahead of time) module.</p>
+<p>Users can use Taichi as a GPU compute shader/kernel compiler by compiling their
+Taichi kernels into an AOT module.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.aot.Module">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">Module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.Module" title="Permalink to this definition">#</a></dt>
@@ -350,13 +353,13 @@ m.save(&#39;/path/to/module&#39;)
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.aot.Module.add_kernel">
-<span class="sig-name descname"><span class="pre">add_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">example_any_arrays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.Module.add_kernel" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">example_ndarrays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.Module.add_kernel" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a taichi kernel to the AOT module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>kernel_fn</strong> (<em>Function</em>) – the function decorated by taichi <cite>kernel</cite>.</p></li>
-<li><p><strong>example_any_arrays</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>ti.ndarray</em><em>]</em>) – a dict where key is arg_id and key is example ndarray input.</p></li>
+<li><p><strong>example_ndarrays</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>ti.ndarray</em><em>]</em>) – a dict where key is arg_id and key is example ndarray input.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – Name to identify this kernel in the module. If not
 provided, uses the built-in <code class="docutils literal notranslate"><span class="pre">__name__</span></code> attribute of <cite>kernel_fn</cite>.</p></li>
 </ul>
@@ -415,12 +418,41 @@ provided, uses the built-in <code class="docutils literal notranslate"><span cla
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.aot.start_recording">
 <span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">start_recording</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.start_recording" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Starts recording kernel information to a <cite>yml</cite> file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – output <cite>yml</cite> file.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; ti.aot.start_recording(&#39;record.yml&#39;)
+&gt;&gt;&gt; ti.init(arch=ti.cc)
+&gt;&gt;&gt; loss = ti.field(float, (), needs_grad=True)
+&gt;&gt;&gt; x = ti.field(float, 233, needs_grad=True)
+&gt;&gt;&gt;
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def compute_loss():
+&gt;&gt;&gt;     for i in x:
+&gt;&gt;&gt;         loss[None] += x[i]**2
+&gt;&gt;&gt;
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def do_some_works():
+&gt;&gt;&gt;     for i in x:
+&gt;&gt;&gt;         x[i] -= x.grad[i]
+&gt;&gt;&gt;
+&gt;&gt;&gt; with ti.Tape(loss):
+&gt;&gt;&gt;     compute_loss()
+&gt;&gt;&gt; do_some_works()
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.aot.stop_recording">
 <span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">stop_recording</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.stop_recording" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Stops recording kernel information.</p>
+<p>This function should be called in pair with <code class="xref py py-func docutils literal notranslate"><span class="pre">start_recording()</span></code>.</p>
+</dd></dl>
 
 </section>
 

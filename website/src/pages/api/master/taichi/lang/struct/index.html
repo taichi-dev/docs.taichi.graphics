@@ -288,6 +288,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.dtype">
+     dtype
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.fill">
      fill
     </a>
@@ -310,6 +315,21 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.keys">
      keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.parent">
+     parent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.shape">
+     shape
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.snode">
+     snode
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -377,7 +397,44 @@ dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct.field">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">members</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;Struct&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.field" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Creates a <a class="reference internal" href="../../#taichi.StructField" title="taichi.StructField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructField</span></code></a> with each element
+has this struct as its type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>members</strong> (<em>dict</em>) – a dict, each item is like <cite>name: type</cite>.</p></li>
+<li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – width and height of the field.</p></li>
+<li><p><strong>offset</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – offset of the indices of the created field.
+For example if <cite>offset=(-10, -10)</cite> the indices of the field
+will start at <cite>(-10, -10)</cite>, not <cite>(0, 0)</cite>.</p></li>
+<li><p><strong>needs_grad</strong> (<em>bool</em>) – enabling gradient field or not.</p></li>
+<li><p><strong>layout</strong> – AOS or SOA.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vec3</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">ti</span><span class="o">.</span><span class="n">f32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sphere</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;center&quot;</span><span class="p">:</span> <span class="n">vec3</span><span class="p">,</span> <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Struct</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">sphere</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span>
+<span class="go">{&#39;center&#39;: array([[[0., 0., 0.],</span>
+<span class="go">    [0., 0., 0.],</span>
+<span class="go">    [0., 0., 0.]],</span>
+</pre></div>
+</div>
+<blockquote>
+<div><dl class="simple">
+<dt>[[0., 0., 0.],</dt><dd><p>[0., 0., 0.],
+[0., 0., 0.]],</p>
+</dd>
+<dt>[[0., 0., 0.],</dt><dd><p>[0., 0., 0.],
+[0., 0., 0.]]], dtype=float32), ‘radius’: array([[0., 0., 0.],</p>
+</dd>
+</dl>
+<p>[0., 0., 0.],
+[0., 0., 0.]], dtype=float32)}</p>
+</div></blockquote>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct.fill">
@@ -393,12 +450,28 @@ dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct.items">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.items" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the items in this struct.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
+&gt;&gt;&gt; sphere = ti.Struct(center=vec3([0, 0, 0]), radius=1.0)
+&gt;&gt;&gt; sphere.items
+dict_items([(&#39;center&#39;, 2), (&#39;radius&#39;, 1.0)])
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct.keys">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.keys" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the list of member names in string format.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
+&gt;&gt;&gt; sphere = ti.Struct(center=vec3([0, 0, 0]), radius=1.0)
+&gt;&gt;&gt; a.keys
+[&#39;center&#39;, &#39;radius&#39;]
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct.to_dict">
@@ -421,11 +494,11 @@ dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v
 <dt class="sig sig-object py" id="taichi.lang.struct.StructField">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.struct.</span></span><span class="sig-name descname"><span class="pre">StructField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../field/#taichi.lang.field.Field" title="taichi.lang.field.Field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.field.Field</span></code></a></p>
-<dl class="simple">
-<dt>Taichi struct field with SNode implementation.</dt><dd><p>Instead of directly contraining Expr entries, the StructField object
+<p>Taichi struct field with SNode implementation.</p>
+<blockquote>
+<div><p>Instead of directly contraining Expr entries, the StructField object
 directly hosts members as <cite>Field</cite> instances to support nested structs.</p>
-</dd>
-</dl>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -447,9 +520,23 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.dtype">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.dtype" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets data type of each individual value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Data type of each individual value.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>DataType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.StructField.fill">
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.fill" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills <cite>self</cite> with a specific value.</p>
+<dd><p>Fills this struct field with a specified value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
@@ -460,12 +547,20 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.StructField.from_numpy">
 <span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.from_numpy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Copies the data from a set of <cite>numpy.array</cite> into this field.</p>
+<p>The argument <cite>array_dict</cite> must be a dictionay-like object, it
+contains all the keys in this field and the copying process
+between corresponding items can be performed.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.StructField.from_torch">
 <span class="sig-name descname"><span class="pre">from_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.from_torch" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Copies the data from a set of <cite>torch.tensor</cite> into this field.</p>
+<p>The argument <cite>array_dict</cite> must be a dictionay-like object, it
+contains all the keys in this field and the copying process
+between corresponding items can be performed.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.StructField.get_member_field">
@@ -487,33 +582,93 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.StructField.keys">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.keys" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the list of names of the field members.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; f1 = ti.Vector.field(3, ti.f32, shape=(3, 3))
+&gt;&gt;&gt; f2 = ti.field(ti.f32, shape=(3, 3))
+&gt;&gt;&gt; F = ti.StructField({&quot;center&quot;: f1, &quot;radius&quot;: f2})
+&gt;&gt;&gt; F.keys
+[&#39;center&#39;, &#39;radius&#39;]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.parent" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets an ancestor of the representative SNode in the SNode tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of levels going up from the representative SNode.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The n-th parent of the representative SNode.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../#taichi.SNode" title="taichi.SNode">SNode</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.shape">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets field shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Field shape.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Tuple[Int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.snode">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.snode" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets representative SNode for info purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../#taichi.SNode" title="taichi.SNode">SNode</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.StructField.to_numpy">
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.to_numpy" title="Permalink to this definition">#</a></dt>
-<dd><dl class="simple">
-<dt>Converts the Struct field instance to a dictionary of NumPy arrays. The dictionary may be nested when converting</dt><dd><p>nested structs.</p>
+<dd><p>Converts the Struct field instance to a dictionary of NumPy arrays.</p>
+<p>The dictionary may be nested when converting nested structs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The result NumPy array.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Dict[str, Union[numpy.ndarray, Dict]]</p>
 </dd>
 </dl>
-<p>Args:
-:returns: The result NumPy array.
-:rtype: Dict[str, Union[numpy.ndarray, Dict]]</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.StructField.to_torch">
 <span class="sig-name descname"><span class="pre">to_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.to_torch" title="Permalink to this definition">#</a></dt>
-<dd><dl class="simple">
-<dt>Converts the Struct field instance to a dictionary of PyTorch tensors. The dictionary may be nested when converting</dt><dd><p>nested structs.</p>
-</dd>
-</dl>
+<dd><p>Converts the Struct field instance to a dictionary of PyTorch tensors.</p>
+<p>The dictionary may be nested when converting nested structs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The desired device of returned tensor.</p>
+<dd class="field-odd"><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The
+desired device of returned tensor.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The result PyTorch tensor.</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>The result</dt><dd><p>PyTorch tensor.</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>Dict[str, Union[torch.Tensor, Dict]]</p>

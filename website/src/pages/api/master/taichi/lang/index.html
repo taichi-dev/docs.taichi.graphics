@@ -513,6 +513,16 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.copy_from">
+     copy_from
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.dtype">
+     dtype
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.MatrixField.fill">
      fill
     </a>
@@ -523,8 +533,28 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.from_torch">
+     from_torch
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.MatrixField.get_scalar_field">
      get_scalar_field
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.parent">
+     parent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.shape">
+     shape
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.snode">
+     snode
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -814,6 +844,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.dtype">
+     dtype
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.StructField.fill">
      fill
     </a>
@@ -836,6 +871,21 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.StructField.keys">
      keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.parent">
+     parent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.shape">
+     shape
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.snode">
+     snode
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1851,7 +1901,7 @@ returned matrix.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.cols">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cols</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.cols" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a Matrix instance by concatenating Vectors/lists column by column.</p>
+<dd><p>Constructs a Matrix instance by concatenating Vectors/lists column by column.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>cols</strong> (<em>List</em>) – A list of Vector (1-D Matrix) or a list of list.</p>
@@ -1880,7 +1930,7 @@ returned matrix.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.cross">
 <span class="sig-name descname"><span class="pre">cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.cross" title="Permalink to this definition">#</a></dt>
-<dd><p>Perform the cross product with the input vector (1-D Matrix).</p>
+<dd><p>Performs the cross product with the input vector (1-D Matrix).</p>
 <p>Both two vectors must have the same dimension &lt;= 3.</p>
 <p>For two 2d vectors (x1, y1) and (x2, y2), the return value is the
 scalar <cite>x1*y2 - x2*y1</cite>.</p>
@@ -1902,7 +1952,7 @@ scalar <cite>x1*y2 - x2*y1</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.determinant">
 <span class="sig-name descname"><span class="pre">determinant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.determinant" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the determinant of this matrix.</p>
+<dd><p>Returns the determinant of this matrix.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The matrix dimension should be less than or equal to 4.</p>
@@ -1923,7 +1973,7 @@ scalar <cite>x1*y2 - x2*y1</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.diag">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">diag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.diag" title="Permalink to this definition">#</a></dt>
-<dd><p>Return a diagonal square matrix with the diagonals filled
+<dd><p>Returns a diagonal square matrix with the diagonals filled
 with <cite>val</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1951,7 +2001,7 @@ with <cite>val</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.dot">
 <span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.dot" title="Permalink to this definition">#</a></dt>
-<dd><p>Perform the dot product of two vectors.</p>
+<dd><p>Performs the dot product of two vectors.</p>
 <p>To call this method, both multiplicatives must be vectors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2023,7 +2073,7 @@ in Taichi scope.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.identity">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.identity" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct an identity Matrix with shape (n, n).</p>
+<dd><p>Constructs an identity Matrix with shape (n, n).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2043,7 +2093,7 @@ in Taichi scope.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.inverse">
 <span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.inverse" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the inverse of this matrix.</p>
+<dd><p>Returns the inverse of this matrix.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The matrix dimension should be less than or equal to 4.</p>
@@ -2064,13 +2114,13 @@ in Taichi scope.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.max">
 <span class="sig-name descname"><span class="pre">max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.max" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the maximum element value.</p>
+<dd><p>Returns the maximum element value.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.min">
 <span class="sig-name descname"><span class="pre">min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.min" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the minimum element value.</p>
+<dd><p>Returns the minimum element value.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2100,7 +2150,7 @@ This function must be called in Python scope, and after <cite>ti.init</cite> is 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.norm">
 <span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.norm" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the square root of the sum of the absolute squares
+<dd><p>Returns the square root of the sum of the absolute squares
 of its elements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2137,7 +2187,7 @@ of its elements.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.norm_sqr">
 <span class="sig-name descname"><span class="pre">norm_sqr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.norm_sqr" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the sum of the absolute squares of its elements.</p>
+<dd><p>Returns the sum of the absolute squares of its elements.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2163,7 +2213,7 @@ and has the same direction with <cite>v</cite>. It’s equal to <cite>v/|v|</cit
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.one">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.one" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a Matrix filled with ones.</p>
+<dd><p>Constructs a Matrix filled with ones.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2184,7 +2234,7 @@ and has the same direction with <cite>v</cite>. It’s equal to <cite>v/|v|</cit
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.outer_product">
 <span class="sig-name descname"><span class="pre">outer_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.outer_product" title="Permalink to this definition">#</a></dt>
-<dd><p>Perform the outer product with the input Vector (1-D Matrix).</p>
+<dd><p>Performs the outer product with the input Vector (1-D Matrix).</p>
 <p>The outer_product of two vectors <cite>v = (x1, x2, …, xn)</cite>,
 <cite>w = (y1, y2, …, yn)</cite> is a <cite>n</cite> times <cite>n</cite> square matrix, and its <cite>(i, j)</cite>
 entry is equal to <cite>xi*yj</cite>.</p>
@@ -2204,7 +2254,7 @@ entry is equal to <cite>xi*yj</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.rotation2d">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.rotation2d" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the matrix representation of the 2D
+<dd><p>Returns the matrix representation of the 2D
 anti-clockwise rotation of angle <cite>alpha</cite>. The angle <cite>alpha</cite>
 is in radians.</p>
 <p>Example:</p>
@@ -2219,7 +2269,7 @@ is in radians.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.rows">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.rows" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a matrix by concatenating a list of
+<dd><p>Constructs a matrix by concatenating a list of
 vectors/lists row by row. Must be called in Taichi scope.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2263,7 +2313,7 @@ vectors/lists row by row. Must be called in Taichi scope.</p>
 <span class="sig-name descname"><span class="pre">to_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.to_list" title="Permalink to this definition">#</a></dt>
 <dd><p>Return this matrix as a 1D <cite>list</cite>.</p>
 <p>This is similar to <cite>numpy.ndarray</cite>’s <cite>flatten</cite> and <cite>ravel</cite> methods,
-but this function always returns a new list.</p>
+the difference is that this function always returns a new list.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2313,7 +2363,7 @@ array([0, 1, 2, 3])
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.transpose">
 <span class="sig-name descname"><span class="pre">transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.transpose" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the transpose of a matrix.</p>
+<dd><p>Returns the transpose of a matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The transpose of this matrix.</p>
@@ -2333,7 +2383,7 @@ array([0, 1, 2, 3])
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.unit">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.unit" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a n-D vector with the <cite>i</cite>-th entry being equal to one and
+<dd><p>Constructs a n-D vector with the <cite>i</cite>-th entry being equal to one and
 the remaining entries are all zeros.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2409,7 +2459,7 @@ the remaining entries are all zeros.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.zero">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.zero" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a Matrix filled with zeros.</p>
+<dd><p>Constructs a Matrix filled with zeros.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2444,12 +2494,39 @@ the remaining entries are all zeros.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.MatrixField.fill">
-<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.fill" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills <cite>self</cite> with specific values.</p>
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.copy_from">
+<span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.copy_from" title="Permalink to this definition">#</a></dt>
+<dd><p>Copies all elements from another field.</p>
+<p>The shape of the other field needs to be the same as <cite>self</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>List</em><em>, </em><em>Tuple</em><em>, </em><a class="reference internal" href="#taichi.lang.Matrix" title="taichi.lang.Matrix"><em>Matrix</em></a><em>]</em>) – Values to fill, which should have dimension consistent with <cite>self</cite>.</p>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.lang.Field" title="taichi.lang.Field"><em>Field</em></a>) – The source field.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.dtype">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.dtype" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets data type of each individual value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Data type of each individual value.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>DataType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills this matrix field with specified values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>List</em><em>, </em><em>Tuple</em><em>, </em><a class="reference internal" href="#taichi.lang.Matrix" title="taichi.lang.Matrix"><em>Matrix</em></a><em>]</em>) – Values to fill,
+should have consistent dimension consistent with <cite>self</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2457,12 +2534,32 @@ the remaining entries are all zeros.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.MatrixField.from_numpy">
 <span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.from_numpy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Copies an <cite>numpy.ndarray</cite> into this field.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; m = ti.Matrix.field(2, 2, ti.f32, shape=(3, 3))
+&gt;&gt;&gt; arr = numpp.ones((3, 3, 2, 2))
+&gt;&gt;&gt; m.from_numpy(arr)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.from_torch">
+<span class="sig-name descname"><span class="pre">from_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.from_torch" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads all elements from a torch tensor.</p>
+<p>The shape of the torch tensor needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>torch.tensor</em>) – The source torch tensor.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.MatrixField.get_scalar_field">
 <span class="sig-name descname"><span class="pre">get_scalar_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.get_scalar_field" title="Permalink to this definition">#</a></dt>
-<dd><p>Creates a ScalarField using a specific field member. Only used for quant.</p>
+<dd><p>Creates a ScalarField using a specific field member.
+Only used for quant.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>indices</strong> (<em>Tuple</em><em>[</em><em>Int</em><em>]</em>) – Specified indices of the field member.</p>
@@ -2472,6 +2569,51 @@ the remaining entries are all zeros.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.ScalarField" title="taichi.lang.ScalarField">ScalarField</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.parent" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets an ancestor of the representative SNode in the SNode tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of levels going up from the representative SNode.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The n-th parent of the representative SNode.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.shape">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets field shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Field shape.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Tuple[Int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.snode">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.snode" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets representative SNode for info purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2538,6 +2680,10 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </ul>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(3, 3), layout=Layout.SOA)
+</pre></div>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.MatrixNdarray.copy_from">
 <span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixNdarray.copy_from" title="Permalink to this definition">#</a></dt>
@@ -2553,15 +2699,13 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.MatrixNdarray.element_shape">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixNdarray.element_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets ndarray element shape.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Ndarray element shape.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Tuple[Int]</p>
-</dd>
-</dl>
+<dd><p>Returns the shape of each element (a 2D matrix) in this ndarray.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(3, 3), layout=Layout.SOA)
+&gt;&gt;&gt; arr.element_shape
+(2, 2)
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -2578,12 +2722,30 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.MatrixNdarray.from_numpy">
 <span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixNdarray.from_numpy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Copies the data of a <cite>numpy.ndarray</cite> into this array.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; m = ti.MatrixNdarray(2, 2, ti.f32, shape=(2, 1), layout=0)
+&gt;&gt;&gt; arr = np.ones((2, 1, 2, 2))
+&gt;&gt;&gt; m.from_numpy(arr)
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.MatrixNdarray.to_numpy">
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixNdarray.to_numpy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Converts this ndarray to a <cite>numpy.ndarray</cite>.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(2, 1), layout=Layout.SOA)
+&gt;&gt;&gt; arr.to_numpy()
+[[[[0. 0.]
+   [0. 0.]]]
+
+ [[[0. 0.]
+   [0. 0.]]]]
+</pre></div>
+</div>
+</dd></dl>
 
 </dd></dl>
 
@@ -2885,24 +3047,13 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ScalarField.fill">
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ScalarField.fill" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills <cite>self</cite> with a specific value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
-</dd>
-</dl>
+<dd><p>Fills this scalar field with a specified value.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ScalarField.from_numpy">
 <span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ScalarField.from_numpy" title="Permalink to this definition">#</a></dt>
-<dd><p>Loads all elements from a numpy array.</p>
-<p>The shape of the numpy array needs to be the same as <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>arr</strong> (<em>numpy.ndarray</em>) – The source numpy array.</p>
-</dd>
-</dl>
+<dd><p>Copies the data from a <cite>numpy.ndarray</cite> into this field.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2965,35 +3116,13 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ScalarField.to_numpy">
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ScalarField.to_numpy" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts <cite>self</cite> to a numpy array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of returned numpy array.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The result numpy array.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-</dl>
+<dd><p>Converts this field to a <cite>numpy.ndarray</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ScalarField.to_torch">
 <span class="sig-name descname"><span class="pre">to_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ScalarField.to_torch" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts <cite>self</cite> to a torch tensor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The desired device of returned tensor.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The result torch tensor.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>torch.tensor</p>
-</dd>
-</dl>
+<dd><p>Converts this field to a <cite>torch.tensor</cite>.</p>
 </dd></dl>
 
 </dd></dl>
@@ -3090,7 +3219,44 @@ dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Struct.field">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">members</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;Struct&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct.field" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Creates a <a class="reference internal" href="../#taichi.StructField" title="taichi.StructField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructField</span></code></a> with each element
+has this struct as its type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>members</strong> (<em>dict</em>) – a dict, each item is like <cite>name: type</cite>.</p></li>
+<li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – width and height of the field.</p></li>
+<li><p><strong>offset</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – offset of the indices of the created field.
+For example if <cite>offset=(-10, -10)</cite> the indices of the field
+will start at <cite>(-10, -10)</cite>, not <cite>(0, 0)</cite>.</p></li>
+<li><p><strong>needs_grad</strong> (<em>bool</em>) – enabling gradient field or not.</p></li>
+<li><p><strong>layout</strong> – AOS or SOA.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vec3</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">ti</span><span class="o">.</span><span class="n">f32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sphere</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;center&quot;</span><span class="p">:</span> <span class="n">vec3</span><span class="p">,</span> <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Struct</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">sphere</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span>
+<span class="go">{&#39;center&#39;: array([[[0., 0., 0.],</span>
+<span class="go">    [0., 0., 0.],</span>
+<span class="go">    [0., 0., 0.]],</span>
+</pre></div>
+</div>
+<blockquote>
+<div><dl class="simple">
+<dt>[[0., 0., 0.],</dt><dd><p>[0., 0., 0.],
+[0., 0., 0.]],</p>
+</dd>
+<dt>[[0., 0., 0.],</dt><dd><p>[0., 0., 0.],
+[0., 0., 0.]]], dtype=float32), ‘radius’: array([[0., 0., 0.],</p>
+</dd>
+</dl>
+<p>[0., 0., 0.],
+[0., 0., 0.]], dtype=float32)}</p>
+</div></blockquote>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Struct.fill">
@@ -3106,12 +3272,28 @@ dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Struct.items">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct.items" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the items in this struct.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
+&gt;&gt;&gt; sphere = ti.Struct(center=vec3([0, 0, 0]), radius=1.0)
+&gt;&gt;&gt; sphere.items
+dict_items([(&#39;center&#39;, 2), (&#39;radius&#39;, 1.0)])
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Struct.keys">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct.keys" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the list of member names in string format.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
+&gt;&gt;&gt; sphere = ti.Struct(center=vec3([0, 0, 0]), radius=1.0)
+&gt;&gt;&gt; a.keys
+[&#39;center&#39;, &#39;radius&#39;]
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Struct.to_dict">
@@ -3134,11 +3316,11 @@ dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v
 <dt class="sig sig-object py" id="taichi.lang.StructField">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">StructField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="field/#taichi.lang.field.Field" title="taichi.lang.field.Field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.field.Field</span></code></a></p>
-<dl class="simple">
-<dt>Taichi struct field with SNode implementation.</dt><dd><p>Instead of directly contraining Expr entries, the StructField object
+<p>Taichi struct field with SNode implementation.</p>
+<blockquote>
+<div><p>Instead of directly contraining Expr entries, the StructField object
 directly hosts members as <cite>Field</cite> instances to support nested structs.</p>
-</dd>
-</dl>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3160,9 +3342,23 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.StructField.dtype">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.dtype" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets data type of each individual value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Data type of each individual value.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>DataType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.StructField.fill">
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.fill" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills <cite>self</cite> with a specific value.</p>
+<dd><p>Fills this struct field with a specified value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
@@ -3173,12 +3369,20 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.StructField.from_numpy">
 <span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.from_numpy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Copies the data from a set of <cite>numpy.array</cite> into this field.</p>
+<p>The argument <cite>array_dict</cite> must be a dictionay-like object, it
+contains all the keys in this field and the copying process
+between corresponding items can be performed.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.StructField.from_torch">
 <span class="sig-name descname"><span class="pre">from_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.from_torch" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Copies the data from a set of <cite>torch.tensor</cite> into this field.</p>
+<p>The argument <cite>array_dict</cite> must be a dictionay-like object, it
+contains all the keys in this field and the copying process
+between corresponding items can be performed.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.StructField.get_member_field">
@@ -3200,33 +3404,93 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.StructField.keys">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.keys" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the list of names of the field members.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; f1 = ti.Vector.field(3, ti.f32, shape=(3, 3))
+&gt;&gt;&gt; f2 = ti.field(ti.f32, shape=(3, 3))
+&gt;&gt;&gt; F = ti.StructField({&quot;center&quot;: f1, &quot;radius&quot;: f2})
+&gt;&gt;&gt; F.keys
+[&#39;center&#39;, &#39;radius&#39;]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.StructField.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.parent" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets an ancestor of the representative SNode in the SNode tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of levels going up from the representative SNode.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The n-th parent of the representative SNode.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.StructField.shape">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets field shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Field shape.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Tuple[Int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.StructField.snode">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.snode" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets representative SNode for info purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.StructField.to_numpy">
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.to_numpy" title="Permalink to this definition">#</a></dt>
-<dd><dl class="simple">
-<dt>Converts the Struct field instance to a dictionary of NumPy arrays. The dictionary may be nested when converting</dt><dd><p>nested structs.</p>
+<dd><p>Converts the Struct field instance to a dictionary of NumPy arrays.</p>
+<p>The dictionary may be nested when converting nested structs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The result NumPy array.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Dict[str, Union[numpy.ndarray, Dict]]</p>
 </dd>
 </dl>
-<p>Args:
-:returns: The result NumPy array.
-:rtype: Dict[str, Union[numpy.ndarray, Dict]]</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.StructField.to_torch">
 <span class="sig-name descname"><span class="pre">to_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.to_torch" title="Permalink to this definition">#</a></dt>
-<dd><dl class="simple">
-<dt>Converts the Struct field instance to a dictionary of PyTorch tensors. The dictionary may be nested when converting</dt><dd><p>nested structs.</p>
-</dd>
-</dl>
+<dd><p>Converts the Struct field instance to a dictionary of PyTorch tensors.</p>
+<p>The dictionary may be nested when converting nested structs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The desired device of returned tensor.</p>
+<dd class="field-odd"><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The
+desired device of returned tensor.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The result PyTorch tensor.</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>The result</dt><dd><p>PyTorch tensor.</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>Dict[str, Union[torch.Tensor, Dict]]</p>
@@ -3413,7 +3677,7 @@ set self.__traceback__ to tb and return self.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.Tape">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">Tape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_gradients</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Tape" title="Permalink to this definition">#</a></dt>
-<dd><p>Return a context manager of <a class="reference internal" href="tape/#taichi.lang.tape.TapeImpl" title="taichi.lang.tape.TapeImpl"><code class="xref py py-class docutils literal notranslate"><span class="pre">TapeImpl</span></code></a>. The
+<dd><p>Returns a context manager of <a class="reference internal" href="tape/#taichi.lang.tape.TapeImpl" title="taichi.lang.tape.TapeImpl"><code class="xref py py-class docutils literal notranslate"><span class="pre">TapeImpl</span></code></a>. The
 context manager would catching all of the callings of functions that
 decorated by <a class="reference internal" href="kernel_impl/#taichi.lang.kernel_impl.kernel" title="taichi.lang.kernel_impl.kernel"><code class="xref py py-func docutils literal notranslate"><span class="pre">kernel()</span></code></a> or
 <a class="reference internal" href="../ad/#taichi.ad.grad_replaced" title="taichi.ad.grad_replaced"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code></a> under <cite>with</cite> statement, and calculate
@@ -3451,17 +3715,19 @@ statement ended.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.TetMesh">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TetMesh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.TetMesh" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Create a tetrahedron mesh builder.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.TriMesh">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">TriMesh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.TriMesh" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Create a triangle mesh builder.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.Vector">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">Vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Vector" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a vector from given array.</p>
+<dd><p>Constructs a vector from given array.</p>
 <p>A vector is an instance of a 2-D matrix with the second dimension being equal to 1.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3505,6 +3771,10 @@ statement ended.</p>
 </ul>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (3, 3), layout=Layout.SOA)
+</pre></div>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.VectorNdarray.copy_from">
 <span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.VectorNdarray.copy_from" title="Permalink to this definition">#</a></dt>
@@ -3520,15 +3790,13 @@ statement ended.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.VectorNdarray.element_shape">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.VectorNdarray.element_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets ndarray element shape.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Ndarray element shape.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Tuple[Int]</p>
-</dd>
-</dl>
+<dd><p>Gets the dimension of the vector of this ndarray.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (3, 3), layout=Layout.SOA)
+&gt;&gt;&gt; a.element_shape
+(3,)
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -3545,12 +3813,32 @@ statement ended.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.VectorNdarray.from_numpy">
 <span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.VectorNdarray.from_numpy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Copies the data from a <cite>numpy.ndarray</cite> into this ndarray.</p>
+<p>The shape and data type of <cite>arr</cite> must match this ndarray.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (2, 2), 0)
+&gt;&gt;&gt; b = np.ones((2, 2, 3), dtype=np.float32)
+&gt;&gt;&gt; a.from_numpy(b)
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.VectorNdarray.to_numpy">
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.VectorNdarray.to_numpy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Converts this vector ndarray to a <cite>numpy.ndarray</cite>.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (2, 2), layout=Layout.SOA)
+&gt;&gt;&gt; a.to_numpy()
+array([[[0., 0., 0.],
+        [0., 0., 0.]],
+
+       [[0., 0., 0.],
+        [0., 0., 0.]]], dtype=float32)
+</pre></div>
+</div>
+</dd></dl>
 
 </dd></dl>
 
@@ -3661,7 +3949,31 @@ statement ended.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.assume_in_range">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">assume_in_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.assume_in_range" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Hints the compiler that a value is between a specified range,
+for the compiler to perform scatchpad optimization, and return the
+value untouched.</p>
+<p>The assumed range is <cite>[base + low, base + high)</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> (<em>Number</em>) – The input value.</p></li>
+<li><p><strong>base</strong> (<em>Number</em>) – The base point for the range interval.</p></li>
+<li><p><strong>low</strong> (<em>Number</em>) – The lower offset relative to <cite>base</cite> (included).</p></li>
+<li><p><strong>high</strong> (<em>Number</em>) – The higher offset relative to <cite>base</cite> (excluded).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return the input <cite>value</cite> untouched.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; # hint the compiler that x is in range [8, 12).
+&gt;&gt;&gt; x = ti.assume_in_range(x, 10, -2, 2)
+&gt;&gt;&gt; x
+10
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.atan2">
@@ -4071,7 +4383,7 @@ Must be called in Taichi scope.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.clear_all_gradients">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">clear_all_gradients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.clear_all_gradients" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the gradients of all fields to zero.</p>
+<dd><p>Sets the gradients of all fields to zero.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -4313,7 +4625,21 @@ will JIT compile it into native instructions.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.global_thread_idx">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">global_thread_idx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.global_thread_idx" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the global thread id of this running thread,
+only available for cpu and cuda backends.</p>
+<p>For cpu backends this is equal to the cpu thread id,
+For cuda backends this is equal to <cite>block_id * block_dim + thread_id</cite>.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; f = ti.field(ti.f32, shape=(16, 16))
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     for i in ti.grouped(f):
+&gt;&gt;&gt;         print(ti.global_thread_idx())
+&gt;&gt;&gt;
+test()
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.gpu">
@@ -4786,12 +5112,13 @@ to hold all entries in one top level loop:
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.no_activate">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">no_activate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.no_activate" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Deactivates a SNode pointer.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.one">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.one" title="Permalink to this definition">#</a></dt>
-<dd><p>Return an array of ones with the same shape and type as the input. It’s also a scalar
+<dd><p>Returns an array of ones with the same shape and type as the input. It’s also a scalar
 if the input is a scalar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5150,7 +5477,8 @@ condition check.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.static_assert">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">static_assert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cond</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.static_assert" title="Permalink to this definition">#</a></dt>
-<dd><p>Throw AssertionError when <cite>cond</cite> is False.
+<dd><p>Throw AssertionError when <cite>cond</cite> is False.</p>
+<p>This function is called at compile time and has no runtime overhead.
 The bool value in <cite>cond</cite> must can be determined at compile time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5173,17 +5501,27 @@ AssertionError: the year must be a lunar year
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.static_print">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">static_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">__p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">print</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.static_print" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The print function in Taichi scope.</p>
+<p>This function is called at compile time and has no runtime overhead.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.stop_grad">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">stop_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.stop_grad" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Stops computing gradients during back propagation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>) – A field.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.sync">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">sync</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.sync" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Blocks the calling thread until all the previously
+launched Taichi kernels have completed.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.tan">
@@ -5264,7 +5602,7 @@ AssertionError: the year must be a lunar year
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.zero">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.zero" title="Permalink to this definition">#</a></dt>
-<dd><p>Return an array of zeros with the same shape and type as the input. It’s also a scalar
+<dd><p>Returns an array of zeros with the same shape and type as the input. It’s also a scalar
 if the input is a scalar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

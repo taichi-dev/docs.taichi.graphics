@@ -471,7 +471,7 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.Tape">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">Tape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_gradients</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.Tape" title="Permalink to this definition">#</a></dt>
-<dd><p>Return a context manager of <a class="reference internal" href="../tape/#taichi.lang.tape.TapeImpl" title="taichi.lang.tape.TapeImpl"><code class="xref py py-class docutils literal notranslate"><span class="pre">TapeImpl</span></code></a>. The
+<dd><p>Returns a context manager of <a class="reference internal" href="../tape/#taichi.lang.tape.TapeImpl" title="taichi.lang.tape.TapeImpl"><code class="xref py py-class docutils literal notranslate"><span class="pre">TapeImpl</span></code></a>. The
 context manager would catching all of the callings of functions that
 decorated by <a class="reference internal" href="../kernel_impl/#taichi.lang.kernel_impl.kernel" title="taichi.lang.kernel_impl.kernel"><code class="xref py py-func docutils literal notranslate"><span class="pre">kernel()</span></code></a> or
 <a class="reference internal" href="../../ad/#taichi.ad.grad_replaced" title="taichi.ad.grad_replaced"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code></a> under <cite>with</cite> statement, and calculate
@@ -515,7 +515,31 @@ statement ended.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.assume_in_range">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">assume_in_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.assume_in_range" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Hints the compiler that a value is between a specified range,
+for the compiler to perform scatchpad optimization, and return the
+value untouched.</p>
+<p>The assumed range is <cite>[base + low, base + high)</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> (<em>Number</em>) – The input value.</p></li>
+<li><p><strong>base</strong> (<em>Number</em>) – The base point for the range interval.</p></li>
+<li><p><strong>low</strong> (<em>Number</em>) – The lower offset relative to <cite>base</cite> (included).</p></li>
+<li><p><strong>high</strong> (<em>Number</em>) – The higher offset relative to <cite>base</cite> (excluded).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return the input <cite>value</cite> untouched.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; # hint the compiler that x is in range [8, 12).
+&gt;&gt;&gt; x = ti.assume_in_range(x, 10, -2, 2)
+&gt;&gt;&gt; x
+10
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.block_local">
@@ -543,7 +567,7 @@ for how BLS is used.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.clear_all_gradients">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">clear_all_gradients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.clear_all_gradients" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the gradients of all fields to zero.</p>
+<dd><p>Sets the gradients of all fields to zero.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -576,7 +600,21 @@ Currently contains ‘x64’, ‘x86_64’, ‘arm64’, ‘cc’, ‘wasm’.</
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.global_thread_idx">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">global_thread_idx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.global_thread_idx" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the global thread id of this running thread,
+only available for cpu and cuda backends.</p>
+<p>For cpu backends this is equal to the cpu thread id,
+For cuda backends this is equal to <cite>block_id * block_dim + thread_id</cite>.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; f = ti.field(ti.f32, shape=(16, 16))
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     for i in ti.grouped(f):
+&gt;&gt;&gt;         print(ti.global_thread_idx())
+&gt;&gt;&gt;
+test()
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.gpu">
@@ -768,7 +806,8 @@ def fill():
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.no_activate">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">no_activate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.no_activate" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Deactivates a SNode pointer.</p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.opengl">
