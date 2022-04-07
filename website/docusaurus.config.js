@@ -214,12 +214,11 @@ module.exports = {
       appId: '6NDEOARB8Z',
       apiKey: '423ce169fbf3df5464895dc686a697b0',
       indexName: 'taichi',
-      // TODO: turn this on once we version the docs
-      contextualSearch: false,
-      // TODO: turn this off once we version the docs && have i18n ready
-      searchParameters: {
-        facetFilters: [`language:${DefaultLocale}`]
-      },
+      // See https://docusaurus.io/docs/search#contextual-search
+      contextualSearch: true,
+      // searchParameters: {
+      //   facetFilters: [`language:${DefaultLocale}`]
+      // },
     },
     colorMode: {
       switchConfig: {
