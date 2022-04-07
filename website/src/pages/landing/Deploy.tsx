@@ -3,17 +3,17 @@ import Feature from './Feature';
 import { FeatureProps } from './Develop';
 import styles from './index.module.scss';
 
-interface FeatureSectionProps {
+interface DeployProps {
   title?: string;
   features: FeatureProps[];
   theme?: any;
 }
 
-export default function FeatureSection({
+export default function Deploy({
   title,
   features,
   theme,
-}: FeatureSectionProps) {
+}: DeployProps) {
   return (
     <div className={styles['description-wrapper']}>
       {title && (

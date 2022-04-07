@@ -17,7 +17,14 @@
   }
   @font-face {
     font-family: "Red Hat Display";
-    src: url("/font/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf") format("ttf");
+    src: url("/font/Red_Hat_Display/RedHatDisplay-Italic-VariableFont_wght.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Red Hat Mono";
+    src: url("/font/Red_Hat_Mono/RedHatMono-Italic-VariableFont_wght.ttf") format("ttf");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -26,6 +33,7 @@
 :root {
   --ifm-font-family-monospace: "Red Hat Text";
   --ifm-font-family-monospace: "Red Hat Display";
+  --ifm-font-family-monospace: "Red Hat Mono";
   --ifm-color-primary: #0891b2;
   --ifm-color-primary-dark: #0782a0;
   --ifm-color-primary-darker: #077b97;

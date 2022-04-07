@@ -13,22 +13,28 @@ export const DEPLOY_IMG = {
 
 export const SwiperConfig = [
   {
-    text: 'We use the Taichi programming language for our simulation projects. It is easy to use. 90% of the  team chose to use Taichi and completed their simulations with flying colors. It is also efficient. Taichi has much less scaffolding code than other programming languages.',
-    link: 'https://taichi.graphics/',
+    text: 'We use the Taichi programming language for physical simulation. It is easy to use. 90% of our projects used Taichi and were completed with flying colors. Taichi is also efficient. It has much less scaffolding code than other languages or frameworks. ',
+    // link: 'https://taichi.graphics/',
     src: '/img/landingpage/ETH.svg',
-    name: 'Jingwei Tang, Research Assistant',
+    name: 'Jingwei Tang, research assistant, ETH Zurich',
   },
   {
-    text: 'We use the Taichi programming language for our simulation projects. It is easy to use. 90% of the  team chose to use Taichi and completed their simulations with flying colors. It is also efficient. Taichi has much less scaffolding code than other programming languages.',
-    link: 'https://taichi.graphics/',
-    src: '/img/landingpage/ETH.svg',
-    name: 'Alexander Mordvintsev',
+    text: 'We were required to solve a high-dimensional dynamic programming problem in a financial engineering class but soon found that the amount of work involved in C++ or CUDA programming is intimidating. Luckily, Taichi provides a simple, efficient parallel programming solution, making our project two magnitudes faster. Besides, it’s more readable.',
+    // link: 'https://taichi.graphics/',
+    src: '/img/landingpage/MIT.svg',
+    name: 'Jie Xu, Ph.D. student EECS, MIT',
   },
   {
-    text: 'We use the Taichi programming language for our simulation projects. It is easy to use. 90% of the  team chose to use Taichi and completed their simulations with flying colors. It is also efficient. Taichi has much less scaffolding code than other programming languages.',
-    link: 'https://taichi.graphics/',
-    src: '/img/landingpage/ETH.svg',
-    name: 'Alexander Mordvintsev',
+    text: 'The simplicity of design in Taichi is always the key to great work. With much less code, we achieved surprisingly good visual results and highly sophisticated features. Taichi proves to be a significant boost to my research and development work.',
+    // link: 'https://taichi.graphics/',
+    src: '/img/landingpage/HK.svg',
+    name: 'Hao Xu, Ph.D. student in Computer Engineering, HKUST',
+  },
+  {
+    text: 'The Taichi programming is much easier to grasp than traditional GPU programming solutions. Besides, once a Taichi program is compiled, it can be deployed on iOS, Android, PC, and many more platforms. This feature meets our fast iteration requirements and significantly reduces time to market.',
+    // link: 'https://taichi.graphics/',
+    src: '/img/landingpage/Kwai.svg',
+    name: 'Chongyang Ma, Lead of Y-tech Graphics AI, Kwai',
   },
 ];
 export const SWIPER_IMG = [

@@ -153,7 +153,7 @@ const DeployOptions = [
   },
   {
     styles: {
-      marginTop: '209px',
+      marginTop: '262px',
     },
     leftComponent: {
       child: (context, index) => {
@@ -165,7 +165,7 @@ const DeployOptions = [
         );
       },
       //   styles: genStyle('632px', '312px'),
-      styles: { width: '632px', height: '312px' },
+      styles: { width: '632px', height: '312px', marginTop: "20px" },
       type: 'module',
     },
     rightComponent: {
@@ -208,7 +208,7 @@ export default function IndexPage(props: ComponentProps) {
           </div>
           <div
             className={styles['deploy-background-img']}
-            style={{ marginTop: '168px' }}
+            style={{ paddingTop: '168px' }}
           >
             <Deploy features={DeployOptions} theme={theme} />
           </div>

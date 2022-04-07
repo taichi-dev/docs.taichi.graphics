@@ -144,7 +144,7 @@ export default function Feature({ index, theme }: FeatureProps) {
         </InView>
       </div>
       <div>
-        <div className={styles['title']}>User stories</div>
+        <div className={styles['title']} style={{marginTop: '130px'}}>User stories</div>
         <div className={styles['user-story']}>{UserStory(ITEMS(styles))}</div>
       </div>
     </div>

@@ -99,6 +99,7 @@ $active-documentation: #677ce5;
 }
 // menu component style
 .my-menu {
+    margin-right: 40px;
   .menu-ul {
     margin: 0;
     height: 68px;
@@ -109,6 +110,20 @@ $active-documentation: #677ce5;
       height: 100%;
       position: relative;
       padding: 0 20px;
+      @include text_color_primary();
+      a {
+        box-sizing: content-box;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        @include text_color_primary();
+      }
+    }
+    li:last-child {
+        height: 100%;
+      position: relative;
+      padding: 0 20px;
+      margin-left: 20px;
       @include text_color_primary();
       a {
         box-sizing: content-box;
@@ -156,7 +171,7 @@ $active-documentation: #677ce5;
       position: absolute;
       z-index: 999;
       top: 26px;
-      right: 8px;
+      right: 0;
       margin-left: 10px;
     }
     .dropdown:hover:after {
@@ -224,6 +239,7 @@ $active-documentation: #677ce5;
       justify-content: flex-end;
       margin-top: 200px;
       .input {
+          font-family: 'Red Hat Mono';
         width: 292px;
         height: 44px;
         border: 0.5px solid #cdd2eb;
@@ -242,7 +258,7 @@ $active-documentation: #677ce5;
         cursor: pointer;
         background: #fff url('/img/landingpage/Copy.svg') no-repeat;
         background-size: 15px 15px;
-        background-position: 14px 14px;
+        background-position: 16px 14px;
       }
       .btn:hover {
         width: 50px;
@@ -253,7 +269,7 @@ $active-documentation: #677ce5;
         cursor: pointer;
         background: #fff url('/img/landingpage/Copy_hover.svg') no-repeat;
         background-size: 15px 15px;
-        background-position: 14px 14px;
+        background-position: 16px 14px;
       }
 
       .documentation {
@@ -278,9 +294,11 @@ $active-documentation: #677ce5;
     font-style: normal;
     font-weight: 400;
     font-size: 48px;
+    letter-spacing: 0.05em;
     line-height: 1;
     @include text_color_primary();
     span {
+        font-family: 'Red Hat Display';
       font-size: 60px;
       color: #677ce5;
       font-weight: 600;
@@ -295,6 +313,7 @@ $active-documentation: #677ce5;
     @include text_color_primary();
     display: flex;
     align-items: center;
+    letter-spacing: 0.05em;
   }
   .launchs {
     margin-left: 0;
@@ -330,15 +349,14 @@ $active-documentation: #677ce5;
       }
       .deploy-background-img {
         background-image: url('/img/landingpage/Round.svg');
-        background-size: contain;
+        background-size: 60%;
         background-repeat: no-repeat;
-        background-position: 200px -40px;
+        background-position: 200px -90px;
       }
       .application-background-img {
         background-image: url('/img/landingpage/Cube.png');
-        background-size: contain;
+        background-size: 60%;
         background-repeat: no-repeat;
-        background-size: 729px 936px;
         background-position: 0px 134px;
       }
     }
@@ -356,7 +374,7 @@ $active-documentation: #677ce5;
     height: 300px;
     position: absolute;
     left: 0;
-    bottom: 150px;
+    bottom: 138px;
     background-image: url('/img/landingpage/lines.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -486,8 +504,7 @@ ul > li {
 }
 
 .user-story {
-  margin-top: 100px;
-
+  margin-top: 114px;
   .custom-img {
     width: 100%;
     height: 287px;
@@ -501,6 +518,7 @@ ul > li {
       @include text_color_primary();
       a {
         margin-left: 10px;
+        color: $active-color-primary;
       }
       .logo {
         position: absolute;
@@ -565,7 +583,7 @@ ul > li {
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.03em;
-    margin: 40px 0 0 40px;
+    margin: 70px 0 20px 40px;
   }
 }
 // common style
@@ -578,6 +596,6 @@ ul > li {
     font-weight: 600;
     font-size: 36px;
     color: #687de6;
-    margin-top: 160px;
+    margin-top: 156px;
   }
 }

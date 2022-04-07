@@ -4,7 +4,7 @@ import { generateUrl } from '../../utils';
 import { communityImg } from '../../config';
 import styles from './index.module.scss';
 
-export default function Application(props: FeatureSectionProps) {
+export default function Contribution(props: FeatureSectionProps) {
   const { theme } = props;
   const [indexKey, setIndex ] = useState('')
   const onMouseEnter = (index) => {
@@ -17,14 +17,14 @@ export default function Application(props: FeatureSectionProps) {
     <div className={styles['contribution']}>
       <div className={styles['title']}>Thrive through open-source</div>
       <img
-        style={{ marginTop: '80px' }}
+        style={{ marginTop: '50px' }}
         src="/img/landingpage/User Avtars.svg"
       />
       <div
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          marginTop: '280px',
+          marginTop: '320px',
         }}
       >
         <div className={styles['community']}>Community</div>

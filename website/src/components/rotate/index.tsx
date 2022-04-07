@@ -46,6 +46,7 @@ export const Efficient = (props: any) => {
           height: '38px',
           paddingLeft: '8px',
           color: '#677CE5',
+          letterSpacing: "0.05em"
         }}
       >
         <SwiperSlide>

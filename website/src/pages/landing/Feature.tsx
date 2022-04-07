@@ -33,7 +33,7 @@ export default function Feature({
               <InView onChange={setInView} threshold={0.5} triggerOnce>
                 <Transition
                   show={inView}
-                  className="animate__animated animate__fadeInRight"
+                  className="animate__animated animate__fadeInLeft"
                 >
                   {left.child instanceof Function
                     ? left?.child({ theme: theme })
@@ -45,7 +45,7 @@ export default function Feature({
               <InView onChange={setInView} threshold={0.5} triggerOnce>
                 <Transition
                   show={inView}
-                  className="animate__animated animate__fadeInLeft"
+                  className="animate__animated animate__fadeInRight"
                 >
                   <div aria-hidden="true" style={{ position: 'relative' }}>
                     {right?.description && (

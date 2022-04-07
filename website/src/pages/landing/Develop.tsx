@@ -7,18 +7,18 @@ export interface FeatureProps {
   rightComponent?: any;
   styles?: any;
 }
-export interface FeatureSectionProps {
+export interface DevelopProps {
   title?: string;
   description?: string;
   features?: FeatureProps[];
   theme?: string;
 }
 
-export default function FeatureSection({
+export default function Develop({
   title,
   description,
   features,
-}: FeatureSectionProps) {
+}: DevelopProps) {
   return (
     <div className={styles['description-wrapper']}>
       <div className={styles['title']}>
