@@ -1,5 +1,3 @@
-
-
 $light-color-primary: #000;
 $night-color-primary: #fff;
 $active-color-primary: #687de5;
@@ -58,7 +56,6 @@ $active-documentation: #677ce5;
   @media screen and (min-width: 1200px) {
     width: 1200px;
     margin: auto;
-    overflow: hidden;
   }
   @media only screen and (min-width: 904px) and (max-width: 1199px) {
     width: 100%;
@@ -84,20 +81,19 @@ $active-documentation: #677ce5;
 .custom-header {
   display: flex;
   width: 100%;
-  height: 68px;
+  padding: 36px 20px;
+  display: flex;
   align-items: center;
-  padding: 0 27px;
   justify-content: space-between;
   .custom-switch {
     @include documentation_color_primary();
   }
   .logo {
-    width: 200px;
+    width: 120px;
   }
 }
 // menu component style
 .my-menu {
-    margin-right: 40px;
   .menu-ul {
     margin: 0;
     height: 68px;
@@ -108,20 +104,6 @@ $active-documentation: #677ce5;
       height: 100%;
       position: relative;
       padding: 0 20px;
-      @include text_color_primary();
-      a {
-        box-sizing: content-box;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        @include text_color_primary();
-      }
-    }
-    li:last-child {
-        height: 100%;
-      position: relative;
-      padding: 0 20px;
-      margin-left: 20px;
       @include text_color_primary();
       a {
         box-sizing: content-box;
@@ -169,7 +151,7 @@ $active-documentation: #677ce5;
       position: absolute;
       z-index: 999;
       top: 26px;
-      right: 0;
+      right: 8px;
       margin-left: 10px;
     }
     .dropdown:hover:after {
@@ -223,7 +205,7 @@ $active-documentation: #677ce5;
     height: 300px;
     position: absolute;
     left: 0;
-    top: 300px;
+    top: 200px;
     z-index: -1;
     background-image: url('/img/landingpage/lines.png');
     background-size: cover;
@@ -233,12 +215,9 @@ $active-documentation: #677ce5;
     @include content_layout();
     margin-top: 38px;
     .command {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 200px;
+      width: 100%;
       .input {
-          font-family: 'Red Hat Mono';
-        width: 292px;
+        width: 100%;
         height: 44px;
         border: 0.5px solid #cdd2eb;
         border-right: none;
@@ -256,7 +235,7 @@ $active-documentation: #677ce5;
         cursor: pointer;
         background: #fff url('/img/landingpage/Copy.svg') no-repeat;
         background-size: 15px 15px;
-        background-position: 16px 14px;
+        background-position: 14px 14px;
       }
       .btn:hover {
         width: 50px;
@@ -267,16 +246,17 @@ $active-documentation: #677ce5;
         cursor: pointer;
         background: #fff url('/img/landingpage/Copy_hover.svg') no-repeat;
         background-size: 15px 15px;
-        background-position: 16px 14px;
+        background-position: 14px 14px;
       }
 
       .documentation {
         display: flex;
         align-items: center;
-        padding: 0 25px;
+        justify-content: center;
+        padding: 10px 25px;
+        margin-top: 20px;
         @include documentation_color_primary();
         cursor: pointer;
-        margin-left: 10px;
       }
       .documentation:hover {
         @include documentation_color_primary_hover();
@@ -287,16 +267,13 @@ $active-documentation: #677ce5;
 .list-content {
   @include content_layout();
   .lists {
-    margin: 112px 0 0 0 ;
+    margin-top: 112px;
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 400;
-    font-size: 48px;
-    letter-spacing: 0.05em;
-    line-height: 1;
+    font-size: 24px;
     @include text_color_primary();
     span {
-        font-family: 'Red Hat Display';
       font-size: 60px;
       color: #677ce5;
       font-weight: 600;
@@ -304,14 +281,15 @@ $active-documentation: #677ce5;
     }
   }
   .sub-banner {
+    margin-top: 30px;
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    @include text_color_primary();
-    display: flex;
-    align-items: center;
+    font-size: 16px;
     letter-spacing: 0.05em;
+    @include text_color_primary();
+    // display: flex;
+    // align-items: center;
   }
   .launchs {
     margin-left: 0;
@@ -340,21 +318,22 @@ $active-documentation: #677ce5;
       z-index: 2;
       padding-bottom: 80px;
       .develop-background-img {
-        background-image: url('/img/landingpage/Triangle.svg');
+        background-image: url('/img/landingpage/Triangle.png');
         background-size: 620px 690px;
         background-repeat: no-repeat;
-        background-position: 0 350px;
+        background-position: -30px 350px;
       }
       .deploy-background-img {
         background-image: url('/img/landingpage/Round.svg');
-        background-size: 60%;
+        background-size: contain;
         background-repeat: no-repeat;
-        background-position: 200px -90px;
+        background-position: 200px -40px;
       }
       .application-background-img {
         background-image: url('/img/landingpage/Cube.png');
-        background-size: 60%;
+        background-size: contain;
         background-repeat: no-repeat;
+        background-size: 729px 936px;
         background-position: 0px 134px;
       }
     }
@@ -372,7 +351,7 @@ $active-documentation: #677ce5;
     height: 300px;
     position: absolute;
     left: 0;
-    bottom: 138px;
+    bottom: 150px;
     background-image: url('/img/landingpage/lines.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -389,7 +368,7 @@ $active-documentation: #677ce5;
     line-height: 32px;
     letter-spacing: 0.02em;
     @include text_color_primary();
-    margin-top: 80px;
+    margin-top: 50px;
   }
   .item {
     display: flex;
@@ -400,7 +379,7 @@ $active-documentation: #677ce5;
       top: 1062px;
       border-radius: 50%;
       background: #687de6;
-      margin: 25px 0 0 20px;
+      margin: 10px 0 0 20px;
     }
     .item-text {
       width: 380px;
@@ -409,7 +388,6 @@ $active-documentation: #677ce5;
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
-      margin-top: 16px;
       @include text_color_primary();
       margin-left: 12px;
       word-wrap: break-word;
@@ -463,7 +441,6 @@ $active-documentation: #677ce5;
 .feature-content {
   @media screen and (max-width: 764px) {
     width: 100%;
-    // display: flex;
     flex-direction: column;
   }
 }
@@ -502,7 +479,8 @@ ul > li {
 }
 
 .user-story {
-  margin-top: 114px;
+  margin-top: 100px;
+
   .custom-img {
     width: 100%;
     height: 287px;
@@ -516,7 +494,6 @@ ul > li {
       @include text_color_primary();
       a {
         margin-left: 10px;
-        color: $active-color-primary;
       }
       .logo {
         position: absolute;
@@ -581,7 +558,7 @@ ul > li {
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.03em;
-    margin: 70px 0 20px 40px;
+    margin: 40px 0 0 40px;
   }
 }
 // common style
@@ -594,6 +571,21 @@ ul > li {
     font-weight: 600;
     font-size: 36px;
     color: #687de6;
-    margin-top: 156px;
+    margin-top: 267px;
   }
+}
+
+///////////
+.Popup-close {
+  width: 100%;
+  height: 20px;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: end;
+}
+.menu-line {
+  width: 100%;
+  display: inline-block;
+  padding: 20px 20px;
+  @include text_color_primary();
 }
