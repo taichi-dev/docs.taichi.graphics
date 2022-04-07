@@ -294,7 +294,49 @@ is adopted, and the operands are required to be boolean values. Since Taichi
 does not have boolean type yet, `ti.i32` is served as a temporary alternative.
 A `ti.i32` value is considered `False` if and only if the value is evaluated to 0.
 
+### Assignment expressions
+
+```
+assignment_expression ::= [identifier ":="] expression
+```
+
+An assignment expression assigns an expression to an identifier (see
+[assignment statements](#assignment-statements) for more details),
+while also returning the value of the expression.
+
+Example:
+```python
+@ti.kernel
+def foo() -> ti.i32:
+    b = 2 + (a := 5)
+    b += a
+    return b
+# the return value should be 12
+```
+
+:::note
+This operator is supported since Python 3.8.
+:::
+
 ### Conditional expressions
+
+### Static expressions
+
+```
+static_expression ::= "ti.static(" positional_arguments ")"
+```
+
+Static expressions are expressions that are wrapped by a call to `ti.static()`.
+The `positional_arguments` is evaluated at compile time, and the items inside must be evaluated to Python values.
+
+`ti.static()` receives one or more arguments.
+- When a single argument is passed in, it returns the argument.
+- When multiple arguments are passed in, it returns a tuple containing all the arguments in the same order as they are passed.
+
+The static expressions work as a mechanism to trigger many metaprogramming functions in Taichi,
+such as [compile-time loop unrolling and compile-time branching](lang/articles/advanced/meta.md#compile-time-evaluations).
+
+The static expressions can also be used to [create aliases for Taichi fields and Taichi functions](lang/articles/advanced/syntax_sugars.md#aliases).
 
 ### Expression lists
 
