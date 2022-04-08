@@ -20,7 +20,7 @@ export default class LandingPage extends React.Component<any, StateProps> {
       platform: 'pc',
     };
     this.onChange = this.onChange.bind(this);
-    this.flexable();
+    // this.flexable();
   }
   static childContextTypes = {
     theme: PropTypes.string,

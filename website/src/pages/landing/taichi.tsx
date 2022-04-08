@@ -42,10 +42,10 @@ interface styleProps {
 }
 
 function generateStyles(params: styleProps) {
-  const width = window.screen.width;
-  if (width < 903) {
-    return params?.mobile ? params?.mobile : params;
-  }
+  //   const width = window.screen.width;
+  //   if (width < 903) {
+  //     return params?.mobile ? params?.mobile : params;
+  //   }
   return params?.pc ? params?.pc : params;
 }
 
