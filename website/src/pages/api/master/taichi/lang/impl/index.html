@@ -37,6 +37,7 @@
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
+    <meta name="docsearch:category" content="API Reference">
     
 
     <!-- Google Analytics -->
@@ -430,7 +431,7 @@ in one <cite>for</cite> loop and a single index.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.impl.one">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.one" title="Permalink to this definition">#</a></dt>
-<dd><p>Return an array of ones with the same shape and type as the input. It’s also a scalar
+<dd><p>Returns an array of ones with the same shape and type as the input. It’s also a scalar
 if the input is a scalar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -512,7 +513,8 @@ condition check.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.impl.static_assert">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">static_assert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cond</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.static_assert" title="Permalink to this definition">#</a></dt>
-<dd><p>Throw AssertionError when <cite>cond</cite> is False.
+<dd><p>Throw AssertionError when <cite>cond</cite> is False.</p>
+<p>This function is called at compile time and has no runtime overhead.
 The bool value in <cite>cond</cite> must can be determined at compile time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -535,17 +537,25 @@ AssertionError: the year must be a lunar year
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.impl.static_print">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">static_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">__p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">print</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.static_print" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The print function in Taichi scope.</p>
+<p>This function is called at compile time and has no runtime overhead.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.impl.stop_grad">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">stop_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.stop_grad" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Stops computing gradients during back propagation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>) – A field.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.impl.zero">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.zero" title="Permalink to this definition">#</a></dt>
-<dd><p>Return an array of zeros with the same shape and type as the input. It’s also a scalar
+<dd><p>Returns an array of zeros with the same shape and type as the input. It’s also a scalar
 if the input is a scalar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

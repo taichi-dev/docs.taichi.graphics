@@ -37,6 +37,7 @@
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
+    <meta name="docsearch:category" content="API Reference">
     
 
     <!-- Google Analytics -->
@@ -278,11 +279,14 @@
                 
   <section id="module-taichi.ad">
 <span id="taichi-ad"></span><h1><a class="reference internal" href="#module-taichi.ad" title="taichi.ad"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ad</span></code></a><a class="headerlink" href="#module-taichi.ad" title="Permalink to this headline">#</a></h1>
+<p>Taichi automatic differentiation module.</p>
+<p>This module supplies two decorators for users to customize their
+gradient computation task.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ad.grad_for">
 <span class="sig-prename descclassname"><span class="pre">taichi.ad.</span></span><span class="sig-name descname"><span class="pre">grad_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">primal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.grad_for" title="Permalink to this definition">#</a></dt>
-<dd><p>Generates a decorator to decorate <cite>primal</cite>’s customized gradient function.
-See <code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code> for examples.</p>
+<dd><p>Generates a decorator to decorate <cite>primal</cite>’s customized gradient function.</p>
+<p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code> for examples.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>primal</strong> (<em>Callable</em>) – The primal function, must be decorated by <a class="reference internal" href="#taichi.ad.grad_replaced" title="taichi.ad.grad_replaced"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code></a>.</p>
@@ -300,8 +304,8 @@ See <code class="xref py py-func docutils literal notranslate"><span class="pre"
 <dt class="sig sig-object py" id="taichi.ad.grad_replaced">
 <span class="sig-prename descclassname"><span class="pre">taichi.ad.</span></span><span class="sig-name descname"><span class="pre">grad_replaced</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.grad_replaced" title="Permalink to this definition">#</a></dt>
 <dd><p>A decorator for python function to customize gradient with Taichi’s autodiff
-system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.
-This decorator forces Taichi’s autodiff system to use a user-defined gradient
+system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.</p>
+<p>This decorator forces Taichi’s autodiff system to use a user-defined gradient
 function for the decorated function. Its customized gradient must be decorated
 by <a class="reference internal" href="#taichi.ad.grad_for" title="taichi.ad.grad_for"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_for()</span></code></a>.</p>
 <dl class="field-list simple">

@@ -37,6 +37,7 @@
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
+    <meta name="docsearch:category" content="API Reference">
     
 
     <!-- Google Analytics -->
@@ -576,24 +577,13 @@ A C++ GlobalVariableExpression wraps the corresponding SNode.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.field.ScalarField.fill">
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.ScalarField.fill" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills <cite>self</cite> with a specific value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
-</dd>
-</dl>
+<dd><p>Fills this scalar field with a specified value.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.field.ScalarField.from_numpy">
 <span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.ScalarField.from_numpy" title="Permalink to this definition">#</a></dt>
-<dd><p>Loads all elements from a numpy array.</p>
-<p>The shape of the numpy array needs to be the same as <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>arr</strong> (<em>numpy.ndarray</em>) – The source numpy array.</p>
-</dd>
-</dl>
+<dd><p>Copies the data from a <cite>numpy.ndarray</cite> into this field.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -656,35 +646,13 @@ A C++ GlobalVariableExpression wraps the corresponding SNode.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.field.ScalarField.to_numpy">
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.ScalarField.to_numpy" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts <cite>self</cite> to a numpy array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of returned numpy array.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The result numpy array.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-</dl>
+<dd><p>Converts this field to a <cite>numpy.ndarray</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.field.ScalarField.to_torch">
 <span class="sig-name descname"><span class="pre">to_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.ScalarField.to_torch" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts <cite>self</cite> to a torch tensor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The desired device of returned tensor.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The result torch tensor.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>torch.tensor</p>
-</dd>
-</dl>
+<dd><p>Converts this field to a <cite>torch.tensor</cite>.</p>
 </dd></dl>
 
 </dd></dl>

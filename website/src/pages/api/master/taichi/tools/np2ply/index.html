@@ -37,6 +37,7 @@
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
+    <meta name="docsearch:category" content="API Reference">
     
 
     <!-- Google Analytics -->
@@ -368,7 +369,18 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.tools.np2ply.</span></span><span class="sig-name descname"><span class="pre">PLYWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_faces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">face_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tri'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'created</span> <span class="pre">by</span> <span class="pre">PLYWriter'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><p>Writes <cite>numpy.array</cite> data to <cite>ply</cite> files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_vertices</strong> (<em>int</em>) – number of vertices.</p></li>
+<li><p><strong>num_faces</strong> (<em>int</em><em>, </em><em>optional</em>) – number of faces.</p></li>
+<li><p><strong>face_type</strong> (<em>str</em>) – <cite>tri</cite> or <cite>quad</cite>.</p></li>
+<li><p><strong>comment</strong> (<em>str</em>) – comment message.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_face_channel">
 <span class="sig-name descname"><span class="pre">add_face_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_face_channel" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -391,7 +403,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_alpha">
 <span class="sig-name descname"><span class="pre">add_vertex_alpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_alpha" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the alpha-channel (transparent) of the vertex colors.</p>
+<dd><p>Sets the alpha-channel (transparent) of the vertex colors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<cite>numpy.array(float)</cite>) – the alpha-channel (transparent) of the colors.</p>
@@ -407,7 +419,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_color">
 <span class="sig-name descname"><span class="pre">add_vertex_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_color" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the (r, g, b) channels of the colors at the vertices.</p>
+<dd><p>Sets the (r, g, b) channels of the colors at the vertices.</p>
 <p>The three arguments are all numpy arrays of float type and have
 the same length.</p>
 <dl class="field-list simple">
@@ -424,7 +436,7 @@ the same length.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_id">
 <span class="sig-name descname"><span class="pre">add_vertex_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_id" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the ids of the vertices.</p>
+<dd><p>Sets the ids of the vertices.</p>
 <p>The id of a vertex is equal to its index in the vertex array.</p>
 </dd></dl>
 
@@ -468,7 +480,7 @@ the same length.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter.add_vertex_rgba">
 <span class="sig-name descname"><span class="pre">add_vertex_rgba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_rgba" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the (r, g, b, a) channels of the colors at the vertices.</p>
+<dd><p>Sets the (r, g, b, a) channels of the colors at the vertices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">

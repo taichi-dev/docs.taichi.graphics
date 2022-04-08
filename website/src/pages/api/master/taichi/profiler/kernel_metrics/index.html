@@ -37,6 +37,7 @@
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
+    <meta name="docsearch:category" content="API Reference">
     
 
     <!-- Google Analytics -->
@@ -333,7 +334,15 @@ For usage of this class, see examples in func <a class="reference internal" href
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.profiler.kernel_metrics.get_predefined_cupti_metrics">
 <span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_metrics.</span></span><span class="sig-name descname"><span class="pre">get_predefined_cupti_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_metrics.get_predefined_cupti_metrics" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the specified cupti metric.</p>
+<p>Accepted arguments are ‘global_access’, ‘shared_access’, ‘atomic_access’,
+‘cache_hit_rate’, ‘device_utilization’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – cupti metri name.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 
