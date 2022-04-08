@@ -1,5 +1,3 @@
-
-
 $light-color-primary: #000;
 $night-color-primary: #fff;
 $active-color-primary: #687de5;
@@ -14,6 +12,45 @@ $active-documentation: #677ce5;
   [data-theme='night'] & {
     background: $documentation !important;
     color: #000;
+  }
+}
+
+@mixin input_color_primary() {
+  [data-theme='light'] & {
+    background: #fff !important;
+    border: 0.5px solid #cdd2eb;
+    color: #000;
+  }
+  [data-theme='night'] & {
+    background: #000 !important;
+    color: #fff;
+    border: 0.5px solid #576192;
+  }
+}
+@mixin input_btn_color_primary() {
+  [data-theme='light'] & {
+    border: 0.5px solid #cdd2eb;
+    background: #fff url('/img/landingpage/Copy.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+  [data-theme='night'] & {
+    border: 0.5px solid #576192;
+    background: #000 url('/img/landingpage/Copy.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+}
+@mixin input_btn_hover_color_primary() {
+  [data-theme='light'] & {
+    background: #fff url('/img/landingpage/Copy_hover.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+  [data-theme='night'] & {
+    background: #000 url('/img/landingpage/Copy_hover.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
   }
 }
 
@@ -64,7 +101,7 @@ $active-documentation: #677ce5;
     width: 100%;
     padding: 0 20px;
   }
-  @media screen and (max-width: 903px) {
+  @media screen and (max-width: 904px) {
     width: 100%;
     padding: 0 20px;
   }
@@ -97,7 +134,7 @@ $active-documentation: #677ce5;
 }
 // menu component style
 .my-menu {
-    margin-right: 40px;
+  margin-right: 40px;
   .menu-ul {
     margin: 0;
     height: 68px;
@@ -118,7 +155,7 @@ $active-documentation: #677ce5;
       }
     }
     li:last-child {
-        height: 100%;
+      height: 100%;
       position: relative;
       padding: 0 20px;
       margin-left: 20px;
@@ -237,12 +274,12 @@ $active-documentation: #677ce5;
       justify-content: flex-end;
       margin-top: 200px;
       .input {
-          font-family: 'Red Hat Mono';
+        font-family: 'Red Hat Mono';
         width: 292px;
         height: 44px;
-        border: 0.5px solid #cdd2eb;
         border-right: none;
-        background: #fff;
+        // background: #fff;
+        @include input_color_primary();
         float: left;
         display: flex;
         align-items: center;
@@ -254,20 +291,14 @@ $active-documentation: #677ce5;
         border: 0.5px solid #cdd2eb;
         float: left;
         cursor: pointer;
-        background: #fff url('/img/landingpage/Copy.svg') no-repeat;
-        background-size: 15px 15px;
-        background-position: 16px 14px;
+        @include input_btn_color_primary();
       }
       .btn:hover {
         width: 50px;
         height: 44px;
-        border: 0.5px solid #cdd2eb;
-        background: #fff;
         float: left;
         cursor: pointer;
-        background: #fff url('/img/landingpage/Copy_hover.svg') no-repeat;
-        background-size: 15px 15px;
-        background-position: 16px 14px;
+        @include input_btn_hover_color_primary();
       }
 
       .documentation {
@@ -287,7 +318,7 @@ $active-documentation: #677ce5;
 .list-content {
   @include content_layout();
   .lists {
-    margin: 112px 0 0 0 ;
+    margin: 112px 0 0 0;
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 400;
@@ -296,7 +327,7 @@ $active-documentation: #677ce5;
     line-height: 1;
     @include text_color_primary();
     span {
-        font-family: 'Red Hat Display';
+      font-family: 'Red Hat Display';
       font-size: 60px;
       color: #677ce5;
       font-weight: 600;
@@ -350,6 +381,10 @@ $active-documentation: #677ce5;
         background-size: 60%;
         background-repeat: no-repeat;
         background-position: 200px -90px;
+        padding-top: '168px';
+        @media screen and (max-width: 904px) {
+          padding-top: '48px';
+        }
       }
       .application-background-img {
         background-image: url('/img/landingpage/Cube.png');
@@ -404,6 +439,9 @@ $active-documentation: #677ce5;
     }
     .item-text {
       width: 380px;
+      @media screen and (max-width: 904px) {
+        width: 100%;
+      }
       font-family: 'Red Hat Text';
       font-style: normal;
       font-weight: 400;
@@ -461,9 +499,8 @@ $active-documentation: #677ce5;
   }
 }
 .feature-content {
-  @media screen and (max-width: 764px) {
+  @media screen and (max-width: 904px) {
     width: 100%;
-    // display: flex;
     flex-direction: column;
   }
 }
@@ -496,7 +533,13 @@ $active-documentation: #677ce5;
     overflow: hidden;
   }
 }
-
+.features-content {
+  @media screen and (max-width: 904px) {
+    width: 100%;
+    // display: flex;
+    flex-direction: column;
+  }
+}
 ul > li {
   list-style: none;
 }
@@ -513,6 +556,7 @@ ul > li {
       width: 700px;
       height: 150px;
       position: relative;
+      font-size: 16px;
       @include text_color_primary();
       a {
         margin-left: 10px;
@@ -524,7 +568,7 @@ ul > li {
         bottom: 0;
         display: flex;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 16px;
         align-items: center;
         @include text_color_primary();
         img {
@@ -534,8 +578,8 @@ ul > li {
     }
     .text-content:before {
       content: '';
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       background: url('/img/landingpage/Quotation_left.svg') no-repeat;
       background-size: 30px 30px;
       position: absolute;
@@ -563,15 +607,90 @@ ul > li {
     }
   }
 }
+@media screen and (max-width: 904px) {
+  .user-story {
+    .custom-img {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .text-content {
+        width: 90%;
+        height: 200px;
+        position: relative;
+        @include text_color_primary();
+        a {
+          margin-left: 10px;
+          color: $active-color-primary;
+        }
+        .logo {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          font-weight: 500;
+          font-size: 14px;
+          align-items: center;
+          @include text_color_primary();
+          span {
+            font-size: 14px;
+          }
+          img {
+            width: 100px;
+            margin-left: 20px;
+          }
+        }
+      }
+      .text-content:before {
+        content: '';
+        width: 50px;
+        height: 50px;
+        background: url('/img/landingpage/Quotation_left.svg') no-repeat;
+        background-size: 20px 20px;
+        position: absolute;
+        left: -20px;
+        top: -10px;
+      }
+      .text-content:after {
+        content: '';
+        width: 50px;
+        height: 50px;
+        background: url('/img/landingpage/Quotation_left.svg') no-repeat;
+        background-size: 20px 20px;
+        position: absolute;
+        right: -20px;
+        top: -10px;
+      }
+    }
+    .img {
+      width: 100%;
+      height: 287px;
+      display: flex;
+      justify-content: center;
+      img {
+        height: 287px;
+      }
+    }
+  }
+}
 .contribution {
   position: relative;
   @include text_color_primary();
-  .community {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    letter-spacing: 0.04em;
+  .contribution_content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 320px;
+    .community {
+      font-family: 'Red Hat Display';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: 0.04em;
+    }
+    img {
+      width: 90px;
+      margin-left: 60px;
+    }
   }
   .liscense {
     font-family: 'Red Hat Display';
@@ -582,6 +701,38 @@ ul > li {
     line-height: 16px;
     letter-spacing: 0.03em;
     margin: 70px 0 20px 40px;
+  }
+}
+@media screen and (max-width: 904px) {
+  .contribution {
+    position: relative;
+    @include text_color_primary();
+    .contribution_content {
+      display: flex;
+      flex-direction: column;
+      .community {
+        font-family: 'Red Hat Display';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        letter-spacing: 0.04em;
+      }
+      .flexable {
+        img {
+          width: 90px;
+          margin: 20px 30% 0 0;
+        }
+      }
+    }
+    .liscense {
+      float: left;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      margin: 20px 0 20px 0;
+    }
   }
 }
 // common style
@@ -595,5 +746,29 @@ ul > li {
     font-size: 36px;
     color: #687de6;
     margin-top: 156px;
+    @media screen and (max-width: 904px) {
+      margin-top: 56px;
+    }
+  }
+}
+
+.mobile-application {
+  width: 100%;
+  height: 400px;
+  background: #ccc;
+  .title {
+    font-family: 'Red Hat Text';
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .description {
+    font-family: 'Red Hat Text';
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .com {
+    width: 100%;
   }
 }

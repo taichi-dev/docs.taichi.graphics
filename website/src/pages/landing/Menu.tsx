@@ -9,11 +9,11 @@ import styles from './index.module.scss';
 
 const resourcesMenu = (
   <Menu>
-    <Menu.Item>
+    {/* <Menu.Item>
       <a href="/events">Events</a>
-    </Menu.Item>
+    </Menu.Item> */}
     <Menu.Item>
-      <a href="/tgc01">Curriculum</a>
+      <a href="https://docs.taichi-lang.org/tgc01">Curriculum</a>
     </Menu.Item>
   </Menu>
 );
@@ -29,15 +29,17 @@ const communityMenu = (
         target="_blank"
         href="https://github.com/taichi-dev/taichi/discussions"
       >
-        GitHub Discussions
+        Forum
       </a>
     </Menu.Item>
     <Menu.Item>
-      <a href="/forum">Forum</a>
+      <a target="_blank" href="https://forum.taichi.graphics/">
+        论坛
+      </a>
     </Menu.Item>
-    <Menu.Item>
+    {/* <Menu.Item>
       <a href="/user_stories">User Stories</a>
-    </Menu.Item>
+    </Menu.Item> */}
   </Menu>
 );
 
@@ -76,10 +78,10 @@ class HeadMenu extends React.Component<any, stateProps> {
             </a>
           </li>
           <li className={styles['normal']}>
-            <a href="/docs">Docs</a>
+            <a href="https://docs.taichi-lang.org/docs">Docs</a>
           </li>
           <li className={styles['normal']}>
-            <a href="/blog">Blog</a>
+            <a href="https://docs.taichi-lang.org/blog">Blog</a>
           </li>
           <li className={styles['dropdown']}>
             <Dropdown overlay={resourcesMenu} placement="bottomLeft">

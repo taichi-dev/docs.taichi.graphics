@@ -17,24 +17,48 @@ export const SwiperConfig = [
     // link: 'https://taichi.graphics/',
     src: '/img/landingpage/ETH.svg',
     name: 'Jingwei Tang, research assistant, ETH Zurich',
+    style: {
+      pc: {},
+      mobile: {
+        width: '100px',
+      },
+    },
   },
   {
     text: 'We were required to solve a high-dimensional dynamic programming problem in a financial engineering class but soon found that the amount of work involved in C++ or CUDA programming is intimidating. Luckily, Taichi provides a simple, efficient parallel programming solution, making our project two magnitudes faster. Besides, it’s more readable.',
     // link: 'https://taichi.graphics/',
     src: '/img/landingpage/MIT.svg',
     name: 'Jie Xu, Ph.D. student EECS, MIT',
+    style: {
+      pc: {},
+      mobile: {
+        width: '50px',
+      },
+    },
   },
   {
     text: 'The simplicity of design in Taichi is always the key to great work. With much less code, we achieved surprisingly good visual results and highly sophisticated features. Taichi proves to be a significant boost to my research and development work.',
     // link: 'https://taichi.graphics/',
     src: '/img/landingpage/HK.svg',
     name: 'Hao Xu, Ph.D. student in Computer Engineering, HKUST',
+    style: {
+      pc: {},
+      mobile: {
+        height: '40px',
+      },
+    },
   },
   {
     text: 'The Taichi programming is much easier to grasp than traditional GPU programming solutions. Besides, once a Taichi program is compiled, it can be deployed on iOS, Android, PC, and many more platforms. This feature meets our fast iteration requirements and significantly reduces time to market.',
     // link: 'https://taichi.graphics/',
     src: '/img/landingpage/Kwai.svg',
     name: 'Chongyang Ma, Lead of Y-tech Graphics AI, Kwai',
+    style: {
+      pc: {},
+      mobile: {
+        height: '40px',
+      },
+    },
   },
 ];
 export const SWIPER_IMG = [
@@ -78,5 +102,8 @@ export const communityImg = [
   },
 ];
 
-export const Run_rapidly_img = '/img/landingpage/Run-rapidly.svg';
+export const Run_rapidly_img = {
+  light: '/img/landingpage/Run-rapidly.svg',
+  night: '/img/landingpage/night/Run-rapidly.svg',
+};
 export const Deploy_univerally_img = '/img/landingpage/Depoly_universally.svg';

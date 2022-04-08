@@ -12,12 +12,15 @@ export interface DevelopProps {
   description?: string;
   features?: FeatureProps[];
   theme?: string;
+  platform?: string;
 }
 
 export default function Develop({
   title,
   description,
+  theme,
   features,
+  platform,
 }: DevelopProps) {
   return (
     <div className={styles['description-wrapper']}>
@@ -27,9 +30,12 @@ export default function Develop({
       {features &&
         features.map((feature: any) => (
           <Feature
+            theme={theme}
+            platform={platform}
             position={feature.styles}
             left={feature.leftComponent}
             right={feature.rightComponent}
+            feature={feature}
           />
         ))}
     </div>

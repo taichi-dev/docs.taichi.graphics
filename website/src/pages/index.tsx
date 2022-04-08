@@ -1,22 +1,30 @@
 import React from 'react';
-import Nav from './landing/header';
+import Header from './landing/Header';
 import Banner from './landing/Banner';
-import Content from './landing/taichi';
+import Content from './landing/Taichi';
 
-import MobileHeader from './landing/mobileHeader';
-import MobileBanner from './landing/mobileBanner';
+import MobileHeader from './landing/MobileHeader';
+import MobileBanner from './landing/MobileBanner';
 import 'animate.css';
+import PropTypes from 'prop-types';
 interface StateProps {
   theme: string;
+  platform: string;
 }
+
 export default class LandingPage extends React.Component<any, StateProps> {
   constructor(props: any) {
     super(props);
     this.state = {
       theme: 'light',
+      platform: 'pc',
     };
     this.onChange = this.onChange.bind(this);
+    this.flexable();
   }
+  static childContextTypes = {
+    theme: PropTypes.string,
+  };
   // switch themes
   onChange(val) {
     this.setTheme(val);
@@ -29,39 +37,61 @@ export default class LandingPage extends React.Component<any, StateProps> {
     );
     document.body.style.background = type ? '#000' : '#fff';
   }
+  flexable() {
+    if (
+      document.documentElement.clientWidth < 904 &&
+      this.state.platform === 'pc'
+    ) {
+      this.setState({ platform: 'mobile' });
+    }
+    if (
+      document.documentElement.clientWidth >= 904 &&
+      this.state.platform === 'mobile'
+    ) {
+      this.setState({ platform: 'pc' });
+    }
+  }
+  componentDidMount(): void {
+    window.onresize = (e) => {
+      this.flexable();
+    };
+  }
   render() {
-    const { theme } = this.state;
+    const { theme, platform } = this.state;
     return layoutTemplate(
       theme,
+      platform,
       { onChange: this.onChange },
-      Nav,
+      Header,
       Banner,
       Content,
     );
   }
   //   render() {
-  //     const { theme } = this.state;
+  //     const { theme, platform } = this.state;
   //     return layoutTemplate(
   //       theme,
+  //       platform,
   //       { onChange: this.onChange },
   //       MobileHeader,
   //       MobileBanner,
   //       Content,
   //     );
   //   }
-
-  //   render() {
-  //     const { theme } = this.state;
-  //     return layoutTemplate(theme,{ onChange: this.onChange }, MobileHeader)
-  //   }
 }
 
-function layoutTemplate(theme, callback, ...Component: any) {
+function layoutTemplate(theme, platform, callback, ...Component: any) {
   return (
     <div>
       {Component &&
         Component.map((Item: any) => {
-          return <Item callback={callback.onChange} theme={theme} />;
+          return (
+            <Item
+              callback={callback.onChange}
+              theme={theme}
+              platform={platform}
+            />
+          );
         })}
     </div>
   );

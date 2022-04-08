@@ -5,40 +5,37 @@ import { communityImg } from '../../config';
 import styles from './index.module.scss';
 
 export default function Contribution(props: FeatureSectionProps) {
-  const { theme } = props;
-  const [indexKey, setIndex ] = useState('')
+  const { theme, platform } = props;
+  const [indexKey, setIndex] = useState('');
   const onMouseEnter = (index) => {
     setIndex(index);
-  }
+  };
   const onMouseLeave = () => {
     setIndex('');
-  }
+  };
   return (
     <div className={styles['contribution']}>
       <div className={styles['title']}>Thrive through open-source</div>
       <img
         style={{ marginTop: '50px' }}
-        src="/img/landingpage/User Avtars.svg"
+        src={
+          platform === 'pc'
+            ? '/img/landingpage/User Avtars.svg'
+            : '/img/landingpage/Mobile_community.svg'
+        }
       />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          marginTop: '320px',
-        }}
-      >
+      <div className={styles['contribution_content']}>
         <div className={styles['community']}>Community</div>
-        <div>
+        <div className={styles['flexable']}>
           {communityImg.map((item, index) => (
             <a href={item.url} target="_blank">
               <img
                 onMouseEnter={() => {
-                    onMouseEnter(index)
+                  onMouseEnter(index);
                 }}
                 onMouseLeave={() => {
-                    onMouseLeave();
+                  onMouseLeave();
                 }}
-                style={{ width: '90px', marginLeft: '60px' }}
                 src={generateUrl(item, theme, index, indexKey)}
                 alt=""
               />

@@ -5,13 +5,11 @@ import { NAV_IMG } from '../../config';
 import { generateUrl } from '../../utils';
 import styles from './index.mobile.module.scss';
 
-import { ComponentProps } from './header';
+import { ComponentProps } from './Header';
 
 export default (props: ComponentProps) => {
   const [visible6, setVisible6] = useState(false);
   const { theme } = props;
-  console.log('themeeme', theme);
-  console.log('NAV_IMGNAV_IMG', NAV_IMG);
   return (
     <div className={styles['custom-header']}>
       <div className={styles['logo']}>

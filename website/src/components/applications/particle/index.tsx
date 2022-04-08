@@ -1,10 +1,10 @@
-import React, { useRef, useEffect, useState } from "react";
-import MPM from "./mpm.wasm";
-import MPMJSON from "./mpm_aot.json";
+import React, { useRef, useEffect, useState } from 'react';
+import MPM from './mpm.wasm';
+import MPMJSON from './mpm_aot.json';
 
 enum particleStyleEnum {
-  RECTANGLE = "RECTANGLE",
-  CIRCLE = "CIRCLE",
+  RECTANGLE = 'RECTANGLE',
+  CIRCLE = 'CIRCLE',
 }
 
 export interface WebAssemblyTaichiMPMCanvasProps {
@@ -13,17 +13,19 @@ export interface WebAssemblyTaichiMPMCanvasProps {
   canvasHeight?: number;
   particleStyle?: particleStyleEnum;
   particleRadius?: number;
+  theme?: string;
 }
 
 const { particle_coordinates, letter_begin, n_particles } = MPMJSON;
 
 // to tweak transparency, see https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4, e.g. 3F, or 7F
 export default function WebAssemblyTaichiMPMCanvas({
-  canvasBackgroudColor = "white",
+  canvasBackgroudColor = '#242c34',
   canvasHeight = 400,
   canvasWidth = 760,
   particleStyle = particleStyleEnum.CIRCLE,
   particleRadius = 2.5,
+  theme = 'light',
 }: WebAssemblyTaichiMPMCanvasProps) {
   // create the canvas ref
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -34,7 +36,7 @@ export default function WebAssemblyTaichiMPMCanvas({
     sharedData: Float32Array,
     material: Int32Array,
     mousePosX: number,
-    mousePosY: number
+    mousePosY: number,
   ) => {
     // background
     ctx.fillStyle = canvasBackgroudColor;
@@ -43,17 +45,17 @@ export default function WebAssemblyTaichiMPMCanvas({
     // mouse indicator
     ctx.beginPath();
     ctx.arc(mousePosX, mousePosY, 8, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(102, 204, 255, 0.3)";
+    ctx.fillStyle = 'rgba(102, 204, 255, 0.3)';
     ctx.fill();
 
     // particles
-    let initialColor = "white"; // mainly used for coloring
+    let initialColor = 'white'; // mainly used for coloring
     for (let i = 0; i < n_particles; i++) {
       // determine color of particles
       if (material[i] === 0) {
-        initialColor = "#068587";
+        initialColor = '#677CE5';
       } else {
-        initialColor = "#ED553B";
+        initialColor = '#13B1BF';
       }
 
       // get coordinates
@@ -75,12 +77,12 @@ export default function WebAssemblyTaichiMPMCanvas({
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const context = canvas!.getContext("2d");
+    const context = canvas!.getContext('2d');
     let requestId: number = 0;
 
     const init = async (
       cvs: HTMLCanvasElement,
-      ctx: CanvasRenderingContext2D
+      ctx: CanvasRenderingContext2D,
     ) => {
       // initialize 46 pages, maximum 96 pages for the SharedArrayBuffer
       let memory = new WebAssembly.Memory({
@@ -105,7 +107,7 @@ export default function WebAssemblyTaichiMPMCanvas({
       let floatArgs = new Float32Array(
         memory.buffer,
         context_address + 4 * 2,
-        8
+        8,
       );
 
       // === NOTE: BELOW ARE CUSTOMIZED CODE FOR WASM AOT, THEY DEPEND ON YOUR TAICHI CODE!! ===
@@ -119,7 +121,7 @@ export default function WebAssemblyTaichiMPMCanvas({
       let displayX = new Float32Array(
         memory.buffer,
         root_buffer_address + displayXOffset,
-        2048
+        2048,
       );
 
       // the 3rd Taichi Field original_x
@@ -127,7 +129,7 @@ export default function WebAssemblyTaichiMPMCanvas({
       let originalX = new Float32Array(
         memory.buffer,
         root_buffer_address + originalXOffset,
-        2048
+        2048,
       );
 
       // the 4th Taichi Field letter_begin_field
@@ -135,7 +137,7 @@ export default function WebAssemblyTaichiMPMCanvas({
       let letterBeginF = new Int32Array(
         memory.buffer,
         root_buffer_address + letterBeginOffset,
-        8
+        8,
       );
 
       // the 5th Taichi Field material
@@ -143,7 +145,7 @@ export default function WebAssemblyTaichiMPMCanvas({
       let materialF = new Int32Array(
         memory.buffer,
         root_buffer_address + materialOffset,
-        2048
+        2048,
       );
 
       // the exported Taichi kernels
@@ -175,14 +177,14 @@ export default function WebAssemblyTaichiMPMCanvas({
       let mousePosX = 0;
       let mousePosY = 0;
       // note we cannot call multiple kernels at the same time
-      cvs.addEventListener("mousemove", (e) => {
+      cvs.addEventListener('mousemove', (e) => {
         // get mouse position
         mousePosX = e.offsetX;
         mousePosY = e.offsetY;
       });
 
-      cvs.addEventListener("keydown", (e) => {
-        if (e.code === "KeyR") {
+      cvs.addEventListener('keydown', (e) => {
+        if (e.code === 'KeyR') {
           resetFunc(context_address);
         }
       });
@@ -223,7 +225,7 @@ export default function WebAssemblyTaichiMPMCanvas({
       id="mpm-canvas"
       width={canvasWidth}
       height={canvasHeight}
-      style={{ opacity: 1, background: "#000" }}
+      style={{ opacity: 1, background: '#000' }}
       tabIndex={1} // this is for the keyDown event to take effect after clicking the canvas
     >
       Sorry, your browser does not support HTML5!

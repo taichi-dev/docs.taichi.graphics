@@ -6,13 +6,15 @@ import styles from './index.module.scss';
 interface DeployProps {
   title?: string;
   features: FeatureProps[];
-  theme?: any;
+  theme?: string;
+  platform?: string;
 }
 
 export default function Deploy({
   title,
   features,
   theme,
+  platform,
 }: DeployProps) {
   return (
     <div className={styles['description-wrapper']}>
@@ -25,6 +27,7 @@ export default function Deploy({
         features?.map((feature: any) => (
           <Feature
             theme={theme}
+            platform={platform}
             position={feature.styles}
             left={feature.leftComponent}
             right={feature.rightComponent}

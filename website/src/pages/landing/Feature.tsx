@@ -15,6 +15,8 @@ export interface FeatureProps {
   left?: any;
   right?: any;
   theme?: string;
+  platform?: string;
+  feature?: any;
 }
 
 export default function Feature({
@@ -22,9 +24,62 @@ export default function Feature({
   left,
   right,
   theme,
+  platform,
+  feature,
 }: FeatureProps) {
   const [inView, setInView] = React.useState(false);
   if (left?.type === 'module') {
+    if (platform === 'mobile') {
+      return (
+        <BrowserOnly>
+          {() => (
+            <div className={styles['feature-content']} style={position}>
+              <div style={right.styles}>
+                <InView onChange={setInView} threshold={0.5} triggerOnce>
+                  <Transition
+                    show={inView}
+                    className="animate__animated animate__fadeInRight"
+                  >
+                    <div aria-hidden="true" style={{ position: 'relative' }}>
+                      {right?.description && (
+                        <p className={styles['description']}>
+                          {right.description}
+                        </p>
+                      )}
+                      {right?.child &&
+                        right.child.map((item: any) => (
+                          <div key={item.name} className={styles['item']}>
+                            <dt className={styles['item-icon']}></dt>
+                            <dd
+                              className={styles['item-text']}
+                              style={item.style}
+                            >
+                              {item.description}
+                              {item.link && renderLinkLong(item.link, item.url)}
+                            </dd>
+                          </div>
+                        ))}
+                    </div>
+                  </Transition>
+                </InView>
+              </div>
+              <div style={left.styles}>
+                <InView onChange={setInView} threshold={0.5} triggerOnce>
+                  <Transition
+                    show={inView}
+                    className="animate__animated animate__fadeInLeft"
+                  >
+                    {left.child instanceof Function
+                      ? left?.child({ theme: theme })
+                      : left?.child}
+                  </Transition>
+                </InView>
+              </div>
+            </div>
+          )}
+        </BrowserOnly>
+      );
+    }
     return (
       <BrowserOnly>
         {() => (

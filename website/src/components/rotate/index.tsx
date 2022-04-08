@@ -46,7 +46,7 @@ export const Efficient = (props: any) => {
           height: '38px',
           paddingLeft: '8px',
           color: '#677CE5',
-          letterSpacing: "0.05em"
+          letterSpacing: '0.05em',
         }}
       >
         <SwiperSlide>
@@ -60,5 +60,34 @@ export const Efficient = (props: any) => {
         </SwiperSlide>
       </Swiper>
     </div>
+  );
+};
+
+export const MobileApplication = (items: any, styles: any) => {
+  return (
+    <Swiper
+      spaceBetween={30}
+      centeredSlides={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[Autoplay, Pagination]}
+      className="mySwiper"
+    >
+      {items &&
+        items.map((val) => (
+          <SwiperSlide>
+            <div className={styles['mobile-application']}>
+              <div className={styles['title']}>{val.title}</div>
+              <div className={styles['description']}>{val.description}</div>
+              <div className={styles['com']}>{val.component}</div>
+            </div>
+          </SwiperSlide>
+        ))}
+    </Swiper>
   );
 };

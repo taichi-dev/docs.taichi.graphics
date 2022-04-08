@@ -20,7 +20,9 @@ const ApplicationOptions = [
   {
     description:
       "Thanks to Taichi's AOT (Ahead-of-time) compilation solution, high-performance real-time physical simulations can be readily deployed on PCs or mobile devices.",
-    component: <Particle />,
+    component: (theme?: string) => {
+      return <Particle theme={theme} />;
+    },
   },
   {
     type: 'img',
@@ -139,12 +141,16 @@ export default function Feature({ index, theme }: FeatureProps) {
             show={inView}
             className="animate__animated animate__fadeInRight"
           >
-            <div className={styles['panel']}>{component}</div>
+            <div className={styles['panel']}>
+              {component instanceof Function ? component(theme) : component}
+            </div>
           </Transition>
         </InView>
       </div>
       <div>
-        <div className={styles['title']} style={{marginTop: '130px'}}>User stories</div>
+        <div className={styles['title']} style={{ marginTop: '130px' }}>
+          User stories
+        </div>
         <div className={styles['user-story']}>{UserStory(ITEMS(styles))}</div>
       </div>
     </div>

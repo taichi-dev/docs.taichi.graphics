@@ -5,7 +5,7 @@ import Application from './Applications';
 import Contribution from './Contribution';
 import { generateUrl } from '../../utils';
 import AnimatedTaichiFractal from './AnimatedTaichiFractal';
-import { ComponentProps } from './header';
+import { ComponentProps } from './Header';
 
 import {
   DEPLOY_IMG,
@@ -26,11 +26,36 @@ function genStyle(width, height) {
   }
   return styles;
 }
+interface styleItem {
+  width?: string;
+  height?: string;
+  display?: string;
+  marginRight?: string;
+  marginTop?: string;
+  marginLeft?: string;
+  marginBottom?: string;
+  flex?: number;
+}
+interface styleProps {
+  pc?: styleItem;
+  mobile?: styleItem;
+}
+
+function generateStyles(params: styleProps) {
+  const width = window.screen.width;
+  if (width < 903) {
+    return params?.mobile ? params?.mobile : params;
+  }
+  return params?.pc ? params?.pc : params;
+}
 
 const DevelopOptions = [
   {
+    order: ['leftComponent', 'rightComponent'],
     leftComponent: {
-      styles: genStyle(null, null),
+      styles: {
+        flex: 1,
+      },
       type: 'template',
       description: 'Develop elegantly',
       child: [
@@ -50,7 +75,7 @@ const DevelopOptions = [
         {
           description: 'Develop fancy computer graphics programs in less than ',
           link: '99 lines of code',
-          url: 'https://zhuanlan.zhihu.com/p/97700605',
+          url: 'https://github.com/taichi-dev/taichi/blob/master/python/taichi/examples/simulation/mpm99.py',
         },
       ],
     },
@@ -62,21 +87,49 @@ const DevelopOptions = [
           title="fractal.py"
         />
       ),
-      styles: Object.assign(genStyle('547px', '777px'), { marginRight: '20px' }),
+      styles: generateStyles({
+        pc: {
+          width: '547px',
+          height: '777px',
+          marginRight: '20px',
+        },
+        mobile: { width: '100%', marginTop: '30px', padding: '0 10px' },
+      }),
       type: 'module',
     },
   },
   {
-    styles: {
-      marginTop: '155px',
-    },
+    order: ['rightComponent', 'leftComponent'],
+    styles: generateStyles({
+      pc: {
+        marginTop: '155px',
+      },
+      mobile: { marginTop: '5px' },
+    }),
     leftComponent: {
-      child: <img src={Run_rapidly_img} />,
-      styles: Object.assign(genStyle('698px', '385px'), { marginTop: '60px' }),
+      child: (context, index) => {
+        return (
+          <img src={generateUrl(Run_rapidly_img, context.theme, index, '0')} />
+        );
+      },
+      styles: generateStyles({
+        pc: {
+          width: '698px',
+          height: '385px',
+          marginTop: '60px',
+        },
+        mobile: { width: '100%', marginTop: '60px' },
+      }),
       type: 'module',
     },
     rightComponent: {
-      styles: Object.assign(genStyle(null, null), { marginLeft: '107px' }),
+      styles: generateStyles({
+        pc: {
+          flex: 1,
+          marginLeft: '107px',
+        },
+        mobile: { width: '100%', marginLeft: '' },
+      }),
       type: 'template',
       description: 'Run rapidly',
       child: [
@@ -84,7 +137,7 @@ const DevelopOptions = [
           type: 'solid',
           description: 'Born to ',
           link: 'harness parallelism in GPUs and multi-core CPUs',
-          url: 'https://taichi.graphics/',
+          url: 'https://github.com/taichi-dev/taichi_benchmark',
         },
         {
           type: 'solid',
@@ -108,9 +161,12 @@ const DevelopOptions = [
 const DeployOptions = [
   {
     leftComponent: {
-      styles: {
-        flex: 1,
-      },
+      styles: generateStyles({
+        pc: {
+          flex: 1,
+        },
+        mobile: { width: '100%' },
+      }),
       type: 'template',
       description: 'Deploy universally',
       child: [
@@ -136,43 +192,54 @@ const DeployOptions = [
       child: (
         <div>
           <img
-            style={{
-              width: '273px',
-              height: '230px',
-              display: 'flex',
-              margin: '43px 53px 0 0',
-            }}
+            style={generateStyles({
+              mobile: { marginTop: '40px', width: '80%', marginLeft: '10%' },
+            })}
             src={Deploy_univerally_img}
           />
         </div>
       ),
-      //   styles: genStyle('326px', '273px'),
-      styles: { width: '326px', height: '273px' },
+      styles: generateStyles({
+        pc: {
+          width: '326px',
+          height: '273px',
+        },
+        mobile: { width: '100%' },
+      }),
       type: 'module',
     },
   },
   {
-    styles: {
-      marginTop: '262px',
-    },
+    styles: generateStyles({
+      pc: {
+        marginTop: '262px',
+      },
+      mobile: { marginTop: '40px' },
+    }),
     leftComponent: {
       child: (context, index) => {
         return (
-          <img
-            style={{ width: '632px', height: '312px' }}
-            src={generateUrl(DEPLOY_IMG.earth, context.theme, index, '')}
-          />
+          <img src={generateUrl(DEPLOY_IMG.earth, context.theme, index, '')} />
         );
       },
-      //   styles: genStyle('632px', '312px'),
-      styles: { width: '632px', height: '312px', marginTop: "20px" },
+      styles: generateStyles({
+        pc: {
+          width: '632px',
+          height: '312px',
+          marginTop: '20px',
+        },
+        mobile: { width: '100%' },
+      }),
       type: 'module',
     },
     rightComponent: {
-      //   styles: Object.assign(genStyle(null, null), {
-      //     marginLeft: '125px',
-      //   }),
-      styles: { marginLeft: '125px', flex: 1 },
+      styles: generateStyles({
+        pc: {
+          marginLeft: '125px',
+          flex: 1,
+        },
+        mobile: { width: '100%', marginLeft: '0' },
+      }),
       type: 'template',
       description: 'Openness from heart',
       child: [
@@ -180,17 +247,23 @@ const DeployOptions = [
           type: 'solid',
           description:
             'With ~200 GitHub contributors from around the globe, Taichi thrives through open-source and would continue fostering its community in return.',
-          style: {
-            width: '390px',
-          },
+          style: generateStyles({
+            pc: {
+              width: '390px',
+            },
+            mobile: { width: '100%' },
+          }),
         },
         {
           type: 'solid',
           description:
             'Born from MIT, Taichi has a goal to solve the most head-scratching computer graphics and HPC issues not only for academia but also for industries.',
-          style: {
-            width: '390px',
-          },
+          style: generateStyles({
+            pc: {
+              width: '390px',
+            },
+            mobile: { width: '100%' },
+          }),
         },
       ],
     },
@@ -198,24 +271,30 @@ const DeployOptions = [
 ];
 
 export default function IndexPage(props: ComponentProps) {
-  const { theme } = props;
+  const { theme, platform } = props;
   return (
     <div className={styles['taichi-box']}>
       <div className={styles['taichi']}>
         <div className={styles['taichi-content']}>
           <div className={styles['develop-background-img']}>
-            <Develop title="Why Taichi?" features={DevelopOptions} />
+            <Develop
+              title="Why Taichi?"
+              features={DevelopOptions}
+              theme={theme}
+              platform={platform}
+            />
           </div>
-          <div
-            className={styles['deploy-background-img']}
-            style={{ paddingTop: '168px' }}
-          >
-            <Deploy features={DeployOptions} theme={theme} />
+          <div className={styles['deploy-background-img']}>
+            <Deploy
+              features={DeployOptions}
+              theme={theme}
+              platform={platform}
+            />
           </div>
           <div className={styles['application-background-img']}>
-            <Application theme={theme} />
+            <Application theme={theme} platform={platform} />
           </div>
-          <Contribution theme={theme} />
+          <Contribution theme={theme} platform={platform} />
         </div>
       </div>
       <div className={styles['taichi-images']}></div>

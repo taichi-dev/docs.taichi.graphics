@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Features from './Features';
-import { FeatureSectionProps } from './develop';
 import styles from './index.module.scss';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export default function Application({ theme }: FeatureSectionProps) {
+import { ComponentProps } from './Header';
+
+export default function Application({ theme, platform }: ComponentProps) {
   const [key, setKey] = useState(0);
   const handleClick = (index) => {
     setKey(index);
@@ -12,8 +13,14 @@ export default function Application({ theme }: FeatureSectionProps) {
   return (
     <div className={styles['applications']}>
       <div className={styles['title']}>Applications</div>
-      <div style={{ margin: '80px 0 0 -20px' }}>{Menus(key, handleClick)}</div>
-      <Features index={key} theme={theme} />
+      {platform === 'pc' ? (
+        <div style={{ margin: '80px 0 0 -20px' }}>
+          {Menus(key, handleClick)}
+        </div>
+      ) : (
+        ''
+      )}
+      <Features index={key} theme={theme} platform={platform} />
     </div>
   );
 }
