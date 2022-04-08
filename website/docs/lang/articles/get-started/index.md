@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /docs
+slug: /
 ---
 
 # Getting Started
@@ -25,21 +25,21 @@ import TabItem from '@theme/TabItem';
 There are a few of extra requirements depend on which operating system you are using:
 
 <Tabs
-defaultValue="arch-linux"
-values={[
-{label: 'Arch Linux', value: 'arch-linux'},
-{label: 'Windows', value: 'windows'},
-]}>
+  defaultValue="arch-linux"
+  values={[
+    {label: 'Arch Linux', value: 'arch-linux'},
+    {label: 'Windows', value: 'windows'},
+  ]}>
 
   <TabItem value="arch-linux">
 
-On Arch Linux, you need to install `ncurses5-compat-libs` package from the Arch User Repository: `yaourt -S ncurses5-compat-libs`
+  On Arch Linux, you need to install `ncurses5-compat-libs` package from the Arch User Repository: `yaourt -S ncurses5-compat-libs`
 
   </TabItem>
   <TabItem value="windows">
 
-On Windows, please install [Microsoft Visual C++
-Redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe) if you haven't done so.
+  On Windows, please install [Microsoft Visual C++
+  Redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe) if you haven't done so.
 
   </TabItem>
 </Tabs>
