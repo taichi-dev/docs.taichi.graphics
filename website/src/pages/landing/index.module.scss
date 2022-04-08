@@ -1,0 +1,774 @@
+$light-color-primary: #000;
+$night-color-primary: #fff;
+$active-color-primary: #687de5;
+$documentation: #576192;
+$active-documentation: #677ce5;
+
+@mixin documentation_color_primary() {
+  [data-theme='light'] & {
+    background: $active-documentation !important;
+    color: #fff;
+  }
+  [data-theme='night'] & {
+    background: $documentation !important;
+    color: #000;
+  }
+}
+
+@mixin input_color_primary() {
+  [data-theme='light'] & {
+    background: #fff !important;
+    border: 0.5px solid #cdd2eb;
+    color: #000;
+  }
+  [data-theme='night'] & {
+    background: #000 !important;
+    color: #fff;
+    border: 0.5px solid #576192;
+  }
+}
+@mixin input_btn_color_primary() {
+  [data-theme='light'] & {
+    border: 0.5px solid #cdd2eb;
+    background: #fff url('/img/landingpage/Copy.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+  [data-theme='night'] & {
+    border: 0.5px solid #576192;
+    background: #000 url('/img/landingpage/Copy.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+}
+@mixin input_btn_hover_color_primary() {
+  [data-theme='light'] & {
+    background: #fff url('/img/landingpage/Copy_hover.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+  [data-theme='night'] & {
+    background: #000 url('/img/landingpage/Copy_hover.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+}
+
+@mixin documentation_color_primary_hover() {
+  [data-theme='light'] & {
+    background: $documentation !important;
+    color: #fff;
+  }
+  [data-theme='night'] & {
+    background: $active-documentation !important;
+    color: #000;
+  }
+}
+@mixin text_color_primary() {
+  [data-theme='night'] & {
+    color: $night-color-primary;
+  }
+  [data-theme='light'] & {
+    color: $light-color-primary;
+  }
+}
+
+@mixin text_color_primary_hover() {
+  [data-theme='night'] & {
+    color: $active-color-primary;
+  }
+  [data-theme='light'] & {
+    color: $active-color-primary;
+  }
+}
+
+@mixin background_color_primary() {
+  [data-theme='night'] & {
+    color: $night-color-primary !important;
+  }
+  [data-theme='light'] & {
+    color: $light-color-primary !important;
+  }
+}
+
+@mixin content_layout() {
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+  }
+  @media only screen and (min-width: 904px) and (max-width: 1199px) {
+    width: 100%;
+    padding: 0 20px;
+  }
+  @media screen and (max-width: 904px) {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@mixin theme_icon_color() {
+  [data-theme='night'] & {
+    border-top: 1px solid $night-color-primary;
+    border-right: 1px solid $night-color-primary;
+  }
+  [data-theme='light'] & {
+    border-top: 1px solid $light-color-primary;
+    border-right: 1px solid $light-color-primary;
+  }
+}
+// Header component style
+.custom-header {
+  display: flex;
+  width: 100%;
+  height: 68px;
+  align-items: center;
+  padding: 0 27px;
+  justify-content: space-between;
+  .custom-switch {
+    @include documentation_color_primary();
+  }
+  .logo {
+    width: 200px;
+  }
+}
+// menu component style
+.my-menu {
+  margin-right: 40px;
+  .menu-ul {
+    margin: 0;
+    height: 68px;
+    display: flex;
+    padding-left: 0 !important;
+    justify-content: space-between;
+    li {
+      height: 100%;
+      position: relative;
+      padding: 0 20px;
+      @include text_color_primary();
+      a {
+        box-sizing: content-box;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        @include text_color_primary();
+      }
+    }
+    li:last-child {
+      height: 100%;
+      position: relative;
+      padding: 0 20px;
+      margin-left: 20px;
+      @include text_color_primary();
+      a {
+        box-sizing: content-box;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        @include text_color_primary();
+      }
+    }
+    .custom-dropdown {
+      position: relative;
+      padding: 0 1px;
+      height: 60px;
+      background-color: #000;
+    }
+    .custom-dropdown::after {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 60px;
+      content: '';
+      width: 150px;
+      height: 100px;
+      background-color: #ccc;
+    }
+    .custom-dropdown:hover:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 60px;
+      content: '';
+      width: 150px;
+      height: 100px;
+      background-color: #ccc;
+    }
+    .dropdown:after {
+      content: '' !important;
+      display: inline-block !important;
+      width: 6px !important;
+      height: 6px !important;
+      @include theme_icon_color();
+      transform: rotate(135deg) !important;
+      transition: all 0.5s ease 0s !important;
+      margin-top: 5px;
+      position: absolute;
+      z-index: 999;
+      top: 26px;
+      right: 0;
+      margin-left: 10px;
+    }
+    .dropdown:hover:after {
+      content: '' !important;
+      display: inline-block !important;
+      width: 6px !important;
+      height: 6px !important;
+      border-top: 1px solid #677ce5 !important;
+      border-right: 1px solid #677ce5 !important;
+      transform: rotate(-45deg) !important;
+      transition: all 0.5s ease 0s !important;
+      position: absolute;
+      top: 28px;
+      margin-left: 10px;
+    }
+    li:hover {
+      @include text_color_primary_hover();
+      a {
+        box-sizing: content-box;
+        @include text_color_primary_hover();
+      }
+    }
+    .normal {
+      cursor: pointer;
+      .item {
+        height: 40px;
+        font-weight: 500;
+        font-size: 16px;
+        p {
+          height: 6px;
+          line-height: 1;
+        }
+      }
+    }
+    .active-normal {
+      a,
+      .item {
+        border-left: 2px solid $active-color-primary;
+        padding-left: 10px;
+        color: $active-color-primary;
+      }
+    }
+  }
+}
+
+// Banner component style
+.banner {
+  position: relative;
+  .banner-ribbon {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    top: 300px;
+    z-index: -1;
+    background-image: url('/img/landingpage/lines.png');
+    background-size: cover;
+  }
+  .banner-content {
+    z-index: 20;
+    @include content_layout();
+    margin-top: 38px;
+    .command {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 200px;
+      .input {
+        font-family: 'Red Hat Mono';
+        width: 292px;
+        height: 44px;
+        border-right: none;
+        // background: #fff;
+        @include input_color_primary();
+        float: left;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+      }
+      .btn {
+        width: 50px;
+        height: 44px;
+        border: 0.5px solid #cdd2eb;
+        float: left;
+        cursor: pointer;
+        @include input_btn_color_primary();
+      }
+      .btn:hover {
+        width: 50px;
+        height: 44px;
+        float: left;
+        cursor: pointer;
+        @include input_btn_hover_color_primary();
+      }
+
+      .documentation {
+        display: flex;
+        align-items: center;
+        padding: 0 25px;
+        @include documentation_color_primary();
+        cursor: pointer;
+        margin-left: 10px;
+      }
+      .documentation:hover {
+        @include documentation_color_primary_hover();
+      }
+    }
+  }
+}
+.list-content {
+  @include content_layout();
+  .lists {
+    margin: 112px 0 0 0;
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    @include text_color_primary();
+    span {
+      font-family: 'Red Hat Display';
+      font-size: 60px;
+      color: #677ce5;
+      font-weight: 600;
+      padding: 8px;
+    }
+  }
+  .sub-banner {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    @include text_color_primary();
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+  }
+  .launchs {
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 30px;
+    li > a {
+      @include text_color_primary();
+    }
+    li > a:hover {
+      color: #677ce5;
+    }
+  }
+}
+.ribbon {
+  margin-top: -100px;
+  z-index: -1;
+}
+// Content component style
+.taichi-box {
+  width: 100%;
+  position: relative;
+  .taichi {
+    position: relative;
+    @include content_layout();
+    .taichi-content {
+      z-index: 2;
+      padding-bottom: 80px;
+      .develop-background-img {
+        background-image: url('/img/landingpage/Triangle.svg');
+        background-size: 620px 690px;
+        background-repeat: no-repeat;
+        background-position: 0 350px;
+      }
+      .deploy-background-img {
+        background-image: url('/img/landingpage/Round.svg');
+        background-size: 60%;
+        background-repeat: no-repeat;
+        background-position: 200px -90px;
+        padding-top: '168px';
+        @media screen and (max-width: 904px) {
+          padding-top: '48px';
+        }
+      }
+      .application-background-img {
+        background-image: url('/img/landingpage/Cube.png');
+        background-size: 60%;
+        background-repeat: no-repeat;
+        background-position: 0px 134px;
+      }
+    }
+    .taichi-img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0;
+    }
+  }
+  .taichi-images {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    bottom: 138px;
+    background-image: url('/img/landingpage/lines.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.feature-content {
+  width: 100%;
+  display: flex;
+  .description {
+    font-family: 'Red Hat Display';
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+    @include text_color_primary();
+    margin-top: 80px;
+  }
+  .item {
+    display: flex;
+    .item-icon {
+      width: 6px;
+      height: 6px;
+      left: 153px;
+      top: 1062px;
+      border-radius: 50%;
+      background: #687de6;
+      margin: 25px 0 0 20px;
+    }
+    .item-text {
+      width: 380px;
+      @media screen and (max-width: 904px) {
+        width: 100%;
+      }
+      font-family: 'Red Hat Text';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 16px;
+      @include text_color_primary();
+      margin-left: 12px;
+      word-wrap: break-word;
+      .link-img,
+      .link-imglong {
+        position: relative;
+      }
+      .link-img:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url('/img/landingpage/link.svg') no-repeat;
+        background-size: 20px 20px;
+        position: absolute;
+        right: -20px;
+        top: 3px;
+      }
+      .link-img:hover:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url('/img/landingpage/link_hover.svg') no-repeat;
+        background-size: 20px 20px;
+        position: absolute;
+        right: -20px;
+        top: 3px;
+      }
+      .link-imglong:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url('/img/landingpage/link.svg') no-repeat;
+        background-size: 20px 20px;
+        position: absolute;
+        right: -20px;
+        top: 26px;
+      }
+      .link-imglong:hover:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url('/img/landingpage/link_hover.svg') no-repeat;
+        background-size: 20px 20px;
+        position: absolute;
+        right: -20px;
+        top: 26px;
+      }
+    }
+  }
+}
+.feature-content {
+  @media screen and (max-width: 904px) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.features-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  .description-content {
+    flex: 1;
+    height: 400px;
+    .description {
+      @include text_color_primary();
+      max-width: 332px;
+      font-family: 'Red Hat Text';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 30px;
+    }
+  }
+  .panel {
+    width: 760px;
+    height: 400px;
+    left: 539px;
+    top: 3633px;
+    background: #0f1922;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
+.features-content {
+  @media screen and (max-width: 904px) {
+    width: 100%;
+    // display: flex;
+    flex-direction: column;
+  }
+}
+ul > li {
+  list-style: none;
+}
+
+.user-story {
+  margin-top: 114px;
+  .custom-img {
+    width: 100%;
+    height: 287px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .text-content {
+      width: 700px;
+      height: 150px;
+      position: relative;
+      font-size: 16px;
+      @include text_color_primary();
+      a {
+        margin-left: 10px;
+        color: $active-color-primary;
+      }
+      .logo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        font-weight: 500;
+        font-size: 16px;
+        align-items: center;
+        @include text_color_primary();
+        img {
+          margin-left: 20px;
+        }
+      }
+    }
+    .text-content:before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: url('/img/landingpage/Quotation_left.svg') no-repeat;
+      background-size: 30px 30px;
+      position: absolute;
+      left: -80px;
+      top: -20px;
+    }
+    .text-content:after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      background: url('/img/landingpage/Quotation_left.svg') no-repeat;
+      background-size: 30px 30px;
+      position: absolute;
+      right: -80px;
+      top: -20px;
+    }
+  }
+  .img {
+    width: 100%;
+    height: 287px;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 287px;
+    }
+  }
+}
+@media screen and (max-width: 904px) {
+  .user-story {
+    .custom-img {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .text-content {
+        width: 90%;
+        height: 200px;
+        position: relative;
+        @include text_color_primary();
+        a {
+          margin-left: 10px;
+          color: $active-color-primary;
+        }
+        .logo {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          font-weight: 500;
+          font-size: 14px;
+          align-items: center;
+          @include text_color_primary();
+          span {
+            font-size: 14px;
+          }
+          img {
+            width: 100px;
+            margin-left: 20px;
+          }
+        }
+      }
+      .text-content:before {
+        content: '';
+        width: 50px;
+        height: 50px;
+        background: url('/img/landingpage/Quotation_left.svg') no-repeat;
+        background-size: 20px 20px;
+        position: absolute;
+        left: -20px;
+        top: -10px;
+      }
+      .text-content:after {
+        content: '';
+        width: 50px;
+        height: 50px;
+        background: url('/img/landingpage/Quotation_left.svg') no-repeat;
+        background-size: 20px 20px;
+        position: absolute;
+        right: -20px;
+        top: -10px;
+      }
+    }
+    .img {
+      width: 100%;
+      height: 287px;
+      display: flex;
+      justify-content: center;
+      img {
+        height: 287px;
+      }
+    }
+  }
+}
+.contribution {
+  position: relative;
+  @include text_color_primary();
+  .contribution_content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 320px;
+    .community {
+      font-family: 'Red Hat Display';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: 0.04em;
+    }
+    img {
+      width: 90px;
+      margin-left: 60px;
+    }
+  }
+  .liscense {
+    font-family: 'Red Hat Display';
+    float: right;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    margin: 70px 0 20px 40px;
+  }
+}
+@media screen and (max-width: 904px) {
+  .contribution {
+    position: relative;
+    @include text_color_primary();
+    .contribution_content {
+      display: flex;
+      flex-direction: column;
+      .community {
+        font-family: 'Red Hat Display';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        letter-spacing: 0.04em;
+      }
+      .flexable {
+        img {
+          width: 90px;
+          margin: 20px 30% 0 0;
+        }
+      }
+    }
+    .liscense {
+      float: left;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      margin: 20px 0 20px 0;
+    }
+  }
+}
+// common style
+.description-wrapper,
+.contribution,
+.applications {
+  .title {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    color: #687de6;
+    margin-top: 156px;
+    @media screen and (max-width: 904px) {
+      margin-top: 56px;
+    }
+  }
+}
+
+.mobile-application {
+  width: 100%;
+  height: 400px;
+  background: #ccc;
+  .title {
+    font-family: 'Red Hat Text';
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .description {
+    font-family: 'Red Hat Text';
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .com {
+    width: 100%;
+  }
+}

@@ -1,0 +1,68 @@
+.terminal {
+  width: 519px;
+  height: 785px;
+  padding: 10px;
+  border-radius: 7px;
+  position: relative;
+  background: #111b27;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0 30px 1px rgba(0, 0, 0, 0.15);
+  @media screen and (max-width: 764px) {
+    width: 100%;
+    height: 785px;
+  }
+}
+.terminal::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  width: 12px;
+  height: 12px;
+  background: #f95c5b;
+  border-radius: 100%;
+  box-shadow: 0 0 0 1px #da3d42, 22px 0 0 0 #fabe3b, 22px 0 0 1px #ecb03e,
+    44px 0 0 0 #38cd46, 44px 0 0 1px #2eae32;
+}
+.build-image {
+  position: absolute;
+  width: 308px;
+  height: 169px;
+  border-radius: 7px;
+  overflow: hidden;
+  left: 258px;
+  top: 666px;
+  @media screen and (max-width: 764px) {
+    top: '';
+    left: 10px;
+    bottom: -50px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 903px) {
+  .terminal {
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    border-radius: 7px;
+    position: relative;
+    background: #111b27;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0 30px 1px rgba(0, 0, 0, 0.15);
+    overflow: auto;
+  }
+  .build-image {
+    position: absolute;
+    width: 80%;
+    border-radius: 7px;
+    // overflow: hidden;
+    bottom: -10%;
+    left: 10%;
+    // img {
+    //   width: 100%;
+    //   height: 100%;
+    // }
+  }
+}
