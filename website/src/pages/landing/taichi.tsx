@@ -5,7 +5,7 @@ import Application from './Applications';
 import Contribution from './Contribution';
 import { generateUrl } from '../../utils';
 import AnimatedTaichiFractal from './AnimatedTaichiFractal';
-import { ComponentProps } from './Header';
+import { ComponentProps } from './header';
 
 import {
   DEPLOY_IMG,

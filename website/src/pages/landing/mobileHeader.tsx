@@ -5,7 +5,7 @@ import { NAV_IMG } from '../../config';
 import { generateUrl } from '../../utils';
 import styles from './index.mobile.module.scss';
 
-import { ComponentProps } from './Header';
+import { ComponentProps } from './header';
 
 export default (props: ComponentProps) => {
   const [visible6, setVisible6] = useState(false);

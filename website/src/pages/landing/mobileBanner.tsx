@@ -2,7 +2,7 @@ import React from 'react';
 import { message } from 'antd';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import 'antd/lib/message/style/index.css';
-import { ComponentProps } from './Header';
+import { ComponentProps } from './header';
 import { Efficient } from '../../components/rotate';
 import styles from './index.mobile.module.scss';
 

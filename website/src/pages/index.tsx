@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './landing/Header';
+import Header from './landing/header';
 import Banner from './landing/Banner';
-import Content from './landing/Taichi';
+import Content from './landing/taichi';
 
-import MobileHeader from './landing/MobileHeader';
-import MobileBanner from './landing/MobileBanner';
+import MobileHeader from './landing/mobileHeader';
+import MobileBanner from './landing/mobileBanner';
 import 'animate.css';
 import PropTypes from 'prop-types';
 interface StateProps {

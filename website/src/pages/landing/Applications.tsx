@@ -3,7 +3,7 @@ import Features from './Features';
 import styles from './index.module.scss';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-import { ComponentProps } from './Header';
+import { ComponentProps } from './header';
 
 export default function Application({ theme, platform }: ComponentProps) {
   const [key, setKey] = useState(0);
