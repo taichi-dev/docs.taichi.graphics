@@ -373,13 +373,16 @@ m.save(&#39;/path/to/module&#39;)
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.aot.module.Module.add_kernel">
-<span class="sig-name descname"><span class="pre">add_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">example_ndarrays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.module.Module.add_kernel" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.module.Module.add_kernel" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a taichi kernel to the AOT module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>kernel_fn</strong> (<em>Function</em>) – the function decorated by taichi <cite>kernel</cite>.</p></li>
-<li><p><strong>example_ndarrays</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>ti.ndarray</em><em>]</em>) – a dict where key is arg_id and key is example ndarray input.</p></li>
+<li><p><strong>template_args</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – a dict where key is the template
+parameter name, and value is the instantiating arg. Note that this
+works for both <a class="reference internal" href="../../types/#taichi.types.template" title="taichi.types.template"><code class="xref py py-class docutils literal notranslate"><span class="pre">template</span></code></a> and for
+<cite>:class:`~taichi.types.ndarray</cite>.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – Name to identify this kernel in the module. If not
 provided, uses the built-in <code class="docutils literal notranslate"><span class="pre">__name__</span></code> attribute of <cite>kernel_fn</cite>.</p></li>
 </ul>
