@@ -6,12 +6,12 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export const UserStory = (items: any) => {
+export const UserStory = (items: any, theme?: any) => {
   return (
     <Swiper
       spaceBetween={30}
       centeredSlides={true}
-      navigation={true}
+      navigation={theme === 'pc'}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,
@@ -64,6 +64,7 @@ export const Efficient = (props: any) => {
 };
 
 export const MobileApplication = (items: any, styles: any) => {
+  console.log('itemsitems', items);
   return (
     <Swiper
       spaceBetween={30}
@@ -76,7 +77,7 @@ export const MobileApplication = (items: any, styles: any) => {
         clickable: true,
       }}
       modules={[Autoplay, Pagination]}
-      className="mySwiper"
+      className="myMobileSwiper"
     >
       {items &&
         items.map((val) => (

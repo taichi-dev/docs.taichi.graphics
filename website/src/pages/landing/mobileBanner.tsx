@@ -5,6 +5,7 @@ import 'antd/lib/message/style/index.css';
 import { ComponentProps } from './header';
 import { Efficient } from '../../components/rotate';
 import styles from './index.mobile.module.scss';
+import { StarOutlined, GithubOutlined } from '@ant-design/icons';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 export default class Banner extends React.Component<ComponentProps> {
@@ -14,6 +15,17 @@ export default class Banner extends React.Component<ComponentProps> {
     super(props);
     this.installPython = 'python3 -m pip install taichi';
     this.execPython = 'python3 -m taichi gallery';
+    this.state = {
+      stars: '',
+    };
+  }
+  componentDidMount() {
+    fetch('https://api.github.com/repos/taichi-dev/taichi')
+      .then((response) => response.json())
+      .then((data) => {
+        const stars = (data.stargazers_count / 1000).toFixed(1) + ' k';
+        this.setState({ stars: stars });
+      });
   }
   render() {
     return (
@@ -47,6 +59,25 @@ export default class Banner extends React.Component<ComponentProps> {
             >
               Documentation
             </a>
+            <div
+              style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <a target="_blank" href="https://github.com/taichi-dev/taichi">
+                <GithubOutlined
+                  style={{
+                    fontSize: '20px',
+                    marginRight: '10px',
+                    marginTop: '32px',
+                  }}
+                />
+                <StarOutlined />
+                &nbsp; {this.state.stars}
+              </a>
+            </div>
           </div>
         </div>
       </div>

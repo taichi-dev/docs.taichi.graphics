@@ -97,10 +97,10 @@ $active-documentation: #677ce5;
     margin: auto;
     overflow: hidden;
   }
-  @media only screen and (min-width: 904px) and (max-width: 1199px) {
-    width: 100%;
-    padding: 0 20px;
-  }
+  //   @media only screen and (min-width: 904px) and (max-width: 1199px) {
+  //     width: 100%;
+  //     padding: 0 20px;
+  //   }
   @media screen and (max-width: 904px) {
     width: 100%;
     padding: 0 20px;
@@ -438,7 +438,7 @@ $active-documentation: #677ce5;
       margin: 25px 0 0 20px;
     }
     .item-text {
-      width: 380px;
+      width: 390px;
       @media screen and (max-width: 904px) {
         width: 100%;
       }
@@ -502,6 +502,15 @@ $active-documentation: #677ce5;
   @media screen and (max-width: 904px) {
     width: 100%;
     flex-direction: column;
+    .description {
+      font-family: 'Red Hat Display';
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0.02em;
+      @include text_color_primary();
+      margin-top: 10px;
+    }
   }
 }
 
@@ -509,6 +518,9 @@ $active-documentation: #677ce5;
   display: flex;
   justify-content: space-between;
   margin-top: 100px;
+  @media screen and (max-width: 764px) {
+    margin-top: 20px;
+  }
   .description-content {
     flex: 1;
     height: 400px;
@@ -609,6 +621,7 @@ ul > li {
 }
 @media screen and (max-width: 904px) {
   .user-story {
+    margin-top: 30px;
     .custom-img {
       width: 100%;
       display: flex;
@@ -618,6 +631,7 @@ ul > li {
         width: 90%;
         height: 200px;
         position: relative;
+        padding: 0 30px;
         @include text_color_primary();
         a {
           margin-left: 10px;
@@ -637,6 +651,7 @@ ul > li {
           }
           img {
             width: 100px;
+            max-height: 40px;
             margin-left: 20px;
           }
         }
@@ -676,6 +691,9 @@ ul > li {
 .contribution {
   position: relative;
   @include text_color_primary();
+  img {
+    width: 100%;
+  }
   .contribution_content {
     display: flex;
     justify-content: space-between;
@@ -740,6 +758,7 @@ ul > li {
 .contribution,
 .applications {
   .title {
+    display: inline-block;
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 600;
@@ -747,7 +766,7 @@ ul > li {
     color: #687de6;
     margin-top: 156px;
     @media screen and (max-width: 904px) {
-      margin-top: 56px;
+      margin-top: 90px;
     }
   }
 }
@@ -755,20 +774,39 @@ ul > li {
 .mobile-application {
   width: 100%;
   height: 400px;
-  background: #ccc;
   .title {
     font-family: 'Red Hat Text';
     font-weight: 500;
-    font-size: 16px;
     margin-top: 20px;
+    font-size: 16px;
+    color: #000000;
   }
   .description {
     font-family: 'Red Hat Text';
+    font-style: normal;
     font-weight: 400;
     font-size: 16px;
+    color: #000000;
     margin-top: 20px;
   }
   .com {
     width: 100%;
+    margin-top: 30px;
+    img {
+      width: 100%;
+      min-height: 240px;
+    }
+  }
+}
+.user-story-title {
+  display: inline-block;
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  color: #687de6;
+  margin-top: 130px;
+  @media screen and (max-width: 904px) {
+    margin-top: 90px;
   }
 }

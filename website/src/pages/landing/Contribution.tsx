@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { FeatureSectionProps } from './Develop';
+// import { FeatureSectionProps } from './Develop';
 import { generateUrl } from '../../utils';
 import { communityImg } from '../../config';
 import styles from './index.module.scss';
 
-export default function Contribution(props: FeatureSectionProps) {
+import { ComponentProps } from './header';
+
+export default function Contribution(props: ComponentProps) {
   const { theme, platform } = props;
   const [indexKey, setIndex] = useState('');
   const onMouseEnter = (index) => {

@@ -50,10 +50,7 @@ export default function Feature({
                         right.child.map((item: any) => (
                           <div key={item.name} className={styles['item']}>
                             <dt className={styles['item-icon']}></dt>
-                            <dd
-                              className={styles['item-text']}
-                              style={item.style}
-                            >
+                            <dd className={styles['item-text']}>
                               {item.description}
                               {item.link && renderLinkLong(item.link, item.url)}
                             </dd>
@@ -144,7 +141,7 @@ export default function Feature({
                   <p className={styles['description']}>{left.description}</p>
                 )}
                 {left?.child &&
-                  left.child.map((item: any) => (
+                  left.child.map((item: any, index: number) => (
                     <div key={item.name} className={styles['item']}>
                       <dt className={styles['item-icon']}></dt>
                       <dd className={styles['item-text']} style={item.style}>

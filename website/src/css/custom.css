@@ -7,8 +7,8 @@
 
 /* Generated with https://docusaurus.io/docs/migration/manual#colors */
 /* fallback: d35400 */
-@import './antCover.scss';
-@font-face {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+/* @font-face {
   font-family: 'Red Hat Text';
   src: url('/font/Red_Hat_Text/RedHatText-Italic-VariableFont_wght.ttf')
     format('ttf');
@@ -31,12 +31,12 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 :root {
-  --ifm-font-family-monospace: 'Red Hat Text';
+  /* --ifm-font-family-monospace: 'Red Hat Text';
   --ifm-font-family-monospace: 'Red Hat Display';
-  --ifm-font-family-monospace: 'Red Hat Mono';
+  --ifm-font-family-monospace: 'Red Hat Mono'; */
   --ifm-color-primary: #0891b2;
   --ifm-color-primary-dark: #0782a0;
   --ifm-color-primary-darker: #077b97;
@@ -654,4 +654,7 @@ a {
 
 .ant-dropdown-menu {
   width: 120px !important;
+}
+.swiper {
+  width: 100% !important;
 }

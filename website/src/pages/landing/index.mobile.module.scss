@@ -57,10 +57,10 @@ $active-documentation: #677ce5;
     width: 1200px;
     margin: auto;
   }
-  @media only screen and (min-width: 904px) and (max-width: 1199px) {
-    width: 100%;
-    padding: 0 20px;
-  }
+  //   @media only screen and (min-width: 904px) and (max-width: 1199px) {
+  //     width: 100%;
+  //     padding: 0 20px;
+  //   }
   @media screen and (max-width: 903px) {
     width: 100%;
     padding: 0 20px;
@@ -265,7 +265,7 @@ $active-documentation: #677ce5;
   }
 }
 .list-content {
-  @include content_layout();
+  //   @include content_layout();
   .lists {
     margin-top: 112px;
     font-family: 'Red Hat Display';
@@ -449,6 +449,9 @@ $active-documentation: #677ce5;
   display: flex;
   justify-content: space-between;
   margin-top: 100px;
+  @media screen and (max-width: 764px) {
+    margin-top: 20px;
+  }
   .description-content {
     flex: 1;
     height: 400px;
@@ -588,4 +591,23 @@ ul > li {
   display: inline-block;
   padding: 20px 20px;
   @include text_color_primary();
+}
+.mobile-application {
+  width: 100%;
+  height: 400px;
+  .title {
+    font-family: 'Red Hat Text';
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .description {
+    font-family: 'Red Hat Text';
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .com {
+    width: 100%;
+  }
 }

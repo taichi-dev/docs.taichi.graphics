@@ -17,10 +17,10 @@ export default class LandingPage extends React.Component<any, StateProps> {
     super(props);
     this.state = {
       theme: 'light',
-      platform: 'pc',
+      platform: document.documentElement.clientWidth > 904 ? 'pc' : 'mobile',
     };
     this.onChange = this.onChange.bind(this);
-    // this.flexable();
+    this.flexable();
   }
   static childContextTypes = {
     theme: PropTypes.string,
@@ -56,28 +56,28 @@ export default class LandingPage extends React.Component<any, StateProps> {
       this.flexable();
     };
   }
-  render() {
-    const { theme, platform } = this.state;
-    return layoutTemplate(
-      theme,
-      platform,
-      { onChange: this.onChange },
-      Header,
-      Banner,
-      Content,
-    );
-  }
   //   render() {
   //     const { theme, platform } = this.state;
   //     return layoutTemplate(
   //       theme,
   //       platform,
   //       { onChange: this.onChange },
-  //       MobileHeader,
-  //       MobileBanner,
+  //       Header,
+  //       Banner,
   //       Content,
   //     );
   //   }
+  render() {
+    const { theme, platform } = this.state;
+    return layoutTemplate(
+      theme,
+      platform,
+      { onChange: this.onChange },
+      platform === 'pc' ? Header : MobileHeader,
+      platform === 'pc' ? Banner : MobileBanner,
+      Content,
+    );
+  }
 }
 
 function layoutTemplate(theme, platform, callback, ...Component: any) {
