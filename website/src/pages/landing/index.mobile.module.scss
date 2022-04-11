@@ -4,6 +4,14 @@ $active-color-primary: #687de5;
 $documentation: #576192;
 $active-documentation: #677ce5;
 
+@mixin collapse_background() {
+  [data-theme='light'] & {
+    background: #fff !important;
+  }
+  [data-theme='night'] & {
+    background: #000 !important;
+  }
+}
 @mixin documentation_color_primary() {
   [data-theme='light'] & {
     background: $active-documentation !important;
@@ -51,7 +59,44 @@ $active-documentation: #677ce5;
     color: $light-color-primary !important;
   }
 }
-
+@mixin input_color_primary() {
+  [data-theme='light'] & {
+    background: #fff !important;
+    border: 0.5px solid #cdd2eb;
+    color: #000;
+  }
+  [data-theme='night'] & {
+    background: #000 !important;
+    color: #fff;
+    border: 0.5px solid #576192;
+  }
+}
+@mixin input_btn_color_primary() {
+  [data-theme='light'] & {
+    border: 0.5px solid #cdd2eb;
+    background: #fff url('/img/landingpage/Copy.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+  [data-theme='night'] & {
+    border: 0.5px solid #576192;
+    background: #000 url('/img/landingpage/Copy.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+}
+@mixin input_btn_hover_color_primary() {
+  [data-theme='light'] & {
+    background: #fff url('/img/landingpage/Copy_hover.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+  [data-theme='night'] & {
+    background: #000 url('/img/landingpage/Copy_hover.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: 16px 14px;
+  }
+}
 @mixin content_layout() {
   @media screen and (min-width: 1200px) {
     width: 1200px;
@@ -221,7 +266,7 @@ $active-documentation: #677ce5;
         height: 44px;
         border: 0.5px solid #cdd2eb;
         border-right: none;
-        background: #fff;
+        @include input_color_primary();
         float: left;
         display: flex;
         align-items: center;
@@ -233,9 +278,10 @@ $active-documentation: #677ce5;
         border: 0.5px solid #cdd2eb;
         float: left;
         cursor: pointer;
-        background: #fff url('/img/landingpage/Copy.svg') no-repeat;
-        background-size: 15px 15px;
-        background-position: 14px 14px;
+        // background: #fff url('/img/landingpage/Copy.svg') no-repeat;
+        // background-size: 15px 15px;
+        // background-position: 14px 14px;
+        @include input_btn_color_primary();
       }
       .btn:hover {
         width: 50px;
@@ -244,9 +290,10 @@ $active-documentation: #677ce5;
         background: #fff;
         float: left;
         cursor: pointer;
-        background: #fff url('/img/landingpage/Copy_hover.svg') no-repeat;
-        background-size: 15px 15px;
-        background-position: 14px 14px;
+        // background: #fff url('/img/landingpage/Copy_hover.svg') no-repeat;
+        // background-size: 15px 15px;
+        // background-position: 14px 14px;
+        @include input_btn_hover_color_primary();
       }
 
       .documentation {
@@ -585,12 +632,14 @@ ul > li {
   padding: 40px 20px;
   display: flex;
   justify-content: end;
+  @include text_color_primary();
 }
 .menu-line {
   width: 100%;
   display: inline-block;
   padding: 20px 20px;
   @include text_color_primary();
+  @include collapse_background();
 }
 .mobile-application {
   width: 100%;

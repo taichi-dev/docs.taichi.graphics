@@ -6,19 +6,20 @@ import 'antd/lib/switch/style/index.css';
 import { StarOutlined, GithubOutlined } from '@ant-design/icons';
 import { Menu, Dropdown } from 'antd';
 import styles from './index.module.scss';
+import { debug } from 'webpack';
 
-const resourcesMenu = (
-  <Menu>
+const resourcesMenu = (theme?: string) => (
+  <Menu theme={theme === 'light' ? 'light' : 'dark'}>
     {/* <Menu.Item>
-      <a href="/events">Events</a>
-    </Menu.Item> */}
+  <a href="/events">Events</a>
+</Menu.Item> */}
     <Menu.Item>
       <a href="https://docs.taichi-lang.org/tgc01">Curriculum</a>
     </Menu.Item>
   </Menu>
 );
-const communityMenu = (
-  <Menu>
+const communityMenu = (theme?: string) => (
+  <Menu theme={theme === 'light' ? 'light' : 'dark'}>
     <Menu.Item>
       <a target="_blank" href="https://taichicommunity.slack.com/ssb/redirect">
         Slack
@@ -38,8 +39,8 @@ const communityMenu = (
       </a>
     </Menu.Item>
     {/* <Menu.Item>
-      <a href="/user_stories">User Stories</a>
-    </Menu.Item> */}
+  <a href="/user_stories">User Stories</a>
+</Menu.Item> */}
   </Menu>
 );
 
@@ -65,6 +66,7 @@ class HeadMenu extends React.Component<any, stateProps> {
       });
   }
   render() {
+    const { theme } = this.props;
     return (
       <div className={styles['my-menu']}>
         <ul className={styles['menu-ul']}>
@@ -84,12 +86,12 @@ class HeadMenu extends React.Component<any, stateProps> {
             <a href="https://docs.taichi-lang.org/blog">Blog</a>
           </li>
           <li className={styles['dropdown']}>
-            <Dropdown overlay={resourcesMenu} placement="bottomLeft">
+            <Dropdown overlay={resourcesMenu(theme)} placement="bottomLeft">
               <a href="JavaScript:void(0);">Resources</a>
             </Dropdown>
           </li>
           <li className={styles['dropdown']}>
-            <Dropdown overlay={communityMenu} placement="bottomLeft">
+            <Dropdown overlay={communityMenu(theme)} placement="bottomLeft">
               <a href="JavaScript:void(0);">Community</a>
             </Dropdown>
           </li>

@@ -22,8 +22,8 @@ export default function Contribution(props: ComponentProps) {
         style={{ marginTop: '50px' }}
         src={
           platform === 'pc'
-            ? '/img/landingpage/User Avtars.svg'
-            : '/img/landingpage/Mobile_community.svg'
+            ? '/img/landingpage/Web_avatar-min.png'
+            : '/img/landingpage/Mobile_avatar-min.png'
         }
       />
       <div className={styles['contribution_content']}>

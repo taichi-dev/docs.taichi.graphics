@@ -648,13 +648,17 @@ a {
   }
 }
 
-.my-message {
-  background-color: #ccc;
+.ant-dropdown-menu {
+  min-width: 120px !important;
 }
 
-.ant-dropdown-menu {
-  width: 120px !important;
-}
 .swiper {
   width: 100% !important;
+}
+
+.collapseDark .adm-list-item {
+  background-color: #000;
+}
+.collapseLight .adm-list-item {
+  background-color: #fff;
 }

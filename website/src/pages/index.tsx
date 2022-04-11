@@ -17,7 +17,7 @@ export default class LandingPage extends React.Component<any, StateProps> {
     super(props);
     this.state = {
       theme: 'light',
-      platform: document.documentElement.clientWidth > 904 ? 'pc' : 'mobile',
+      platform: 'pc',
     };
     this.onChange = this.onChange.bind(this);
     this.flexable();
@@ -52,6 +52,9 @@ export default class LandingPage extends React.Component<any, StateProps> {
     }
   }
   componentDidMount(): void {
+    if (document.documentElement.clientWidth < 904) {
+      this.setState({ platform: 'mobile' });
+    }
     window.onresize = (e) => {
       this.flexable();
     };

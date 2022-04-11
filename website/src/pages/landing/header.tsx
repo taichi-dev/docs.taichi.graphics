@@ -55,7 +55,7 @@ class Header extends React.Component<ComponentProps> {
           className={theme === 'light' ? 'lightTheme' : 'nightTheme'}
           style={{ display: 'flex', alignItems: 'center' }}
         >
-          <HeadMenu />
+          <HeadMenu theme={theme} />
           <Switch
             className={styles['custom-switch']}
             style={{ fontSize: '20px' }}
