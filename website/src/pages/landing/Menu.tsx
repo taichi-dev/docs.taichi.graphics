@@ -1,7 +1,4 @@
 import React from 'react';
-import 'antd/lib/dropdown/style/index.css';
-import 'antd/lib/menu/style/index.css';
-import 'antd/lib/switch/style/index.css';
 
 import { StarOutlined, GithubOutlined } from '@ant-design/icons';
 import { Menu, Dropdown } from 'antd';

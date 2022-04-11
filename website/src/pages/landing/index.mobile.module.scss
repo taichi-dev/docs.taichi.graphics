@@ -315,7 +315,7 @@ $active-documentation: #677ce5;
   //   @include content_layout();
   .lists {
     margin-top: 112px;
-    font-family: 'Red Hat Display';
+    font-family: 'Red Hat Display', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -329,7 +329,7 @@ $active-documentation: #677ce5;
   }
   .sub-banner {
     margin-top: 30px;
-    font-family: 'Red Hat Display';
+    font-family: 'Red Hat Display', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -409,7 +409,7 @@ $active-documentation: #677ce5;
   width: 100%;
   display: flex;
   .description {
-    font-family: 'Red Hat Display';
+    font-family: 'Red Hat Display', sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
@@ -430,7 +430,7 @@ $active-documentation: #677ce5;
     }
     .item-text {
       width: 380px;
-      font-family: 'Red Hat Text';
+      font-family: 'Red Hat Text', sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
@@ -505,7 +505,7 @@ $active-documentation: #677ce5;
     .description {
       @include text_color_primary();
       max-width: 332px;
-      font-family: 'Red Hat Text';
+      font-family: 'Red Hat Text', sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
@@ -594,14 +594,14 @@ ul > li {
   position: relative;
   @include text_color_primary();
   .community {
-    font-family: 'Red Hat Display';
+    font-family: 'Red Hat Display', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     letter-spacing: 0.04em;
   }
   .liscense {
-    font-family: 'Red Hat Display';
+    font-family: 'Red Hat Display', sans-serif;
     float: right;
     font-style: normal;
     font-weight: 500;
@@ -616,7 +616,7 @@ ul > li {
 .contribution,
 .applications {
   .title {
-    font-family: 'Red Hat Display';
+    font-family: 'Red Hat Display', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
@@ -645,13 +645,13 @@ ul > li {
   width: 100%;
   height: 400px;
   .title {
-    font-family: 'Red Hat Text';
+    font-family: 'Red Hat Text', sans-serif;
     font-weight: 500;
     font-size: 16px;
     margin-top: 20px;
   }
   .description {
-    font-family: 'Red Hat Text';
+    font-family: 'Red Hat Text', sans-serif;
     font-weight: 400;
     font-size: 16px;
     margin-top: 20px;
