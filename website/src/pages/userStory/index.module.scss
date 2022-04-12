@@ -1,0 +1,81 @@
+// $light-color-primary: #000;
+// $night-color-primary: #fff;
+// $active-color-primary: #687de5;
+// $documentation: #576192;
+// $active-documentation: #677ce5;
+
+.placeImg {
+  width: 100%;
+  z-index: 1px;
+  margin-bottom: -5px;
+}
+
+.placeBox {
+  width: 100%;
+  /* position: relative; */
+  z-index: 1;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.placeText {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 50px;
+  text-align: center;
+  z-index: 3;
+  letter-spacing: 0.05em;
+  color: #ffffff !important;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: left;
+  padding: 26px 46px 46px 62px;
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 50px 0;
+  z-index: 10;
+}
+.para {
+  width: 920px;
+  min-height: 65px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.paraPart{
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: flex-start;
+}
+.title {
+  height: 24px;
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 24px;
+  /* identical to box height, or 67% */
+  letter-spacing: 0.05em;
+  color: #677ce5;
+  margin-bottom: 35px;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
