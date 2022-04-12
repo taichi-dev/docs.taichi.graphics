@@ -22,9 +22,10 @@ function Article() {
       'Run the same parallel programming projects from different computing platforms.',
     ],
     'Why Taichi': [
-      'Seamlessly embedded in Python: Easier to learn, more intuitive, and much faster than CUDA.',
+      'Seamlessly embedded in Python: Easier to learn, more intuitive, and as fast as CUDA.',
       "Taichi's GGUI system makes 3D rendering a breeze.",
       "A single-source framework: Automatically falls back to CPUs if your system doesn't have CUDA or a powerful GPU.",
+      "An active community and a wide range of reference code make it easy to get started."
     ],
     Results: [
       '90% of the projects chose Taichi, and all were completed with flying colors.',
@@ -63,7 +64,7 @@ function Article() {
       <div className={styles.content}>
         <div className={styles.para}>
           <div className={styles.paraPart}>
-            <div>
+            <div  style={{lineHeight:'25px'}} >
               In Fall 2021, the Computer Graphics Laboratory (CGL) at ETH Zurich
               offered a course on physically based simulation, which requires
               students to create a small game or a demo scene using techniques
