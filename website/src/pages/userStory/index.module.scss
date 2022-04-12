@@ -5,9 +5,9 @@
 // $active-documentation: #677ce5;
 
 .placeImg {
-  width: 100%;
+  // width: 100%;
   z-index: 1px;
-  margin-bottom: -5px;
+  // margin-bottom: -5px;
 }
 
 .placeBox {
@@ -36,7 +36,8 @@
   padding: 26px 46px 46px 62px;
   display:flex;
   flex-direction: row;
-  align-items:center;
+  align-items:flex-end;
+  justify-content: space-between;
 
 }
 .content {
@@ -44,7 +45,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin: 60px 0;
+  margin: 75px 0;
   z-index: 10;
 }
 .para {

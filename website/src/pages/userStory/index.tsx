@@ -4,9 +4,10 @@ import Dot from './img/Vector.png';
 import ManyLine from './img/Line.png';
 import styles from './index.module.scss';
 import ETH from './img/ETH.png';
+import Sand from './img/sand.mp4';
 
 function Article() {
-  const manyLineStyle:object = {
+  const manyLineStyle: object = {
     marginBottom: '-1074px',
     opacity: '0.2',
     zIndex: '1',
@@ -25,7 +26,7 @@ function Article() {
       'Seamlessly embedded in Python: Easier to learn, more intuitive, and as fast as CUDA.',
       "Taichi's GGUI system makes 3D rendering a breeze.",
       "A single-source framework: Automatically falls back to CPUs if your system doesn't have CUDA or a powerful GPU.",
-      "An active community and a wide range of reference code make it easy to get started."
+      'An active community and a wide range of reference code make it easy to get started.',
     ],
     Results: [
       '90% of the projects chose Taichi, and all were completed with flying colors.',
@@ -49,32 +50,24 @@ function Article() {
           />
         </div>
         <div className={styles.placeText}>
-          <div>
-            Taichi, a perfect programming framework for computer graphics
-            courses
-          </div>
-          <img
-            src={ETH}
-            className={styles.placeImg}
-            style={{ width: '20%', marginLeft: '10px' }}
-          />
+          <div>Taichi, a perfect programming framework for computer graphics courses</div>
+          <img src={ETH} className={styles.placeImg} style={{ width: '190px', marginLeft: '10px' }} />
         </div>
       </div>
       <div style={{ height: '50px' }}></div>
       <div className={styles.content}>
         <div className={styles.para}>
           <div className={styles.paraPart}>
-            <div  style={{lineHeight:'25px'}} >
-              In Fall 2021, the Computer Graphics Laboratory (CGL) at ETH Zurich
-              offered a course on physically based simulation, which requires
-              students to create a small game or a demo scene using techniques
-              they learned in class.
+            <div style={{ lineHeight: '25px' ,fontWeight:500}}>
+              In Fall 2021, the Computer Graphics Laboratory (CGL) at ETH Zurich offered a course on
+              physically based simulation, which requires students to create a small game or a demo
+              scene using techniques they learned in class.
             </div>
           </div>
-          <div className={styles.paraPart} style={{ marginTop: '15px' }}>
+          <div className={styles.paraPart} style={{ marginTop: '15px',fontWeight:500 }}>
             <div>
-              The vast majority of the student groups chose the Taichi
-              programming language for real-time physical simulation.
+              The vast majority of the student groups chose the Taichi programming language for
+              real-time physical simulation.
             </div>
           </div>
         </div>
@@ -95,15 +88,16 @@ function Article() {
               })}
               {item === 'Results' ? (
                 <div style={{ marginTop: '20px' }}>
-                  <iframe
-                    width="560"
-                    height="315"
+                  <video src={Sand} width="900" height="421" controls></video>
+                  {/* <iframe
+                    width="908"
+                    height="421"
                     src="https://www.youtube.com/embed/_Uaf5wF9wjo"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
-                  ></iframe>
+                  ></iframe> */}
                 </div>
               ) : (
                 ''
