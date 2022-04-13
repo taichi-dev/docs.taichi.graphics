@@ -168,6 +168,11 @@ reference: https://gist.github.com/uditalias/3969a20ef759bf3a8757499429b30063
 }
 
 .prism-code .token-line::marker {
+  color: var(--ifm-color-gray-400);
+  content: counter(line-number);
+}
+
+html[data-theme='dark'] .prism-code .token-line::marker {
   color: var(--ifm-color-gray-800);
   content: counter(line-number);
 }
