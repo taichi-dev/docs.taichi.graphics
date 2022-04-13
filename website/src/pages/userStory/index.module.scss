@@ -9,6 +9,17 @@
   z-index: 1px;
   // margin-bottom: -5px;
 }
+.placeImgBg  {
+  // width: 100%;
+  z-index: 1px;
+  // margin-bottom: -5px;
+  background-image: url(./img/image-palace.png);
+  height: 443px;
+  // width: 100%;
+  background-repeat:no-repeat;
+  background-position:center;
+  margin-bottom: -205px;
+}
 
 .placeBox {
   width: 100%;
@@ -19,7 +30,15 @@
   flex-direction: column;
   margin-bottom: 50px;
 }
-
+.manyLines{
+  background-image: url(./img/Line.png);
+  margin-bottom: -1074px;
+    opacity: 0.2;
+    z-index: 1;
+    user-select: none;
+    height: 1074px;
+    background-position:center;
+}
 .placeText {
   font-family: 'Red Hat Text';
   font-style: normal;
@@ -41,6 +60,15 @@
   justify-content: space-between;
 
 }
+.contentBox{
+  display: flex;
+  flex-direction: column;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+// .contentBox{
+  
+// }
 .content {
   display: flex;
   flex-direction: column;
@@ -50,7 +78,7 @@
   z-index: 10;
 }
 .para {
-  width: 920px;
+  width: 100%;
   min-height: 65px;
   font-style: normal;
   font-weight: 400;
@@ -63,6 +91,12 @@
   align-items:center;
   justify-content: flex-start;
 }
+// .desContent{
+//   background: url(./img/Line.png);
+//   opacity: '0.2';
+//   background-size:100% auto;
+//   background-repeat: no-repeat;
+// }
 .title {
   height: 24px;
   font-family: 'Red Hat Display';
@@ -80,4 +114,76 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.dotImg{
+  margin-right: 5px;
+}
+.ethBox{
+display: flex;
+}
+@media screen and (max-width: 768px) {
+  .placeImgBg  {
+    // width: 100%;
+    // z-index: 1px;
+    // margin-bottom: -5px;
+    background-image: url(./img/image-md.png);
+    height: 492px;
+    margin-bottom: -492px;
+    background-size: cover;
+  }
+  .placeText{
+    height: 490px;
+  }
+  .manyLines{
+    
+    background-image: white;
+    margin-bottom: 0px;
+    opacity: 0.2;
+    z-index: 1;
+    user-select: none;
+    height: 0px;
+    background-position:center;
+  }
+  .placeText{
+    padding: 51px 20px 15px 20px;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: space-between;
+  }
+  .ethBox{
+    display:flex;
+    flex-direction: row;
+    align-items:flex-start;
+    justify-content: end;
+    width: 100%;
+  }
+  .contentBox{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: -10px 0 60px 0;
+    z-index: 10;
+  }
+  .title{
+    height: auto;
+    line-height: 40px;
+  }
+  .dotImg{
+    margin-top: 0.8rem;
+    margin-left: 15px;
+  }
+  .paraPart{
+    align-items: flex-start;
+  }
+  .placeImg{
+    width: 130px;
+  }
 }
