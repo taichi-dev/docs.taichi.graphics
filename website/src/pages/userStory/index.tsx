@@ -5,6 +5,7 @@ import ManyLine from './img/Line.png';
 import styles from './index.module.scss';
 import ETH from './img/ETH.png';
 import Sand from './img/sand.mp4';
+import './tailwind.css'
 
 function Article() {
   const manyLineStyle: object = {
@@ -65,7 +66,7 @@ function Article() {
             </div>
           </div>
           <div className={styles.paraPart} style={{ marginTop: '15px',fontWeight:500 }}>
-            <div>
+            <div className=' md:bg-red-200'>
               The vast majority of the student groups chose the Taichi programming language for
               real-time physical simulation.
             </div>
@@ -75,13 +76,15 @@ function Article() {
       <img src={ManyLine} draggable="false" style={manyLineStyle} />
       {Object.keys(contantObj).map((item, index) => {
         return (
-          <div className={styles.content}>
+          <div className={styles.content}  key = {`${item}${index}`}>
             <div className={styles.title}>{item}</div>
             <div className={styles.para}>
-              {contantObj[item].map((item, index) => {
+              {contantObj[item].map((item, index,array) => {
                 return (
-                  <div className={styles.paraPart}>
-                    <img src={Dot} alt="" style={{ marginRight: '5px' }} />
+                  <div className={styles.paraPart} key = {`${item}${index}`}>
+                    {
+                      array.length === 1? "" : <img src={Dot} alt="" style={{ marginRight: '5px' }} />
+                    }
                     <div>{item}</div>
                   </div>
                 );
