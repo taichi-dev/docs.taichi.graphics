@@ -63,7 +63,6 @@ function Article() {
             <img
               src={ETH}
               className={styles.placeImg}
-              style={{ width: '190px', marginLeft: '10px' }}
             />
           </div>
         </div>
@@ -79,7 +78,7 @@ function Article() {
               </div>
             </div>
             <div className={styles.paraPart} style={{ marginTop: '15px', fontWeight: 500 }}>
-              <div className=" md:bg-red-200">
+              <div >
                 The vast majority of the student groups chose the Taichi programming language for
                 real-time physical simulation.
               </div>
