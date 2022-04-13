@@ -256,6 +256,11 @@
    grad_replaced
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ad.no_grad">
+   no_grad
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -337,6 +342,37 @@ by <a class="reference internal" href="#taichi.ad.grad_for" title="taichi.ad.gra
 &gt;&gt;&gt; @ti.grad_for(foo)
 &gt;&gt;&gt; def foo_grad(a):
 &gt;&gt;&gt;     multiply_grad(a)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.ad.no_grad">
+<span class="sig-prename descclassname"><span class="pre">taichi.ad.</span></span><span class="sig-name descname"><span class="pre">no_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.no_grad" title="Permalink to this definition">#</a></dt>
+<dd><p>A decorator for python function to skip gradient calculation within Taichi’s
+autodiff system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.
+This decorator forces Taichi’s autodiff system to use an empty gradient function
+for the decorated function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – The python function to be decorated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The decorated function.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Callable</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def multiply(a: ti.float32):
+&gt;&gt;&gt;     for I in ti.grouped(x):
+&gt;&gt;&gt;         y[I] = x[I] * a
+&gt;&gt;&gt;
+&gt;&gt;&gt; @ti.no_grad
+&gt;&gt;&gt; def foo(a):
+&gt;&gt;&gt;     multiply(a)
 </pre></div>
 </div>
 </dd></dl>
