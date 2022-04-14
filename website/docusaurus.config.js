@@ -1,10 +1,10 @@
-const path = require("path");
+const path = require('path');
 
-const version = require('./apiversion.json')
+const version = require('./apiversion.json');
 
-const variablePlugin = require('./plugins/remark-plugins/variables')
-const fragmentPlugin = require('./plugins/remark-plugins/fragments')
-const variables = require('./variables')
+const variablePlugin = require('./plugins/remark-plugins/variables');
+const fragmentPlugin = require('./plugins/remark-plugins/fragments');
+const variables = require('./variables');
 
 // For i18n
 const DefaultLocale = 'en';
@@ -15,7 +15,7 @@ const mapLocaleCodeToCrowdin = (locale) => {
     default:
       return locale;
   }
-}
+};
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -60,7 +60,7 @@ module.exports = {
     prism: {
       defaultLanguage: 'python',
       theme: require('prism-react-renderer/themes/github'),
-      darkTheme: require('prism-react-renderer/themes/palenight')
+      darkTheme: require('prism-react-renderer/themes/palenight'),
     },
     hotjar: {
       siteId: '2765142',
@@ -71,9 +71,9 @@ module.exports = {
       // style: 'dark',
       logo: {
         alt: 'Taichi Graphics',
-        src: 'img/black_words.svg',
-        srcDark: 'img/white_words.svg',
-        href: 'https://taichi.graphics',
+        src: 'img/black_logo.png',
+        srcDark: 'img/white_logo.png',
+        href: 'https://www.taichi-lang.org/',
       },
       items: [
         {
@@ -98,11 +98,11 @@ module.exports = {
         {
           label: 'Training',
           position: 'right',
-          items:[
+          items: [
             {
               to: '/tgc01',
-              label: 'Taichi Graphics Course 01'
-            }
+              label: 'Taichi Graphics Course 01',
+            },
           ],
         },
         {
@@ -224,7 +224,7 @@ module.exports = {
       switchConfig: {
         darkIcon: '🌙',
         lightIcon: '☀️',
-      }
+      },
     },
   },
   themes: [path.join(__dirname, './plugins/docusaurus-theme-extends/src')],
@@ -236,9 +236,11 @@ module.exports = {
           // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
           routeBasePath: '/',
           path: '.flatdocs',
-          editUrl: ({locale, versionDocsDirPath, docPath}) => {
+          editUrl: ({ locale, versionDocsDirPath, docPath }) => {
             if (locale !== DefaultLocale) {
-              return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(locale)}`;
+              return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(
+                locale
+              )}`;
             }
             // here we enforce contributors to not be able to edit versioned docs
             // also redirect them to the main repository
@@ -255,7 +257,14 @@ module.exports = {
           },
           remarkPlugins: [
             [variablePlugin, { data: variables, fail: false }],
-            [fragmentPlugin, { prefix: 'fragments', fail: false, baseUrl: __dirname + '/fragments' }]
+            [
+              fragmentPlugin,
+              {
+                prefix: 'fragments',
+                fail: false,
+                baseUrl: __dirname + '/fragments',
+              },
+            ],
           ],
         },
         blog: {
