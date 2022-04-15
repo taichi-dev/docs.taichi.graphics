@@ -248,13 +248,53 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cconj">
+   cconj
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cdiv">
+   cdiv
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cexp">
+   cexp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cinv">
+   cinv
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.math.clamp">
    clamp
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.clog">
+   clog
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cmul">
+   cmul
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cpow">
+   cpow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.math.cross">
    cross
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.csqrt">
+   csqrt
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -363,6 +403,112 @@
 <p>Taichi math module.</p>
 <p>The math module supports glsl-style vectors, matrices and functions.</p>
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.cconj">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">cconj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.cconj" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the complex conjugate of a 2d vector.</p>
+<p>If <cite>z=(x, y)</cite> then the conjugate of <cite>z</cite> is <cite>(x, -y)</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The complex conjugate of <cite>z</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.cdiv">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">cdiv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.cdiv" title="Permalink to this definition">#</a></dt>
+<dd><p>Performs complex division between two 2d vectors.</p>
+<p>This is equivalent to the division in the complex number field
+when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z1</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The first input.</p></li>
+<li><p><strong>z2</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The second input.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     z1 = ti.math.vec2(1, 1)
+&gt;&gt;&gt;     z2 = ti.math.vec2(0, 1)
+&gt;&gt;&gt;     ti.math.cdiv(z1, z2)  # [1, -1]
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the complex division of <cite>z1 / z2</cite>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.cexp">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">cexp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.cexp" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the complex exponential <span class="math notranslate nohighlight">\(e^z\)</span>.</p>
+<p><cite>z</cite> is a 2d vector treated as a complex number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The base.</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – The exponent.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     z = ti.math.vec2(1, 1)
+&gt;&gt;&gt;     w = ti.math.cexp(z)  # [1.468694, 2.287355]
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The power <span class="math notranslate nohighlight">\(z^a\)</span></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.cinv">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">cinv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.cinv" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes the reciprocal of a complex <cite>z</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The input.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     z = ti.math.vec2(1, 1)
+&gt;&gt;&gt;     w = ti.math.cinv(z)  # [0.5, -0.5]
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The reciprocal of <cite>z</cite>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.math.clamp">
 <span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">clamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.clamp" title="Permalink to this definition">#</a></dt>
 <dd><p>Constrain a value to lie between two further values, element-wise.
@@ -397,6 +543,96 @@ the upper end of the range into which to constrain <cite>x</cite>.</p></li>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.clog">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">clog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.clog" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the complex logarithm of <cite>z</cite>, so that if <span class="math notranslate nohighlight">\(e^w = z\)</span>,
+then <span class="math notranslate nohighlight">\(log(z) = w\)</span>.</p>
+<p><cite>z</cite> is a 2d vector treated as a complex number. The argument of <span class="math notranslate nohighlight">\(w\)</span>
+lies in the range (-pi, pi].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The input.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     z = ti.math.vec2(1, 1)
+&gt;&gt;&gt;     w = ti.math.clog(z)  # [0.346574, 0.785398]
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The logarithm of <cite>z</cite>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.cmul">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">cmul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.cmul" title="Permalink to this definition">#</a></dt>
+<dd><p>Performs complex multiplication between two 2d vectors.</p>
+<p>This is equivalent to the multiplication in the complex number field
+when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z1</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The first input.</p></li>
+<li><p><strong>z2</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The second input.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     z1 = ti.math.vec2(1, 1)
+&gt;&gt;&gt;     z2 = ti.math.vec2(0, 1)
+&gt;&gt;&gt;     ti.math.cmul(z1, z2)  # [-1, 1]
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the complex multiplication <cite>z1 * z2</cite>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.cpow">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">cpow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.cpow" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes the power of a complex <cite>z</cite>: <span class="math notranslate nohighlight">\(z^a\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The base.</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – The exponent.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     z = ti.math.vec2(1, 1)
+&gt;&gt;&gt;     w = ti.math.cpow(z)  # [-2, 2]
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The power <span class="math notranslate nohighlight">\(z^a\)</span>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.math.cross">
 <span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.cross" title="Permalink to this definition">#</a></dt>
 <dd><p>Calculate the cross product of two vectors.</p>
@@ -420,6 +656,36 @@ the upper end of the range into which to constrain <cite>x</cite>.</p></li>
 [0., 0., 1.]
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.csqrt">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">csqrt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.csqrt" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the complex square root of a 2d vector <cite>z</cite>, so that
+if <cite>w^2=z</cite>, then <cite>w = csqrt(z)</cite>.</p>
+<p>Among the two square roots of <cite>z</cite>, if their real parts are non-zero,
+the one with positive real part is returned. If both their real parts
+are zero, the one with non-negative imaginary part is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The input.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     z = ti.math.vec2(-1, 0)
+&gt;&gt;&gt;     w = ti.math.csqrt(z)  # [0, 1]
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The complex square root.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
