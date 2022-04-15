@@ -37,6 +37,7 @@
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
+    <meta name="docsearch:category" content="API Reference">
     
 
     <!-- Google Analytics -->
@@ -73,81 +74,49 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi
-   </span>
-  </code>
+  taichi: The main taichi module
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="current reference internal nav-link" href="#">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.ad
-   </span>
-  </code>
+  taichi.ad: Taichi Autodiff system
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../aot/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.aot
-   </span>
-  </code>
+  taichi.aot: Taichi AOT system
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../linalg/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.linalg
-   </span>
-  </code>
+  taichi.linalg: Taichi Linear algebra library
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../profiler/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.profiler
-   </span>
-  </code>
+  taichi.profiler: Taichi profiler tools
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../tools/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.tools
-   </span>
-  </code>
+  taichi.tools: Miscellaneous tools shipped with Taichi
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../types/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.types
-   </span>
-  </code>
+  taichi.types: Taichi types
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../ui/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.ui
-   </span>
-  </code>
+  taichi.ui: Taichi UI components (GUI and GGUI)
  </a>
 </li>
 
@@ -201,11 +170,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v0.9.2</a>
+            <a class="dropdown-item" href="/api/">v1.0.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v0.8.11/">v0.8.11</a>
+            <a class="dropdown-item" href="/api/v0.9.2/">v0.9.2</a>
             
           
         </div>
@@ -219,74 +188,42 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi
-    </span>
-   </code>
+   taichi: The main taichi module
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.ad
-    </span>
-   </code>
+   taichi.ad: Taichi Autodiff system
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../aot/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.aot
-    </span>
-   </code>
+   taichi.aot: Taichi AOT system
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.linalg
-    </span>
-   </code>
+   taichi.linalg: Taichi Linear algebra library
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../profiler/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.profiler
-    </span>
-   </code>
+   taichi.profiler: Taichi profiler tools
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tools/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.tools
-    </span>
-   </code>
+   taichi.tools: Miscellaneous tools shipped with Taichi
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../types/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.types
-    </span>
-   </code>
+   taichi.types: Taichi types
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../ui/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.ui
-    </span>
-   </code>
+   taichi.ui: Taichi UI components (GUI and GGUI)
   </a>
  </li>
 </ul>
@@ -319,6 +256,11 @@
    grad_replaced
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ad.no_grad">
+   no_grad
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -342,11 +284,14 @@
                 
   <section id="module-taichi.ad">
 <span id="taichi-ad"></span><h1><a class="reference internal" href="#module-taichi.ad" title="taichi.ad"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ad</span></code></a><a class="headerlink" href="#module-taichi.ad" title="Permalink to this headline">#</a></h1>
+<p>Taichi automatic differentiation module.</p>
+<p>This module supplies two decorators for users to customize their
+gradient computation task.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ad.grad_for">
 <span class="sig-prename descclassname"><span class="pre">taichi.ad.</span></span><span class="sig-name descname"><span class="pre">grad_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">primal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.grad_for" title="Permalink to this definition">#</a></dt>
-<dd><p>Generates a decorator to decorate <cite>primal</cite>’s customized gradient function.
-See <code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code> for examples.</p>
+<dd><p>Generates a decorator to decorate <cite>primal</cite>’s customized gradient function.</p>
+<p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code> for examples.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>primal</strong> (<em>Callable</em>) – The primal function, must be decorated by <a class="reference internal" href="#taichi.ad.grad_replaced" title="taichi.ad.grad_replaced"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code></a>.</p>
@@ -364,8 +309,8 @@ See <code class="xref py py-func docutils literal notranslate"><span class="pre"
 <dt class="sig sig-object py" id="taichi.ad.grad_replaced">
 <span class="sig-prename descclassname"><span class="pre">taichi.ad.</span></span><span class="sig-name descname"><span class="pre">grad_replaced</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.grad_replaced" title="Permalink to this definition">#</a></dt>
 <dd><p>A decorator for python function to customize gradient with Taichi’s autodiff
-system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.
-This decorator forces Taichi’s autodiff system to use a user-defined gradient
+system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.</p>
+<p>This decorator forces Taichi’s autodiff system to use a user-defined gradient
 function for the decorated function. Its customized gradient must be decorated
 by <a class="reference internal" href="#taichi.ad.grad_for" title="taichi.ad.grad_for"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_for()</span></code></a>.</p>
 <dl class="field-list simple">
@@ -401,6 +346,37 @@ by <a class="reference internal" href="#taichi.ad.grad_for" title="taichi.ad.gra
 </div>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.ad.no_grad">
+<span class="sig-prename descclassname"><span class="pre">taichi.ad.</span></span><span class="sig-name descname"><span class="pre">no_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.no_grad" title="Permalink to this definition">#</a></dt>
+<dd><p>A decorator for python function to skip gradient calculation within Taichi’s
+autodiff system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.
+This decorator forces Taichi’s autodiff system to use an empty gradient function
+for the decorated function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – The python function to be decorated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The decorated function.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Callable</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def multiply(a: ti.float32):
+&gt;&gt;&gt;     for I in ti.grouped(x):
+&gt;&gt;&gt;         y[I] = x[I] * a
+&gt;&gt;&gt;
+&gt;&gt;&gt; @ti.no_grad
+&gt;&gt;&gt; def foo(a):
+&gt;&gt;&gt;     multiply(a)
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
 
 
@@ -429,7 +405,7 @@ by <a class="reference internal" href="#taichi.ad.grad_for" title="taichi.ad.gra
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     
