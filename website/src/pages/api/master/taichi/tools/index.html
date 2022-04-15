@@ -37,6 +37,7 @@
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
+    <meta name="docsearch:category" content="API Reference">
     
 
     <!-- Google Analytics -->
@@ -73,81 +74,49 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi
-   </span>
-  </code>
+  taichi: The main taichi module
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../ad/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.ad
-   </span>
-  </code>
+  taichi.ad: Taichi Autodiff system
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../aot/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.aot
-   </span>
-  </code>
+  taichi.aot: Taichi AOT system
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../linalg/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.linalg
-   </span>
-  </code>
+  taichi.linalg: Taichi Linear algebra library
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../profiler/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.profiler
-   </span>
-  </code>
+  taichi.profiler: Taichi profiler tools
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="current reference internal nav-link" href="#">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.tools
-   </span>
-  </code>
+  taichi.tools: Miscellaneous tools shipped with Taichi
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../types/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.types
-   </span>
-  </code>
+  taichi.types: Taichi types
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../ui/">
-  <code class="xref py py-mod docutils literal notranslate">
-   <span class="pre">
-    taichi.ui
-   </span>
-  </code>
+  taichi.ui: Taichi UI components (GUI and GGUI)
  </a>
 </li>
 
@@ -201,11 +170,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v0.9.2</a>
+            <a class="dropdown-item" href="/api/">v1.0.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v0.8.11/">v0.8.11</a>
+            <a class="dropdown-item" href="/api/v0.9.2/">v0.9.2</a>
             
           
         </div>
@@ -219,74 +188,42 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi
-    </span>
-   </code>
+   taichi: The main taichi module
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../ad/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.ad
-    </span>
-   </code>
+   taichi.ad: Taichi Autodiff system
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../aot/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.aot
-    </span>
-   </code>
+   taichi.aot: Taichi AOT system
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.linalg
-    </span>
-   </code>
+   taichi.linalg: Taichi Linear algebra library
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../profiler/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.profiler
-    </span>
-   </code>
+   taichi.profiler: Taichi profiler tools
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.tools
-    </span>
-   </code>
+   taichi.tools: Miscellaneous tools shipped with Taichi
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../types/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.types
-    </span>
-   </code>
+   taichi.types: Taichi types
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../ui/">
-   <code class="xref py py-mod docutils literal notranslate">
-    <span class="pre">
-     taichi.ui
-    </span>
-   </code>
+   taichi.ui: Taichi UI components (GUI and GGUI)
   </a>
  </li>
 </ul>
@@ -486,10 +423,27 @@
                 
   <section id="module-taichi.tools">
 <span id="taichi-tools"></span><h1><a class="reference internal" href="#module-taichi.tools" title="taichi.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.tools</span></code></a><a class="headerlink" href="#module-taichi.tools" title="Permalink to this headline">#</a></h1>
+<p>Taichi utility module.</p>
+<ul class="simple">
+<li><p><cite>image</cite> submodule for image io.</p></li>
+<li><p><cite>video</cite> submodule for exporting results to video files.</p></li>
+<li><p><cite>diagnose</cite> submodule for printing system environment information.</p></li>
+</ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.tools.</span></span><span class="sig-name descname"><span class="pre">PLYWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_faces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">face_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tri'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'created</span> <span class="pre">by</span> <span class="pre">PLYWriter'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><p>Writes <cite>numpy.array</cite> data to <cite>ply</cite> files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_vertices</strong> (<em>int</em>) – number of vertices.</p></li>
+<li><p><strong>num_faces</strong> (<em>int</em><em>, </em><em>optional</em>) – number of faces.</p></li>
+<li><p><strong>face_type</strong> (<em>str</em>) – <cite>tri</cite> or <cite>quad</cite>.</p></li>
+<li><p><strong>comment</strong> (<em>str</em>) – comment message.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_face_channel">
 <span class="sig-name descname"><span class="pre">add_face_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_face_channel" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -512,7 +466,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_alpha">
 <span class="sig-name descname"><span class="pre">add_vertex_alpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_alpha" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the alpha-channel (transparent) of the vertex colors.</p>
+<dd><p>Sets the alpha-channel (transparent) of the vertex colors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<cite>numpy.array(float)</cite>) – the alpha-channel (transparent) of the colors.</p>
@@ -528,7 +482,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_color">
 <span class="sig-name descname"><span class="pre">add_vertex_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_color" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the (r, g, b) channels of the colors at the vertices.</p>
+<dd><p>Sets the (r, g, b) channels of the colors at the vertices.</p>
 <p>The three arguments are all numpy arrays of float type and have
 the same length.</p>
 <dl class="field-list simple">
@@ -545,7 +499,7 @@ the same length.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_id">
 <span class="sig-name descname"><span class="pre">add_vertex_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_id" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the ids of the vertices.</p>
+<dd><p>Sets the ids of the vertices.</p>
 <p>The id of a vertex is equal to its index in the vertex array.</p>
 </dd></dl>
 
@@ -589,7 +543,7 @@ the same length.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_rgba">
 <span class="sig-name descname"><span class="pre">add_vertex_rgba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_rgba" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the (r, g, b, a) channels of the colors at the vertices.</p>
+<dd><p>Sets the (r, g, b, a) channels of the colors at the vertices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -770,7 +724,7 @@ For an interactive Ipython environment, the image will be shown in the notebook.
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>img</strong> (<em>Union</em><em>[</em><em>ti.field</em><em>, </em><em>np.ndarray</em><em>]</em>) – A field of shape <cite>(height, width)</cite> or <cite>(height, width, 3)</cite> or <cite>(height, width, 4)</cite>,             if dtype is float-type (<cite>ti.f16</cite>, <cite>ti.f32</cite>, <cite>np.float32</cite> etc), <strong>the value of each pixel should be float between [0.0, 1.0]</strong>. Otherwise <cite>ti.imwrite</cite> will first clip them into [0.0, 1.0]                if dtype is int-type (<cite>ti.u8</cite>, <cite>ti.u16</cite>, <cite>np.uint8</cite> etc), , <strong>the value of each pixel can be any valid integer in its own bounds</strong>. These integers in this field will be scaled to [0, 255] by being divided over the upper bound of its basic type accordingly.</p></li>
+<li><p><strong>img</strong> (<em>Union</em><em>[</em><em>ti.field</em><em>, </em><em>np.ndarray</em><em>]</em>) – A field of shape <cite>(height, width)</cite> or <cite>(height, width, 3)</cite> or <cite>(height, width, 4)</cite>,             if dtype is float-type (<cite>ti.f16</cite>, <cite>ti.f32</cite>, <cite>np.float32</cite> etc), <strong>the value of each pixel should be float between [0.0, 1.0]</strong>. Otherwise <cite>ti.tools.imwrite</cite> will first clip them into [0.0, 1.0]                if dtype is int-type (<cite>ti.u8</cite>, <cite>ti.u16</cite>, <cite>np.uint8</cite> etc), , <strong>the value of each pixel can be any valid integer in its own bounds</strong>. These integers in this field will be scaled to [0, 255] by being divided over the upper bound of its basic type accordingly.</p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – The filename to save to.</p></li>
 </ul>
 </dd>
@@ -805,7 +759,7 @@ For an interactive Ipython environment, the image will be shown in the notebook.
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     
