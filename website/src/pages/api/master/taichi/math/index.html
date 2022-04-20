@@ -313,6 +313,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.eye">
+   eye
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.math.fract">
    fract
   </a>
@@ -365,6 +370,26 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.math.refract">
    refract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rot2">
+   rot2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rot3">
+   rot3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rotate2d">
+   rotate2d
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rotate3d">
+   rotate3d
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -763,6 +788,13 @@ are zero, the one with non-negative imaginary part is returned.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.eye">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">eye</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.eye" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the nxn identiy matrix.</p>
+<p>Alias for <a class="reference internal" href="../#taichi.Matrix.identity" title="taichi.Matrix.identity"><code class="xref py py-func docutils literal notranslate"><span class="pre">identity()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.math.fract">
 <span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">fract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.fract" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the fractional part of the argument, element-wise.
@@ -992,6 +1024,127 @@ function returns the reflection direction calculated as
 [2., -1., 2]
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.rot2">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">rot2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ang</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.rot2" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the matrix representation of a 2d counter-clockwise rotation,
+given the angle of rotation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ang</strong> (<em>float</em>) – Angle of rotation in radians.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2x2 rotation matrix.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.math.mat2" title="taichi.math.mat2"><code class="xref py py-class docutils literal notranslate"><span class="pre">mat2</span></code></a></p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from taichi.math import *
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     M = rot2(radians(30))
+[[0.866025, -0.500000], [0.500000, 0.866025]]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.rot3">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">rot3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.rot3" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the matrix representation of a 3d rotation,
+given the axis and angle of rotation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axis</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec3</span></code>) – Axis of rotation.</p></li>
+<li><p><strong>ang</strong> (<em>float</em>) – Angle of rotation in radians.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>3x3 rotation matrix.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.math.mat3" title="taichi.math.mat3"><code class="xref py py-class docutils literal notranslate"><span class="pre">mat3</span></code></a></p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from taichi.math import *
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     M = rot3(vec3(1, 1, 1), radians(30))
+[[0.732051, -0.366025, 0.633975],
+ [0.633975, 0.732051, -0.366025],
+ [-0.366025, 0.633975, 0.732051]]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.rotate2d">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">rotate2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.rotate2d" title="Permalink to this definition">#</a></dt>
+<dd><p>Rotates a 2d vector by a given angle in counter-clockwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The 2d vector to rotate.</p></li>
+<li><p><strong>ang</strong> (<em>float</em>) – Angle of rotation, in radians.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The vector after rotation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from taichi.math import *
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     v = vec2(1, 0)
+&gt;&gt;&gt;     print(rotate2d(v, radians(30)))
+[0.866025, 0.500000]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.rotate3d">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">rotate3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.rotate3d" title="Permalink to this definition">#</a></dt>
+<dd><p>Rotates a vector in 3d space, given an axis and angle of rotation.</p>
+<p>The vector <cite>axis</cite> should be a unit vector.</p>
+<p>See “<a class="reference external" href="https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula">https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula</a>”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec3</span></code>) – The 3d vector to rotate.</p></li>
+<li><p><strong>axis</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec3</span></code>) – Axis of rotation.</p></li>
+<li><p><strong>ang</strong> (<em>float</em>) – Angle of rotation, in radians.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from taichi.math import *
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     v = vec3(1, 0, 0)
+&gt;&gt;&gt;     axis = normalize(vec3(1, 1, 1))
+&gt;&gt;&gt;     print(rotate3d(v, axis, radians(30)))
+[0.910684, 0.333333, -0.244017]
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The vector after rotation.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec3</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
