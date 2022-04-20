@@ -9,7 +9,7 @@ tags: [AOT, shader, Ahead-of-time, Ndarray, shape, Just-in-time, JIT]
 
 Physical simulation, which Taichi Lang is best at, has wide applications on mobile devices, such as real-time physically-based interactions in mobile games or cool visual effects in short videos. This is thanks to Taichi's features such as fast prototyping and cross-platform GPU acceleration.
 
-However, Taichi is currently a language embedded in the Python frontend. Python is not the most ideal language when it comes to deployment, because Python's heavy virtual machine design often makes it hard to embed Python in other host languages. Therefore, how to have Taichi's users enjoy both the rapid iteration of Python and seamless deployment in real industrial scenarios is what the Taichi team has been thinking about all the time.
+However, Taichi is currently a language embedded in the Python frontend. Python is not the most ideal language when it comes to deployment, because Python's heavy virtual machine design often makes it hard to embed Python in other host languages. Therefore, we've been constantly thinking about how to have Taichi's users enjoy both the rapid iteration of Python and seamless deployment in real industrial scenarios.
 
 <!--truncate-->
 
