@@ -303,6 +303,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.mathimpl.mod">
+   mod
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.math.mathimpl.normalize">
    normalize
   </a>
@@ -594,6 +599,30 @@ the weight to use to interpolate between x and y.</p></li>
 &gt;&gt;&gt; a = 0.5
 &gt;&gt;&gt; ti.mix(x, y, a)
 [[2.0, 3.5], [3.0, 4.0]]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.mathimpl.mod">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.mathimpl.</span></span><span class="sig-name descname"><span class="pre">mod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.mathimpl.mod" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute value of one parameter modulo another, element-wise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>) – The first input.</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>) – The second input.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the value of <cite>x</cite> modulo <cite>y</cite>. This is computed as <cite>x - y * floor(x/y)</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.Vector([-0.5, 0.5, 1.])
+&gt;&gt;&gt; y = 1.0
+&gt;&gt;&gt; mod(x, y)
+[0.5, 0.5, 0.0]
 </pre></div>
 </div>
 </dd></dl>

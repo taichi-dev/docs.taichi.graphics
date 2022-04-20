@@ -4091,15 +4091,32 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.Mesh">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">Mesh</span></span><a class="headerlink" href="#taichi.Mesh" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><p>The Mesh type class.</p>
+<p>ti.Mesh offers first-class support for triangular/tetrahedral meshes
+and allows efficient computation on these irregular data structures,
+only available for backends supporting <cite>ti.extension.mesh</cite>.</p>
+<p>Related to <a class="reference external" href="https://github.com/taichi-dev/taichi/issues/3608">https://github.com/taichi-dev/taichi/issues/3608</a></p>
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.Mesh.Tet">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Mesh.Tet" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Create a tetrahedron mesh (a set of vert/edge/face/cell elements, attributes, and connectivity) builder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An instance of mesh builder.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Mesh.Tri">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tri</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Mesh.Tri" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Create a triangle mesh (a set of vert/edge/face elements, attributes, and connectivity) builder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An instance of mesh builder.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Mesh.generate_meta">
@@ -5060,13 +5077,23 @@ statement ended.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.TetMesh">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">TetMesh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.TetMesh" title="Permalink to this definition">#</a></dt>
-<dd><p>Create a tetrahedron mesh builder.</p>
+<dd><p>Create a tetrahedron mesh (a set of vert/edge/face/cell elements, attributes, and connectivity) builder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An instance of mesh builder.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.TriMesh">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">TriMesh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.TriMesh" title="Permalink to this definition">#</a></dt>
-<dd><p>Create a triangle mesh builder.</p>
+<dd><p>Create a triangle mesh (a set of vert/edge/face elements, attributes, and connectivity) builder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An instance of mesh builder.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -6472,12 +6499,42 @@ must have the same shape, and scalars will be broadcasted to the same shape as t
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.mesh_local">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">mesh_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.mesh_local" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Hints the compiler to cache the mesh attributes
+and to enable the mesh BLS optimization,
+only available for backends supporting <cite>ti.extension.mesh</cite> and to use with mesh-for loop.</p>
+<p>Related to <a class="reference external" href="https://github.com/taichi-dev/taichi/issues/3608">https://github.com/taichi-dev/taichi/issues/3608</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>*args</strong> (<em>List</em><em>[</em><em>Attribute</em><em>]</em>) – A list of mesh attributes or fields accessed as attributes.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># instantiate model
+mesh_builder = ti.Mesh.tri()
+mesh_builder.verts.place({
+    &#39;x&#39; : ti.f32,
+    &#39;y&#39; : ti.f32
+})
+model = mesh_builder.build(meta)
+
+@ti.kernel
+def foo():
+    # hint the compiler to cache mesh vertex attribute `x` and `y`.
+    ti.mesh_local(model.verts.x, model.verts.y)
+    for v0 in model.verts: # mesh-for loop
+        for v1 in v0.verts:
+            v0.x += v1.y
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.mesh_patch_idx">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">mesh_patch_idx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.mesh_patch_idx" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the internal mesh patch id of this running thread,
+only available for backends supporting <cite>ti.extension.mesh</cite> and to use within mesh-for loop.</p>
+<p>Related to <a class="reference external" href="https://github.com/taichi-dev/taichi/issues/3608">https://github.com/taichi-dev/taichi/issues/3608</a></p>
+</dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.metal">
