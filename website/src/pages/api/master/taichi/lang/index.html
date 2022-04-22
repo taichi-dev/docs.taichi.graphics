@@ -608,6 +608,43 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor">
+     RelationVisitor
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.generic_visit">
+       generic_visit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit">
+       visit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Assign">
+       visit_Assign
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Attribute">
+       visit_Attribute
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Constant">
+       visit_Constant
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_For">
+       visit_For
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.Mesh.Tet">
      Tet
     </a>
@@ -625,6 +662,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.Mesh.load_meta">
      load_meta
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Mesh.update_relation">
+     update_relation
     </a>
    </li>
   </ul>
@@ -2758,6 +2800,57 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 and allows efficient computation on these irregular data structures,
 only available for backends supporting <cite>ti.extension.mesh</cite>.</p>
 <p>Related to <a class="reference external" href="https://github.com/taichi-dev/taichi/issues/3608">https://github.com/taichi-dev/taichi/issues/3608</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.Mesh.RelationVisitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RelationVisitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Mesh.RelationVisitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">ast.NodeVisitor</span></code></p>
+<p>A node visitor base class that walks the abstract syntax tree and calls a
+visitor function for every node found.  This function may return a value
+which is forwarded by the <cite>visit</cite> method.</p>
+<p>This class is meant to be subclassed, with the subclass adding visitor
+methods.</p>
+<p>Per default the visitor functions for the nodes are <code class="docutils literal notranslate"><span class="pre">'visit_'</span></code> +
+class name of the node.  So a <cite>TryFinally</cite> node visit function would
+be <cite>visit_TryFinally</cite>.  This behavior can be changed by overriding
+the <cite>visit</cite> method.  If no visitor function exists for a node
+(return value <cite>None</cite>) the <cite>generic_visit</cite> visitor is used instead.</p>
+<p>Don’t use the <cite>NodeVisitor</cite> if you want to apply changes to nodes during
+traversing.  For this a special visitor exists (<cite>NodeTransformer</cite>) that
+allows modifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Mesh.RelationVisitor.generic_visit">
+<span class="sig-name descname"><span class="pre">generic_visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Mesh.RelationVisitor.generic_visit" title="Permalink to this definition">#</a></dt>
+<dd><p>Called if no explicit visitor function exists for a node.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Mesh.RelationVisitor.visit">
+<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Mesh.RelationVisitor.visit" title="Permalink to this definition">#</a></dt>
+<dd><p>Visit a node.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Mesh.RelationVisitor.visit_Assign">
+<span class="sig-name descname"><span class="pre">visit_Assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Mesh.RelationVisitor.visit_Assign" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Mesh.RelationVisitor.visit_Attribute">
+<span class="sig-name descname"><span class="pre">visit_Attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Mesh.RelationVisitor.visit_Attribute" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Mesh.RelationVisitor.visit_Constant">
+<span class="sig-name descname"><span class="pre">visit_Constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Mesh.RelationVisitor.visit_Constant" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Mesh.RelationVisitor.visit_For">
+<span class="sig-name descname"><span class="pre">visit_For</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Mesh.RelationVisitor.visit_For" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Mesh.Tet">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Mesh.Tet" title="Permalink to this definition">#</a></dt>
@@ -2788,6 +2881,11 @@ only available for backends supporting <cite>ti.extension.mesh</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Mesh.load_meta">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_meta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Mesh.load_meta" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Mesh.update_relation">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Mesh.update_relation" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
