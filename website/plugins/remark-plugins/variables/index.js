@@ -10,14 +10,15 @@ function locator (opening) {
 }
 
 module.exports = function variable(options) {
-  const { data, name, fence, quiet, fail, onError } = utils.withDefaultOption(options)
+  const { data: datafunc, name, fence, quiet, fail, onError } = utils.withDefaultOption(options)
   const { inlineTokenizers, inlineMethods } = this.Parser.prototype
-  inlineTokenizers[name] = tokenizer(name, data, fence, quiet, fail, onError)
+  inlineTokenizers[name] = tokenizer(name, datafunc, fence, quiet, fail, onError)
   inlineMethods.splice(inlineMethods.indexOf('url'), 0, name)
   inlineTokenizers[name].locator = locator(fence[0])
-  function visitor(node) {
+  function visitor(node, vfile) {
     const reg = utils.getFenceRegex(fence)
     if (node.url) {
+      const data = datafunc(vfile.path, vfile.cwd)
       node.url = node.url.replace(reg, function(match, escapeValue){
         if (escapeValue && escapeValue.startsWith('var.')) {
           escapeValue = escapeValue.substring(4)

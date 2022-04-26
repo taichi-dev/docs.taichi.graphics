@@ -28,28 +28,26 @@ jobs:
           repository: taichi-dev/docs.taichi.graphics
           path: target
 
-      - name: Sync and stage changes
-        run: |
-          # faithfully copy source docs to target
-          # remove extra files to make them identical
-          # also print the logs in human readable format
-          rsync -avh --delete source/docs/lang/ target/website/docs/lang
-          rsync -avh --delete source/docs/variable.json target/website/variables/variable.json
-          rsync -avh --delete source/docs/fragments/ target/website/fragments
+      - name: Install Dependences
+        run: sudo apt-get install -y jq
 
-      - name: Set API Gen Env
+      - name: Set Env
         run: |
           echo "DOCSTRING_GEN_PATH=${GITHUB_WORKSPACE}/docsgen" >> $GITHUB_ENV
           echo "TAICHI_PATH=${GITHUB_WORKSPACE}/source/python/taichi" >> $GITHUB_ENV
+          echo "TAICHI_MAIN=${GITHUB_WORKSPACE}/source" >> $GITHUB_ENV
           echo "TAICHI_WEBSITE=${GITHUB_WORKSPACE}/target" >> $GITHUB_ENV
-
-      - name: Generate New API Docs AND Sync To Docs Website
-        run: |
           export DOCSTRING_GEN_PATH=${{ env.DOCSTRING_GEN_PATH }}
           export TAICHI_PATH=${{ env.TAICHI_PATH }}
           export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
+          export TAICHI_MAIN=${{ env.TAICHI_MAIN }}
+
+      - name: Sync and stage changes
+        run: cd $TAICHI_WEBSITE/website && ./sync_docs.sh
+
+      - name: Generate New API Docs AND Sync To Docs Website
+        run: |
           $DOCSTRING_GEN_PATH/multi_version_build.sh
-          cd $TAICHI_WEBSITE/website && yarn install && yarn run apiversion
 
       - name: Create a Pull Request
         id: create-pr

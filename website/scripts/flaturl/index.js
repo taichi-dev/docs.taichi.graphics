@@ -2,9 +2,18 @@ const docutils = require('./doc')
 const tabutils = require('./tab')
 
 const myArgs = process.argv.slice(2);
-let baseurl = './.flatdocs'
+let frombase = './docs'
+let tobase = './docs'
+let baseurl = '/lang/articles'
 if (myArgs.length >= 1) {
-  baseurl = myArgs[0]
+  frombase = myArgs[0]
+}
+if (myArgs.length >= 2) {
+  tobase = myArgs[1]
+}
+
+if (myArgs.length >= 3) {
+  baseurl = myArgs[2]
 }
 
 async function flatUrl(frombase, tobase, baseurl) {
@@ -15,6 +24,6 @@ async function flatUrl(frombase, tobase, baseurl) {
   }
 }
 
-flatUrl(baseurl, baseurl, '/lang/articles').then(() => {
-  tabutils.findTabAndReplace(baseurl)
+flatUrl(frombase, tobase, baseurl).then(() => {
+  tabutils.findTabAndReplace(frombase)
 })

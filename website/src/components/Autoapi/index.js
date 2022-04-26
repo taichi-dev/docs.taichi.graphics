@@ -120,11 +120,15 @@ const AutoApiContainer = ({ content }) => {
   return <div style={{ width: '100%', paddingLeft: 15, paddingRight: 15 }} dangerouslySetInnerHTML={{ __html: content }}></div>
 }
 
-export default ({ __content }) => {
+export default ({ __content, __version }) => {
   return (
     <Layout
       wrapperClassName={ThemeClassNames.wrapper.docsPages}
-      pageClassName={ThemeClassNames.page.docsDocPage}>
+      pageClassName={ThemeClassNames.page.docsDocPage}
+      searchMetadata={{
+        version: __version,
+        tag: `docs-default-${__version}`,
+      }}>
       <div className='autoapi-container markdown'>
         <BackToTopButton />
         <AutoApiContainer content={__content} />
