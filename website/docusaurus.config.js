@@ -47,17 +47,6 @@ module.exports = {
         current: 'master',
       },
     ],
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            from: ['/'],
-            to: '/docs/',
-          },
-        ],
-      }
-    ]
   ],
   i18n: {
     defaultLocale: DefaultLocale,
