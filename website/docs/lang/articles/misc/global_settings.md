@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
+slug: /lang/articles/global_settings
 ---
-
 # Global settings
 
 ## Backends

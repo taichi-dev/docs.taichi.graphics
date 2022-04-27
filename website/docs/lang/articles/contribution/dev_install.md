@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
+slug: /lang/articles/dev_install
 ---
-
 # Developer installation
 
 ## Target audience

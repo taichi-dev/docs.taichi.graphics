@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
+slug: /lang/articles/doc_writing
 ---
-
 # Documentation writing guide
 
 This section briefly introduces syntax that will help you write documentation on this website. Note that the documentation is written in an extended version of [Markdown](https://daringfireball.net/projects/markdown/syntax), so most of the time you don't need special syntax besides the basic Markdown syntax.
