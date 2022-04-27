@@ -50,7 +50,9 @@ jobs:
           export TAICHI_MAIN=${{ env.TAICHI_MAIN }}
 
       - name: Sync and stage changes
-        run: cd $TAICHI_WEBSITE/website && ./sync_docs.sh
+        run: |
+          cd $TAICHI_PATH && git fetch --tags
+          cd $TAICHI_WEBSITE/website && ./sync_docs.sh
 
       - name: Generate New API Docs AND Sync To Docs Website
         run: |
