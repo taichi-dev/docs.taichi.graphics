@@ -34,6 +34,9 @@ jobs:
           echo "TAICHI_PATH=${GITHUB_WORKSPACE}/source/python/taichi" >> $GITHUB_ENV
           echo "TAICHI_MAIN=${GITHUB_WORKSPACE}/source" >> $GITHUB_ENV
           echo "TAICHI_WEBSITE=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
+
+      - name: Export Env
+        run: |
           export TAICHI_PATH=${{ env.TAICHI_PATH }}
           export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
           export TAICHI_MAIN=${{ env.TAICHI_MAIN }}

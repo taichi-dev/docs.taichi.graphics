@@ -42,6 +42,13 @@ jobs:
           export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
           export TAICHI_MAIN=${{ env.TAICHI_MAIN }}
 
+      - name: Export Env
+        run: |
+          export DOCSTRING_GEN_PATH=${{ env.DOCSTRING_GEN_PATH }}
+          export TAICHI_PATH=${{ env.TAICHI_PATH }}
+          export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
+          export TAICHI_MAIN=${{ env.TAICHI_MAIN }}
+
       - name: Sync and stage changes
         run: cd $TAICHI_WEBSITE/website && ./sync_docs.sh
 
