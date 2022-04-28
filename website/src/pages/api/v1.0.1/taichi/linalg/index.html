@@ -281,38 +281,6 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.linalg.SparseSolver">
-   SparseSolver
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.linalg.SparseSolver.analyze_pattern">
-     analyze_pattern
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.linalg.SparseSolver.compute">
-     compute
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.linalg.SparseSolver.factorize">
-     factorize
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.linalg.SparseSolver.info">
-     info
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.linalg.SparseSolver.solve">
-     solve
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.linalg.sparse_matrix_builder">
    sparse_matrix_builder
   </a>
@@ -398,84 +366,6 @@
 <dt class="sig sig-object py" id="taichi.linalg.SparseMatrixBuilder.print_triplets">
 <span class="sig-name descname"><span class="pre">print_triplets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseMatrixBuilder.print_triplets" title="Permalink to this definition">#</a></dt>
 <dd><p>Print the triplets stored in the builder</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="taichi.linalg.SparseSolver">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">SparseSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">f32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'LLT'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AMD'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseSolver" title="Permalink to this definition">#</a></dt>
-<dd><p>Sparse linear system solver</p>
-<p>Use this class to solve linear systems represented by sparse matrices.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>solver_type</strong> (<em>str</em>) – The factorization type.</p></li>
-<li><p><strong>ordering</strong> (<em>str</em>) – The method for matrices re-ordering.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.linalg.SparseSolver.analyze_pattern">
-<span class="sig-name descname"><span class="pre">analyze_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparse_matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseSolver.analyze_pattern" title="Permalink to this definition">#</a></dt>
-<dd><p>Reorder the nonzero elements of the matrix, such that the factorization step creates less fill-in.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sparse_matrix</strong> (<a class="reference internal" href="#taichi.linalg.SparseMatrix" title="taichi.linalg.SparseMatrix"><em>SparseMatrix</em></a>) – The sparse matrix to be analyzed.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.linalg.SparseSolver.compute">
-<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparse_matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseSolver.compute" title="Permalink to this definition">#</a></dt>
-<dd><p>This method is equivalent to calling both <cite>analyze_pattern</cite> and then <cite>factorize</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sparse_matrix</strong> (<a class="reference internal" href="#taichi.linalg.SparseMatrix" title="taichi.linalg.SparseMatrix"><em>SparseMatrix</em></a>) – The sparse matrix to be computed.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.linalg.SparseSolver.factorize">
-<span class="sig-name descname"><span class="pre">factorize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparse_matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseSolver.factorize" title="Permalink to this definition">#</a></dt>
-<dd><p>Do the factorization step</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sparse_matrix</strong> (<a class="reference internal" href="#taichi.linalg.SparseMatrix" title="taichi.linalg.SparseMatrix"><em>SparseMatrix</em></a>) – The sparse matrix to be factorized.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.linalg.SparseSolver.info">
-<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseSolver.info" title="Permalink to this definition">#</a></dt>
-<dd><p>Check if the linear systems are solved successfully.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if the solving process succeeded, False otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.linalg.SparseSolver.solve">
-<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseSolver.solve" title="Permalink to this definition">#</a></dt>
-<dd><p>Computes the solution of the linear systems.
-:param b: The right-hand side of the linear systems.
-:type b: numpy.array or Field</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The solution of linear systems.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>numpy.array</p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
