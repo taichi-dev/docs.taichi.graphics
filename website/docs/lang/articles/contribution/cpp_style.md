@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /lang/articles/cpp_style
+slug: /cpp_style
 ---
 # C++ style
 

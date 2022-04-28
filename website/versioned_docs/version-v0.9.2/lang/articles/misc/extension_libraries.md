@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-slug: /lang/articles/extension_libraries
+slug: /extension_libraries
 ---
 # Extension libraries
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-slug: /lang/articles/compilation
+slug: /compilation
 ---
 # Life of a Taichi kernel
 

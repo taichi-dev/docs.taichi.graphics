@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-slug: /lang/articles/odop
+slug: /odop
 ---
 # Objective data-oriented programming
 

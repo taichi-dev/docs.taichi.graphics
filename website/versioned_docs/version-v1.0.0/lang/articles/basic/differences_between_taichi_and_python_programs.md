@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /lang/articles/differences_between_taichi_and_python_programs
+slug: /differences_between_taichi_and_python_programs
 ---
 # Differences between Taichi and Python programs
 

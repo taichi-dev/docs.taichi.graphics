@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9998
-slug: /lang/articles/reference
+slug: /reference
 ---
 # Language Reference
 

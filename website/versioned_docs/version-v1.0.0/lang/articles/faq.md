@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9999
-slug: /lang/articles/faq
+slug: /faq
 ---
 # Frequently Asked Questions
 

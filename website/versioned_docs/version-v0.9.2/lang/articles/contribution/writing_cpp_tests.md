@@ -1,6 +1,6 @@
 ---
 sidebar_position: 11
-slug: /lang/articles/writing_cpp_tests
+slug: /writing_cpp_tests
 ---
 # Workflow for writing a C++ test
 

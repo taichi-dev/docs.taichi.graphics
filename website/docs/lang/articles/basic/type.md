@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: /lang/articles/type
+slug: /type
 ---
 # Type system
 

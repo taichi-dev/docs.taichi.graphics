@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: /lang/articles/sparse
+slug: /sparse
 ---
 # Sparse spatial data structures
 

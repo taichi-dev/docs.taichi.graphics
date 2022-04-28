@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /lang/articles/dev_install
+slug: /dev_install
 ---
 # Developer installation
 

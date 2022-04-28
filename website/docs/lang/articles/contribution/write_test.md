@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-slug: /lang/articles/write_test
+slug: /write_test
 ---
 # Workflow for writing a Python test
 

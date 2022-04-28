@@ -17,7 +17,7 @@ do
   rm -rf ./versioned_docs/version-$version
   mkdir -p ./versioned_docs/version-$version
   rsync -avh --delete $TAICHI_MAIN/docs/lang/ $TAICHI_WEBSITE/website/versioned_docs/version-$version/lang
-  node ./scripts/flaturl ./versioned_docs/version-$version ./versioned_docs/version-$version /lang/articles
+  node ./scripts/flaturl ./versioned_docs/version-$version ./versioned_docs/version-$version
   cp -r variables ./versioned_docs/version-$version/variables
   rsync -avh --delete $TAICHI_MAIN/docs/variable.json $TAICHI_WEBSITE/website/versioned_docs/version-$version/variables/variable.json
   rsync -avh --delete $TAICHI_MAIN/docs/fragments/ $TAICHI_WEBSITE/website/versioned_docs/version-$version/fragments
@@ -30,7 +30,7 @@ cd $TAICHI_WEBSITE/website
 rm -rf docs
 mkdir -p $TAICHI_WEBSITE/website/docs/lang
 rsync -avh --delete $TAICHI_MAIN/docs/lang/ $TAICHI_WEBSITE/website/docs/lang
-node ./scripts/flaturl ./docs ./docs /lang/articles
+node ./scripts/flaturl ./docs ./docs
 cp -r variables ./docs/variables
 rsync -avh --delete $TAICHI_MAIN/docs/variable.json $TAICHI_WEBSITE/website/docs/variables/variable.json
 rsync -avh --delete $TAICHI_MAIN/docs/fragments/ $TAICHI_WEBSITE/website/docs/fragments

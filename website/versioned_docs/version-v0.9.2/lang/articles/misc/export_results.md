@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-slug: /lang/articles/export_results
+slug: /export_results
 ---
 # Export your results
 

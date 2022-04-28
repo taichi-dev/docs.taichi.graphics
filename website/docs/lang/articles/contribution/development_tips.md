@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: /lang/articles/development_tips
+slug: /development_tips
 ---
 # Development tips
 

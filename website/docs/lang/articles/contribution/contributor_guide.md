@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /lang/articles/contributor_guide
+slug: /contributor_guide
 ---
 # Contribution guidelines
 

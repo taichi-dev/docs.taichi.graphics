@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /lang/articles/ndarray_android
+slug: /ndarray_android
 ---
 # Run a Taichi Program using Ndarray on Android
 

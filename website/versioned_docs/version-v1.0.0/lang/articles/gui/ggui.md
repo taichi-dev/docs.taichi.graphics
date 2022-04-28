@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /lang/articles/ggui
+slug: /ggui
 ---
 # A New UI system: GGUI
 

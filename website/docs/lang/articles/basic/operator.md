@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /lang/articles/operator
+slug: /operator
 ---
 # Operators
 Here we present the supported operators in Taichi for both primitive types and

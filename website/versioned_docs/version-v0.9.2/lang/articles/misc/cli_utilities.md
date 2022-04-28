@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-slug: /lang/articles/cli_utilities
+slug: /cli_utilities
 ---
 # Command line utilities
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-slug: /lang/articles/doc_writing
+slug: /doc_writing
 ---
 # Documentation writing guide
 

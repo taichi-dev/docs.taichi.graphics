@@ -4,7 +4,7 @@ const tabutils = require('./tab')
 const myArgs = process.argv.slice(2);
 let frombase = './docs'
 let tobase = './docs'
-let baseurl = '/lang/articles'
+let baseurl = ''
 if (myArgs.length >= 1) {
   frombase = myArgs[0]
 }

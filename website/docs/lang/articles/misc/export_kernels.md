@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-slug: /lang/articles/export_kernels
+slug: /export_kernels
 ---
 # Export Taichi kernels to C source
 

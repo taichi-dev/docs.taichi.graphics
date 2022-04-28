@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-slug: /lang/articles/syntax_sugars
+slug: /syntax_sugars
 ---
 # Syntax sugars
 

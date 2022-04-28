@@ -1,6 +1,6 @@
 ---
 sidebar_position: 12
-slug: /lang/articles/style_guide_en
+slug: /style_guide_en
 ---
 # Taichi Technical Documentation Style Guide
 

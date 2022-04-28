@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-slug: /lang/articles/install
+slug: /install
 ---
 # Installation Troubleshooting
 

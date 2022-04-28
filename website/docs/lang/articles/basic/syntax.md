@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /lang/articles/syntax
+slug: /syntax
 ---
 # Kernels and functions
 

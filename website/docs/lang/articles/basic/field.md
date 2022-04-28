@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /lang/articles/field
+slug: /field
 ---
 # Fields
 

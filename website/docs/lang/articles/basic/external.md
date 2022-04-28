@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-slug: /lang/articles/external
+slug: /external
 ---
 # Interacting with external arrays
 

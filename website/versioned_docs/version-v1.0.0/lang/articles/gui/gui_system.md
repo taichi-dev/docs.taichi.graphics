@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /lang/articles/gui_system
+slug: /gui_system
 ---
 # GUI system
 

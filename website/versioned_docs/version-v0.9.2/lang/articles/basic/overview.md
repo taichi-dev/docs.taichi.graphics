@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-slug: /lang/articles/overview
+slug: /overview
 ---
 # Why a new programming language
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-slug: /lang/articles/offset
+slug: /offset
 ---
 # Coordinate offsets
 

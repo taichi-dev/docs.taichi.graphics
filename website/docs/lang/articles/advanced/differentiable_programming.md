@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /lang/articles/differentiable_programming
+slug: /differentiable_programming
 ---
 # Differentiable programming
 
