@@ -429,6 +429,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.to_paddle">
+     to_paddle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixField.to_torch">
      to_torch
     </a>
@@ -1224,6 +1229,27 @@ For example, a 4x1 or 1x4 matrix field with 5x6x7 elements results in an array o
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixField.to_paddle">
+<span class="sig-name descname"><span class="pre">to_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.to_paddle" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts the field instance to a Paddle tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>place</strong> (<em>paddle.CPUPlace</em><em>(</em><em>)</em><em>/CUDAPlace</em><em>(</em><em>n</em><em>)</em><em>, </em><em>optional</em>) – The desired place of returned tensor.</p></li>
+<li><p><strong>keep_dims</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to keep the dimension after conversion.
+See <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_numpy()</span></code> for more detailed explanation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The result paddle tensor.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>paddle.Tensor</p>
 </dd>
 </dl>
 </dd></dl>
