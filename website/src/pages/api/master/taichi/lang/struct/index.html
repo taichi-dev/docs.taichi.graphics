@@ -304,6 +304,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.from_paddle">
+     from_paddle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.from_torch">
      from_torch
     </a>
@@ -336,6 +341,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.to_numpy">
      to_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.struct.StructField.to_paddle">
+     to_paddle
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -555,6 +565,15 @@ between corresponding items can be performed.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.from_paddle">
+<span class="sig-name descname"><span class="pre">from_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.from_paddle" title="Permalink to this definition">#</a></dt>
+<dd><p>Copies the data from a set of <cite>paddle.Tensor</cite> into this field.</p>
+<p>The argument <cite>array_dict</cite> must be a dictionay-like object, it
+contains all the keys in this field and the copying process
+between corresponding items can be performed.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.StructField.from_torch">
 <span class="sig-name descname"><span class="pre">from_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.from_torch" title="Permalink to this definition">#</a></dt>
 <dd><p>Copies the data from a set of <cite>torch.tensor</cite> into this field.</p>
@@ -650,6 +669,29 @@ between corresponding items can be performed.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>Dict[str, Union[numpy.ndarray, Dict]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.struct.StructField.to_paddle">
+<span class="sig-name descname"><span class="pre">to_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.to_paddle" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts the Struct field instance to a dictionary of Paddle tensors.</p>
+<p>The dictionary may be nested when converting nested structs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>place</strong> (<em>paddle.CPUPlace</em><em>(</em><em>)</em><em>/CUDAPlace</em><em>(</em><em>n</em><em>)</em><em>, </em><em>optional</em>) – The
+desired place of returned tensor.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The result</dt><dd><p>Paddle tensor.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, Union[paddle.Tensor, Dict]]</p>
 </dd>
 </dl>
 </dd></dl>

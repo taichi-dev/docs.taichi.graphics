@@ -272,6 +272,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.from_paddle">
+     from_paddle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.field.Field.from_torch">
      from_torch
     </a>
@@ -294,6 +299,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.field.Field.to_numpy">
      to_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.to_paddle">
+     to_paddle
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -329,6 +339,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.from_paddle">
+     from_paddle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.from_torch">
      from_torch
     </a>
@@ -351,6 +366,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.to_numpy">
      to_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.to_paddle">
+     to_paddle
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -446,6 +466,18 @@ A C++ GlobalVariableExpression wraps the corresponding SNode.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.field.Field.from_paddle">
+<span class="sig-name descname"><span class="pre">from_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field.from_paddle" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads all elements from a paddle tensor.</p>
+<p>The shape of the paddle tensor needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>paddle.Tensor</em>) – The source paddle tensor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.field.Field.from_torch">
 <span class="sig-name descname"><span class="pre">from_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field.from_torch" title="Permalink to this definition">#</a></dt>
 <dd><p>Loads all elements from a torch tensor.</p>
@@ -520,6 +552,23 @@ A C++ GlobalVariableExpression wraps the corresponding SNode.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.field.Field.to_paddle">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field.to_paddle" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts <cite>self</cite> to a paddle tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>place</strong> (<em>paddle.CPUPlace</em><em>(</em><em>)</em><em>/CUDAPlace</em><em>(</em><em>n</em><em>)</em><em>, </em><em>optional</em>) – The desired place of returned tensor.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The result paddle tensor.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>paddle.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.field.Field.to_torch">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field.to_torch" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts <cite>self</cite> to a torch tensor.</p>
@@ -587,6 +636,18 @@ A C++ GlobalVariableExpression wraps the corresponding SNode.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.field.ScalarField.from_paddle">
+<span class="sig-name descname"><span class="pre">from_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.ScalarField.from_paddle" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads all elements from a paddle tensor.</p>
+<p>The shape of the paddle tensor needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>paddle.Tensor</em>) – The source paddle tensor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.field.ScalarField.from_torch">
 <span class="sig-name descname"><span class="pre">from_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.ScalarField.from_torch" title="Permalink to this definition">#</a></dt>
 <dd><p>Loads all elements from a torch tensor.</p>
@@ -647,6 +708,12 @@ A C++ GlobalVariableExpression wraps the corresponding SNode.</p>
 <dt class="sig sig-object py" id="taichi.lang.field.ScalarField.to_numpy">
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.ScalarField.to_numpy" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts this field to a <cite>numpy.ndarray</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.field.ScalarField.to_paddle">
+<span class="sig-name descname"><span class="pre">to_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.ScalarField.to_paddle" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts this field to a <cite>paddle.Tensor</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
