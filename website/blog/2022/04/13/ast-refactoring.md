@@ -460,7 +460,7 @@ def build_Return(ctx, node):
     return None
 ```
 
-Then, we make class `Func` (which is the object that a function transforms to after being decorated by `@``ti.func`) callable, and let it return the return value.
+Then, we make class `Func` (which is the object that a function transforms to after being decorated by `@ti.func`) callable, and let it return the return value.
 
 ```python
 def transform_tree(tree, ctx: ASTTransformerContext):

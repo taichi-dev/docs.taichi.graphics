@@ -171,7 +171,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.0.0</a>
+            <a class="dropdown-item" href="/api/">v1.0.1</a>
             
           
             
@@ -313,8 +313,28 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.eye">
+   eye
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.math.fract">
    fract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.ivec2">
+   ivec2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.ivec3">
+   ivec3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.ivec4">
+   ivec4
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -368,6 +388,26 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rot2">
+   rot2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rot3">
+   rot3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rotate2d">
+   rotate2d
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rotate3d">
+   rotate3d
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.math.sign">
    sign
   </a>
@@ -380,6 +420,36 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.math.step">
    step
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.uvec2">
+   uvec2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.uvec3">
+   uvec3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.uvec4">
+   uvec4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.vec2">
+   vec2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.vec3">
+   vec3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.vec4">
+   vec4
   </a>
  </li>
 </ul>
@@ -414,13 +484,13 @@
 <p>If <cite>z=(x, y)</cite> then the conjugate of <cite>z</cite> is <cite>(x, -y)</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The input.</p>
+<dd class="field-odd"><p><strong>z</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The input.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The complex conjugate of <cite>z</cite>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -434,8 +504,8 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>z1</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The first input.</p></li>
-<li><p><strong>z2</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The second input.</p></li>
+<li><p><strong>z1</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The first input.</p></li>
+<li><p><strong>z2</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The second input.</p></li>
 </ul>
 </dd>
 </dl>
@@ -452,7 +522,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dd class="field-odd"><p>the complex division of <cite>z1 / z2</cite>.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -465,7 +535,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The base.</p></li>
+<li><p><strong>z</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The base.</p></li>
 <li><p><strong>a</strong> (<em>float</em>) – The exponent.</p></li>
 </ul>
 </dd>
@@ -482,7 +552,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dd class="field-odd"><p>The power <span class="math notranslate nohighlight">\(z^a\)</span></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -493,7 +563,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dd><p>Computes the reciprocal of a complex <cite>z</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The input.</p>
+<dd class="field-odd"><p><strong>z</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The input.</p>
 </dd>
 </dl>
 <p>Example:</p>
@@ -508,7 +578,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dd class="field-odd"><p>The reciprocal of <cite>z</cite>.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -556,7 +626,7 @@ then <span class="math notranslate nohighlight">\(log(z) = w\)</span>.</p>
 lies in the range (-pi, pi].</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The input.</p>
+<dd class="field-odd"><p><strong>z</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The input.</p>
 </dd>
 </dl>
 <p>Example:</p>
@@ -571,7 +641,7 @@ lies in the range (-pi, pi].</p>
 <dd class="field-odd"><p>The logarithm of <cite>z</cite>.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -585,8 +655,8 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>z1</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The first input.</p></li>
-<li><p><strong>z2</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The second input.</p></li>
+<li><p><strong>z1</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The first input.</p></li>
+<li><p><strong>z2</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The second input.</p></li>
 </ul>
 </dd>
 </dl>
@@ -603,7 +673,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dd class="field-odd"><p>the complex multiplication <cite>z1 * z2</cite>.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -615,7 +685,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The base.</p></li>
+<li><p><strong>z</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The base.</p></li>
 <li><p><strong>a</strong> (<em>float</em>) – The exponent.</p></li>
 </ul>
 </dd>
@@ -632,7 +702,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dd class="field-odd"><p>The power <span class="math notranslate nohighlight">\(z^a\)</span>.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -673,7 +743,7 @@ the one with positive real part is returned. If both their real parts
 are zero, the one with non-negative imaginary part is returned.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>z</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code>) – The input.</p>
+<dd class="field-odd"><p><strong>z</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The input.</p>
 </dd>
 </dl>
 <p>Example:</p>
@@ -688,7 +758,7 @@ are zero, the one with non-negative imaginary part is returned.</p>
 <dd class="field-odd"><p>The complex square root.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></p>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -763,6 +833,13 @@ are zero, the one with non-negative imaginary part is returned.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.eye">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">eye</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.eye" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the nxn identiy matrix.</p>
+<p>Alias for <a class="reference internal" href="../#taichi.Matrix.identity" title="taichi.Matrix.identity"><code class="xref py py-func docutils literal notranslate"><span class="pre">identity()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.math.fract">
 <span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">fract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.fract" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the fractional part of the argument, element-wise.
@@ -782,6 +859,24 @@ input value.</p>
 [0.8, 0.3, 0.3, 0.2]
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.math.ivec2">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">ivec2</span></span><a class="headerlink" href="#taichi.math.ivec2" title="Permalink to this definition">#</a></dt>
+<dd><p>2D int vector type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.math.ivec3">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">ivec3</span></span><a class="headerlink" href="#taichi.math.ivec3" title="Permalink to this definition">#</a></dt>
+<dd><p>3D int vector type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.math.ivec4">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">ivec4</span></span><a class="headerlink" href="#taichi.math.ivec4" title="Permalink to this definition">#</a></dt>
+<dd><p>4D int vector type.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -809,19 +904,19 @@ then <span class="math notranslate nohighlight">\(y=\log2(x)\)</span>.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.math.mat2">
 <span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">mat2</span></span><a class="headerlink" href="#taichi.math.mat2" title="Permalink to this definition">#</a></dt>
-<dd><p>2x2 float matrix type</p>
+<dd><p>2x2 float matrix type.</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.math.mat3">
 <span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">mat3</span></span><a class="headerlink" href="#taichi.math.mat3" title="Permalink to this definition">#</a></dt>
-<dd><p>3x3 float matrix type</p>
+<dd><p>3x3 float matrix type.</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.math.mat4">
 <span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">mat4</span></span><a class="headerlink" href="#taichi.math.mat4" title="Permalink to this definition">#</a></dt>
-<dd><p>4x4 float matrix type</p>
+<dd><p>4x4 float matrix type.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -995,6 +1090,127 @@ function returns the reflection direction calculated as
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.rot2">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">rot2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ang</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.rot2" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the matrix representation of a 2d counter-clockwise rotation,
+given the angle of rotation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ang</strong> (<em>float</em>) – Angle of rotation in radians.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2x2 rotation matrix.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.math.mat2" title="taichi.math.mat2"><code class="xref py py-class docutils literal notranslate"><span class="pre">mat2</span></code></a></p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from taichi.math import *
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     M = rot2(radians(30))
+[[0.866025, -0.500000], [0.500000, 0.866025]]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.rot3">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">rot3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.rot3" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the matrix representation of a 3d rotation,
+given the axis and angle of rotation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axis</strong> (<a class="reference internal" href="#taichi.math.vec3" title="taichi.math.vec3"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec3</span></code></a>) – Axis of rotation.</p></li>
+<li><p><strong>ang</strong> (<em>float</em>) – Angle of rotation in radians.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>3x3 rotation matrix.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.math.mat3" title="taichi.math.mat3"><code class="xref py py-class docutils literal notranslate"><span class="pre">mat3</span></code></a></p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from taichi.math import *
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     M = rot3(vec3(1, 1, 1), radians(30))
+[[0.732051, -0.366025, 0.633975],
+ [0.633975, 0.732051, -0.366025],
+ [-0.366025, 0.633975, 0.732051]]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.rotate2d">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">rotate2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.rotate2d" title="Permalink to this definition">#</a></dt>
+<dd><p>Rotates a 2d vector by a given angle in counter-clockwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The 2d vector to rotate.</p></li>
+<li><p><strong>ang</strong> (<em>float</em>) – Angle of rotation, in radians.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The vector after rotation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from taichi.math import *
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     v = vec2(1, 0)
+&gt;&gt;&gt;     print(rotate2d(v, radians(30)))
+[0.866025, 0.500000]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.rotate3d">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">rotate3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.rotate3d" title="Permalink to this definition">#</a></dt>
+<dd><p>Rotates a vector in 3d space, given an axis and angle of rotation.</p>
+<p>The vector <cite>axis</cite> should be a unit vector.</p>
+<p>See “<a class="reference external" href="https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula">https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula</a>”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="#taichi.math.vec3" title="taichi.math.vec3"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec3</span></code></a>) – The 3d vector to rotate.</p></li>
+<li><p><strong>axis</strong> (<a class="reference internal" href="#taichi.math.vec3" title="taichi.math.vec3"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec3</span></code></a>) – Axis of rotation.</p></li>
+<li><p><strong>ang</strong> (<em>float</em>) – Angle of rotation, in radians.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from taichi.math import *
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     v = vec3(1, 0, 0)
+&gt;&gt;&gt;     axis = normalize(vec3(1, 1, 1))
+&gt;&gt;&gt;     print(rotate3d(v, axis, radians(30)))
+[0.910684, 0.333333, -0.244017]
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The vector after rotation.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.math.vec3" title="taichi.math.vec3"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec3</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.math.sign">
 <span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.sign" title="Permalink to this definition">#</a></dt>
 <dd><p>Extract the sign of the parameter, element-wise.</p>
@@ -1078,6 +1294,42 @@ the value to be used to generate the step function.</p></li>
 [[1.0, 1.0], [0.0, 0.0]]
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.uvec2">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">uvec2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.uvec2" title="Permalink to this definition">#</a></dt>
+<dd><p>2D unsigned int vector type.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.uvec3">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">uvec3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.uvec3" title="Permalink to this definition">#</a></dt>
+<dd><p>3D unsigned int vector type.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.math.uvec4">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">uvec4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.uvec4" title="Permalink to this definition">#</a></dt>
+<dd><p>4D unsigned int vector type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.math.vec2">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">vec2</span></span><a class="headerlink" href="#taichi.math.vec2" title="Permalink to this definition">#</a></dt>
+<dd><p>2D float vector type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.math.vec3">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">vec3</span></span><a class="headerlink" href="#taichi.math.vec3" title="Permalink to this definition">#</a></dt>
+<dd><p>3D float vector type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.math.vec4">
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">vec4</span></span><a class="headerlink" href="#taichi.math.vec4" title="Permalink to this definition">#</a></dt>
+<dd><p>4D float vector type.</p>
 </dd></dl>
 
 </section>
