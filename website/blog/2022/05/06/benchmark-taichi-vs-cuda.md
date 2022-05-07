@@ -14,7 +14,7 @@ Taichi Lang is a domain-specific language (DSL) and can solve a great many numer
 
 <!--truncate-->
 
-This benchmark project partially answers the long-standing question from Taichi Lang's users: how does Taichi Lang perform against CUDA? We conducted experiments against CUDA's reference implementations on an Nvidia Geforce RTX 3080 graphics card, using two different timing methods on nine algorithms:
+This benchmark project partially answers the long-standing question from Taichi Lang's users: how does Taichi Lang compare to CUDA? We conducted experiments against CUDA's reference implementations on an Nvidia Geforce RTX 3080 graphics card, using two different timing methods on nine algorithms:
 
 - Wall clock timer: Repetitively runs the compute kernels and calculates the average computing time. The time excludes the first round of kernel run because it includes Taichi Lang's compilation overhead.
 - Native kernel timer: The kernel timer can measure the GPU computing time. We used the `cudaEventElapsedTime` interface for CUDA and `ti.profiler`[2] for Taichi Lang. For the sake of fairness, both timers are implemented using the CUPTI library.
