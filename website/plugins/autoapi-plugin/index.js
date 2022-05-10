@@ -23,7 +23,7 @@ module.exports = function (context, options) {
       const { include, allowVersions, current } = options;
       const versions = [current, ...allowVersions];
 
-      const defaultVersion = allowVersions[0];
+      const defaultVersion = allowVersions[0] || current;
       const pagesDir = contentPath;
       if (!fs.existsSync(pagesDir)) {
         return null;

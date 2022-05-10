@@ -4,6 +4,7 @@ const versions = require('./versions.json');
 
 const variablePlugin = require('./plugins/remark-plugins/variables');
 const fragmentPlugin = require('./plugins/remark-plugins/fragments');
+const utilsExtensionPlugin = require("./plugins/docusaurus-utils-extends");
 // const variables = require('./variables');
 
 const versionpaths = [__dirname + '/docs']
@@ -36,6 +37,7 @@ module.exports = {
   projectName: 'docs.taichi.graphics',
   plugins: [
     'docusaurus-plugin-sass',
+    utilsExtensionPlugin,
     path.resolve(__dirname, 'plugins/docusaurus-plugin-hotjar'),
     [
       path.resolve(__dirname, 'plugins/autoapi-plugin'),
