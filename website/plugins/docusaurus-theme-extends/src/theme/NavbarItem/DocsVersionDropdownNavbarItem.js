@@ -10,11 +10,10 @@ import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import {
   useVersions,
   useLatestVersion,
-  useActiveDocContext,
 } from '@docusaurus/plugin-content-docs/client';
 import {useDocsPreferredVersion} from '@docusaurus/theme-common';
 import {translate} from '@docusaurus/Translate';
-import { useApiDocContext } from './useApiContext';
+import { useGlobalActiveContext } from './useApiContext';
 
 
 const getVersionMainDoc = (version) =>
@@ -29,12 +28,12 @@ export default function DocsVersionDropdownNavbarItem({
   ...props
 }) {
 
-  const activeApiContext = useApiDocContext(docsPluginId)
+  const activeContext =  useGlobalActiveContext(docsPluginId)
 
-  const activeDocContext = useActiveDocContext(docsPluginId);
 
   const versions = useVersions(docsPluginId);
   const latestVersion = useLatestVersion(docsPluginId);
+
   const {preferredVersion, savePreferredVersionName} =
     useDocsPreferredVersion(docsPluginId);
 
@@ -43,13 +42,13 @@ export default function DocsVersionDropdownNavbarItem({
       // We try to link to the same doc, in another version
       // When not possible, fallback to the "main doc" of the version
       const versionDoc =
-        activeDocContext?.alternateDocVersions[version.name] || activeApiContext?.alternateDocVersions[version.name] ||
+        activeContext?.alternateDocVersions[version.name] ||
         getVersionMainDoc(version);
       return {
         isNavLink: true,
         label: version.label,
         to: versionDoc.path,
-        isActive: () => version.name === (activeDocContext?.activeVersion?.name || activeApiContext?.activeVersion?.name),
+        isActive: () => version.name === (activeContext?.activeVersion?.name),
         onClick: () => {
           savePreferredVersionName(version.name);
         },
@@ -61,8 +60,8 @@ export default function DocsVersionDropdownNavbarItem({
   const items = getItems();
 
   const dropdownVersion =
-    activeDocContext.activeVersion ?? preferredVersion ?? latestVersion; // Mobile dropdown is handled a bit differently
-
+    activeContext.activeVersion ?? preferredVersion ?? latestVersion; // Mobile dropdown is handled a bit differently
+  // console.log(dropdownVersion)
   const dropdownLabel =
     mobile && items.length > 1
       ? translate({

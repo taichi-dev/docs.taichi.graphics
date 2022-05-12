@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, version } from 'react';
 import Layout from '@theme/Layout';
+import {useDocsPreferredVersion} from '@docusaurus/theme-common';
 import LayoutProviders from '@theme/LayoutProviders';
 import _ from 'lodash'
 import {
@@ -79,8 +80,15 @@ const CodeContainer = ({ code, className }) => {
   return <CodeBlock className={className} children={code} />
 }
 
-const AutoApiContainer = ({ content }) => {
+const AutoApiContainer = ({ content, version }) => {
   const value = useRef()
+  const {savePreferredVersionName} =
+    useDocsPreferredVersion('default');
+  useEffect(() => {
+    if (version) {
+      savePreferredVersionName(version)
+    }
+  }, [version])
   const { isDarkTheme } = useColorMode()
   useEffect(() => {
     value.current = isDarkTheme
@@ -120,18 +128,19 @@ const AutoApiContainer = ({ content }) => {
   return <div style={{ width: '100%', paddingLeft: 15, paddingRight: 15 }} dangerouslySetInnerHTML={{ __html: content }}></div>
 }
 
-export default ({ __content, __version }) => {
+export default ({ __content, __title, __version }) => {
   return (
     <Layout
       wrapperClassName={ThemeClassNames.wrapper.docsPages}
       pageClassName={ThemeClassNames.page.docsDocPage}
+      title={__title}
       searchMetadata={{
         version: __version,
         tag: `docs-default-${__version}`,
       }}>
       <div className='autoapi-container markdown'>
         <BackToTopButton />
-        <AutoApiContainer content={__content} />
+        <AutoApiContainer content={__content} version={__version} />
       </div>
     </Layout>
   );
