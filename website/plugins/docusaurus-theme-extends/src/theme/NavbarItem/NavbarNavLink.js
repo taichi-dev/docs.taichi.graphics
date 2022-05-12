@@ -10,6 +10,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 
+import { useGlobalActiveVersion } from './useApiContext';
+
 import {isRegexpStringMatch, useDocsPreferredVersion} from '@docusaurus/theme-common';
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
@@ -17,7 +19,11 @@ const useVersionUrl = (docsPluginId, toUrl) => {
   const {preferredVersion} =
     useDocsPreferredVersion(docsPluginId);
 
-  const vernsionpath = preferredVersion?.isLast ? '' : (preferredVersion?.name || '')
+  const activeVersion = useGlobalActiveVersion(docsPluginId)
+
+  const currentVersion = activeVersion || preferredVersion
+
+  const vernsionpath = currentVersion?.isLast ? '' : (currentVersion?.name || '')
   if (!toUrl) return toUrl
   const tmp = toUrl.replace(/{{([\s\S]+?)}}/g, (match, escapeValue) => {
     if (escapeValue && escapeValue.trim() === 'version') {
@@ -26,6 +32,7 @@ const useVersionUrl = (docsPluginId, toUrl) => {
     }
     return match
   })
+
   const hasEndingSlash = tmp[tmp.length - 1] === '/'
   return hasEndingSlash ? tmp : tmp + '/'
 }

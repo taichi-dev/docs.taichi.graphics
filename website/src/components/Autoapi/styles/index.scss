@@ -405,7 +405,7 @@
     text-decoration: none;
   }
   .bd-sidebar {
-    padding-top: 1em;
+    padding-top: 0;
   }
   @media (min-width: 720px) {
     .bd-sidebar {
@@ -942,6 +942,7 @@
     }
   }
   .rst-versions {
+    display: none;
     padding: 0 var(--ifm-menu-link-padding-horizontal);
   }
   dl {
