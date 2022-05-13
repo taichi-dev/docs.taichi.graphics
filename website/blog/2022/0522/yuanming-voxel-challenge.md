@@ -20,7 +20,7 @@ Finding a beautiful theme is half success. Forest is a common theme in many grea
 
 It must be very interesting to reproduce a tranquil autumn theme with voxels and use ray tracing to render it!
 
-&gt;Note: So long as you have basic Python programming knowledge, you will be able to follow the rest of this post. Taichi Lang is a parallel programming language embedded in Python, allowing your program to be accelerated by your GPU. If you are unfamiliar with Taichi Lang, read this: [https://docs.taichi-lang.org/docs/](https://docs.taichi-lang.org/docs/).
+> Note: So long as you have basic Python programming knowledge, you will be able to follow the rest of this post. Taichi Lang is a parallel programming language embedded in Python, allowing your program to be accelerated by your GPU. If you are unfamiliar with Taichi Lang, read this: [https://docs.taichi-lang.org/docs/](https://docs.taichi-lang.org/docs/).
 
 # 3. Program in Python and indulge in the 3D voxel world
 
@@ -32,30 +32,32 @@ If you wish to try out the autumn theme for yourself and view the complete sourc
 
 Just so you know, Taichi Voxel Challenge 2022 is getting heated. If you are also a voxel art lover, you are very welcome to join! Let's compare 'voxels' and motivate each other! For more information about how to participate, see the Voxel Challenge README at [https://github.com/taichi-dev/community/blob/main/events/voxel-challenge/README.md](https://github.com/taichi-dev/community/blob/main/events/voxel-challenge/README.md)
 
-&gt;*It has been reported at* [*https://github.com/taichi-dev/taichi/issues/4891*](https://link.zhihu.com/?target=https://github.com/taichi-dev/taichi/issues/4891)  *that Taichi Lang v1.0.1 has some compatibility issues with the Vulkan backend in some environments. The next Taichi Lang release will ship the fix. As a workaround, use Taichi Lang v1.0.0 instead:*  
-&gt;  
-&gt;*pip install taichi==1.0.0*
+> *It has been reported at* [*https://github.com/taichi-dev/taichi/issues/4891*](https://link.zhihu.com/?target=https://github.com/taichi-dev/taichi/issues/4891)  *that Taichi Lang v1.0.1 has some compatibility issues with the Vulkan backend in some environments. The next Taichi Lang release will ship the fix. As a workaround, use Taichi Lang v1.0.0 instead:*  
+>  
+> *pip install taichi==1.0.0*
 
 # 4. Using voxels to create a forest in the autumn air
 
 The autumn theme has three key elements: trees, forest floor covered by fallen leaves, and volumetric fog. Our renderer does not support volumetric fog, but we can simulate autumn sunset with a 45° directional light source (`set_directional_light()`) and a yellowish light color (`set_background_color()`) instead.
 
-    from scene import Scene
-    import taichi as ti
-    from taichi.math import *
+```python
+from scene import Scene
+import taichi as ti
+from taichi.math import *
     
-    scene = Scene(voxel_edges=0, exposure=2) # Create a scene, specifying the voxel edge and exposure. 
-    scene.set_floor(0, (1.0, 1.0, 1.0)) # Height of the floor
-    scene.set_background_color((0.5, 0.5, 0.4)) # Color of the sky
-    scene.set_directional_light((1, 1, -1), 0.2, (1, 0.8, 0.6)) # Direction and color of the light
+scene = Scene(voxel_edges=0, exposure=2) # Create a scene, specifying the voxel edge and exposure. 
+scene.set_floor(0, (1.0, 1.0, 1.0)) # Height of the floor
+scene.set_background_color((0.5, 0.5, 0.4)) # Color of the sky
+scene.set_directional_light((1, 1, -1), 0.2, (1, 0.8, 0.6)) # Direction and color of the light
     
-    @ti.kernel
-    def initialize_voxels():
-        scene.set_voxel(vec3(0), 1, vec3(1)) # Add a (1, 1, 1) voxel at the position of (0, 0, 0)
+@ti.kernel
+def initialize_voxels():
+    scene.set_voxel(vec3(0), 1, vec3(1)) # Add a (1, 1, 1) voxel at the position of (0, 0, 0)
     
-    initialize_voxels()
+initialize_voxels()
     
-    scene.finish()
+scene.finish()
+```
 
 Then you get the following scene:
 
@@ -100,7 +102,7 @@ def initialize_voxels():
 
 There we go:
 
-![From position \(0, 0, 0\) grows a 20x40x30 cubicle.](https://github.com/taichi-dev/public_files/blob/master/taichi.graphics/yuanming-voxel/greencube.png?raw=true)
+![From position (0, 0, 0) grows a 20x40x30 cubicle.](https://github.com/taichi-dev/public_files/blob/master/taichi.graphics/yuanming-voxel/greencube.png?raw=true)
 
 Then we can loop the `create_block()`method call for four times to draw a four-layered base floor:
 
@@ -241,7 +243,7 @@ def make_fence(start, direction, length):
         create_block(start + direction * i * fence_dist + ivec3(1, -3, 1), ivec3(1, 5, 1), color, vec3(0))
 ```
 
-![Call make\_fence\(\) for four times to complete the fences.](https://github.com/taichi-dev/public_files/blob/master/taichi.graphics/yuanming-voxel/call%20make_fence%204.png?raw=true)
+![Call `make_fence()` for four times to complete the fences.](https://github.com/taichi-dev/public_files/blob/master/taichi.graphics/yuanming-voxel/call%20make_fence%204.png?raw=true)
 
 Now we are done with the base floor, trees, fallen leaves, and the fences. Let's call it a day!
 
