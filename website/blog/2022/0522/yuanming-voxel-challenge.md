@@ -275,5 +275,5 @@ For those voxel art lovers, so long as you can program in Python, I assure you t
 
 * You can click [bit.ly/3whe1zX](https://bit.ly/3whe1zX) to view more of the submissions of voxel Challenge 2022.
 * We also came up with some artworks (all have source code) during internal test and before Voxel Challenge 2022. See [bit.ly/3FGDwxr](https://bit.ly/3FGDwxr).
-
+    
 Note that the voxel editor required by Voxel Challenge 2022 requires the Python environment only. It supports Windows, macOS, and Linux. It works fine even if you don't have a GPU.
