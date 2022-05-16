@@ -15,6 +15,8 @@ On a Sunday afternoon about a couple of months ago, when Ye ([https://github.com
 
 Taichi Lang is embedded in Python and it runs on any operating system and can easily interact with Python. As far as I know, apart from Taichi Lang, there's no such tooling in the Python ecosystem for generating GPU path tracing voxel renders. With Taichi Lang, one can easily create such a renderer ([https://github.com/taichi-dev/voxel-challenge/blob/main/renderer.py](https://github.com/taichi-dev/voxel-challenge/blob/main/renderer.py)) in around 300 lines of code.
 
+<!--truncate-->
+
 When finishing off the program, we became aware of something more serious: It is much easier for an experienced graphics developer to code a path tracing renderer than to come up with a scene setting for a beautiful image. Considering the huge amount of work involved in developing the UI, if we could only edit voxels one by one, it would take ages to get the intended results!
 
 I'm not a mighty Minecraft developer, but, thankfully, I can program to batch process the voxels. Let's get started!
