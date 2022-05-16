@@ -1,6 +1,6 @@
 module.exports = tokenizer
 
-function tokenizer (name, data, fence, quiet, fail, onError) {
+function tokenizer (name, datafunc, fence, quiet, fail, onError) {
   return function (eat, value, silent) {
 
     if (!value.startsWith(fence[0])) return
@@ -17,7 +17,7 @@ function tokenizer (name, data, fence, quiet, fail, onError) {
       }
 
       sub = sub.substring(4)
-
+      const data = datafunc(file.path, file.cwd)
       const fromData = data[sub]
 
       const found = fromData

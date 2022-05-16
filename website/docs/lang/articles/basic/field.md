@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
+slug: /field
 ---
-
 # Fields
 
 The term _field_ is borrowed from mathematics and physics. If you already know [scalar field](https://en.wikipedia.org/wiki/Scalar_field) (for example heat field), or vector field (for example [gravitational field](https://en.wikipedia.org/wiki/Gravitational_field)), then it is straightforward for you to understand fields in Taichi.
@@ -74,7 +74,7 @@ while gui.running:
 ```
 
 :::tip
-With Taichi versions earlier than v0.8.0, you cannot allocate new fields after executing a kernel. Starting from v0.8.0, you can use the `FieldsBuilder` class to dynamically allocate or destruct fields. See the [Field (advanced)](/lang/articles/advanced/layout.md) for more information.
+With Taichi versions earlier than v0.8.0, you cannot allocate new fields after executing a kernel. Starting from v0.8.0, you can use the `FieldsBuilder` class to dynamically allocate or destruct fields. See the [Field (advanced)](../advanced/layout.md) for more information.
 :::
 
 :::caution WARNING

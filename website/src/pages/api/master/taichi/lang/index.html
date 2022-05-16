@@ -357,6 +357,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.any_array_access">
+     any_array_access
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.Matrix.cast">
      cast
     </a>
@@ -387,6 +392,16 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.dynamic_index_stride">
+     dynamic_index_stride
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.entries">
+     entries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.Matrix.field">
      field
     </a>
@@ -404,6 +419,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.Matrix.inverse">
      inverse
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.local_tensor_proxy">
+     local_tensor_proxy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -852,11 +872,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.StructField.dtype">
-     dtype
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.StructField.fill">
      fill
     </a>
@@ -884,21 +899,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.StructField.keys">
      keys
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.StructField.parent">
-     parent
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.StructField.shape">
-     shape
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.StructField.snode">
-     snode
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1911,6 +1911,11 @@ True
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Matrix.any_array_access">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">any_array_access</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.any_array_access" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.cast">
 <span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.cast" title="Permalink to this definition">#</a></dt>
 <dd><p>Cast the matrix elements to a specified data type.</p>
@@ -2061,6 +2066,16 @@ with <cite>val</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Matrix.dynamic_index_stride">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dynamic_index_stride</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.dynamic_index_stride" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Matrix.entries">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">entries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.entries" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.field">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.field" title="Permalink to this definition">#</a></dt>
 <dd><p>Construct a data container to hold all elements of the Matrix.</p>
@@ -2147,6 +2162,11 @@ in Taichi scope.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.Matrix.local_tensor_proxy">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">local_tensor_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Matrix.local_tensor_proxy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Matrix.max">
@@ -3337,20 +3357,6 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.StructField.dtype">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.dtype" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets data type of each individual value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Data type of each individual value.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>DataType</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.StructField.fill">
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.fill" title="Permalink to this definition">#</a></dt>
 <dd><p>Fills this struct field with a specified value.</p>
@@ -3417,51 +3423,6 @@ between corresponding items can be performed.</p>
 [&#39;center&#39;, &#39;radius&#39;]
 </pre></div>
 </div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.StructField.parent">
-<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.parent" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets an ancestor of the representative SNode in the SNode tree.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of levels going up from the representative SNode.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The n-th parent of the representative SNode.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.StructField.shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets field shape.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Field shape.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Tuple[Int]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.StructField.snode">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.snode" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets representative SNode for info purposes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">

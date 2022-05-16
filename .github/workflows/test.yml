@@ -18,7 +18,7 @@ jobs:
       #   uses: actions/checkout@v2
       #   with:
       #     repository: taichi-dev/taichi
-      #     path: taichi
+      #     path: source
 
       # - name: Checkout Taichi Autoapi Gen
       #   uses: actions/checkout@v2
@@ -26,19 +26,25 @@ jobs:
       #     repository: taichi-dev/docstring-gen
       #     path: docstring-gen
 
-      # - name: Set API Gen Env
+      # - name: Install Dependences
+      #   run: sudo apt-get install -y jq
+
+      # - name: Set Env
       #   run: |
-      #     echo "DOCSTRING_GEN_PATH=${GITHUB_WORKSPACE}/docstring-gen" >> $GITHUB_ENV
-      #     echo "TAICHI_PATH=${GITHUB_WORKSPACE}/taichi/python/taichi" >> $GITHUB_ENV
+      #     echo "TAICHI_PATH=${GITHUB_WORKSPACE}/source/python/taichi" >> $GITHUB_ENV
+      #     echo "TAICHI_MAIN=${GITHUB_WORKSPACE}/source" >> $GITHUB_ENV
       #     echo "TAICHI_WEBSITE=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
 
-      # - name: Generate New API Docs AND Sync To Docs Website
+      # - name: Export Env
       #   run: |
-      #     export DOCSTRING_GEN_PATH=${{ env.DOCSTRING_GEN_PATH }}
       #     export TAICHI_PATH=${{ env.TAICHI_PATH }}
       #     export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
-      #     cd $DOCSTRING_GEN_PATH && git fetch origin pull/8/head:pr-8 && git checkout pr-8
-      #     $DOCSTRING_GEN_PATH/multi_version_build.sh
+      #     export TAICHI_MAIN=${{ env.TAICHI_MAIN }}
+
+      # - name: Sync and stage changes
+      #   run: |
+      #     cd $TAICHI_PATH && git fetch --tags
+      #     cd $TAICHI_WEBSITE/website && ./sync_docs.sh
 
       - name: Cache node_modules
         uses: actions/cache@v2

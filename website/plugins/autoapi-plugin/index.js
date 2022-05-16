@@ -2,23 +2,28 @@ const path = require('path');
 const fs = require('fs');
 const globby = require('globby');
 const cheerio = require('cheerio');
+const _ = require('lodash');
 
 const {
   encodePath,
   fileToPath,
-  aliasedSitePath,
   docuHash,
+  normalizeUrl,
 } = require('@docusaurus/utils');
 
 const isHTML = (source) => source.endsWith('.html');
 
 module.exports = function (context, options) {
   const { siteConfig, siteDir, generatedFilesDir } = context;
+  // const allVersionNames = await readVersionNames(context.siteDir, options);
   const contentPath = path.resolve(siteDir, options.path);
   return {
     name: 'autoapi-plugin',
     async loadContent() {
-      const { include, defaultVersion } = options;
+      const { include, allowVersions, current } = options;
+      const versions = [current, ...allowVersions];
+
+      const defaultVersion = allowVersions[0] || current;
       const pagesDir = contentPath;
       if (!fs.existsSync(pagesDir)) {
         return null;
@@ -41,28 +46,60 @@ module.exports = function (context, options) {
         if (linkurl.endsWith('/index.html')) {
           linkurl = linkurl.substring(0, linkurl.length - 10)
         }
+        let version = 'current'
+        let id = linkurl
+        let found = false
+        for (const item of versions) {
+          const start = `${routeprefix}${item}`
+          if (linkurl.startsWith(start)) {
+            version = item
+            id = linkurl.substring(start.length + 1)
+            found = true;
+            break
+          }
+        }
+        if (!found) return false
         const start = `${routeprefix}${defaultVersion}`
         if (linkurl.startsWith(start)) {
           linkurl = routeprefix + linkurl.substring(start.length + 1)
         }
         if (isHTML(relativeSource)) {
           return {
-            permalink: linkurl,
+            id: id,
+            path: linkurl,
             source, //: aliasedSourcePath,
+            version: version === current ? 'current' : version,
           };
         }
       }
-      return pagesFiles.map(toMetadata);
+      const pages = pagesFiles.map(toMetadata).filter(Boolean);
+      const groupversions = _.groupBy(pages, function(item){
+        return item.version
+      })
+      return Object.keys(groupversions).map(function(key){
+        let version = key
+        if (version === 'current') {
+          version = current
+        }
+        return {
+          docs: groupversions[key],
+          name: key,
+          label: key === 'current' ? 'develop' : key,
+          isLast: key === defaultVersion,
+          mainDocId: '',
+          path: key === defaultVersion ? normalizeUrl([baseUrl, options.route]) : normalizeUrl([baseUrl, options.route, version])
+        }
+      })
     },
     async contentLoaded({ content, actions }) {
       if (!content) {
         return;
       }
 
-      const { addRoute, createData } = actions;
+      const { addRoute, createData, setGlobalData } = actions;
       await Promise.all(
-        content.map(async (metadata) => {
-          const { permalink, source } = metadata;
+        _.flatten(content.map((item) => item.docs.map(async (metadata) => {
+          const { path } = metadata;
           const html = fs.readFileSync(metadata.source).toString('utf8');
           const $ = cheerio.load(html);
           const __content = await createData(
@@ -73,26 +110,29 @@ module.exports = function (context, options) {
             `${docuHash(metadata.source)}.title.json`,
             JSON.stringify($('head > title').text(), null, 2),
           );
-          // let linkurl = permalink
-          // if (linkurl.endsWith('/index.html')) {
-          //   linkurl = linkurl.substr(0, linkurl.length - 11)
-          // }
 
-          // if (linkurl.startsWith('/api/autoapi')) {
-          //   linkurl = '/api' + linkurl.substr(12)
-          // }
-          // console.log(linkurl)
+          const __version = await createData(
+            `${docuHash(metadata.version)}.version.json`,
+            JSON.stringify(metadata.version, null, 2),
+          )
+
           addRoute({
-            path: permalink,
+            path: path,
             component: '@site/src/components/Autoapi/index.js',
             exact: true,
             modules: {
               __content,
               __title,
+              __version,
             },
           });
         })
-      );
+      )));
+
+      setGlobalData({
+        path: normalizeUrl([siteConfig.baseUrl, options.route]),
+        versions: content,
+      })
     },
   };
 };

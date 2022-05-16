@@ -1,10 +1,16 @@
 const path = require('path');
 
-const version = require('./apiversion.json');
+const versions = require('./versions.json');
 
 const variablePlugin = require('./plugins/remark-plugins/variables');
 const fragmentPlugin = require('./plugins/remark-plugins/fragments');
-const variables = require('./variables');
+const utilsExtensionPlugin = require("./plugins/docusaurus-utils-extends");
+// const variables = require('./variables');
+
+const versionpaths = [__dirname + '/docs']
+for (const version of versions) {
+  versionpaths.push(__dirname + `/versioned_docs/version-${version}`)
+}
 
 // For i18n
 const DefaultLocale = 'en';
@@ -31,6 +37,7 @@ module.exports = {
   projectName: 'docs.taichi.graphics',
   plugins: [
     'docusaurus-plugin-sass',
+    utilsExtensionPlugin,
     path.resolve(__dirname, 'plugins/docusaurus-plugin-hotjar'),
     [
       path.resolve(__dirname, 'plugins/autoapi-plugin'),
@@ -38,7 +45,8 @@ module.exports = {
         path: path.resolve(__dirname, 'src/pages/api'),
         include: '**/*.html',
         route: 'api/',
-        defaultVersion: version.current, // cd $TAICHI_PATH && git describe --tags --abbrev=0
+        allowVersions: versions,
+        current: 'master',
       },
     ],
   ],
@@ -84,7 +92,7 @@ module.exports = {
           className: 'animated-anchor-link',
         },
         {
-          to: '/api/',
+          to: '/api/{{version}}',
           position: 'right',
           label: 'API',
           className: 'animated-anchor-link',
@@ -234,8 +242,8 @@ module.exports = {
       {
         docs: {
           // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
-          routeBasePath: '/',
-          path: '.flatdocs',
+          routeBasePath: '/docs',
+          path: 'docs',
           editUrl: ({ locale, versionDocsDirPath, docPath }) => {
             if (locale !== DefaultLocale) {
               return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(
@@ -253,16 +261,33 @@ module.exports = {
           versions: {
             current: {
               label: 'develop',
+              path: 'master',
             },
           },
           remarkPlugins: [
-            [variablePlugin, { data: variables, fail: false }],
+            [variablePlugin, { data: (path) => {
+              if (!path) return {}
+              for (const item of versionpaths) {
+                if (path.startsWith(item)) {
+                  return require(item + '/variables')
+                }
+              }
+              return {}
+            }, fail: false }],
             [
               fragmentPlugin,
               {
                 prefix: 'fragments',
                 fail: false,
-                baseUrl: __dirname + '/fragments',
+                baseUrl: (path) => {
+                  if (!path) return __dirname + '/docs/fragments'
+                  for (const item of versionpaths) {
+                    if (path.startsWith(item)) {
+                      return item + '/fragments'
+                    }
+                  }
+                  return __dirname + '/docs/fragments'
+                },
               },
             ],
           ],
