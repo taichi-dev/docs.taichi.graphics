@@ -26,8 +26,6 @@ It must be very interesting to reproduce a tranquil autumn theme with voxels and
 
 When finishing reading this post, you will be able to create your own 3D voxel world. The source code is in Python and compatible with almost all platforms. It runs fine on my Macbook (20 FPS) except for some noises, and the noises subside quickly after you pause. If you are using an ultimate GPU like RTX 3090, it will definitely run much more smoothly.
 
-<video src="https://github.com/taichi-dev/public_files/blob/master/taichi.graphics/yuanming-voxel/p.mp4" controls>
-
 If you wish to try out the autumn theme for yourself and view the complete source code (91 lines of Python code in total), you can clone my repo at [https://github.com/yuanming-hu/voxel-art](https://link.zhihu.com/?target=https://github.com/yuanming-hu/voxel-art). If you wish to create your own voxel world, start by using our template repo [https://github.com/taichi-dev/voxel-challenge/](https://github.com/taichi-dev/voxel-challenge/)
 
 Just so you know, Taichi Voxel Challenge 2022 is getting heated. If you are also a voxel art lover, you are very welcome to join! Let's compare 'voxels' and motivate each other! For more information about how to participate, see the Voxel Challenge README at [https://github.com/taichi-dev/community/blob/main/events/voxel-challenge/README.md](https://github.com/taichi-dev/community/blob/main/events/voxel-challenge/README.md)
