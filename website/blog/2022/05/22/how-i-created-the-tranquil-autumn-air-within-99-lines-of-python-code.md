@@ -1,4 +1,11 @@
-# How I created the tranquil autumn air within 99 lines of Python code
+---
+title: "How I created the tranquil autumn air within 99 lines of Python code"
+date: "2022-05-16"
+slug: "how-i-created-the-tranquil-autumn-air-within-99-lines-of-python-code"
+authors:
+  - yuanming-hu
+tags: [Taichi, voxel, voxel challenge, abstract syntax tree]
+---
 
 # 1. Beginnings
 
@@ -6,7 +13,7 @@ On a Sunday afternoon about a couple of months ago, when Ye ([https://github.com
 
 ![Our first ray-tracing renderer prototype](https://github.com/taichi-dev/public_files/blob/master/taichi.graphics/yuanming-voxel/prototype.gif?raw=true)
 
-Taichi Lang is embedded in Python and it runs on any operating system and can easily interact with Python. As far as I know, apart from Taichi Lang, there's no such tooling in the Python ecosystem for generating GPU path tracing voxel renders. With Taichi Lang, one can easily create such a renderer ([https://github.com/taichi-dev/voxel-challenge/blob/main/renderer.py](https://link.zhihu.com/?target=https://github.com/taichi-dev/voxel-challenge/blob/main/renderer.py)) in around 300 lines of code.
+Taichi Lang is embedded in Python and it runs on any operating system and can easily interact with Python. As far as I know, apart from Taichi Lang, there's no such tooling in the Python ecosystem for generating GPU path tracing voxel renders. With Taichi Lang, one can easily create such a renderer ([https://github.com/taichi-dev/voxel-challenge/blob/main/renderer.py](https://github.com/taichi-dev/voxel-challenge/blob/main/renderer.py)) in around 300 lines of code.
 
 When finishing off the program, we became aware of something more serious: It is much easier for an experienced graphics developer to code a path tracing renderer than to come up with a scene setting for a beautiful image. Considering the huge amount of work involved in developing the UI, if we could only edit voxels one by one, it would take ages to get the intended results!
 
@@ -26,11 +33,11 @@ It must be very interesting to reproduce a tranquil autumn theme with voxels and
 
 When finishing reading this post, you will be able to create your own 3D voxel world. The source code is in Python and compatible with almost all platforms. It runs fine on my Macbook (20 FPS) except for some noises, and the noises subside quickly after you pause. If you are using an ultimate GPU like RTX 3090, it will definitely run much more smoothly.
 
-If you wish to try out the autumn theme for yourself and view the complete source code (91 lines of Python code in total), you can clone my repo at [https://github.com/yuanming-hu/voxel-art](https://link.zhihu.com/?target=https://github.com/yuanming-hu/voxel-art). If you wish to create your own voxel world, start by using our template repo [https://github.com/taichi-dev/voxel-challenge/](https://github.com/taichi-dev/voxel-challenge/)
+If you wish to try out the autumn theme for yourself and view the complete source code (91 lines of Python code in total), you can clone my repo at [https://github.com/yuanming-hu/voxel-art](https://github.com/yuanming-hu/voxel-art). If you wish to create your own voxel world, start by using our template repo [https://github.com/taichi-dev/voxel-challenge/](https://github.com/taichi-dev/voxel-challenge/)
 
 Just so you know, Taichi Voxel Challenge 2022 is getting heated. If you are also a voxel art lover, you are very welcome to join! Let's compare 'voxels' and motivate each other! For more information about how to participate, see the Voxel Challenge README at [https://github.com/taichi-dev/community/blob/main/events/voxel-challenge/README.md](https://github.com/taichi-dev/community/blob/main/events/voxel-challenge/README.md)
 
-> *It has been reported at* [*https://github.com/taichi-dev/taichi/issues/4891*](https://link.zhihu.com/?target=https://github.com/taichi-dev/taichi/issues/4891)  *that Taichi Lang v1.0.1 has some compatibility issues with the Vulkan backend in some environments. The next Taichi Lang release will ship the fix. As a workaround, use Taichi Lang v1.0.0 instead:*  
+> *It has been reported at* [https://github.com/taichi-dev/taichi/issues/4891](https://github.com/taichi-dev/taichi/issues/4891)  *that Taichi Lang v1.0.1 has some compatibility issues with the Vulkan backend in some environments. The next Taichi Lang release will ship the fix. As a workaround, use Taichi Lang v1.0.0 instead:*  
 >  
 > *pip install taichi==1.0.0*
 
