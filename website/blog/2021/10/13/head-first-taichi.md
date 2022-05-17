@@ -168,7 +168,7 @@ And that's it! This is all the code that we need to perform a parallel simulatio
 
 ### Rendering
 
-We will use taichi's built-in GPU-based GUI system (nicknamed "GGUI") to render the cloth. GGUI uses the Vulkan graphics API for rendering, so make sure you [have Vulkan installed on your machine](https://docs.taichi-lang.org/docs/misc/ggui). GGUI supports rendering two types of 3D objects: triangle meshes, and particles. We will render the cloth as a triangle mesh, and render the red ball as a single particle.
+We will use taichi's built-in GPU-based GUI system (nicknamed "GGUI") to render the cloth. GGUI uses the Vulkan graphics API for rendering, so make sure you [have Vulkan installed on your machine](https://docs.taichi-lang.org/docs/ggui). GGUI supports rendering two types of 3D objects: triangle meshes, and particles. We will render the cloth as a triangle mesh, and render the red ball as a single particle.
 
 GGUI represents a triangle mesh with two taichi fields: a field of `vertices`, and a field of `indices`. The `vertices` fields is a 1-dimensional field where each element extract is a 3D vector that represents the position of a vertex, possibly shared by multiple triangles. In our application, every point mass is a triangle vertex, so we can simply copy data from `x` into `vertices`:
 
