@@ -44,7 +44,7 @@ We also observed unsatisfactory results in the N-body test shown in Fig. 1. In t
 Please refer to the Taichi benchmark code repository [5] for more detailed performance analysis reports. We have a plot_benchmark.py script in each sub-directory, which can reproduce the above-mentioned performance charts once run. If you want to add more algorithms to our benchmark project or have a better baseline program, submit an issue in our repo. Let's work together to help Taichi Lang run faster!
 
 - [1] Taichi AOT, the solution for deploying kernels in mobile devices https://docs.taichi-lang.org/blog/taichi-aot-the-solution-for-deploying-kernels-in-mobile-devices  
-- [2] Taichi profiler Document https://docs.taichi-lang.org/lang/articles/profiler
+- [2] Taichi profiler Document https://docs.taichi-lang.org/docs/profiler
 - [3] N-body reference code repository https://github.com/harrism/mini-nbody
 - [4] Roofline model https://en.wikipedia.org/wiki/Roofline_model
 - [5] Taichi benchmark code repository https://github.com/taichi-dev/taichi_benchmark

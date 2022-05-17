@@ -32,7 +32,7 @@ A few things that are worth noticing here:
 - PyTorch Tensor are generally multi-dimensional arrays and their axes don't usually have an explicit meaning. But Taichi is designed for graphics applications where elements often map to an existing object, like the RGB channels of a pixel in an image or coordinates of a particle in a 2D plane. 
 - Both Taichi and Torch allow more flexible layout options, so that users can optimize performance according to their memory access pattern. 
   - Torch offers different memory formats specifying the mapping from Tensor dimensions to their real meanings, such as NCHW and NHWC. 
-  - With `ti.Layout.AOS` ,  the 3 scalars in the vector element are placed contiguously in memory, which means accessing all three scalars together will be blazing fast. Moreover, Taichi provides `SOA` layout and hierarchical data structure support through the "structure node". I won't delve into the details here. Please take a look at [this doc](https://docs.taichi.graphics/lang/articles/layout) if you are interested.
+  - With `ti.Layout.AOS` ,  the 3 scalars in the vector element are placed contiguously in memory, which means accessing all three scalars together will be blazing fast. Moreover, Taichi provides `SOA` layout and hierarchical data structure support through the "structure node". I won't delve into the details here. Please take a look at [this doc](https://docs.taichi.graphics/docs/layout) if you are interested.
 
 ## 2. Different granularity in abstraction
 
@@ -73,7 +73,7 @@ See? Although you are able to index a tensor, Torch mostly abstracts away the te
 
 You can exchange data between Taichi field and Torch tensor easily using the [from_torch](https://docs.taichi.graphics/api/taichi/#taichi.Field.from_torch) and [to_torch](https://docs.taichi.graphics/api/taichi/#taichi.Field.to_torch) APIs. But please be mindful that these APIs explicitly deep copy the data during transfer.
 
-Luckily for those who want to save this extra copy, a Taichi kernel can seamlessly take a Torch tensor as input without having to copy it to a Taichi field. We'll show you a demo in the next blog. Please see "[Interacting with external arrays](https://docs.taichi.graphics/lang/articles/external)" if you are interested. 
+Luckily for those who want to save this extra copy, a Taichi kernel can seamlessly take a Torch tensor as input without having to copy it to a Taichi field. We'll show you a demo in the next blog. Please see "[Interacting with external arrays](https://docs.taichi.graphics/docs/external)" if you are interested. 
 
 ## Nits: 
 

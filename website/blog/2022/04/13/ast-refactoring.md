@@ -18,7 +18,7 @@ We have refactored the Abstract Syntax Tree (AST) transformer of taichi in the p
 
 ![image](https://raw.githubusercontent.com/taichi-dev/public_files/fa03e63ca4e161318c8aa9a5db7f4a825604df88/taichi/life_of_kernel.png)
 
-As shown in this picture from [Life of a kernel](https://docs.taichi-lang.org/lang/articles/compilation), the AST transformer (currently the `ASTTransformer` class in `taichi/python/taichi/lang/ast/ast_transformer.py`) traverses the AST of a python function decorated by `@ti.kernel` and `@ti.func`, and generates the corresponding Taichi AST in C++.
+As shown in this picture from [Life of a kernel](https://docs.taichi-lang.org/docs/compilation), the AST transformer (currently the `ASTTransformer` class in `taichi/python/taichi/lang/ast/ast_transformer.py`) traverses the AST of a python function decorated by `@ti.kernel` and `@ti.func`, and generates the corresponding Taichi AST in C++.
 
 The C++ part of taichi provides interfaces for python to build the Taichi AST through [pybind11](https://github.com/pybind/pybind11), a foreign function interface (FFI) library between C++ and python. Pybind11 generates a dynamic library file (`taichi_core.so` on linux and mac, and `taichi_core.pyd` on Windows), and Python can import the file and use the file as a module (currently `taichi._lib.core`). 
 
@@ -362,7 +362,7 @@ In line 4 of `build_stmts`, we can see that besides `ctx.returned`, `ctx.loop_st
 
 ## Dealing with break and continue in compile-time loop unrolling
 
-Taichi supports compile-time evaluation, including [compile-time loop unrolling](https://docs.taichi-lang.or/lang/articles/meta#when-to-use-tistatic-with-for-loops) with `break` and `continue`. You can wrap the loop iterator with `ti.static` in `for` to let the compiler unroll the loop for you, like `for i in ti.static(range(10))`. It is also called static loop.
+Taichi supports compile-time evaluation, including [compile-time loop unrolling](https://docs.taichi-lang.or/docs/meta#when-to-use-tistatic-with-for-loops) with `break` and `continue`. You can wrap the loop iterator with `ti.static` in `for` to let the compiler unroll the loop for you, like `for i in ti.static(range(10))`. It is also called static loop.
 
 In the previous transformer, the logic of `for`, `break`, and `continue` are all handled by the Python interpreter when running the compiled function, and the transformer does not need to deal with it. However, the new transformer must handle it by itself. 
 
