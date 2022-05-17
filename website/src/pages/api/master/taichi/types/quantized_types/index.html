@@ -245,7 +245,24 @@
                 
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.quantized_types.fixed">
+   fixed
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.quantized_types.float">
+   float
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.quantized_types.int">
+   int
+  </a>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -267,6 +284,73 @@
                 
   <section id="module-taichi.types.quantized_types">
 <span id="taichi-types-quantized-types"></span><h1><a class="reference internal" href="#module-taichi.types.quantized_types" title="taichi.types.quantized_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.quantized_types</span></code></a><a class="headerlink" href="#module-taichi.types.quantized_types" title="Permalink to this headline">#</a></h1>
+<p>This module defines generators of quantized types.
+For more details, read <a class="reference external" href="https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf">https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf</a>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.types.quantized_types.fixed">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.quantized_types.</span></span><span class="sig-name descname"><span class="pre">fixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quantized_types.fixed" title="Permalink to this definition">#</a></dt>
+<dd><p>Generates a quantized type for fixed-point real numbers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frac</strong> (<em>int</em>) – Number of bits.</p></li>
+<li><p><strong>signed</strong> (<em>bool</em>) – Signed or unsigned.</p></li>
+<li><p><strong>num_range</strong> (<em>float</em>) – Range of the number.</p></li>
+<li><p><strong>compute</strong> (<em>DataType</em>) – Type for computation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified type.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DataType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.types.quantized_types.float">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.quantized_types.</span></span><span class="sig-name descname"><span class="pre">float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quantized_types.float" title="Permalink to this definition">#</a></dt>
+<dd><p>Generates a quantized type for floating-point real numbers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> (<em>int</em>) – Number of exponent bits.</p></li>
+<li><p><strong>frac</strong> (<em>int</em>) – Number of fraction bits.</p></li>
+<li><p><strong>signed</strong> (<em>bool</em>) – Signed or unsigned.</p></li>
+<li><p><strong>compute</strong> (<em>DataType</em>) – Type for computation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified type.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DataType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.types.quantized_types.int">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.quantized_types.</span></span><span class="sig-name descname"><span class="pre">int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quantized_types.int" title="Permalink to this definition">#</a></dt>
+<dd><p>Generates a quantized type for integers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bits</strong> (<em>int</em>) – Number of bits.</p></li>
+<li><p><strong>signed</strong> (<em>bool</em>) – Signed or unsigned.</p></li>
+<li><p><strong>compute</strong> (<em>DataType</em>) – Type for computation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified type.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DataType</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
