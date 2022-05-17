@@ -55,7 +55,7 @@ Ndarray is a data container designed specifically for the Taichi AOT solution. T
 
 ## AOT module
 
-We need to create a `ti.aot.Module` and call `add_kernel ()` to save all Taichi kernels used in the demo. For more details, see [the corresponding API reference](https://docs.taichi-lang.org/api/taichi/aot/) and [this tutorial](https://docs.taichi-lang.org/lang/articles/ndarray_android).
+We need to create a `ti.aot.Module` and call `add_kernel ()` to save all Taichi kernels used in the demo. For more details, see [the corresponding API reference](https://docs.taichi-lang.org/api/taichi/aot/) and [this tutorial](https://docs.taichi-lang.org/docs/ndarray_android).
 
 ```python
 mod = ti.aot.Module(ti.vulkan)
