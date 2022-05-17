@@ -4172,7 +4172,7 @@ allows modifications.</p>
 <p>For more information on Taichi’s SNode system, please check out
 these references:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.taichi-lang.org/lang/articles/sparse">https://docs.taichi-lang.org/lang/articles/sparse</a></p></li>
+<li><p><a class="reference external" href="https://docs.taichi-lang.org/docs/sparse">https://docs.taichi-lang.org/docs/sparse</a></p></li>
 <li><p><a class="reference external" href="https://yuanming.taichi.graphics/publication/2019-taichi/taichi-lang.pdf">https://yuanming.taichi.graphics/publication/2019-taichi/taichi-lang.pdf</a></p></li>
 </ul>
 <dl class="simple">
@@ -5639,7 +5639,7 @@ This is a scalar if both <cite>x1</cite> and <cite>x2</cite> are scalars.</p>
 <dt class="sig sig-object py" id="taichi.block_local">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">block_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.block_local" title="Permalink to this definition">#</a></dt>
 <dd><p>Hints Taichi to cache the fields and to enable the BLS optimization.</p>
-<p>Please visit <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/performance">https://docs.taichi-lang.org/lang/articles/performance</a>
+<p>Please visit <a class="reference external" href="https://docs.taichi-lang.org/docs/performance">https://docs.taichi-lang.org/docs/performance</a>
 for how BLS is used.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5757,7 +5757,7 @@ Currently contains ‘x64’, ‘x86_64’, ‘arm64’, ‘cc’, ‘wasm’.</
 <dd><p>Marks a class as Taichi compatible.</p>
 <p>To allow for modularized code, Taichi provides this decorator so that
 Taichi kernels can be defined inside a class.</p>
-<p>See also <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/odop">https://docs.taichi-lang.org/lang/articles/odop</a></p>
+<p>See also <a class="reference external" href="https://docs.taichi-lang.org/docs/odop">https://docs.taichi-lang.org/docs/odop</a></p>
 <p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.data_oriented
 &gt;&gt;&gt; class TiArray:
@@ -5892,7 +5892,7 @@ eigenvectors (ti.Matrix(n*2, n)): The eigenvectors in complex form. Each column 
 the complexity of how its underlying <a class="reference internal" href="lang/snode/#taichi.lang.snode.SNode" title="taichi.lang.snode.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> are
 actually defined. The data in a Taichi field can be directly accessed by
 a Taichi <a class="reference internal" href="lang/kernel_impl/#taichi.lang.kernel_impl.kernel" title="taichi.lang.kernel_impl.kernel"><code class="xref py py-func docutils literal notranslate"><span class="pre">kernel()</span></code></a>.</p>
-<p>See also <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/field">https://docs.taichi-lang.org/lang/articles/field</a></p>
+<p>See also <a class="reference external" href="https://docs.taichi-lang.org/docs/field">https://docs.taichi-lang.org/docs/field</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -6176,7 +6176,7 @@ complete list, please check out
 <li><p><code class="docutils literal notranslate"><span class="pre">cpu_max_num_threads</span></code> (int): Sets the number of threads used by the CPU thread pool.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">debug</span></code> (bool): Enables the debug mode, under which Taichi does a few more things like boundary checks.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">print_ir</span></code> (bool): Prints the CHI IR of the Taichi kernels.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">packed</span></code> (bool): Enables the packed memory layout. See <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/layout">https://docs.taichi-lang.org/lang/articles/layout</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">packed</span></code> (bool): Enables the packed memory layout. See <a class="reference external" href="https://docs.taichi-lang.org/docs/layout">https://docs.taichi-lang.org/docs/layout</a>.</p></li>
 </ul>
 </p></li>
 </ul>
@@ -6235,7 +6235,7 @@ complete list, please check out
 <dd><p>Check if the specified logging level is effective.
 All levels below current level will be effective.
 The default level is ‘info’.</p>
-<p>See also <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/utilities#logging">https://docs.taichi-lang.org/lang/articles/utilities#logging</a>.</p>
+<p>See also <a class="reference external" href="https://docs.taichi-lang.org/docs/utilities#logging">https://docs.taichi-lang.org/docs/utilities#logging</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>level</strong> (<em>str</em>) – The string represents logging level.             Effective levels include: ‘trace’, ‘debug’, ‘info’, ‘warn’, ‘error’, ‘critical’.</p>
@@ -6299,7 +6299,7 @@ Taichi into native CPU/GPU instructions (e.g. a series of CUDA kernels).
 The top-level <code class="docutils literal notranslate"><span class="pre">for</span></code> loops are automatically parallelized, and distributed
 to either a CPU thread pool or massively parallel GPUs.</p>
 <p>Kernel’s gradient kernel would be generated automatically by the AutoDiff system.</p>
-<p>See also <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/syntax#kernel">https://docs.taichi-lang.org/lang/articles/syntax#kernel</a>.</p>
+<p>See also <a class="reference external" href="https://docs.taichi-lang.org/docs/syntax#kernel">https://docs.taichi-lang.org/docs/syntax#kernel</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – the Python function to be decorated</p>
@@ -6884,7 +6884,7 @@ before rest: 1
 <dt class="sig sig-object py" id="taichi.root">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">root</span></span><a class="headerlink" href="#taichi.root" title="Permalink to this definition">#</a></dt>
 <dd><p>Root of the declared Taichi :func:<a href="#id1"><span class="problematic" id="id2">`</span></a>~taichi.lang.impl.field`s.</p>
-<p>See also <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/layout">https://docs.taichi-lang.org/lang/articles/layout</a></p>
+<p>See also <a class="reference external" href="https://docs.taichi-lang.org/docs/layout">https://docs.taichi-lang.org/docs/layout</a></p>
 <p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.field(ti.f32)
 &gt;&gt;&gt; ti.root.pointer(ti.ij, 4).dense(ti.ij, 8).place(x)
@@ -6968,7 +6968,7 @@ Available levels are: ‘trace’, ‘debug’, ‘info’, ‘warn’, ‘error
 <p>Note that after calling this function, logging levels below the specified one will
 also be effective. For example if <cite>level</cite> is set to ‘warn’, then the levels below
 it, which are ‘error’ and ‘critical’ in this case, will also be effective.</p>
-<p>See also <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/utilities#logging">https://docs.taichi-lang.org/lang/articles/utilities#logging</a>.</p>
+<p>See also <a class="reference external" href="https://docs.taichi-lang.org/docs/utilities#logging">https://docs.taichi-lang.org/docs/utilities#logging</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>level</strong> (<em>str</em>) – Logging level.</p>
@@ -7055,7 +7055,7 @@ element wise. If <cite>x &lt; 0</cite> an exception is raised.</p>
 <dd><p>Evaluates a Taichi-scope expression at compile time.</p>
 <p><cite>static()</cite> is what enables the so-called metaprogramming in Taichi. It is
 in many ways similar to <code class="docutils literal notranslate"><span class="pre">constexpr</span></code> in C++.</p>
-<p>See also <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/meta">https://docs.taichi-lang.org/lang/articles/meta</a>.</p>
+<p>See also <a class="reference external" href="https://docs.taichi-lang.org/docs/meta">https://docs.taichi-lang.org/docs/meta</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
