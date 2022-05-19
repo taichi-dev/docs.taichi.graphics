@@ -177,7 +177,7 @@ Now, let's add some leaves to the bold, boring tree trunk. Here, we define a fun
             f = I / radius
             d = vec2(f[0], f[2]).norm() # Distance to the axis of the cylinder (tree crown)
             prob = max(0, 1 - d)**2
-            if ti.random() &lt; prob:
+            if ti.random() < prob:
                 scene.set_voxel(pos + I, 1, color + (ti.random() - 0.5) * 0.2)
 ```
 
@@ -200,9 +200,9 @@ Well, it doesn't look very real, but we can use mathematics and noise to give it
             prob += ti.sin(f[0] * 5 + pos[0]) * 0.02
             prob += ti.sin(f[1] * 9 + pos[1]) * 0.01
             prob += ti.sin(f[2] * 10 + pos[2]) * 0.03
-            if prob &lt; 0.1:
+            if prob < 0.1:
                 prob = 0.0
-            if ti.random() &lt; prob:
+            if ti.random() < prob:
                 scene.set_voxel(pos + I, 1, color + (ti.random() - 0.5) * 0.2)
 ```
 
@@ -216,7 +216,7 @@ Autumn has always been synonymous with fallen leaves. Then, we intersperse the c
         for i, j in ti.ndrange((-radius, radius), (-radius, radius)):
             prob = max((radius - vec2(i, j).norm()) / radius, 0)
             prob = prob * prob
-            if ti.random() &lt; prob * prob:
+            if ti.random() < prob * prob:
                 scene.set_voxel(pos + ivec3(i, 1, j), 1,
                                 color + ti.random() * vec3(0.1))
 ```
