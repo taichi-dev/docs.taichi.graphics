@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.math._complex &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,12 +32,13 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -309,20 +310,20 @@
               <div>
                 
   <section id="module-taichi.math._complex">
-<span id="taichi-math-complex"></span><h1><a class="reference internal" href="#module-taichi.math._complex" title="taichi.math._complex"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.math._complex</span></code></a><a class="headerlink" href="#module-taichi.math._complex" title="Permalink to this headline">#</a></h1>
+<span id="taichi-math-complex"></span><h1><a class="reference internal" href="#module-taichi.math._complex" title="taichi.math._complex"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.math._complex</span></code></a><a class="headerlink" href="#module-taichi.math._complex" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.math._complex.cconj">
 <span class="sig-prename descclassname"><span class="pre">taichi.math._complex.</span></span><span class="sig-name descname"><span class="pre">cconj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math._complex.cconj" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the complex conjugate of a 2d vector.</p>
 <p>If <cite>z=(x, y)</cite> then the conjugate of <cite>z</cite> is <cite>(x, -y)</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>z</strong> (<a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The complex conjugate of <cite>z</cite>.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
@@ -335,7 +336,7 @@
 <p>This is equivalent to the division in the complex number field
 when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>z1</strong> (<a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The first input.</p></li>
 <li><p><strong>z2</strong> (<a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The second input.</p></li>
@@ -351,10 +352,10 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the complex division of <cite>z1 / z2</cite>.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
@@ -366,7 +367,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dd><p>Returns the complex exponential <span class="math notranslate nohighlight">\(e^z\)</span>.</p>
 <p><cite>z</cite> is a 2d vector treated as a complex number.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>z</strong> (<a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The base.</p></li>
 <li><p><strong>a</strong> (<em>float</em>) – The exponent.</p></li>
@@ -381,10 +382,10 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The power <span class="math notranslate nohighlight">\(z^a\)</span></p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
@@ -395,7 +396,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.math._complex.</span></span><span class="sig-name descname"><span class="pre">cinv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math._complex.cinv" title="Permalink to this definition">#</a></dt>
 <dd><p>Computes the reciprocal of a complex <cite>z</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>z</strong> (<a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The input.</p>
 </dd>
 </dl>
@@ -407,10 +408,10 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The reciprocal of <cite>z</cite>.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
@@ -424,7 +425,7 @@ then <span class="math notranslate nohighlight">\(log(z) = w\)</span>.</p>
 <p><cite>z</cite> is a 2d vector treated as a complex number. The argument of <span class="math notranslate nohighlight">\(w\)</span>
 lies in the range (-pi, pi].</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>z</strong> (<a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The input.</p>
 </dd>
 </dl>
@@ -436,10 +437,10 @@ lies in the range (-pi, pi].</p>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The logarithm of <cite>z</cite>.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
@@ -452,7 +453,7 @@ lies in the range (-pi, pi].</p>
 <p>This is equivalent to the multiplication in the complex number field
 when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>z1</strong> (<a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The first input.</p></li>
 <li><p><strong>z2</strong> (<a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The second input.</p></li>
@@ -468,10 +469,10 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the complex multiplication <cite>z1 * z2</cite>.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
@@ -482,7 +483,7 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.math._complex.</span></span><span class="sig-name descname"><span class="pre">cpow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math._complex.cpow" title="Permalink to this definition">#</a></dt>
 <dd><p>Computes the power of a complex <cite>z</cite>: <span class="math notranslate nohighlight">\(z^a\)</span>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>z</strong> (<a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The base.</p></li>
 <li><p><strong>a</strong> (<em>float</em>) – The exponent.</p></li>
@@ -497,10 +498,10 @@ when <cite>z1</cite> and <cite>z2</cite> are treated as complex numbers.</p>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The power <span class="math notranslate nohighlight">\(z^a\)</span>.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
@@ -515,7 +516,7 @@ if <cite>w^2=z</cite>, then <cite>w = csqrt(z)</cite>.</p>
 the one with positive real part is returned. If both their real parts
 are zero, the one with non-negative imaginary part is returned.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>z</strong> (<a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a>) – The input.</p>
 </dd>
 </dl>
@@ -527,10 +528,10 @@ are zero, the one with non-negative imaginary part is returned.</p>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The complex square root.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../#taichi.math.vec2" title="taichi.math.vec2"><code class="xref py py-class docutils literal notranslate"><span class="pre">vec2</span></code></a></p>
 </dd>
 </dl>
@@ -564,7 +565,7 @@ are zero, the one with non-negative imaginary part is returned.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     
