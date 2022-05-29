@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi._funcs &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -298,7 +299,7 @@
               <div>
                 
   <section id="module-taichi._funcs">
-<span id="taichi-funcs"></span><h1><a class="reference internal" href="#module-taichi._funcs" title="taichi._funcs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi._funcs</span></code></a><a class="headerlink" href="#module-taichi._funcs" title="Permalink to this headline">#</a></h1>
+<span id="taichi-funcs"></span><h1><a class="reference internal" href="#module-taichi._funcs" title="taichi._funcs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi._funcs</span></code></a><a class="headerlink" href="#module-taichi._funcs" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi._funcs.eig">
 <span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">eig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.eig" title="Permalink to this definition">#</a></dt>
@@ -306,17 +307,17 @@
 <p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.
 2D implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.eig2x2()</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – 2D Matrix for which the eigenvalues and right eigenvectors will be computed.</p></li>
 <li><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the eigenvalues and right eigenvectors.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The eigenvalues in complex form. Each row stores one eigenvalue. The first number of the eigenvalue represents the real part and the second number represents the imaginary part.
 eigenvectors (ti.Matrix(n*2, n)): The eigenvectors in complex form. Each column stores one eigenvector. Each eigenvector consists of n entries, each of which is represented by two numbers for its real part and imaginary part.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>eigenvalues (ti.Matrix(n, 2))</p>
 </dd>
 </dl>
@@ -329,13 +330,13 @@ eigenvectors (ti.Matrix(n*2, n)): The eigenvectors in complex form. Each column 
 <p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Polar_decomposition">https://en.wikipedia.org/wiki/Polar_decomposition</a>.
 This is only a wrapper for <a class="reference internal" href="../#taichi.polar_decompose" title="taichi.polar_decompose"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.polar_decompose()</span></code></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – input nxn matrix <cite>A</cite>.</p></li>
 <li><p><strong>dt</strong> (<em>DataType</em>) – date type of elements in matrix <cite>A</cite>, typically accepts ti.f32 or ti.f64.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Decomposed nxn matrices <cite>U</cite> and <cite>P</cite>.</p>
 </dd>
 </dl>
@@ -348,11 +349,11 @@ This is only a wrapper for <a class="reference internal" href="../#taichi.polar_
 (Gaussian) distribution of mean 0 and variance 1, using the
 Box-Muller transformation. Must be called in Taichi scope.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dt</strong> (<em>DataType</em>) – Data type of the required random number. Default to <cite>None</cite>.
 If set to <cite>None</cite> <cite>dt</cite> will be determined dynamically in runtime.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The generated random float.</p>
 </dd>
 </dl>
@@ -372,17 +373,17 @@ If set to <cite>None</cite> <cite>dt</cite> will be determined dynamically in ru
 <span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.solve" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve a matrix using Gauss elimination method.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – input nxn matrix <cite>A</cite>.</p></li>
 <li><p><strong>b</strong> (<em>ti.Vector</em><em>(</em><em>n</em><em>, </em><em>1</em><em>)</em>) – input nx1 vector <cite>b</cite>.</p></li>
 <li><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the <cite>A</cite> and <cite>b</cite>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>the solution of Ax=b.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>x (ti.Vector(n, 1))</p>
 </dd>
 </dl>
@@ -395,13 +396,13 @@ If set to <cite>None</cite> <cite>dt</cite> will be determined dynamically in ru
 <p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Singular_value_decomposition">https://en.wikipedia.org/wiki/Singular_value_decomposition</a>.
 This is only a wrappers for <a class="reference internal" href="../#taichi.svd" title="taichi.svd"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.svd()</span></code></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – input nxn matrix <cite>A</cite>.</p></li>
 <li><p><strong>dt</strong> (<em>DataType</em>) – date type of elements in matrix <cite>A</cite>, typically accepts ti.f32 or ti.f64.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Decomposed nxn matrices <cite>U</cite>, ‘S’ and <cite>V</cite>.</p>
 </dd>
 </dl>
@@ -414,17 +415,17 @@ This is only a wrappers for <a class="reference internal" href="../#taichi.svd" 
 <p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.
 2D implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.sym_eig2x2()</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – Symmetric Matrix for which the eigenvalues and right eigenvectors will be computed.</p></li>
 <li><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the eigenvalues and right eigenvectors.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The eigenvalues. Each entry store one eigen value.
 eigenvectors (ti.Matrix(n, n)): The eigenvectors. Each column stores one eigenvector.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>eigenvalues (ti.Vector(n))</p>
 </dd>
 </dl>
@@ -458,7 +459,7 @@ eigenvectors (ti.Matrix(n, n)): The eigenvectors. Each column stores one eigenve
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

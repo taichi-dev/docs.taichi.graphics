@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.lang.kernel_impl &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -283,7 +284,7 @@
               <div>
                 
   <section id="module-taichi.lang.kernel_impl">
-<span id="taichi-lang-kernel-impl"></span><h1><a class="reference internal" href="#module-taichi.lang.kernel_impl" title="taichi.lang.kernel_impl"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.kernel_impl</span></code></a><a class="headerlink" href="#module-taichi.lang.kernel_impl" title="Permalink to this headline">#</a></h1>
+<span id="taichi-lang-kernel-impl"></span><h1><a class="reference internal" href="#module-taichi.lang.kernel_impl" title="taichi.lang.kernel_impl"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.kernel_impl</span></code></a><a class="headerlink" href="#module-taichi.lang.kernel_impl" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.kernel_impl.data_oriented">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_impl.</span></span><span class="sig-name descname"><span class="pre">data_oriented</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_impl.data_oriented" title="Permalink to this definition">#</a></dt>
@@ -307,10 +308,10 @@ Taichi kernels can be defined inside a class.</p>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>cls</strong> (<em>Class</em>) – the class to be decorated</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The decorated class.</p>
 </dd>
 </dl>
@@ -323,16 +324,16 @@ Taichi kernels can be defined inside a class.</p>
 <p>This decorator transforms a Python function into a Taichi one. Taichi
 will JIT compile it into native instructions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fn</strong> (<em>Callable</em>) – The Python function to be decorated</p></li>
 <li><p><strong>is_real_function</strong> (<em>bool</em>) – Whether the function is a real function</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The decorated function</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Callable</p>
 </dd>
 </dl>
@@ -359,13 +360,13 @@ to either a CPU thread pool or massively parallel GPUs.</p>
 <p>Kernel’s gradient kernel would be generated automatically by the AutoDiff system.</p>
 <p>See also <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/syntax#kernel">https://docs.taichi-lang.org/lang/articles/syntax#kernel</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – the Python function to be decorated</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The decorated function</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Callable</p>
 </dd>
 </dl>
@@ -409,7 +410,7 @@ to either a CPU thread pool or massively parallel GPUs.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.profiler.kernel_metrics &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -278,7 +279,7 @@
               <div>
                 
   <section id="module-taichi.profiler.kernel_metrics">
-<span id="taichi-profiler-kernel-metrics"></span><h1><a class="reference internal" href="#module-taichi.profiler.kernel_metrics" title="taichi.profiler.kernel_metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernel_metrics</span></code></a><a class="headerlink" href="#module-taichi.profiler.kernel_metrics" title="Permalink to this headline">#</a></h1>
+<span id="taichi-profiler-kernel-metrics"></span><h1><a class="reference internal" href="#module-taichi.profiler.kernel_metrics" title="taichi.profiler.kernel_metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernel_metrics</span></code></a><a class="headerlink" href="#module-taichi.profiler.kernel_metrics" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.profiler.kernel_metrics.CuptiMetric">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_metrics.</span></span><span class="sig-name descname"><span class="pre">CuptiMetric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed_header'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span>&#160;&#160;&#160;&#160; <span class="pre">{:8.0f}</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_metrics.CuptiMetric" title="Permalink to this definition">#</a></dt>
@@ -287,7 +288,7 @@
 Only available for the CUDA backend now, i.e. you need <code class="docutils literal notranslate"><span class="pre">ti.init(kernel_profiler=True,</span> <span class="pre">arch=ti.cuda)</span></code>.
 For usage of this class, see examples in func <a class="reference internal" href="../#taichi.profiler.set_kernel_profiler_metrics" title="taichi.profiler.set_kernel_profiler_metrics"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_kernel_profiler_metrics()</span></code></a> and <a class="reference internal" href="../#taichi.profiler.collect_kernel_profiler_metrics" title="taichi.profiler.collect_kernel_profiler_metrics"><code class="xref py py-func docutils literal notranslate"><span class="pre">collect_kernel_profiler_metrics()</span></code></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – name of metric that collected by CUPTI toolkit. used by <a class="reference internal" href="../#taichi.profiler.set_kernel_profiler_metrics" title="taichi.profiler.set_kernel_profiler_metrics"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_kernel_profiler_metrics()</span></code></a> and <a class="reference internal" href="../#taichi.profiler.collect_kernel_profiler_metrics" title="taichi.profiler.collect_kernel_profiler_metrics"><code class="xref py py-func docutils literal notranslate"><span class="pre">collect_kernel_profiler_metrics()</span></code></a>.</p></li>
 <li><p><strong>header</strong> (<em>str</em>) – column header of this metric, used by <a class="reference internal" href="../#taichi.profiler.print_kernel_profiler_info" title="taichi.profiler.print_kernel_profiler_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">print_kernel_profiler_info()</span></code></a>.</p></li>
@@ -338,7 +339,7 @@ For usage of this class, see examples in func <a class="reference internal" href
 <p>Accepted arguments are ‘global_access’, ‘shared_access’, ‘atomic_access’,
 ‘cache_hit_rate’, ‘device_utilization’.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – cupti metri name.</p>
 </dd>
 </dl>
@@ -372,7 +373,7 @@ For usage of this class, see examples in func <a class="reference internal" href
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

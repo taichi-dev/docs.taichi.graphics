@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.lang.struct &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -367,7 +368,7 @@
               <div>
                 
   <section id="module-taichi.lang.struct">
-<span id="taichi-lang-struct"></span><h1><a class="reference internal" href="#module-taichi.lang.struct" title="taichi.lang.struct"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.struct</span></code></a><a class="headerlink" href="#module-taichi.lang.struct" title="Permalink to this headline">#</a></h1>
+<span id="taichi-lang-struct"></span><h1><a class="reference internal" href="#module-taichi.lang.struct" title="taichi.lang.struct"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.struct</span></code></a><a class="headerlink" href="#module-taichi.lang.struct" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.struct.</span></span><span class="sig-name descname"><span class="pre">Struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct" title="Permalink to this definition">#</a></dt>
@@ -377,10 +378,10 @@
 (key, value) pairs. Valid data members of a struct can be scalars,
 matrices or other dictionary-like stuctures.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>entries</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>Dict</em><em>, </em><em>Expr</em><em>, </em><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><em>Matrix</em></a><em>, </em><a class="reference internal" href="#taichi.lang.struct.Struct" title="taichi.lang.struct.Struct"><em>Struct</em></a><em>]</em><em>]</em>) – keys and values for struct members.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An instance of this struct.</p>
 </dd>
 </dl>
@@ -401,7 +402,7 @@ dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v
 <dd><p>Creates a <a class="reference internal" href="../../#taichi.StructField" title="taichi.StructField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructField</span></code></a> with each element
 has this struct as its type.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>members</strong> (<em>dict</em>) – a dict, each item is like <cite>name: type</cite>.</p></li>
 <li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – width and height of the field.</p></li>
@@ -442,7 +443,7 @@ will start at <cite>(-10, -10)</cite>, not <cite>(0, 0)</cite>.</p></li>
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.fill" title="Permalink to this definition">#</a></dt>
 <dd><p>Fills the Struct with a specific value in Taichi scope.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
 </dd>
 </dl>
@@ -480,10 +481,10 @@ dict_items([(&#39;center&#39;, 2), (&#39;radius&#39;, 1.0)])
 <dd><p>Converts the Struct to a dictionary.</p>
 <p>Args:</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The result dictionary.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>Dict</p>
 </dd>
 </dl>
@@ -501,7 +502,7 @@ dict_items([(&#39;center&#39;, 2), (&#39;radius&#39;, 1.0)])
 directly hosts members as <cite>Field</cite> instances to support nested structs.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>field_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><em>Field</em></a><em>]</em>) – Struct field members.</p></li>
 <li><p><strong>name</strong> (<em>string</em><em>, </em><em>optional</em>) – The custom name of the field.</p></li>
@@ -514,7 +515,7 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <dd><p>Copies all elements from another field.</p>
 <p>The shape of the other field needs to be the same as <cite>self</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><em>Field</em></a>) – The source field.</p>
 </dd>
 </dl>
@@ -525,10 +526,10 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.dtype" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets data type of each individual value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Data type of each individual value.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>DataType</p>
 </dd>
 </dl>
@@ -539,7 +540,7 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.fill" title="Permalink to this definition">#</a></dt>
 <dd><p>Fills this struct field with a specified value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
 </dd>
 </dl>
@@ -568,13 +569,13 @@ between corresponding items can be performed.</p>
 <span class="sig-name descname"><span class="pre">get_member_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.get_member_field" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a ScalarField using a specific field member. Only used for quant.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – Specified key of the field member.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The result ScalarField.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.ScalarField" title="taichi.ScalarField">ScalarField</a></p>
 </dd>
 </dl>
@@ -599,13 +600,13 @@ between corresponding items can be performed.</p>
 <span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.parent" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets an ancestor of the representative SNode in the SNode tree.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of levels going up from the representative SNode.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The n-th parent of the representative SNode.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.SNode" title="taichi.SNode">SNode</a></p>
 </dd>
 </dl>
@@ -616,10 +617,10 @@ between corresponding items can be performed.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets field shape.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Field shape.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>Tuple[Int]</p>
 </dd>
 </dl>
@@ -630,10 +631,10 @@ between corresponding items can be performed.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.StructField.snode" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets representative SNode for info purposes.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../../#taichi.SNode" title="taichi.SNode">SNode</a></p>
 </dd>
 </dl>
@@ -645,10 +646,10 @@ between corresponding items can be performed.</p>
 <dd><p>Converts the Struct field instance to a dictionary of NumPy arrays.</p>
 <p>The dictionary may be nested when converting nested structs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The result NumPy array.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>Dict[str, Union[numpy.ndarray, Dict]]</p>
 </dd>
 </dl>
@@ -660,18 +661,18 @@ between corresponding items can be performed.</p>
 <dd><p>Converts the Struct field instance to a dictionary of PyTorch tensors.</p>
 <p>The dictionary may be nested when converting nested structs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The
 desired device of returned tensor.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>The result</dt><dd><p>PyTorch tensor.</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Dict[str, Union[torch.Tensor, Dict]]</p>
 </dd>
 </dl>
@@ -707,7 +708,7 @@ desired device of returned tensor.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

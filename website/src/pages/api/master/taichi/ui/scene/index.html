@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.ui.scene &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -325,7 +326,7 @@
               <div>
                 
   <section id="module-taichi.ui.scene">
-<span id="taichi-ui-scene"></span><h1><a class="reference internal" href="#module-taichi.ui.scene" title="taichi.ui.scene"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.scene</span></code></a><a class="headerlink" href="#module-taichi.ui.scene" title="Permalink to this headline">#</a></h1>
+<span id="taichi-ui-scene"></span><h1><a class="reference internal" href="#module-taichi.ui.scene" title="taichi.ui.scene"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.scene</span></code></a><a class="headerlink" href="#module-taichi.ui.scene" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.scene.Scene">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.scene.</span></span><span class="sig-name descname"><span class="pre">Scene</span></span><a class="headerlink" href="#taichi.ui.scene.Scene" title="Permalink to this definition">#</a></dt>
@@ -347,7 +348,7 @@ and can be rendered on a canvas.</p>
 <span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.mesh" title="Permalink to this definition">#</a></dt>
 <dd><p>Declare a mesh inside the scene.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertices</strong> – a taichi 3D Vector field, where each element indicate the
 3D location of a vertex.</p></li>
@@ -373,7 +374,7 @@ seen from both sides.</p></li>
 <span class="sig-name descname"><span class="pre">particles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.particles" title="Permalink to this definition">#</a></dt>
 <dd><p>Declare a set of particles within the scene.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>centers</strong> – a taichi 3D Vector field, where each element indicate the
 3D location of the center of a triangle.</p></li>
@@ -393,7 +394,7 @@ seen from both sides.</p></li>
 <span class="sig-name descname"><span class="pre">point_light</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.point_light" title="Permalink to this definition">#</a></dt>
 <dd><p>Set a point light in this scene.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pos</strong> (list, tuple, <code class="xref py py-class docutils literal notranslate"><span class="pre">vector(3,</span> <span class="pre">float)</span></code>) – 3D vector for light position.</p></li>
 <li><p><strong>color</strong> (list, tuple, <code class="xref py py-class docutils literal notranslate"><span class="pre">vector(3,</span> <span class="pre">float)</span></code>) – (r, g, b) triple for the color of the light, in the range [0, 1].</p></li>
@@ -407,7 +408,7 @@ seen from both sides.</p></li>
 <span class="sig-name descname"><span class="pre">set_camera</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.set_camera" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the camera for this scene.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>camera</strong> (<a class="reference internal" href="../#taichi.ui.Camera" title="taichi.ui.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a>) – A camera instance.</p>
 </dd>
 </dl>
@@ -468,7 +469,7 @@ seen from both sides.</p></li>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

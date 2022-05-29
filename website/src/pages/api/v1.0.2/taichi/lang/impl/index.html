@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.lang.impl &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -328,13 +329,13 @@
               <div>
                 
   <section id="module-taichi.lang.impl">
-<span id="taichi-lang-impl"></span><h1><a class="reference internal" href="#module-taichi.lang.impl" title="taichi.lang.impl"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.impl</span></code></a><a class="headerlink" href="#module-taichi.lang.impl" title="Permalink to this headline">#</a></h1>
+<span id="taichi-lang-impl"></span><h1><a class="reference internal" href="#module-taichi.lang.impl" title="taichi.lang.impl"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.impl</span></code></a><a class="headerlink" href="#module-taichi.lang.impl" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.impl.axes">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">axes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.axes" title="Permalink to this definition">#</a></dt>
 <dd><p>Defines a list of axes to be used by a field.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>*x</strong> – A list of axes to be activated</p>
 </dd>
 </dl>
@@ -358,7 +359,7 @@ actually defined. The data in a Taichi field can be directly accessed by
 a Taichi <a class="reference internal" href="../kernel_impl/#taichi.lang.kernel_impl.kernel" title="taichi.lang.kernel_impl.kernel"><code class="xref py py-func docutils literal notranslate"><span class="pre">kernel()</span></code></a>.</p>
 <p>See also <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/field">https://docs.taichi-lang.org/lang/articles/field</a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dtype</strong> (<em>DataType</em>) – data type of the field.</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – shape of the field.</p></li>
@@ -388,7 +389,7 @@ and thus needs an adjoint field to store the gradients.</p></li>
 <p>This is often used when you want to iterate over all indices returned by <cite>ndrange()</cite>
 in one <cite>for</cite> loop and a single index.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="../../#taichi.ndrange" title="taichi.ndrange"><code class="xref py py-func docutils literal notranslate"><span class="pre">ndrange()</span></code></a>) – an iterator object returned by <cite>ti.ndrange</cite>.</p>
 </dd>
 </dl>
@@ -414,7 +415,7 @@ in one <cite>for</cite> loop and a single index.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.ndarray" title="Permalink to this definition">#</a></dt>
 <dd><p>Defines a Taichi ndarray with scalar elements.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
@@ -434,10 +435,10 @@ in one <cite>for</cite> loop and a single index.</p>
 <dd><p>Returns an array of ones with the same shape and type as the input. It’s also a scalar
 if the input is a scalar.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A new copy of the input but filled with ones.</p>
 </dd>
 </dl>
@@ -472,7 +473,7 @@ if the input is a scalar.</p>
 in many ways similar to <code class="docutils literal notranslate"><span class="pre">constexpr</span></code> in C++.</p>
 <p>See also <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/meta">https://docs.taichi-lang.org/lang/articles/meta</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>Any</em>) – an expression to be evaluated</p></li>
 <li><p><strong>*xs</strong> (<em>Any</em>) – for Python-ish swapping assignment</p></li>
@@ -517,7 +518,7 @@ condition check.</p>
 <p>This function is called at compile time and has no runtime overhead.
 The bool value in <cite>cond</cite> must can be determined at compile time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>cond</strong> (<em>bool</em>) – an expression with a bool value.</p></li>
 <li><p><strong>msg</strong> (<em>str</em>) – assertion message.</p></li>
@@ -546,7 +547,7 @@ AssertionError: the year must be a lunar year
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">stop_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.stop_grad" title="Permalink to this definition">#</a></dt>
 <dd><p>Stops computing gradients during back propagation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>) – A field.</p>
 </dd>
 </dl>
@@ -558,10 +559,10 @@ AssertionError: the year must be a lunar year
 <dd><p>Returns an array of zeros with the same shape and type as the input. It’s also a scalar
 if the input is a scalar.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A new copy of the input but filled with zeros.</p>
 </dd>
 </dl>
@@ -604,7 +605,7 @@ if the input is a scalar.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

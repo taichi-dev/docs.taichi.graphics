@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.lang.misc &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -468,7 +469,7 @@
               <div>
                 
   <section id="module-taichi.lang.misc">
-<span id="taichi-lang-misc"></span><h1><a class="reference internal" href="#module-taichi.lang.misc" title="taichi.lang.misc"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.misc</span></code></a><a class="headerlink" href="#module-taichi.lang.misc" title="Permalink to this headline">#</a></h1>
+<span id="taichi-lang-misc"></span><h1><a class="reference internal" href="#module-taichi.lang.misc" title="taichi.lang.misc"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.misc</span></code></a><a class="headerlink" href="#module-taichi.lang.misc" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.Tape">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">Tape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_gradients</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.Tape" title="Permalink to this definition">#</a></dt>
@@ -482,16 +483,16 @@ statement ended.</p>
 <p>See also <a class="reference internal" href="../kernel_impl/#taichi.lang.kernel_impl.kernel" title="taichi.lang.kernel_impl.kernel"><code class="xref py py-func docutils literal notranslate"><span class="pre">kernel()</span></code></a> and
 <a class="reference internal" href="../../ad/#taichi.ad.grad_replaced" title="taichi.ad.grad_replaced"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code></a> for gradient functions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>loss</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code>) – The loss field, which shape should be ().</p></li>
 <li><p><strong>clear_gradients</strong> (<em>Bool</em>) – Before <cite>with</cite> body start, clear all gradients or not.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The context manager.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../tape/#taichi.lang.tape.TapeImpl" title="taichi.lang.tape.TapeImpl"><code class="xref py py-class docutils literal notranslate"><span class="pre">TapeImpl</span></code></a></p>
 </dd>
 </dl>
@@ -521,7 +522,7 @@ for the compiler to perform scatchpad optimization, and return the
 value untouched.</p>
 <p>The assumed range is <cite>[base + low, base + high)</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>val</strong> (<em>Number</em>) – The input value.</p></li>
 <li><p><strong>base</strong> (<em>Number</em>) – The base point for the range interval.</p></li>
@@ -529,7 +530,7 @@ value untouched.</p>
 <li><p><strong>high</strong> (<em>Number</em>) – The higher offset relative to <cite>base</cite> (excluded).</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Return the input <cite>value</cite> untouched.</p>
 </dd>
 </dl>
@@ -549,7 +550,7 @@ value untouched.</p>
 <p>Please visit <a class="reference external" href="https://docs.taichi-lang.org/lang/articles/performance">https://docs.taichi-lang.org/lang/articles/performance</a>
 for how BLS is used.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>*args</strong> (<em>List</em><em>[</em><a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><em>Field</em></a><em>]</em>) – A list of sparse Taichi fields.</p>
 </dd>
 </dl>
@@ -682,7 +683,7 @@ For a 1d array it’s the direction along this array.</p>
 <p>This should always be the entry point of your Taichi program. Most
 importantly, it sets the backend used throughout the program.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>arch</strong> – Backend to use. This is usually <a class="reference internal" href="../#taichi.lang.cpu" title="taichi.lang.cpu"><code class="xref py py-const docutils literal notranslate"><span class="pre">cpu</span></code></a> or <a class="reference internal" href="../#taichi.lang.gpu" title="taichi.lang.gpu"><code class="xref py py-const docutils literal notranslate"><span class="pre">gpu</span></code></a>.</p></li>
 <li><p><strong>default_fp</strong> (<em>Optional</em><em>[</em><em>type</em><em>]</em>) – Default floating-point type.</p></li>
@@ -754,7 +755,7 @@ lower dimension d-2, it’s the second axis of this cell.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">loop_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serialize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallelize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.loop_config" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets directives for the next loop</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>block_dim</strong> (<em>int</em>) – The number of threads in a block on GPU</p></li>
 <li><p><strong>serialize</strong> (<em>bool</em>) – Whether to let the for loop execute serially, <cite>serialize=True</cite> equals to <cite>parallelize=1</cite></p></li>
@@ -796,7 +797,7 @@ and to enable the mesh BLS optimization,
 only available for backends supporting <cite>ti.extension.mesh</cite> and to use with mesh-for loop.</p>
 <p>Related to <a class="reference external" href="https://github.com/taichi-dev/taichi/issues/3608">https://github.com/taichi-dev/taichi/issues/3608</a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>*args</strong> (<em>List</em><em>[</em><em>Attribute</em><em>]</em>) – A list of mesh attributes or fields accessed as attributes.</p>
 </dd>
 </dl>
@@ -917,7 +918,7 @@ before rest: 1
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

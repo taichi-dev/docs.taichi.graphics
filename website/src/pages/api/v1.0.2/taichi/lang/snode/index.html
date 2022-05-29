@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.lang.snode &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -365,7 +366,7 @@
               <div>
                 
   <section id="module-taichi.lang.snode">
-<span id="taichi-lang-snode"></span><h1><a class="reference internal" href="#module-taichi.lang.snode" title="taichi.lang.snode"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.snode</span></code></a><a class="headerlink" href="#module-taichi.lang.snode" title="Permalink to this headline">#</a></h1>
+<span id="taichi-lang-snode"></span><h1><a class="reference internal" href="#module-taichi.lang.snode" title="taichi.lang.snode"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.snode</span></code></a><a class="headerlink" href="#module-taichi.lang.snode" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.snode.SNode">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.snode.</span></span><span class="sig-name descname"><span class="pre">SNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode" title="Permalink to this definition">#</a></dt>
@@ -385,14 +386,14 @@ these references:</p>
 <span class="sig-name descname"><span class="pre">bit_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.bit_array" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds a bit_array SNode as a child component of <cite>self</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>axes</strong> (<em>List</em><em>[</em><em>Axis</em><em>]</em>) – Axes to activate.</p></li>
 <li><p><strong>dimensions</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Shape of each axis.</p></li>
 <li><p><strong>num_bits</strong> (<em>int</em>) – Number of bits to use.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The added <a class="reference internal" href="../#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> instance.</p>
 </dd>
 </dl>
@@ -403,10 +404,10 @@ these references:</p>
 <span class="sig-name descname"><span class="pre">bit_struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.bit_struct" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds a bit_struct SNode as a child component of <cite>self</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>num_bits</strong> – Number of bits to use.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The added <a class="reference internal" href="../#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> instance.</p>
 </dd>
 </dl>
@@ -417,13 +418,13 @@ these references:</p>
 <span class="sig-name descname"><span class="pre">bitmasked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.bitmasked" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds a bitmasked SNode as a child component of <cite>self</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>axes</strong> (<em>List</em><em>[</em><em>Axis</em><em>]</em>) – Axes to activate.</p></li>
 <li><p><strong>dimensions</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Shape of each axis.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The added <a class="reference internal" href="../#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> instance.</p>
 </dd>
 </dl>
@@ -440,13 +441,13 @@ these references:</p>
 <span class="sig-name descname"><span class="pre">dense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.dense" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds a dense SNode as a child component of <cite>self</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>axes</strong> (<em>List</em><em>[</em><em>Axis</em><em>]</em>) – Axes to activate.</p></li>
 <li><p><strong>dimensions</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Shape of each axis.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The added <a class="reference internal" href="../#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> instance.</p>
 </dd>
 </dl>
@@ -457,14 +458,14 @@ these references:</p>
 <span class="sig-name descname"><span class="pre">dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.dynamic" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds a dynamic SNode as a child component of <cite>self</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>axis</strong> (<em>List</em><em>[</em><em>Axis</em><em>]</em>) – Axis to activate, must be 1.</p></li>
 <li><p><strong>dimension</strong> (<em>int</em>) – Shape of the axis.</p></li>
 <li><p><strong>chunk_size</strong> (<em>int</em>) – Chunk size.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The added <a class="reference internal" href="../#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> instance.</p>
 </dd>
 </dl>
@@ -486,13 +487,13 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.parent" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets an ancestor of <cite>self</cite> in the SNode tree.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of levels going up from <cite>self</cite>.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The n-th parent of <cite>self</cite>.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Union[None, _Root, <a class="reference internal" href="#taichi.lang.snode.SNode" title="taichi.lang.snode.SNode">SNode</a>]</p>
 </dd>
 </dl>
@@ -503,14 +504,14 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_exponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.place" title="Permalink to this definition">#</a></dt>
 <dd><p>Places a list of Taichi fields under the <cite>self</cite> container.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>*args</strong> (<em>List</em><em>[</em><em>ti.field</em><em>]</em>) – A list of Taichi fields to place.</p></li>
 <li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>tuple</em><em>[</em><em>Number</em><em>]</em><em>]</em>) – Offset of the field domain.</p></li>
 <li><p><strong>shared_exponent</strong> (<em>bool</em>) – Only useful for quant types.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The <cite>self</cite> container.</p>
 </dd>
 </dl>
@@ -521,13 +522,13 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <span class="sig-name descname"><span class="pre">pointer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.pointer" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds a pointer SNode as a child component of <cite>self</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>axes</strong> (<em>List</em><em>[</em><em>Axis</em><em>]</em>) – Axes to activate.</p></li>
 <li><p><strong>dimensions</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Shape of each axis.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The added <a class="reference internal" href="../#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> instance.</p>
 </dd>
 </dl>
@@ -538,10 +539,10 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.SNode.shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets the number of elements from root in each axis of <cite>self</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The number of elements from root in each axis of <cite>self</cite>.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>Tuple[int]</p>
 </dd>
 </dl>
@@ -554,7 +555,7 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.snode.</span></span><span class="sig-name descname"><span class="pre">activate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.activate" title="Permalink to this definition">#</a></dt>
 <dd><p>Explicitly activate a cell of <cite>node</cite> at location <cite>indices</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>node</strong> (<a class="reference internal" href="../../#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – Must be a pointer, hash or bitmasked node.</p></li>
 <li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="../../#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to activate.</p></li>
@@ -568,7 +569,7 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.snode.</span></span><span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.append" title="Permalink to this definition">#</a></dt>
 <dd><p>Append a value <cite>val</cite> to a SNode <cite>node</cite> at index <cite>indices</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>node</strong> (<a class="reference internal" href="../../#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – Input SNode.</p></li>
 <li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="../../#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to visit.</p></li>
@@ -585,7 +586,7 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <p>After deactivation, the Taichi runtime automatically recycles and zero-fills
 the memory of the deactivated cell.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>node</strong> (<a class="reference internal" href="../../#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – Must be a pointer, hash or bitmasked node.</p></li>
 <li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="../../#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to deactivate.</p></li>
@@ -600,16 +601,16 @@ the memory of the deactivated cell.</p>
 <dd><p>Query the memory address (on CUDA/x64) of field <cite>f</cite> at index <cite>indices</cite>.</p>
 <p>Currently, this function can only be called inside a taichi kernel.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>f</strong> (Union[<a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>, <a class="reference internal" href="../../#taichi.MatrixField" title="taichi.MatrixField"><code class="xref py py-class docutils literal notranslate"><span class="pre">MatrixField</span></code></a>]) – Input taichi field for memory address query.</p></li>
 <li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="../../#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – The specified field indices of the query.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The memory address of <cite>f[indices]</cite>.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ti.u64</p>
 </dd>
 </dl>
@@ -621,16 +622,16 @@ the memory of the deactivated cell.</p>
 <dd><p>Explicitly query whether a cell in a SNode <cite>node</cite> at location
 <cite>indices</cite> is active or not.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>node</strong> (<a class="reference internal" href="../../#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – Must be a pointer, hash or bitmasked node.</p></li>
 <li><p><strong>indices</strong> (Union[int, list, <a class="reference internal" href="../../#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to visit.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>the cell <cite>node[indices]</cite> is active or not.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
@@ -641,16 +642,16 @@ the memory of the deactivated cell.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.snode.</span></span><span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.length" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the length of the dynamic SNode <cite>node</cite> at index <cite>indices</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>node</strong> (<a class="reference internal" href="../../#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – a dynamic SNode.</p></li>
 <li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="../../#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to query.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>the length of cell <cite>node[indices]</cite>.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -661,17 +662,17 @@ the memory of the deactivated cell.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.snode.</span></span><span class="sig-name descname"><span class="pre">rescale_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">I</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.snode.rescale_index" title="Permalink to this definition">#</a></dt>
 <dd><p>Rescales the index ‘I’ of field (or SNode) ‘a’ to match the shape of SNode ‘b’.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (Union[<a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>, <a class="reference internal" href="../../#taichi.MatrixField" title="taichi.MatrixField"><code class="xref py py-class docutils literal notranslate"><span class="pre">MatrixField</span></code></a>) – Input taichi fields or snodes.</p></li>
 <li><p><strong>b</strong> (Union[<a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>, <a class="reference internal" href="../../#taichi.MatrixField" title="taichi.MatrixField"><code class="xref py py-class docutils literal notranslate"><span class="pre">MatrixField</span></code></a>) – Input taichi fields or snodes.</p></li>
 <li><p><strong>I</strong> (Union[list, <a class="reference internal" href="../../#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – grouped loop index.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>rescaled grouped loop index</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Ib (<a class="reference internal" href="../../#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>)</p>
 </dd>
 </dl>
@@ -705,7 +706,7 @@ the memory of the deactivated cell.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     
