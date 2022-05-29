@@ -1590,6 +1590,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.struct_class">
+   struct_class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.sync">
    sync
   </a>
@@ -3276,7 +3281,9 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 matrices or other dictionary-like stuctures.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>entries</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>Dict</em><em>, </em><em>Expr</em><em>, </em><a class="reference internal" href="#taichi.lang.Matrix" title="taichi.lang.Matrix"><em>Matrix</em></a><em>, </em><a class="reference internal" href="#taichi.lang.Struct" title="taichi.lang.Struct"><em>Struct</em></a><em>]</em><em>]</em>) – keys and values for struct members.</p>
+<dd class="field-odd"><p><strong>entries</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>Dict</em><em>, </em><em>Expr</em><em>, </em><a class="reference internal" href="#taichi.lang.Matrix" title="taichi.lang.Matrix"><em>Matrix</em></a><em>, </em><a class="reference internal" href="#taichi.lang.Struct" title="taichi.lang.Struct"><em>Struct</em></a><em>]</em><em>]</em>) – keys and values for struct members. Entries can optionally
+include a dictionary of functions with the key ‘__struct_methods’
+which will be attached to the struct for executing on the struct data.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>An instance of this struct.</p>
@@ -3295,13 +3302,16 @@ dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Struct.field">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">members</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;Struct&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct.field" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">members</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;Struct&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct.field" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a <a class="reference internal" href="../#taichi.StructField" title="taichi.StructField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructField</span></code></a> with each element
 has this struct as its type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>members</strong> (<em>dict</em>) – a dict, each item is like <cite>name: type</cite>.</p></li>
+<li><p><strong>methods</strong> (<em>dict</em>) – a dict of methods that should be included with
+the field.  Each struct item of the field will have the
+methods as instance functions.</p></li>
 <li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – width and height of the field.</p></li>
 <li><p><strong>offset</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – offset of the indices of the created field.
 For example if <cite>offset=(-10, -10)</cite> the indices of the field
@@ -3374,15 +3384,18 @@ dict_items([(&#39;center&#39;, 2), (&#39;radius&#39;, 1.0)])
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.Struct.to_dict">
-<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct.to_dict" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_methods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct.to_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the Struct to a dictionary.</p>
-<p>Args:</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The result dictionary.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>include_methods</strong> (<em>bool</em>) – Whether any struct methods should be included
+in the result dictionary under the key ‘__struct_methods’.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Dict</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The result dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3391,7 +3404,7 @@ dict_items([(&#39;center&#39;, 2), (&#39;radius&#39;, 1.0)])
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.StructField">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">StructField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">StructField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">struct_methods</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="field/#taichi.lang.field.Field" title="taichi.lang.field.Field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.field.Field</span></code></a></p>
 <p>Taichi struct field with SNode implementation.</p>
 <blockquote>
@@ -3402,6 +3415,8 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>field_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="#taichi.lang.Field" title="taichi.lang.Field"><em>Field</em></a><em>]</em>) – Struct field members.</p></li>
+<li><p><strong>struct_methods</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>callable</em><em>]</em>) – Dictionary of functions to apply
+to each struct instance in the field.</p></li>
 <li><p><strong>name</strong> (<em>string</em><em>, </em><em>optional</em>) – The custom name of the field.</p></li>
 </ul>
 </dd>
@@ -5661,6 +5676,48 @@ AssertionError: the year must be a lunar year
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>) – A field.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.struct_class">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">struct_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct_class" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts a class with field annotations and methods into a taichi struct type.</p>
+<p>This will return a normal custom struct type, with the functions added to it.
+Struct fields can be generated in the normal way from the struct type.
+Functions in the class can be run on the struct instance.</p>
+<dl class="simple">
+<dt>This class decorator inspects the class for annotations and methods and</dt><dd><ol class="arabic simple">
+<li><p>Sets the annotations as fields for the struct</p></li>
+<li><p>Attaches the methods to the struct type</p></li>
+</ol>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.stuct_class
+&gt;&gt;&gt; class Sphere:
+&gt;&gt;&gt;     center: vec3
+&gt;&gt;&gt;     radius: ti.f32
+&gt;&gt;&gt;
+&gt;&gt;&gt;     @ti.func
+&gt;&gt;&gt;     def area(self):
+&gt;&gt;&gt;         return 4 * 3.14 * self.radius * self.radius
+&gt;&gt;&gt;
+&gt;&gt;&gt; my_spheres = Sphere.field(shape=(n, ))
+&gt;&gt;&gt; my_sphere[2].area()
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cls</strong> (<em>Class</em>) – the class with annotations and methods to convert to a struct</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A taichi struct with the annotations as fields</dt><dd><p>and methods from the class attached.</p>
+</dd>
+</dl>
+</p>
 </dd>
 </dl>
 </dd></dl>
