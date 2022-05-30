@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.ui &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -924,7 +925,7 @@
               <div>
                 
   <section id="module-taichi.ui">
-<span id="taichi-ui"></span><h1><a class="reference internal" href="#module-taichi.ui" title="taichi.ui"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui</span></code></a><a class="headerlink" href="#module-taichi.ui" title="Permalink to this headline">#</a></h1>
+<span id="taichi-ui"></span><h1><a class="reference internal" href="#module-taichi.ui" title="taichi.ui"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui</span></code></a><a class="headerlink" href="#module-taichi.ui" title="Permalink to this heading">#</a></h1>
 <p>Taichi gui module for visualization.</p>
 <p>This module contains a cpu based GUI system, a vulkan based GGUI system,
 and other helper utilities like adding widgets and exporting video files.</p>
@@ -956,7 +957,7 @@ and other helper utilities like adding widgets and exporting video files.</p>
 directly, please use the helper function <a class="reference internal" href="#taichi.ui.make_camera" title="taichi.ui.make_camera"><code class="xref py py-func docutils literal notranslate"><span class="pre">make_camera()</span></code></a>
 instead.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>ptr</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">PyCamera</span></code>) – An instance of the <cite>PyCamera</cite>             class from the C++ level.</p>
 </dd>
 </dl>
@@ -979,7 +980,7 @@ instead.</p>
 <span class="sig-name descname"><span class="pre">bottom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.bottom" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the offset of the bottom clipping plane in camera frustum.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>bottom</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – offset of the bottom clipping plane.</p>
 </dd>
 </dl>
@@ -994,7 +995,7 @@ instead.</p>
 <span class="sig-name descname"><span class="pre">fov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fov</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.fov" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the camera fov angle (field of view) in degrees.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>fov</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – Angle in range (0, 180).</p>
 </dd>
 </dl>
@@ -1009,7 +1010,7 @@ instead.</p>
 <span class="sig-name descname"><span class="pre">left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.left" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the offset of the left clipping plane in camera frustum.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>left</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – offset of the left clipping plane.</p>
 </dd>
 </dl>
@@ -1024,7 +1025,7 @@ instead.</p>
 <span class="sig-name descname"><span class="pre">lookat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.lookat" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the camera lookat.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – 3D coordinates.</p>
 </dd>
 </dl>
@@ -1039,7 +1040,7 @@ instead.</p>
 <span class="sig-name descname"><span class="pre">position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.position" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the camera position.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – 3D coordinates.</p>
 </dd>
 </dl>
@@ -1060,7 +1061,7 @@ instead.</p>
 <span class="sig-name descname"><span class="pre">right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.right" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the offset of the right clipping plane in camera frustum.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>right</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – offset of the right clipping plane.</p>
 </dd>
 </dl>
@@ -1075,7 +1076,7 @@ instead.</p>
 <span class="sig-name descname"><span class="pre">top</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.top" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the offset of the top clipping plane in camera frustum.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>top</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – offset of the top clipping plane.</p>
 </dd>
 </dl>
@@ -1092,7 +1093,7 @@ instead.</p>
 Press <cite>w</cite>, <cite>s</cite>, <cite>a</cite>, <cite>d</cite>, <cite>e</cite>, <cite>q</cite> to move the camera
 <cite>formard</cite>, <cite>back</cite>, <cite>left</cite>, <cite>right</cite>, <cite>head up</cite>, <cite>head down</cite>, accordingly.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>window</strong> (<a class="reference internal" href="#taichi.ui.Window" title="taichi.ui.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code></a>) – a windown instance.</p></li>
 <li><p><strong>movement_speed</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – camera movement speed.</p></li>
@@ -1109,7 +1110,7 @@ Press <cite>w</cite>, <cite>s</cite>, <cite>a</cite>, <cite>d</cite>, <cite>e</c
 <span class="sig-name descname"><span class="pre">up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.up" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the camera up vector.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – 3D coordinates.</p>
 </dd>
 </dl>
@@ -1124,7 +1125,7 @@ Press <cite>w</cite>, <cite>s</cite>, <cite>a</cite>, <cite>d</cite>, <cite>e</c
 <span class="sig-name descname"><span class="pre">z_far</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_far</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.z_far" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the offset of the far clipping plane in camera frustum.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>far</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – offset of the far clipping plane.</p>
 </dd>
 </dl>
@@ -1139,7 +1140,7 @@ Press <cite>w</cite>, <cite>s</cite>, <cite>a</cite>, <cite>d</cite>, <cite>e</c
 <span class="sig-name descname"><span class="pre">z_near</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_near</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.z_near" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the offset of the near clipping plane in camera frustum.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>near</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – offset of the near clipping plane.</p>
 </dd>
 </dl>
@@ -1163,7 +1164,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">circles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Canvas.circles" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a set of 2D circles on this canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>centers</strong> – a taichi 2D Vector field, where each element indicate the                 3D location of a vertex.</p></li>
 <li><p><strong>radius</strong> (<em>float</em>) – radius of the circles, relative to the height of the screen.</p></li>
@@ -1179,7 +1180,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Canvas.lines" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a set of 2D lines on this canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertices</strong> – a taichi 2D Vector field, where each element indicate the                 3D location of a vertex.</p></li>
 <li><p><strong>width</strong> (<em>float</em>) – width of the lines, relative to the height of the screen.</p></li>
@@ -1196,7 +1197,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">scene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scene</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Canvas.scene" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a 3D scene on the canvas</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>scene</strong> (<a class="reference internal" href="#taichi.ui.Scene" title="taichi.ui.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code></a>) – an instance of <a class="reference internal" href="#taichi.ui.Scene" title="taichi.ui.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code></a>.</p>
 </dd>
 </dl>
@@ -1207,7 +1208,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">set_background_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Canvas.set_background_color" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the background color of this canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>color</strong> (<em>tuple</em><em>(</em><em>float</em><em>)</em>) – RGB triple in the range [0, 1].</p>
 </dd>
 </dl>
@@ -1218,7 +1219,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">set_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Canvas.set_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the content of this canvas to an <cite>img</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>img</strong> (numpy.ndarray, <a class="reference internal" href="../#taichi.MatrixField" title="taichi.MatrixField"><code class="xref py py-class docutils literal notranslate"><span class="pre">MatrixField</span></code></a>, <a class="reference internal" href="../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>) – the image to be shown.</p>
 </dd>
 </dl>
@@ -1229,7 +1230,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">triangles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Canvas.triangles" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a set of 2D triangles on this canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertices</strong> – a taichi 2D Vector field, where each element indicate                 the 3D location of a vertex.</p></li>
 <li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which                 indicate the vertex indices of the triangles. If this is None,                 then it is assumed that the vertices are already arranged in                 triangles order.</p></li>
@@ -1257,7 +1258,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">GUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Taichi'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_gui</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fullscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fast_gui</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI" title="Permalink to this definition">#</a></dt>
 <dd><p>Taichi Graphical User Interface class.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the GUI to be constructed.
 Default is ‘Taichi’.</p></li>
@@ -1272,10 +1273,10 @@ fullscreen mode. Default is False.</p></li>
 Taichi. Default is False.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The created taichi GUI object.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">GUI</span></code></p>
 </dd>
 </dl>
@@ -1431,7 +1432,7 @@ Taichi. Default is False.</p></li>
 <span class="sig-name descname"><span class="pre">arrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.arrow" title="Permalink to this definition">#</a></dt>
 <dd><p>Draws a single arrow on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>orig</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position where arrow starts. Shape must be 2.</p></li>
 <li><p><strong>direction</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The direction where arrow points to. Shape must be 2.</p></li>
@@ -1447,7 +1448,7 @@ Taichi. Default is False.</p></li>
 <span class="sig-name descname"><span class="pre">arrow_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.arrow_field" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a field of arrows on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>direction</strong> (<em>np.array</em>) – The pattern and direction of the field of arrows.</p></li>
 <li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>np.array</em><em>]</em><em>, </em><em>optional</em>) – The color or colors of arrows.
@@ -1463,7 +1464,7 @@ Default is 0xFFFFFF.</p></li>
 <span class="sig-name descname"><span class="pre">arrows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.arrows" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a list arrows on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>orig</strong> (<em>numpy.array</em>) – The positions where arrows start.</p></li>
 <li><p><strong>direction</strong> (<em>numpy.array</em>) – The directions where arrows point to.</p></li>
@@ -1479,14 +1480,14 @@ Default is 0xFFFFFF.</p></li>
 <span class="sig-name descname"><span class="pre">button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.button" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a button object on canvas to be manipulated with.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>text</strong> (<em>str</em>) – The title of button.</p></li>
 <li><p><strong>event_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The event name associated with button.
 Default is WidgetButton_{text}</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The event name associated with created button.</p>
 </dd>
 </dl>
@@ -1497,7 +1498,7 @@ Default is WidgetButton_{text}</p></li>
 <span class="sig-name descname"><span class="pre">circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.circle" title="Permalink to this definition">#</a></dt>
 <dd><p>Draws a circle on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pos</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>numpy.array</em><em>]</em>) – The position of the circle.</p></li>
 <li><p><strong>color</strong> (<em>int</em><em>, </em><em>Optional</em>) – The color of the circle. Default is 0xFFFFFF.</p></li>
@@ -1512,7 +1513,7 @@ Default is WidgetButton_{text}</p></li>
 <span class="sig-name descname"><span class="pre">circles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.circles" title="Permalink to this definition">#</a></dt>
 <dd><p>Draws a list of circles on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pos</strong> (<em>numpy.array</em>) – The positions of the circles.</p></li>
 <li><p><strong>radius</strong> (<em>Number</em><em>, </em><em>optional</em>) – The radius of the circles in pixel. Default is 1.</p></li>
@@ -1531,7 +1532,7 @@ circle. Shape must match pos. Default is None.</p></li>
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.clear" title="Permalink to this definition">#</a></dt>
 <dd><p>Clears the canvas with the color provided.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – Specify the color to clear the canvas. Default
 is the background color of GUI.</p>
 </dd>
@@ -1565,10 +1566,10 @@ the dtype is <cite>float</cite> it will be directly casted to 32-bit float type.
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fps_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.fps_limit" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets the maximum fps of this gui.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the maximum fps.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -1579,13 +1580,13 @@ the dtype is <cite>float</cite> it will be directly casted to 32-bit float type.
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_bool_environ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_bool_environ" title="Permalink to this definition">#</a></dt>
 <dd><p>Get an environment variable and cast it to <cite>bool</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> (<em>str</em>) – The environment variable key.</p></li>
 <li><p><strong>default</strong> (<em>bool</em>) – The default value.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The environment variable value cast to bool.             If the value is not found, directly return argument ‘default’.</p>
 </dd>
 </dl>
@@ -1600,7 +1601,7 @@ in the range <cite>[0, 1] x [0, 1]</cite>.</p>
 corner, with <cite>+x</cite> direction points to the right, and <cite>+y</cite> direcntion
 points upward.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The current position of mouse.</p>
 </dd>
 </dl>
@@ -1611,13 +1612,13 @@ points upward.</p>
 <span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">e_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_event" title="Permalink to this definition">#</a></dt>
 <dd><p>Checks if the specified event is triggered.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>*e_filter</strong> (<em>ti.GUI.EVENT</em>) – The specific event to be checked.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>whether or not the specified event is triggered.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
@@ -1628,13 +1629,13 @@ points upward.</p>
 <span class="sig-name descname"><span class="pre">get_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">e_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_events" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets a list of events that are triggered.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>*e_filter</strong> (<em>List</em><em>[</em><em>ti.GUI.EVENT</em><em>]</em>) – The type of events to be filtered.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A list of events that are triggered.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">EVENT</span></code></p>
 </dd>
 </dl>
@@ -1645,10 +1646,10 @@ points upward.</p>
 <span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the window content as an <cite>numpy.ndarray</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The image data in numpy contiguous array type.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.array</span></code></p>
 </dd>
 </dl>
@@ -1659,10 +1660,10 @@ points upward.</p>
 <span class="sig-name descname"><span class="pre">get_key_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.get_key_event" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets keyboard triggered event.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The keyboard triggered event.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">EVENT</span></code></p>
 </dd>
 </dl>
@@ -1673,10 +1674,10 @@ points upward.</p>
 <span class="sig-name descname"><span class="pre">has_key_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.has_key_event" title="Permalink to this definition">#</a></dt>
 <dd><p>Check if there is any key event registered.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>whether or not there is any key event registered.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
@@ -1687,13 +1688,13 @@ points upward.</p>
 <span class="sig-name descname"><span class="pre">is_pressed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.is_pressed" title="Permalink to this definition">#</a></dt>
 <dd><p>Checks if any key among a set of specified keys is pressed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>*keys</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – The keys to be listened to.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>whether or not any key among the specified keys is pressed.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
@@ -1704,13 +1705,13 @@ points upward.</p>
 <span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.label" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a label object on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – The title of label.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The created label object.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">WidgetValue</span></code></p>
 </dd>
 </dl>
@@ -1721,7 +1722,7 @@ points upward.</p>
 <span class="sig-name descname"><span class="pre">line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.line" title="Permalink to this definition">#</a></dt>
 <dd><p>Draws a single line on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>begin</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of one end of line. Shape must be 2.</p></li>
 <li><p><strong>end</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of the other end of line. Shape must be 2.</p></li>
@@ -1737,7 +1738,7 @@ points upward.</p>
 <span class="sig-name descname"><span class="pre">lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.lines" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a list of lines on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>begin</strong> (<em>numpy.array</em>) – The positions of one end of lines.</p></li>
 <li><p><strong>end</strong> (<em>numpy.array</em>) – The positions of the other end of lines.</p></li>
@@ -1757,7 +1758,7 @@ the shape of begin &amp; end. Default is 0xFFFFFF.</p></li>
 <span class="sig-name descname"><span class="pre">point_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.point_field" title="Permalink to this definition">#</a></dt>
 <dd><p>Draws a field of points on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>radius</strong> (<em>np.array</em>) – The pattern and radius of the field of points.</p></li>
 <li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>np.array</em><em>]</em><em>, </em><em>optional</em>) – The color or colors of points.
@@ -1773,7 +1774,7 @@ Default is 0xFFFFFF.</p></li>
 <span class="sig-name descname"><span class="pre">rect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topleft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottomright</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.rect" title="Permalink to this definition">#</a></dt>
 <dd><p>Draws a single rectangle on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>topleft</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of the topleft corner of rectangle.
 Shape must be 2.</p></li>
@@ -1791,10 +1792,10 @@ of rectangle. Shape must be 2.</p></li>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.running" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns whether this gui is running or not.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>whether this gui is running or not.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
@@ -1829,7 +1830,7 @@ the horizontal coordinates (from left to right) and <cite>j</cite> the vertical 
 </dd>
 </dl>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>img</strong> (Union[<a class="reference internal" href="../#taichi.field" title="taichi.field"><code class="xref py py-class docutils literal notranslate"><span class="pre">taichi.field</span></code></a>, <cite>numpy.array</cite>]) – The color array                 representing the image to be drawn. Support greyscale, RG, RGB,                 and RGBA color representations. Its shape must match GUI resolution.</p>
 </dd>
 </dl>
@@ -1841,7 +1842,7 @@ the horizontal coordinates (from left to right) and <cite>j</cite> the vertical 
 <dd><p>Shows the frame content in the gui window, or save the content to an
 image file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>file</strong> (<em>str</em><em>, </em><em>optional</em>) – output filename. The default is <cite>None</cite>, and
 the frame content is displayed in the gui window. If it’s a valid
 image filename the frame will be saved as the specified image.</p>
@@ -1854,7 +1855,7 @@ image filename the frame will be saved as the specified image.</p>
 <span class="sig-name descname"><span class="pre">slider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.slider" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a slider object on canvas to be manipulated with.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>text</strong> (<em>str</em>) – The title of slider.</p></li>
 <li><p><strong>minimum</strong> (<em>int</em><em>, </em><em>float</em>) – The minimum value of slider.</p></li>
@@ -1862,10 +1863,10 @@ image filename the frame will be saved as the specified image.</p>
 <li><p><strong>step</strong> (<em>int</em><em>, </em><em>float</em>) – The changing step of slider. Optional and default to 1.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The created slider object.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">WidgetValue</span></code></p>
 </dd>
 </dl>
@@ -1876,7 +1877,7 @@ image filename the frame will be saved as the specified image.</p>
 <span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.text" title="Permalink to this definition">#</a></dt>
 <dd><p>Draws texts on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>content</strong> (<em>str</em>) – The text to be drawn on canvas.</p></li>
 <li><p><strong>pos</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position where the text is to be put.</p></li>
@@ -1892,7 +1893,7 @@ image filename the frame will be saved as the specified image.</p>
 <span class="sig-name descname"><span class="pre">triangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.triangle" title="Permalink to this definition">#</a></dt>
 <dd><p>Draws a single triangle on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of the first point of triangle. Shape must be 2.</p></li>
 <li><p><strong>b</strong> (<em>List</em><em>[</em><em>Number</em><em>]</em>) – The position of the second point of triangle. Shape must be 2.</p></li>
@@ -1908,7 +1909,7 @@ image filename the frame will be saved as the specified image.</p>
 <span class="sig-name descname"><span class="pre">triangles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.triangles" title="Permalink to this definition">#</a></dt>
 <dd><p>Draws a list of triangles on canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>numpy.array</em>) – The positions of the first points of triangles.</p></li>
 <li><p><strong>b</strong> (<em>numpy.array</em>) – The positions of the second points of triangles.</p></li>
@@ -1929,7 +1930,7 @@ the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
 <dd><p>For declaring IMGUI components in a <a class="reference internal" href="#taichi.ui.Window" title="taichi.ui.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">taichi.ui.Window</span></code></a>
 created by the GGUI system.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>gui</strong> – reference to a <cite>PyGui</cite>.</p>
 </dd>
 </dl>
@@ -1940,7 +1941,7 @@ created by the GGUI system.</p>
 <p>All widget function calls (e.g. <cite>text</cite>, <cite>button</cite>) after the <cite>begin</cite>
 and before the next <cite>end</cite> will describe the widgets within this subwindow.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>float</em>) – The x-coordinate (between 0 and 1) of the top-left                 corner of the subwindow, relative to the full window.</p></li>
 <li><p><strong>y</strong> (<em>float</em>) – The y-coordinate (between 0 and 1) of the top-left                 corner of the subwindow, relative to the full window.</p></li>
@@ -1956,7 +1957,7 @@ and before the next <cite>end</cite> will describe the widgets within this subwi
 <span class="sig-name descname"><span class="pre">button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.button" title="Permalink to this definition">#</a></dt>
 <dd><p>Declares a button, and returns whether or not it had just been clicked.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the button.</p>
 </dd>
 </dl>
@@ -1967,7 +1968,7 @@ and before the next <cite>end</cite> will describe the widgets within this subwi
 <span class="sig-name descname"><span class="pre">checkbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.checkbox" title="Permalink to this definition">#</a></dt>
 <dd><p>Declares a checkbox, and returns whether or not it has been checked.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the checkbox.</p></li>
 <li><p><strong>old_value</strong> (<em>bool</em>) – whether the checkbox is currently checked.</p></li>
@@ -1981,7 +1982,7 @@ and before the next <cite>end</cite> will describe the widgets within this subwi
 <span class="sig-name descname"><span class="pre">color_edit_3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.color_edit_3" title="Permalink to this definition">#</a></dt>
 <dd><p>Declares a color edit palate.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the palate.</p></li>
 <li><p><strong>old_value</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – the current value of the color, this                 should be a tuple of floats in [0,1] that indicates RGB values.</p></li>
@@ -2001,7 +2002,7 @@ and before the next <cite>end</cite> will describe the widgets within this subwi
 <span class="sig-name descname"><span class="pre">slider_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Gui.slider_float" title="Permalink to this definition">#</a></dt>
 <dd><p>Declares a slider, and returns its newest value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the slider</p></li>
 <li><p><strong>old_value</strong> (<em>float</em>) – the current value of the slider.</p></li>
@@ -2021,7 +2022,7 @@ and before the next <cite>end</cite> will describe the widgets within this subwi
 <p>All args of this method should align with <cite>begin</cite>.</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>float</em>) – The x-coordinate (between 0 and 1) of the top-left                 corner of the subwindow, relative to the full window.</p></li>
 <li><p><strong>y</strong> (<em>float</em>) – The y-coordinate (between 0 and 1) of the top-left                 corner of the subwindow, relative to the full window.</p></li>
@@ -2122,7 +2123,7 @@ and can be rendered on a canvas.</p>
 <span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Scene.mesh" title="Permalink to this definition">#</a></dt>
 <dd><p>Declare a mesh inside the scene.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertices</strong> – a taichi 3D Vector field, where each element indicate the
 3D location of a vertex.</p></li>
@@ -2148,7 +2149,7 @@ seen from both sides.</p></li>
 <span class="sig-name descname"><span class="pre">particles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Scene.particles" title="Permalink to this definition">#</a></dt>
 <dd><p>Declare a set of particles within the scene.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>centers</strong> – a taichi 3D Vector field, where each element indicate the
 3D location of the center of a triangle.</p></li>
@@ -2168,7 +2169,7 @@ seen from both sides.</p></li>
 <span class="sig-name descname"><span class="pre">point_light</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Scene.point_light" title="Permalink to this definition">#</a></dt>
 <dd><p>Set a point light in this scene.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pos</strong> (list, tuple, <code class="xref py py-class docutils literal notranslate"><span class="pre">vector(3,</span> <span class="pre">float)</span></code>) – 3D vector for light position.</p></li>
 <li><p><strong>color</strong> (list, tuple, <code class="xref py py-class docutils literal notranslate"><span class="pre">vector(3,</span> <span class="pre">float)</span></code>) – (r, g, b) triple for the color of the light, in the range [0, 1].</p></li>
@@ -2182,7 +2183,7 @@ seen from both sides.</p></li>
 <span class="sig-name descname"><span class="pre">set_camera</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Scene.set_camera" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the camera for this scene.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>camera</strong> (<a class="reference internal" href="#taichi.ui.Camera" title="taichi.ui.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a>) – A camera instance.</p>
 </dd>
 </dl>
@@ -2205,7 +2206,7 @@ seen from both sides.</p></li>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">Window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vsync</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Window" title="Permalink to this definition">#</a></dt>
 <dd><p>The window class.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Window title.</p></li>
 <li><p><strong>res</strong> (<em>tuple</em><em>[</em><em>int</em><em>]</em>) – resolution (width, height) of the window, in pixels.</p></li>
@@ -2258,7 +2259,7 @@ to the corresponding event.</p>
 <span class="sig-name descname"><span class="pre">get_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Window.get_events" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current list of unprocessed events.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>tag</strong> (<em>str</em>) – A tag used for filtering events.                 If it is None, then all events are returned.</p>
 </dd>
 </dl>
@@ -2269,13 +2270,13 @@ to the corresponding event.</p>
 <span class="sig-name descname"><span class="pre">is_pressed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Window.is_pressed" title="Permalink to this definition">#</a></dt>
 <dd><p>Checks if any of a set of specified keys is pressed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>keys</strong> (list[<a class="reference internal" href="constants/#module-taichi.ui.constants" title="taichi.ui.constants"><code class="xref py py-mod docutils literal notranslate"><span class="pre">constants</span></code></a>]) – The keys to be matched.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>True</cite> if any key among <cite>keys</cite> is pressed, else <cite>False</cite>.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
@@ -2298,7 +2299,7 @@ to the corresponding event.</p>
 <span class="sig-name descname"><span class="pre">write_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Window.write_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Save the window content to an image file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – output filename.</p>
 </dd>
 </dl>
@@ -2317,10 +2318,10 @@ to the corresponding event.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">hex_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.hex_to_rgb" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts hex color format to rgb color format.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>color</strong> (<em>int</em>) – The hex representation of color.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The rgb representation of color.</p>
 </dd>
 </dl>
@@ -2345,10 +2346,10 @@ your scene.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">rgb_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.rgb_to_hex" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts rgb color format to hex color format.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>c</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – The rgb representation of color.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The hex representation of color.</p>
 </dd>
 </dl>
@@ -2382,7 +2383,7 @@ your scene.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

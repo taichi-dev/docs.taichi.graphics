@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.aot &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -310,7 +311,7 @@
               <div>
                 
   <section id="module-taichi.aot">
-<span id="taichi-aot"></span><h1><a class="reference internal" href="#module-taichi.aot" title="taichi.aot"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.aot</span></code></a><a class="headerlink" href="#module-taichi.aot" title="Permalink to this headline">#</a></h1>
+<span id="taichi-aot"></span><h1><a class="reference internal" href="#module-taichi.aot" title="taichi.aot"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.aot</span></code></a><a class="headerlink" href="#module-taichi.aot" title="Permalink to this heading">#</a></h1>
 <p>Taichi’s AOT (ahead of time) module.</p>
 <p>Users can use Taichi as a GPU compute shader/kernel compiler by compiling their
 Taichi kernels into an AOT module.</p>
@@ -338,7 +339,7 @@ m.save(&#39;/path/to/module&#39;)
 <span class="sig-name descname"><span class="pre">add_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.Module.add_field" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a taichi field to the AOT module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> – name of taichi field</p></li>
 <li><p><strong>field</strong> – taichi field</p></li>
@@ -367,7 +368,7 @@ m.save(&#39;/path/to/module&#39;)
 <span class="sig-name descname"><span class="pre">add_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.Module.add_kernel" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a taichi kernel to the AOT module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>kernel_fn</strong> (<em>Function</em>) – the function decorated by taichi <cite>kernel</cite>.</p></li>
 <li><p><strong>template_args</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – a dict where key is the template
@@ -386,7 +387,7 @@ provided, uses the built-in <code class="docutils literal notranslate"><span cla
 <span class="sig-name descname"><span class="pre">add_kernel_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_fn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.Module.add_kernel_template" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a taichi kernel (with template parameters) to the AOT module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>kernel_fn</strong> (<em>Function</em>) – the function decorated by taichi <cite>kernel</cite>.</p>
 </dd>
 </dl>
@@ -418,7 +419,7 @@ provided, uses the built-in <code class="docutils literal notranslate"><span cla
 <dt class="sig sig-object py" id="taichi.aot.Module.save">
 <span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.Module.save" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filepath</strong> (<em>str</em>) – path to a folder to store aot files.</p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – filename prefix for stored aot files.</p></li>
@@ -434,7 +435,7 @@ provided, uses the built-in <code class="docutils literal notranslate"><span cla
 <span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">start_recording</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.start_recording" title="Permalink to this definition">#</a></dt>
 <dd><p>Starts recording kernel information to a <cite>yml</cite> file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – output <cite>yml</cite> file.</p>
 </dd>
 </dl>
@@ -496,7 +497,7 @@ provided, uses the built-in <code class="docutils literal notranslate"><span cla
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

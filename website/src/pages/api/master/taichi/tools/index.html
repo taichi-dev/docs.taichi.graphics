@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.tools &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -422,7 +423,7 @@
               <div>
                 
   <section id="module-taichi.tools">
-<span id="taichi-tools"></span><h1><a class="reference internal" href="#module-taichi.tools" title="taichi.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.tools</span></code></a><a class="headerlink" href="#module-taichi.tools" title="Permalink to this headline">#</a></h1>
+<span id="taichi-tools"></span><h1><a class="reference internal" href="#module-taichi.tools" title="taichi.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.tools</span></code></a><a class="headerlink" href="#module-taichi.tools" title="Permalink to this heading">#</a></h1>
 <p>Taichi utility module.</p>
 <ul class="simple">
 <li><p><cite>image</cite> submodule for image io.</p></li>
@@ -434,7 +435,7 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.tools.</span></span><span class="sig-name descname"><span class="pre">PLYWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_faces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">face_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tri'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'created</span> <span class="pre">by</span> <span class="pre">PLYWriter'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter" title="Permalink to this definition">#</a></dt>
 <dd><p>Writes <cite>numpy.array</cite> data to <cite>ply</cite> files.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>num_vertices</strong> (<em>int</em>) – number of vertices.</p></li>
 <li><p><strong>num_faces</strong> (<em>int</em><em>, </em><em>optional</em>) – number of faces.</p></li>
@@ -468,7 +469,7 @@
 <span class="sig-name descname"><span class="pre">add_vertex_alpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_alpha" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets the alpha-channel (transparent) of the vertex colors.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<cite>numpy.array(float)</cite>) – the alpha-channel (transparent) of the colors.</p>
 </dd>
 </dl>
@@ -486,7 +487,7 @@
 <p>The three arguments are all numpy arrays of float type and have
 the same length.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>r</strong> (<cite>numpy.array(float)</cite>) – the r-channel (red) of the colors.</p></li>
 <li><p><strong>g</strong> (<cite>numpy.array(float)</cite>) – the g-channel (green) of the color.</p></li>
@@ -510,7 +511,7 @@ the same length.</p>
 <p>The three arguments are all numpy arrays of float type and have
 the same length.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nx</strong> (<cite>numpy.array(float)</cite>) – x-coordinates of the normal vectors.</p></li>
 <li><p><strong>ny</strong> (<cite>numpy.array(float)</cite>) – y-coordinates of the normal vectors.</p></li>
@@ -530,7 +531,7 @@ the same length.</p>
 <span class="sig-name descname"><span class="pre">add_vertex_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_pos" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the (x, y, z) coordinates of the vertices.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<cite>numpy.array(float)</cite>) – x-coordinates of the vertices.</p></li>
 <li><p><strong>y</strong> (<cite>numpy.array(float)</cite>) – y-coordinates of the vertices.</p></li>
@@ -545,7 +546,7 @@ the same length.</p>
 <span class="sig-name descname"><span class="pre">add_vertex_rgba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_rgba" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets the (r, g, b, a) channels of the colors at the vertices.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>r</strong> (<cite>numpy.array(float)</cite>) – the r-channel (red) of the colors.</p></li>
 <li><p><strong>g</strong> (<cite>numpy.array(float)</cite>) – the g-channel (green) of the color.</p></li>
@@ -594,7 +595,7 @@ the same length.</p>
 <dd><p>Utility class for exporting results to <cite>mp4</cite> and <cite>gif</cite> formats.
 This class relies on <cite>ffmpeg</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>output_dir</strong> (<em>str</em>) – directory to save the frames.</p></li>
 <li><p><strong>width</strong> (<em>int</em>) – resolution of the video.</p></li>
@@ -618,7 +619,7 @@ the process image.</p></li>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>An instance of <a class="reference internal" href="#taichi.tools.VideoManager" title="taichi.tools.VideoManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">taichi.tools.VideoManager</span></code></a> class.</p>
 </dd>
 </dl>
@@ -666,16 +667,16 @@ and the frame counter.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.tools.</span></span><span class="sig-name descname"><span class="pre">imread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.imread" title="Permalink to this definition">#</a></dt>
 <dd><p>Load image from a specific file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename</strong> (<em>str</em>) – An image filename to load from.</p></li>
 <li><p><strong>channels</strong> (<em>int</em><em>, </em><em>optinal</em>) – The channels hint of input image, Default to 0.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An output image loaded from given filename.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
 </dd>
 </dl>
@@ -686,17 +687,17 @@ and the frame counter.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.tools.</span></span><span class="sig-name descname"><span class="pre">imresize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.imresize" title="Permalink to this definition">#</a></dt>
 <dd><p>Resize an image to a specific size.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>img</strong> (<em>Union</em><em>[</em><em>ti.field</em><em>, </em><em>np.ndarray</em><em>]</em>) – A field of of array with shape <cite>(width, height, …)</cite></p></li>
 <li><p><strong>w</strong> (<em>int</em>) – The output width after resize.</p></li>
 <li><p><strong>h</strong> (<em>int</em><em>, </em><em>optional</em>) – The output height after resize, will be the same as width if not set. Default to <cite>None</cite>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An output image after resize input.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
 </dd>
 </dl>
@@ -708,7 +709,7 @@ and the frame counter.</p>
 <dd><p>Display a taichi.field or a numpy.ndarray in a Taichi GUI window or an interactive Ipython notebook.
 For an interactive Ipython environment, the image will be shown in the notebook.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>img</strong> (<em>Union</em><em>[</em><em>ti.field</em><em>, </em><em>np.ndarray</em><em>]</em>) – A field of of array with shape <cite>(width, height)</cite> or <cite>(height, width, 3)</cite> or <cite>(height, width, 4)</cite>.</p></li>
 <li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – The title of GUI window. Default to <cite>imshow</cite>.</p></li>
@@ -722,7 +723,7 @@ For an interactive Ipython environment, the image will be shown in the notebook.
 <span class="sig-prename descclassname"><span class="pre">taichi.tools.</span></span><span class="sig-name descname"><span class="pre">imwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.imwrite" title="Permalink to this definition">#</a></dt>
 <dd><p>Save a field to a a specific file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>img</strong> (<em>Union</em><em>[</em><em>ti.field</em><em>, </em><em>np.ndarray</em><em>]</em>) – A field of shape <cite>(height, width)</cite> or <cite>(height, width, 3)</cite> or <cite>(height, width, 4)</cite>,             if dtype is float-type (<cite>ti.f16</cite>, <cite>ti.f32</cite>, <cite>np.float32</cite> etc), <strong>the value of each pixel should be float between [0.0, 1.0]</strong>. Otherwise <cite>ti.tools.imwrite</cite> will first clip them into [0.0, 1.0]                if dtype is int-type (<cite>ti.u8</cite>, <cite>ti.u16</cite>, <cite>np.uint8</cite> etc), , <strong>the value of each pixel can be any valid integer in its own bounds</strong>. These integers in this field will be scaled to [0, 255] by being divided over the upper bound of its basic type accordingly.</p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – The filename to save to.</p></li>
@@ -759,7 +760,7 @@ For an interactive Ipython environment, the image will be shown in the notebook.
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

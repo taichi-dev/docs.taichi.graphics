@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.lang.matrix &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -551,7 +552,7 @@
               <div>
                 
   <section id="module-taichi.lang.matrix">
-<span id="taichi-lang-matrix"></span><h1><a class="reference internal" href="#module-taichi.lang.matrix" title="taichi.lang.matrix"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.matrix</span></code></a><a class="headerlink" href="#module-taichi.lang.matrix" title="Permalink to this headline">#</a></h1>
+<span id="taichi-lang-matrix"></span><h1><a class="reference internal" href="#module-taichi.lang.matrix" title="taichi.lang.matrix"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.matrix</span></code></a><a class="headerlink" href="#module-taichi.lang.matrix" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.matrix.Matrix">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppress_warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix" title="Permalink to this definition">#</a></dt>
@@ -562,7 +563,7 @@ aligned continously. We recommend only use matrix with no more than 32 elements 
 efficiency considerations.</p>
 <p>Note: in taichi a matrix is strictly two-dimensional and only stores scalars.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>arr</strong> (<em>Union</em><em>[</em><em>list</em><em>, </em><em>tuple</em><em>, </em><em>np.ndarray</em><em>]</em>) – the initial values of a matrix.</p></li>
 <li><p><strong>dt</strong> (<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – the element data type.</p></li>
@@ -601,10 +602,10 @@ you can even initialize a matrix with an empty list:
 <span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.all" title="Permalink to this definition">#</a></dt>
 <dd><p>Test whether all element not equal zero.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><cite>True</cite> if all elements are not equal zero, <cite>False</cite> otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
@@ -621,10 +622,10 @@ False
 <span class="sig-name descname"><span class="pre">any</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.any" title="Permalink to this definition">#</a></dt>
 <dd><p>Test whether any element not equal zero.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><cite>True</cite> if any element is not equal zero, <cite>False</cite> otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
@@ -646,14 +647,14 @@ True
 <span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.cast" title="Permalink to this definition">#</a></dt>
 <dd><p>Cast the matrix elements to a specified data type.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dtype</strong> (<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – data type of the
 returned matrix.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A new matrix with the specified data dtype.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">taichi.Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -671,13 +672,13 @@ returned matrix.</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cols</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.cols" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructs a Matrix instance by concatenating Vectors/lists column by column.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>cols</strong> (<em>List</em>) – A list of Vector (1-D Matrix) or a list of list.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A matrix.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -705,13 +706,13 @@ scalar <cite>x1*y2 - x2*y1</cite>.</p>
 <p>For two 3d vectors <cite>v</cite> and <cite>w</cite>, the return value is the 3d vector
 <cite>v x w</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>) – The input Vector.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The cross product of the two Vectors.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -726,13 +727,13 @@ scalar <cite>x1*y2 - x2*y1</cite>.</p>
 <p>The matrix dimension should be less than or equal to 4.</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The determinant of this matrix.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dtype</p>
 </dd>
-<dt class="field-odd">Raises</dt>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>Exception</strong> – Determinants of matrices with sizes &gt;= 5 are not supported.</p>
 </dd>
 </dl>
@@ -744,16 +745,16 @@ scalar <cite>x1*y2 - x2*y1</cite>.</p>
 <dd><p>Returns a diagonal square matrix with the diagonals filled
 with <cite>val</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dim</strong> (<em>int</em>) – the dimension of the wanted square matrix.</p></li>
 <li><p><strong>val</strong> (<em>TypeVar</em>) – value for the diagonal elements.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The wanted diagonal matrix.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -772,13 +773,13 @@ with <cite>val</cite>.</p>
 <dd><p>Performs the dot product of two vectors.</p>
 <p>To call this method, both multiplicatives must be vectors.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>) – The input Vector.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The dot product result (scalar) of the two Vectors.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>DataType</p>
 </dd>
 </dl>
@@ -806,7 +807,7 @@ with <cite>val</cite>.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.field" title="Permalink to this definition">#</a></dt>
 <dd><p>Construct a data container to hold all elements of the Matrix.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – The desired number of rows of the Matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em>) – The desired number of columns of the Matrix.</p></li>
@@ -820,10 +821,10 @@ of all elements in a field.</p></li>
 Structure (AOS) or Structure Of Array (SOA).</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A matrix.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -835,7 +836,7 @@ Structure (AOS) or Structure Of Array (SOA).</p></li>
 <dd><p>Fills the matrix with a specified value, must be called
 in Taichi scope.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
 </dd>
 </dl>
@@ -853,16 +854,16 @@ in Taichi scope.</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.identity" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructs an identity Matrix with shape (n, n).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – The number of rows/columns.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An <cite>n x n</cite> identity matrix.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -877,13 +878,13 @@ in Taichi scope.</p>
 <p>The matrix dimension should be less than or equal to 4.</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The inverse of a matrix.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
-<dt class="field-odd">Raises</dt>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>Exception</strong> – Inversions of matrices with sizes &gt;= 5 are not supported.</p>
 </dd>
 </dl>
@@ -912,7 +913,7 @@ in Taichi scope.</p>
 <dd><p>Defines a Taichi ndarray with matrix elements.
 This function must be called in Python scope, and after <cite>ti.init</cite> is called.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Number of rows of the matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
@@ -936,7 +937,7 @@ This function must be called in Python scope, and after <cite>ti.init</cite> is 
 <dd><p>Returns the square root of the sum of the absolute squares
 of its elements.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>eps</strong> (<em>Number</em>) – a safe-guard value for sqrt, usually 0.</p>
 </dd>
 </dl>
@@ -947,7 +948,7 @@ of its elements.</p>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The square root of the sum of the absolute squares of its elements.</p>
 </dd>
 </dl>
@@ -958,10 +959,10 @@ of its elements.</p>
 <span class="sig-name descname"><span class="pre">norm_inv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.norm_inv" title="Permalink to this definition">#</a></dt>
 <dd><p>The inverse of the matrix <a class="reference internal" href="#taichi.lang.matrix.Matrix.norm" title="taichi.lang.matrix.Matrix.norm"><code class="xref py py-func docutils literal notranslate"><span class="pre">norm()</span></code></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>eps</strong> (<em>float</em>) – a safe-guard value for sqrt, usually 0.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The inverse of the matrix/vector <cite>norm</cite>.</p>
 </dd>
 </dl>
@@ -981,7 +982,7 @@ equal to one.</p>
 <p>The normalization of a vector <cite>v</cite> is a vector of length 1
 and has the same direction with <cite>v</cite>. It’s equal to <cite>v/|v|</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>eps</strong> (<em>float</em>) – a safe-guard value for sqrt, usually 0.</p>
 </dd>
 </dl>
@@ -998,17 +999,17 @@ and has the same direction with <cite>v</cite>. It’s equal to <cite>v/|v|</cit
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.one" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructs a Matrix filled with ones.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – The first dimension (row) of the matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em><em>, </em><em>optional</em>) – The second dimension (column) of the matrix.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> instance filled with ones.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -1022,13 +1023,13 @@ and has the same direction with <cite>v</cite>. It’s equal to <cite>v/|v|</cit
 <cite>w = (y1, y2, …, yn)</cite> is a <cite>n</cite> times <cite>n</cite> square matrix, and its <cite>(i, j)</cite>
 entry is equal to <cite>xi*yj</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>) – The input Vector.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The outer product of the two Vectors.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -1055,13 +1056,13 @@ is in radians.</p>
 <dd><p>Constructs a matrix by concatenating a list of
 vectors/lists row by row. Must be called in Taichi scope.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>rows</strong> (<em>List</em>) – A list of Vector (1-D Matrix) or a list of list.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A matrix.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -1104,15 +1105,15 @@ the difference is that this function always returns a new list.</p>
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.to_numpy" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts this matrix to a numpy array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>keep_dims</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to keep the dimension
 after conversion. If set to <cite>False</cite>, the resulting numpy array
 will discard the axis of length one.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The result numpy array.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>numpy.ndarray</p>
 </dd>
 </dl>
@@ -1131,7 +1132,7 @@ array([0, 1, 2, 3])
 <dd><p>The sum of a matrix diagonal elements.</p>
 <p>To call this method the matrix must be square-like.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The sum of a matrix diagonal elements.</p>
 </dd>
 </dl>
@@ -1148,10 +1149,10 @@ array([0, 1, 2, 3])
 <span class="sig-name descname"><span class="pre">transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.transpose" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the transpose of a matrix.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The transpose of this matrix.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -1169,17 +1170,17 @@ array([0, 1, 2, 3])
 <dd><p>Constructs a n-D vector with the <cite>i</cite>-th entry being equal to one and
 the remaining entries are all zeros.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – The length of the vector.</p></li>
 <li><p><strong>i</strong> (<em>int</em>) – The index of the entry that will be filled with one.</p></li>
 <li><p><strong>dt</strong> (<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, optional) – The desired data type.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The returned vector.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -1196,17 +1197,17 @@ the remaining entries are all zeros.</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.zero" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructs a Matrix filled with zeros.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – The first dimension (row) of the matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em><em>, </em><em>optional</em>) – The second dimension (column) of the matrix.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A <a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> instance filled with zeros.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -1220,7 +1221,7 @@ the remaining entries are all zeros.</p>
 <dd><p>Bases: <a class="reference internal" href="../field/#taichi.lang.field.Field" title="taichi.lang.field.Field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.field.Field</span></code></a></p>
 <p>Taichi matrix field with SNode implementation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vars</strong> (<em>List</em><em>[</em><em>Expr</em><em>]</em>) – Field members.</p></li>
 <li><p><strong>n</strong> (<em>Int</em>) – Number of rows.</p></li>
@@ -1233,7 +1234,7 @@ the remaining entries are all zeros.</p>
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.fill" title="Permalink to this definition">#</a></dt>
 <dd><p>Fills this matrix field with specified values.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>List</em><em>, </em><em>Tuple</em><em>, </em><a class="reference internal" href="#taichi.lang.matrix.Matrix" title="taichi.lang.matrix.Matrix"><em>Matrix</em></a><em>]</em>) – Values to fill,
 should have consistent dimension consistent with <cite>self</cite>.</p>
 </dd>
@@ -1257,13 +1258,13 @@ should have consistent dimension consistent with <cite>self</cite>.</p>
 <span class="sig-name descname"><span class="pre">get_scalar_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.get_scalar_field" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a ScalarField using a specific field member.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>indices</strong> (<em>Tuple</em><em>[</em><em>Int</em><em>]</em>) – Specified indices of the field member.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The result ScalarField.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.ScalarField" title="taichi.ScalarField">ScalarField</a></p>
 </dd>
 </dl>
@@ -1274,7 +1275,7 @@ should have consistent dimension consistent with <cite>self</cite>.</p>
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.to_numpy" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the field instance to a NumPy array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>keep_dims</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to keep the dimension after conversion.
 When keep_dims=True, on an n-D matrix field, the numpy array always has n+2 dims, even for 1x1, 1xn, nx1 matrix fields.
@@ -1283,10 +1284,10 @@ For example, a 4x1 or 1x4 matrix field with 5x6x7 elements results in an array o
 <li><p><strong>dtype</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of returned numpy array.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The result NumPy array.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>numpy.ndarray</p>
 </dd>
 </dl>
@@ -1297,17 +1298,17 @@ For example, a 4x1 or 1x4 matrix field with 5x6x7 elements results in an array o
 <span class="sig-name descname"><span class="pre">to_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.to_paddle" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the field instance to a Paddle tensor.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>place</strong> (<em>paddle.CPUPlace</em><em>(</em><em>)</em><em>/CUDAPlace</em><em>(</em><em>n</em><em>)</em><em>, </em><em>optional</em>) – The desired place of returned tensor.</p></li>
 <li><p><strong>keep_dims</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to keep the dimension after conversion.
 See <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_numpy()</span></code> for more detailed explanation.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The result paddle tensor.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>paddle.Tensor</p>
 </dd>
 </dl>
@@ -1318,17 +1319,17 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <span class="sig-name descname"><span class="pre">to_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixField.to_torch" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the field instance to a PyTorch tensor.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The desired device of returned tensor.</p></li>
 <li><p><strong>keep_dims</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to keep the dimension after conversion.
 See <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_numpy()</span></code> for more detailed explanation.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The result torch tensor.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>torch.tensor</p>
 </dd>
 </dl>
@@ -1342,7 +1343,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <dd><p>Bases: <a class="reference internal" href="../_ndarray/#taichi.lang._ndarray.Ndarray" title="taichi.lang._ndarray.Ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang._ndarray.Ndarray</span></code></a></p>
 <p>Taichi ndarray with matrix elements.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Number of rows of the matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
@@ -1362,7 +1363,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <dd><p>Copies all elements from another ndarray.</p>
 <p>The shape of the other ndarray needs to be the same as <cite>self</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../../#taichi.Ndarray" title="taichi.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
 </dd>
 </dl>
@@ -1385,7 +1386,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.fill" title="Permalink to this definition">#</a></dt>
 <dd><p>Fills ndarray with a specific scalar value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
 </dd>
 </dl>
@@ -1427,16 +1428,16 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <dd><p>Constructs a vector from given array.</p>
 <p>A vector is an instance of a 2-D matrix with the second dimension being equal to 1.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>arr</strong> (<em>Union</em><em>[</em><em>list</em><em>, </em><em>tuple</em><em>, </em><em>np.ndarray</em><em>]</em>) – The initial values of the Vector.</p></li>
 <li><p><strong>dt</strong> (<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – data type of the vector.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A vector instance.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
@@ -1459,7 +1460,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <dd><p>Bases: <a class="reference internal" href="../_ndarray/#taichi.lang._ndarray.Ndarray" title="taichi.lang._ndarray.Ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang._ndarray.Ndarray</span></code></a></p>
 <p>Taichi ndarray with vector elements.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Size of the vector.</p></li>
 <li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
@@ -1478,7 +1479,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <dd><p>Copies all elements from another ndarray.</p>
 <p>The shape of the other ndarray needs to be the same as <cite>self</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../../#taichi.Ndarray" title="taichi.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
 </dd>
 </dl>
@@ -1501,7 +1502,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.fill" title="Permalink to this definition">#</a></dt>
 <dd><p>Fills ndarray with a specific scalar value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
 </dd>
 </dl>
@@ -1567,7 +1568,7 @@ array([[[0., 0., 0.],
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

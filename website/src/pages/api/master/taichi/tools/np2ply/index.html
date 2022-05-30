@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.tools.np2ply &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -365,13 +366,13 @@
               <div>
                 
   <section id="module-taichi.tools.np2ply">
-<span id="taichi-tools-np2ply"></span><h1><a class="reference internal" href="#module-taichi.tools.np2ply" title="taichi.tools.np2ply"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.tools.np2ply</span></code></a><a class="headerlink" href="#module-taichi.tools.np2ply" title="Permalink to this headline">#</a></h1>
+<span id="taichi-tools-np2ply"></span><h1><a class="reference internal" href="#module-taichi.tools.np2ply" title="taichi.tools.np2ply"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.tools.np2ply</span></code></a><a class="headerlink" href="#module-taichi.tools.np2ply" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.tools.np2ply.PLYWriter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.tools.np2ply.</span></span><span class="sig-name descname"><span class="pre">PLYWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_faces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">face_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tri'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'created</span> <span class="pre">by</span> <span class="pre">PLYWriter'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter" title="Permalink to this definition">#</a></dt>
 <dd><p>Writes <cite>numpy.array</cite> data to <cite>ply</cite> files.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>num_vertices</strong> (<em>int</em>) – number of vertices.</p></li>
 <li><p><strong>num_faces</strong> (<em>int</em><em>, </em><em>optional</em>) – number of faces.</p></li>
@@ -405,7 +406,7 @@
 <span class="sig-name descname"><span class="pre">add_vertex_alpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_alpha" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets the alpha-channel (transparent) of the vertex colors.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<cite>numpy.array(float)</cite>) – the alpha-channel (transparent) of the colors.</p>
 </dd>
 </dl>
@@ -423,7 +424,7 @@
 <p>The three arguments are all numpy arrays of float type and have
 the same length.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>r</strong> (<cite>numpy.array(float)</cite>) – the r-channel (red) of the colors.</p></li>
 <li><p><strong>g</strong> (<cite>numpy.array(float)</cite>) – the g-channel (green) of the color.</p></li>
@@ -447,7 +448,7 @@ the same length.</p>
 <p>The three arguments are all numpy arrays of float type and have
 the same length.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nx</strong> (<cite>numpy.array(float)</cite>) – x-coordinates of the normal vectors.</p></li>
 <li><p><strong>ny</strong> (<cite>numpy.array(float)</cite>) – y-coordinates of the normal vectors.</p></li>
@@ -467,7 +468,7 @@ the same length.</p>
 <span class="sig-name descname"><span class="pre">add_vertex_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_pos" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the (x, y, z) coordinates of the vertices.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<cite>numpy.array(float)</cite>) – x-coordinates of the vertices.</p></li>
 <li><p><strong>y</strong> (<cite>numpy.array(float)</cite>) – y-coordinates of the vertices.</p></li>
@@ -482,7 +483,7 @@ the same length.</p>
 <span class="sig-name descname"><span class="pre">add_vertex_rgba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.np2ply.PLYWriter.add_vertex_rgba" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets the (r, g, b, a) channels of the colors at the vertices.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>r</strong> (<cite>numpy.array(float)</cite>) – the r-channel (red) of the colors.</p></li>
 <li><p><strong>g</strong> (<cite>numpy.array(float)</cite>) – the g-channel (green) of the color.</p></li>
@@ -553,7 +554,7 @@ the same length.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.ui.canvas &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -305,7 +306,7 @@
               <div>
                 
   <section id="module-taichi.ui.canvas">
-<span id="taichi-ui-canvas"></span><h1><a class="reference internal" href="#module-taichi.ui.canvas" title="taichi.ui.canvas"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.canvas</span></code></a><a class="headerlink" href="#module-taichi.ui.canvas" title="Permalink to this headline">#</a></h1>
+<span id="taichi-ui-canvas"></span><h1><a class="reference internal" href="#module-taichi.ui.canvas" title="taichi.ui.canvas"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.canvas</span></code></a><a class="headerlink" href="#module-taichi.ui.canvas" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.canvas.Canvas">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.canvas.</span></span><span class="sig-name descname"><span class="pre">Canvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">canvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas" title="Permalink to this definition">#</a></dt>
@@ -318,7 +319,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">circles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.circles" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a set of 2D circles on this canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>centers</strong> – a taichi 2D Vector field, where each element indicate the                 3D location of a vertex.</p></li>
 <li><p><strong>radius</strong> (<em>float</em>) – radius of the circles, relative to the height of the screen.</p></li>
@@ -334,7 +335,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.lines" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a set of 2D lines on this canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertices</strong> – a taichi 2D Vector field, where each element indicate the                 3D location of a vertex.</p></li>
 <li><p><strong>width</strong> (<em>float</em>) – width of the lines, relative to the height of the screen.</p></li>
@@ -351,7 +352,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">scene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scene</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.scene" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a 3D scene on the canvas</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>scene</strong> (<a class="reference internal" href="../#taichi.ui.Scene" title="taichi.ui.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code></a>) – an instance of <a class="reference internal" href="../#taichi.ui.Scene" title="taichi.ui.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code></a>.</p>
 </dd>
 </dl>
@@ -362,7 +363,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">set_background_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.set_background_color" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the background color of this canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>color</strong> (<em>tuple</em><em>(</em><em>float</em><em>)</em>) – RGB triple in the range [0, 1].</p>
 </dd>
 </dl>
@@ -373,7 +374,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">set_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.set_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the content of this canvas to an <cite>img</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>img</strong> (numpy.ndarray, <a class="reference internal" href="../../#taichi.MatrixField" title="taichi.MatrixField"><code class="xref py py-class docutils literal notranslate"><span class="pre">MatrixField</span></code></a>, <a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>) – the image to be shown.</p>
 </dd>
 </dl>
@@ -384,7 +385,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <span class="sig-name descname"><span class="pre">triangles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.triangles" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a set of 2D triangles on this canvas.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vertices</strong> – a taichi 2D Vector field, where each element indicate                 the 3D location of a vertex.</p></li>
 <li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which                 indicate the vertex indices of the triangles. If this is None,                 then it is assumed that the vertices are already arranged in                 triangles order.</p></li>
@@ -425,7 +426,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

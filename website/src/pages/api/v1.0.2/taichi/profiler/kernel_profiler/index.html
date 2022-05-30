@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.profiler.kernel_profiler &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -303,7 +304,7 @@
               <div>
                 
   <section id="module-taichi.profiler.kernel_profiler">
-<span id="taichi-profiler-kernel-profiler"></span><h1><a class="reference internal" href="#module-taichi.profiler.kernel_profiler" title="taichi.profiler.kernel_profiler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernel_profiler</span></code></a><a class="headerlink" href="#module-taichi.profiler.kernel_profiler" title="Permalink to this headline">#</a></h1>
+<span id="taichi-profiler-kernel-profiler"></span><h1><a class="reference internal" href="#module-taichi.profiler.kernel_profiler" title="taichi.profiler.kernel_profiler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.profiler.kernel_profiler</span></code></a><a class="headerlink" href="#module-taichi.profiler.kernel_profiler" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.profiler.kernel_profiler.clear_kernel_profiler_info">
 <span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">clear_kernel_profiler_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.clear_kernel_profiler_info" title="Permalink to this definition">#</a></dt>
@@ -315,7 +316,7 @@
 <span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">collect_kernel_profiler_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">default_cupti_metrics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.collect_kernel_profiler_metrics" title="Permalink to this definition">#</a></dt>
 <dd><p>Set temporary metrics that will be collected by the CUPTI toolkit within this context.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>metric_list</strong> (<em>list</em>) – a list of <a class="reference internal" href="../#taichi.profiler.CuptiMetric" title="taichi.profiler.CuptiMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">CuptiMetric()</span></code></a> instances, default value: <code class="xref py py-data docutils literal notranslate"><span class="pre">default_cupti_metrics</span></code>.</p>
 </dd>
 </dl>
@@ -365,10 +366,10 @@
 <span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">get_kernel_profiler_total_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.get_kernel_profiler_total_time" title="Permalink to this definition">#</a></dt>
 <dd><p>Get elapsed time of all kernels recorded in KernelProfiler.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>total time in second.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>time (float)</p>
 </dd>
 </dl>
@@ -383,7 +384,7 @@
 <code class="docutils literal notranslate"><span class="pre">'trace'</span></code> mode: print the records of launched kernels with specific profiling metrics (time, memory load/store and core utilization etc.),
 and defaults to <code class="docutils literal notranslate"><span class="pre">'count'</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – the way to print profiling results.</p>
 </dd>
 </dl>
@@ -419,13 +420,13 @@ backend due to its lack of support for <cite>ti.sync()</cite>.</p>
 <dd><p>Query kernel elapsed time(min,avg,max) on devices using the kernel name.</p>
 <p>To enable this profiler, set <cite>kernel_profiler=True</cite> in <cite>ti.init</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – kernel name.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>with member variables(counter, min, max, avg)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>KernelProfilerQueryResult (class)</p>
 </dd>
 </dl>
@@ -466,7 +467,7 @@ backend due to its lack of support for <cite>ti.sync()</cite>.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.profiler.kernel_profiler.</span></span><span class="sig-name descname"><span class="pre">set_kernel_profiler_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">default_cupti_metrics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.profiler.kernel_profiler.set_kernel_profiler_metrics" title="Permalink to this definition">#</a></dt>
 <dd><p>Set metrics that will be collected by the CUPTI toolkit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>metric_list</strong> (<em>list</em>) – a list of <a class="reference internal" href="../#taichi.profiler.CuptiMetric" title="taichi.profiler.CuptiMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">CuptiMetric()</span></code></a> instances, default value: <code class="xref py py-data docutils literal notranslate"><span class="pre">default_cupti_metrics</span></code>.</p>
 </dd>
 </dl>
@@ -517,13 +518,13 @@ backend due to its lack of support for <cite>ti.sync()</cite>.</p>
 <dd><p>Set the toolkit used by KernelProfiler.</p>
 <p>Currently, we only support toolkits: <code class="docutils literal notranslate"><span class="pre">'default'</span></code> and <code class="docutils literal notranslate"><span class="pre">'cupti'</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>toolkit_name</strong> (<em>str</em>) – string of toolkit name.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>whether the setting is successful or not.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>status (bool)</p>
 </dd>
 </dl>
@@ -579,7 +580,7 @@ backend due to its lack of support for <cite>ti.sync()</cite>.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     

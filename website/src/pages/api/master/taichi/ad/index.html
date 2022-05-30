@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>taichi.ad &#8212; taichi-api-docstring  documentation</title>
     
@@ -32,11 +32,12 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     <meta name="docsearch:category" content="API Reference">
     
 
@@ -283,7 +284,7 @@
               <div>
                 
   <section id="module-taichi.ad">
-<span id="taichi-ad"></span><h1><a class="reference internal" href="#module-taichi.ad" title="taichi.ad"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ad</span></code></a><a class="headerlink" href="#module-taichi.ad" title="Permalink to this headline">#</a></h1>
+<span id="taichi-ad"></span><h1><a class="reference internal" href="#module-taichi.ad" title="taichi.ad"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ad</span></code></a><a class="headerlink" href="#module-taichi.ad" title="Permalink to this heading">#</a></h1>
 <p>Taichi automatic differentiation module.</p>
 <p>This module supplies two decorators for users to customize their
 gradient computation task.</p>
@@ -293,13 +294,13 @@ gradient computation task.</p>
 <dd><p>Generates a decorator to decorate <cite>primal</cite>’s customized gradient function.</p>
 <p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code> for examples.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>primal</strong> (<em>Callable</em>) – The primal function, must be decorated by <a class="reference internal" href="#taichi.ad.grad_replaced" title="taichi.ad.grad_replaced"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_replaced()</span></code></a>.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The decorator used to decorate customized gradient function.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Callable</p>
 </dd>
 </dl>
@@ -314,13 +315,13 @@ system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.</p>
 function for the decorated function. Its customized gradient must be decorated
 by <a class="reference internal" href="#taichi.ad.grad_for" title="taichi.ad.grad_for"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_for()</span></code></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – The python function to be decorated.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The decorated function.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Callable</p>
 </dd>
 </dl>
@@ -354,13 +355,13 @@ autodiff system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.
 This decorator forces Taichi’s autodiff system to use an empty gradient function
 for the decorated function.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – The python function to be decorated.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The decorated function.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Callable</p>
 </dd>
 </dl>
@@ -405,7 +406,7 @@ for the decorated function.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.0.<br>
 </p>
     </div>
     
