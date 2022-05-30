@@ -10,3 +10,11 @@
 [context.deploy-preview]
   command = "yarn build --locale en"
 
+[[redirects]]
+  from = "/lang/articles/:slug"
+  to = "/docs/:slug"
+  status = 301
+[[redirects]]
+  from = "/lang/articles/:dir/:slug"
+  to = "/docs/:slug"
+  status = 301

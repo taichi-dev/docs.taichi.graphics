@@ -892,7 +892,7 @@
   div.code-block-caption:hover > a.headerlink {
     visibility: visible;
   }
-  dt:target {
+  dt[id], section[id] {
     scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
   }
   .rst-current-version {
