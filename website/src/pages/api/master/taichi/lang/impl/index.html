@@ -412,19 +412,24 @@ in one <cite>for</cite> loop and a single index.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.impl.ndarray">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.ndarray" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.NULL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.ndarray" title="Permalink to this definition">#</a></dt>
 <dd><p>Defines a Taichi ndarray with scalar elements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
+<li><p><strong>dtype</strong> (<em>Union</em><em>[</em><em>DataType</em><em>, </em><em>MatrixType</em><em>]</em>) – Data type of each element. This can be either a scalar type like ti.f32 or a compound type like ti.types.vector(3, ti.i32).</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
+<li><p><strong>layout</strong> (<em>Layout</em><em>, </em><em>optional</em>) – Layout of ndarray, only applicable when element is non-scalar type. Default is Layout.AOS.</p></li>
 </ul>
 </dd>
 </dl>
 <p class="rubric">Example</p>
 <p>The code below shows how a Taichi ndarray with scalar elements can be declared and defined:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.ndarray(ti.f32, shape=(16, 8))
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.ndarray(ti.f32, shape=(16, 8))  # ndarray of shape (16, 8), each element is ti.f32 scalar.
+&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.i32)
+&gt;&gt;&gt; y = ti.ndarray(vec3, shape=(10, 2))  # ndarray of shape (10, 2), each element is a vector of 3 ti.i32 scalars.
+&gt;&gt;&gt; matrix_ty = ti.types.matrix(3, 4, float)
+&gt;&gt;&gt; z = ti.ndarray(matrix_ty, shape=(4, 5), layout=ti.Layout.SOA)  # ndarray of shape (4, 5), each element is a matrix of (3, 4) ti.float scalars.
 </pre></div>
 </div>
 </dd></dl>

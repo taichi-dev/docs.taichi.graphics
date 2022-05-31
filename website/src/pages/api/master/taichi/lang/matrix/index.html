@@ -487,6 +487,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.get_type">
+     get_type
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.to_numpy">
      to_numpy
     </a>
@@ -521,6 +526,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.from_numpy">
      from_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.get_type">
+     get_type
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -817,7 +827,7 @@ with <cite>val</cite>.</p>
 <li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple of int</em><em>]</em><em>, </em><em>optional</em>) – The coordinate offset
 of all elements in a field.</p></li>
 <li><p><strong>needs_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the Matrix need gradients.</p></li>
-<li><p><strong>layout</strong> (<a class="reference internal" href="../../#taichi.Layout" title="taichi.Layout"><em>Layout</em></a><em>, </em><em>optional</em>) – The field layout, either Array Of
+<li><p><strong>layout</strong> (<em>Layout</em><em>, </em><em>optional</em>) – The field layout, either Array Of
 Structure (AOS) or Structure Of Array (SOA).</p></li>
 </ul>
 </dd>
@@ -919,7 +929,7 @@ This function must be called in Python scope, and after <cite>ti.init</cite> is 
 <li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
 <li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
-<li><p><strong>layout</strong> (<a class="reference internal" href="../../#taichi.Layout" title="taichi.Layout"><em>Layout</em></a><em>, </em><em>optional</em>) – Memory layout, AOS by default.</p></li>
+<li><p><strong>layout</strong> (<em>Layout</em><em>, </em><em>optional</em>) – Memory layout, AOS by default.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1349,7 +1359,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
 <li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
-<li><p><strong>layout</strong> (<a class="reference internal" href="../../#taichi.Layout" title="taichi.Layout"><em>Layout</em></a>) – Memory layout.</p></li>
+<li><p><strong>layout</strong> (<em>Layout</em>) – Memory layout.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1403,6 +1413,11 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.get_type" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.to_numpy">
@@ -1465,7 +1480,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <li><p><strong>n</strong> (<em>int</em>) – Size of the vector.</p></li>
 <li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
 <li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – Shape of the ndarray.</p></li>
-<li><p><strong>layout</strong> (<a class="reference internal" href="../../#taichi.Layout" title="taichi.Layout"><em>Layout</em></a>) – Memory layout.</p></li>
+<li><p><strong>layout</strong> (<em>Layout</em>) – Memory layout.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1521,6 +1536,11 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.get_type" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.to_numpy">
