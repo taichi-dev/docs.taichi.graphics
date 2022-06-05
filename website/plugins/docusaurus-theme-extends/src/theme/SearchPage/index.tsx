@@ -59,9 +59,7 @@ function useDocsSearchVersionsHelpers() {
   const allDocsData = useAllDocsData();
   // const preferredVersions =  useDocsPreferredVersionByPluginId()
   const [state] = useDocsPreferredVersionContext();
-  const [isInit, setIsInit] = useState(false)
 
-  console.log(JSON.stringify(state));
   // const isReady = Object.entries(allDocsData).every(([pluginId]) => !!preferredVersions[pluginId])
 
   // State of the version select menus / algolia facet filters
@@ -101,7 +99,6 @@ function useDocsSearchVersionsHelpers() {
 
   return {
     allDocsData,
-    isReady: true,
     versioningEnabled,
     searchVersions: searchVersions,
     setSearchVersion,
@@ -368,9 +365,7 @@ function SearchPage(): JSX.Element {
   }, [loaderRef]);
 
   useEffect(() => {
-    if (!docsSearchVersionsHelpers.isReady) {
-      return;
-    }
+
     searchResultStateDispatcher({ type: 'reset' });
 
     if (searchQuery) {
