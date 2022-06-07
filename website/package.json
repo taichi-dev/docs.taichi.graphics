@@ -32,6 +32,7 @@
     "react-dom": "^17.0.2",
     "remark": "^13.0.0",
     "semver": "^7.3.7",
+    "algoliasearch-helper": "^3.5.5",
     "url-loader": "^4.1.1"
   },
   "browserslist": {
