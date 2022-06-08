@@ -17,9 +17,6 @@
   --ifm-color-primary-lightest: #0abce7;
   --ifm-code-font-size: 95%;
 }
-html, body {
-  scroll-behavior: smooth;
-}
 
 .docusaurus-highlight-code-line {
   background-color: #dee2e6;
