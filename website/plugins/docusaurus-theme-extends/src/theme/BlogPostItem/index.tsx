@@ -7,15 +7,15 @@
 
 import React from 'react';
 import clsx from 'clsx';
-import {MDXProvider} from '@mdx-js/react';
-import Translate, {translate} from '@docusaurus/Translate';
+import { MDXProvider } from '@mdx-js/react';
+import Translate, { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
-import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
-import {usePluralForm} from '@docusaurus/theme-common';
-import {blogPostContainerID} from '@docusaurus/utils-common';
+import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
+import { usePluralForm } from '@docusaurus/theme-common';
+import { blogPostContainerID } from '@docusaurus/utils-common';
 import MDXComponents from '@theme/MDXComponents';
 import EditThisPage from '@theme/EditThisPage';
-import type {Props} from '@theme/BlogPostItem';
+import type { Props } from '@theme/BlogPostItem';
 
 import styles from './styles.module.css';
 import TagsListInline from '@theme/TagsListInline';
@@ -23,7 +23,7 @@ import BlogPostAuthors from '@theme/BlogPostAuthors';
 
 // Very simple pluralization: probably good enough for now
 function useReadingTimePlural() {
-  const {selectMessage} = usePluralForm();
+  const { selectMessage } = usePluralForm();
   return (readingTimeFloat: number) => {
     const readingTime = Math.ceil(readingTimeFloat);
     return selectMessage(
@@ -35,28 +35,19 @@ function useReadingTimePlural() {
             'Pluralized label for "{readingTime} min read". Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
           message: 'One min read|{readingTime} min read',
         },
-        {readingTime},
-      ),
+        { readingTime }
+      )
     );
   };
 }
 
 function BlogListPostItem(props: Props): JSX.Element {
-  const {
-    assets,
-    metadata,
-  } = props;
-  const {
-    date,
-    formattedDate,
-    permalink,
-    title,
-    description
-  } = metadata;
+  const { assets, metadata } = props;
+  const { date, formattedDate, permalink, title, description, authors } = metadata;
   return (
-    <article className='margin-bottom--lg'>
+    <article className="margin-bottom--lg">
       <header>
-        <h2 className='margin-bottom--sm'>
+        <h2 className="margin-bottom--sm">
           <Link itemProp="url" to={permalink}>
             {title}
           </Link>
@@ -65,34 +56,32 @@ function BlogListPostItem(props: Props): JSX.Element {
           <time dateTime={date} itemProp="datePublished">
             {formattedDate}
           </time>
+          <span className={clsx(styles.divideVerical)}></span>
+          <span>{authors.map((item, idx) => <Link href={item.url}>{item.name}</Link>)}</span>
         </div>
       </header>
-      <div
-        className="markdown margin-top--md"
-        itemProp="articleBody">
+      <div className="markdown margin-top--md" itemProp="articleBody">
         {description}
       </div>
-      <div
-              className={clsx('col text--right')}>
-              <Link
-                to={metadata.permalink}
-                aria-label={`Read more about ${title}`}>
-                <b>
-                  <Translate
-                    id="theme.blog.post.readMore"
-                    description="The label used in blog post item excerpts to link to full blog posts">
-                    Read More
-                  </Translate>
-                </b>
-              </Link>
-            </div>
+      <div className={clsx('col text--right')}>
+        <Link to={metadata.permalink} aria-label={`Read more about ${title}`}>
+          <b>
+            <Translate
+              id="theme.blog.post.readMore"
+              description="The label used in blog post item excerpts to link to full blog posts"
+            >
+              Read More
+            </Translate>
+          </b>
+        </Link>
+      </div>
     </article>
-  )
+  );
 }
 
 function BlogPostItem(props: Props): JSX.Element {
   const readingTimePlural = useReadingTimePlural();
-  const {withBaseUrl} = useBaseUrlUtils();
+  const { withBaseUrl } = useBaseUrlUtils();
   const {
     children,
     frontMatter,
@@ -118,7 +107,7 @@ function BlogPostItem(props: Props): JSX.Element {
   const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
   if (!isBlogPostPage) {
-    return <BlogListPostItem {...props} />
+    return <BlogListPostItem {...props} />;
   }
 
   return (
@@ -126,7 +115,8 @@ function BlogPostItem(props: Props): JSX.Element {
       className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
       itemProp="blogPost"
       itemScope
-      itemType="http://schema.org/BlogPosting">
+      itemType="http://schema.org/BlogPosting"
+    >
       <header>
         <TitleHeading className={styles.blogPostTitle} itemProp="headline">
           {isBlogPostPage ? (
@@ -153,14 +143,18 @@ function BlogPostItem(props: Props): JSX.Element {
       </header>
 
       {image && (
-        <meta itemProp="image" content={withBaseUrl(image, {absolute: true})} />
+        <meta
+          itemProp="image"
+          content={withBaseUrl(image, { absolute: true })}
+        />
       )}
 
       <div
         // This ID is used for the feed generation to locate the main content
         id={isBlogPostPage ? blogPostContainerID : undefined}
         className="markdown"
-        itemProp="articleBody">
+        itemProp="articleBody"
+      >
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
       </div>
 
@@ -168,9 +162,10 @@ function BlogPostItem(props: Props): JSX.Element {
         <footer
           className={clsx('row docusaurus-mt-lg', {
             [styles.blogPostDetailsFull]: isBlogPostPage,
-          })}>
+          })}
+        >
           {tagsExists && (
-            <div className={clsx('col', {'col--9': truncatedPost})}>
+            <div className={clsx('col', { 'col--9': truncatedPost })}>
               <TagsListInline tags={tags} />
             </div>
           )}
@@ -185,14 +180,17 @@ function BlogPostItem(props: Props): JSX.Element {
             <div
               className={clsx('col text--right', {
                 'col--3': tagsExists,
-              })}>
+              })}
+            >
               <Link
                 to={metadata.permalink}
-                aria-label={`Read more about ${title}`}>
+                aria-label={`Read more about ${title}`}
+              >
                 <b>
                   <Translate
                     id="theme.blog.post.readMore"
-                    description="The label used in blog post item excerpts to link to full blog posts">
+                    description="The label used in blog post item excerpts to link to full blog posts"
+                  >
                     Read More
                   </Translate>
                 </b>

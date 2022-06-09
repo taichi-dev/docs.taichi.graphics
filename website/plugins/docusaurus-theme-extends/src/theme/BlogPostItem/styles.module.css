@@ -16,3 +16,9 @@
 .blogPostDetailsFull {
   flex-direction: column;
 }
+
+.divideVerical {
+  border-left: 1px solid var(--ifm-color-emphasis-300);
+  height: 100%;
+  margin: 4px 0.5rem;
+}
