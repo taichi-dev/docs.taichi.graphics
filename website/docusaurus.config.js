@@ -49,6 +49,12 @@ module.exports = {
         current: 'master',
       },
     ],
+    [
+      path.resolve(__dirname, 'plugins/blog-enhance-plugin'),
+      {
+        postsPerPage: 10,
+      }
+    ],
   ],
   i18n: {
     defaultLocale: DefaultLocale,
@@ -292,9 +298,7 @@ module.exports = {
             ],
           ],
         },
-        blog: {
-          postsPerPage: 10,
-        },
+        blog: false,
         gtag: {
           trackingID: 'G-9K17QVGTR6',
           anonymizeIP: true,
