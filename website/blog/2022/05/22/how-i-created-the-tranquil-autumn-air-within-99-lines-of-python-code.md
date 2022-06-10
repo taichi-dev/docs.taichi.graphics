@@ -9,7 +9,7 @@ tags: [Taichi, voxel, voxel challenge, abstract syntax tree]
 
 # 1. Beginnings
 
-On a Sunday afternoon about a couple of months ago, when Ye ([https://github.com/k-ye](https://github.com/k-ye)) and I were on our way back from a long week of travel, we decided to do something to relax on the train ( to kill time). Since we happened to mention Minecraft and MagicaVoxel, we decided to do a Hackathon, where we use Taichi Lang to create a GPU path tracing voxel renderer. Soon, before we were back home, we had our prototype:
+On a Sunday afternoon about a couple of months ago, when [Ye]([https://github.com/k-ye](https://github.com/k-ye)) and I were on our way back from a long week of travel, we decided to do something to relax on the train ( to kill time). Since we happened to mention Minecraft and MagicaVoxel, we decided to do a Hackathon, where we use Taichi Lang to create a GPU path tracing voxel renderer. Soon, before we were back home, we had our prototype:
 
 ![Our first ray-tracing renderer prototype](https://github.com/taichi-dev/public_files/blob/master/taichi.graphics/yuanming-voxel/prototype.gif?raw=true)
 
