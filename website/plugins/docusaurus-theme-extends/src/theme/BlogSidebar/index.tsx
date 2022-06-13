@@ -10,16 +10,19 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import type {Props} from '@theme/BlogSidebar';
 import styles from './styles.module.css';
-import Translate, {translate} from '@docusaurus/Translate';
+import {translate} from '@docusaurus/Translate';
 import { useBlogTags } from '../../utils/blogData';
 
-import Tag from '@theme/Tag';
+import { useLocation } from '@docusaurus/router';
 
 export default function BlogSidebar({sidebar}: Props): JSX.Element | null {
+  const {pathname} = useLocation()
+
+  const { blogTags } = useBlogTags()
+
   if (sidebar.items.length === 0) {
     return null;
   }
-  const { blogTags } = useBlogTags()
   return (
     <nav
       className={clsx(styles.sidebar, 'thin-scrollbar')}
@@ -45,18 +48,21 @@ export default function BlogSidebar({sidebar}: Props): JSX.Element | null {
         ))}
       </ul>
       <div className={clsx(styles.sidebarItemTitle, 'margin-bottom--md')}>
-        <Translate
-          id="theme.blog.post.allTags"
-          description="The label used in blog post item excerpts to link to full blog posts">
-          All Tags
-        </Translate>
+        All Tags
       </div>
       <ul className={styles.sidebarItemList}>
-        {Object.keys(blogTags).map((item) => (
-          <li key={item} className={styles.tag}>
-            <Tag {...blogTags[item]} />
+        {Object.keys(blogTags).map((item) => {
+          const { name, permalink } = blogTags[item]
+          const active = pathname == permalink
+          return (
+          <li key={item} className={clsx(styles.tagContainer)}>
+            <Link
+              href={active ? '/blog/' : permalink}
+              className={clsx(styles.tag, styles.tagRegular, active ? styles.tagactive : '')}>
+              {name}
+            </Link>
           </li>
-        ))}
+        )})}
       </ul>
     </nav>
   );

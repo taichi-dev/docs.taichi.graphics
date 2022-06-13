@@ -57,7 +57,7 @@ function BlogListPostItem(props: Props): JSX.Element {
             {formattedDate}
           </time>
           <span className={clsx(styles.divideVerical)}></span>
-          <span>{authors.map((item, idx) => <Link href={item.url}>{item.name}</Link>)}</span>
+          <span>{authors.map((item, idx) => <Link key={item.name} href={item.url}>{item.name}</Link>)}</span>
         </div>
       </header>
       <div className="markdown margin-top--md" itemProp="articleBody">
