@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>taichi.lang.kernel_arguments &#8212; taichi-api-docstring  documentation</title>
+    <title>taichi.lang._texture &#8212; taichi-api-docstring  documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -248,56 +248,38 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.KernelArgument">
-   KernelArgument
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.SparseMatrixEntry">
-   SparseMatrixEntry
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.SparseMatrixProxy">
-   SparseMatrixProxy
+  <a class="reference internal nav-link" href="#taichi.lang._texture.Texture">
+   Texture
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.SparseMatrixProxy.subscript">
-     subscript
+    <a class="reference internal nav-link" href="#taichi.lang._texture.Texture.device_allocation_ptr">
+     device_allocation_ptr
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang._texture.Texture.from_ndarray">
+     from_ndarray
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_matrix_arg">
-   decl_matrix_arg
+  <a class="reference internal nav-link" href="#taichi.lang._texture.TextureSampler">
+   TextureSampler
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_ndarray_arg">
-   decl_ndarray_arg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_ret">
-   decl_ret
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_scalar_arg">
-   decl_scalar_arg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_sparse_matrix">
-   decl_sparse_matrix
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.kernel_arguments.decl_texture_arg">
-   decl_texture_arg
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang._texture.TextureSampler.fetch">
+     fetch
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang._texture.TextureSampler.sample_lod">
+     sample_lod
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -320,57 +302,47 @@
               
               <div>
                 
-  <section id="module-taichi.lang.kernel_arguments">
-<span id="taichi-lang-kernel-arguments"></span><h1><a class="reference internal" href="#module-taichi.lang.kernel_arguments" title="taichi.lang.kernel_arguments"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.kernel_arguments</span></code></a><a class="headerlink" href="#module-taichi.lang.kernel_arguments" title="Permalink to this heading">#</a></h1>
+  <section id="module-taichi.lang._texture">
+<span id="taichi-lang-texture"></span><h1><a class="reference internal" href="#module-taichi.lang._texture" title="taichi.lang._texture"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang._texture</span></code></a><a class="headerlink" href="#module-taichi.lang._texture" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.KernelArgument">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">KernelArgument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_annotation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inspect.Parameter.empty</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.KernelArgument" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.lang._texture.Texture">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang._texture.</span></span><span class="sig-name descname"><span class="pre">Texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture" title="Permalink to this definition">#</a></dt>
+<dd><p>Taichi Texture class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
+<li><p><strong>num_channels</strong> (<em>int</em>) – Number of channels in texture</p></li>
+<li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – Shape of the Texture.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang._texture.Texture.device_allocation_ptr">
+<span class="sig-name descname"><span class="pre">device_allocation_ptr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture.device_allocation_ptr" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py class">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.SparseMatrixEntry">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">SparseMatrixEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixEntry" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.SparseMatrixProxy">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">SparseMatrixProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixProxy" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.SparseMatrixProxy.subscript">
-<span class="sig-name descname"><span class="pre">subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.SparseMatrixProxy.subscript" title="Permalink to this definition">#</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang._texture.Texture.from_ndarray">
+<span class="sig-name descname"><span class="pre">from_ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture.from_ndarray" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_matrix_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_matrix_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrixtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_matrix_arg" title="Permalink to this definition">#</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang._texture.TextureSampler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang._texture.</span></span><span class="sig-name descname"><span class="pre">TextureSampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr_expr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.TextureSampler" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang._texture.TextureSampler.fetch">
+<span class="sig-name descname"><span class="pre">fetch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lod</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.TextureSampler.fetch" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_ndarray_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_ndarray_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_ndarray_arg" title="Permalink to this definition">#</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang._texture.TextureSampler.sample_lod">
+<span class="sig-name descname"><span class="pre">sample_lod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lod</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.TextureSampler.sample_lod" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_ret">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_ret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_ret" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_scalar_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_scalar_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_scalar_arg" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_sparse_matrix">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_sparse_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_sparse_matrix" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_texture_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_texture_arg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_texture_arg" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+</dd></dl>
 
 </section>
 
