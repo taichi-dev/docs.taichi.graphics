@@ -698,7 +698,7 @@ lower dimension d-2, it’s the second axis of this cell.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.misc.loop_config">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">loop_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serialize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallelize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.loop_config" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">loop_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serialize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallelize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_dim_adaptive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.loop_config" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets directives for the next loop</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -706,6 +706,7 @@ lower dimension d-2, it’s the second axis of this cell.</p>
 <li><p><strong>block_dim</strong> (<em>int</em>) – The number of threads in a block on GPU</p></li>
 <li><p><strong>serialize</strong> (<em>bool</em>) – Whether to let the for loop execute serially, <cite>serialize=True</cite> equals to <cite>parallelize=1</cite></p></li>
 <li><p><strong>parallelize</strong> (<em>int</em>) – The number of threads to use on CPU</p></li>
+<li><p><strong>block_dim_adaptive</strong> (<em>bool</em>) – Whether to allow backends set block_dim adaptively, enabled by default</p></li>
 </ul>
 </dd>
 </dl>
