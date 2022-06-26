@@ -28,6 +28,12 @@ jobs:
           repository: taichi-dev/docs.taichi.graphics
           path: target
 
+      - name: Checkout Taichi blog repo
+        uses: actions/checkout@v2
+        with:
+          repository: taichi-dev/blogs
+          path: _blogs
+
       - name: Install Dependences
         run: sudo apt-get install -y jq
 
@@ -37,10 +43,12 @@ jobs:
           echo "TAICHI_PATH=${GITHUB_WORKSPACE}/source/python/taichi" >> $GITHUB_ENV
           echo "TAICHI_MAIN=${GITHUB_WORKSPACE}/source" >> $GITHUB_ENV
           echo "TAICHI_WEBSITE=${GITHUB_WORKSPACE}/target" >> $GITHUB_ENV
+          echo "TAICHI_BLOG=${GITHUB_WORKSPACE}/_blogs" >> $GITHUB_ENV
           export DOCSTRING_GEN_PATH=${{ env.DOCSTRING_GEN_PATH }}
           export TAICHI_PATH=${{ env.TAICHI_PATH }}
           export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
           export TAICHI_MAIN=${{ env.TAICHI_MAIN }}
+          export TAICHI_BLOG=${{ env.TAICHI_BLOG }}
 
       - name: Export Env
         run: |
@@ -48,11 +56,13 @@ jobs:
           export TAICHI_PATH=${{ env.TAICHI_PATH }}
           export TAICHI_WEBSITE=${{ env.TAICHI_WEBSITE }}
           export TAICHI_MAIN=${{ env.TAICHI_MAIN }}
+          export TAICHI_BLOG=${{ env.TAICHI_BLOG }}
 
       - name: Sync and stage changes
         run: |
           cd $TAICHI_PATH && git fetch --tags
           cd $TAICHI_WEBSITE/website && ./sync_docs.sh
+          rsync -avh --delete $TAICHI_BLOG/blogs $TAICHI_WEBSITE/website/blog
 
       - name: Generate New API Docs AND Sync To Docs Website
         run: |
