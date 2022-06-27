@@ -8,7 +8,7 @@
   command = "yarn build && yarn run crowdin:upload"
 
 [context.deploy-preview]
-  command = "yarn build --locale en"
+  command = "yarn build"
 
 [[redirects]]
   from = "/lang/articles/:slug"
