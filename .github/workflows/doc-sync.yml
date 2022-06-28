@@ -62,7 +62,7 @@ jobs:
         run: |
           cd $TAICHI_PATH && git fetch --tags
           cd $TAICHI_WEBSITE/website && ./sync_docs.sh
-          rsync -avh --delete $TAICHI_BLOG/blogs $TAICHI_WEBSITE/website/blog
+          rsync -avh --delete $TAICHI_BLOG/blogs/ $TAICHI_WEBSITE/website/blog
 
       - name: Generate New API Docs AND Sync To Docs Website
         run: |
