@@ -371,6 +371,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.FieldsBuilder.lazy_dual">
+     lazy_dual
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.FieldsBuilder.lazy_grad">
      lazy_grad
     </a>
@@ -1108,6 +1113,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.SNode.dynamic">
      dynamic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.SNode.lazy_dual">
+     lazy_dual
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -2511,6 +2521,12 @@ fb.finalize()
 <dd class="field-odd"><p><strong>raise_warning</strong> (<em>bool</em>) – Raise warning or not.</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.FieldsBuilder.lazy_dual">
+<span class="sig-name descname"><span class="pre">lazy_dual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.lazy_dual" title="Permalink to this definition">#</a></dt>
+<dd><p>Same as <a class="reference internal" href="lang/snode/#taichi.lang.snode.SNode.lazy_dual" title="taichi.lang.snode.SNode.lazy_dual"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.lazy_dual()</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -4440,6 +4456,12 @@ these references:</p>
 <dd class="field-even"><p>The added <a class="reference internal" href="lang/#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> instance.</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.SNode.lazy_dual">
+<span class="sig-name descname"><span class="pre">lazy_dual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.SNode.lazy_dual" title="Permalink to this definition">#</a></dt>
+<dd><p>Automatically place the dual fields following the layout of their primal fields.</p>
 </dd></dl>
 
 <dl class="py method">
