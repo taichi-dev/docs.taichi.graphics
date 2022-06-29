@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-slug: /operator
 ---
+
 # Operators
 Here we present the supported operators in Taichi for both primitive types and
 compound types such as matrices.
