@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
+slug: /meta
 ---
-
 # Metaprogramming
 
 Taichi provides metaprogramming infrastructures. There are many benefits of metaprogramming in Taichi:

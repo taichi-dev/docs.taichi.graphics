@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
+slug: /performance
 ---
-
 # Performance tuning
 
 ## For-loop decorators

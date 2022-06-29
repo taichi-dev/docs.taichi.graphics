@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9998
+slug: /reference
 ---
-
 # Language Reference
 
 This article describes the syntax and semantics of the Taichi programming
