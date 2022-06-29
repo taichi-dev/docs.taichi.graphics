@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
+slug: /export_kernels
 ---
-
 # Export Taichi kernels to C source
 
 The C backend of Taichi allows you to **export Taichi kernels to C
