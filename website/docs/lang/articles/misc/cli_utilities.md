@@ -5,7 +5,7 @@ slug: /cli_utilities
 # Command line utilities
 
 A successful installation of Taichi should add a CLI (Command-Line
-Interface) to your system, which is helpful to perform several rountine
+Interface) to your system, which is helpful to perform several routine
 tasks quickly. To invoke the CLI, please run `ti` or
 `python3 -m taichi`.
 

@@ -420,7 +420,7 @@ For usage of this class, see examples in func <a class="reference internal" href
 &gt;&gt;&gt;     for i in x:
 &gt;&gt;&gt;         y[None] += x[i]
 
-&gt;&gt;&gt; # In the case of not pramater, Taichi will print its pre-defined metrics list
+&gt;&gt;&gt; # In the case of not parameter, Taichi will print its pre-defined metrics list
 &gt;&gt;&gt; ti.profiler.get_predefined_cupti_metrics()
 &gt;&gt;&gt; # get Taichi pre-defined metrics
 &gt;&gt;&gt; profiling_metrics = ti.profiler.get_predefined_cupti_metrics(&#39;device_utilization&#39;)
@@ -571,7 +571,7 @@ backend due to its lack of support for <cite>ti.sync()</cite>.</p>
 &gt;&gt;&gt; for i in range(100):
 &gt;&gt;&gt;     fill()
 &gt;&gt;&gt; query_result = ti.profiler.query_kernel_profiler_info(fill.__name__) #[2]
-&gt;&gt;&gt; print(&quot;kernel excuted times =&quot;,query_result.counter)
+&gt;&gt;&gt; print(&quot;kernel executed times =&quot;,query_result.counter)
 &gt;&gt;&gt; print(&quot;kernel elapsed time(min_in_ms) =&quot;,query_result.min)
 &gt;&gt;&gt; print(&quot;kernel elapsed time(max_in_ms) =&quot;,query_result.max)
 &gt;&gt;&gt; print(&quot;kernel elapsed time(avg_in_ms) =&quot;,query_result.avg)
@@ -611,7 +611,7 @@ backend due to its lack of support for <cite>ti.sync()</cite>.</p>
 &gt;&gt;&gt;     for i in x:
 &gt;&gt;&gt;         y[None] += x[i]
 
-&gt;&gt;&gt; # In the case of not pramater, Taichi will print its pre-defined metrics list
+&gt;&gt;&gt; # In the case of not parameter, Taichi will print its pre-defined metrics list
 &gt;&gt;&gt; ti.profiler.get_predefined_cupti_metrics()
 &gt;&gt;&gt; # get Taichi pre-defined metrics
 &gt;&gt;&gt; profiling_metrics = ti.profiler.get_predefined_cupti_metrics(&#39;shared_access&#39;)

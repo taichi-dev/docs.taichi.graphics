@@ -2464,7 +2464,7 @@ fb = ti.FieldsBuilder()
 fb.dense(ti.ij, 8).place(x)
 fb.pointer(ti.ij, 8).dense(ti.ij, 4).place(y)
 
-# Afer this line, `x` and `y` are placed. No more fields can be placed
+# After this line, `x` and `y` are placed. No more fields can be placed
 # into `fb`.
 #
 # The tree looks like the following:
@@ -3209,7 +3209,7 @@ image filename the frame will be saved as the specified image.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>numpy.array</em>) – The positions of the first points of triangles.</p></li>
 <li><p><strong>b</strong> (<em>numpy.array</em>) – The positions of the second points of triangles.</p></li>
-<li><p><strong>c</strong> (<em>numpy.array</em>) – The positions of the thrid points of triangles.</p></li>
+<li><p><strong>c</strong> (<em>numpy.array</em>) – The positions of the third points of triangles.</p></li>
 <li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>numpy.array</em><em>]</em><em>, </em><em>optional</em>) – The color or colors of triangles.
 Can be either a single color or a list of colors whose shape matches
 the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
@@ -3237,7 +3237,7 @@ the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
 <dd><p>Bases: <a class="reference internal" href="lang/common_ops/#taichi.lang.common_ops.TaichiOperations" title="taichi.lang.common_ops.TaichiOperations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.common_ops.TaichiOperations</span></code></a></p>
 <p>The matrix class.</p>
 <p>A matrix is a 2-D rectangular array with scalar entries, it’s row-majored, and is
-aligned continously. We recommend only use matrix with no more than 32 elements for
+aligned continuously. We recommend only use matrix with no more than 32 elements for
 efficiency considerations.</p>
 <p>Note: in taichi a matrix is strictly two-dimensional and only stores scalars.</p>
 <dl class="field-list simple">
@@ -4754,7 +4754,7 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <p>The Struct type class.</p>
 <p>A struct is a dictionary-like data structure that stores members as
 (key, value) pairs. Valid data members of a struct can be scalars,
-matrices or other dictionary-like stuctures.</p>
+matrices or other dictionary-like structures.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>entries</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>Dict</em><em>, </em><em>Expr</em><em>, </em><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><em>Matrix</em></a><em>, </em><a class="reference internal" href="#taichi.Struct" title="taichi.Struct"><em>Struct</em></a><em>]</em><em>]</em>) – keys and values for struct members. Entries can optionally
@@ -4884,7 +4884,7 @@ in the result dictionary under the key ‘__struct_methods’.</p>
 <dd><p>Bases: <a class="reference internal" href="lang/field/#taichi.lang.field.Field" title="taichi.lang.field.Field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.field.Field</span></code></a></p>
 <p>Taichi struct field with SNode implementation.</p>
 <blockquote>
-<div><p>Instead of directly contraining Expr entries, the StructField object
+<div><p>Instead of directly constraining Expr entries, the StructField object
 directly hosts members as <cite>Field</cite> instances to support nested structs.</p>
 </div></blockquote>
 <dl class="field-list simple">
@@ -6777,7 +6777,7 @@ must have the same shape, and scalars will be broadcasted to the same shape as t
 of n groups of integers, where n equals the number of arguments in the input list, and looks like</p>
 <p>range(x1, y1) x range(x2, y2) x … x range(xn, yn)</p>
 <p>The k-th argument corresponds to the k-th <cite>range()</cite> factor in the above product, and each
-argument must be an integer or a pair of two integers. An integer argument n will be intepreted
+argument must be an integer or a pair of two integers. An integer argument n will be interpreted
 as <cite>range(0, n)</cite>, and a pair of two integers (start, end) will be interpreted as <cite>range(start, end)</cite>.</p>
 <p>You can loop over these multi-dimensonal indices in different ways, see the examples below.</p>
 <dl class="field-list simple">
