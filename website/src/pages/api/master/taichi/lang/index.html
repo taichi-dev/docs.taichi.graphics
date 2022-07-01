@@ -2140,7 +2140,7 @@ with <cite>val</cite>.</p>
 <li><p><strong>name</strong> (<em>string</em><em>, </em><em>optional</em>) – The custom name of the field.</p></li>
 <li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple of int</em><em>]</em><em>, </em><em>optional</em>) – The coordinate offset
 of all elements in a field.</p></li>
-<li><p><strong>needs_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the Matrix need gradients.</p></li>
+<li><p><strong>needs_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the Matrix need grad field (reverse mode autodiff).</p></li>
 <li><p><strong>layout</strong> (<em>Layout</em><em>, </em><em>optional</em>) – The field layout, either Array Of
 Structure (AOS) or Structure Of Array (SOA).</p></li>
 </ul>
@@ -3438,7 +3438,7 @@ methods as instance functions.</p></li>
 <li><p><strong>offset</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – offset of the indices of the created field.
 For example if <cite>offset=(-10, -10)</cite> the indices of the field
 will start at <cite>(-10, -10)</cite>, not <cite>(0, 0)</cite>.</p></li>
-<li><p><strong>needs_grad</strong> (<em>bool</em>) – enabling gradient field or not.</p></li>
+<li><p><strong>needs_grad</strong> (<em>bool</em>) – enabling grad field (reverse mode autodiff) or not.</p></li>
 <li><p><strong>layout</strong> – AOS or SOA.</p></li>
 </ul>
 </dd>
@@ -3526,7 +3526,7 @@ in the result dictionary under the key ‘__struct_methods’.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.StructField">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">StructField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">struct_methods</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">StructField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">struct_methods</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_primal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="field/#taichi.lang.field.Field" title="taichi.lang.field.Field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.field.Field</span></code></a></p>
 <p>Taichi struct field with SNode implementation.</p>
 <blockquote>
@@ -4717,7 +4717,7 @@ a Taichi <a class="reference internal" href="kernel_impl/#taichi.lang.kernel_imp
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – shape of the field.</p></li>
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – name of the field.</p></li>
 <li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – offset of the field domain.</p></li>
-<li><p><strong>needs_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether this field participates in autodiff
+<li><p><strong>needs_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether this field participates in autodiff (reverse mode)
 and thus needs an adjoint field to store the gradients.</p></li>
 </ul>
 </dd>
