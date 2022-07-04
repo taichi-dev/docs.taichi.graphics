@@ -58,10 +58,10 @@ function AnchorHeading({ as: As, id, ...props }: Props) {
       <span className={styles.anchorCopiedText}>
         {showCopied && (
           <Translate
-            id="theme.CodeBlock.copied"
-            description="The copied button label on code blocks"
+            id="theme.anchorHeading.copied"
+            description="The copied button label on anchor heading"
           >
-            Copied
+            URL copied
           </Translate>
         )}
       </span>
