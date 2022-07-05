@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, version } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import {useDocsPreferredVersion} from '@docusaurus/theme-common';
 import LayoutProviders from '@theme/LayoutProviders';
 import _ from 'lodash'
@@ -133,11 +134,13 @@ export default ({ __content, __title, __version }) => {
     <Layout
       wrapperClassName={ThemeClassNames.wrapper.docsPages}
       pageClassName={ThemeClassNames.page.docsDocPage}
-      title={__title}
       searchMetadata={{
         version: __version,
         tag: `docs-default-${__version}`,
       }}>
+      <Head>
+        <title>{__title}</title>
+      </Head>
       <div className='autoapi-container markdown'>
         <BackToTopButton />
         <AutoApiContainer content={__content} version={__version} />

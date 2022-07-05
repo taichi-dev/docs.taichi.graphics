@@ -18,3 +18,7 @@
   from = "/lang/articles/:dir/:slug"
   to = "/docs/:slug"
   status = 301
+[[redirects]]
+  from = "/"
+  to = "/docs"
+  status = 301
