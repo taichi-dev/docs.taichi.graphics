@@ -61,7 +61,7 @@ function AnchorHeading({ as: As, id, ...props }: Props) {
             id="theme.anchorHeading.copied"
             description="The copied button label on anchor heading"
           >
-            URL copied
+            URL copied.
           </Translate>
         )}
       </span>
