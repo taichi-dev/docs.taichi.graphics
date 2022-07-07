@@ -20,7 +20,7 @@ We have refactored the Abstract Syntax Tree (AST) transformer of taichi in the p
 
 As shown in this picture from [Life of a kernel](https://docs.taichi-lang.org/docs/compilation), the AST transformer (currently the `ASTTransformer` class in `taichi/python/taichi/lang/ast/ast_transformer.py`) traverses the AST of a python function decorated by `@ti.kernel` and `@ti.func`, and generates the corresponding Taichi AST in C++.
 
-The C++ part of taichi provides interfaces for python to build the Taichi AST through [pybind11](https://github.com/pybind/pybind11), a foreign function interface (FFI) library between C++ and python. Pybind11 generates a dynamic library file (`taichi_core.so` on linux and mac, and `taichi_core.pyd` on Windows), and Python can import the file and use the file as a module (currently `taichi._lib.core`). 
+The C++ part of taichi provides interfaces for python to build the Taichi AST through [pybind11](https://github.com/pybind/pybind11), a foreign function interface (FFI) library between C++ and python. Pybind11 generates a dynamic library file (`taichi_core.so` on linux and mac, and `taichi_core.pyd` on Windows), and Python can import the file and use the file as a module (currently `taichi._lib.core`).
 
 In Python, we can call functions in the FFI module to form the Taichi AST in C++.
 
@@ -71,7 +71,7 @@ core.create_kernel_return(Expr(ret).ptr)
 
 ### `Expr` class
 
-`Expr` is a class that represents all expressions in the python frontend. For example, `a`, and `ret` are both `Expr`s. 
+`Expr` is a class that represents all expressions in the python frontend. For example, `a`, and `ret` are both `Expr`s.
 
 When `Expr` is initialized, it typically calls the functions in `core` to generate the corresponding Taichi AST node and stores the pointer to the node in `ptr`. If it is initialized with an `Expr`, it just copies the pointer of the source `Expr`.
 
@@ -79,13 +79,13 @@ An expression in which `Expr` operates with another `Expr` or python variable, f
 
 ## The transformer before refactoring and its drawbacks
 
-The transformer before refactoring works as follows. The transformer first transforms the original AST of the program to the AST representing the code above. After that, we compile the AST to a function, and then execute the function to get the Taichi AST. 
+The transformer before refactoring works as follows. The transformer first transforms the original AST of the program to the AST representing the code above. After that, we compile the AST to a function, and then execute the function to get the Taichi AST.
 
-However, this process has several drawbacks. 
+However, this process has several drawbacks.
 
-First, it makes the code hard to understand. Writing code that manipulates Python AST is not trivial, and it often involves many magic numbers. What you get is not what you see. 
+First, it makes the code hard to understand. Writing code that manipulates Python AST is not trivial, and it often involves many magic numbers. What you get is not what you see.
 
-Second, it is hard to get a clean and accurate error message. Before refactoring, the original traceback was very long, and the place where the error occurs hide in the middle of the long traceback. Shortening traceback while preserving the useful information about where the exception is from is hard by catching and re-raising the exception with no traceback because the exception often occurs inside a compiled function, and catching exceptions inside it is difficult. We tried to customize an exception hook to filter out the frames of unnecessary internal function calls, but we need to mark the functions that need to be filtered one by one, which is hard labor. 
+Second, it is hard to get a clean and accurate error message. Before refactoring, the original traceback was very long, and the place where the error occurs hide in the middle of the long traceback. Shortening traceback while preserving the useful information about where the exception is from is hard by catching and re-raising the exception with no traceback because the exception often occurs inside a compiled function, and catching exceptions inside it is difficult. We tried to customize an exception hook to filter out the frames of unnecessary internal function calls, but we need to mark the functions that need to be filtered one by one, which is hard labor.
 
 ## The new transformer
 
@@ -132,13 +132,13 @@ class ScopeGuard:
 class BuilderContext:
     def __init__(self, ...)
         ...
-        self.local_scopes = []       
+        self.local_scopes = []
     def variable_scope(self, *args):
         return ScopeGuard(self.local_scopes, *args)
-       
+
     def current_scope(self):
         return self.local_scopes[-1]
-       
+
     def var_declared(self, name):
         for s in self.local_scopes:
             if name in s:
@@ -178,21 +178,21 @@ def square_sum(n: ti.i32) -> ti.i32:
 class VariableScopeGuard:
     def __init__(self, scopes):
         self.scopes = scopes
-        
+
     def __enter__(self):
         self.scopes.append({})
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.scopes.pop()
-       
+
 class ASTTransformerContext:
     def __init__(self, ...)
         ...
         self.local_scopes = []
-       
+
     def variable_scope_guard(self):
         return VariableScopeGuard(self.local_scopes)
-        
+
     def current_scope(self):
         return self.local_scopes[-1]
 
@@ -219,7 +219,7 @@ class ASTTransformerContext:
             raise TaichiNameError(f'Name "{name}" is not defined')
 ```
 
-As shown in the code, when we meet a name in the code, we first search in the variable dictionary of every scope, and then in the global variables of the kernel/function when it is called, and finally in the built-in functions. 
+As shown in the code, when we meet a name in the code, we first search in the variable dictionary of every scope, and then in the global variables of the kernel/function when it is called, and finally in the built-in functions.
 
 ## Translating nodes from the previous AST builder
 
@@ -241,11 +241,11 @@ def build_BinOp(ctx, node):
     return node.ptr
 ```
 
-We use `build_stmt` and `build_stmts` to process and record the expressions. They call the `__call__` function in AST transformer which calls `build_xxx` functions in the transformer corresponding to the type of `node`.  
+We use `build_stmt` and `build_stmts` to process and record the expressions. They call the `__call__` function in AST transformer which calls `build_xxx` functions in the transformer corresponding to the type of `node`.
 
 Then, we need to translate the code generated by the previous transformer to the new transformer.
 
-For example, this is the `build_If` function in the previous transformer. 
+For example, this is the `build_If` function in the previous transformer.
 
 ```python
     @staticmethod
@@ -309,9 +309,9 @@ In line 13, there is a non-static control flow guard. It is for dealing with ret
 
 ## Dealing with return
 
-Currently, Taichi only supports one return statement, and the return statement must not appear in scopes inside non-static if/for/while. 
+Currently, Taichi only supports one return statement, and the return statement must not appear in scopes inside non-static if/for/while.
 
-To enforce this rule, we added `NonStaticControlFlowGuard` to record whether the current scope is inside a non-static control flow. 
+To enforce this rule, we added `NonStaticControlFlowGuard` to record whether the current scope is inside a non-static control flow.
 
 ```python
 class NonStaticControlFlowStatus:
@@ -364,7 +364,7 @@ In line 4 of `build_stmts`, we can see that besides `ctx.returned`, `ctx.loop_st
 
 Taichi supports compile-time evaluation, including [compile-time loop unrolling](https://docs.taichi-lang.or/docs/meta#when-to-use-tistatic-with-for-loops) with `break` and `continue`. You can wrap the loop iterator with `ti.static` in `for` to let the compiler unroll the loop for you, like `for i in ti.static(range(10))`. It is also called static loop.
 
-In the previous transformer, the logic of `for`, `break`, and `continue` are all handled by the Python interpreter when running the compiled function, and the transformer does not need to deal with it. However, the new transformer must handle it by itself. 
+In the previous transformer, the logic of `for`, `break`, and `continue` are all handled by the Python interpreter when running the compiled function, and the transformer does not need to deal with it. However, the new transformer must handle it by itself.
 
 ### Distinction between normal loop and static loop
 
@@ -374,7 +374,7 @@ In order to determine whether we are in a static loop, we introduce `LoopScopeGu
 
 For normal loops, we only need to insert a statement to the program and process normally.
 
-However, for static loops, we need to tell the transformer to stop processing statements after the break or continue statements inside the loop. Therefore, we also keep a `LoopStatus` in the stack to record if a static loop encounters break or continue statements. 
+However, for static loops, we need to tell the transformer to stop processing statements after the break or continue statements inside the loop. Therefore, we also keep a `LoopStatus` in the stack to record if a static loop encounters break or continue statements.
 
 ```python
 class LoopStatus(Enum):
@@ -523,7 +523,7 @@ def __call__(self, ctx, node):
 
 AST nodes in Python after version 3.8 have detailed information about the node like the line number and column number that the code of the node starts and ends in the file, and we can get the file name and the code using inspect module in python. Therefore, we can show the accurate position to users when an exception happens.
 
-For the following program, 
+For the following program,
 
 ```python
 import taichi as ti
@@ -552,7 +552,7 @@ Traceback (most recent call last):
     foo()
   File "/home/lin/taichi2/python/taichi/lang/kernel_impl.py", line 739, in wrapped
     raise type(e)('\n' + str(e)) from None
-taichi.lang.exception.TaichiTypeError: 
+taichi.lang.exception.TaichiTypeError:
 On line 15 of file "/home/lin/tmp/error.py":
     bar()
     ^^^^^
@@ -672,4 +672,4 @@ We can see that the traceback of Taichi 0.8.11 is significantly shorter than tha
 
 ### External functions
 
-Expressions in Taichi kernels and Taichi functions are all evaluated in the transformer. However, if you call a function that is not decorated with `@ti.kernel` or `@ti.func`, the code within the function is executed directly by Python interpreter, and the transformer does not process it. The transformer calls internal functions when encountering some nodes, so the code may not work as expected if it is not processed by the transformer. 
+Expressions in Taichi kernels and Taichi functions are all evaluated in the transformer. However, if you call a function that is not decorated with `@ti.kernel` or `@ti.func`, the code within the function is executed directly by Python interpreter, and the transformer does not process it. The transformer calls internal functions when encountering some nodes, so the code may not work as expected if it is not processed by the transformer.

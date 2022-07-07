@@ -21,7 +21,7 @@ This benchmark project partially answers the long-standing question from Taichi 
 
 *Specifically, the wall clock timer still involves Python overhead and fits better into the real-world scenarios; the kernel timer calculates the GPU computing time only and provides more accurate assessments of the quality of the kernels. Each benchmarking is made using a consistent timing method for the sake of fairness.*
 
-The following diagram compares the acceleration ratio of Taichi Lang with CUDA in percentage terms. 
+The following diagram compares the acceleration ratio of Taichi Lang with CUDA in percentage terms.
 
 |![Taichi-vs-cuda](https://user-images.githubusercontent.com/93570324/167157162-1f336f55-6882-4630-a952-4e2bca1b3c5a.png)|
 |:--:|
@@ -43,7 +43,7 @@ We also observed unsatisfactory results in the N-body test shown in Fig. 1. In t
 
 Please refer to the Taichi benchmark code repository [5] for more detailed performance analysis reports. We have a plot_benchmark.py script in each sub-directory, which can reproduce the above-mentioned performance charts once run. If you want to add more algorithms to our benchmark project or have a better baseline program, submit an issue in our repo. Let's work together to help Taichi Lang run faster!
 
-- [1] Taichi AOT, the solution for deploying kernels in mobile devices https://docs.taichi-lang.org/blog/taichi-aot-the-solution-for-deploying-kernels-in-mobile-devices  
+- [1] Taichi AOT, the solution for deploying kernels in mobile devices https://docs.taichi-lang.org/blog/taichi-aot-the-solution-for-deploying-kernels-in-mobile-devices
 - [2] Taichi profiler Document https://docs.taichi-lang.org/docs/profiler
 - [3] N-body reference code repository https://github.com/harrism/mini-nbody
 - [4] Roofline model https://en.wikipedia.org/wiki/Roofline_model
