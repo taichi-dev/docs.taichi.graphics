@@ -842,6 +842,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_image_buffer">
+     get_image_buffer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.Window.is_pressed">
      is_pressed
     </a>
@@ -2266,6 +2271,20 @@ to the corresponding event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>tag</strong> (<em>str</em>) – A tag used for filtering events.                 If it is None, then all events are returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Window.get_image_buffer">
+<span class="sig-name descname"><span class="pre">get_image_buffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Window.get_image_buffer" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the window content to numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>[width, height, channels] with (0.0~1.0) float-format color.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>3d numpy array</p>
 </dd>
 </dl>
 </dd></dl>
