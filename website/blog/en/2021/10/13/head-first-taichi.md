@@ -373,4 +373,3 @@ Not only did Taichi allow us to implement all these complex functionalities with
 To learn more about Taichi, please do visit its [Github Page](https://github.com/taichi-dev/taichi), where you can find detailed documentation, as well as quite a few example Taichi programs, all of which are quite amusing. And finally, if you believe in our mission of making a friendly yet powerful language for parallel computation, we would be delighted to see you join us as an open-source contributor.
 
 In our next article, we will discuss the inner workings of Taichi, and how it interacts with GPUs on different platforms for computation and rendering. Until then, happy coding!
-
