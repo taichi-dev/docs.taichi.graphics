@@ -233,6 +233,16 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.camera.Camera.get_projection_matrix">
+     get_projection_matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.camera.Camera.get_view_matrix">
+     get_view_matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.camera.Camera.left">
      left
     </a>
@@ -359,6 +369,31 @@ instead.</p>
 </dl>
 <p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; camera.fov(45)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.camera.Camera.get_projection_matrix">
+<span class="sig-name descname"><span class="pre">get_projection_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aspect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.camera.Camera.get_projection_matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the projection matrix(in row major) of the camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>aspect</strong> (<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – aspect ratio of the camera</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; camera.get_projection_matrix(1080/720)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.camera.Camera.get_view_matrix">
+<span class="sig-name descname"><span class="pre">get_view_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.camera.Camera.get_view_matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the view matrix(in row major) of the camera.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; camera.get_view_matrix()
 </pre></div>
 </div>
 </dd></dl>
