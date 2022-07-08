@@ -1684,6 +1684,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.dataclass">
+   dataclass
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.deactivate">
    deactivate
   </a>
@@ -2096,11 +2101,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.stop_grad">
    stop_grad
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.struct_class">
-   struct_class
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -5978,6 +5978,48 @@ Taichi kernels can be defined inside a class.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.dataclass">
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">dataclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.dataclass" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts a class with field annotations and methods into a taichi struct type.</p>
+<p>This will return a normal custom struct type, with the functions added to it.
+Struct fields can be generated in the normal way from the struct type.
+Functions in the class can be run on the struct instance.</p>
+<dl class="simple">
+<dt>This class decorator inspects the class for annotations and methods and</dt><dd><ol class="arabic simple">
+<li><p>Sets the annotations as fields for the struct</p></li>
+<li><p>Attaches the methods to the struct type</p></li>
+</ol>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.dataclass
+&gt;&gt;&gt; class Sphere:
+&gt;&gt;&gt;     center: vec3
+&gt;&gt;&gt;     radius: ti.f32
+&gt;&gt;&gt;
+&gt;&gt;&gt;     @ti.func
+&gt;&gt;&gt;     def area(self):
+&gt;&gt;&gt;         return 4 * 3.14 * self.radius * self.radius
+&gt;&gt;&gt;
+&gt;&gt;&gt; my_spheres = Sphere.field(shape=(n, ))
+&gt;&gt;&gt; my_sphere[2].area()
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cls</strong> (<em>Class</em>) – the class with annotations and methods to convert to a struct</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A taichi struct with the annotations as fields</dt><dd><p>and methods from the class attached.</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.deactivate">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">deactivate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.deactivate" title="Permalink to this definition">#</a></dt>
 <dd><p>Explicitly deactivate a cell of <cite>node</cite> at location <cite>indices</cite>.</p>
@@ -7348,48 +7390,6 @@ AssertionError: the year must be a lunar year
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>) – A field.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.struct_class">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">struct_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.struct_class" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts a class with field annotations and methods into a taichi struct type.</p>
-<p>This will return a normal custom struct type, with the functions added to it.
-Struct fields can be generated in the normal way from the struct type.
-Functions in the class can be run on the struct instance.</p>
-<dl class="simple">
-<dt>This class decorator inspects the class for annotations and methods and</dt><dd><ol class="arabic simple">
-<li><p>Sets the annotations as fields for the struct</p></li>
-<li><p>Attaches the methods to the struct type</p></li>
-</ol>
-</dd>
-</dl>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.stuct_class
-&gt;&gt;&gt; class Sphere:
-&gt;&gt;&gt;     center: vec3
-&gt;&gt;&gt;     radius: ti.f32
-&gt;&gt;&gt;
-&gt;&gt;&gt;     @ti.func
-&gt;&gt;&gt;     def area(self):
-&gt;&gt;&gt;         return 4 * 3.14 * self.radius * self.radius
-&gt;&gt;&gt;
-&gt;&gt;&gt; my_spheres = Sphere.field(shape=(n, ))
-&gt;&gt;&gt; my_sphere[2].area()
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>cls</strong> (<em>Class</em>) – the class with annotations and methods to convert to a struct</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>A taichi struct with the annotations as fields</dt><dd><p>and methods from the class attached.</p>
-</dd>
-</dl>
-</p>
 </dd>
 </dl>
 </dd></dl>

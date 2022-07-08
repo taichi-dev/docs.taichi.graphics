@@ -307,8 +307,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang.struct.struct_class">
-   struct_class
+  <a class="reference internal nav-link" href="#taichi.lang.struct.dataclass">
+   dataclass
   </a>
  </li>
 </ul>
@@ -629,8 +629,8 @@ desired device of returned tensor.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.lang.struct.struct_class">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.struct.</span></span><span class="sig-name descname"><span class="pre">struct_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.struct_class" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.lang.struct.dataclass">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.struct.</span></span><span class="sig-name descname"><span class="pre">dataclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.dataclass" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts a class with field annotations and methods into a taichi struct type.</p>
 <p>This will return a normal custom struct type, with the functions added to it.
 Struct fields can be generated in the normal way from the struct type.
@@ -643,7 +643,7 @@ Functions in the class can be run on the struct instance.</p>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.stuct_class
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.dataclass
 &gt;&gt;&gt; class Sphere:
 &gt;&gt;&gt;     center: vec3
 &gt;&gt;&gt;     radius: ti.f32
