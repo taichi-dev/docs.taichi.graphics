@@ -218,6 +218,23 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang._texture.RWTextureAccessor">
+   RWTextureAccessor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang._texture.RWTextureAccessor.load">
+     load
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang._texture.RWTextureAccessor.store">
+     store
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang._texture.Texture">
    Texture
   </a>
@@ -279,6 +296,21 @@
                 
   <section id="module-taichi.lang._texture">
 <span id="taichi-lang-texture"></span><h1><a class="reference internal" href="#module-taichi.lang._texture" title="taichi.lang._texture"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang._texture</span></code></a><a class="headerlink" href="#module-taichi.lang._texture" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang._texture.RWTextureAccessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang._texture.</span></span><span class="sig-name descname"><span class="pre">RWTextureAccessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr_expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_dims</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.RWTextureAccessor" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang._texture.RWTextureAccessor.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.RWTextureAccessor.load" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang._texture.RWTextureAccessor.store">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.RWTextureAccessor.store" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang._texture.Texture">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang._texture.</span></span><span class="sig-name descname"><span class="pre">Texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture" title="Permalink to this definition">#</a></dt>
