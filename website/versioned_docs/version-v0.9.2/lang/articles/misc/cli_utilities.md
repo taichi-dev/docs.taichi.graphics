@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
+slug: /cli_utilities
 ---
-
 # Command line utilities
 
 A successful installation of Taichi should add a CLI (Command-Line
