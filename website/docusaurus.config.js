@@ -18,6 +18,8 @@ const mapLocaleCodeToCrowdin = (locale) => {
   switch (locale) {
     case 'zh-Hans':
       return 'zh-CN';
+    case 'fr-FR':
+      return 'fr';
     default:
       return locale;
   }
@@ -58,7 +60,7 @@ module.exports = {
   ],
   i18n: {
     defaultLocale: DefaultLocale,
-    locales: [DefaultLocale, 'zh-Hans', 'fr'],
+    locales: [DefaultLocale, 'zh-Hans', 'fr-FR'],
   },
   themeConfig: {
     hideableSidebar: true,
