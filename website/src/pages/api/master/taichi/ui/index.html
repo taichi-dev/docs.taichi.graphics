@@ -253,6 +253,16 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.get_projection_matrix">
+     get_projection_matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.get_view_matrix">
+     get_view_matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.Camera.left">
      left
     </a>
@@ -832,6 +842,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_image_buffer">
+     get_image_buffer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.Window.is_pressed">
      is_pressed
     </a>
@@ -971,6 +986,31 @@ instead.</p>
 </dl>
 <p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; camera.fov(45)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Camera.get_projection_matrix">
+<span class="sig-name descname"><span class="pre">get_projection_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aspect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.get_projection_matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the projection matrix(in row major) of the camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>aspect</strong> (<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.primitive_types</span></code></a>) – aspect ratio of the camera</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; camera.get_projection_matrix(1080/720)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Camera.get_view_matrix">
+<span class="sig-name descname"><span class="pre">get_view_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.get_view_matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the view matrix(in row major) of the camera.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; camera.get_view_matrix()
 </pre></div>
 </div>
 </dd></dl>
@@ -2090,13 +2130,18 @@ and can be rendered on a canvas.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.Scene.mesh">
-<span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Scene.mesh" title="Permalink to this definition">#</a></dt>
-<dd><p>Declare a mesh inside the scene.</p>
+<span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Scene.mesh" title="Permalink to this definition">#</a></dt>
+<dd><p>Declare a mesh inside the scene.
+if you indicate the index_offset and index_count, the normals will also
+be sliced by the args, and the shading resultes will not be affected.
+(It is equal to make a part of the mesh visible)
+:param vertices: a taichi 3D Vector field, where each element indicate the</p>
+<blockquote>
+<div><p>3D location of a vertex.</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vertices</strong> – a taichi 3D Vector field, where each element indicate the
-3D location of a vertex.</p></li>
 <li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which indicate
 the vertex indices of the triangles. If this is None, then it is
 assumed that the vertices are already arranged in triangles order.</p></li>
@@ -2109,6 +2154,19 @@ If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
 element indicate the RGB color of a vertex.</p></li>
 <li><p><strong>two_sided</strong> (<em>bool</em>) – whether or not the triangles should be able to be
 seen from both sides.</p></li>
+<li><p><strong>vertex_offset</strong> – int type(ohterwise float type will be floored to int),
+if ‘indices’ is provided, this means the value added to the vertex
+index before indexing into the vertex buffer, else this means the
+index of the first vertex to draw.</p></li>
+<li><p><strong>vertex_count</strong> – int type(ohterwise float type will be floored to int),
+only avaliable when <cite>indices</cite> is not provided, which is the number
+of vertices to draw.</p></li>
+<li><p><strong>index_offset</strong> – int type(ohterwise float type will be floored to int),
+only avaliable when <cite>indices</cite> is provided, which is the base index
+within the index buffer.</p></li>
+<li><p><strong>index_count</strong> – int type(ohterwise float type will be floored to int),
+only avaliable when <cite>indices</cite> is provided, which is the the number
+of vertices to draw.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2116,7 +2174,7 @@ seen from both sides.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.Scene.particles">
-<span class="sig-name descname"><span class="pre">particles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Scene.particles" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">particles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Scene.particles" title="Permalink to this definition">#</a></dt>
 <dd><p>Declare a set of particles within the scene.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2127,8 +2185,10 @@ seen from both sides.</p></li>
 values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
 <li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each
 element indicate the RGB color of a particle.</p></li>
-<li><p><strong>two_sided</strong> (<em>bool</em>) – whether or not the triangles should be able to be
-seen from both sides.</p></li>
+<li><p><strong>index_offset</strong> – int type(ohterwise float type will be floored to int),
+the index of the first vertex to draw.</p></li>
+<li><p><strong>index_count</strong> – int type(ohterwise float type will be floored to int),
+the number of vertices to draw.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2231,6 +2291,20 @@ to the corresponding event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>tag</strong> (<em>str</em>) – A tag used for filtering events.                 If it is None, then all events are returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Window.get_image_buffer">
+<span class="sig-name descname"><span class="pre">get_image_buffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Window.get_image_buffer" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the window content to numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>[width, height, channels] with (0.0~1.0) float-format color.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>3d numpy array</p>
 </dd>
 </dl>
 </dd></dl>

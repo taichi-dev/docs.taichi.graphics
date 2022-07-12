@@ -223,11 +223,6 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.bit_array">
-     bit_array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.bit_struct">
      bit_struct
     </a>
@@ -275,6 +270,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.pointer">
      pointer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi._snode.fields_builder.FieldsBuilder.quant_array">
+     quant_array
     </a>
    </li>
   </ul>
@@ -325,12 +325,6 @@ fb.pointer(ti.ij, 8).dense(ti.ij, 4).place(y)
 fb.finalize()
 </pre></div>
 </div>
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.bit_array">
-<span class="sig-name descname"><span class="pre">bit_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.bit_array" title="Permalink to this definition">#</a></dt>
-<dd><p>Same as <a class="reference internal" href="../../lang/snode/#taichi.lang.snode.SNode.bit_array" title="taichi.lang.snode.SNode.bit_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.bit_array()</span></code></a></p>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.bit_struct">
 <span class="sig-name descname"><span class="pre">bit_struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.bit_struct" title="Permalink to this definition">#</a></dt>
@@ -394,6 +388,12 @@ fb.finalize()
 <dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.pointer">
 <span class="sig-name descname"><span class="pre">pointer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.pointer" title="Permalink to this definition">#</a></dt>
 <dd><p>Same as <a class="reference internal" href="../../lang/snode/#taichi.lang.snode.SNode.pointer" title="taichi.lang.snode.SNode.pointer"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.pointer()</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi._snode.fields_builder.FieldsBuilder.quant_array">
+<span class="sig-name descname"><span class="pre">quant_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._snode.fields_builder.FieldsBuilder.quant_array" title="Permalink to this definition">#</a></dt>
+<dd><p>Same as <a class="reference internal" href="../../lang/snode/#taichi.lang.snode.SNode.quant_array" title="taichi.lang.snode.SNode.quant_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.quant_array()</span></code></a></p>
 </dd></dl>
 
 </dd></dl>

@@ -39,8 +39,8 @@ If you wish to try out the autumn theme for yourself and view the complete sourc
 
 Just so you know, Taichi Voxel Challenge 2022 is getting heated. If you are also a voxel art lover, you are very welcome to join! Let's compare 'voxels' and motivate each other! For more information about how to participate, see the Voxel Challenge README at [https://github.com/taichi-dev/community/blob/main/events/voxel-challenge/README.md](https://github.com/taichi-dev/community/blob/main/events/voxel-challenge/README.md)
 
-> *It has been reported at* [https://github.com/taichi-dev/taichi/issues/4891](https://github.com/taichi-dev/taichi/issues/4891)  *that Taichi Lang v1.0.1 has some compatibility issues with the Vulkan backend in some environments. The next Taichi Lang release will ship the fix. As a workaround, use Taichi Lang v1.0.0 instead:*  
->  
+> *It has been reported at* [https://github.com/taichi-dev/taichi/issues/4891](https://github.com/taichi-dev/taichi/issues/4891)  *that Taichi Lang v1.0.1 has some compatibility issues with the Vulkan backend in some environments. The next Taichi Lang release will ship the fix. As a workaround, use Taichi Lang v1.0.0 instead:*
+>
 > *pip install taichi==1.0.0*
 
 # 4. Using voxels to create a forest in the autumn air
@@ -51,18 +51,18 @@ The autumn theme has three key elements: trees, forest floor covered by fallen l
 from scene import Scene
 import taichi as ti
 from taichi.math import *
-    
-scene = Scene(voxel_edges=0, exposure=2) # Create a scene, specifying the voxel edge and exposure. 
+
+scene = Scene(voxel_edges=0, exposure=2) # Create a scene, specifying the voxel edge and exposure.
 scene.set_floor(0, (1.0, 1.0, 1.0)) # Height of the floor
 scene.set_background_color((0.5, 0.5, 0.4)) # Color of the sky
 scene.set_directional_light((1, 1, -1), 0.2, (1, 0.8, 0.6)) # Direction and color of the light
-    
+
 @ti.kernel
 def initialize_voxels():
     scene.set_voxel(vec3(0), 1, vec3(1)) # Add a (1, 1, 1) voxel at the position of (0, 0, 0)
-    
+
 initialize_voxels()
-    
+
 scene.finish()
 ```
 
@@ -88,7 +88,7 @@ Now we start building the base floor layer by layer, and each layer is virtually
 @ti.func
 def create_block(pos, size, color, color_noise):
     for I in ti.grouped(
-        ti.ndrange((pos[0], pos[0] + size[0]), 
+        ti.ndrange((pos[0], pos[0] + size[0]),
                    (pos[1], pos[1] + size[1]),
                    (pos[2], pos[2] + size[2]))):
         scene.set_voxel(I, 1, color + color_noise * ti.random())
@@ -120,7 +120,7 @@ def initialize_voxels():
         create_block(ivec3(-60, -(i + 1)**2 - 40, -60),
                      ivec3(120, 2 * i + 1, 120),
                      vec3(0.5 - i * 0.1) * vec3(1.0, 0.8, 0.6),
-                     vec3(0.05 * (3 - i))) 
+                     vec3(0.05 * (3 - i)))
 ```
 
 ![Now you have a taupe base floor...](https://github.com/taichi-dev/public_files/blob/master/taichi.graphics/yuanming-voxel/earch.png?raw=true)
@@ -142,7 +142,7 @@ One tree does not make a forest, and we have to make it within 99 lines of code.
 ```python
 @ti.func
 def create_tree(pos, height, radius, color):
-    ...    
+    ...
 ```
 
 The function takes four parameters:
@@ -244,7 +244,7 @@ The last step is to create fences, which is to add a bar along each direction an
 def make_fence(start, direction, length):
     color = vec3(0.5, 0.3, 0.2)
     create_block(start, direction * length + ivec3(3, 2, 3), color, vec3(0.1))
-    
+
     fence_dist = 3
     for i in range(length // fence_dist + 1):
         create_block(start + direction * i * fence_dist + ivec3(1, -3, 1), ivec3(1, 5, 1), color, vec3(0))
@@ -282,5 +282,5 @@ For those voxel art lovers, so long as you can program in Python, I assure you t
 
 * You can click [bit.ly/3whe1zX](https://bit.ly/3whe1zX) to view more of the submissions of voxel Challenge 2022.
 * We also came up with some artworks (all have source code) during internal test and before Voxel Challenge 2022. See [bit.ly/3FGDwxr](https://bit.ly/3FGDwxr).
-    
+
 Note that the voxel editor required by Voxel Challenge 2022 requires the Python environment only. It supports Windows, macOS, and Linux. It works fine even if you don't have a GPU.

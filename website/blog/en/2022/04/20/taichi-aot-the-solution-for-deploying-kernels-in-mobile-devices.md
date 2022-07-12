@@ -64,7 +64,7 @@ mod.add_kernel(get_force,
                    'x': x,
                    'f': f,
                    'vertices': vertices
-               })                
+               })
 ...
 mod.save(dir_name, '')
 ```
