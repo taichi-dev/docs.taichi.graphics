@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-slug: /dev_install
 ---
+
 # Developer installation
 
 ## Target audience
