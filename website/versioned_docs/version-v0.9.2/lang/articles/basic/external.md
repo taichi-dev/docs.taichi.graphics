@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
+slug: /external
 ---
-
 # Interacting with external arrays
 
 Although Taichi fields are mainly used in Taichi-scope, in some cases

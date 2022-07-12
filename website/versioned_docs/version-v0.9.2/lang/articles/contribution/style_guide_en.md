@@ -1,7 +1,7 @@
 ---
 sidebar_position: 12
+slug: /style_guide_en
 ---
-
 # Taichi Technical Documentation Style Guide
 
 This is a reference for the developers and users at Taichi community to improve their writing and the consistency of Taichi's documentation. You can find detailed style, usage, and grammar in the following sections.

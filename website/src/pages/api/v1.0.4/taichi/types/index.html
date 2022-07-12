@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>taichi.types &#8212; taichi-api-docstring  documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:category" content="API Reference">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../">
+  <img src="../../../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="ml-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../">
+  Taichi Language’s API reference
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://docs.taichi.graphics">Taichi Documentation Site<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/taichi-dev/taichi" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl autoapi-container">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items">
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="dropdown show">
+        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          v1.0.4
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          
+            
+            <a class="dropdown-item" href="/api/master/">master</a>
+            
+          
+             <strong> 
+            <a class="dropdown-item" href="/api/">v1.0.4</a>
+             </strong> 
+          
+            
+            <a class="dropdown-item" href="/api/v0.9.2/">v0.9.2</a>
+            
+          
+        </div>
+      </span>
+    </span>
+  </div>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <!--  -->
+
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../">
+   Taichi Language’s API reference
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../">
+     taichi: The main taichi module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ad/">
+     taichi.ad: Taichi Autodiff system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aot/">
+     taichi.aot: Taichi AOT system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/">
+     taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../profiler/">
+     taichi.profiler: Taichi profiler tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/">
+     taichi.tools: Miscellaneous tools shipped with Taichi
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     taichi.types: Taichi types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ui/">
+     taichi.ui: Taichi UI components (GUI and GGUI)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.f16">
+   f16
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.f32">
+   f32
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.f64">
+   f64
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.float16">
+   float16
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.float32">
+   float32
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.float64">
+   float64
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.i16">
+   i16
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.i32">
+   i32
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.i64">
+   i64
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.i8">
+   i8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.int16">
+   int16
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.int32">
+   int32
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.int64">
+   int64
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.int8">
+   int8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.is_integral">
+   is_integral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.is_signed">
+   is_signed
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.matrix">
+   matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.ndarray">
+   ndarray
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.ref">
+   ref
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.rw_texture">
+   rw_texture
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.sparse_matrix_builder">
+   sparse_matrix_builder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.struct">
+   struct
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.template">
+   template
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.texture">
+   texture
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.u16">
+   u16
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.u32">
+   u32
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.u64">
+   u64
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.u8">
+   u8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.uint16">
+   uint16
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.uint32">
+   uint32
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.uint64">
+   uint64
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.uint8">
+   uint8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.vector">
+   vector
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-taichi.types">
+<span id="taichi-types"></span><h1><a class="reference internal" href="#module-taichi.types" title="taichi.types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types</span></code></a><a class="headerlink" href="#module-taichi.types" title="Permalink to this heading">#</a></h1>
+<p>This module defines data types in Taichi:</p>
+<ul class="simple">
+<li><p>primitive: int, float, etc.</p></li>
+<li><p>compound: matrix, vector, struct.</p></li>
+<li><p>template: for reference types.</p></li>
+<li><p>ndarray: for arbitrary arrays.</p></li>
+<li><p>quantized: for quantized types, see “<a class="reference external" href="https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf">https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf</a>”</p></li>
+</ul>
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.f16">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">f16</span></span><a class="headerlink" href="#taichi.types.f16" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.float16" title="taichi.types.primitive_types.float16"><code class="xref py py-const docutils literal notranslate"><span class="pre">float16</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.f32">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">f32</span></span><a class="headerlink" href="#taichi.types.f32" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.float32" title="taichi.types.primitive_types.float32"><code class="xref py py-const docutils literal notranslate"><span class="pre">float32</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.f64">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">f64</span></span><a class="headerlink" href="#taichi.types.f64" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.float64" title="taichi.types.primitive_types.float64"><code class="xref py py-const docutils literal notranslate"><span class="pre">float64</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.float16">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">float16</span></span><a class="headerlink" href="#taichi.types.float16" title="Permalink to this definition">#</a></dt>
+<dd><p>16-bit precision floating point data type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.float32">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">float32</span></span><a class="headerlink" href="#taichi.types.float32" title="Permalink to this definition">#</a></dt>
+<dd><p>32-bit single precision floating point data type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.float64">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">float64</span></span><a class="headerlink" href="#taichi.types.float64" title="Permalink to this definition">#</a></dt>
+<dd><p>64-bit double precision floating point data type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.i16">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">i16</span></span><a class="headerlink" href="#taichi.types.i16" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.int16" title="taichi.types.primitive_types.int16"><code class="xref py py-const docutils literal notranslate"><span class="pre">int16</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.i32">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">i32</span></span><a class="headerlink" href="#taichi.types.i32" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.int32" title="taichi.types.primitive_types.int32"><code class="xref py py-const docutils literal notranslate"><span class="pre">int32</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.i64">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">i64</span></span><a class="headerlink" href="#taichi.types.i64" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.int64" title="taichi.types.primitive_types.int64"><code class="xref py py-const docutils literal notranslate"><span class="pre">int64</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.i8">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">i8</span></span><a class="headerlink" href="#taichi.types.i8" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.int8" title="taichi.types.primitive_types.int8"><code class="xref py py-const docutils literal notranslate"><span class="pre">int8</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.int16">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">int16</span></span><a class="headerlink" href="#taichi.types.int16" title="Permalink to this definition">#</a></dt>
+<dd><p>16-bit signed integer data type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.int32">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">int32</span></span><a class="headerlink" href="#taichi.types.int32" title="Permalink to this definition">#</a></dt>
+<dd><p>32-bit signed integer data type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.int64">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">int64</span></span><a class="headerlink" href="#taichi.types.int64" title="Permalink to this definition">#</a></dt>
+<dd><p>64-bit signed integer data type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.int8">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">int8</span></span><a class="headerlink" href="#taichi.types.int8" title="Permalink to this definition">#</a></dt>
+<dd><p>8-bit signed integer data type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.is_integral">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">is_integral</span></span><a class="headerlink" href="#taichi.types.is_integral" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.is_signed">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">is_signed</span></span><a class="headerlink" href="#taichi.types.is_signed" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.types.matrix">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates a matrix type with given shape and data type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – number of rows of the matrix.</p></li>
+<li><p><strong>m</strong> (<em>int</em>) – number of columns of the matrix.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – matrix data type.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A matrix type.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; mat2x2 = ti.types.matrix(2, 2, ti.f32)  # 2x2 matrix type
+&gt;&gt;&gt; M = mat2x2([[1., 2.], [3., 4.]])  # an instance of this type
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.ndarray">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><a class="headerlink" href="#taichi.types.ndarray" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <code class="xref py py-class docutils literal notranslate"><span class="pre">NdarrayType</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def to_numpy(x: ti.types.ndarray(), y: ti.types.ndarray()):
+&gt;&gt;&gt;     for i in range(n):
+&gt;&gt;&gt;         x[i] = y[i]
+&gt;&gt;&gt;
+&gt;&gt;&gt; y = ti.ndarray(ti.f64, shape=n)
+&gt;&gt;&gt; ... # calculate y
+&gt;&gt;&gt; x = numpy.zeros(n)
+&gt;&gt;&gt; to_numpy(x, y)  # `x` will be filled with `y`&#39;s data.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.types.ref">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.ref" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.rw_texture">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">rw_texture</span></span><a class="headerlink" href="#taichi.types.rw_texture" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <code class="xref py py-class docutils literal notranslate"><span class="pre">TextureType</span></code>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.types.sparse_matrix_builder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">sparse_matrix_builder</span></span><a class="headerlink" href="#taichi.types.sparse_matrix_builder" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.types.struct">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.struct" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates a struct type with given members.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> (<em>dict</em>) – a dictionary contains the names and types of the
+struct members.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A struct type.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
+&gt;&gt;&gt; sphere = ti.types.strcut(center=vec3, radius=float)
+&gt;&gt;&gt; s = sphere(center=vec3([0., 0., 0.]), radius=1.0)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.template">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">template</span></span><a class="headerlink" href="#taichi.types.template" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <code class="xref py py-class docutils literal notranslate"><span class="pre">Template</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.texture">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">texture</span></span><a class="headerlink" href="#taichi.types.texture" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.u16">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">u16</span></span><a class="headerlink" href="#taichi.types.u16" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.uint16" title="taichi.types.primitive_types.uint16"><code class="xref py py-const docutils literal notranslate"><span class="pre">uint16</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.u32">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">u32</span></span><a class="headerlink" href="#taichi.types.u32" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.uint32" title="taichi.types.primitive_types.uint32"><code class="xref py py-const docutils literal notranslate"><span class="pre">uint32</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.u64">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">u64</span></span><a class="headerlink" href="#taichi.types.u64" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.uint64" title="taichi.types.primitive_types.uint64"><code class="xref py py-const docutils literal notranslate"><span class="pre">uint64</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.u8">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">u8</span></span><a class="headerlink" href="#taichi.types.u8" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="primitive_types/#taichi.types.primitive_types.uint8" title="taichi.types.primitive_types.uint8"><code class="xref py py-const docutils literal notranslate"><span class="pre">uint8</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.uint16">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">uint16</span></span><a class="headerlink" href="#taichi.types.uint16" title="Permalink to this definition">#</a></dt>
+<dd><p>16-bit unsigned integer data type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.uint32">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">uint32</span></span><a class="headerlink" href="#taichi.types.uint32" title="Permalink to this definition">#</a></dt>
+<dd><p>32-bit unsigned integer data type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.uint64">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">uint64</span></span><a class="headerlink" href="#taichi.types.uint64" title="Permalink to this definition">#</a></dt>
+<dd><p>64-bit unsigned integer data type.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.types.uint8">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">uint8</span></span><a class="headerlink" href="#taichi.types.uint8" title="Permalink to this definition">#</a></dt>
+<dd><p>8-bit unsigned integer data type.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.types.vector">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.vector" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates a vector type with given shape and data type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – dimension of the vector.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – vector data type.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A vector type.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)  # 3d vector type
+&gt;&gt;&gt; v = vec3([1., 2., 3.])  # an instance of this type
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Taichi Graphics.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
