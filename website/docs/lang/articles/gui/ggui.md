@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-slug: /ggui
 ---
+
 # A New UI system: GGUI
 
 | **Category** | **Prerequisites**                                            |

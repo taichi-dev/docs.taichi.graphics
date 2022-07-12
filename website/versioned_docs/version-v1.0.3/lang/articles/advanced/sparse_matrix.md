@@ -1,6 +1,3 @@
----
-slug: /sparse_matrix
----
 # Sparse Matrix
 Sparse matrices are frequently used when solving linear systems in science and engineering. Taichi provides programmers with useful APIs for sparse matrices.
 
