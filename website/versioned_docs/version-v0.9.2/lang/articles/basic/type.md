@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
+slug: /type
 ---
-
 # Type system
 
 Data types in Taichi consist of _primitive types_ and _compound types_. Primitive types are the numerical data types used by different backends, while compound types are user-defined types of data records composed of multiple members.

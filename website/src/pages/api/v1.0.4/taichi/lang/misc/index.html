@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>taichi.lang.misc &#8212; taichi-api-docstring  documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:category" content="API Reference">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../">
+  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="ml-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../">
+  Taichi Language’s API reference
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://docs.taichi.graphics">Taichi Documentation Site<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/taichi-dev/taichi" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl autoapi-container">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items">
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="dropdown show">
+        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          v1.0.4
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          
+            
+            <a class="dropdown-item" href="/api/master/">master</a>
+            
+          
+             <strong> 
+            <a class="dropdown-item" href="/api/">v1.0.4</a>
+             </strong> 
+          
+            
+            <a class="dropdown-item" href="/api/v0.9.2/">v0.9.2</a>
+            
+          
+        </div>
+      </span>
+    </span>
+  </div>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <!--  -->
+
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../">
+   Taichi Language’s API reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../">
+     taichi: The main taichi module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ad/">
+     taichi.ad: Taichi Autodiff system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aot/">
+     taichi.aot: Taichi AOT system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../linalg/">
+     taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../profiler/">
+     taichi.profiler: Taichi profiler tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/">
+     taichi.tools: Miscellaneous tools shipped with Taichi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/">
+     taichi.types: Taichi types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/">
+     taichi.ui: Taichi UI components (GUI and GGUI)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.arm64">
+   arm64
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.assume_in_range">
+   assume_in_range
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.block_local">
+   block_local
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.cache_read_only">
+   cache_read_only
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.cc">
+   cc
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.cpu">
+   cpu
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.cuda">
+   cuda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.dx11">
+   dx11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.extension">
+   extension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.global_thread_idx">
+   global_thread_idx
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.gpu">
+   gpu
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.i">
+   i
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ij">
+   ij
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ijk">
+   ijk
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ijkl">
+   ijkl
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ijl">
+   ijl
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ik">
+   ik
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ikl">
+   ikl
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.il">
+   il
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.init">
+   init
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.j">
+   j
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.jk">
+   jk
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.jkl">
+   jkl
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.jl">
+   jl
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.k">
+   k
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.kl">
+   kl
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.l">
+   l
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.loop_config">
+   loop_config
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.mesh_local">
+   mesh_local
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.mesh_patch_idx">
+   mesh_patch_idx
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.metal">
+   metal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.no_activate">
+   no_activate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.opengl">
+   opengl
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.reset">
+   reset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.vulkan">
+   vulkan
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.wasm">
+   wasm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.x64">
+   x64
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.x86_64">
+   x86_64
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-taichi.lang.misc">
+<span id="taichi-lang-misc"></span><h1><a class="reference internal" href="#module-taichi.lang.misc" title="taichi.lang.misc"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.misc</span></code></a><a class="headerlink" href="#module-taichi.lang.misc" title="Permalink to this heading">#</a></h1>
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.arm64">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">arm64</span></span><a class="headerlink" href="#taichi.lang.misc.arm64" title="Permalink to this definition">#</a></dt>
+<dd><p>The ARM CPU backend.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.misc.assume_in_range">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">assume_in_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.assume_in_range" title="Permalink to this definition">#</a></dt>
+<dd><p>Hints the compiler that a value is between a specified range,
+for the compiler to perform scatchpad optimization, and return the
+value untouched.</p>
+<p>The assumed range is <cite>[base + low, base + high)</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> (<em>Number</em>) – The input value.</p></li>
+<li><p><strong>base</strong> (<em>Number</em>) – The base point for the range interval.</p></li>
+<li><p><strong>low</strong> (<em>Number</em>) – The lower offset relative to <cite>base</cite> (included).</p></li>
+<li><p><strong>high</strong> (<em>Number</em>) – The higher offset relative to <cite>base</cite> (excluded).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Return the input <cite>value</cite> untouched.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; # hint the compiler that x is in range [8, 12).
+&gt;&gt;&gt; x = ti.assume_in_range(x, 10, -2, 2)
+&gt;&gt;&gt; x
+10
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.misc.block_local">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">block_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.block_local" title="Permalink to this definition">#</a></dt>
+<dd><p>Hints Taichi to cache the fields and to enable the BLS optimization.</p>
+<p>Please visit <a class="reference external" href="https://docs.taichi-lang.org/docs/performance">https://docs.taichi-lang.org/docs/performance</a>
+for how BLS is used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*args</strong> (<em>List</em><em>[</em><a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><em>Field</em></a><em>]</em>) – A list of sparse Taichi fields.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.misc.cache_read_only">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">cache_read_only</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.cache_read_only" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.cc">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">cc</span></span><a class="headerlink" href="#taichi.lang.misc.cc" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.cpu">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">cpu</span></span><a class="headerlink" href="#taichi.lang.misc.cpu" title="Permalink to this definition">#</a></dt>
+<dd><p>A list of CPU backends supported on the current system.
+Currently contains ‘x64’, ‘x86_64’, ‘arm64’, ‘cc’, ‘wasm’.</p>
+<p>When this is used, Taichi automatically picks the matching CPU backend.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.cuda">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">cuda</span></span><a class="headerlink" href="#taichi.lang.misc.cuda" title="Permalink to this definition">#</a></dt>
+<dd><p>The CUDA backend.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.dx11">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">dx11</span></span><a class="headerlink" href="#taichi.lang.misc.dx11" title="Permalink to this definition">#</a></dt>
+<dd><p>The DX11 backend.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.extension">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#taichi.lang.misc.extension" title="Permalink to this definition">#</a></dt>
+<dd><p>An instance of Taichi extension.</p>
+<p>The list of currently available extensions is [‘sparse’, ‘async_mode’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.misc.global_thread_idx">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">global_thread_idx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.global_thread_idx" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the global thread id of this running thread,
+only available for cpu and cuda backends.</p>
+<p>For cpu backends this is equal to the cpu thread id,
+For cuda backends this is equal to <cite>block_id * block_dim + thread_id</cite>.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; f = ti.field(ti.f32, shape=(16, 16))
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     for i in ti.grouped(f):
+&gt;&gt;&gt;         print(ti.global_thread_idx())
+&gt;&gt;&gt;
+test()
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.gpu">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">gpu</span></span><a class="headerlink" href="#taichi.lang.misc.gpu" title="Permalink to this definition">#</a></dt>
+<dd><p>A list of GPU backends supported on the current system.
+Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’.</p>
+<p>When this is used, Taichi automatically picks the matching GPU backend. If no
+GPU is detected, Taichi falls back to the CPU backend.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.i">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">i</span></span><a class="headerlink" href="#taichi.lang.misc.i" title="Permalink to this definition">#</a></dt>
+<dd><p>Axis 0. For multi-dimensional arrays it’s the direction downward the rows.
+For a 1d array it’s the direction along this array.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.ij">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ij</span></span><a class="headerlink" href="#taichi.lang.misc.ij" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (0, 1).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.ijk">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ijk</span></span><a class="headerlink" href="#taichi.lang.misc.ijk" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (0, 1, 2).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.ijkl">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ijkl</span></span><a class="headerlink" href="#taichi.lang.misc.ijkl" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (0, 1, 2, 3).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.ijl">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ijl</span></span><a class="headerlink" href="#taichi.lang.misc.ijl" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (0, 1, 3).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.ik">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ik</span></span><a class="headerlink" href="#taichi.lang.misc.ik" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (0, 2).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.ikl">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">ikl</span></span><a class="headerlink" href="#taichi.lang.misc.ikl" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (0, 2, 3).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.il">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">il</span></span><a class="headerlink" href="#taichi.lang.misc.il" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (0, 3).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.misc.init">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_fp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_test_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_fallback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.init" title="Permalink to this definition">#</a></dt>
+<dd><p>Initializes the Taichi runtime.</p>
+<p>This should always be the entry point of your Taichi program. Most
+importantly, it sets the backend used throughout the program.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arch</strong> – Backend to use. This is usually <a class="reference internal" href="../#taichi.lang.cpu" title="taichi.lang.cpu"><code class="xref py py-const docutils literal notranslate"><span class="pre">cpu</span></code></a> or <a class="reference internal" href="../#taichi.lang.gpu" title="taichi.lang.gpu"><code class="xref py py-const docutils literal notranslate"><span class="pre">gpu</span></code></a>.</p></li>
+<li><p><strong>default_fp</strong> (<em>Optional</em><em>[</em><em>type</em><em>]</em>) – Default floating-point type.</p></li>
+<li><p><strong>default_ip</strong> (<em>Optional</em><em>[</em><em>type</em><em>]</em>) – Default integral type.</p></li>
+<li><p><strong>require_version</strong> (<em>Optional</em><em>[</em><em>string</em><em>]</em>) – A version string.</p></li>
+<li><p><strong>**kwargs</strong> – <p>Taichi provides highly customizable compilation through
+<code class="docutils literal notranslate"><span class="pre">kwargs</span></code>, which allows for fine grained control of Taichi compiler
+behavior. Below we list some of the most frequently used ones. For a
+complete list, please check out
+<a class="reference external" href="https://github.com/taichi-dev/taichi/blob/master/taichi/program/compile_config.h">https://github.com/taichi-dev/taichi/blob/master/taichi/program/compile_config.h</a>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cpu_max_num_threads</span></code> (int): Sets the number of threads used by the CPU thread pool.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debug</span></code> (bool): Enables the debug mode, under which Taichi does a few more things like boundary checks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print_ir</span></code> (bool): Prints the CHI IR of the Taichi kernels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">packed</span></code> (bool): Enables the packed memory layout. See <a class="reference external" href="https://docs.taichi-lang.org/docs/layout">https://docs.taichi-lang.org/docs/layout</a>.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.j">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">j</span></span><a class="headerlink" href="#taichi.lang.misc.j" title="Permalink to this definition">#</a></dt>
+<dd><p>Axis 1. For multi-dimensional arrays it’s the direction across the columns.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.jk">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">jk</span></span><a class="headerlink" href="#taichi.lang.misc.jk" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (1, 2).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.jkl">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">jkl</span></span><a class="headerlink" href="#taichi.lang.misc.jkl" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (1, 2, 3).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.jl">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">jl</span></span><a class="headerlink" href="#taichi.lang.misc.jl" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (1, 3).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.k">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">k</span></span><a class="headerlink" href="#taichi.lang.misc.k" title="Permalink to this definition">#</a></dt>
+<dd><p>Axis 2. For arrays of dimension <cite>d</cite> &gt;= 3, view each cell as an array of
+lower dimension d-2, it’s the first axis of this cell.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.kl">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">kl</span></span><a class="headerlink" href="#taichi.lang.misc.kl" title="Permalink to this definition">#</a></dt>
+<dd><p>Axes (2, 3).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.l">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">l</span></span><a class="headerlink" href="#taichi.lang.misc.l" title="Permalink to this definition">#</a></dt>
+<dd><p>Axis 3. For arrays of dimension <cite>d</cite> &gt;= 4, view each cell as an array of
+lower dimension d-2, it’s the second axis of this cell.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.misc.loop_config">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">loop_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serialize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallelize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_dim_adaptive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bit_vectorize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.loop_config" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets directives for the next loop</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block_dim</strong> (<em>int</em>) – The number of threads in a block on GPU</p></li>
+<li><p><strong>serialize</strong> (<em>bool</em>) – Whether to let the for loop execute serially, <cite>serialize=True</cite> equals to <cite>parallelize=1</cite></p></li>
+<li><p><strong>parallelize</strong> (<em>int</em>) – The number of threads to use on CPU</p></li>
+<li><p><strong>block_dim_adaptive</strong> (<em>bool</em>) – Whether to allow backends set block_dim adaptively, enabled by default</p></li>
+<li><p><strong>bit_vectorize</strong> (<em>bool</em>) – Whether to enable bit vectorization of struct fors on quant_arrays.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@ti.kernel
+def break_in_serial_for() -&gt; ti.i32:
+    a = 0
+    ti.loop_config(serialize=True)
+    for i in range(100):  # This loop runs serially
+        a += i
+        if i == 10:
+            break
+    return a
+
+break_in_serial_for()  # returns 55
+
+n = 128
+val = ti.field(ti.i32, shape=n)
+@ti.kernel
+def fill():
+    ti.loop_config(parallelize=8, block_dim=16)
+    # If the kernel is run on the CPU backend, 8 threads will be used to run it
+    # If the kernel is run on the CUDA backend, each block will have 16 threads.
+    for i in range(n):
+        val[i] = i
+
+u1 = ti.types.quant.int(bits=1, signed=False)
+x = ti.field(dtype=u1)
+y = ti.field(dtype=u1)
+cell = ti.root.dense(ti.ij, (128, 4))
+cell.quant_array(ti.j, 32).place(x)
+cell.quant_array(ti.j, 32).place(y)
+@ti.kernel
+def copy():
+    ti.loop_config(bit_vectorize=True)
+    # 32 bits, instead of 1 bit, will be copied at a time
+    for i, j in x:
+        y[i, j] = x[i, j]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.misc.mesh_local">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">mesh_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.mesh_local" title="Permalink to this definition">#</a></dt>
+<dd><p>Hints the compiler to cache the mesh attributes
+and to enable the mesh BLS optimization,
+only available for backends supporting <cite>ti.extension.mesh</cite> and to use with mesh-for loop.</p>
+<p>Related to <a class="reference external" href="https://github.com/taichi-dev/taichi/issues/3608">https://github.com/taichi-dev/taichi/issues/3608</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*args</strong> (<em>List</em><em>[</em><em>Attribute</em><em>]</em>) – A list of mesh attributes or fields accessed as attributes.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># instantiate model
+mesh_builder = ti.Mesh.tri()
+mesh_builder.verts.place({
+    &#39;x&#39; : ti.f32,
+    &#39;y&#39; : ti.f32
+})
+model = mesh_builder.build(meta)
+
+@ti.kernel
+def foo():
+    # hint the compiler to cache mesh vertex attribute `x` and `y`.
+    ti.mesh_local(model.verts.x, model.verts.y)
+    for v0 in model.verts: # mesh-for loop
+        for v1 in v0.verts:
+            v0.x += v1.y
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.misc.mesh_patch_idx">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">mesh_patch_idx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.mesh_patch_idx" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the internal mesh patch id of this running thread,
+only available for backends supporting <cite>ti.extension.mesh</cite> and to use within mesh-for loop.</p>
+<p>Related to <a class="reference external" href="https://github.com/taichi-dev/taichi/issues/3608">https://github.com/taichi-dev/taichi/issues/3608</a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.metal">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">metal</span></span><a class="headerlink" href="#taichi.lang.misc.metal" title="Permalink to this definition">#</a></dt>
+<dd><p>The Apple Metal backend.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.misc.no_activate">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">no_activate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.no_activate" title="Permalink to this definition">#</a></dt>
+<dd><p>Deactivates a SNode pointer.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.opengl">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">opengl</span></span><a class="headerlink" href="#taichi.lang.misc.opengl" title="Permalink to this definition">#</a></dt>
+<dd><p>The OpenGL backend. OpenGL 4.3 required.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.misc.reset">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.misc.reset" title="Permalink to this definition">#</a></dt>
+<dd><p>Resets Taichi to its initial state.
+This will destroy all the allocated fields and kernels, and restore
+the runtime to its default configuration.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.field(ti.i32, shape=())
+&gt;&gt;&gt; a[None] = 1
+&gt;&gt;&gt; print(&quot;before reset: &quot;, a)
+before rest: 1
+&gt;&gt;&gt;
+&gt;&gt;&gt; ti.reset()
+&gt;&gt;&gt; print(&quot;after reset: &quot;, a)
+# will raise error because a is unavailable after reset.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.vulkan">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">vulkan</span></span><a class="headerlink" href="#taichi.lang.misc.vulkan" title="Permalink to this definition">#</a></dt>
+<dd><p>The Vulkan backend.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.wasm">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">wasm</span></span><a class="headerlink" href="#taichi.lang.misc.wasm" title="Permalink to this definition">#</a></dt>
+<dd><p>The WebAssembly backend.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.x64">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">x64</span></span><a class="headerlink" href="#taichi.lang.misc.x64" title="Permalink to this definition">#</a></dt>
+<dd><p>The X64 CPU backend.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.x86_64">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">x86_64</span></span><a class="headerlink" href="#taichi.lang.misc.x86_64" title="Permalink to this definition">#</a></dt>
+<dd><p>The x64 CPU backend.</p>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Taichi Graphics.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

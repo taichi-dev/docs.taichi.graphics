@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
+slug: /utilities
 ---
-
 # Developer utilities
 
 This section provides a detailed description of some commonly used
