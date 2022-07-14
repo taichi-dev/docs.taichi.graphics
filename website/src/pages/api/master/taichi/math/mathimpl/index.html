@@ -1122,7 +1122,9 @@ original vector <cite>v</cite>.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.math.mathimpl.</span></span><span class="sig-name descname"><span class="pre">pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.mathimpl.pow" title="Permalink to this definition">#</a></dt>
 <dd><p>First array elements raised to powers from second array <span class="math notranslate nohighlight">\(x^a\)</span>, element-wise.</p>
 <p>Negative values raised to a non-integral value will return <cite>nan</cite>.
-A zero value raised to a negative value will return <cite>inf</cite>.</p>
+A zero value raised to a negative value will return <cite>inf</cite>.
+If debug mode or optimization passes are on, an exception will be raised
+when an integral value is raised to a negative value; otherwise 1 will be returned.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
