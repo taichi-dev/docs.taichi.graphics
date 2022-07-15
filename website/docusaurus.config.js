@@ -29,7 +29,7 @@ const mapLocaleCodeToCrowdin = (locale) => {
 module.exports = {
   title: 'Taichi Docs',
   tagline: 'Graphics programming for everyone',
-  url: 'https://docs.taichi.graphics',
+  url: 'https://docs.taichi-lang.org',
   baseUrl: '/',
   // trailingSlash: false,
   onBrokenLinks: 'throw',
