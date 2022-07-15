@@ -11,6 +11,12 @@
   command = "yarn build"
 
 [[redirects]]
+from = "https://docs.taichi.graphics/*"
+to = "https://docs.taichi-lang.org/*"
+status = 301
+force = true
+
+[[redirects]]
   from = "/lang/articles/:slug"
   to = "/docs/:slug"
   status = 301
