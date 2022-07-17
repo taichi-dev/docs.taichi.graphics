@@ -57,6 +57,61 @@ module.exports = {
         postsPerPage: 10,
       }
     ],
+    [
+      path.resolve(__dirname, 'plugins/docs-enhance-plugin'),
+      {
+        // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
+        routeBasePath: '/docs',
+        path: 'docs',
+        editUrl: ({ locale, versionDocsDirPath, docPath }) => {
+          if (locale !== DefaultLocale) {
+            return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(
+              locale
+            )}`;
+          }
+          // here we enforce contributors to not be able to edit versioned docs
+          // also redirect them to the main repository
+          return `https://github.com/taichi-dev/taichi/edit/master/docs/${docPath}`;
+        },
+        editCurrentVersion: true,
+        sidebarPath: require.resolve('./sidebars.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        versions: {
+          current: {
+            label: 'develop',
+            path: 'master',
+          },
+        },
+        remarkPlugins: [
+          [variablePlugin, { data: (path) => {
+            if (!path) return {}
+            for (const item of versionpaths) {
+              if (path.startsWith(item)) {
+                return require(item + '/variables')
+              }
+            }
+            return {}
+          }, fail: false }],
+          [
+            fragmentPlugin,
+            {
+              prefix: 'fragments',
+              fail: false,
+              baseUrl: (path) => {
+                if (!path) return __dirname + '/docs/fragments'
+                for (const item of versionpaths) {
+                  if (path.startsWith(item)) {
+                    return item + '/fragments'
+                  }
+                }
+                return __dirname + '/docs/fragments'
+              },
+            },
+          ],
+        ],
+      }
+    ],
   ],
   i18n: {
     defaultLocale: DefaultLocale,
@@ -248,58 +303,7 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
-          routeBasePath: '/docs',
-          path: 'docs',
-          editUrl: ({ locale, versionDocsDirPath, docPath }) => {
-            if (locale !== DefaultLocale) {
-              return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(
-                locale
-              )}`;
-            }
-            // here we enforce contributors to not be able to edit versioned docs
-            // also redirect them to the main repository
-            return `https://github.com/taichi-dev/taichi/edit/master/docs/${docPath}`;
-          },
-          editCurrentVersion: true,
-          sidebarPath: require.resolve('./sidebars.js'),
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-          versions: {
-            current: {
-              label: 'develop',
-              path: 'master',
-            },
-          },
-          remarkPlugins: [
-            [variablePlugin, { data: (path) => {
-              if (!path) return {}
-              for (const item of versionpaths) {
-                if (path.startsWith(item)) {
-                  return require(item + '/variables')
-                }
-              }
-              return {}
-            }, fail: false }],
-            [
-              fragmentPlugin,
-              {
-                prefix: 'fragments',
-                fail: false,
-                baseUrl: (path) => {
-                  if (!path) return __dirname + '/docs/fragments'
-                  for (const item of versionpaths) {
-                    if (path.startsWith(item)) {
-                      return item + '/fragments'
-                    }
-                  }
-                  return __dirname + '/docs/fragments'
-                },
-              },
-            ],
-          ],
-        },
+        docs: false,
         blog: false,
         gtag: {
           trackingID: 'G-9K17QVGTR6',
