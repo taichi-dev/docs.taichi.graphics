@@ -2726,6 +2726,13 @@
     tslib "^2.3.1"
     url-loader "^4.1.1"
 
+"@giscus/react@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@giscus/react/-/react-2.0.6.tgz#66ace3761dddffe8da79c65c4c6af0b366f16aa3"
+  integrity sha512-Kdrz/Jx7XNwFMuaIXHWXeqISdYwilFhRp9blmUwkixR+HdFJe4+dzkorVNnyW0M/xbSfzhjb49Ng2YvJOB/28Q==
+  dependencies:
+    giscus "^1.0.6"
+
 "@hapi/hoek@^9.0.0":
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.0.tgz#f3933a44e365864f4dad5db94158106d511e8131"
@@ -2773,6 +2780,11 @@
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.3.tgz#0300943770e04231041a51bd39f0439b5c7ab4f0"
   integrity sha512-nkalE/f1RvRGChwBnEIoBfSEYOXnCRdleKuv6+lePbMDrMZXeDQnqak5XDOeBgrPPyPfAdcCu/B5z+v3VhplGg==
+
+"@lit/reactive-element@^1.3.0":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@lit/reactive-element/-/reactive-element-1.3.3.tgz#851de2bd28d6c3378a816a28d2505075931559c2"
+  integrity sha512-ukelZ49tzUqgOAEbVujl/U62JNK3wdn5kKtXVqrjKND4QvHACZOMOYaZI6/5Jd8vsg+Fq9HDwiib70FBLydOiQ==
 
 "@mdx-js/mdx@1.6.22", "@mdx-js/mdx@^1.6.21":
   version "1.6.22"
@@ -3362,6 +3374,11 @@
   integrity sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==
   dependencies:
     "@types/node" "*"
+
+"@types/trusted-types@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/trusted-types/-/trusted-types-2.0.2.tgz#fc25ad9943bcac11cceb8168db4f275e0e72e756"
+  integrity sha512-F5DIZ36YVLE+PN+Zwws4kJogq47hNgX3Nx6WyDJ3kcplxyke3XIzB8uK5n/Lpm1HBsbGzd6nmGehL8cPekP+Tg==
 
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2", "@types/unist@^2.0.3":
   version "2.0.6"
@@ -5611,6 +5628,13 @@ get-stream@^6.0.0:
   resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-6.0.1.tgz#a262d8eef67aced57c2852ad6167526a43cbf7b7"
   integrity sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==
 
+giscus@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/giscus/-/giscus-1.0.6.tgz#e1baaf01a2601b46c1cc03a1751229707713b208"
+  integrity sha512-YPqo3ZyefMdAJaadZdDjSqj6m+KTZC21SL1QxF85HZZkBEqICzrGHu8PQhWc1HPiZAQsDVH9guvjhI79w+XUeg==
+  dependencies:
+    lit "^2.2.6"
+
 github-slugger@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-1.4.0.tgz#206eb96cdb22ee56fdc53a28d5a302338463444e"
@@ -6614,6 +6638,30 @@ lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
+
+lit-element@^3.2.0:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-3.2.1.tgz#f917d22451b848768f84164d41eb5e18903986e3"
+  integrity sha512-2PxyE9Yq9Jyo/YBK2anycaHcqo93YvB5D+24JxloPVqryW/BOXekne+jGsm0Ke3E5E2v7CDgkmpEmCAzYfrHCQ==
+  dependencies:
+    "@lit/reactive-element" "^1.3.0"
+    lit-html "^2.2.0"
+
+lit-html@^2.2.0:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-2.2.6.tgz#e70679605420a34c4f3cbd0c483b2fb1fff781df"
+  integrity sha512-xOKsPmq/RAKJ6dUeOxhmOYFjcjf0Q7aSdfBJgdJkOfCUnkmmJPxNrlZpRBeVe1Gg50oYWMlgm6ccAE/SpJgSdw==
+  dependencies:
+    "@types/trusted-types" "^2.0.2"
+
+lit@^2.2.6:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/lit/-/lit-2.2.7.tgz#a563e8851db1f131912f510129dcc9a42324e838"
+  integrity sha512-WXYujlKFwme5ZqXOZoWuRVZQAwy7scbcVT3wCbAOHefOxyscqjywWGlF2e6nnC9E64yP9l2ZQlN8wZcRlrjUMQ==
+  dependencies:
+    "@lit/reactive-element" "^1.3.0"
+    lit-element "^3.2.0"
+    lit-html "^2.2.0"
 
 loader-runner@^4.2.0:
   version "4.2.0"
