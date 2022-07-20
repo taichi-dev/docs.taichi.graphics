@@ -253,6 +253,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_depth_buffer_as_numpy">
+     get_depth_buffer_as_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_event">
      get_event
     </a>
@@ -265,6 +270,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_image_buffer">
      get_image_buffer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_window_shape">
+     get_window_shape
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -358,7 +368,21 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.get_depth_buffer">
-<span class="sig-name descname"><span class="pre">get_depth_buffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_depth_buffer" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_depth_buffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_depth_buffer" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>fetch the depth information of current scene to ti.ndarray/ti.field</dt><dd><p>(support copy from vulkan to cuda/cpu which is a faster version)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>depth</strong> (<em>ti.ndarray/ti.field</em>) – [window_width, window_height] carries depth information.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.window.Window.get_depth_buffer_as_numpy">
+<span class="sig-name descname"><span class="pre">get_depth_buffer_as_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_depth_buffer_as_numpy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the depth information of current scene to numpy array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -402,6 +426,14 @@ to the corresponding event.</p>
 <dd class="field-even"><p>3d numpy array</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.window.Window.get_window_shape">
+<span class="sig-name descname"><span class="pre">get_window_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_window_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the shape of window.
+:returns: (width, height)
+:rtype: tuple</p>
 </dd></dl>
 
 <dl class="py method">
