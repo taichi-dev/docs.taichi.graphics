@@ -228,6 +228,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.scene.Scene.lines">
+     lines
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.scene.Scene.mesh">
      mesh
     </a>
@@ -311,6 +316,30 @@ and can be rendered on a canvas.</p>
 &gt;&gt;&gt; scene.ambient_light([0.2, 0.2, 0.2])
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.scene.Scene.lines">
+<span class="sig-name descname"><span class="pre">lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.lines" title="Permalink to this definition">#</a></dt>
+<dd><p>Declare multi-lines inside the scene.
+:param vertices: a taichi 3D Vector field, where each element indicate the</p>
+<blockquote>
+<div><p>3D location of points of lines.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> – the line width (maybe different on different systems).</p></li>
+<li><p><strong>indices</strong> – a taichi int field of shape (2 * #points), which indicate
+the points indices of the lines. If this is None, then it is
+assumed that the points are already arranged in lines order.</p></li>
+<li><p><strong>color</strong> – a global color of the mesh as 3 floats representing RGB values.
+If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
+<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each
+element indicate the RGB color of the line.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
