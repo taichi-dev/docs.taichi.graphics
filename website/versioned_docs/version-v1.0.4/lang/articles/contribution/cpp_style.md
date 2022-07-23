@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-slug: /cpp_style
 ---
+
 # C++ style
 
 We generally follow [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html). One major exception is the naming convention of functions: Taichi adopts the snake case for function naming, as opposed to the camel case [suggested in Google's style](https://google.github.io/styleguide/cppguide.html#Function_Names), e.g. `this_is_a_taichi_function()`.

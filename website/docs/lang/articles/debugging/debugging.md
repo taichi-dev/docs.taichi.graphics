@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-slug: /debugging
 ---
+
 # Debugging
 
 Debugging a parallel program is not easy, so Taichi provides built-in

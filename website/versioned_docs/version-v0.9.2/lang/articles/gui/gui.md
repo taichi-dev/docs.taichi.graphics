@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-slug: /gui
 ---
+
 # GUI system
 
 Taichi has a built-in cpu-based GUI system to help users visualize results.

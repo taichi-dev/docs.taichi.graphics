@@ -2,6 +2,7 @@
 sidebar_position: 1
 slug: /
 ---
+
 # Getting Started
 
 Welcome to the Taichi Language documentation!

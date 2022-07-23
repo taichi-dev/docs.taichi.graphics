@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-slug: /differentiable_programming
 ---
+
 # Differentiable Programming
 
 ## Introduction

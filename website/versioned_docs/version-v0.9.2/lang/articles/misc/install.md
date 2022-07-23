@@ -1,7 +1,7 @@
 ---
 sidebar_position: 0
-slug: /install
 ---
+
 # Installation Troubleshooting
 
 ### Linux issues

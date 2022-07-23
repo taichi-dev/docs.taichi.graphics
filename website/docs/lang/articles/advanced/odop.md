@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-slug: /odop
 ---
+
 # Objective Data-oriented Programming
 
 Taichi is a
