@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-slug: /faq
 ---
+
 # Frequently Asked Questions
 
 ### Why does my `pip` complain `package not found` when installing Taichi?

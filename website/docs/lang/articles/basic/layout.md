@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-slug: /layout
 ---
+
 # Fields (advanced)
 
 Modern processor cores compute orders of magnitude faster than their equipped memory systems. To shrink this  performance gap, multi-level cache systems and high-bandwidth multi-channel memories are built into the computer architectures.

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-slug: /profiler
 ---
+
 # Profiler
 
 ## Overview

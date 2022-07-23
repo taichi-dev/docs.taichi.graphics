@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-slug: /field
 ---
+
 # Fields
 Taichi fields are used to store data.
 In general, fields are global data containers that can be read and written from both the Python scope and the Taichi scope.

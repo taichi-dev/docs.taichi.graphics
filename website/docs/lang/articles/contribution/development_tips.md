@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-slug: /development_tips
 ---
+
 # Development Tips
 
 This section gives you some tips on the Taichi compiler development.
