@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
+slug: /export_results
 ---
-
 # Export Your Results
 
 Taichi has functions that help you **export visual results to images or

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
+slug: /global_settings
 ---
-
 # Global Settings
 
 ## Backends

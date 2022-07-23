@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
+slug: /write_test
 ---
-
 # Workflow for writing a Python test
 
 Normally we write functional tests in Python.
