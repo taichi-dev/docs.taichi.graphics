@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
+slug: /syntax_sugars
 ---
-
 # Syntax sugars
 
 ## Aliases

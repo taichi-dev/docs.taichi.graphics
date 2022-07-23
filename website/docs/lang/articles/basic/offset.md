@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
+slug: /offset
 ---
-
 # Coordinate Offsets
 
 - A Taichi field can be defined with **coordinate offsets**. The

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
+slug: /sparse
 ---
-
 # Sparse Spatial Data Structures
 
 :::note

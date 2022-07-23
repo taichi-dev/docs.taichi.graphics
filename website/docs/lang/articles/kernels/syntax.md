@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
+slug: /syntax
 ---
-
 # Kernels and functions
 
 Taichi is a domain-specific language embedded in Python. The meaning of "embedded in Python" is twofold:  The code you've written in Taichi is valid Python code but is compiled and executed in Taichi's runtime; the rest of your code is treated as native Python code and executed in Python's virtual machine.

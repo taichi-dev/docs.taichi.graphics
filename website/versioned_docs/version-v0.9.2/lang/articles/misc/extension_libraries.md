@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
+slug: /extension_libraries
 ---
-
 # Extension libraries
 
 The Taichi programming language offers a minimal and generic built-in

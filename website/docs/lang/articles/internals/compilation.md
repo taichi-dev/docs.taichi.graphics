@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
+slug: /compilation
 ---
-
 # Life of a Taichi Kernel
 
 Sometimes it is helpful to understand the life cycle of a Taichi kernel.

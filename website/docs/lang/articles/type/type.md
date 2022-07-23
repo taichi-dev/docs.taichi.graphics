@@ -1,8 +1,7 @@
 ---
 sidebar_position: 1
-
+slug: /type
 ---
-
 # Type system
 
 Taichi supports two data types in the [Taichi scope](../kernels/syntax.md#taichi-scope): primitive type and compound type.
