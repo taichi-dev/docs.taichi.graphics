@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>taichi &#8212; taichi-api-docstring  documentation</title>
     
@@ -1786,6 +1786,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.get_addr">
    get_addr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.get_compute_stream_device_time_elapsed_us">
+   get_compute_stream_device_time_elapsed_us
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -6183,7 +6188,7 @@ eigenvectors (ti.Matrix(n*2, n)): The eigenvectors in complex form. Each column 
 <dt class="sig sig-object py" id="taichi.extension">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#taichi.extension" title="Permalink to this definition">#</a></dt>
 <dd><p>An instance of Taichi extension.</p>
-<p>The list of currently available extensions is [‘sparse’, ‘async_mode’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
+<p>The list of currently available extensions is [‘sparse’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
 </dd></dl>
 
 <dl class="py data">
@@ -6337,6 +6342,11 @@ will JIT compile it into native instructions.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.get_compute_stream_device_time_elapsed_us">
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">get_compute_stream_device_time_elapsed_us</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#taichi.get_compute_stream_device_time_elapsed_us" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.global_thread_idx">
@@ -7720,7 +7730,7 @@ if the input is a scalar.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
     </div>
     
