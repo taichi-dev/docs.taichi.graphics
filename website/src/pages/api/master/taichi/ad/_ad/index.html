@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>taichi.ad._ad &#8212; taichi-api-docstring  documentation</title>
     
@@ -365,7 +365,7 @@ gradient computation task.</p>
 <dt class="sig sig-object py" id="taichi.ad._ad.grad_replaced">
 <span class="sig-prename descclassname"><span class="pre">taichi.ad._ad.</span></span><span class="sig-name descname"><span class="pre">grad_replaced</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad._ad.grad_replaced" title="Permalink to this definition">#</a></dt>
 <dd><p>A decorator for python function to customize gradient with Taichi’s autodiff
-system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.</p>
+system, e.g. <cite>ti.ad.Tape()</cite> and <cite>kernel.grad()</cite>.</p>
 <p>This decorator forces Taichi’s autodiff system to use a user-defined gradient
 function for the decorated function. Its customized gradient must be decorated
 by <a class="reference internal" href="../#taichi.ad.grad_for" title="taichi.ad.grad_for"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_for()</span></code></a>.</p>
@@ -406,7 +406,7 @@ by <a class="reference internal" href="../#taichi.ad.grad_for" title="taichi.ad.
 <dt class="sig sig-object py" id="taichi.ad._ad.no_grad">
 <span class="sig-prename descclassname"><span class="pre">taichi.ad._ad.</span></span><span class="sig-name descname"><span class="pre">no_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad._ad.no_grad" title="Permalink to this definition">#</a></dt>
 <dd><p>A decorator for python function to skip gradient calculation within Taichi’s
-autodiff system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.
+autodiff system, e.g. <cite>ti.ad.Tape()</cite> and <cite>kernel.grad()</cite>.
 This decorator forces Taichi’s autodiff system to use an empty gradient function
 for the decorated function.</p>
 <dl class="field-list simple">
@@ -461,7 +461,7 @@ for the decorated function.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
     </div>
     
