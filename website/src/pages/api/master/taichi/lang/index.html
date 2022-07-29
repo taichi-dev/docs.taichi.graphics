@@ -219,6 +219,18 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.BitpackedFields">
+   BitpackedFields
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.BitpackedFields.place">
+     place
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.Field">
    Field
   </a>
@@ -677,11 +689,6 @@
    SNode
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.SNode.bit_struct">
-     bit_struct
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.SNode.bitmasked">
      bitmasked
@@ -1683,6 +1690,31 @@
                 
   <section id="module-taichi.lang">
 <span id="taichi-lang"></span><h1><a class="reference internal" href="#module-taichi.lang" title="taichi.lang"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang</span></code></a><a class="headerlink" href="#module-taichi.lang" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.BitpackedFields">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">BitpackedFields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_num_bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.BitpackedFields" title="Permalink to this definition">#</a></dt>
+<dd><p>Taichi bitpacked fields, where fields with quantized types are packed together.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_num_bits</strong> (<em>int</em>) – Maximum number of bits all fields inside can occupy in total. Only 32 or 64 is allowed.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.BitpackedFields.place">
+<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_exponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.BitpackedFields.place" title="Permalink to this definition">#</a></dt>
+<dd><p>Places a list of fields with quantized types inside.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> (<em>List</em><em>[</em><a class="reference internal" href="#taichi.lang.Field" title="taichi.lang.Field"><em>Field</em></a><em>]</em>) – A list of fields with quantized types to place.</p></li>
+<li><p><strong>shared_exponent</strong> (<em>bool</em>) – Whether the fields have a shared exponent.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.Field">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">Field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_vars</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Field" title="Permalink to this definition">#</a></dt>
@@ -3011,20 +3043,6 @@ these references:</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.SNode.bit_struct">
-<span class="sig-name descname"><span class="pre">bit_struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.bit_struct" title="Permalink to this definition">#</a></dt>
-<dd><p>Adds a bit_struct SNode as a child component of <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>num_bits</strong> – Number of bits to use.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The added <a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> instance.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.SNode.bitmasked">
 <span class="sig-name descname"><span class="pre">bitmasked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.bitmasked" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds a bitmasked SNode as a child component of <cite>self</cite>.</p>
@@ -3118,14 +3136,13 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.SNode.place">
-<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_exponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.place" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.place" title="Permalink to this definition">#</a></dt>
 <dd><p>Places a list of Taichi fields under the <cite>self</cite> container.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>*args</strong> (<em>List</em><em>[</em><em>ti.field</em><em>]</em>) – A list of Taichi fields to place.</p></li>
 <li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>tuple</em><em>[</em><em>Number</em><em>]</em><em>]</em>) – Offset of the field domain.</p></li>
-<li><p><strong>shared_exponent</strong> (<em>bool</em>) – Only useful for quant types.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
