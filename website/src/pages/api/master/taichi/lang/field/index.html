@@ -218,6 +218,18 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.field.BitpackedFields">
+   BitpackedFields
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.BitpackedFields.place">
+     place
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.field.Field">
    Field
   </a>
@@ -374,6 +386,31 @@
                 
   <section id="module-taichi.lang.field">
 <span id="taichi-lang-field"></span><h1><a class="reference internal" href="../#taichi.lang.field" title="taichi.lang.field"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.field</span></code></a><a class="headerlink" href="#module-taichi.lang.field" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.field.BitpackedFields">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.field.</span></span><span class="sig-name descname"><span class="pre">BitpackedFields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_num_bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.BitpackedFields" title="Permalink to this definition">#</a></dt>
+<dd><p>Taichi bitpacked fields, where fields with quantized types are packed together.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_num_bits</strong> (<em>int</em>) – Maximum number of bits all fields inside can occupy in total. Only 32 or 64 is allowed.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.field.BitpackedFields.place">
+<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_exponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.BitpackedFields.place" title="Permalink to this definition">#</a></dt>
+<dd><p>Places a list of fields with quantized types inside.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> (<em>List</em><em>[</em><a class="reference internal" href="#taichi.lang.field.Field" title="taichi.lang.field.Field"><em>Field</em></a><em>]</em>) – A list of fields with quantized types to place.</p></li>
+<li><p><strong>shared_exponent</strong> (<em>bool</em>) – Whether the fields have a shared exponent.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.field.Field">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.field.</span></span><span class="sig-name descname"><span class="pre">Field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_vars</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field" title="Permalink to this definition">#</a></dt>
