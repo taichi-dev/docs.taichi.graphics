@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>taichi.lang &#8212; taichi-api-docstring  documentation</title>
     
@@ -218,6 +218,18 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.BitpackedFields">
+   BitpackedFields
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.BitpackedFields.place">
+     place
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.Field">
    Field
@@ -473,6 +485,16 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.copy_from">
+     copy_from
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.dtype">
+     dtype
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.MatrixField.fill">
      fill
     </a>
@@ -483,8 +505,33 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.from_paddle">
+     from_paddle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.from_torch">
+     from_torch
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.MatrixField.get_scalar_field">
      get_scalar_field
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.parent">
+     parent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.shape">
+     shape
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.snode">
+     snode
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -642,11 +689,6 @@
    SNode
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.SNode.bit_struct">
-     bit_struct
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.SNode.bitmasked">
      bitmasked
@@ -851,6 +893,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.dtype">
+     dtype
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.StructField.fill">
      fill
     </a>
@@ -878,6 +925,21 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.StructField.keys">
      keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.parent">
+     parent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.shape">
+     shape
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.snode">
+     snode
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1311,6 +1373,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.get_compute_stream_device_time_elapsed_us">
+   get_compute_stream_device_time_elapsed_us
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.global_thread_idx">
    global_thread_idx
   </a>
@@ -1623,6 +1690,31 @@
                 
   <section id="module-taichi.lang">
 <span id="taichi-lang"></span><h1><a class="reference internal" href="#module-taichi.lang" title="taichi.lang"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang</span></code></a><a class="headerlink" href="#module-taichi.lang" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.BitpackedFields">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">BitpackedFields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_num_bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.BitpackedFields" title="Permalink to this definition">#</a></dt>
+<dd><p>Taichi bitpacked fields, where fields with quantized types are packed together.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_num_bits</strong> (<em>int</em>) – Maximum number of bits all fields inside can occupy in total. Only 32 or 64 is allowed.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.BitpackedFields.place">
+<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_exponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.BitpackedFields.place" title="Permalink to this definition">#</a></dt>
+<dd><p>Places a list of fields with quantized types inside.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> (<em>List</em><em>[</em><a class="reference internal" href="#taichi.lang.Field" title="taichi.lang.Field"><em>Field</em></a><em>]</em>) – A list of fields with quantized types to place.</p></li>
+<li><p><strong>shared_exponent</strong> (<em>bool</em>) – Whether the fields have a shared exponent.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.Field">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">Field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_vars</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Field" title="Permalink to this definition">#</a></dt>
@@ -2490,6 +2582,32 @@ the remaining entries are all zeros.</p>
 </dd>
 </dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.copy_from">
+<span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.copy_from" title="Permalink to this definition">#</a></dt>
+<dd><p>Copies all elements from another field.</p>
+<p>The shape of the other field needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.lang.Field" title="taichi.lang.Field"><em>Field</em></a>) – The source field.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.dtype">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.dtype" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets data type of each individual value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Data type of each individual value.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.MatrixField.fill">
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.fill" title="Permalink to this definition">#</a></dt>
 <dd><p>Fills this matrix field with specified values.</p>
@@ -2514,6 +2632,30 @@ should have consistent dimension consistent with <cite>self</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.from_paddle">
+<span class="sig-name descname"><span class="pre">from_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.from_paddle" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads all elements from a paddle tensor.</p>
+<p>The shape of the paddle tensor needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>paddle.Tensor</em>) – The source paddle tensor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.from_torch">
+<span class="sig-name descname"><span class="pre">from_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.from_torch" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads all elements from a torch tensor.</p>
+<p>The shape of the torch tensor needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>torch.tensor</em>) – The source torch tensor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.MatrixField.get_scalar_field">
 <span class="sig-name descname"><span class="pre">get_scalar_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.get_scalar_field" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a ScalarField using a specific field member.</p>
@@ -2526,6 +2668,51 @@ should have consistent dimension consistent with <cite>self</cite>.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.ScalarField" title="taichi.lang.ScalarField">ScalarField</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.parent" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets an ancestor of the representative SNode in the SNode tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of levels going up from the representative SNode.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The n-th parent of the representative SNode.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.shape">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets field shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Field shape.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[Int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixField.snode">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixField.snode" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets representative SNode for info purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2856,20 +3043,6 @@ these references:</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.SNode.bit_struct">
-<span class="sig-name descname"><span class="pre">bit_struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.bit_struct" title="Permalink to this definition">#</a></dt>
-<dd><p>Adds a bit_struct SNode as a child component of <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>num_bits</strong> – Number of bits to use.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The added <a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> instance.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.SNode.bitmasked">
 <span class="sig-name descname"><span class="pre">bitmasked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.bitmasked" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds a bitmasked SNode as a child component of <cite>self</cite>.</p>
@@ -2963,14 +3136,13 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.SNode.place">
-<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_exponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.place" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.place" title="Permalink to this definition">#</a></dt>
 <dd><p>Places a list of Taichi fields under the <cite>self</cite> container.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>*args</strong> (<em>List</em><em>[</em><em>ti.field</em><em>]</em>) – A list of Taichi fields to place.</p></li>
 <li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>tuple</em><em>[</em><em>Number</em><em>]</em><em>]</em>) – Offset of the field domain.</p></li>
-<li><p><strong>shared_exponent</strong> (<em>bool</em>) – Only useful for quant types.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -2998,14 +3170,14 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.SNode.quant_array">
-<span class="sig-name descname"><span class="pre">quant_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.quant_array" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">quant_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.SNode.quant_array" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds a quant_array SNode as a child component of <cite>self</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>axes</strong> (<em>List</em><em>[</em><em>Axis</em><em>]</em>) – Axes to activate.</p></li>
 <li><p><strong>dimensions</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Shape of each axis.</p></li>
-<li><p><strong>num_bits</strong> (<em>int</em>) – Number of bits to use.</p></li>
+<li><p><strong>max_num_bits</strong> (<em>int</em>) – Maximum number of bits it can hold.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -3398,6 +3570,20 @@ to each struct instance in the field.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.StructField.dtype">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.dtype" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets data type of each individual value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Data type of each individual value.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.StructField.fill">
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.fill" title="Permalink to this definition">#</a></dt>
 <dd><p>Fills this struct field with a specified value.</p>
@@ -3464,6 +3650,51 @@ between corresponding items can be performed.</p>
 [&#39;center&#39;, &#39;radius&#39;]
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.StructField.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.parent" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets an ancestor of the representative SNode in the SNode tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of levels going up from the representative SNode.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The n-th parent of the representative SNode.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.StructField.shape">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets field shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Field shape.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[Int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.StructField.snode">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.snode" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets representative SNode for info purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -4585,7 +4816,7 @@ the memory of the deactivated cell.</p>
 <dt class="sig sig-object py" id="taichi.lang.extension">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#taichi.lang.extension" title="Permalink to this definition">#</a></dt>
 <dd><p>An instance of Taichi extension.</p>
-<p>The list of currently available extensions is [‘sparse’, ‘async_mode’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
+<p>The list of currently available extensions is [‘sparse’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
 </dd></dl>
 
 <dl class="py function">
@@ -4703,6 +4934,11 @@ will JIT compile it into native instructions.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.get_compute_stream_device_time_elapsed_us">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">get_compute_stream_device_time_elapsed_us</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#taichi.lang.get_compute_stream_device_time_elapsed_us" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.global_thread_idx">
@@ -5788,7 +6024,7 @@ if the input is a scalar.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
     </div>
     

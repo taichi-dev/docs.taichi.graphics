@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>taichi.ui.scene &#8212; taichi-api-docstring  documentation</title>
     
@@ -228,8 +228,18 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.scene.Scene.lines">
+     lines
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.scene.Scene.mesh">
      mesh
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.scene.Scene.mesh_instance">
+     mesh_instance
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -314,19 +324,56 @@ and can be rendered on a canvas.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.ui.scene.Scene.mesh">
-<span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.mesh" title="Permalink to this definition">#</a></dt>
-<dd><p>Declare a mesh inside the scene.
-if you indicate the index_offset and index_count, the normals will also
-be sliced by the args, and the shading resultes will not be affected.
-(It is equal to make a part of the mesh visible)
-:param vertices: a taichi 3D Vector field, where each element indicate the</p>
-<blockquote>
-<div><p>3D location of a vertex.</p>
-</div></blockquote>
+<dt class="sig sig-object py" id="taichi.ui.scene.Scene.lines">
+<span class="sig-name descname"><span class="pre">lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.lines" title="Permalink to this definition">#</a></dt>
+<dd><p>Declare multi-lines inside the scene.</p>
+<p>Note that under current situation, for example, there you have 4 vertices,
+vertices.shape[0] is 4. So there will be 2 lines, the first line’s two points
+are vertices[0] and vertices[1], and the second line’s two points are
+vertices[2] and vertices[3].</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> – a taichi 3D Vector field, where each element indicate the
+3D location of points of lines.</p></li>
+<li><p><strong>width</strong> – the line width (maybe different on different systems).</p></li>
+<li><p><strong>indices</strong> – a taichi int field of shape (2 * #points), which indicate
+the points indices of the lines. If this is None, then it is
+assumed that the points are already arranged in lines order.</p></li>
+<li><p><strong>color</strong> – a global color of the mesh as 3 floats representing RGB values.
+If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
+<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each
+element indicate the RGB color of the line.</p></li>
+<li><p><strong>vertex_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – if ‘indices’ is provided, this refers to the value added to the vertex
+index before indexing into the vertex buffer, else this refers to the
+index of the first vertex to draw.</p></li>
+<li><p><strong>vertex_count</strong> (<em>int</em><em>, </em><em>optional</em>) – only available when <cite>indices</cite> is not provided, which is the number
+of vertices to draw. There are 2 cases that we will change your
+<cite>vertex_count</cite>. [1] If the <cite>vertex_count</cite> is an odd number, then we
+will change it to <cite>vertex_count</cite> - 1. [2] If <cite>vertex_offset</cite> plus
+<cite>vertex_count</cite> greater than vertices.shape[0], then we will reduce
+<cite>vertex_count</cite> to no more than vertices.shape[0].</p></li>
+<li><p><strong>index_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Only available when <cite>indices</cite> is provided, which is the base index
+within the index buffer.</p></li>
+<li><p><strong>index_count</strong> (<em>int</em><em>, </em><em>optional</em>) – Only available when <cite>indices</cite> is provided, which is the number
+of vertices to draw.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.scene.Scene.mesh">
+<span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.mesh" title="Permalink to this definition">#</a></dt>
+<dd><p>Declare a mesh inside the scene.</p>
+<p>if you indicate the index_offset and index_count, the normals will also
+be sliced by the args, and the shading resultes will not be affected.
+(It is equal to make a part of the mesh visible)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> – a taichi 3D Vector field, where each element indicate the
+3D location of a vertex.</p></li>
 <li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which indicate
 the vertex indices of the triangles. If this is None, then it is
 assumed that the vertices are already arranged in triangles order.</p></li>
@@ -339,18 +386,58 @@ If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
 element indicate the RGB color of a vertex.</p></li>
 <li><p><strong>two_sided</strong> (<em>bool</em>) – whether or not the triangles should be able to be
 seen from both sides.</p></li>
-<li><p><strong>vertex_offset</strong> – int type(ohterwise float type will be floored to int),
-if ‘indices’ is provided, this means the value added to the vertex
-index before indexing into the vertex buffer, else this means the
+<li><p><strong>vertex_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – if ‘indices’ is provided, this refers to the value added to the vertex
+index before indexing into the vertex buffer, else this refers to the
 index of the first vertex to draw.</p></li>
-<li><p><strong>vertex_count</strong> – int type(ohterwise float type will be floored to int),
-only avaliable when <cite>indices</cite> is not provided, which is the number
+<li><p><strong>vertex_count</strong> (<em>int</em><em>, </em><em>optional</em>) – only available when <cite>indices</cite> is not provided, which is the number
 of vertices to draw.</p></li>
-<li><p><strong>index_offset</strong> – int type(ohterwise float type will be floored to int),
-only avaliable when <cite>indices</cite> is provided, which is the base index
+<li><p><strong>index_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – only available when <cite>indices</cite> is provided, which is the base index
 within the index buffer.</p></li>
-<li><p><strong>index_count</strong> – int type(ohterwise float type will be floored to int),
-only avaliable when <cite>indices</cite> is provided, which is the the number
+<li><p><strong>index_count</strong> (<em>int</em><em>, </em><em>optional</em>) – only available when <cite>indices</cite> is provided, which is the the number
+of vertices to draw.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.scene.Scene.mesh_instance">
+<span class="sig-name descname"><span class="pre">mesh_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transforms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">draw_first_instance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.scene.Scene.mesh_instance" title="Permalink to this definition">#</a></dt>
+<dd><p>Declare lots of mesh instances inside the scene.</p>
+<p>If transforms is given, then according to the shape of transforms, we will
+draw mesh instances based on the transforms, and you can indicate which instance
+to draw first. If you indicate the index_offset and index_count, the normals will also
+be sliced by the args, and the shading resultes will not be affected.
+(It is equal to make a part of the mesh visible)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> – a taichi 3D Vector field, where each element indicate the
+3D location of a vertex.</p></li>
+<li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which indicate
+the vertex indices of the triangles. If this is None, then it is
+assumed that the vertices are already arranged in triangles order.</p></li>
+<li><p><strong>normals</strong> – a taichi 3D Vector field, where each element indicate the
+normal of a vertex. If this is none, normals will be automatically
+inferred from vertex positions.</p></li>
+<li><p><strong>color</strong> – a global color of the mesh as 3 floats representing RGB values.
+If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
+<li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each
+element indicate the RGB color of a vertex.</p></li>
+<li><p><strong>two_sided</strong> (<em>bool</em>) – whether or not the triangles should be able to be
+seen from both sides.</p></li>
+<li><p><strong>transforms</strong> (<em>ti.Matrix.field</em><em>, </em><em>optional</em>) – The Matrix must be 4x4 size with N instances, and data type should
+be ti.f32, ti.i32, ti.u32. If None, then it behaves like raw mesh (no copy).</p></li>
+<li><p><strong>draw_first_instance</strong> (<em>int</em><em>, </em><em>optional</em>) – Default value is 0 which means no offset to show mesh instances. Otherwise,
+the mesh instances will show from the <cite>draw_first_instance</cite>.</p></li>
+<li><p><strong>vertex_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – if ‘indices’ is provided, this refers to the value added to the vertex
+index before indexing into the vertex buffer, else this refers to the
+index of the first vertex to draw.</p></li>
+<li><p><strong>vertex_count</strong> (<em>int</em><em>, </em><em>optional</em>) – only available when <cite>indices</cite> is not provided, which is the number
+of vertices to draw.</p></li>
+<li><p><strong>index_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – only available when <cite>indices</cite> is provided, which is the base index
+within the index buffer.</p></li>
+<li><p><strong>index_count</strong> (<em>int</em><em>, </em><em>optional</em>) – only available when <cite>indices</cite> is provided, which is the the number
 of vertices to draw.</p></li>
 </ul>
 </dd>
@@ -370,10 +457,8 @@ of vertices to draw.</p></li>
 values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
 <li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where each
 element indicate the RGB color of a particle.</p></li>
-<li><p><strong>index_offset</strong> – int type(ohterwise float type will be floored to int),
-the index of the first vertex to draw.</p></li>
-<li><p><strong>index_count</strong> – int type(ohterwise float type will be floored to int),
-the number of vertices to draw.</p></li>
+<li><p><strong>index_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – the index of the first vertex to draw.</p></li>
+<li><p><strong>index_count</strong> (<em>int</em><em>, </em><em>optional</em>) – the number of vertices to draw.</p></li>
 </ul>
 </dd>
 </dl>
@@ -459,7 +544,7 @@ the number of vertices to draw.</p></li>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
     </div>
     

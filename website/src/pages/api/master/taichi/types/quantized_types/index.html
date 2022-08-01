@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>taichi.types.quantized_types &#8212; taichi-api-docstring  documentation</title>
     
@@ -259,14 +259,14 @@
 For more details, read <a class="reference external" href="https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf">https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf</a>.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.types.quantized_types.fixed">
-<span class="sig-prename descclassname"><span class="pre">taichi.types.quantized_types.</span></span><span class="sig-name descname"><span class="pre">fixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quantized_types.fixed" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.types.quantized_types.</span></span><span class="sig-name descname"><span class="pre">fixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quantized_types.fixed" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates a quantized type for fixed-point real numbers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>frac</strong> (<em>int</em>) – Number of bits.</p></li>
+<li><p><strong>bits</strong> (<em>int</em>) – Number of bits.</p></li>
 <li><p><strong>signed</strong> (<em>bool</em>) – Signed or unsigned.</p></li>
-<li><p><strong>range</strong> (<em>float</em>) – Range of the number.</p></li>
+<li><p><strong>max_value</strong> (<em>float</em>) – Maximum value of the number.</p></li>
 <li><p><strong>compute</strong> (<em>DataType</em>) – Type for computation.</p></li>
 <li><p><strong>scale</strong> (<em>float</em>) – Scaling factor. The argument is prioritized over range.</p></li>
 </ul>
@@ -351,7 +351,7 @@ For more details, read <a class="reference external" href="https://yuanming.taic
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
     </div>
     

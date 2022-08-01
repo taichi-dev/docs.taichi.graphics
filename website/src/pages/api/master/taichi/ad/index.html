@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>taichi.ad &#8212; taichi-api-docstring  documentation</title>
     
@@ -301,7 +301,7 @@
 <span id="taichi-ad"></span><h1><a class="reference internal" href="#module-taichi.ad" title="taichi.ad"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ad</span></code></a><a class="headerlink" href="#module-taichi.ad" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ad.FwdMode">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ad.</span></span><span class="sig-name descname"><span class="pre">FwdMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_gradients</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.FwdMode" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ad.</span></span><span class="sig-name descname"><span class="pre">FwdMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_gradients</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.FwdMode" title="Permalink to this definition">#</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="taichi.ad.FwdMode.clear_seed">
 <span class="sig-name descname"><span class="pre">clear_seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.FwdMode.clear_seed" title="Permalink to this definition">#</a></dt>
@@ -362,7 +362,7 @@
 <dt class="sig sig-object py" id="taichi.ad.grad_replaced">
 <span class="sig-prename descclassname"><span class="pre">taichi.ad.</span></span><span class="sig-name descname"><span class="pre">grad_replaced</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.grad_replaced" title="Permalink to this definition">#</a></dt>
 <dd><p>A decorator for python function to customize gradient with Taichi’s autodiff
-system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.</p>
+system, e.g. <cite>ti.ad.Tape()</cite> and <cite>kernel.grad()</cite>.</p>
 <p>This decorator forces Taichi’s autodiff system to use a user-defined gradient
 function for the decorated function. Its customized gradient must be decorated
 by <a class="reference internal" href="#taichi.ad.grad_for" title="taichi.ad.grad_for"><code class="xref py py-func docutils literal notranslate"><span class="pre">grad_for()</span></code></a>.</p>
@@ -403,7 +403,7 @@ by <a class="reference internal" href="#taichi.ad.grad_for" title="taichi.ad.gra
 <dt class="sig sig-object py" id="taichi.ad.no_grad">
 <span class="sig-prename descclassname"><span class="pre">taichi.ad.</span></span><span class="sig-name descname"><span class="pre">no_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ad.no_grad" title="Permalink to this definition">#</a></dt>
 <dd><p>A decorator for python function to skip gradient calculation within Taichi’s
-autodiff system, e.g. <cite>ti.Tape()</cite> and <cite>kernel.grad()</cite>.
+autodiff system, e.g. <cite>ti.ad.Tape()</cite> and <cite>kernel.grad()</cite>.
 This decorator forces Taichi’s autodiff system to use an empty gradient function
 for the decorated function.</p>
 <dl class="field-list simple">
@@ -458,7 +458,7 @@ for the decorated function.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
     </div>
     
