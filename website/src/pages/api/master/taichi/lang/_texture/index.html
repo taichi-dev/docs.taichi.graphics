@@ -245,18 +245,23 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._texture.Texture.device_allocation_ptr">
-     device_allocation_ptr
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang._texture.Texture.from_field">
      from_field
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang._texture.Texture.from_image">
+     from_image
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang._texture.Texture.from_ndarray">
      from_ndarray
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang._texture.Texture.to_image">
+     to_image
     </a>
    </li>
   </ul>
@@ -330,19 +335,51 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._texture.Texture.device_allocation_ptr">
-<span class="sig-name descname"><span class="pre">device_allocation_ptr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture.device_allocation_ptr" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang._texture.Texture.from_field">
 <span class="sig-name descname"><span class="pre">from_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture.from_field" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Loads a field to texture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>field</strong> (<em>ti.Field</em>) – Source field to load from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang._texture.Texture.from_image">
+<span class="sig-name descname"><span class="pre">from_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture.from_image" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads a PIL image to texture. This method is only allowed a 2D texture with <cite>ti.u8</cite> dtype and <cite>num_channels=4</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image</strong> (<em>PIL.Image.Image</em>) – Source PIL image to load from.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang._texture.Texture.from_ndarray">
 <span class="sig-name descname"><span class="pre">from_ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture.from_ndarray" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Loads an ndarray to texture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ndarray</strong> (<em>ti.Ndarray</em>) – Source ndarray to load from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang._texture.Texture.to_image">
+<span class="sig-name descname"><span class="pre">to_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture.to_image" title="Permalink to this definition">#</a></dt>
+<dd><p>Saves a texture to a PIL image in RGB mode. This method is only allowed a 2D texture with <cite>ti.u8</cite> dtype and <cite>num_channels=4</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a PIL image in RGB mode, with the same size as source texture.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>img (PIL.Image.Image)</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

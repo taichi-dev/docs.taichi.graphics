@@ -258,6 +258,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.imgui.Gui.slider_int">
+     slider_int
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.imgui.Gui.sub_window">
      sub_window
     </a>
@@ -377,6 +382,28 @@ and before the next <cite>end</cite> will describe the widgets within this subwi
 <li><p><strong>minimum</strong> (<em>float</em>) – the minimum value of the slider.</p></li>
 <li><p><strong>maximum</strong> (<em>float</em>) – the maximum value of the slider.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.imgui.Gui.slider_int">
+<span class="sig-name descname"><span class="pre">slider_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.imgui.Gui.slider_int" title="Permalink to this definition">#</a></dt>
+<dd><p>Declares a slider, and returns its newest value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – a line of text to be shown next to the slider</p></li>
+<li><p><strong>old_value</strong> (<em>int</em>) – the current value of the slider.</p></li>
+<li><p><strong>minimum</strong> (<em>int</em>) – the minimum value of the slider.</p></li>
+<li><p><strong>maximum</strong> (<em>int</em>) – the maximum value of the slider.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the updated value of the slider.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
 </dd>
 </dl>
 </dd></dl>
