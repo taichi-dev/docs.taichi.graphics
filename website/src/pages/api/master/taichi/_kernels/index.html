@@ -283,6 +283,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.load_texture_from_numpy">
+   load_texture_from_numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi._kernels.matrix_to_ext_arr">
    matrix_to_ext_arr
   </a>
@@ -305,6 +310,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi._kernels.parallel_sort">
    parallel_sort
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.save_texture_to_numpy">
+   save_texture_to_numpy
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -431,6 +441,11 @@
 <dd></dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.load_texture_from_numpy">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">load_texture_from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">texture_type.rw_texture(num_dimensions=2,</span> <span class="pre">num_channels=4,</span> <span class="pre">channel_format=u8,</span> <span class="pre">lod=0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray(field_dim=2,</span> <span class="pre">element_shape=(3,))</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.load_texture_from_numpy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi._kernels.matrix_to_ext_arr">
 <span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">matrix_to_ext_arr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.matrix_to_ext_arr" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -453,6 +468,11 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi._kernels.parallel_sort">
 <span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">parallel_sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.parallel_sort" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.save_texture_to_numpy">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">save_texture_to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">texture_type.rw_texture(num_dimensions=2,</span> <span class="pre">num_channels=4,</span> <span class="pre">channel_format=u8,</span> <span class="pre">lod=0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray(field_dim=2,</span> <span class="pre">element_shape=(3,))</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.save_texture_to_numpy" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
