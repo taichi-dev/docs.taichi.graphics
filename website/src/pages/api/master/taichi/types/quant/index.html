@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>taichi.types.quantized_types &#8212; taichi-api-docstring  documentation</title>
+    <title>taichi.types.quant &#8212; taichi-api-docstring  documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -144,17 +144,17 @@
   <div class="bd-toc-item active">
     <!--  -->
 
-    <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../../">
    Taichi Language’s API reference
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../../">
      taichi: The main taichi module
@@ -190,6 +190,11 @@
      taichi.types: Taichi types
     </a>
    </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     taichi.types.quant: Taichi quantized types
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../ui/">
      taichi.ui: Taichi UI components (GUI and GGUI)
@@ -218,17 +223,17 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.types.quantized_types.fixed">
+  <a class="reference internal nav-link" href="#taichi.types.quant.fixed">
    fixed
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.types.quantized_types.float">
+  <a class="reference internal nav-link" href="#taichi.types.quant.float">
    float
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.types.quantized_types.int">
+  <a class="reference internal nav-link" href="#taichi.types.quant.int">
    int
   </a>
  </li>
@@ -253,13 +258,13 @@
               
               <div>
                 
-  <section id="module-taichi.types.quantized_types">
-<span id="taichi-types-quantized-types"></span><h1><a class="reference internal" href="#module-taichi.types.quantized_types" title="taichi.types.quantized_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.quantized_types</span></code></a><a class="headerlink" href="#module-taichi.types.quantized_types" title="Permalink to this heading">#</a></h1>
+  <section id="module-taichi.types.quant">
+<span id="taichi-types-quant"></span><h1><a class="reference internal" href="#module-taichi.types.quant" title="taichi.types.quant"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.types.quant</span></code></a><a class="headerlink" href="#module-taichi.types.quant" title="Permalink to this heading">#</a></h1>
 <p>This module defines generators of quantized types.
 For more details, read <a class="reference external" href="https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf">https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf</a>.</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.types.quantized_types.fixed">
-<span class="sig-prename descclassname"><span class="pre">taichi.types.quantized_types.</span></span><span class="sig-name descname"><span class="pre">fixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quantized_types.fixed" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.types.quant.fixed">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.quant.</span></span><span class="sig-name descname"><span class="pre">fixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quant.fixed" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates a quantized type for fixed-point real numbers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -281,8 +286,8 @@ For more details, read <a class="reference external" href="https://yuanming.taic
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.types.quantized_types.float">
-<span class="sig-prename descclassname"><span class="pre">taichi.types.quantized_types.</span></span><span class="sig-name descname"><span class="pre">float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quantized_types.float" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.types.quant.float">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.quant.</span></span><span class="sig-name descname"><span class="pre">float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quant.float" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates a quantized type for floating-point real numbers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -303,8 +308,8 @@ For more details, read <a class="reference external" href="https://yuanming.taic
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.types.quantized_types.int">
-<span class="sig-prename descclassname"><span class="pre">taichi.types.quantized_types.</span></span><span class="sig-name descname"><span class="pre">int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quantized_types.int" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.types.quant.int">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.quant.</span></span><span class="sig-name descname"><span class="pre">int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.quant.int" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates a quantized type for integers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

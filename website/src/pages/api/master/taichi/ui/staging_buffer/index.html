@@ -191,6 +191,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../types/quant/">
+     taichi.types.quant: Taichi quantized types
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../">
      taichi.ui: Taichi UI components (GUI and GGUI)
     </a>
@@ -223,13 +228,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_image_f32_to_u8">
-   copy_image_f32_to_u8
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_image_f32_to_rgba8">
+   copy_image_f32_to_rgba8
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_image_u8_to_u8">
-   copy_image_u8_to_u8
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_image_u8_to_rgba8">
+   copy_image_u8_to_rgba8
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -278,8 +283,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.to_u8_rgba">
-   to_u8_rgba
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.to_rgba8">
+   to_rgba8
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -321,13 +326,13 @@
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_image_f32_to_u8">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_f32_to_u8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_f32_to_u8" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_image_f32_to_rgba8">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_f32_to_rgba8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_f32_to_rgba8" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_image_u8_to_u8">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_u8_to_u8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_u8_to_u8" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_image_u8_to_rgba8">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_u8_to_rgba8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_u8_to_rgba8" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -357,7 +362,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ui.staging_buffer.fill_vbo">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">fill_vbo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.fill_vbo" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">fill_vbo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.types.primitive_types.f32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.fill_vbo" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -376,8 +381,8 @@
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.to_u8_rgba">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">to_u8_rgba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.to_u8_rgba" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.ui.staging_buffer.to_rgba8">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">to_rgba8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.to_rgba8" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
