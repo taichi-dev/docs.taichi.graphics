@@ -36,10 +36,12 @@ function getAnchors({
   minHeadingLevel: number;
   maxHeadingLevel: number;
 }) {
-  const selectors = [];
+  const selectors: string[] = [];
   for (let i = minHeadingLevel; i <= maxHeadingLevel; i += 1) {
     selectors.push(`h${i}.anchor`);
   }
+
+  selectors.push('.autoapi-container a.headerlink')
 
   return Array.from(
     document.querySelectorAll(selectors.join()),
@@ -84,7 +86,8 @@ function getActiveAnchor(
 }
 
 function getLinkAnchorValue(link: HTMLAnchorElement): string {
-  return decodeURIComponent(link.href.substring(link.href.indexOf('#') + 1));
+  const href = link.href || ''
+  return decodeURIComponent(href.substring(href.indexOf('#') + 1));
 }
 
 function getLinks(linkClassName: string) {
@@ -153,11 +156,13 @@ function useTOCHighlight(config: TOCHighlightConfig | undefined): void {
     function updateActiveLink() {
       const links = getLinks(linkClassName);
       const anchors = getAnchors({minHeadingLevel, maxHeadingLevel});
+
       const activeAnchor = getActiveAnchor(anchors, {
         anchorTopOffset: anchorTopOffsetRef.current,
       });
+
       const activeLink = links.find(
-        (link) => activeAnchor && activeAnchor.id === getLinkAnchorValue(link),
+        (link) => activeAnchor && (activeAnchor.id === getLinkAnchorValue(link) || getLinkAnchorValue(activeAnchor as HTMLAnchorElement) === getLinkAnchorValue(link)),
       );
 
       links.forEach((link) => {
