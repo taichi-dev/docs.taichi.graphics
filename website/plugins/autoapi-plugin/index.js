@@ -10,6 +10,7 @@ const {
   docuHash,
   normalizeUrl,
 } = require('@docusaurus/utils');
+const { parseApi } = require('./utils');
 
 const isHTML = (source) => source.endsWith('.html');
 
@@ -102,9 +103,11 @@ module.exports = function (context, options) {
           const { path } = metadata;
           const html = fs.readFileSync(metadata.source).toString('utf8');
           const $ = cheerio.load(html);
+          const data = parseApi(path, html)
+          $('#bd-docs-nav').css('display', 'none')
           const __content = await createData(
             `${docuHash(metadata.source)}.content.json`,
-            JSON.stringify($('.autoapi-container').html(), null, 2),
+            JSON.stringify($('.autoapi-container .bd-content').html(), null, 2),
           );
           const __title = await createData(
             `${docuHash(metadata.source)}.title.json`,
@@ -116,6 +119,16 @@ module.exports = function (context, options) {
             JSON.stringify(metadata.version, null, 2),
           )
 
+          const __sidebar = await createData(
+            `${docuHash(metadata.source)}.sidebar.json`,
+            JSON.stringify(data.sidebars, null, 2),
+          )
+
+          const __toc = await createData(
+            `${docuHash(metadata.source)}.toc.json`,
+            JSON.stringify(data.tocs, null, 2),
+          )
+
           addRoute({
             path: path,
             component: '@site/src/components/Autoapi/index.js',
@@ -124,6 +137,8 @@ module.exports = function (context, options) {
               __content,
               __title,
               __version,
+              __sidebar,
+              __toc
             },
           });
         })
