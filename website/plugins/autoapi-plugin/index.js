@@ -129,6 +129,11 @@ module.exports = function (context, options) {
             JSON.stringify(data.tocs, null, 2),
           )
 
+          const __path = await createData(
+            `${docuHash(metadata.source)}.path.json`,
+            JSON.stringify(path, null, 2),
+          )
+
           addRoute({
             path: path,
             component: '@site/src/components/Autoapi/index.js',
@@ -138,7 +143,8 @@ module.exports = function (context, options) {
               __title,
               __version,
               __sidebar,
-              __toc
+              __toc,
+              __path,
             },
           });
         })

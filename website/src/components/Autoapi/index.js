@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import {useDocsPreferredVersion} from '@docusaurus/theme-common';
@@ -9,7 +9,15 @@ import {
   useColorMode,
 } from '@docusaurus/theme-common';
 
+import clsx from 'clsx';
+import {translate} from '@docusaurus/Translate';
+
+import DocSidebar from '@theme/DocSidebar';
+import IconArrow from '@theme/IconArrow';
+
 import CodeBlock from '@theme/CodeBlock'
+
+import DocItem from './DocItem';
 
 import ReactDOM from 'react-dom'
 
@@ -17,39 +25,7 @@ import BackToTopButton from '@theme/BackToTopButton';
 
 import './styles/index.scss'
 
-const spyScroll = (scrollParent) => {
-  if (!scrollParent) return false;
-
-  // create an Object with all children that has data-name attribute
-
-  let lisubselector = '#bd-toc-nav > ul > li'
-  const nodes = []
-  let level = 4
-  while (true) {
-    const currentnodes = document.querySelectorAll(lisubselector + ' > a')
-    let bestMatch = {};
-    level --
-    if (currentnodes.length === 0 || level <= 0) break
-    currentnodes.forEach((domElm, index) => {
-      const href = domElm.getAttribute('href')
-      const node = document.querySelector(`.bd-content a.headerlink[href="${href}"]`)
-      const delta = Math.abs(scrollParent.scrollTop - node.offsetTop); // check distance from top, takig scroll into account
-
-      if (!bestMatch.node)
-        bestMatch = { node: domElm, delta, index };
-      // console.log(delta)
-      // check which delet is closest to "0"
-      if (delta < bestMatch.delta) {
-        bestMatch = { node: domElm, delta, index };
-      }
-    })
-    lisubselector += `:nth-child(${bestMatch.index + 1}) > ul > li`
-    nodes.push(bestMatch.node)
-  }
-
-  // update state with best-fit section
-  return nodes;
-};
+import styles from './styles.module.css'
 
 const lang = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i;
 
@@ -94,23 +70,7 @@ const AutoApiContainer = ({ content, version }) => {
   useEffect(() => {
     value.current = isDarkTheme
   }, [isDarkTheme])
-  const throttledOnScroll = _.throttle(
-    e => {
-      const navLinks = document.querySelectorAll("#bd-toc-nav a");
 
-      navLinks.forEach((navLink) => {
-        navLink.classList.remove("active");
-        navLink.parentElement.classList.remove("active");
-      });
-
-      const nodes = spyScroll(document.documentElement)
-      nodes.forEach((node) => {
-        node.parentElement.classList.add("active");
-        node.classList.add("active")
-      })
-    },
-    300
-  )
   useEffect(() => {
       const nodes = document.querySelectorAll('.autoapi-container pre')
       nodes.forEach((node) => {
@@ -122,14 +82,21 @@ const AutoApiContainer = ({ content, version }) => {
         node.remove()
         ReactDOM.render(<LayoutProviders><CodeContainer className={node.className} code={node.textContent} /></LayoutProviders>, p)
       })
-      window.addEventListener('scroll', throttledOnScroll);
-      // unbind
-      return () => window.removeEventListener('scroll', throttledOnScroll)
   }, [])
   return <div style={{ width: '100%', paddingLeft: 15, paddingRight: 15 }} dangerouslySetInnerHTML={{ __html: content }}></div>
 }
 
-export default ({ __content, __title, __version }) => {
+export default ({ __content, __title, __version, __sidebar, __toc, __path }) => {
+  const [hiddenSidebarContainer, setHiddenSidebarContainer] = useState(false);
+  const [hiddenSidebar, setHiddenSidebar] = useState(false);
+  const toggleSidebar = useCallback(() => {
+    if (hiddenSidebar) {
+      setHiddenSidebar(false);
+    }
+
+    setHiddenSidebarContainer((value) => !value);
+  }, [hiddenSidebar]);
+
   return (
     <Layout
       wrapperClassName={ThemeClassNames.wrapper.docsPages}
@@ -141,9 +108,74 @@ export default ({ __content, __title, __version }) => {
       <Head>
         <title>{__title}</title>
       </Head>
-      <div className='autoapi-container markdown'>
+      <div className={styles.docPage}>
         <BackToTopButton />
-        <AutoApiContainer content={__content} version={__version} />
+        {__sidebar && (
+          <aside
+          className={clsx(
+            ThemeClassNames.docs.docSidebarContainer,
+            styles.docSidebarContainer,
+            {
+              [styles.docSidebarContainerHidden]: hiddenSidebarContainer,
+            },
+          )}
+          onTransitionEnd={(e) => {
+            if (
+              !e.currentTarget.classList.contains(styles.docSidebarContainer)
+            ) {
+              return;
+            }
+
+            if (hiddenSidebarContainer) {
+              setHiddenSidebar(true);
+            }
+          }}>
+            <DocSidebar
+              path={__path}
+              sidebar={__sidebar}
+              onCollapse={toggleSidebar}
+              isHidden={hiddenSidebar}
+            />
+            {hiddenSidebar && (
+              <div
+                className={styles.collapsedDocSidebar}
+                title={translate({
+                  id: 'theme.docs.sidebar.expandButtonTitle',
+                  message: 'Expand sidebar',
+                  description:
+                    'The ARIA label and title attribute for expand button of doc sidebar',
+                })}
+                aria-label={translate({
+                  id: 'theme.docs.sidebar.expandButtonAriaLabel',
+                  message: 'Expand sidebar',
+                  description:
+                    'The ARIA label and title attribute for expand button of doc sidebar',
+                })}
+                tabIndex={0}
+                role="button"
+                onKeyDown={toggleSidebar}
+                onClick={toggleSidebar}>
+                <IconArrow className={styles.expandSidebarButtonIcon} />
+              </div>
+            )}
+          </aside>
+        )}
+        <main
+          className={clsx(styles.docMainContainer, {
+            [styles.docMainContainerEnhanced]:
+              hiddenSidebarContainer || !__sidebar,
+          })}>
+          <div
+            className={clsx(
+              'container padding-top--md padding-bottom--lg',
+              styles.docItemWrapper,
+              {
+                [styles.docItemWrapperEnhanced]: hiddenSidebarContainer,
+              },
+            )}>
+              <DocItem content={<AutoApiContainer content={__content} version={__version} />} tocs={__toc} />
+            </div>
+        </main>
       </div>
     </Layout>
   );

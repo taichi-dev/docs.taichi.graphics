@@ -13,7 +13,10 @@ const findnavs = ($, url, root) => {
   navs.map((_, v) => {
     const item = $(v)
     const _href = item.find(' > a').attr('href')
-    const href = path.join(url, _href)
+    let href = path.join(url, _href).trim()
+    if (href.endsWith('#')) {
+      href = href.substring(0, href.length - 1)
+    }
     const label = replaceAll(item.find(' > a').text().trim(), '\n', '').trim()
     const subroot = item.find(' > ul')
     const navitem = { href: href, label: label }
