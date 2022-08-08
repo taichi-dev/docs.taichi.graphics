@@ -288,6 +288,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_vertex_vel">
+     add_vertex_vel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.export">
      export
     </a>
@@ -527,6 +532,21 @@ the same length.</p>
 <li><p><strong>g</strong> (<cite>numpy.array(float)</cite>) – the g-channel (green) of the color.</p></li>
 <li><p><strong>b</strong> (<cite>numpy.array(float)</cite>) – the b-channel (blue) of the colors.</p></li>
 <li><p><strong>a</strong> (<cite>numpy.array(float)</cite>) – the a-channel (alpha) of the colors.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.tools.PLYWriter.add_vertex_vel">
+<span class="sig-name descname"><span class="pre">add_vertex_vel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vz</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.PLYWriter.add_vertex_vel" title="Permalink to this definition">#</a></dt>
+<dd><p>Add velocity vectors at the vertices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vx</strong> (<cite>numpy.array(float)</cite>) – x-coordinates of the velocity vectors.</p></li>
+<li><p><strong>vy</strong> (<cite>numpy.array(float)</cite>) – y-coordinates of the velocity vectors.</p></li>
+<li><p><strong>vz</strong> (<cite>numpy.array(float)</cite>) – z-coordinates of the velocity vectors.</p></li>
 </ul>
 </dd>
 </dl>
