@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /type
+slug: /datatype
 ---
 # Type system
 
