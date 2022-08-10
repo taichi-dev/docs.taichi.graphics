@@ -273,6 +273,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_gui">
+     get_gui
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_image_buffer">
      get_image_buffer
     </a>
@@ -290,6 +295,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.window.Window.running">
      running
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.save_image">
+     save_image
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -344,7 +354,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.GUI">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.GUI" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns a IMGUI handle. See :class`~taichi.ui.ui.Gui`</p>
+<dd><p>Returns a IMGUI handle. See :class`~taichi.ui.ui.Gui` This is an
+deprecated interface, please use <cite>~taichi.ui.Window.get_gui</cite> instead.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -420,6 +431,12 @@ to the corresponding event.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.window.Window.get_gui">
+<span class="sig-name descname"><span class="pre">get_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_gui" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a IMGUI handle. See :class`~taichi.ui.ui.Gui`</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.get_image_buffer">
 <span class="sig-name descname"><span class="pre">get_image_buffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.get_image_buffer" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the window content to numpy array.</p>
@@ -465,6 +482,17 @@ to the corresponding event.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.window.Window.save_image">
+<span class="sig-name descname"><span class="pre">save_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.save_image" title="Permalink to this definition">#</a></dt>
+<dd><p>Save the window content to an image file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – output filename.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.show">
 <span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.show" title="Permalink to this definition">#</a></dt>
 <dd><p>Display this window.</p>
@@ -473,7 +501,8 @@ to the corresponding event.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.window.Window.write_image">
 <span class="sig-name descname"><span class="pre">write_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.window.Window.write_image" title="Permalink to this definition">#</a></dt>
-<dd><p>Save the window content to an image file.</p>
+<dd><p>Save the window content to an image file. This is an deprecated
+interface; please use <cite>save_image</cite> instead.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – output filename.</p>

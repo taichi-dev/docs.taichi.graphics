@@ -324,20 +324,15 @@
 <span id="taichi-ui-camera"></span><h1><a class="reference internal" href="#module-taichi.ui.camera" title="taichi.ui.camera"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.camera</span></code></a><a class="headerlink" href="#module-taichi.ui.camera" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.camera.Camera">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.camera.</span></span><span class="sig-name descname"><span class="pre">Camera</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.camera.Camera" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.camera.</span></span><span class="sig-name descname"><span class="pre">Camera</span></span><a class="headerlink" href="#taichi.ui.camera.Camera" title="Permalink to this definition">#</a></dt>
 <dd><p>The Camera class.</p>
-<p>You should not instantiate this class by calling the <cite>__init__</cite> method
-directly, please use the helper function <a class="reference internal" href="../#taichi.ui.make_camera" title="taichi.ui.make_camera"><code class="xref py py-func docutils literal notranslate"><span class="pre">make_camera()</span></code></a>
-instead.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ptr</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">PyCamera</span></code>) – An instance of the <cite>PyCamera</cite>             class from the C++ level.</p>
-</dd>
-</dl>
+<p>You should also manually set the camera parameters like <cite>camera.position</cite>,
+<cite>camera.lookat</cite>, <cite>camera.up</cite>, etc. The default settings may not work for
+your scene.</p>
 <p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; scene = ti.ui.Scene()  # assume you have a scene
 &gt;&gt;&gt;
-&gt;&gt;&gt; camera = ti.ui.make_camera()
+&gt;&gt;&gt; camera = ti.ui.Camera()
 &gt;&gt;&gt; camera.position(1, 1, 1)  # set camera position
 &gt;&gt;&gt; camera.lookat(0, 0, 0)  # set camera lookat
 &gt;&gt;&gt; camera.up(0, 1, 0)  # set camera up vector
