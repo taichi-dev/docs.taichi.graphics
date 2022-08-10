@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /performance
+slug: /performance_tuning
 ---
 # Performance Tuning
 

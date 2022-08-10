@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /debugging
+slug: /de_bugging
 ---
 # Debugging
 
