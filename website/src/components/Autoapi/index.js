@@ -27,6 +27,19 @@ import './styles/index.scss'
 
 import styles from './styles.module.css'
 
+import Prism from "prism-react-renderer/prism"
+
+(typeof global !== "undefined" ? global : window).Prism = Prism;
+
+Prism.languages.python = {
+  prompt: {
+    pattern: /(^|[^\\])(>>>)[ ]{0,}/,
+		lookbehind: true,
+		greedy: true
+  },
+  ...Prism.languages.python,
+}
+
 const lang = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i;
 
 const CodeContainer = ({ code, className }) => {

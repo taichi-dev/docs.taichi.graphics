@@ -139,6 +139,10 @@
     font-weight: 500;
   }
 
+  .highlight .token.prompt {
+    display: none;
+  }
+
   .autoapi-container .nav {
     display: block;
   }
