@@ -124,7 +124,7 @@ if __name__ == "__main__":
 σ = [[-0.742128014565, -0.000001000000, 0.000000000000], [-0.000001000000, -1.731631994247, 0.000000000000], [0.000000000000, 0.000000000000, -0.742128014565]]
  ```
 
-After switching to `float64` by setting `ti.init(debug=True, default_fp=ti.f64)`, you get the correct output:
+After switching to `float64` by setting `ti.init(debug=True, default_fp=ti.f64)`, you can get the correct output:
 
 ```plaintext
 σ = [[-0.742128000000, -0.000001000000, 0.000000000000], [-0.000001000000, -1.731632000000, 0.000000000000], [0.000000000000, 0.000000000000, -0.742128000000]]
