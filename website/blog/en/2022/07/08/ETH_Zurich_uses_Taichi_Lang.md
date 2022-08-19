@@ -4,7 +4,7 @@ date: "2022-07-08"
 slug: "eth-zürich-uses-taichi-lang-in-its-physically-based-simulation-source"
 authors:
   - yuanming-hu
-tags: [Taichi, physical simulation, Taichi Lang]
+tags: [simulation]
 ---
 
 As you may already know, ETH Zürich is a world-class university constantly ranked among the top 1 to 5 in Europe.

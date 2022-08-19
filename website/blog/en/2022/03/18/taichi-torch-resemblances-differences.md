@@ -4,7 +4,7 @@ date: "2022-03-18"
 slug: "Taichi-torch-resemblances-differences"
 authors:
   - Ailzhang
-tags: [Taichi, Torch, tutorial, PyTorch, Torchscript]
+tags: [beginner, internals, PyTorch]
 ---
 
 "What is the advantage of Taichi over Pytorch or Tensorflow when running on GPU?" Not surprisingly, this is one of the top questions we've received in the Taichi user community. In this blog series we will walk you through some major concepts and components in Taichi and Torch, elaborating on the analogies and differences which might not be obvious at the first sight.
