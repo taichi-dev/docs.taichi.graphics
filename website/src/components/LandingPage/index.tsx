@@ -115,7 +115,7 @@ export default (props) => {
               </div>
             </div>
           </div>
-          <div className="relative h-24 rounded-sm bg-[#111015] desktop:mb-10 mb-6">
+          <div className="relative h-24 rounded-sm bg-black desktop:mb-10 mb-6">
             <div className="absolute right-0 flex items-center inset-y-0 overflow-hidden">
               <img src={AnotherWorldGif} />
             </div>
