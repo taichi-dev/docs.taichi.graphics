@@ -4,7 +4,7 @@ date: "2022-05-06"
 slug: "is-taichi-lang-comparable-to-or-even-faster-than-cuda"
 authors:
   - turbo0628
-tags: [Taichi, Taichi Lang, CUDA, benchmark, performance]
+tags: [benchmark, CUDA]
 
 ---
 

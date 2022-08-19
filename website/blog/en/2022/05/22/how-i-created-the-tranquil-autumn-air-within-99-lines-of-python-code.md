@@ -4,7 +4,7 @@ date: "2022-05-16"
 slug: "how-i-created-the-tranquil-autumn-air-within-99-lines-of-python-code"
 authors:
   - yuanming-hu
-tags: [Taichi, voxel, voxel challenge, abstract syntax tree]
+tags: [beginner, tutorial, voxel challenge]
 ---
 
 # 1. Beginnings

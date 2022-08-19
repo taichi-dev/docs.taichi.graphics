@@ -4,7 +4,7 @@ date: "2022-04-13"
 slug: "ast-refactoring"
 authors:
   - lin-hitonami
-tags: [Taichi, AST, abstract syntax tree]
+tags: [advanced, AST, internals]
 ---
 
 ```python
