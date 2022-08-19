@@ -1,4 +1,11 @@
 
+:root {
+  --ifm-tabs-padding-horizontal: 0.75rem;
+  --ifm-tabs-padding-vertical: 0.5rem;
+  --ifm-tabs-color-active-border: var(--taichi-grey-4);
+  --ifm-hover-overlay: var(--taichi-grey-1);
+}
+
 article ul {
   list-style-type: disc;
   margin: 0 0 var(--ifm-list-margin);
@@ -29,4 +36,16 @@ article a {
 article a:hover {
   color: var(--ifm-link-hover-color);
   text-decoration: var(--ifm-link-hover-decoration);
+}
+
+.tabs {
+  font-weight: 400;
+}
+
+.tabs>:not([hidden])~:not([hidden]) {
+  margin-left: 2rem;
+}
+
+.tabs__item--active {
+  color: var(--ifm-tabs-color);
 }

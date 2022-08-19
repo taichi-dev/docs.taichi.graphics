@@ -3,17 +3,13 @@ import Layout from '@theme/Layout';
 
 import { ThemeClassNames } from '@docusaurus/theme-common';
 
-import { useDocsPreferredVersion } from '@docusaurus/theme-common';
-
 import DocPageLayout from '../DocPageLayout';
 
-import { translate } from '@docusaurus/Translate';
-
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import Translate, { translate } from '@docusaurus/Translate';
 
 import ArrowRight from './arrow-right.svg';
 import UserIcon from './user.svg';
+import PackageIcon from './package.svg';
 import NormalUserBg from './simple.svg';
 import DeveloperUserBg from './complex.svg';
 import AnotherWorldGif from './Another-World.gif'
@@ -78,7 +74,7 @@ export default (props) => {
                 <NormalUserBg />
               </div>
               <div className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black">
-                <div className="text-caption">
+                <div className="text-caption mb-2">
                   {translate({
                     id: 'theme.docs.docHome.userhint',
                     message: 'Accelerate the Python frontend.',
@@ -86,7 +82,7 @@ export default (props) => {
                 </div>
                 <div className="flex flex-col">
                   <UserIcon />
-                  <a href="/docs" className="flex justify-between items-center">
+                  <a href="/docs" className="flex justify-between items-center hover:text-grey-4">
                     <div className="text-h3">User</div>
                     <span>
                       <ArrowRight />
@@ -100,17 +96,17 @@ export default (props) => {
                 <DeveloperUserBg />
               </div>
               <div className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black">
-                <div className="text-caption">
+                <div className="text-caption  mb-2">
                   {translate({
                     id: 'theme.docs.docHome.developerhint',
                     message: 'Deploy Taichi programs in production.',
                   })}
                 </div>
                 <div className="flex flex-col">
-                  <UserIcon />
+                  <PackageIcon />
                   <a
-                    href="/docs/dev_install"
-                    className="flex justify-between items-center"
+                    href="/docs/ndarray_android"
+                    className="flex justify-between items-center hover:text-grey-4"
                   >
                     <div className="text-h3">Developer</div>
                     <ArrowRight />
@@ -131,11 +127,8 @@ export default (props) => {
                     message: 'Develop elegantly.',
                   })}
                 </div>
-                <div className="text-caption hidden desktop:block">
-                  {translate({
-                    id: 'theme.docs.docHome.voxel',
-                    message: 'Image by peng-bo in Voxel Challenge 2022',
-                  })}
+                <div className="text-caption hidden font-light desktop:block">
+                  Image by <span className='font-normal'>peng-bo</span> in Voxel Challenge 2022
                 </div>
               </div>
               <a href="/api/">

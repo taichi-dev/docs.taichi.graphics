@@ -100,6 +100,8 @@ export default function DocItem(props: Props): JSX.Element {
 
                 <DocContent />
               </div>
+
+              <DocItemFooter {...props} />
               {/* <ArticleThumb /> */}
             </article>
           </div>

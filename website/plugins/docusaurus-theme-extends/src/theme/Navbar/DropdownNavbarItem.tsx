@@ -66,7 +66,7 @@ export const SimpleDropdown: React.FC<{
     <div className="group relative">
       <div className="flex cursor-pointer items-center bg-grey-1 border rounded-sm p-[6px]">
         <span className="mr-1">{label}</span>
-        <DropdownIcon />
+        <DropdownIcon className='text-brand-cyan' />
       </div>
       <div
         className={clsx(
