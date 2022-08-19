@@ -300,7 +300,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Taichi Graphics Technology, Inc. Built with Docusaurus and the Taichi community.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Taichi Graphics Technology, Inc.`,
     },
     algolia: {
       appId: '6NDEOARB8Z',

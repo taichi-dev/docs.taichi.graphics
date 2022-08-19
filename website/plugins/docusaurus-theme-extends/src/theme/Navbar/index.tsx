@@ -83,8 +83,8 @@ function NavbarMobileSidebar({
           <CollapseDropDown
             label="Resource"
             items={[
-              { label: 'Taichi Blog', href: '/blog' },
-              { label: 'Taichi Newsletter', href: '/newsletter' },
+              { label: 'Blogs', href: '/blog' },
+              { label: 'Newsletters', href: '/newsletter' },
               { label: 'User Stories', href: '/user-stories' },
               { label: 'Taichi Graphics Course', href: '/tgc01/' },
             ]}
@@ -92,8 +92,8 @@ function NavbarMobileSidebar({
           <CollapseDropDown
             label="Community"
             items={[
-              { label: 'Global Forum', href: '' },
-              { label: '中文论坛', href: '' },
+              { label: 'Global Forum', href: 'https://github.com/taichi-dev/taichi/discussions' },
+              { label: '中文论坛', href: 'https://forum.taichi.graphics/' },
               { label: 'Slack', href: 'https://taichicommunity.slack.com/join/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg#/shared-invite/email' },
               { label: 'WeChat', href: '' },
             ]}
@@ -150,8 +150,8 @@ function Navbar(): JSX.Element {
           <DropdownNavbarItem
             label="Resources"
             items={[
-              { label: 'Taichi Blog', href: '/blog' },
-              { label: 'Taichi Newsletter', href: '/newsletter' },
+              { label: 'Blogs', href: '/blog' },
+              { label: 'Newsletters', href: '/newsletter' },
               { label: 'User Stories', href: '/user-stories' },
               { label: 'Taichi Graphics Course', href: '/tgc01/' },
             ]}
@@ -161,9 +161,9 @@ function Navbar(): JSX.Element {
           <DropdownNavbarItem
             label="Community"
             items={[
-              { label: 'Global Forum', href: '' },
-              { label: '中文论坛', href: '' },
-              { label: 'Slack', href: '' },
+              { label: 'Global Forum', href: 'https://github.com/taichi-dev/taichi/discussions' },
+              { label: '中文论坛', href: 'https://forum.taichi.graphics/' },
+              { label: 'Slack', href: 'https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg' },
               { label: 'WeChat', href: '' },
             ]}
           />
