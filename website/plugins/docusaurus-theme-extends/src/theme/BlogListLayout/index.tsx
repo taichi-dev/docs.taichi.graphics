@@ -63,7 +63,7 @@ function BlogListPage(props: Props): JSX.Element {
         tag: 'blog_posts_list',
       }}
     >
-      <div className={clsx("desktop:mt-14 mt-6", {"newsletter-article": isNewsletter})}>
+      <div className={clsx("desktop:mt-14 mt-6")}>
         <h1 className="bg-clip-text text-transparent text-brand-cyan-gradients inline-block font-bold mb-4 px-4">
           {isNewsletter ? 'Taichi Newsletter' : 'Taichi Blogs'}
         </h1>
@@ -130,7 +130,7 @@ function BlogListPage(props: Props): JSX.Element {
                 <SearchBar />
               </div>}
               <div className="border relative shadow rounded-sm bg-grey-0 pb-8 desktop:pb-3">
-                <div className="h-24 w-full brand-cyan-gradients"></div>
+                <div className="h-28 w-full brand-cyan-gradients"></div>
                 <div className="absolute right-4 top-4">
                   <div
                     className="desktop:hidden bg-grey-0 w-8 h-8 flex items-center justify-center rounded-full"
@@ -140,12 +140,18 @@ function BlogListPage(props: Props): JSX.Element {
                   </div>
                 </div>
 
-                <div className="-mt-[4.25rem] px-4">
+                <div className="-mt-[6rem] px-4">
                   <div className="text-grey-4 font-bold text-h3 mb-4">
                     <div>
                       {translate({
                         id: 'theme.subscription.subscribetoours',
-                        message: 'Subscribe to our updates',
+                        message: 'Subscribe to our',
+                      })}
+                    </div>
+                    <div>
+                    {translate({
+                        id: 'theme.subscription.updates',
+                        message: 'updates',
                       })}
                     </div>
                   </div>

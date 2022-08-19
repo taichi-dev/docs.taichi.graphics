@@ -62,7 +62,7 @@ function TOCItemList({
 
 export default function TOCItems({
   toc,
-  className = '',
+  className = 'table-of-contents',
   linkClassName = 'table-of-contents__link',
   linkActiveClassName = undefined,
   minHeadingLevel: minHeadingLevelOption,

@@ -461,10 +461,12 @@ html[data-theme='dark'] .prism-code .token-line::marker {
   color: var(--taichi-brand-cyan);
 }
 
-html[data-theme='dark'] {
-  --taichi-grey-0: #090C0D;
-  --taichi-grey-1: #0E1414;
-  --taichi-grey-2: #1B2526;
-  --taichi-grey-3: #324A4D;
-  --taichi-grey-4: #EDF9FA;
+
+.table-of-contents {
+  margin: 0;
+  padding: 0;
+}
+
+.table-of-contents li {
+  margin: 0;
 }
