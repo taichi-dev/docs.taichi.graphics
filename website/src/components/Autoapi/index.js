@@ -117,6 +117,7 @@ export default ({ __content, __title, __version, __sidebar, __toc, __path }) => 
       searchMetadata={{
         version: __version,
         tag: `docs-default-${__version}`,
+        category: 'api',
       }}>
       <Head>
         <title>{__title}</title>

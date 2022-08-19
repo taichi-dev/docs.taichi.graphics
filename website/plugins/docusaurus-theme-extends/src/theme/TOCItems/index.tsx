@@ -15,6 +15,10 @@ import {
   // useTOCHighlight,
 } from '@docusaurus/theme-common';
 
+import clsx from 'clsx';
+
+import styles from './style.module.css'
+
 import useTOCHighlight from './useTOCHighlight'
 
 // Recursive component rendering the toc tree
@@ -34,12 +38,12 @@ function TOCItemList({
     return null;
   }
   return (
-    <ul className={isChild ? undefined : className}>
+    <ul className={isChild ? '' : className}>
       {toc.map((heading) => (
-        <li key={heading.id}>
+        <li key={heading.id} className={clsx('border-l pl-2 m-0', isChild ? 'pl-2 ml-2' : 'pl-4')}>
           <a
             href={`#${heading.id}`}
-            className={linkClassName ?? undefined}
+            className={clsx('text-caption', linkClassName ?? undefined)}
             // Developer provided the HTML, so assume it's safe.
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{__html: heading.value}}
@@ -58,7 +62,7 @@ function TOCItemList({
 
 export default function TOCItems({
   toc,
-  className = 'table-of-contents table-of-contents__left-border',
+  className = '',
   linkClassName = 'table-of-contents__link',
   linkActiveClassName = undefined,
   minHeadingLevel: minHeadingLevelOption,

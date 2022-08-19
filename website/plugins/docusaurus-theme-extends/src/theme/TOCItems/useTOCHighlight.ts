@@ -99,7 +99,7 @@ function getLinks(linkClassName: string) {
 function getNavbarHeight(): number {
   // Not ideal to obtain actual height this way
   // Using TS ! (not ?) because otherwise a bad selector would be un-noticed
-  return document.querySelector('.navbar')!.clientHeight;
+  return document.querySelector('#header-nav')!.clientHeight;
 }
 
 function useAnchorTopOffsetRef() {
@@ -143,13 +143,13 @@ function useTOCHighlight(config: TOCHighlightConfig | undefined): void {
     function updateLinkActiveClass(link: HTMLAnchorElement, active: boolean) {
       if (active) {
         if (lastActiveLinkRef.current && lastActiveLinkRef.current !== link) {
-          lastActiveLinkRef.current?.classList.remove(linkActiveClassName);
+          lastActiveLinkRef.current?.parentElement?.classList.remove(linkActiveClassName);
         }
-        link.classList.add(linkActiveClassName);
+        link.parentElement?.classList.add(linkActiveClassName);
         lastActiveLinkRef.current = link;
         // link.scrollIntoView({block: 'nearest'});
       } else {
-        link.classList.remove(linkActiveClassName);
+        link.parentElement?.classList.remove(linkActiveClassName);
       }
     }
 

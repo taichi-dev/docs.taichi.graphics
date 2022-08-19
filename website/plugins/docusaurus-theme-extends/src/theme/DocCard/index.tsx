@@ -28,8 +28,7 @@ function CardContainer({
   children: ReactNode;
 }): JSX.Element {
   const className = clsx(
-    'card margin-bottom--lg padding--lg',
-    styles.cardContainer,
+    'border border-grey-3 px-5 py-6 flex flex-col hover:text-grey-4 space-y-3 max-w-[75%]',
     href && styles.cardContainerLink,
   );
   return href ? (
@@ -56,11 +55,11 @@ function CardLayout({
 }): JSX.Element {
   return (
     <CardContainer href={href}>
-      <h2 className={clsx('text--truncate', styles.cardTitle)} title={title}>
-        {icon} {title}
-      </h2>
+      <h3 className='font-bold' title={title}>
+        {title}
+      </h3>
       <div
-        className={clsx('text--truncate', styles.cardDescription)}
+        className='text-caption font-light'
         title={description}>
         {description}
       </div>
@@ -86,7 +85,7 @@ function CardLink({item}: {item: PropSidebarItemLink}): JSX.Element {
   const doc = useDocById(item.docId ?? undefined);
   const version = useActiveVersion()
   const vd = version?.docs.find((d) => d.id === item.docId)
-  const tags = vd?.frontMatter?.keywords?.filter((item) => item === 'developer' || item === 'normal user')
+  const tags = vd?.frontMatter?.userType?.filter((item) => item === 'developer' || item === 'user')
   return (
     <CardLayout
       href={item.href}
@@ -99,7 +98,7 @@ function CardLink({item}: {item: PropSidebarItemLink}): JSX.Element {
 }
 
 export default function DocCard({item}: Props): JSX.Element {
-  console.log(item)
+
   switch (item.type) {
     case 'link':
       return <CardLink item={item} />;

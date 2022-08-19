@@ -1,0 +1,32 @@
+
+article ul {
+  list-style-type: disc;
+  margin: 0 0 var(--ifm-list-margin);
+  padding-left: var(--ifm-list-left-padding);
+}
+
+article ol {
+  list-style-type: decimal;
+  margin: 0 0 var(--ifm-list-margin);
+  padding-left: var(--ifm-list-left-padding);
+}
+
+article p {
+  margin: 0 0 var(--ifm-paragraph-margin-bottom);
+}
+
+article img {
+  /* text-align: center; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+article a {
+  color: var(--ifm-link-color);
+  text-decoration: var(--ifm-link-decoration);
+}
+
+article a:hover {
+  color: var(--ifm-link-hover-color);
+  text-decoration: var(--ifm-link-hover-decoration);
+}

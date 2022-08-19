@@ -13,6 +13,8 @@ import { useThemeConfig } from '@docusaurus/theme-common';
 
 import copy from 'copy-text-to-clipboard';
 
+import LinkIcon from './link.svg'
+
 import './styles.css';
 import styles from './styles.module.css';
 
@@ -53,7 +55,7 @@ function AnchorHeading({ as: As, id, ...props }: Props) {
           description: 'Title for link to heading',
         })}
       >
-        &#8203;
+        <LinkIcon />
       </a>
       <span className={styles.anchorCopiedText}>
         {showCopied && (

@@ -1,0 +1,22 @@
+.topbg {
+  background: radial-gradient(33.39% 197.26% at 97.56% 97.71%, #4CBDC7 0%, rgba(76, 189, 199, 0) 100%), radial-gradient(100% 834.14% at 0% 100%, #4CBDC7 23.75%, rgba(76, 189, 199, 0) 100%), url(./topbg-full.png);
+
+  filter: drop-shadow(2px 16px 40px rgba(38, 51, 77, 0.15));
+
+  height: 417px;
+
+  /* background-position-y: -30px; */
+  background-position: center;
+  background-size: cover;
+}
+
+
+.cardContainer {
+   /* flex flex-wrap justify-between items-center mx-auto max-w-[908px] */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 908px;
+  margin-left: auto;
+  margin-right: auto;
+}

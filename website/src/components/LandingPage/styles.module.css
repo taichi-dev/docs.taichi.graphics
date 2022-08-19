@@ -1,0 +1,39 @@
+.docHomeHeader {
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+}
+
+.userSelectionCards {
+  display: flex;
+}
+
+.userSelectionCards>:not([hidden])~:not([hidden]) {
+  margin-left: 1.25rem;
+}
+
+.userCard {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  height: 8rem;
+  border-radius: 2px;
+  padding: 0.75rem 1.25rem 0.875rem 1.25rem;
+}
+
+.userCardBg {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  left: 181px;
+}
+
+.userCardNormal {
+  background: radial-gradient(218.85% 218.85% at 1.92% 25.77%, var(--taichi-brand-blue) 0%, #E9ECF2 100%)
+}
+
+.userCardDeveloper {
+  background: radial-gradient(218.85% 218.85% at 1.92% 25.77%, var(--taichi-brand-cyan) 0%, #E9ECF2 100%)
+}

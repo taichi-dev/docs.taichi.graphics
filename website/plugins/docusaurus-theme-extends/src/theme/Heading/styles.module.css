@@ -22,7 +22,7 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
   opacity: 0;
   font-size: 1rem;
   margin-left: 0.5rem;
-  color: var(--ifm-color-success-light);
+  color: var(--taichi-brand-cyan);
 }
 
 .hash-link:focus,

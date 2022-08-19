@@ -10,6 +10,13 @@
   margin-top: 0;
 }
 
+.docrightSidebar {
+  max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
+  /* overflow-y: auto; */
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
 @media (min-width: 997px) {
   .docItemCol {
     max-width: 75% !important;

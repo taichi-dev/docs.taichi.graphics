@@ -39,6 +39,17 @@ module.exports = {
   projectName: 'docs.taichi.graphics',
   plugins: [
     'docusaurus-plugin-sass',
+    async function myPlugin() {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
     utilsExtensionPlugin,
     path.resolve(__dirname, 'plugins/docusaurus-plugin-hotjar'),
     [
@@ -55,6 +66,19 @@ module.exports = {
       path.resolve(__dirname, 'plugins/blog-enhance-plugin'),
       {
         postsPerPage: 10,
+        blogTitle: 'Taichi Blogs'
+      }
+    ],
+    [
+      path.resolve(__dirname, 'plugins/blog-enhance-plugin'),
+      {
+        id: 'newsletter',
+        postsPerPage: 10,
+        path: 'newsletter',
+        routeBasePath: 'newsletter',
+        blogTitle: 'Taichi Newsletter',
+        blogDescription: 'Newsletter',
+        showReadingTime: false,
       }
     ],
     [
@@ -115,7 +139,7 @@ module.exports = {
   ],
   i18n: {
     defaultLocale: DefaultLocale,
-    locales: [DefaultLocale, 'zh-Hans', 'fr-FR'],
+    locales: [DefaultLocale, 'zh-Hans'],
   },
   themeConfig: {
     hideableSidebar: true,
@@ -148,10 +172,9 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'lang/articles/get-started/index',
+          to: '/',
           position: 'right',
-          label: 'Docs',
+          label: 'Doc Home',
           className: 'animated-anchor-link',
         },
         {
@@ -161,23 +184,21 @@ module.exports = {
           className: 'animated-anchor-link',
         },
         {
-          to: 'blog',
-          label: 'Blogs',
-          position: 'right',
-          className: 'animated-anchor-link',
-        },
-        {
-          label: 'Training',
+          label: 'Resources',
           position: 'right',
           items: [
             {
-              to: '/tgc01',
-              label: 'Taichi Graphics Course 01',
+              to: '/blog',
+              label: 'Blogs',
+            },
+            {
+              to: '/blog',
+              label: 'Blogs',
             },
           ],
         },
         {
-          label: 'Explore',
+          label: 'Community',
           position: 'right',
           items: [
             {
@@ -192,16 +213,6 @@ module.exports = {
           ],
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
-          dropdownItemsAfter: [
-            {
-              to: '/help-us-translate',
-              label: 'Help us translate',
-            },
-          ],
-        },
-        {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsBefore: [],
@@ -212,25 +223,35 @@ module.exports = {
           docsPluginId: 'default',
         },
         {
-          href: 'https://github.com/taichi-dev/taichi',
-          'aria-label': 'GitHub repository',
-          className: 'header-github-link',
+          type: 'localeDropdown',
           position: 'right',
+          dropdownItemsAfter: [
+            {
+              to: '/help-us-translate',
+              label: 'Help us translate',
+            },
+          ],
         },
+        // {
+        //   href: 'https://github.com/taichi-dev/taichi',
+        //   'aria-label': 'GitHub repository',
+        //   className: 'header-github-link',
+        //   position: 'left',
+        // },
       ],
     },
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Products',
-          items: [
-            {
-              label: 'Taichi Programming Language',
-              to: 'https://github.com/taichi-dev/taichi',
-            },
-          ],
-        },
+        // {
+        //   title: 'Products',
+        //   items: [
+        //     {
+        //       label: 'Taichi Programming Language',
+        //       to: 'https://github.com/taichi-dev/taichi',
+        //     },
+        //   ],
+        // },
         {
           title: 'Resources',
           items: [
