@@ -49,3 +49,38 @@ article a:hover {
 .tabs__item--active {
   color: var(--ifm-tabs-color);
 }
+
+.table-of-contents {
+  margin: 0;
+  padding: 0;
+}
+
+.table-of-contents li {
+  margin: 0;
+}
+
+
+.alert--info {
+  --ifm-alert-background-color: var(--ifm-color-info-contrast-background);
+  --ifm-alert-border-color: #D3E4E6;
+}
+
+.alert--warning {
+  --ifm-alert-background-color: var(--ifm-color-warning-contrast-background);
+  --ifm-alert-border-color: #E5D75C;
+}
+
+.alert--danger {
+  --ifm-alert-background-color: var(--ifm-color-danger-contrast-background);
+  --ifm-alert-border-color: #FF4040;
+}
+
+.alert--success {
+  --ifm-alert-background-color: var(--ifm-color-success-contrast-background);
+  --ifm-alert-border-color: #AEE55C;
+}
+
+.admonition-tip {
+  --ifm-alert-background-color: var(--ifm-color-tip-contrast-background);
+  --ifm-alert-border-color: #4C8EF4;
+}

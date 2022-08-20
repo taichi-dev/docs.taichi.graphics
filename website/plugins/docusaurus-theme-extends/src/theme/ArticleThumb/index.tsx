@@ -11,7 +11,7 @@ const ArticleThumb = () => {
     if (!activeKey) {
       setActiveKey(val)
       if (window && (window as any).hj) {
-        (window as any).hj('event_thumbclick', val)
+        (window as any).hj('event', 'thumb_'+val)
       }
     }
   }
