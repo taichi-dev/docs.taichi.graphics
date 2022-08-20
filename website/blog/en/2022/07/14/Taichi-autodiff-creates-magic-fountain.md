@@ -4,7 +4,7 @@ date: "2022-07-14"
 slug: "training-a-magic-fountain-using-taichi-autodiff-an-efficient-tool-for-differentiable-physical-simulation"
 authors:
   - erizmr
-tags: [Taichi, physical simulation, autodiff, Taichi Lang]
+tags: [autodiff, intermediate, simulation, tutorial]
 ---
 
 With the generated gradient information, a differentiable physical simulator can make the convergence of the machine learning process one order of magnitude faster than gradient-free algorithms, such as model-free reinforcement learning.

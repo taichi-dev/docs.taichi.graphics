@@ -4,7 +4,7 @@ date: "2021-10-12"
 slug: "head-first-taichi"
 authors:
   - AmesingFlank
-tags: [Taichi, GGUI, tutorial]
+tags: [beginner, GGUI, internals, tutorial]
 ---
 
 Ever since the Python programming language was born, its core philosophy has always been to maximize the readability and simplicity of code. In fact, the reach for readability and simplicity is so deep within Python's root, that if you type `import this` in a Python console, it will recite a little poem:

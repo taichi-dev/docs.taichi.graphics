@@ -4,7 +4,7 @@ date: "2022-04-20"
 slug: "taichi-aot-the-solution-for-deploying-kernels-in-mobile-devices"
 authors:
   - k-ye
-tags: [AOT, shader, Ahead-of-time, Ndarray, shape, Just-in-time, JIT]
+tags: [advanced, AOT, deployment, mobile]
 ---
 
 Physical simulation, which Taichi Lang is best at, has wide applications on mobile devices, such as real-time physically-based interactions in mobile games or cool visual effects in short videos. This is thanks to Taichi's features such as fast prototyping and cross-platform GPU acceleration.
