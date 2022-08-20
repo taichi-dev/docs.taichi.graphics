@@ -17,6 +17,7 @@ import {
   useVersions,
   useLatestVersion,
 } from '@docusaurus/plugin-content-docs/client';
+import { WithLocalLink } from './WithVersionUrl';
 
 export const DropdownNavbarItem: React.FC<{
   label: string | React.ReactNode;
@@ -41,13 +42,10 @@ export const DropdownNavbarItem: React.FC<{
             <ul className="flex-1 w-48 space-y-2">
               {items.map((item, i) => (
                 <li className="text-grey-4" key={i}>
-                  <a
-                    className="whitespace-nowrap block"
-                    target={item.isExternal ? '_blank' : ''}
-                    href={item.href}
-                  >
-                    {item.label}
-                  </a>
+                  <WithLocalLink className="whitespace-nowrap block"
+                    isExternal={item.isExternal}
+                    label={item.label}
+                    href={item.href}></WithLocalLink>
                 </li>
               ))}
             </ul>

@@ -8,6 +8,14 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useGlobalActiveVersion } from '../NavbarItem/useApiContext';
 import { useLocation } from '@docusaurus/router';
 
+interface Props {
+  href: string;
+  label: string | React.ReactNode;
+  className?: string;
+  matchPath?: string;
+  isExternal?: boolean
+}
+
 const useVersionUrl = (toUrl) => {
   const { preferredVersion } = useDocsPreferredVersion();
 
@@ -47,15 +55,16 @@ export function WithVersionLink({ href, label, matchPath, className }: Props) {
   );
 }
 
-export function NavLink({ href, label, matchPath, className }: Props) {
+export function NavLink({ href, label, matchPath, className, isExternal }: Props) {
   const { pathname } = useLocation();
   return (
     <a
       className={clsx(
-        pathname.startsWith(matchPath) ? 'text-brand-cyan' : '',
+        matchPath && pathname.startsWith(matchPath) ? 'text-brand-cyan' : '',
         className
       )}
       href={href}
+      target={isExternal ? '_blank' : undefined}
     >
       {label}
     </a>
@@ -67,22 +76,25 @@ export function WithLocalLink({
   label,
   className,
   matchPath,
+  isExternal
 }: {
   href: string;
   label: string | React.ReactNode;
   className?: string;
   matchPath?: string;
+  isExternal?: boolean
 }) {
   const {
     i18n: { defaultLocale, currentLocale },
   } = useDocusaurusContext();
-  if (defaultLocale !== currentLocale) href = '/' + currentLocale + '/' + href;
+  if (defaultLocale !== currentLocale && !isExternal) href = '/' + currentLocale + '/' + href;
   return (
     <NavLink
       className={className}
       href={href}
       label={label}
       matchPath={matchPath}
+      isExternal={isExternal}
     />
   );
 }
