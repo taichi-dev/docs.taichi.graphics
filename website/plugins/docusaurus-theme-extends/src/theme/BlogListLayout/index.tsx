@@ -31,10 +31,16 @@ import styles from './styles.module.css';
 import CloseIcon from './x.svg';
 import { useState } from 'react';
 
+const newslettertitle = translate({
+  id: 'theme.text.taichinewsletters',
+  message: 'Taichi Newletters',
+})
+
 function BlogListPage(props: Props): JSX.Element {
   const { metadata, items } = props;
   const {
     siteConfig: { title: siteTitle },
+    i18n: { defaultLocale, currentLocale }
   } = useDocusaurusContext();
   const { blogDescription, blogTitle, permalink } = metadata;
   const isBlogOnlyMode = permalink === '/';
@@ -42,7 +48,8 @@ function BlogListPage(props: Props): JSX.Element {
 
   const { pathname } = useLocation();
 
-  const isNewsletter = permalink.startsWith('/newsletter');
+  const prefix = defaultLocale === currentLocale ? '' : '/' + currentLocale
+  const isNewsletter = permalink.startsWith(prefix + '/newsletter');
 
   const baseUrl = isNewsletter ? '/newsletter' : '/blog';
 
@@ -63,9 +70,14 @@ function BlogListPage(props: Props): JSX.Element {
         tag: 'blog_posts_list',
       }}
     >
-      <div className={clsx("desktop:mt-14 mt-6 pb-6")}>
+      <div className={clsx('desktop:mt-14 mt-6 pb-6')}>
         <h1 className="bg-clip-text text-transparent text-brand-cyan-gradients inline-block font-bold mb-4 px-4">
-          {isNewsletter ? 'Taichi Newsletter' : 'Taichi Blogs'}
+          {isNewsletter
+            ? newslettertitle
+            : translate({
+                id: 'theme.text.taichiblogs',
+                message: 'Taichi Blogs',
+              })}
         </h1>
         <div className="flex flex-col desktop:flex-row">
           <div className="space-y-4 flex-1 px-4">
@@ -126,9 +138,11 @@ function BlogListPage(props: Props): JSX.Element {
           </div>
           {showSubscription && (
             <div className={styles.blogrightsideber}>
-              {!isNewsletter && <div className="mb-5 hidden desktop:block">
-                <SearchBar />
-              </div>}
+              {!isNewsletter && (
+                <div className="mb-5 hidden desktop:block">
+                  <SearchBar />
+                </div>
+              )}
               <div className="border relative shadow rounded-sm bg-grey-0 pb-8 desktop:pb-3">
                 <div className="h-28 w-full brand-cyan-gradients"></div>
                 <div className="absolute right-4 top-4">
@@ -141,19 +155,19 @@ function BlogListPage(props: Props): JSX.Element {
                 </div>
 
                 <div className="-mt-[6rem] px-4">
-                  <div className="text-grey-4 font-bold text-h3 mb-4">
+                  <div className="text-grey-4 font-bold text-h3 mb-4 h-[60px]">
                     <div>
                       {translate({
-                        id: 'theme.subscription.subscribetoours',
-                        message: 'Subscribe to our',
+                        id: 'theme.subscription.subscribetoourupdates',
+                        message: 'Subscribe to our updates',
                       })}
                     </div>
-                    <div>
-                    {translate({
+                    {/* <div>
+                      {translate({
                         id: 'theme.subscription.updates',
                         message: 'updates',
                       })}
-                    </div>
+                    </div> */}
                   </div>
                   <SubscriptionInput />
                   <div className="mt-6">

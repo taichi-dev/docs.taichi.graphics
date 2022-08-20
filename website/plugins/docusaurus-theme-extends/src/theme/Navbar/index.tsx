@@ -16,6 +16,8 @@ import {
 
 import useMobileSidebar from '../../utils/useMobile';
 
+import ArrowRightIcon from '../icons/arrow-right.svg';
+
 import {
   CollapseDropDown,
   DropdownNavbarItem,
@@ -32,6 +34,50 @@ import LogoIcon from './logo.svg';
 import CloseIcon from './x.svg';
 import { NavLink, WithVersionLink } from './WithVersionUrl';
 import { translate } from '@docusaurus/Translate';
+
+const resources = [
+  {
+    label: translate({
+      id: 'theme.text.blog',
+      message: 'Blogs',
+    }),
+    href: '/blog',
+  },
+  { label: translate({
+    id: 'theme.text.newsletters',
+    message: 'Newsletters',
+  }), href: '/newsletter' },
+  {
+    label: translate({
+      id: 'theme.text.userstories',
+      message: 'User Stories',
+    }),
+    href: '/user-stories',
+  },
+  {
+    label: translate({
+      id: 'theme.text.taichicourse',
+      message: 'Taichi Graphics Course',
+    }),
+    href: '/tgc01/',
+  },
+]
+
+const communities = [
+  {
+    label: 'Global Forum',
+    href: 'https://github.com/taichi-dev/taichi/discussions',
+  },
+  { label: '中文论坛', href: 'https://forum.taichi.graphics/' },
+  {
+    label: 'Slack',
+    href: 'https://taichicommunity.slack.com/join/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg#/shared-invite/email',
+  },
+  { label: translate({
+    id: 'theme.text.wechat',
+    message: 'Wechat',
+  }), href: '' },
+]
 
 function useColorModeToggle() {
   const {
@@ -93,36 +139,20 @@ function NavbarMobileSidebar({
           </li>
           <CollapseDropDown
             label="Resource"
-            items={[
-              { label: 'Blogs', href: '/blog' },
-              { label: 'Newsletters', href: '/newsletter' },
-              { label: 'User Stories', href: '/user-stories' },
-              { label: 'Taichi Graphics Course', href: '/tgc01/' },
-            ]}
+            items={resources}
           />
           <CollapseDropDown
             label="Community"
-            items={[
-              {
-                label: 'Global Forum',
-                href: 'https://github.com/taichi-dev/taichi/discussions',
-              },
-              { label: '中文论坛', href: 'https://forum.taichi.graphics/' },
-              {
-                label: 'Slack',
-                href: 'https://taichicommunity.slack.com/join/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg#/shared-invite/email',
-              },
-              { label: 'WeChat', href: '' },
-            ]}
+            items={communities}
           />
         </ul>
       </div>
       <div className="border-t py-3">
         <ul className="flex items-center justify-around space-x-3">
-          <li className='flex-1'>
+          <li className="flex-1">
             <VersionDropdownNavbarItem position="top" />
           </li>
-          <li className='flex-1'>
+          <li className="flex-1">
             <LocaleDropdownNavbarItem position="top" />
           </li>
           <li>
@@ -158,7 +188,14 @@ function Navbar(): JSX.Element {
       </div>
       <ul className="hidden desktop:flex items-center">
         <li className="pr-6 border-r">
-          <NavLink href="/" label="Doc Home" matchPath="/docs" />
+          <NavLink
+            href="/"
+            label={translate({
+              id: 'theme.text.dochome',
+              message: 'Doc Home',
+            })}
+            matchPath="/docs"
+          />
         </li>
         <li className="px-6 border-r">
           <WithVersionLink href="/api/" label="API" matchPath="/api" />
@@ -167,30 +204,29 @@ function Navbar(): JSX.Element {
           <DropdownNavbarItem
             description={
               <>
-                <div className='pb-4'>
+                <div className="pb-4">
                   {translate({
                     id: 'theme.navbar.resourceinfo',
                     message:
                       "Get inspired by Taichi's users stories, blogs, and Graphics courses.",
                   })}
                 </div>
-                <div>
+                <h4 className="flex justify-between items-center">
                   <a href="/blog">
                     {translate({
                       id: 'theme.text.learnmore',
                       message: 'Learn more',
                     })}
                   </a>
-                </div>
+                  <ArrowRightIcon />
+                </h4>
               </>
             }
-            label="Resources"
-            items={[
-              { label: 'Blogs', href: '/blog' },
-              { label: 'Newsletters', href: '/newsletter' },
-              { label: 'User Stories', href: '/user-stories' },
-              { label: 'Taichi Graphics Course', href: '/tgc01/' },
-            ]}
+            label={translate({
+              id: 'theme.text.resources',
+              message: 'Resources',
+            })}
+            items={resources}
           />
         </li>
         <li className="px-6 border-r">
@@ -203,29 +239,22 @@ function Navbar(): JSX.Element {
                     message: "Join Taichi's Community.",
                   })}
                 </div>
-                <div>
+                <h4 className="flex justify-between items-center">
                   <a href="https://github.com/taichi-dev/taichi">
                     {translate({
                       id: 'theme.text.learnmore',
                       message: 'Learn more',
                     })}
                   </a>
-                </div>
+                  <ArrowRightIcon />
+                </h4>
               </>
             }
-            label="Community"
-            items={[
-              {
-                label: 'Global Forum',
-                href: 'https://github.com/taichi-dev/taichi/discussions',
-              },
-              { label: '中文论坛', href: 'https://forum.taichi.graphics/' },
-              {
-                label: 'Slack',
-                href: 'https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg',
-              },
-              { label: 'WeChat', href: '' },
-            ]}
+            label={translate({
+              id: 'theme.text.community',
+              message: 'Community',
+            })}
+            items={communities}
           />
         </li>
         <li className="ml-6">

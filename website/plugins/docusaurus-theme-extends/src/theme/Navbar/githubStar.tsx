@@ -6,17 +6,17 @@ import StarIcon from './star.svg';
 export const GithubStars = () => {
   const [star, setStar] = useState('19.6k');
   useEffect(() => {
-    // fetch('https://api.github.com/repos/taichi-dev/taichi')
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     let stars;
-    //     if (data.stargazers_count) {
-    //       stars = (data.stargazers_count / 1000).toFixed(1) + ' k';
-    //     } else {
-    //       stars = '19.6k';
-    //     }
-    //     setStar(stars);
-    //   });
+    fetch('https://api.github.com/repos/taichi-dev/taichi')
+      .then((response) => response.json())
+      .then((data) => {
+        let stars;
+        if (data.stargazers_count) {
+          stars = (data.stargazers_count / 1000).toFixed(1) + ' k';
+        } else {
+          stars = '20.0k';
+        }
+        setStar(stars);
+      });
   }, []);
 
   return (

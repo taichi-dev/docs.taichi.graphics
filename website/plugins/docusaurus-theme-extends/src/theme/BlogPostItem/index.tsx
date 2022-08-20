@@ -16,6 +16,7 @@ import { blogPostContainerID } from '@docusaurus/utils-common';
 import MDXComponents from '@theme/MDXComponents';
 import EditThisPage from '@theme/EditThisPage';
 import type { Props } from '@theme/BlogPostItem';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import styles from './styles.module.css';
 import TagsListInline from '@theme/TagsListInline';
@@ -104,6 +105,10 @@ function BlogPostItem(props: Props): JSX.Element {
     authors,
   } = metadata;
 
+  const {
+    i18n: { defaultLocale, currentLocale }
+  } = useDocusaurusContext();
+
   const image = assets.image ?? frontMatter.image;
   const truncatedPost = !isBlogPostPage && truncated;
   const tagsExists = tags.length > 0;
@@ -112,7 +117,8 @@ function BlogPostItem(props: Props): JSX.Element {
     return <BlogListPostItem {...props} />;
   }
 
-  const isNewsletter = permalink.startsWith('/newsletter')
+  const prefix = defaultLocale === currentLocale ? '' : '/' + currentLocale
+  const isNewsletter = permalink.startsWith(prefix + '/newsletter');
 
   const baseUrl = isNewsletter ? '/newsletter' : '/blog'
 

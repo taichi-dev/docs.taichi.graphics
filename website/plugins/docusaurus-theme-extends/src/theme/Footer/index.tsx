@@ -25,14 +25,14 @@ import IconExternalLink from '@theme/IconExternalLink';
 
 import { translate } from '@docusaurus/Translate';
 
-import SubscriptionInput from '../Subscription'
+import SubscriptionInput from '../Subscription';
 
 import MessageIcon from './message-circle.svg';
 import SlackIcon from './slack.svg';
 import GithubIcon from './github.svg';
 import Logo from './logo.svg';
 
-import WechatLinkCode from '../icons/wechat-community.jpg'
+import WechatLinkCode from '../icons/wechat-community.jpg';
 
 function FooterLink({
   to,
@@ -162,13 +162,19 @@ function FooterSubscriber() {
         <SubscriptionInput />
       </div>
       <div className="flex justify-end space-x-6">
-        <a href='https://github.com/taichi-dev/taichi/discussions' target='_blank'>
+        <a
+          href="https://github.com/taichi-dev/taichi/discussions"
+          target="_blank"
+        >
           <MessageIcon />
         </a>
-        <a href='https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg' target='_blank'>
+        <a
+          href="https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg"
+          target="_blank"
+        >
           <SlackIcon width={32} height={32} />
         </a>
-        <a href='https://github.com/taichi-dev/taichi' target='_blank'>
+        <a href="https://github.com/taichi-dev/taichi" target="_blank">
           <GithubIcon />
         </a>
       </div>
@@ -183,49 +189,103 @@ function Footer(): JSX.Element | null {
     return null;
   }
 
-  const {copyright} = footer || {};
+  const { copyright } = footer || {};
 
   return (
     <footer className="bg-grey-4 dark:bg-grey-0 text-white">
       <div className="mx-auto my-6 desktop:mt-10 desktop:mb-2 px-4 max-w-docmain">
         <div className="border-b border-b-white pb-6 flex items-center justify-between">
           <Logo />
-          <div className='hidden desktop:inline-block text-caption text-grey-3 desktop:w-[328px]'>{copyright}</div>
+          <div className="hidden desktop:inline-block text-caption text-grey-3 desktop:w-[328px]">
+            {copyright}
+          </div>
         </div>
-        <div className='mt-4 flex justify-between flex-wrap mb-4'>
-          <div className='flex-1'>
-            <div className='desktop:w-10/12 flex flex-wrap mb-4'>
-              <div className='flex flex-col flex-1 min-w-[9rem]'>
-                <h5 className='font-bold mb-3'>Resources</h5>
-                <div className='flex flex-col space-y-2'>
-                  <Link href='/blog'>Blogs</Link>
-                  <Link href='/newsletter'>Newsletters</Link>
-                  <Link href='/user-stories'>User Stories</Link>
-                  <Link href='/tgc01/'>Taichi Graphics Course</Link>
+        <div className="mt-4 flex justify-between flex-wrap mb-4">
+          <div className="flex-1">
+            <div className="desktop:w-10/12 flex flex-wrap mb-4">
+              <div className="flex flex-col flex-1 min-w-[9rem]">
+                <h5 className="font-bold mb-3">
+                  {translate({
+                    id: 'theme.text.resources',
+                    message: 'Resources',
+                  })}
+                </h5>
+                <div className="flex flex-col space-y-2">
+                  <Link href="/blog">
+                    {translate({
+                      id: 'theme.text.blog',
+                      message: 'Blogs',
+                    })}
+                  </Link>
+                  <Link href="/newsletter">
+                  {translate({
+                      id: 'theme.text.newsletters',
+                      message: 'Newsletters',
+                    })}
+                  </Link>
+                  <Link href="/user-stories">
+                  {translate({
+                      id: 'theme.text.userstories',
+                      message: 'User Stories',
+                    })}
+                  </Link>
+                  <Link href="/tgc01/">
+                  {translate({
+                      id: 'theme.text.taichicourse',
+                      message: 'Taichi Graphics Course',
+                    })}
+                  </Link>
                 </div>
               </div>
-              <div className='flex flex-col flex-1 min-w-[9rem] mb-4'>
-              <h5 className='font-bold mb-3'>Community</h5>
-                <div className='flex flex-col space-y-2'>
-                  <Link href='https://github.com/taichi-dev/taichi/discussions'>Global Forum</Link>
-                  <Link href='https://forum.taichi.graphics/'>中文论坛</Link>
-                  <Link href='https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg'>Slack</Link>
+              <div className="flex flex-col flex-1 min-w-[9rem] mb-4">
+                <h5 className="font-bold mb-3">
+                {translate({
+                      id: 'theme.text.community',
+                      message: 'Community',
+                    })}
+                </h5>
+                <div className="flex flex-col space-y-2">
+                  <Link href="https://github.com/taichi-dev/taichi/discussions">
+                    Global Forum
+                  </Link>
+                  <Link href="https://forum.taichi.graphics/">中文论坛</Link>
+                  <Link href="https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg">
+                    Slack
+                  </Link>
                   {/* <Link href='/'>Wechat</Link> */}
-                  <div className='relative group'><span className='cursor-pointer'>Wechat</span><div className='hidden group-hover:block absolute bottom-8'><img src={WechatLinkCode} /></div></div>
+                  <div className="relative group">
+                    <span className="cursor-pointer">
+                    {translate({
+                      id: 'theme.text.wechat',
+                      message: 'Wechat',
+                    })}
+                    </span>
+                    <div className="hidden group-hover:block absolute bottom-8">
+                      <img src={WechatLinkCode} />
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className='flex flex-col flex-1 min-w-[9rem] mb-4'>
-              <h5 className='font-bold mb-3'>LEGAL</h5>
-                <div className='flex flex-col space-y-2'>
-                  <Link href='https://taichi.graphics/cookie-policy/'>Cookie Policy <IconExternalLink /></Link>
-                  <Link href='https://taichi.graphics/privacy-policy/'>Privacy Policy <IconExternalLink /></Link>
+              <div className="flex flex-col flex-1 min-w-[9rem] mb-4">
+                <h5 className="font-bold mb-3">LEGAL</h5>
+                <div className="flex flex-col space-y-2">
+                  <Link href="https://taichi.graphics/cookie-policy/">
+                    Cookie Policy <IconExternalLink />
+                  </Link>
+                  <Link href="https://taichi.graphics/privacy-policy/">
+                    Privacy Policy <IconExternalLink />
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
-          <div className='desktop:w-[328px] w-full'><FooterSubscriber /></div>
+          <div className="desktop:w-[328px] w-full">
+            <FooterSubscriber />
+          </div>
         </div>
-        <div className='inline-block desktop:hidden text-caption text-grey-3 desktop:w-[328px]'>{copyright}</div>
+        <div className="inline-block desktop:hidden text-caption text-grey-3 desktop:w-[328px]">
+          {copyright}
+        </div>
       </div>
     </footer>
   );

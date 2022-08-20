@@ -47,8 +47,8 @@ const ArticleCategoryCard: React.FC<{ category: PropSidebarItemCategory }> = ({
           >
             <span>
               {translate({
-                id: 'theme.docs.docHome.readmore',
-                message: 'Read More',
+                id: 'theme.text.readmore',
+                message: 'Read more',
               })}
             </span>
             <ArrowRight className="ml-3" />
@@ -67,7 +67,10 @@ export default (props) => {
     >
       <DocPageLayout sidebar={props.sidebar}>
         <div className="max-w-[988px] mx-auto">
-          <div className="text-h3 desktop:pb-5 pb-4">Doc Home</div>
+          <div className="text-h3 desktop:pb-5 pb-4">{translate({
+                      id: 'theme.text.dochome',
+                      message: 'Doc Home',
+                    })}</div>
           <div className="flex justify-between flex-col desktop:flex-row desktop:space-x-5 desktop:mb-5">
             <div className="relative flex-1 h-32 overflow-hidden brand-blue-gradients rounded-sm mb-4">
               <div className="absolute left-[181px] inset-y-0">
@@ -85,7 +88,10 @@ export default (props) => {
                     <UserIcon  />
                   </a>
                   <a href="/docs" className="flex justify-between items-center hover:text-white">
-                    <div className="text-h3">User</div>
+                    <div className="text-h3">{translate({
+                    id: 'theme.text.user',
+                    message: 'User',
+                  })}</div>
                     <span>
                       <ArrowRight />
                     </span>
@@ -112,7 +118,10 @@ export default (props) => {
                     href="/docs/ndarray_android"
                     className="flex justify-between items-center hover:text-white"
                   >
-                    <div className="text-h3">Developer</div>
+                    <div className="text-h3">{translate({
+                    id: 'theme.text.developer',
+                    message: 'Developer',
+                  })}</div>
                     <ArrowRight />
                   </a>
                 </div>

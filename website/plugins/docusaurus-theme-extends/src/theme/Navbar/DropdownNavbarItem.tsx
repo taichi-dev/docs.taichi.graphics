@@ -32,7 +32,7 @@ export const DropdownNavbarItem: React.FC<{
           <div className="flex-1 brand-cyan-gradients relative">
             <DropdownBg />
             <div className='absolute inset-x-0 bottom-6 flex items-center px-9 space-y-6 text-black'>
-              <div><h4 className='font-bold'>{description}</h4></div>
+              <div><h3 className='font-bold block'>{description}</h3></div>
             </div>
           </div>
           <div className="flex-1 px-12">
