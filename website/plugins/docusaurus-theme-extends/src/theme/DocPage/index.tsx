@@ -106,7 +106,7 @@ function DocPageContent({
         category: 'docs',
       }}
     >
-      <div className="flex w-full">
+      <div className="flex max-w-[1660px] mx-auto w-full">
         <BackToTopButton />
 
         {sidebar && !mobileSidebar.shouldRender && (
