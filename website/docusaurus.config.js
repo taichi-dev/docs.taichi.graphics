@@ -139,7 +139,7 @@ module.exports = {
   ],
   i18n: {
     defaultLocale: DefaultLocale,
-    locales: [DefaultLocale, 'zh-Hans'],
+    locales: [DefaultLocale, 'zh-Hans', 'fr-FR'],
   },
   themeConfig: {
     hideableSidebar: true,

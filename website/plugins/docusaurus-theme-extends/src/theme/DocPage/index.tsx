@@ -169,16 +169,17 @@ function DocPageContent({
         )}
         <main
           className={clsx(
-            'flex-1',
+            'flex-1 flex-col',
             styles.docMainContainer,
             hiddenSidebarContainer && styles.docMainContainerEnhanced
           )}
         >
-          <div className="mx-auto max-w-docmain w-full">
+
+            <div className={clsx(styles.docBreadcrumbs, 'w-full border-b')}>
             <div
               className={clsx(
-                styles.docBreadcrumbs,
-                'py-2 desktop:px-10 px-4 text-grey-4 flex z-20 font-light text-caption border-b items-center'
+                'mx-auto max-w-docmain w-full',
+                'py-2 desktop:px-10 px-4 text-grey-4 flex z-20 font-light text-caption items-center'
               )}
             >
               <div className="flex-1 overflow-hidden h-6">
@@ -199,8 +200,8 @@ function DocPageContent({
               {sidebar && (
                 <div
                   className={clsx(
-                    'w-6 rotate-90 desktop:hidden flex items-center justify-center',
-                    mobileSidebar.shown ? 'rotate-180' : ''
+                    'w-6 desktop:hidden flex items-center justify-center',
+                    mobileSidebar.shown ? '' : 'rotate-180'
                   )}
                   onClick={mobileSidebar.toggle}
                 >
@@ -208,6 +209,8 @@ function DocPageContent({
                 </div>
               )}
             </div>
+            </div>
+            <div className="mx-auto max-w-docmain w-full">
             <div className="desktop:px-10 px-4 pt-5 pb-12">
               <MDXProvider components={MDXComponents}>{children}</MDXProvider>
             </div>
