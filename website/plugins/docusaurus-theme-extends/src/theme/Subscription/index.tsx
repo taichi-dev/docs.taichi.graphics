@@ -67,7 +67,7 @@ function SubscriptionInput() {
   return (
     <div className="flex">
       <input
-        className={clsx("flex-1 w-0 border bg-grey-0 outline-0 rounded-l-sm py-2 px-4 text-grey-4", { 'border-red-main': err && err.length > 0 })}
+        className={clsx("flex-1 w-0 border bg-grey-0 outline-0 rounded-l-sm py-2 px-4 text-grey-4 focus:border-brand-cyan")}
         placeholder={translate({
           id: 'theme.subscription.email',
           message: 'Email address',

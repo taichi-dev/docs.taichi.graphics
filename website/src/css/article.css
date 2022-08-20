@@ -6,6 +6,12 @@
   --ifm-hover-overlay: var(--taichi-grey-1);
 }
 
+code {
+  border: 1px solid var(--taichi-grey-3);
+  background: var(--taichi-grey-1);
+  border-radius: 4px;
+}
+
 article ul {
   list-style-type: disc;
   margin: 0 0 var(--ifm-list-margin);
@@ -40,10 +46,6 @@ article a:hover {
 
 .tabs {
   font-weight: 400;
-}
-
-.tabs>:not([hidden])~:not([hidden]) {
-  margin-left: 2rem;
 }
 
 .tabs__item--active {
