@@ -17,16 +17,17 @@ const useVersionUrl = (toUrl) => {
 
   const activeVersion = useGlobalActiveVersion();
 
-  const currentVersion = activeVersion || preferredVersion;
-  let vernsionpath = currentVersion?.isLast ? '' : currentVersion?.name || '';
-
-  if (!toUrl || vernsionpath === '') return toUrl;
-  if (toUrl.startsWith('/api')) {
-    vernsionpath = vernsionpath === 'current' ? 'master' : vernsionpath;
-  }
   let withlocalurl = toUrl;
   if (defaultLocale !== currentLocale) {
     withlocalurl = '/' + currentLocale + toUrl;
+  }
+
+  const currentVersion = activeVersion || preferredVersion;
+  let vernsionpath = currentVersion?.isLast ? '' : currentVersion?.name || '';
+
+  if (!withlocalurl || vernsionpath === '') return withlocalurl;
+  if (toUrl.startsWith('/api')) {
+    vernsionpath = vernsionpath === 'current' ? 'master' : vernsionpath;
   }
   const hasEndingSlash = withlocalurl[withlocalurl.length - 1] === '/';
   return (

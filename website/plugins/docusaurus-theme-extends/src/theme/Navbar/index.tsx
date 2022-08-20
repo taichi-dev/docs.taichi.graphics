@@ -130,7 +130,7 @@ function NavbarMobileSidebar({
       <div className="px-3 py-4 flex-1 overflow-hidden relative">
         <ul className="space-y-3 overflow-auto h-full">
           <li className="px-2 py-1">
-            <NavLink
+            <WithLocalLink
               className="block"
               href="/"
               label="Doc Home"
