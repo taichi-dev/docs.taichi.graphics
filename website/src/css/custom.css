@@ -256,12 +256,20 @@ svg {
   transition-timing-function: var(--ifm-transition-timing-default);
 }
 
-.table-of-contents__link--active {
-  border-left: 2px solid var(--taichi-brand-cyan);
+.table-of-contents li {
+  border-left: 2px solid transparent;
+}
+
+.table-of-contents li.table-of-contents__link--active {
+  border-left-color: var(--taichi-brand-cyan);
 }
 
 .table-of-contents__link--active > a {
   color: var(--taichi-brand-cyan);
+}
+
+article ul.table-of-contents {
+  border-left: none;
 }
 
 .docusaurus-highlight-code-line {

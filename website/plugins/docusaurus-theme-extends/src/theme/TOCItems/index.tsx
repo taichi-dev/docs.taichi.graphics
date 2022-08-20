@@ -38,12 +38,12 @@ function TOCItemList({
     return null;
   }
   return (
-    <ul className={isChild ? '' : className}>
+    <ul className={isChild ? '' : clsx(className, 'space-y-1 border-l')}>
       {toc.map((heading) => (
-        <li key={heading.id} className={clsx('border-l pl-2 m-0', isChild ? 'pl-2 ml-2' : 'pl-4')}>
+        <li key={heading.id} className={clsx('pl-2 m-0', isChild ? 'pl-2 ml-2' : 'pl-4')}>
           <a
             href={`#${heading.id}`}
-            className={clsx('text-caption', linkClassName ?? undefined)}
+            className={clsx('text-caption block', linkClassName ?? undefined, { 'py-1': !isChild })}
             // Developer provided the HTML, so assume it's safe.
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{__html: heading.value}}

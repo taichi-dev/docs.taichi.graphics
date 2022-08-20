@@ -14,7 +14,7 @@ import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Head from '@docusaurus/Head';
 import {isRegexpStringMatch, useSearchPage} from '@docusaurus/theme-common';
-import {useDocSearchKeyboardEvents} from '@docsearch/react';
+import {useDocSearchKeyboardEvents} from '../DocsearchModal';
 import {useAlgoliaContextualFacetFilters} from '@docusaurus/theme-search-algolia/client';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
@@ -26,11 +26,14 @@ import {DocSearchButton} from './SearchButton'
 import type {
   DocSearchModal as DocSearchModalType,
   DocSearchModalProps,
-} from '@docsearch/react';
+} from '../DocsearchModal';
 import type {
   InternalDocSearchHit,
   StoredDocSearchHit,
-} from '@docsearch/react/dist/esm/types';
+} from '../DocsearchModal/types';
+// import {
+
+// } from '@docsearch/react/dist/esm/'
 import type {AutocompleteState} from '@algolia/autocomplete-core';
 
 type DocSearchProps = Omit<
@@ -132,9 +135,9 @@ function DocSearch({
 
     return Promise.all([
       // @ts-ignore
-      import('@docsearch/react/modal'),
+      import('../DocsearchModal/DocSearchModal'),
       // @ts-ignore
-      import('@docsearch/react/style'),
+      import('../DocsearchModal/style'),
       import('./styles.css'),
     ]).then(([{DocSearchModal: Modal}]) => {
       DocSearchModal = Modal;
@@ -230,6 +233,10 @@ function DocSearch({
     message: 'Search',
     description: 'The ARIA label and placeholder for search button',
   });
+
+  console.log(translatedSearchLabel)
+
+  console.log(DocSearchModal)
 
   return (
     <>

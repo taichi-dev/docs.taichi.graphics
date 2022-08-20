@@ -26,12 +26,12 @@ export const DropdownNavbarItem: React.FC<{
   return (
     <div className="group relative">
       <div className="cursor-pointer">{label}</div>
-      <div className="opacity-0 invisible -translate-y-2.5 dropdown-transition absolute -right-60 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-        <div className="m-auto mt-2 h-0 w-0 border-x-8 border-x-transparent border-b-[16px]"></div>
+      <div className="opacity-0 invisible -translate-y-2.5 dropdown-transition absolute -right-48 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+        <div className="ml-96 mt-2 h-0 w-0 border-x-8 border-x-transparent border-b-[16px]"></div>
         <div className="flex shadow-lg rounded-sm bg-grey-0">
           <div className="flex-1 brand-cyan-gradients relative">
             <DropdownBg />
-            <div className='absolute inset-0 flex items-center px-9 space-y-6 text-black'>
+            <div className='absolute inset-x-0 bottom-6 flex items-center px-9 space-y-6 text-black'>
               <div><h4 className='font-bold'>{description}</h4></div>
             </div>
           </div>

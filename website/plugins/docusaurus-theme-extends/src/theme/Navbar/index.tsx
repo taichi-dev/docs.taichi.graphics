@@ -31,6 +31,7 @@ import MenuIcon from './menu.svg';
 import LogoIcon from './logo.svg';
 import CloseIcon from './x.svg';
 import { NavLink, WithVersionLink } from './WithVersionUrl';
+import { translate } from '@docusaurus/Translate';
 
 function useColorModeToggle() {
   const {
@@ -74,11 +75,21 @@ function NavbarMobileSidebar({
       </div>
       <div className="px-3 py-4 flex-1 overflow-hidden relative">
         <ul className="space-y-3 overflow-auto h-full">
-          <li className='px-2 py-1'>
-            <NavLink className='block' href="/" label="Doc Home" matchPath="/docs" />
+          <li className="px-2 py-1">
+            <NavLink
+              className="block"
+              href="/"
+              label="Doc Home"
+              matchPath="/docs"
+            />
           </li>
-          <li className='px-2 py-1'>
-            <WithVersionLink className='block' href="/api/" label="API" matchPath="/api" />
+          <li className="px-2 py-1">
+            <WithVersionLink
+              className="block"
+              href="/api/"
+              label="API"
+              matchPath="/api"
+            />
           </li>
           <CollapseDropDown
             label="Resource"
@@ -92,9 +103,15 @@ function NavbarMobileSidebar({
           <CollapseDropDown
             label="Community"
             items={[
-              { label: 'Global Forum', href: 'https://github.com/taichi-dev/taichi/discussions' },
+              {
+                label: 'Global Forum',
+                href: 'https://github.com/taichi-dev/taichi/discussions',
+              },
               { label: '中文论坛', href: 'https://forum.taichi.graphics/' },
-              { label: 'Slack', href: 'https://taichicommunity.slack.com/join/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg#/shared-invite/email' },
+              {
+                label: 'Slack',
+                href: 'https://taichicommunity.slack.com/join/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg#/shared-invite/email',
+              },
               { label: 'WeChat', href: '' },
             ]}
           />
@@ -148,7 +165,25 @@ function Navbar(): JSX.Element {
         </li>
         <li className="px-6 border-r">
           <DropdownNavbarItem
-            description="Get inspired by Taichi's users stories, blogs, and Graphics courses."
+            description={
+              <>
+                <div className='pb-4'>
+                  {translate({
+                    id: 'theme.navbar.resourceinfo',
+                    message:
+                      "Get inspired by Taichi's users stories, blogs, and Graphics courses.",
+                  })}
+                </div>
+                <div>
+                  <a href="/blog">
+                    {translate({
+                      id: 'theme.text.learnmore',
+                      message: 'Learn more',
+                    })}
+                  </a>
+                </div>
+              </>
+            }
             label="Resources"
             items={[
               { label: 'Blogs', href: '/blog' },
@@ -160,12 +195,35 @@ function Navbar(): JSX.Element {
         </li>
         <li className="px-6 border-r">
           <DropdownNavbarItem
-            description="Join Taichi's Community."
+            description={
+              <>
+                <div className="pb-4">
+                  {translate({
+                    id: 'theme.navbar.communityinfo',
+                    message: "Join Taichi's Community.",
+                  })}
+                </div>
+                <div>
+                  <a href="https://github.com/taichi-dev/taichi">
+                    {translate({
+                      id: 'theme.text.learnmore',
+                      message: 'Learn more',
+                    })}
+                  </a>
+                </div>
+              </>
+            }
             label="Community"
             items={[
-              { label: 'Global Forum', href: 'https://github.com/taichi-dev/taichi/discussions' },
+              {
+                label: 'Global Forum',
+                href: 'https://github.com/taichi-dev/taichi/discussions',
+              },
               { label: '中文论坛', href: 'https://forum.taichi.graphics/' },
-              { label: 'Slack', href: 'https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg' },
+              {
+                label: 'Slack',
+                href: 'https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg',
+              },
               { label: 'WeChat', href: '' },
             ]}
           />
