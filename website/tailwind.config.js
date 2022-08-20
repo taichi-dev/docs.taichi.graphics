@@ -17,6 +17,9 @@ module.exports = {
         'brand-cyan': 'var(--taichi-brand-cyan)',
         'brand-blue': 'var(--taichi-brand-blue)',
         'brand-cyan-dark': 'var(--taichi-brand-cyan-dark)',
+        red: {
+          main: 'var(--taichi-red-main)',
+        },
         yellow: {
           main: 'var(--taichi-yellow-main)',
         },
