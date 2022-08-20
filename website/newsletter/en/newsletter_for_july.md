@@ -2,8 +2,7 @@
 title: "Taichi Newsletter for July"
 date: "2022-08-01"
 description:
-  📌 Highlights
-  Taichi v1.0.4 was released
+  📌 Highlights\n Taichi v1.0.4 was released\nJoin Taichi's Numerical Simulation SIG\n No problem is trivial - become a more sophisticated Taichi user with five practical tips
 ---
 
 # Taichi Newsletter for July
