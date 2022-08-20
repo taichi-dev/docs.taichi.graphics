@@ -234,10 +234,6 @@ function DocSearch({
     description: 'The ARIA label and placeholder for search button',
   });
 
-  console.log(translatedSearchLabel)
-
-  console.log(DocSearchModal)
-
   return (
     <>
       <Head>
