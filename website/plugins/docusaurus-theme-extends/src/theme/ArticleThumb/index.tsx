@@ -10,8 +10,8 @@ const ArticleThumb = () => {
   const handleThumbClick = (val: string) => {
     if (!activeKey) {
       setActiveKey(val)
-      if (window && (window as any).hj) {
-        (window as any).hj('event', 'thumb_'+val)
+      if (window && (window as any).gtag) {
+        (window as any).gtag('event', 'thumbclick', { value: val })
       }
     }
   }
