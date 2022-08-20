@@ -20,8 +20,9 @@ import {
 
 export const DropdownNavbarItem: React.FC<{
   label: string | React.ReactNode;
+  description: string | React.ReactNode;
   items: { label: string; href: string; isExternal?: boolean }[];
-}> = ({ label, items }) => {
+}> = ({ label, items, description }) => {
   return (
     <div className="group relative">
       <div className="cursor-pointer">{label}</div>
@@ -31,7 +32,7 @@ export const DropdownNavbarItem: React.FC<{
           <div className="flex-1 brand-cyan-gradients relative">
             <DropdownBg />
             <div className='absolute inset-0 flex items-center px-9 space-y-6 text-black'>
-              <div><h4 className='font-bold'>Join Taichi's Community</h4></div>
+              <div><h4 className='font-bold'>{description}</h4></div>
             </div>
           </div>
           <div className="flex-1 px-12">

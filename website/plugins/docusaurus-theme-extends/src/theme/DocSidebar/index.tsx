@@ -105,7 +105,7 @@ function DocSidebar(props: Props) {
           <SearchBar />
         </div>
         <div className="pt-6 px-5 desktop:pr-7 flex-1 overflow-auto">
-          <ul className="space-y-3 select-none overflow-hidden">
+          <ul className="space-y-2 select-none overflow-hidden">
             {props.sidebar.map((item, index) => (
               <DocSidebarItem
                 activePath={props.path}
@@ -126,6 +126,7 @@ function DocSidebar(props: Props) {
           )}
         >
           <div
+            onClick={() => props.onCollapse()}
             className={clsx(
               'bg-grey-3 mt-6 rounded-l-lg w-6 h-10 cursor-pointer flex items-center justify-center',
               props.isHidden && 'rotate-180'
@@ -135,7 +136,7 @@ function DocSidebar(props: Props) {
           </div>
         </div>
       )}
-      {!mobileSidebar.shouldRender && (
+      {/* {!mobileSidebar.shouldRender && (
         <div
           className={clsx(
             'absolute -right-6 w-12 h-full top-0 desktop:flex hidden',
@@ -143,7 +144,7 @@ function DocSidebar(props: Props) {
           )}
           onClick={() => props.onCollapse()}
         ></div>
-      )}
+      )} */}
     </div>
   );
 }

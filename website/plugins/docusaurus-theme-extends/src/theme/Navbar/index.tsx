@@ -148,6 +148,7 @@ function Navbar(): JSX.Element {
         </li>
         <li className="px-6 border-r">
           <DropdownNavbarItem
+            description="Get inspired by Taichi's users stories, blogs, and Graphics courses."
             label="Resources"
             items={[
               { label: 'Blogs', href: '/blog' },
@@ -159,6 +160,7 @@ function Navbar(): JSX.Element {
         </li>
         <li className="px-6 border-r">
           <DropdownNavbarItem
+            description="Join Taichi's Community."
             label="Community"
             items={[
               { label: 'Global Forum', href: 'https://github.com/taichi-dev/taichi/discussions' },
