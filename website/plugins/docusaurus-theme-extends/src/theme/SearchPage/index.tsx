@@ -22,7 +22,6 @@ import {
   usePluralForm,
   isRegexpStringMatch,
   useDynamicCallback,
-  useSearchPage,
 } from '@docusaurus/theme-common';
 import { useDocsPreferredVersionContext } from '@docusaurus/theme-common/lib/utils/docsPreferredVersion/DocsPreferredVersionProvider';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -30,6 +29,8 @@ import { useAllDocsData } from '@docusaurus/plugin-content-docs/client';
 import Layout from '@theme/Layout';
 import Translate, { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
+
+import useSearchPage from './useSearchPage'
 
 // Very simple pluralization: probably good enough for now
 function useDocumentsFoundPlural() {
@@ -171,18 +172,19 @@ type ResultDispatcher =
 const searchTypes = [
   {
     label: 'All',
+    value: '',
   },
   {
     label: 'Docs',
-    type: '',
+    value: 'doc',
   },
   {
     label: 'API',
-    type: '',
+    value: 'api',
   },
   {
     label: 'Blogs',
-    type: '',
+    value: 'blog',
   },
 ];
 
@@ -199,7 +201,7 @@ function SearchPage(): JSX.Element {
   const documentsFoundPlural = useDocumentsFoundPlural();
 
   const docsSearchVersionsHelpers = useDocsSearchVersionsHelpers();
-  const { searchQuery, setSearchQuery } = useSearchPage();
+  const { searchQuery, setSearchQuery, setCategoryQuery, categoryQuery } = useSearchPage();
   const initialSearchResultState: ResultDispatcherState = {
     items: [],
     query: null,
@@ -358,7 +360,9 @@ function SearchPage(): JSX.Element {
         );
       }
     );
-
+    // if (categoryQuery) {
+    //   algoliaHelper.addDisjunctiveFacetRefinement('category', categoryQuery)
+    // }
     algoliaHelper.setQuery(searchQuery).setPage(page).search();
   });
 
@@ -384,7 +388,7 @@ function SearchPage(): JSX.Element {
         makeSearch();
       }, 300);
     }
-  }, [searchQuery, docsSearchVersionsHelpers.searchVersions, makeSearch]);
+  }, [searchQuery, categoryQuery, docsSearchVersionsHelpers.searchVersions, makeSearch]);
 
   useEffect(() => {
     if (!searchResultState.lastPage || searchResultState.lastPage === 0) {
@@ -441,8 +445,9 @@ function SearchPage(): JSX.Element {
               <div className="flex space-x-3">
                 {searchTypes.map((item) => (
                   <div
-                    className="bg-grey-0 border px-3 py-1 desktop:min-w-[5rem] min-w-[3rem] flex justify-center cursor-pointer"
+                    className={clsx("border px-3 py-1 desktop:min-w-[5rem] min-w-[3rem] flex justify-center cursor-pointer", item.value === categoryQuery ? 'bg-brand-cyan' : 'bg-grey-0', { 'hover:border-grey-4 hover:bg-grey-2': item.value !== categoryQuery })}
                     key={item.label}
+                    onClick={() => setCategoryQuery(item.value)}
                   >
                     {item.label}
                   </div>
