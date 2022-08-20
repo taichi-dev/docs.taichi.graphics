@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import type { Props } from '@theme/DocSidebar';
 import type { PropSidebarItem } from '@docusaurus/plugin-content-docs';
 
-import { isActiveSidebarItem } from '@docusaurus/theme-common';
+import { isActiveSidebarItem, DocSidebarItemsExpandedStateProvider, useDocSidebarItemsExpandedState, Collapsible } from '@docusaurus/theme-common';
 
 import SearchBar from '@theme/SearchBar';
 
@@ -18,17 +18,41 @@ function DocSidebarItem({
   className,
   activePath,
   level,
+  index,
 }: {
   item: PropSidebarItem;
   className?: string;
   activePath: string;
   level: number;
+  index: number;
 }) {
   const isActive = isActiveSidebarItem(item, activePath);
   // console.log(item.href, activePath)
   const [isHidden, setIsHidden] = useState(!isActive);
 
+  // const {expandedItem, setExpandedItem} = useDocSidebarItemsExpandedState();
+  // console.log(expandedItem)
+  function updateCollapsed() {
+    // console.log(isHidden)
+    // setExpandedItem(isHidden ? index : null);
+    setIsHidden(!isHidden)
+  }
+
+  // useEffect(() => {
+  //   if (
+  //     expandedItem &&
+  //     expandedItem !== index
+  //   ) {
+  //     setIsHidden(true);
+  //   }
+  // }, [
+  //   expandedItem,
+  //   index,
+  //   setIsHidden,
+  // ]);
+
   return (
+
     <li
       className={clsx(
         className,
@@ -37,6 +61,7 @@ function DocSidebarItem({
           (isActive ? 'border-l-2 border-brand-cyan' : 'border-l border-grey-3')
       )}
     >
+
       <div
         className={clsx(
           'flex justify-between items-center pr-2',
@@ -46,7 +71,7 @@ function DocSidebarItem({
               : 'bg-brand-cyan text-white border-l-4 border-brand-cyan-dark rounded-l-sm'
             : ''
         )}
-        onClick={() => setIsHidden(!isHidden)}
+        onClick={() => updateCollapsed()}
       >
         <a
           className={clsx(
@@ -72,6 +97,7 @@ function DocSidebarItem({
         )}
       </div>
       {item.type === 'category' && (
+        <Collapsible lazy as="ul" className="menu__list" collapsed={isHidden}>
         <ul
           className={clsx(
             'height-transition',
@@ -82,6 +108,7 @@ function DocSidebarItem({
         >
           {item.items.map((sub, index) => (
             <DocSidebarItem
+              index={index}
               activePath={activePath}
               level={level + 1}
               className="ml-3 text-caption"
@@ -90,6 +117,7 @@ function DocSidebarItem({
             />
           ))}
         </ul>
+        </Collapsible>
       )}
     </li>
   );
@@ -105,17 +133,20 @@ function DocSidebar(props: Props) {
           <SearchBar />
         </div>
         <div className="pt-6 px-5 desktop:pr-7 flex-1 overflow-auto">
-          <ul className="space-y-2 select-none overflow-hidden">
-            {props.sidebar.map((item, index) => (
-              <DocSidebarItem
-                activePath={props.path}
-                level={0}
-                className="text-h5"
-                key={index}
-                item={item}
-              />
-            ))}
-          </ul>
+          <DocSidebarItemsExpandedStateProvider>
+            <ul className="space-y-2 select-none overflow-hidden">
+              {props.sidebar.map((item, index) => (
+                <DocSidebarItem
+                  activePath={props.path}
+                  level={0}
+                  className="text-h5"
+                  key={index}
+                  item={item}
+                  index={index}
+                />
+              ))}
+            </ul>
+          </DocSidebarItemsExpandedStateProvider>
         </div>
       </div>
       {!mobileSidebar.shouldRender && (
