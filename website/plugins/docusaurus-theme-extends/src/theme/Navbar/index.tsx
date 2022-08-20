@@ -118,11 +118,11 @@ function NavbarMobileSidebar({
         </ul>
       </div>
       <div className="border-t py-3">
-        <ul className="flex items-center justify-around">
-          <li>
+        <ul className="flex items-center justify-around space-x-2">
+          <li className='flex-1'>
             <VersionDropdownNavbarItem position="top" />
           </li>
-          <li>
+          <li className='flex-1'>
             <LocaleDropdownNavbarItem position="top" />
           </li>
           <li>

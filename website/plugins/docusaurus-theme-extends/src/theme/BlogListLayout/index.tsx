@@ -63,7 +63,7 @@ function BlogListPage(props: Props): JSX.Element {
         tag: 'blog_posts_list',
       }}
     >
-      <div className={clsx("desktop:mt-14 mt-6")}>
+      <div className={clsx("desktop:mt-14 mt-6 pb-6")}>
         <h1 className="bg-clip-text text-transparent text-brand-cyan-gradients inline-block font-bold mb-4 px-4">
           {isNewsletter ? 'Taichi Newsletter' : 'Taichi Blogs'}
         </h1>
