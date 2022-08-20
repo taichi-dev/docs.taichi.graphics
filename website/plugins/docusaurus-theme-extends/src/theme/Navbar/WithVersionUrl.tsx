@@ -87,7 +87,7 @@ export function WithLocalLink({
   const {
     i18n: { defaultLocale, currentLocale },
   } = useDocusaurusContext();
-  if (defaultLocale !== currentLocale && !isExternal) href = '/' + currentLocale + '/' + href;
+  if (defaultLocale !== currentLocale && !isExternal) href = '/' + currentLocale + href;
   return (
     <NavLink
       className={className}
