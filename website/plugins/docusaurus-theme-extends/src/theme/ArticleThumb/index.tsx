@@ -7,6 +7,14 @@ import { translate } from '@docusaurus/Translate';
 
 const ArticleThumb = () => {
   const [activeKey, setActiveKey] = useState<string>();
+  const handleThumbClick = (val: string) => {
+    if (!activeKey) {
+      setActiveKey(val)
+      if (window && (window as any).hj) {
+        (window as any).hj('event_thumbclick', val)
+      }
+    }
+  }
   return (
     <div className="border rounded-sm p-3 space-y-1">
       <div>
@@ -26,7 +34,7 @@ const ArticleThumb = () => {
               'hover:bg-grey-4 hover:text-grey-0': !activeKey,
             }
           )}
-          onClick={() => !activeKey && setActiveKey('up')}
+          onClick={() => handleThumbClick('up')}
         >
           <ThumbUp />
         </div>
@@ -40,7 +48,7 @@ const ArticleThumb = () => {
               'hover:bg-grey-4 hover:text-grey-0': !activeKey,
             }
           )}
-          onClick={() => !activeKey && setActiveKey('down')}
+          onClick={() => handleThumbClick('down')}
         >
           <ThumbDown />
         </div>
