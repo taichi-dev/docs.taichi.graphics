@@ -29,6 +29,7 @@
   background-color: var(--taichi-grey-0);
   position: sticky;
   top: var(--ifm-navbar-height);
+  z-index: 10;
 }
 
 @media (min-width: 997px) {
@@ -44,6 +45,7 @@
   .docBreadcrumbs {
     position: relative;
     top: 0;
+    z-index: initial;
   }
 
   .docSidebarContainer {
