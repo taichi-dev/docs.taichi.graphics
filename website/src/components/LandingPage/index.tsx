@@ -81,8 +81,10 @@ export default (props) => {
                   })}
                 </div>
                 <div className="flex flex-col">
-                  <UserIcon />
-                  <a href="/docs" className="flex justify-between items-center hover:text-grey-4">
+                  <a href='/docs' className='hover:text-white'>
+                    <UserIcon  />
+                  </a>
+                  <a href="/docs" className="flex justify-between items-center hover:text-white">
                     <div className="text-h3">User</div>
                     <span>
                       <ArrowRight />
@@ -103,10 +105,12 @@ export default (props) => {
                   })}
                 </div>
                 <div className="flex flex-col">
+                <a href="/docs/ndarray_android" className='hover:text-white cursor-pointer'>
                   <PackageIcon />
+                  </a>
                   <a
                     href="/docs/ndarray_android"
-                    className="flex justify-between items-center hover:text-grey-4"
+                    className="flex justify-between items-center hover:text-white"
                   >
                     <div className="text-h3">Developer</div>
                     <ArrowRight />
