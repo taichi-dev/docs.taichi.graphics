@@ -32,7 +32,7 @@ import { GithubStars } from './githubStar';
 import MenuIcon from './menu.svg';
 import LogoIcon from './logo.svg';
 import CloseIcon from './x.svg';
-import { NavLink, WithVersionLink } from './WithVersionUrl';
+import { NavLink, WithLocalLink, WithVersionLink } from './WithVersionUrl';
 import { translate } from '@docusaurus/Translate';
 
 const resources = [
@@ -43,10 +43,13 @@ const resources = [
     }),
     href: '/blog',
   },
-  { label: translate({
-    id: 'theme.text.newsletters',
-    message: 'Newsletters',
-  }), href: '/newsletter' },
+  {
+    label: translate({
+      id: 'theme.text.newsletters',
+      message: 'Newsletters',
+    }),
+    href: '/newsletter',
+  },
   {
     label: translate({
       id: 'theme.text.userstories',
@@ -61,23 +64,28 @@ const resources = [
     }),
     href: '/tgc01/',
   },
-]
+];
 
 const communities = [
   {
     label: 'Global Forum',
     href: 'https://github.com/taichi-dev/taichi/discussions',
+    isExternal: true,
   },
-  { label: '中文论坛', href: 'https://forum.taichi.graphics/' },
+  { label: '中文论坛', href: 'https://forum.taichi.graphics/',isExternal: true },
   {
     label: 'Slack',
     href: 'https://taichicommunity.slack.com/join/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg#/shared-invite/email',
+    isExternal: true,
   },
-  { label: translate({
-    id: 'theme.text.wechat',
-    message: 'Wechat',
-  }), href: '' },
-]
+  {
+    label: translate({
+      id: 'theme.text.wechat',
+      message: 'Wechat',
+    }),
+    href: '',
+  },
+];
 
 function useColorModeToggle() {
   const {
@@ -137,14 +145,8 @@ function NavbarMobileSidebar({
               matchPath="/api"
             />
           </li>
-          <CollapseDropDown
-            label="Resource"
-            items={resources}
-          />
-          <CollapseDropDown
-            label="Community"
-            items={communities}
-          />
+          <CollapseDropDown label="Resource" items={resources} />
+          <CollapseDropDown label="Community" items={communities} />
         </ul>
       </div>
       <div className="border-t py-3">
@@ -188,7 +190,7 @@ function Navbar(): JSX.Element {
       </div>
       <ul className="hidden desktop:flex items-center">
         <li className="pr-6 border-r">
-          <NavLink
+          <WithLocalLink
             href="/"
             label={translate({
               id: 'theme.text.dochome',
@@ -211,15 +213,29 @@ function Navbar(): JSX.Element {
                       "Get inspired by Taichi's users stories, blogs, and Graphics courses.",
                   })}
                 </div>
-                <h4 className="flex justify-between items-center">
-                  <a href="/blog">
+                {/* <a href="https://github.com/taichi-dev/taichi" className='text-h4 flex justify-between items-center text-black hover:text-white'>
                     {translate({
                       id: 'theme.text.learnmore',
                       message: 'Learn more',
                     })}
-                  </a>
-                  <ArrowRightIcon />
-                </h4>
+                    <ArrowRightIcon />
+                  </a> */}
+                {/* <h4 className="flex justify-between items-center"> */}
+                <WithLocalLink
+                  className="text-h4 flex justify-between items-center text-black hover:text-white"
+                  href="/blog"
+                  label={
+                    <>
+                      {translate({
+                        id: 'theme.text.learnmore',
+                        message: 'Learn more',
+                      })}
+                      <ArrowRightIcon />
+                    </>
+                  }
+                />
+                {/* <ArrowRightIcon /> */}
+                {/* </h4> */}
               </>
             }
             label={translate({
@@ -239,15 +255,16 @@ function Navbar(): JSX.Element {
                     message: "Join Taichi's Community.",
                   })}
                 </div>
-                <h4 className="flex justify-between items-center">
-                  <a href="https://github.com/taichi-dev/taichi">
-                    {translate({
-                      id: 'theme.text.learnmore',
-                      message: 'Learn more',
-                    })}
-                  </a>
+                <a
+                  href="https://github.com/taichi-dev/taichi"
+                  className="text-h4 flex justify-between items-center text-black hover:text-white"
+                >
+                  {translate({
+                    id: 'theme.text.learnmore',
+                    message: 'Learn more',
+                  })}
                   <ArrowRightIcon />
-                </h4>
+                </a>
               </>
             }
             label={translate({
