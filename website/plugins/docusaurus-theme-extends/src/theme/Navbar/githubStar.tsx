@@ -3,10 +3,13 @@ import React, { useEffect, useState } from 'react';
 
 import StarIcon from './star.svg';
 
+let globalstars = ''
+
 export const GithubStars = () => {
-  const [star, setStar] = useState('19.6k');
+  const [star, setStar] = useState(globalstars);
   useEffect(() => {
-    fetch('https://api.github.com/repos/taichi-dev/taichi')
+    if (!globalstars) {
+      fetch('https://api.github.com/repos/taichi-dev/taichi')
       .then((response) => response.json())
       .then((data) => {
         let stars;
@@ -15,8 +18,10 @@ export const GithubStars = () => {
         } else {
           stars = '20.0k';
         }
+        globalstars = stars
         setStar(stars);
       });
+    }
   }, []);
 
   return (

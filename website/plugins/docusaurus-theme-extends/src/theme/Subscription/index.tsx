@@ -34,7 +34,7 @@ const request = (url, { timeout }) => {
   );
 };
 
-function SubscriptionInput() {
+function SubscriptionInput(props) {
   const [email, setEmail] = useState('');
   const [err, setErr] = useState('');
   const [disabled, setDisabled] = useState(false);
@@ -67,7 +67,7 @@ function SubscriptionInput() {
   return (
     <div className="flex">
       <input
-        className={clsx("flex-1 w-0 border bg-grey-0 outline-0 rounded-l-sm py-2 px-4 text-grey-4 focus:border-brand-cyan")}
+        className={clsx("flex-1 w-0 border outline-0 rounded-l-sm py-2 px-4 focus:border-brand-cyan", props.mode === 'dark' ? 'bg-dark-grey-0 text-dark-grey-4 border-dark-grey-2' : 'bg-grey-0 text-grey-4')}
         placeholder={translate({
           id: 'theme.subscription.email',
           message: 'Email address',

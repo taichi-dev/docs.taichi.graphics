@@ -116,7 +116,9 @@ function NavbarMobileSidebar({
     <div className="navbar-sidebar flex flex-col overflow-hidden">
       <div className="desktop:h-20 h-16 flex items-center px-3 border-b border-grey-3">
         <div className="flex items-center space-x-3">
-          <LogoIcon width={120} />
+          <a href='https://www.taichi-lang.org'>
+            <LogoIcon width={120} />
+          </a>
           <GithubStars />
         </div>
         <button
@@ -183,7 +185,9 @@ function Navbar(): JSX.Element {
       )}
     >
       <div className="flex items-center space-x-5">
+        <a href='https://www.taichi-lang.org/'>
         <LogoIcon />
+        </a>
         <div className="hidden desktop:inline-block">
           <GithubStars />
         </div>

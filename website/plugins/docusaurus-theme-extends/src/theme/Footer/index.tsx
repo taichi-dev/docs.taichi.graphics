@@ -159,7 +159,7 @@ function FooterSubscriber() {
         })}
       </div>
       <div className="w-full mb-6">
-        <SubscriptionInput />
+        <SubscriptionInput mode='dark' />
       </div>
       <div className="flex justify-end space-x-6">
         <a

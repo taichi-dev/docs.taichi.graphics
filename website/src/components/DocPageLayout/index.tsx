@@ -32,6 +32,7 @@ export default function ({ sidebar, children } :Props) {
     setHiddenSidebarContainer((value) => !value);
   }, [hiddenSidebar]);
   return (
+    <div className="flex max-w-[1660px] mx-auto w-full">
     <div className={styles.docPage}>
         <BackToTopButton />
         {sidebar && (
@@ -100,6 +101,7 @@ export default function ({ sidebar, children } :Props) {
               {children}
             </div>
         </main>
+      </div>
       </div>
   )
 }

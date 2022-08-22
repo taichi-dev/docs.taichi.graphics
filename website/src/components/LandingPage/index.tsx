@@ -7,12 +7,14 @@ import DocPageLayout from '../DocPageLayout';
 
 import Translate, { translate } from '@docusaurus/Translate';
 
+import AsyncImage from '@theme/AsyncImage'
+
 import ArrowRight from './arrow-right.svg';
 import UserIcon from './user.svg';
 import PackageIcon from './package.svg';
 import NormalUserBg from './simple.svg';
 import DeveloperUserBg from './complex.svg';
-import AnotherWorldGif from './Another-World.gif'
+import AnotherWorldGif from './Another-World.gif';
 
 import type {
   PropSidebarItemCategory,
@@ -39,22 +41,7 @@ const ArticleCategoryCard: React.FC<{ category: PropSidebarItemCategory }> = ({
           })}
         </ul>
       </div>
-      <div>
-        {category.items.length > 5 && (
-          <a
-            href={category.href || category.items[0].href}
-            className="flex items-center text-brand-cyan font-bold"
-          >
-            <span>
-              {translate({
-                id: 'theme.text.readmore',
-                message: 'Read more',
-              })}
-            </span>
-            <ArrowRight className="ml-3" />
-          </a>
-        )}
-      </div>
+
     </div>
   );
 };
@@ -67,70 +54,72 @@ export default (props) => {
     >
       <DocPageLayout sidebar={props.sidebar}>
         <div className="max-w-[988px] mx-auto">
-          <div className="text-h3 desktop:pb-5 pb-4">{translate({
-                      id: 'theme.text.dochome',
-                      message: 'Doc Home',
-                    })}</div>
+          <div className="text-h3 desktop:pb-5 pb-4">
+            {translate({
+              id: 'theme.text.dochome',
+              message: 'Doc Home',
+            })}
+          </div>
           <div className="flex justify-between flex-col desktop:flex-row desktop:space-x-5 desktop:mb-5">
             <div className="relative flex-1 h-32 overflow-hidden brand-blue-gradients rounded-sm mb-4">
               <div className="absolute left-[181px] inset-y-0">
                 <NormalUserBg />
               </div>
-              <div className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black">
-                <div className="text-caption mb-2">
+              <a href='/docs' className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black cursor-pointer hover:text-white">
+                <div className="text-caption mb-2 text-black">
                   {translate({
                     id: 'theme.docs.docHome.userhint',
                     message: 'Accelerate the Python frontend.',
                   })}
                 </div>
                 <div className="flex flex-col">
-                  <a href='/docs' className='hover:text-white'>
-                    <UserIcon  />
-                  </a>
-                  <a href="/docs" className="flex justify-between items-center hover:text-white">
-                    <div className="text-h3">{translate({
-                    id: 'theme.text.user',
-                    message: 'User',
-                  })}</div>
+                  <UserIcon />
+                  <div className="flex justify-between items-center font-bold">
+                    <div className="text-h3">
+                      {translate({
+                        id: 'theme.text.user',
+                        message: 'User',
+                      })}
+                    </div>
                     <span>
                       <ArrowRight />
                     </span>
-                  </a>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
             <div className="relative flex-1 h-32 overflow-hidden brand-cyan-gradients rounded-sm mb-4">
               <div className="absolute left-[181px] inset-y-0">
                 <DeveloperUserBg />
               </div>
-              <div className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black">
-                <div className="text-caption  mb-2">
+              <a
+                href="/docs/ndarray_android"
+                className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black cursor-pointer hover:text-white"
+              >
+                <div className="text-caption  mb-2 text-black">
                   {translate({
                     id: 'theme.docs.docHome.developerhint',
                     message: 'Deploy Taichi programs in production.',
                   })}
                 </div>
                 <div className="flex flex-col">
-                <a href="/docs/ndarray_android" className='hover:text-white cursor-pointer'>
                   <PackageIcon />
-                  </a>
-                  <a
-                    href="/docs/ndarray_android"
-                    className="flex justify-between items-center hover:text-white"
-                  >
-                    <div className="text-h3">{translate({
-                    id: 'theme.text.developer',
-                    message: 'Developer',
-                  })}</div>
+                  <div className="flex justify-between items-center font-bold">
+                    <div className="text-h3">
+                      {translate({
+                        id: 'theme.text.developer',
+                        message: 'Developer',
+                      })}
+                    </div>
                     <ArrowRight />
-                  </a>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
-          <div className="relative h-24 rounded-sm bg-black desktop:mb-10 mb-6">
+          <a href="/api/" className="relative block h-24 rounded-sm bg-black desktop:mb-10 mb-6">
             <div className="absolute right-0 flex items-center inset-y-0 overflow-hidden">
-              <img src={AnotherWorldGif} />
+              <AsyncImage src={AnotherWorldGif} />
             </div>
             <div className="flex relative flex-col h-full text-white justify-between px-4 py-3">
               <div className="flex justify-between">
@@ -141,10 +130,10 @@ export default (props) => {
                   })}
                 </div>
                 <div className="text-caption hidden font-light desktop:block">
-                  Image by <span className='font-normal'>peng-bo</span> in Voxel Challenge 2022
+                  Image by <span className="font-normal">peng-bo</span> in Voxel
+                  Challenge 2022
                 </div>
               </div>
-              <a href="/api/">
                 <div className="flex justify-between">
                   <div className="text-h4 text-brand-cyan-gradients">
                     {translate({
@@ -154,9 +143,8 @@ export default (props) => {
                   </div>
                   <ArrowRight />
                 </div>
-              </a>
             </div>
-          </div>
+          </a>
           <div className="space-y-4 md:space-y-5">
             <div className="text-h2">
               {translate({
