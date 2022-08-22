@@ -33,8 +33,10 @@ export const DropdownNavbarItem: React.FC<{
         <div className="flex shadow-lg rounded-sm bg-grey-0">
           <div className="flex-1 brand-cyan-gradients relative">
             <DropdownBg />
-            <div className='absolute inset-x-0 bottom-6 flex items-center px-9 space-y-6 text-black'>
-              <div><h3 className='font-bold block'>{description}</h3></div>
+            <div className="absolute inset-x-0 bottom-6 flex items-center px-9 space-y-6 text-black">
+              <div>
+                <h3 className="font-bold block">{description}</h3>
+              </div>
             </div>
           </div>
           <div className="flex-1 px-12">
@@ -43,10 +45,12 @@ export const DropdownNavbarItem: React.FC<{
             <ul className="flex-1 w-48 space-y-2">
               {items.map((item, i) => (
                 <li className="text-grey-4" key={i}>
-                  <WithLocalLink className="whitespace-nowrap block"
+                  <WithLocalLink
+                    className="whitespace-nowrap block"
                     isExternal={item.isExternal}
                     label={item.label}
-                    href={item.href}></WithLocalLink>
+                    href={item.href}
+                  ></WithLocalLink>
                 </li>
               ))}
             </ul>
@@ -59,14 +63,19 @@ export const DropdownNavbarItem: React.FC<{
 
 export const SimpleDropdown: React.FC<{
   position?: 'top' | 'bottom';
-  items: { label: string; href: string; active?: boolean }[];
+  items: {
+    label: string;
+    href: string;
+    active?: boolean;
+    isNavLink?: boolean;
+  }[];
   label: string;
 }> = ({ label, items, position }) => {
   return (
     <div className="group relative">
       <div className="flex cursor-pointer items-center justify-between bg-grey-1 border rounded-sm p-[6px]">
         <span className="mr-3">{label}</span>
-        <DropdownIcon className='text-brand-cyan' />
+        <DropdownIcon className="text-brand-cyan" />
       </div>
       <div
         className={clsx(
@@ -81,6 +90,7 @@ export const SimpleDropdown: React.FC<{
               href={item.href}
               label={item.label}
               active={item.active}
+              isNavLink={item.isNavLink}
             />
           ))}
         </ul>
@@ -96,9 +106,14 @@ export const CollapseDropDown: React.FC<{
   const [isHidden, setIsHidden] = useState(true);
   return (
     <li>
-      <div className="flex justify-between items-center px-2 py-1" onClick={() => setIsHidden(!isHidden)}>
+      <div
+        className="flex justify-between items-center px-2 py-1"
+        onClick={() => setIsHidden(!isHidden)}
+      >
         <span>{label}</span>
-        <span className={clsx({'rotate-180': !isHidden})}><DropdownIcon /></span>
+        <span className={clsx({ 'rotate-180': !isHidden })}>
+          <DropdownIcon />
+        </span>
       </div>
       <ul
         className={clsx(
@@ -120,13 +135,20 @@ const DropDownItemLink: React.FC<{
   href: string;
   label: string;
   active?: boolean;
-}> = ({ href, label, active }) => {
+  isNavLink?: boolean;
+}> = ({ href, label, active, isNavLink }) => {
   // const to = useBaseUrl(href)
   return (
     <li className={clsx(active ? 'text-brand-cyan bg-grey-2' : '')}>
-      <Link className="block px-4 py-[2px] whitespace-nowrap" href={href}>
-        {label}
-      </Link>
+      {isNavLink ? (
+        <a className="block px-4 py-[2px] whitespace-nowrap" href={href}>
+          {label}
+        </a>
+      ) : (
+        <Link className="block px-4 py-[2px] whitespace-nowrap" href={href}>
+          {label}
+        </Link>
+      )}
     </li>
   );
 };
@@ -152,6 +174,7 @@ export const LocaleDropdownNavbarItem: React.FC<{
       label: getLocaleLabel(locale),
       href: to,
       active: currentLocale === locale,
+      isNavLink: true,
     };
   });
 
