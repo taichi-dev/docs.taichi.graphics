@@ -20,6 +20,7 @@ import type {
   PropSidebarItemCategory,
   PropSidebarItem,
 } from '@docusaurus/plugin-content-docs';
+import Link from '@docusaurus/Link';
 
 const ArticleCategoryCard: React.FC<{ category: PropSidebarItemCategory }> = ({
   category,
@@ -35,7 +36,7 @@ const ArticleCategoryCard: React.FC<{ category: PropSidebarItemCategory }> = ({
             if (index >= 5) return null;
             return (
               <li key={item.href}>
-                <a href={item.href}>{item.label}</a>
+                <Link href={item.href}>{item.label}</Link>
               </li>
             );
           })}
@@ -65,7 +66,7 @@ export default (props) => {
               <div className="absolute left-[181px] inset-y-0">
                 <NormalUserBg />
               </div>
-              <a href='/docs' className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black cursor-pointer hover:text-white">
+              <Link href='/docs' className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black cursor-pointer hover:text-white">
                 <div className="text-caption mb-2 text-black">
                   {translate({
                     id: 'theme.docs.docHome.userhint',
@@ -86,13 +87,13 @@ export default (props) => {
                     </span>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="relative flex-1 h-32 overflow-hidden brand-cyan-gradients rounded-sm mb-4">
               <div className="absolute left-[181px] inset-y-0">
                 <DeveloperUserBg />
               </div>
-              <a
+              <Link
                 href="/docs/ndarray_android"
                 className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black cursor-pointer hover:text-white"
               >
@@ -114,10 +115,10 @@ export default (props) => {
                     <ArrowRight />
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
-          <a href="/api/" className="relative block h-24 rounded-sm bg-black desktop:mb-10 mb-6">
+          <Link href="/api/" className="relative block h-24 rounded-sm bg-black desktop:mb-10 mb-6">
             <div className="absolute right-0 flex items-center inset-y-0 overflow-hidden">
               <AsyncImage src={AnotherWorldGif} />
             </div>
@@ -144,7 +145,7 @@ export default (props) => {
                   <ArrowRight />
                 </div>
             </div>
-          </a>
+          </Link>
           <div className="space-y-4 md:space-y-5">
             <div className="text-h2">
               {translate({

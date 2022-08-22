@@ -7,6 +7,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import { useGlobalActiveVersion } from '../NavbarItem/useApiContext';
 import { useLocation } from '@docusaurus/router';
+import Link from '@docusaurus/Link';
 
 interface Props {
   href: string;
@@ -58,7 +59,7 @@ export function WithVersionLink({ href, label, matchPath, className }: Props) {
 export function NavLink({ href, label, matchPath, className, isExternal }: Props) {
   const { pathname } = useLocation();
   return (
-    <a
+    <Link
       className={clsx(
         matchPath && pathname.startsWith(matchPath) ? 'text-brand-cyan' : '',
         className
@@ -67,7 +68,7 @@ export function NavLink({ href, label, matchPath, className, isExternal }: Props
       target={isExternal ? '_blank' : undefined}
     >
       {label}
-    </a>
+    </Link>
   );
 }
 

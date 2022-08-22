@@ -12,6 +12,7 @@ import DropdownIcon from './dropdown.svg';
 import FolderIcon from './folder.svg';
 
 import useMobileSidebar from '../../utils/useMobile';
+import Link from '@docusaurus/Link';
 
 function DocSidebarItem({
   item,
@@ -73,7 +74,7 @@ function DocSidebarItem({
         )}
         onClick={() => updateCollapsed()}
       >
-        <a
+        <Link
           className={clsx(
             'flex-1 cursor-pointer',
             level > 0 ? 'px-2 py-1' : 'px-3 py-2',
@@ -82,7 +83,7 @@ function DocSidebarItem({
           href={item.href}
         >
           {item.label}
-        </a>
+        </Link>
         {item.type === 'category' && (
           <span className="hover:bg-brand-cyan hover:text-white rounded-sm cursor-pointer w-6 h-6 flex items-center justify-center">
             <span

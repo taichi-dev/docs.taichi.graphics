@@ -18,6 +18,7 @@ import {
   useLatestVersion,
 } from '@docusaurus/plugin-content-docs/client';
 import { WithLocalLink } from './WithVersionUrl';
+import Link from '@docusaurus/Link';
 
 export const DropdownNavbarItem: React.FC<{
   label: string | React.ReactNode;
@@ -26,7 +27,7 @@ export const DropdownNavbarItem: React.FC<{
 }> = ({ label, items, description }) => {
   return (
     <div className="group relative">
-      <div className="cursor-pointer">{label}</div>
+      <div className="cursor-pointer hover:text-brand-cyan">{label}</div>
       <div className="opacity-0 invisible -translate-y-2.5 dropdown-transition absolute -right-48 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
         <div className="ml-96 mt-2 h-0 w-0 border-x-8 border-x-transparent border-b-[16px]"></div>
         <div className="flex shadow-lg rounded-sm bg-grey-0">
@@ -123,9 +124,9 @@ const DropDownItemLink: React.FC<{
   // const to = useBaseUrl(href)
   return (
     <li className={clsx(active ? 'text-brand-cyan bg-grey-2' : '')}>
-      <a className="block px-4 py-[2px] whitespace-nowrap" href={href}>
+      <Link className="block px-4 py-[2px] whitespace-nowrap" href={href}>
         {label}
-      </a>
+      </Link>
     </li>
   );
 };
