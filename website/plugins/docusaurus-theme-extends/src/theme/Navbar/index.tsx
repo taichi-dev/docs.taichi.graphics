@@ -18,10 +18,15 @@ import useMobileSidebar from '../../utils/useMobile';
 
 import ArrowRightIcon from '../icons/arrow-right.svg';
 
+import WebchatImg from '../icons/wechat-community.jpg'
+
+import AsyncImage from '@theme/AsyncImage'
+
 import {
   CollapseDropDown,
   DropdownNavbarItem,
   LocaleDropdownNavbarItem,
+  SimpleDropdown,
   VersionDropdownNavbarItem,
 } from './DropdownNavbarItem';
 
@@ -72,7 +77,11 @@ const communities = [
     href: 'https://github.com/taichi-dev/taichi/discussions',
     isExternal: true,
   },
-  { label: '中文论坛', href: 'https://forum.taichi.graphics/',isExternal: true },
+  {
+    label: '中文论坛',
+    href: 'https://forum.taichi.graphics/',
+    isExternal: true,
+  },
   {
     label: 'Slack',
     href: 'https://taichicommunity.slack.com/join/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg#/shared-invite/email',
@@ -84,6 +93,7 @@ const communities = [
       message: 'Wechat',
     }),
     href: '',
+    popover: <AsyncImage src={WebchatImg} />
   },
 ];
 
@@ -116,7 +126,7 @@ function NavbarMobileSidebar({
     <div className="navbar-sidebar flex flex-col overflow-hidden">
       <div className="desktop:h-20 h-16 flex items-center px-3 border-b border-grey-3">
         <div className="flex items-center space-x-3">
-          <a href='https://www.taichi-lang.org'>
+          <a href="https://www.taichi-lang.org">
             <LogoIcon width={120} />
           </a>
           <GithubStars />
@@ -185,8 +195,8 @@ function Navbar(): JSX.Element {
       )}
     >
       <div className="flex items-center space-x-5">
-        <a href='https://www.taichi-lang.org/'>
-        <LogoIcon />
+        <a href="https://www.taichi-lang.org/">
+          <LogoIcon />
         </a>
         <div className="hidden desktop:inline-block">
           <GithubStars />
@@ -207,7 +217,15 @@ function Navbar(): JSX.Element {
           <WithVersionLink href="/api/" label="API" matchPath="/api" />
         </li>
         <li className="px-6 border-r">
-          <DropdownNavbarItem
+          <SimpleDropdown
+            labelNode={
+              <div className="cursor-pointer hover:text-brand-cyan p-[6px]">
+                {translate({
+                  id: 'theme.text.resources',
+                  message: 'Resources',
+                })}
+              </div>
+            }
             description={
               <>
                 <div className="pb-4">
@@ -250,7 +268,15 @@ function Navbar(): JSX.Element {
           />
         </li>
         <li className="px-6 border-r">
-          <DropdownNavbarItem
+          <SimpleDropdown
+            labelNode={
+              <div className="cursor-pointer hover:text-brand-cyan p-[6px]">
+                {translate({
+                  id: 'theme.text.community',
+                  message: 'Community',
+                })}
+              </div>
+            }
             description={
               <>
                 <div className="pb-4">

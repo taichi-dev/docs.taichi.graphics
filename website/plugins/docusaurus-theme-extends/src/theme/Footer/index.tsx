@@ -166,7 +166,7 @@ function FooterSubscriber() {
           href="https://github.com/taichi-dev/taichi/discussions"
           target="_blank"
         >
-          <MessageIcon />
+          <MessageIcon width={32} height={32} />
         </a>
         <a
           href="https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg"
@@ -175,7 +175,7 @@ function FooterSubscriber() {
           <SlackIcon width={32} height={32} />
         </a>
         <a href="https://github.com/taichi-dev/taichi" target="_blank">
-          <GithubIcon />
+          <GithubIcon width={32} height={32} />
         </a>
       </div>
     </div>
@@ -196,7 +196,7 @@ function Footer(): JSX.Element | null {
       <div className="mx-auto my-6 desktop:mt-10 desktop:mb-2 px-4 max-w-docmain">
         <div className="border-b border-b-white pb-6 flex items-center justify-between">
           <Logo />
-          <div className="hidden desktop:inline-block text-caption text-grey-3 desktop:w-[328px]">
+          <div className="hidden desktop:inline-block text-caption text-light-grey-3 desktop:w-[328px]">
             {copyright}
           </div>
         </div>
@@ -283,7 +283,7 @@ function Footer(): JSX.Element | null {
             <FooterSubscriber />
           </div>
         </div>
-        <div className="inline-block desktop:hidden text-caption text-grey-3 desktop:w-[328px]">
+        <div className="inline-block desktop:hidden text-caption text-dark-grey-3 desktop:w-[328px]">
           {copyright}
         </div>
       </div>

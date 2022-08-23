@@ -12,13 +12,17 @@ code {
   border-radius: 4px;
 }
 
+.markdown blockquote {
+  margin: 0 0 var(--ifm-spacing-vertical);
+}
+
 .markdown h1:first-child {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: calc(var(--ifm-h1-vertical-rhythm-bottom)*var(--ifm-leading));
   line-height: 1.25;
 }
 
-.markdown h1, .markdown h2, .markdown h3, .markdown h4 {
+.markdown h1, .markdown h2 {
   font-weight: bold;
 }
 
@@ -100,4 +104,13 @@ article a:hover {
 .admonition-tip {
   --ifm-alert-background-color: var(--ifm-color-tip-contrast-background);
   --ifm-alert-border-color: #4C8EF4;
+}
+
+.alert a {
+  text-decoration-color: inherit;
+  --ifm-link-decoration: none;
+}
+
+.alert a:hover {
+  --ifm-link-hover-color: var(--taichi-brand-cyan);
 }

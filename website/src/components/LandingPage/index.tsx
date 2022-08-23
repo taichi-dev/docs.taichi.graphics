@@ -55,7 +55,7 @@ export default (props) => {
     >
       <DocPageLayout sidebar={props.sidebar}>
         <div className="max-w-[988px] mx-auto">
-          <div className="text-h3 desktop:pb-5 pb-4">
+          <div className="text-h3 desktop:pb-5 pb-4 font-bold">
             {translate({
               id: 'theme.text.dochome',
               message: 'Doc Home',
@@ -135,7 +135,7 @@ export default (props) => {
                   Challenge 2022
                 </div>
               </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between font-bold">
                   <div className="text-h4 text-brand-cyan-gradients">
                     {translate({
                       id: 'theme.docs.docHome.gotoapi',
@@ -147,7 +147,7 @@ export default (props) => {
             </div>
           </Link>
           <div className="space-y-4 md:space-y-5">
-            <div className="text-h2">
+            <div className="text-h2 font-bold">
               {translate({
                 id: 'theme.docs.docHome.expandedviewofdocs',
                 message: 'Expanded View of Docs',

@@ -68,19 +68,25 @@ export const SimpleDropdown: React.FC<{
     href: string;
     active?: boolean;
     isNavLink?: boolean;
+    popover?: React.ReactNode;
   }[];
   label: string;
-}> = ({ label, items, position }) => {
+  labelNode?: React.ReactNode;
+}> = ({ label, labelNode, items, position }) => {
   return (
     <div className="group relative">
-      <div className="flex cursor-pointer items-center justify-between bg-grey-1 border rounded-sm p-[6px]">
-        <span className="mr-3">{label}</span>
-        <DropdownIcon className="text-brand-cyan" />
-      </div>
+      {labelNode ? (
+        labelNode
+      ) : (
+        <div className="flex cursor-pointer items-center justify-between bg-grey-1 border rounded-sm p-[6px]">
+          <span className="mr-3">{label}</span>
+          <DropdownIcon className="text-brand-cyan" />
+        </div>
+      )}
       <div
         className={clsx(
-          'opacity-0 invisible -translate-y-2.5 dropdown-transition flex absolute min-w-[10rem] shadow-lg border rounded-sm bg-grey-0 p-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0',
-          { 'bottom-[2.5rem]': position === 'top' }
+          'opacity-0 invisible -translate-y-2.5 dropdown-transition flex absolute min-w-[10rem] shadow-lg border rounded-sm bg-grey-0 p-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-10',
+          position === 'top' ? 'bottom-[2.5rem]' : 'top-[2.5rem]'
         )}
       >
         <ul className="space-y-2 w-full">
@@ -91,6 +97,7 @@ export const SimpleDropdown: React.FC<{
               label={item.label}
               active={item.active}
               isNavLink={item.isNavLink}
+              popover={item.popover}
             />
           ))}
         </ul>
@@ -136,11 +143,24 @@ const DropDownItemLink: React.FC<{
   label: string;
   active?: boolean;
   isNavLink?: boolean;
-}> = ({ href, label, active, isNavLink }) => {
+  popover?: React.ReactNode;
+}> = ({ href, label, active, isNavLink, popover }) => {
   // const to = useBaseUrl(href)
+  const [showpopover, setShowpopover] = useState(false);
   return (
     <li className={clsx(active ? 'text-brand-cyan bg-grey-2' : '')}>
-      {isNavLink ? (
+      {popover ? (
+        <div
+          className="block px-4 py-[2px] whitespace-nowrap relative cursor-pointer hover:text-brand-cyan"
+          onMouseEnter={() => setShowpopover(true)}
+          onMouseLeave={() => setShowpopover(false)}
+        >
+          <div>{label}</div>
+          <div className={clsx('absolute', showpopover ? 'block' : 'hidden')}>
+            {popover}
+          </div>
+        </div>
+      ) : isNavLink ? (
         <a className="block px-4 py-[2px] whitespace-nowrap" href={href}>
           {label}
         </a>

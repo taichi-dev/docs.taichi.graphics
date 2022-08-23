@@ -31,11 +31,11 @@ export const GithubStars = () => {
       className="hover:no-underline"
     >
       <div className="flex border border-grey-3 bg-grey-0 text-grey-4 rounded-sm text-caption">
-        <div className="px-1 bg-grey-2 flex items-center">
-          <StarIcon />
-          <span className="scale-75">Star</span>
+        <div className="p-1 bg-grey-2 flex items-center">
+          <StarIcon height={16} width={16} />
+          <span className='ml-1'>Star</span>
         </div>
-        <div className="scale-75">{star}</div>
+        <div className='p-1'>{star}</div>
       </div>
     </a>
   );
