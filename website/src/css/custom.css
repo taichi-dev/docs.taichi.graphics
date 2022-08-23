@@ -130,6 +130,21 @@
   --ifm-global-radius: 2px;
 }
 
+.DocSearch-Modal {
+  --docsearch-modal-background: var(--taichi-grey-0);
+}
+
+.DocSearch-Modal .DocSearch-Hit {
+  box-shadow: 2px 4px 10px rgba(38, 51, 77, 0.05);
+  border-radius: 2px;
+  padding-bottom: 0;
+  border: 1px solid var(--taichi-grey-2);
+}
+
+.DocSearch-Modal #docsearch-list>:not([hidden])~:not([hidden]) {
+  margin-top: 4px;
+}
+
 html[data-theme='dark'] {
   --taichi-grey-0: var(--taichi-dark-grey-0);
   --taichi-grey-1: var(--taichi-dark-grey-1);
