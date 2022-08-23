@@ -46,11 +46,10 @@ const ToggleComponent = memo(
           role="button"
           tabIndex={-1}
           onClick={() => inputRef.current?.click()}>
-          <div className={styles.toggleTrackCheck}>
+          <div className={clsx(styles.toggleTrackThumb, 'dark:bg-yellow-main bg-brand-cyan')}>
+            <MoonIcon className='hidden dark:block' />
+            <SunIcon className='dark:hidden' />
           </div>
-          <div className={styles.toggleTrackX}>
-          </div>
-          <div className={clsx(styles.toggleTrackThumb, 'dark:bg-yellow-main bg-brand-cyan')}>{checked ? <MoonIcon /> : <SunIcon />}</div>
         </div>
 
         <input
