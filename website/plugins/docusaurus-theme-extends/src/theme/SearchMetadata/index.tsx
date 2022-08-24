@@ -5,26 +5,25 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
+ import React from 'react';
 
-import Head from '@docusaurus/Head';
-import type {Props} from '@theme/SearchMetadata';
+ import Head from '@docusaurus/Head';
+ import type {Props} from '@theme/SearchMetadata';
 
-// Note: we don't couple this to Algolia/DocSearch on purpose
-// We may want to support other search engine plugins too
-// Search plugins should swizzle/override this comp to add their behavior
-export default function SearchMetadata({
-  locale,
-  version,
-  tag,
-  category,
-}: Props): JSX.Element {
-  return (
-    <Head>
-      {locale && <meta name="docusaurus_locale" content={locale} />}
-      {version && <meta name="docusaurus_version" content={version} />}
-      {tag && <meta name="docusaurus_tag" content={tag} />}
-      {category && <meta name="docusaurus_category" content={category} />}
-    </Head>
-  );
-}
+ // Override default/agnostic SearchMetadata to use Algolia-specific metadata
+ function SearchMetadata({locale, version, tag, category}: Props): JSX.Element {
+   // Seems safe to consider here the locale is the language,
+   // as the existing docsearch:language filter is afaik a regular string-based filter
+   const language = locale;
+
+   return (
+     <Head>
+       {language && <meta name="docsearch:language" content={language} />}
+       {version && <meta name="docsearch:version" content={version} />}
+       {tag && <meta name="docsearch:docusaurus_tag" content={tag} />}
+       {category && <meta name="docsearch:category" content={category} />}
+     </Head>
+   );
+ }
+
+ export default SearchMetadata;
