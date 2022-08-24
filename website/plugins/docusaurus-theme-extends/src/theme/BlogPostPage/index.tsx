@@ -14,6 +14,8 @@ import type {Props} from '@theme/BlogPostPage';
 import {ThemeClassNames} from '@docusaurus/theme-common';
 import TOC from '@theme/TOC';
 
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 function BlogPostPage(props: Props): JSX.Element {
   const {content: BlogPostContents, sidebar} = props;
   const {assets, metadata} = BlogPostContents;
@@ -36,6 +38,13 @@ function BlogPostPage(props: Props): JSX.Element {
 
   const image = assets.image ?? frontMatter.image;
 
+  const {
+    i18n: { defaultLocale, currentLocale }
+  } = useDocusaurusContext();
+
+  const prefix = defaultLocale === currentLocale ? '' : '/' + currentLocale
+  const isNewsletter = permalink.startsWith(prefix + '/newsletter');
+
   return (
     <BlogLayout
       wrapperClassName={ThemeClassNames.wrapper.blogPages}
@@ -43,7 +52,7 @@ function BlogPostPage(props: Props): JSX.Element {
       sidebar={sidebar}
       searchMetadata={{
         // assign unique search tag to exclude this page from search results!
-        category: 'blogs'
+        category: isNewsletter ? 'newletters' : 'blogs'
       }}
       toc={
         !hideTableOfContents &&
