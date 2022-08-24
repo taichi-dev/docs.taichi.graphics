@@ -41,6 +41,7 @@ import { useMemo } from 'react';
 import ChevronDown from './chevron-down.svg';
 
 import useMobileSidebar from '../../utils/useMobile';
+import Link from '@docusaurus/Link';
 
 type DocPageContentProps = {
   readonly currentDocRoute: DocumentRoute;
@@ -185,7 +186,7 @@ function DocPageContent({
               <div className="flex-1 overflow-hidden h-6">
                 <div className='overflow-auto flex space-x-1 whitespace-nowrap pb-4 mt-1'>
                 <div>
-                  <a href="/">Doc Home</a>
+                  <Link href="/">Doc Home</Link>
                 </div>
                 {breadcrumbs.map((item, i) => (
                   <>

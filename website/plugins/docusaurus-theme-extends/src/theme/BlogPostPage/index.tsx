@@ -28,6 +28,7 @@ function BlogPostPage(props: Props): JSX.Element {
     tags,
     authors,
     frontMatter,
+    permalink,
   } = metadata;
   const {
     hide_table_of_contents: hideTableOfContents,
