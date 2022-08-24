@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import Translate from '@docusaurus/Translate';
 import Toggle from '@theme/Toggle';
 import {
@@ -39,6 +39,7 @@ import LogoIcon from './logo.svg';
 import CloseIcon from './x.svg';
 import { NavLink, WithLocalLink, WithVersionLink } from './WithVersionUrl';
 import { translate } from '@docusaurus/Translate';
+import { useLocation } from '@docusaurus/router';
 
 const resources = [
   {
@@ -181,10 +182,17 @@ function NavbarMobileSidebar({
   );
 }
 
-function Navbar(): JSX.Element {
+function Navbar(props): JSX.Element {
   const colorModeToggle = useColorModeToggle();
 
   const mobileSidebar = useMobileSidebar();
+
+  const { pathname } = useLocation();
+
+  const resourceswithactive = resources.map((item) => {
+    const active = pathname.startsWith(item.href)
+    return {...item, active }
+  })
 
   return (
     <nav
@@ -203,7 +211,7 @@ function Navbar(): JSX.Element {
         </div>
       </div>
       <ul className="hidden desktop:flex items-center">
-        <li className="pr-6 border-r">
+        <li className="pr-6 border-r navitem">
           <WithLocalLink
             href="/"
             label={translate({
@@ -213,10 +221,10 @@ function Navbar(): JSX.Element {
             matchPath="/docs"
           />
         </li>
-        <li className="px-6 border-r">
+        <li className="px-6 border-r navitem">
           <WithVersionLink href="/api/" label="API" matchPath="/api" />
         </li>
-        <li className="px-6 border-r">
+        <li className="px-6 border-r navitem">
           <SimpleDropdown
             labelNode={
               <div className="cursor-pointer hover:text-brand-cyan p-[6px]">
@@ -264,7 +272,7 @@ function Navbar(): JSX.Element {
               id: 'theme.text.resources',
               message: 'Resources',
             })}
-            items={resources}
+            items={resourceswithactive}
           />
         </li>
         <li className="px-6 border-r">

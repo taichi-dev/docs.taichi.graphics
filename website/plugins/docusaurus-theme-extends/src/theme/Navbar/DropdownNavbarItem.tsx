@@ -148,7 +148,7 @@ const DropDownItemLink: React.FC<{
   // const to = useBaseUrl(href)
   const [showpopover, setShowpopover] = useState(false);
   return (
-    <li className={clsx(active ? 'text-brand-cyan bg-grey-2' : '')}>
+    <li className={clsx(active ? 'text-brand-cyan bg-grey-2 active' : '')}>
       {popover ? (
         <div
           className="block px-4 py-[2px] whitespace-nowrap relative cursor-pointer hover:text-brand-cyan"

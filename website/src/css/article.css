@@ -19,7 +19,7 @@ code {
 }
 
 .markdown details summary font {
-  color: var(--taichi-dark-grey-4) !important;
+  color: var(--taichi-grey-4) !important;
 }
 
 .markdown blockquote {

@@ -61,7 +61,7 @@ export function NavLink({ href, label, matchPath, className, isExternal }: Props
   return (
     <Link
       className={clsx(
-        matchPath && pathname.startsWith(matchPath) ? 'text-brand-cyan' : '',
+        matchPath && pathname.startsWith(matchPath) ? 'text-brand-cyan active' : '',
         className
       )}
       href={href}
