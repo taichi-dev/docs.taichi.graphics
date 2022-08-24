@@ -1,0 +1,134 @@
+
+:root {
+  --ifm-tabs-padding-horizontal: 0.75rem;
+  --ifm-tabs-padding-vertical: 0.5rem;
+  --ifm-tabs-color-active-border: var(--taichi-grey-4);
+  --ifm-hover-overlay: var(--taichi-grey-1);
+}
+
+code {
+  border: 1px solid var(--taichi-grey-3);
+  background: var(--taichi-grey-2);
+  border-radius: 4px;
+}
+
+.markdown details {
+  --docusaurus-details-decoration-color: var(--taichi-grey-3);
+  border: 1px solid var(--taichi-grey-3);
+  background-color: var(--taichi-grey-1);
+}
+
+.markdown details summary font {
+  color: var(--taichi-grey-4) !important;
+}
+
+.markdown blockquote {
+  margin: 0 0 var(--ifm-spacing-vertical);
+}
+
+.markdown .theme-code-block > div {
+  background-color: var(--taichi-grey-2) !important;
+}
+
+.markdown h1:first-child {
+  font-size: 2.5rem;
+  margin-bottom: calc(var(--ifm-h1-vertical-rhythm-bottom)*var(--ifm-leading));
+  line-height: 1.25;
+}
+
+.markdown h1, .markdown h2 {
+  font-weight: bold;
+}
+
+pre code {
+  background-color: var(--taichi-grey-2);
+}
+
+article ul {
+  list-style-type: disc;
+  margin: 0 0 var(--ifm-list-margin);
+  padding-left: var(--ifm-list-left-padding);
+}
+
+article ol {
+  list-style-type: decimal;
+  margin: 0 0 var(--ifm-list-margin);
+  padding-left: var(--ifm-list-left-padding);
+}
+
+article p {
+  margin: 0 0 var(--ifm-paragraph-margin-bottom);
+}
+
+article img {
+  /* text-align: center; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+article a {
+  color: #36A8B2;
+  text-decoration: var(--ifm-link-decoration);
+}
+
+/* article a:hover { */
+  /* font-weight: bold; */
+  /* text-decoration: #36A8B2; */
+/* } */
+
+article a:hover {
+  color: var(--ifm-link-hover-color);
+  text-decoration: var(--ifm-link-hover-decoration);
+}
+
+.tabs {
+  font-weight: 400;
+}
+
+.tabs__item--active {
+  color: var(--ifm-tabs-color);
+}
+
+.table-of-contents {
+  margin: 0;
+  padding: 0;
+}
+
+.table-of-contents li {
+  margin: 0;
+}
+
+
+.alert--info {
+  --ifm-alert-background-color: var(--ifm-color-info-contrast-background);
+  --ifm-alert-border-color: #D3E4E6;
+}
+
+.alert--warning {
+  --ifm-alert-background-color: var(--ifm-color-warning-contrast-background);
+  --ifm-alert-border-color: #E5D75C;
+}
+
+.alert--danger {
+  --ifm-alert-background-color: var(--ifm-color-danger-contrast-background);
+  --ifm-alert-border-color: #FF4040;
+}
+
+.alert--success {
+  --ifm-alert-background-color: var(--ifm-color-success-contrast-background);
+  --ifm-alert-border-color: #AEE55C;
+}
+
+.admonition-tip {
+  --ifm-alert-background-color: var(--ifm-color-tip-contrast-background);
+  --ifm-alert-border-color: #4C8EF4;
+}
+
+.alert a {
+  text-decoration-color: inherit;
+  --ifm-link-decoration: none;
+}
+
+.alert a:hover {
+  --ifm-link-hover-color: var(--taichi-brand-cyan);
+}

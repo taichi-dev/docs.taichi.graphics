@@ -48,9 +48,11 @@ export default function NavbarNavLink({
   prependBaseUrlToHref,
   ...props
 }) {
+  // console.log(to)
   // TODO all this seems hacky
   // {to: 'version'} should probably be forbidden, in favor of {to: '/version'}
   const toUrl = useBaseUrl(to);
+  // console.log(toUrl)
   const withversionurl = useVersionUrl(docsPluginId, toUrl)
   const activeBaseUrl = useBaseUrl(activeBasePath);
   const normalizedHref = useBaseUrl(href, {

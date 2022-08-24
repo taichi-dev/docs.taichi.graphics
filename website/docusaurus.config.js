@@ -39,6 +39,17 @@ module.exports = {
   projectName: 'docs.taichi.graphics',
   plugins: [
     'docusaurus-plugin-sass',
+    async function myPlugin() {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
     utilsExtensionPlugin,
     path.resolve(__dirname, 'plugins/docusaurus-plugin-hotjar'),
     [
@@ -55,6 +66,74 @@ module.exports = {
       path.resolve(__dirname, 'plugins/blog-enhance-plugin'),
       {
         postsPerPage: 10,
+        blogTitle: 'Taichi Blogs'
+      }
+    ],
+    [
+      path.resolve(__dirname, 'plugins/blog-enhance-plugin'),
+      {
+        id: 'newsletter',
+        postsPerPage: 10,
+        path: 'newsletter',
+        routeBasePath: 'newsletter',
+        blogTitle: 'Taichi Newsletter',
+        blogDescription: 'Newsletter',
+        showReadingTime: false,
+      }
+    ],
+    [
+      path.resolve(__dirname, 'plugins/docs-enhance-plugin'),
+      {
+        // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
+        routeBasePath: '/docs',
+        path: 'docs',
+        editUrl: ({ locale, versionDocsDirPath, docPath }) => {
+          if (locale !== DefaultLocale) {
+            return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(
+              locale
+            )}`;
+          }
+          // here we enforce contributors to not be able to edit versioned docs
+          // also redirect them to the main repository
+          return `https://github.com/taichi-dev/taichi/edit/master/docs/${docPath}`;
+        },
+        editCurrentVersion: true,
+        sidebarPath: require.resolve('./sidebars.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        versions: {
+          current: {
+            label: 'develop',
+            path: 'master',
+          },
+        },
+        remarkPlugins: [
+          [variablePlugin, { data: (path) => {
+            if (!path) return {}
+            for (const item of versionpaths) {
+              if (path.startsWith(item)) {
+                return require(item + '/variables')
+              }
+            }
+            return {}
+          }, fail: false }],
+          [
+            fragmentPlugin,
+            {
+              prefix: 'fragments',
+              fail: false,
+              baseUrl: (path) => {
+                if (!path) return __dirname + '/docs/fragments'
+                for (const item of versionpaths) {
+                  if (path.startsWith(item)) {
+                    return item + '/fragments'
+                  }
+                }
+                return __dirname + '/docs/fragments'
+              },
+            },
+          ],
+        ],
       }
     ],
   ],
@@ -93,10 +172,9 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'lang/articles/get-started/index',
+          to: '/',
           position: 'right',
-          label: 'Docs',
+          label: 'Doc Home',
           className: 'animated-anchor-link',
         },
         {
@@ -106,23 +184,21 @@ module.exports = {
           className: 'animated-anchor-link',
         },
         {
-          to: 'blog',
-          label: 'Blogs',
-          position: 'right',
-          className: 'animated-anchor-link',
-        },
-        {
-          label: 'Training',
+          label: 'Resources',
           position: 'right',
           items: [
             {
-              to: '/tgc01',
-              label: 'Taichi Graphics Course 01',
+              to: '/blog',
+              label: 'Blogs',
+            },
+            {
+              to: '/blog',
+              label: 'Blogs',
             },
           ],
         },
         {
-          label: 'Explore',
+          label: 'Community',
           position: 'right',
           items: [
             {
@@ -137,16 +213,6 @@ module.exports = {
           ],
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
-          dropdownItemsAfter: [
-            {
-              to: '/help-us-translate',
-              label: 'Help us translate',
-            },
-          ],
-        },
-        {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsBefore: [],
@@ -157,25 +223,35 @@ module.exports = {
           docsPluginId: 'default',
         },
         {
-          href: 'https://github.com/taichi-dev/taichi',
-          'aria-label': 'GitHub repository',
-          className: 'header-github-link',
+          type: 'localeDropdown',
           position: 'right',
+          dropdownItemsAfter: [
+            {
+              to: '/help-us-translate',
+              label: 'Help us translate',
+            },
+          ],
         },
+        // {
+        //   href: 'https://github.com/taichi-dev/taichi',
+        //   'aria-label': 'GitHub repository',
+        //   className: 'header-github-link',
+        //   position: 'left',
+        // },
       ],
     },
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Products',
-          items: [
-            {
-              label: 'Taichi Programming Language',
-              to: 'https://github.com/taichi-dev/taichi',
-            },
-          ],
-        },
+        // {
+        //   title: 'Products',
+        //   items: [
+        //     {
+        //       label: 'Taichi Programming Language',
+        //       to: 'https://github.com/taichi-dev/taichi',
+        //     },
+        //   ],
+        // },
         {
           title: 'Resources',
           items: [
@@ -224,7 +300,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Taichi Graphics Technology, Inc. Built with Docusaurus and the Taichi community.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Taichi Graphics Technology, Inc.`,
     },
     algolia: {
       appId: '6NDEOARB8Z',
@@ -237,6 +313,8 @@ module.exports = {
       // },
     },
     colorMode: {
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false,
       switchConfig: {
         darkIcon: '🌙',
         lightIcon: '☀️',
@@ -248,58 +326,7 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          // `Docs-only` mode, blocked by bug https://github.com/facebook/docusaurus/issues/4967
-          routeBasePath: '/docs',
-          path: 'docs',
-          editUrl: ({ locale, versionDocsDirPath, docPath }) => {
-            if (locale !== DefaultLocale) {
-              return `https://translate.taichi.graphics/project/taichi-programming-language/${mapLocaleCodeToCrowdin(
-                locale
-              )}`;
-            }
-            // here we enforce contributors to not be able to edit versioned docs
-            // also redirect them to the main repository
-            return `https://github.com/taichi-dev/taichi/edit/master/docs/${docPath}`;
-          },
-          editCurrentVersion: true,
-          sidebarPath: require.resolve('./sidebars.js'),
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-          versions: {
-            current: {
-              label: 'develop',
-              path: 'master',
-            },
-          },
-          remarkPlugins: [
-            [variablePlugin, { data: (path) => {
-              if (!path) return {}
-              for (const item of versionpaths) {
-                if (path.startsWith(item)) {
-                  return require(item + '/variables')
-                }
-              }
-              return {}
-            }, fail: false }],
-            [
-              fragmentPlugin,
-              {
-                prefix: 'fragments',
-                fail: false,
-                baseUrl: (path) => {
-                  if (!path) return __dirname + '/docs/fragments'
-                  for (const item of versionpaths) {
-                    if (path.startsWith(item)) {
-                      return item + '/fragments'
-                    }
-                  }
-                  return __dirname + '/docs/fragments'
-                },
-              },
-            ],
-          ],
-        },
+        docs: false,
         blog: false,
         gtag: {
           trackingID: 'G-9K17QVGTR6',

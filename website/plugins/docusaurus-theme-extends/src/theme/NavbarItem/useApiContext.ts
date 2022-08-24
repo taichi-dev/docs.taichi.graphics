@@ -18,7 +18,7 @@ import type {
 
 import { getActiveDocContext, getActiveVersion } from './docsClientUtils'
 
-export const useApiData = (pluginId: string | undefined): GlobalPluginData =>
+export const useApiData = (pluginId?: string): GlobalPluginData =>
   usePluginData('autoapi-plugin', pluginId) as GlobalPluginData;
 
   export function useApiDocContext(
@@ -45,7 +45,7 @@ export const useApiData = (pluginId: string | undefined): GlobalPluginData =>
     return getActiveVersion(data, pathname)
   }
 
-  export function useGlobalActiveVersion(pluginId: string | undefined) {
+  export function useGlobalActiveVersion(pluginId?: string) {
     const isApi = useIsApi()
     const docActiveVersion = useActiveVersion(pluginId)
     const apiActiveVersion = useApiActiveVersion(pluginId)
@@ -53,7 +53,7 @@ export const useApiData = (pluginId: string | undefined): GlobalPluginData =>
     return activeVersion
   }
 
-  export function useGlobalActiveContext(pluginId: string | undefined) {
+  export function useGlobalActiveContext(pluginId?: string) {
     const isApi = useIsApi()
     const docActiveContext = useActiveDocContext(pluginId);
     const apiActiveContext = useActiveApiContext(pluginId);

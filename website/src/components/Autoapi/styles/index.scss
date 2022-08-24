@@ -133,6 +133,15 @@
 
   width: 100%;
 
+  p {
+    margin: 0 0 var(--ifm-paragraph-margin-bottom);
+  }
+
+  dl {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
   a > code {
     color: var(--ifm-menu-color);
     font: var(--ifm-font-size-base)/var(--ifm-line-height-base) var(--ifm-font-family-base);

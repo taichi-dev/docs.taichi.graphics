@@ -36,10 +36,12 @@ function getAnchors({
   minHeadingLevel: number;
   maxHeadingLevel: number;
 }) {
-  const selectors = [];
+  const selectors: string[] = [];
   for (let i = minHeadingLevel; i <= maxHeadingLevel; i += 1) {
     selectors.push(`h${i}.anchor`);
   }
+
+  selectors.push('.autoapi-container a.headerlink')
 
   return Array.from(
     document.querySelectorAll(selectors.join()),
@@ -84,7 +86,8 @@ function getActiveAnchor(
 }
 
 function getLinkAnchorValue(link: HTMLAnchorElement): string {
-  return decodeURIComponent(link.href.substring(link.href.indexOf('#') + 1));
+  const href = link.href || ''
+  return decodeURIComponent(href.substring(href.indexOf('#') + 1));
 }
 
 function getLinks(linkClassName: string) {
@@ -96,7 +99,7 @@ function getLinks(linkClassName: string) {
 function getNavbarHeight(): number {
   // Not ideal to obtain actual height this way
   // Using TS ! (not ?) because otherwise a bad selector would be un-noticed
-  return document.querySelector('.navbar')!.clientHeight;
+  return document.querySelector('#header-nav')!.clientHeight;
 }
 
 function useAnchorTopOffsetRef() {
@@ -140,24 +143,26 @@ function useTOCHighlight(config: TOCHighlightConfig | undefined): void {
     function updateLinkActiveClass(link: HTMLAnchorElement, active: boolean) {
       if (active) {
         if (lastActiveLinkRef.current && lastActiveLinkRef.current !== link) {
-          lastActiveLinkRef.current?.classList.remove(linkActiveClassName);
+          lastActiveLinkRef.current?.parentElement?.classList.remove(linkActiveClassName);
         }
-        link.classList.add(linkActiveClassName);
+        link.parentElement?.classList.add(linkActiveClassName);
         lastActiveLinkRef.current = link;
         // link.scrollIntoView({block: 'nearest'});
       } else {
-        link.classList.remove(linkActiveClassName);
+        link.parentElement?.classList.remove(linkActiveClassName);
       }
     }
 
     function updateActiveLink() {
       const links = getLinks(linkClassName);
       const anchors = getAnchors({minHeadingLevel, maxHeadingLevel});
+
       const activeAnchor = getActiveAnchor(anchors, {
         anchorTopOffset: anchorTopOffsetRef.current,
       });
+
       const activeLink = links.find(
-        (link) => activeAnchor && activeAnchor.id === getLinkAnchorValue(link),
+        (link) => activeAnchor && (activeAnchor.id === getLinkAnchorValue(link) || getLinkAnchorValue(activeAnchor as HTMLAnchorElement) === getLinkAnchorValue(link)),
       );
 
       links.forEach((link) => {

@@ -1,0 +1,13 @@
+
+.blogrightsideber {
+  position: sticky;
+  bottom: 0;
+  max-height: 100vh;
+}
+
+@media (min-width: 997px) {
+  .blogrightsideber {
+    top: calc(var(--ifm-navbar-height) + 6rem);
+    width: 325px;
+  }
+}

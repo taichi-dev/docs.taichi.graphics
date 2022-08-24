@@ -12,6 +12,8 @@ import TOCCollapsible from '@theme/TOCCollapsible';
 import styles from './styles.module.css';
 import {ThemeClassNames, useWindowSize} from '@docusaurus/theme-common';
 
+import ArticleThumb from '@theme/ArticleThumb'
+
 export default function DocItem(props :{ content: JSX.Element, tocs: any }): JSX.Element {
   const {content, tocs} = props;
 
@@ -49,15 +51,19 @@ export default function DocItem(props :{ content: JSX.Element, tocs: any }): JSX
             </article>
           </div>
         </div>
-        {renderTocDesktop && (
-          <div className="col col--3">
-            <TOC
+        <div className="col col--3">
+          <div className={clsx(styles.docrightSidebar, 'space-y-5')}>
+            <ArticleThumb />
+            {renderTocDesktop && (
+              <TOC
               toc={tocs}
+              disableSticky={true}
               minHeadingLevel={0}
               className={ThemeClassNames.docs.docTocDesktop}
             />
+            )}
           </div>
-        )}
+        </div>
       </div>
     </>
   );

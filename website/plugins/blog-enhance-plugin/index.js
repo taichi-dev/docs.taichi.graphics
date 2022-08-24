@@ -5,8 +5,9 @@ const globby = require('globby')
 const blogPlugin = blogPluginExports.default;
 
 async function blogPluginEnhanced(context, options) {
+  // console.log(options)
   let pathwithlang = path.join(options.path, context.i18n.currentLocale)
-  console.log(pathwithlang)
+  // console.log(pathwithlang)
   const pagesFiles = await globby('**/*.{md,mdx}', {
     cwd: pathwithlang,
   });

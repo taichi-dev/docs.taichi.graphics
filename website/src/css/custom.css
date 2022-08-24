@@ -7,8 +7,96 @@
 
 /* Generated with https://docusaurus.io/docs/migration/manual#colors */
 /* fallback: d35400 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: opensans;
+  src:
+    url('./font/opensans/OpenSans-Regular.ttf')
+      format('TrueType');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: opensans;
+  src:
+    url('./font/opensans/OpenSans-Bold.ttf')
+      format('TrueType');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: opensans;
+  src:
+    url('./font/opensans/OpenSans-Light.ttf') format('TrueType');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: firacode;
+  src:
+    url('./font/firacode/FiraMono-Regular.ttf')
+      format('TrueType');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: firacode;
+  src:
+    url('./font/firacode/FiraMono-Bold.ttf')
+      format('TrueType');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: firacode;
+  src:
+    url('./font/firacode/FiraMono-Medium.ttf') format('TrueType');
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
-  --ifm-color-primary: #0891b2;
+
+  --ifm-font-family-base: opensans,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  --ifm-font-family-monospace: firacode,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
+  --taichi-brand-cyan: #4CBDC7;
+  --taichi-brand-blue: #4C8EF4;
+
+  --taichi-brand-cyan-dark: #00919B;
+
+  --taichi-light-grey-0: #FFFFFF;
+  --taichi-light-grey-1: #F7FCFC;
+  --taichi-light-grey-2: #E9F1F2;
+  --taichi-light-grey-3: #D3E4E5;
+  --taichi-light-grey-4: #141E1F;
+
+  --taichi-dark-grey-0: #090C0D;
+  --taichi-dark-grey-1: #0E1414;
+  --taichi-dark-grey-2: #1B2526;
+  --taichi-dark-grey-3: #324A4D;
+  --taichi-dark-grey-4: #EDF9FA;
+
+  --taichi-grey-0: var(--taichi-light-grey-0);
+  --taichi-grey-1: var(--taichi-light-grey-1);
+  --taichi-grey-2: var(--taichi-light-grey-2);
+  --taichi-grey-3: var(--taichi-light-grey-3);
+  --taichi-grey-4: var(--taichi-light-grey-4);
+
+  --taichi-yellow-main: #e5d75c;
+
+  --taichi-red-main: #FF4040;
+
+  --ifm-color-primary: var(--taichi-brand-cyan);
   --ifm-color-primary-dark: #0782a0;
   --ifm-color-primary-darker: #077b97;
   --ifm-color-primary-darkest: #06657d;
@@ -16,6 +104,204 @@
   --ifm-color-primary-lighter: #09a7cd;
   --ifm-color-primary-lightest: #0abce7;
   --ifm-code-font-size: 95%;
+  --ifm-navbar-height: 4rem;
+  --ifm-h1-font-size: 1.75rem;
+  --ifm-h2-font-size: 1.5rem;
+  --ifm-h3-font-size: 1.25rem;
+  --ifm-h4-font-size: 1rem;
+  --ifm-h4-font-size: 0.875rem;
+
+  --ifm-navbar-background-color: var(--taichi-grey-0);
+
+  --ifm-navbar-padding-horizontal: 1.875rem;
+
+  --doc-sidebar-width: 362px;
+
+  --ifm-navbar-sidebar-width: 90vw;
+
+  --ifm-toc-border-color: var(--taichi-grey-2);
+
+  --ifm-color-info-contrast-background: #F7FCFC;
+  --ifm-color-success-contrast-background: #F4FCE9;
+  --ifm-color-danger-contrast-background: #FFECEF;
+  --ifm-color-warning-contrast-background: #FBF9E2;
+  --ifm-color-tip-contrast-background: rgba(89, 125, 255, 0.1);
+
+  --docusaurus-details-decoration-color: var(--taichi-grey-2);
+
+  --ifm-global-radius: 2px;
+}
+
+.DocSearch-Modal {
+  --docsearch-modal-background: var(--taichi-grey-0);
+  --docsearch-footer-background: var(--taichi-grey-2);
+  --docsearch-key-gradient: var(--taichi-grey-3);
+  --docsearch-key-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15), 0px 2px 0px var(--taichi-grey-3);
+}
+
+.DocSearch-Modal .DocSearch-Hit {
+  box-shadow: 2px 4px 10px rgba(38, 51, 77, 0.05);
+  border-radius: 2px;
+  padding-bottom: 0;
+  border: 1px solid var(--taichi-grey-2);
+}
+
+.DocSearch-Modal #docsearch-list>:not([hidden])~:not([hidden]) {
+  margin-top: 4px;
+}
+
+html[data-theme='dark'] {
+  --taichi-grey-0: var(--taichi-dark-grey-0);
+  --taichi-grey-1: var(--taichi-dark-grey-1);
+  --taichi-grey-2: var(--taichi-dark-grey-2);
+  --taichi-grey-3: var(--taichi-dark-grey-3);
+  --taichi-grey-4: var(--taichi-dark-grey-4);
+
+  --ifm-color-info-contrast-background: rgba(255, 255, 255, 0.1);
+  --ifm-color-success-contrast-background: rgba(174, 229, 92, 0.1);
+  --ifm-color-danger-contrast-background: rgba(255, 64, 64, 0.1);
+  --ifm-color-warning-contrast-background: rgba(229, 215, 92, 0.1);
+  --ifm-color-tip-contrast-background: rgba(89, 125, 255, 0.1);
+}
+
+html {
+  font-family: var(--ifm-font-family-base);
+}
+
+code, kbd, samp, pre {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+* {
+  border-color: var(--taichi-grey-2);
+  /* font-size: 0.875rem; */
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+a:hover {
+  outline: none;
+  text-decoration: none;
+}
+
+@import url(./article.css);
+
+.text-caption {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-h5, p, h5 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-h4, h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-h3, h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-h2, h2 {
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+}
+
+.text-h1, h1 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+
+@media (min-width: 997px) {
+
+  :root {
+    --ifm-navbar-height: 5rem;
+  }
+
+  .text-caption {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .text-h5, h5, p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .text-h4, h4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .text-h3, h3 {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+  }
+
+  .text-h2, h2 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+
+  .text-h1, h1 {
+    font-size: 2rem;
+    line-height: 2.625rem;
+  }
+}
+
+svg {
+  display: inline;
+  vertical-align: middle;
+}
+
+.brand-blue-gradients {
+ background :radial-gradient(218.85% 218.85% at 1.92% 25.77%, var(--taichi-brand-blue) 0%, #E9ECF2 100%);
+}
+.brand-cyan-gradients {
+  background: radial-gradient(218.85% 218.85% at 1.92% 25.77%, var(--taichi-brand-cyan) 0%, #E9ECF2 100%);
+}
+
+.text-brand-cyan-gradients {
+  display: inline-block;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  background-image: linear-gradient(180deg, rgba(121, 242, 221, 0) 50.04%, rgba(153, 255, 237, 0.44) 100.09%), linear-gradient(64.57deg, #57D9CE 7.22%, #4C8EF4 90.07%);
+}
+
+.height-transition {
+  will-change: height;
+  transition: height 308ms ease-in-out 0s;
+}
+
+.dropdown-transition {
+  transition-duration: var(--ifm-transition-fast);
+  transition-property: opacity,transform,visibility;
+  transition-timing-function: var(--ifm-transition-timing-default);
+}
+
+.table-of-contents li {
+  border-left: 2px solid transparent;
+}
+
+.table-of-contents li.table-of-contents__link--active {
+  border-left-color: var(--taichi-brand-cyan);
+}
+
+.table-of-contents__link--active > a {
+  color: var(--taichi-brand-cyan);
+}
+
+article ul.table-of-contents {
+  border-left: none;
 }
 
 .docusaurus-highlight-code-line {
@@ -34,6 +320,7 @@ html {
   /* this is conflicting with Docusaurus's built-in BackToTop button */
 	/* scroll-behavior: smooth; */
   overscroll-behavior: none;
+  /* line-height: 1; */
 }
 
 /* Cancel the ugly white when bouncing over navbar and footer */
@@ -180,9 +467,22 @@ html[data-theme='dark'] .prism-code .token-line::marker {
   color: rgb(106,153,85) !important;
 }
 
+
 .prism-code .token-line {
   counter-increment: line-number;
   display: list-item;
   padding-left: var(--ifm-pre-padding);
   margin-left: var(--ifm-global-spacing);
+}
+
+.alert-no-border {
+  border-left-width: 0
+}
+
+.newsletter-article h2 {
+  border-bottom: 1px solid var(--taichi-grey-3);
+}
+.newsletter-article a {
+  text-decoration: underline;
+  color: var(--taichi-brand-cyan);
 }

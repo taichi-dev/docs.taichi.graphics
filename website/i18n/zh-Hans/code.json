@@ -1,0 +1,74 @@
+{
+  "theme.docs.docHome.expandedviewofdocs": {
+    "message": "文档总览"
+  },
+  "theme.text.dochome": {
+    "message": "文档首页"
+  },
+  "theme.docs.docHome.userhint": {
+    "message": "加速 Python"
+  },
+  "theme.docs.docHome.developerhint": {
+    "message": "在生产环境部署 Taichi"
+  },
+  "theme.docs.docHome.slogan": {
+    "message": "优雅开发"
+  },
+  "theme.docs.docHome.gotoapi": {
+    "message": "太极 API 参考"
+  },
+  "theme.text.readmore": {
+    "message": "更多详情"
+  },
+  "theme.text.user": {
+    "message": "用户"
+  },
+  "theme.text.developer": {
+    "message": "开发者"
+  },
+  "theme.text.pythonuser": {
+    "message": "Python 用户"
+  },
+  "theme.text.aotdeployment": {
+    "message": "Aot 部署"
+  },
+  "theme.text.resources": {
+    "message": "各类资源"
+  },
+  "theme.text.community": {
+    "message": "开发者社区"
+  },
+  "theme.text.learnmore": {
+    "message": "了解更多"
+  },
+  "theme.navbar.communityinfo": {
+    "message": "加入太极社区"
+  },
+  "theme.navbar.resourceinfo": {
+    "message": "用户案例、博客与太极图形课"
+  },
+  "theme.text.taichicourse": {
+    "message": "太极图形课"
+  },
+  "theme.text.userstories": {
+    "message": "用户案例"
+  },
+  "theme.text.blog": {
+    "message": "博客"
+  },
+  "theme.text.newsletters": {
+    "message": "太极月报"
+  },
+  "theme.text.wechat": {
+    "message": "微信"
+  },
+  "theme.text.taichiblogs": {
+    "message": "太极博客"
+  },
+  "theme.text.taichinewsletters": {
+    "message": "太极月报"
+  },
+  "theme.subscription.subscribetoourupdates": {
+    "message": "订阅太极月报"
+  }
+}

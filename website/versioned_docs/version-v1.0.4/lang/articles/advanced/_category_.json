@@ -1,4 +1,10 @@
 {
   "label": "Advanced Topics",
-  "position": 3
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "Advanced Topics",
+    "slug": "/advanced",
+		"description": "高级主题"
+  }
 }

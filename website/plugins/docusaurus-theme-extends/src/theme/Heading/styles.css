@@ -13,10 +13,6 @@
   cursor: pointer;
 }
 
-.hash-link::before {
-  content: '#';
-}
-
 .hash-link:focus,
 *:hover > .hash-link {
   opacity: 1;
