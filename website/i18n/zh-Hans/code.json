@@ -27,10 +27,10 @@
     "message": "开发者"
   },
   "theme.text.pythonuser": {
-    "message": "用户"
+    "message": "Python 用户"
   },
   "theme.text.aotdeployment": {
-    "message": "开发者"
+    "message": "Aot 部署"
   },
   "theme.text.resources": {
     "message": "各类资源"
