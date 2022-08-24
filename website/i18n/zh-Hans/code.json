@@ -26,6 +26,12 @@
   "theme.text.developer": {
     "message": "开发者"
   },
+  "theme.text.pythonuser": {
+    "message": "用户"
+  },
+  "theme.text.aotdeployment": {
+    "message": "开发者"
+  },
   "theme.text.resources": {
     "message": "各类资源"
   },

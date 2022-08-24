@@ -78,8 +78,8 @@ export default (props) => {
                   <div className="flex justify-between items-center font-bold">
                     <div className="text-h3">
                       {translate({
-                        id: 'theme.text.user',
-                        message: 'User',
+                        id: 'theme.text.pythonuser',
+                        message: 'Python User',
                       })}
                     </div>
                     <span>
@@ -108,8 +108,8 @@ export default (props) => {
                   <div className="flex justify-between items-center font-bold">
                     <div className="text-h3">
                       {translate({
-                        id: 'theme.text.developer',
-                        message: 'Developer',
+                        id: 'theme.text.aotdeployment',
+                        message: 'AOT Deployment',
                       })}
                     </div>
                     <ArrowRight />

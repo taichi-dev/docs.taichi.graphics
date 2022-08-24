@@ -8,8 +8,18 @@
 
 code {
   border: 1px solid var(--taichi-grey-3);
-  background: var(--taichi-grey-1);
+  background: var(--taichi-grey-2);
   border-radius: 4px;
+}
+
+.markdown details {
+  --docusaurus-details-decoration-color: var(--taichi-grey-3);
+  border: 1px solid var(--taichi-grey-3);
+  background-color: var(--taichi-grey-1);
+}
+
+.markdown details summary font {
+  color: var(--taichi-dark-grey-4) !important;
 }
 
 .markdown blockquote {
@@ -24,6 +34,10 @@ code {
 
 .markdown h1, .markdown h2 {
   font-weight: bold;
+}
+
+pre code {
+  background-color: var(--taichi-grey-2);
 }
 
 article ul {

@@ -78,7 +78,7 @@ export const SimpleDropdown: React.FC<{
       {labelNode ? (
         labelNode
       ) : (
-        <div className="flex cursor-pointer items-center justify-between bg-grey-1 border rounded-sm p-[6px]">
+        <div className="flex cursor-pointer items-center justify-between bg-grey-1 border rounded-sm py-[6px] rounded-full px-3">
           <span className="mr-3">{label}</span>
           <DropdownIcon className="text-brand-cyan" />
         </div>
