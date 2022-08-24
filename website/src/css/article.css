@@ -26,6 +26,10 @@ code {
   margin: 0 0 var(--ifm-spacing-vertical);
 }
 
+.markdown .theme-code-block > div {
+  background-color: var(--taichi-grey-2) !important;
+}
+
 .markdown h1:first-child {
   font-size: 2.5rem;
   margin-bottom: calc(var(--ifm-h1-vertical-rhythm-bottom)*var(--ifm-leading));
