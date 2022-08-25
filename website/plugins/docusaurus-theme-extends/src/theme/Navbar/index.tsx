@@ -20,6 +20,8 @@ import ArrowRightIcon from '../icons/arrow-right.svg';
 
 import WebchatImg from '../icons/wechat-community.jpg'
 
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 import AsyncImage from '@theme/AsyncImage'
 
 import {
@@ -189,8 +191,14 @@ function Navbar(props): JSX.Element {
 
   const { pathname } = useLocation();
 
+  const {
+    i18n: { defaultLocale, currentLocale },
+  } = useDocusaurusContext();
+
   const resourceswithactive = resources.map((item) => {
-    const active = pathname.startsWith(item.href)
+    let matchpath = item.href
+    if (defaultLocale !== currentLocale) matchpath = '/' + currentLocale + matchpath
+    const active = pathname.startsWith(matchpath)
     return {...item, active }
   })
 
