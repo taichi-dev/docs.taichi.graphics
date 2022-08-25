@@ -58,10 +58,15 @@ export function WithVersionLink({ href, label, matchPath, className }: Props) {
 
 export function NavLink({ href, label, matchPath, className, isExternal }: Props) {
   const { pathname } = useLocation();
+  const {
+    i18n: { defaultLocale, currentLocale },
+  } = useDocusaurusContext();
+  let tomatch = matchPath
+  if (tomatch && defaultLocale !== currentLocale && !isExternal) tomatch = '/' + currentLocale + tomatch;
   return (
     <Link
       className={clsx(
-        matchPath && pathname.startsWith(matchPath) ? 'text-brand-cyan active' : '',
+        tomatch && pathname.startsWith(tomatch) ? 'text-brand-cyan active' : '',
         className
       )}
       href={href}
