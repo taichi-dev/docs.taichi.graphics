@@ -176,7 +176,7 @@ const searchTypes = [
   },
   {
     label: 'Docs',
-    value: 'doc',
+    value: 'docs',
   },
   {
     label: 'API',
@@ -253,7 +253,7 @@ function SearchPage(): JSX.Element {
   const algoliaHelper = algoliaSearchHelper(algoliaClient, indexName, {
     hitsPerPage: 15,
     advancedSyntax: true,
-    disjunctiveFacets: ['language', 'docusaurus_tag'],
+    disjunctiveFacets: ['language', 'docusaurus_tag', 'category'],
   });
 
   algoliaHelper.on(
@@ -356,13 +356,13 @@ function SearchPage(): JSX.Element {
       ([pluginId, searchVersion]) => {
         algoliaHelper.addDisjunctiveFacetRefinement(
           'docusaurus_tag',
-          `docs-${pluginId}-${searchVersion}`
+          `docs-${pluginId}-${searchVersion}`,
         );
       }
     );
-    // if (categoryQuery) {
-    //   algoliaHelper.addDisjunctiveFacetRefinement('category', categoryQuery)
-    // }
+    if (categoryQuery) {
+      algoliaHelper.addDisjunctiveFacetRefinement('category', categoryQuery)
+    }
     algoliaHelper.setQuery(searchQuery).setPage(page).search();
   });
 
@@ -441,7 +441,7 @@ function SearchPage(): JSX.Element {
               </div>
             </form>
 
-            {/* <div>
+            <div>
               <div className="flex space-x-3">
                 {searchTypes.map((item) => (
                   <div
@@ -453,7 +453,7 @@ function SearchPage(): JSX.Element {
                   </div>
                 ))}
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
         <div className="max-w-[908px] mx-auto pt-5 px-4">
