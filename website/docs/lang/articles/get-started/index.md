@@ -2,7 +2,7 @@
 sidebar_position: 1
 slug: /
 ---
-# Getting Started
+# Hello, World!
 
 Taichi is a high-performance parallel programming language embedded in Python.
 
