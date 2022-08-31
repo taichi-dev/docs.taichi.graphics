@@ -293,6 +293,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.non_static_if_guard">
+     non_static_if_guard
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.set_loop_status">
      set_loop_status
     </a>
@@ -364,6 +369,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowStatus">
    NonStaticControlFlowStatus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.NonStaticIfGuard">
+   NonStaticIfGuard
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -505,6 +515,11 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.non_static_if_guard">
+<span class="sig-name descname"><span class="pre">non_static_if_guard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ast.If</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.non_static_if_guard" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.set_loop_status">
 <span class="sig-name descname"><span class="pre">set_loop_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.set_loop_status" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -573,12 +588,17 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowGuard">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.ast.ast_transformer_utils.</span></span><span class="sig-name descname"><span class="pre">NonStaticControlFlowGuard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowGuard" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.ast.ast_transformer_utils.</span></span><span class="sig-name descname"><span class="pre">NonStaticControlFlowGuard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowStatus" title="taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowStatus"><span class="pre">NonStaticControlFlowStatus</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowGuard" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowStatus">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.ast.ast_transformer_utils.</span></span><span class="sig-name descname"><span class="pre">NonStaticControlFlowStatus</span></span><a class="headerlink" href="#taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowStatus" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer_utils.NonStaticIfGuard">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.ast.ast_transformer_utils.</span></span><span class="sig-name descname"><span class="pre">NonStaticIfGuard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">if_node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ast.If</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loop_attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.lang.ast.ast_transformer_utils.LoopScopeAttribute" title="taichi.lang.ast.ast_transformer_utils.LoopScopeAttribute"><span class="pre">LoopScopeAttribute</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_static_status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowStatus" title="taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowStatus"><span class="pre">NonStaticControlFlowStatus</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer_utils.NonStaticIfGuard" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
