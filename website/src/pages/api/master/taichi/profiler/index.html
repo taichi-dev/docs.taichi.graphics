@@ -599,7 +599,7 @@ backend due to its lack of support for <cite>ti.sync()</cite>.</p>
 &gt;&gt;&gt; profiling_metrics += [global_op_atom]
 
 &gt;&gt;&gt; # metrics setting will be retained until the next configuration
-&gt;&gt;&gt; ti.profiler.set_kernel_profile_metrics(profiling_metrics)
+&gt;&gt;&gt; ti.profiler.set_kernel_profiler_metrics(profiling_metrics)
 &gt;&gt;&gt; for i in range(16):
 &gt;&gt;&gt;     reduction()
 &gt;&gt;&gt; ti.profiler.print_kernel_profiler_info(&#39;trace&#39;)
