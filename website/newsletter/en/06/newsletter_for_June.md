@@ -21,7 +21,9 @@ description:
 - **Taichi v1.0.3 released!**
 
     Despite being small, this latest version marks a big step towards making Taichi-Lang a superset of CUDA. If you want to utilize miscellaneous CUDA warp-level intrinsics or add a struct_class decorator, [don't miss out](https://github.com/taichi-dev/taichi/releases/tag/v1.0.3?utm_source=twitter). Upgrade now!
+  
     `pip install --upgrade taichi`
+  
     `ti gallery`
 
 ## 🌟 Featured repos & projects
@@ -30,10 +32,9 @@ description:
 
     Fancy a break from coding and get some tasty visual refreshments? We launched the [Awesome Taichi repo](https://github.com/Taichi-dev/awesome-taichi) to give you easy access to the latest collection of Taichi applications. Be it innovative image processing techniques, refreshing integration with machine learning, realistic simulation projects, or adorable voxel artworks, you shall always find your cup of tea! Or ... Better: Contribute your demos to the [Awesome Taichi repo](https://github.com/Taichi-dev/awesome-taichi) and see your hard work become a source of inspiration.😎
 
-    Now, a really cool starter for your first bite:
+    Now, a really cool starter for your first bite: [Madelbrot Viewer](https://github.com/Y7K4/mandelbrot-viewer) by [Y7K4](https://github.com/Y7K4)
 
     ![Mandelbrot](./pics/mandelbrot.gif)
-    [Madelbrot Viewer](https://github.com/Y7K4/mandelbrot-viewer), by [Y7K4](https://github.com/Y7K4)
 
 - **[YuCrazing](https://github.com/YuCrazing)'s position-based fluid simulation**
 
