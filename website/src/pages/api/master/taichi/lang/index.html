@@ -1835,11 +1835,10 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.Field">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">Field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_vars</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Field" title="Permalink to this definition">#</a></dt>
-<dd><p>Taichi field with SNode implementation.</p>
+<dd><p>Taichi field class.</p>
 <p>A field is constructed by a list of field members.
 For example, a scalar field has 1 field member, while a 3x3 matrix field has 9 field members.
-A field member is a Python Expr wrapping a C++ GlobalVariableExpression.
-A C++ GlobalVariableExpression wraps the corresponding SNode.</p>
+A field member is a Python Expr wrapping a C++ FieldExpression.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>vars</strong> (<em>List</em><em>[</em><em>Expr</em><em>]</em>) – Field members.</p>
