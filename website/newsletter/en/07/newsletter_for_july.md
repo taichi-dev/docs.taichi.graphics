@@ -44,18 +44,18 @@ description:
 
 ## 📝 Blogs
 
-- **[ETH Zürich uses Taichi Lang in its Physically-based Simulation course (AS 21)](https://medium.com/parallel-programming-in-python/eth-zürich-uses-taichi-lang-in-its-physically-based-simulation-course-as-21-ae6b36ac1bf0)**
+- **[ETH Zürich uses Taichi Lang in its Physically-based Simulation course (AS 21)](https://docs.taichi-lang.org/blog/eth-z%C3%BCrich-uses-taichi-lang-in-its-physically-based-simulation-source)**
 
   The Computer Graphics Laboratory (CGL) at ETHETH Zürich, a world-class university in Europe, used Taichi Lang as the creation tool for a course named [Physically-based Simulation](https://cgl.ethz.ch/teaching/simulation21/fame.php) in the fall of 2021. Taichi's creator, [Yuanming Hu](https://github.com/yuanming-hu), interviewed the students enrolled in the course and summarized why they like Taichi and what to improve in the future. This blog also presents a few representative projects students submitted as coursework. Maybe your research interest also lies in physical simulation, and you might get some inspiration or refreshing ideas from this article!
 
-- **[Training a magic fountain using Taichi's autodiff, an efficient tool for differentiable physical simulation](https://www.reddit.com/user/mingrui-zhang/comments/vx49mz/training_a_magic_fountain_using_taichis_autodiff/)**
+- **[Training a magic fountain using Taichi's autodiff, an efficient tool for differentiable physical simulation](https://docs.taichi-lang.org/blog/training-a-magic-fountain-using-taichi-autodiff-an-efficient-tool-for-differentiable-physical-simulation)**
 
   Supporting the reverse-mode automatic differentiation, Taichi allows you to optimize neural network controllers efficiently with brute-force gradient descent. [erizmr](https://github.com/erizmr) wrote this blog to share how to implement a magic fountain that learns to hit a target with the least effort, cleverly using Taichi's autodiff to accelerate the convergence.
 
   <!-- ![autodiff magic fountain]() -->
 
-- **[Taichi Cookbook 001: Five practical tips on how to master Taichi, a handy parallel programming language embedded in Python](https://sourl.cn/GnGEEm)**
-  Have you ever been troubled by the silent array access violation errors? Or have you tried to optimize the performance of your program, only to be perplexed by where to start? Well, though not lethal, these problems are real headaches. If that's the case, you need to take a look at the first Taichi cooking session, tutored by [Yuanming Hu](https://github.com/yuanming-hu). He generously shares five practical tips and one new feature, `ti.dataclass`, to help you use Taichi to its best! For example, you can learn how to auto-debug out-of-bound array accesses and analyze performance with Taichi Profiler. More to discover in [this blog](https://sourl.cn/GnGEEm).
+- **[Taichi Cookbook 001: Five practical tips on how to master Taichi, a handy parallel programming language embedded in Python](https://docs.taichi-lang.org/blog/taichi-cookbook-001)**
+  Have you ever been troubled by the silent array access violation errors? Or have you tried to optimize the performance of your program, only to be perplexed by where to start? Well, though not lethal, these problems are real headaches. If that's the case, you need to take a look at the first Taichi cooking session, tutored by [Yuanming Hu](https://github.com/yuanming-hu). He generously shares five practical tips and one new feature, `ti.dataclass`, to help you use Taichi to its best! For example, you can learn how to auto-debug out-of-bound array accesses and analyze performance with Taichi Profiler. More to discover in [this blog](https://docs.taichi-lang.org/blog/taichi-cookbook-001).
 
 ## 🌟 Featured projects
 
@@ -63,25 +63,25 @@ description:
 
   [yhesper](https://github.com/yhesper) created a real-time fluid simulation on the surface of a triangle mesh, based on a modified version of Elcott's SImplicial Fluids algorithm. [This stunning work of art](https://docs.taichi-lang.org/docs/ggui) is implemented using [Taichi Lang](https://www.taichi-lang.org/) and its UI system [GGUI](https://docs.taichi-lang.org/docs/ggui).
 
-  ![stanford bunny](./unnamed.gif)
+  ![stanford bunny](./pics/unnamed.gif)
 
 - **Embed Taichi Lang in Unreal Engine**
 
   [cgerchenhp](https://github.com/cgerchenhp) shows it can be pretty effortless to integrate Taichi into Unreal Engine. Making the best of Taichi's high-performance parallel computation and UE's support for Python (via the plugin TAPython), you can also build your breathtaking 3D scenes starting from [here](https://twitter.com/TaichiGraphics/status/1547923209822949378).
 
-  ![Taichi & UE](./ue.gif)
+  ![Taichi & UE](./pics/ue.gif)
 
 - **Rigid body simulation based on shape matching**
 
   The shape matching algorithm provides a particle-based approach to rigid body simulation. Thus, it makes coupling with SPH-based fluid simulation easier, enabling fluid-structure interaction and shape transition. Using Taichi Lang to implement shape matching, [chunleili](https://github.com/chunleili) completed a [rigid body simulation](https://github.com/chunleili/tiRigidBody) project, the essential part of which is neatly done within 30 LoCs. This project can also be conveniently adapted to simulate elastic and plastic bodies.
 
-  ![rigid body simulation](./rigid_body.gif)
+  ![rigid body simulation](./pics/rigid_body.gif)
 
 - **Using Taichi features in Julia**
 
   [lucifer1004](https://github.com/lucifer1004) managed to export the Python module Taichi as a constant `ti` so that most of Taichi's features can be directly called in Julia. More details are given on the [project page](https://github.com/lucifer1004/Taichi.jl). Try reproducing a Taichi demo in Julia and share with us your work and thoughts!
 
-  ![Taichi & julia](./julia.gif)
+  ![Taichi & julia](./pics/julia.gif)
 
 ## 🧑‍💻 Become a contributor!
 

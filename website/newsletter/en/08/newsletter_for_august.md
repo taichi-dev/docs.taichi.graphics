@@ -14,7 +14,7 @@ description:
 
 - Taichi has gathered over 20k GitHub stars! Thanks for your great support 🙌.
 
-- We have revamped our documentation site: https://docs.taichi-lang.org. Explore it and let us know how you feel!
+- We have revamped our documentation site: <https://docs.taichi-lang.org>. Explore it and let us know how you feel!
 
 </div>
 
