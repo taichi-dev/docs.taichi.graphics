@@ -42,15 +42,15 @@ def is_prime(n: int):
     result = True
     for k in range(2, int(n ** 0.5) + 1):
         if n % k == 0:
-        result = False
-        break
+            result = False
+            break
     return result
     
 def count_primes(n: int) -> int:
     count = 0
     for k in range(2, n):
         if is_prime(k):
-        count += 1
+            count += 1
         
     return count
     
@@ -152,7 +152,7 @@ To find the LCS of two given sequences via dynamic programming, we can progressi
 
 We use `f[i, j]` to refer to the length of this subsequence `LCS((prefix(a, i), prefix(b, j)`. `prefix(a, i)` denotes the first `i` elements of sequence `a`, i.e., `a[0], a[1], ..., a[i - 1]`. So, we can get the following recurrence relation:
 
-```
+```python
 f[i, j] = max(f[i - 1, j - 1] + (a[i - 1] == b[j - 1]),
               max(f[i - 1, j], f[i, j - 1]))
 ```
@@ -243,7 +243,7 @@ There are four key parameters: `Du` (diffusion speed of U), `Dv` (diffusion spee
 
 To simulate the process in Taichi, we first need to create a grid to cover the domain and use `vec2` to represent the concentration of U and V in the grid. The numerical computation of the Laplace operator requires access to the neighboring grids. To avoid updating and reading data in the same loop, we should create two grids of the identical shape `W × H × 2`. Each time we access data from one grid, we write the updated data into the other and then switch grids. I design the data structure as such:
 
-```
+```python
 W, H = 800, 600
 uv = ti.Vector.field(2, float, shape=(2, W, H)) 
 ```
@@ -309,4 +309,3 @@ Of course, Python is an inclusive universe where many tools are available to exp
 **Taichi vs. ctypes**: ctypes allows users to call C functions from Python and run programs written in C++/CUDA in Python through a C-compatible API. However, ctypes further elevates the usage barrier: To write a satisfactory program, users need to command C, Python, CMake, CUDA, and even more languages. It is much more reassuring to keep everything in Python.
 
 To sum up, there is no universal solution to all optimization problems. That's partially why Python is fascinating. You can always find/create an easy-to-use tool that can precisely solve your problem at hand. In terms of scientific computing, Taichi is an ideal option within Python that can help you achieve performance comparable to C/C++.
-
