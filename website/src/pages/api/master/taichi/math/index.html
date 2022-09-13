@@ -1468,33 +1468,41 @@ original vector <cite>v</cite>.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.math.pow">
-<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.pow" title="Permalink to this definition">#</a></dt>
-<dd><p>First array elements raised to powers from second array <span class="math notranslate nohighlight">\(x^a\)</span>, element-wise.</p>
-<p>Negative values raised to a non-integral value will return <cite>nan</cite>.
-A zero value raised to a negative value will return <cite>inf</cite>.
-If debug mode or optimization passes are on, an exception will be raised
-when an integral value is raised to a negative value; otherwise 1 will be returned.</p>
+<span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.pow" title="Permalink to this definition">#</a></dt>
+<dd><p>First array elements raised to second array elements <span class="math notranslate nohighlight">\({base}^{exponent}\)</span>, element-wise.</p>
+<p>The result type of two scalar operands is determined as follows:
+- If the exponent is an integral value, then the result type takes the type of the base.
+- Otherwise, the result type follows</p>
+<blockquote>
+<div><p>[Implicit type casting in binary operations](<a class="reference external" href="https://docs.taichi-lang.org/docs/type#implicit-type-casting-in-binary-operations">https://docs.taichi-lang.org/docs/type#implicit-type-casting-in-binary-operations</a>).</p>
+</div></blockquote>
+<p>With the above rules, an integral value raised to a negative integral value cannot have a
+feasible type. Therefore, an exception will be raised if debug mode or optimization passes
+are on; otherwise 1 will be returned.</p>
+<p>In the following situations, the result is undefined:
+- A negative value raised to a non-integral value.
+- A zero value raised to a non-positive value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The bases.</p></li>
-<li><p><strong>a</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The exponents.</p></li>
+<li><p><strong>base</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The bases.</p></li>
+<li><p><strong>exponent</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The exponents.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The bases in <cite>x1</cite> raised to the exponents in <cite>x2</cite>. This is a scalar if both             <cite>x1</cite> and <cite>x2</cite> are scalars.</p>
+<dd class="field-even"><p><cite>base</cite> raised to <cite>exponent</cite>. This is a scalar if both <cite>base</cite> and <cite>exponent</cite> are scalars.</p>
 </dd>
 </dl>
 <p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
 &gt;&gt;&gt; def test():
-&gt;&gt;&gt;     x = ti.Matrix([-2.0, 0.0, 2.0])
-&gt;&gt;&gt;     y = -2.2
+&gt;&gt;&gt;     x = ti.Matrix([-2.0, 2.0])
+&gt;&gt;&gt;     y = -3
 &gt;&gt;&gt;     z = ti.pow(x, y)
 &gt;&gt;&gt;     print(z)
 &gt;&gt;&gt;
 &gt;&gt;&gt; test()
-[-nan, inf, 0.217638]
+[-0.125000, 0.125000]
 </pre></div>
 </div>
 </dd></dl>
