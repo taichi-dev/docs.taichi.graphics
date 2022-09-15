@@ -27,7 +27,7 @@ code {
 }
 
 .markdown .theme-code-block > div {
-  background-color: var(--taichi-grey-2) !important;
+  background-color: var(--taichi-code-bg) !important;
 }
 
 .markdown h1:first-child {
@@ -41,7 +41,7 @@ code {
 }
 
 pre code {
-  background-color: var(--taichi-grey-2);
+  background-color: var(--taichi-code-bg);
 }
 
 article ul {
