@@ -3722,7 +3722,7 @@ in Taichi scope.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Matrix.ndarray">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.ndarray" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.ndarray" title="Permalink to this definition">#</a></dt>
 <dd><p>Defines a Taichi ndarray with matrix elements.
 This function must be called in Python scope, and after <cite>ti.init</cite> is called.</p>
 <dl class="field-list simple">
@@ -3732,7 +3732,6 @@ This function must be called in Python scope, and after <cite>ti.init</cite> is 
 <li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
 <li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
-<li><p><strong>layout</strong> (<em>Layout</em><em>, </em><em>optional</em>) – Memory layout, AOS by default.</p></li>
 </ul>
 </dd>
 </dl>
@@ -4153,7 +4152,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.MatrixNdarray">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">MatrixNdarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.MatrixNdarray" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">MatrixNdarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.MatrixNdarray" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="lang/_ndarray/#taichi.lang._ndarray.Ndarray" title="taichi.lang._ndarray.Ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang._ndarray.Ndarray</span></code></a></p>
 <p>Taichi ndarray with matrix elements.</p>
 <dl class="field-list simple">
@@ -4163,12 +4162,11 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
 <li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
-<li><p><strong>layout</strong> (<em>Layout</em>) – Memory layout.</p></li>
 </ul>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(3, 3), layout=Layout.SOA)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(3, 3))
 </pre></div>
 </div>
 <dl class="py method">
@@ -4176,7 +4174,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.MatrixNdarray.element_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the shape of each element (a 2D matrix) in this ndarray.</p>
 <p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(3, 3), layout=Layout.SOA)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(3, 3))
 &gt;&gt;&gt; arr.element_shape
 (2, 2)
 </pre></div>
@@ -4200,7 +4198,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.MatrixNdarray.to_numpy" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts this ndarray to a <cite>numpy.ndarray</cite>.</p>
 <p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(2, 1), layout=Layout.SOA)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(2, 1))
 &gt;&gt;&gt; arr.to_numpy()
 [[[[0. 0.]
    [0. 0.]]]
@@ -5698,7 +5696,7 @@ in Taichi scope.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Vector.ndarray">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector.ndarray" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector.ndarray" title="Permalink to this definition">#</a></dt>
 <dd><p>Defines a Taichi ndarray with vector elements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -6003,7 +6001,7 @@ the remaining entries are all zeros.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.VectorNdarray">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">VectorNdarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.VectorNdarray" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">VectorNdarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.VectorNdarray" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="lang/_ndarray/#taichi.lang._ndarray.Ndarray" title="taichi.lang._ndarray.Ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang._ndarray.Ndarray</span></code></a></p>
 <p>Taichi ndarray with vector elements.</p>
 <dl class="field-list simple">
@@ -6017,7 +6015,7 @@ the remaining entries are all zeros.</p>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (3, 3), layout=Layout.SOA)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (3, 3))
 </pre></div>
 </div>
 <dl class="py method">
@@ -6025,7 +6023,7 @@ the remaining entries are all zeros.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.VectorNdarray.element_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets the dimension of the vector of this ndarray.</p>
 <p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (3, 3), layout=Layout.SOA)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (3, 3))
 &gt;&gt;&gt; a.element_shape
 (3,)
 </pre></div>
@@ -6051,7 +6049,7 @@ the remaining entries are all zeros.</p>
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.VectorNdarray.to_numpy" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts this vector ndarray to a <cite>numpy.ndarray</cite>.</p>
 <p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (2, 2), layout=Layout.SOA)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (2, 2))
 &gt;&gt;&gt; a.to_numpy()
 array([[[0., 0., 0.],
         [0., 0., 0.]],
@@ -7493,14 +7491,13 @@ must have the same shape, and scalars will be broadcasted to the same shape as t
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ndarray">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.NULL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ndarray" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ndarray" title="Permalink to this definition">#</a></dt>
 <dd><p>Defines a Taichi ndarray with scalar elements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dtype</strong> (<em>Union</em><em>[</em><em>DataType</em><em>, </em><em>MatrixType</em><em>]</em>) – Data type of each element. This can be either a scalar type like ti.f32 or a compound type like ti.types.vector(3, ti.i32).</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
-<li><p><strong>layout</strong> (<em>Layout</em><em>, </em><em>optional</em>) – Layout of ndarray, only applicable when element is non-scalar type. Default is Layout.AOS.</p></li>
 </ul>
 </dd>
 </dl>
@@ -7510,7 +7507,7 @@ must have the same shape, and scalars will be broadcasted to the same shape as t
 &gt;&gt;&gt; vec3 = ti.types.vector(3, ti.i32)
 &gt;&gt;&gt; y = ti.ndarray(vec3, shape=(10, 2))  # ndarray of shape (10, 2), each element is a vector of 3 ti.i32 scalars.
 &gt;&gt;&gt; matrix_ty = ti.types.matrix(3, 4, float)
-&gt;&gt;&gt; z = ti.ndarray(matrix_ty, shape=(4, 5), layout=ti.Layout.SOA)  # ndarray of shape (4, 5), each element is a matrix of (3, 4) ti.float scalars.
+&gt;&gt;&gt; z = ti.ndarray(matrix_ty, shape=(4, 5))  # ndarray of shape (4, 5), each element is a matrix of (3, 4) ti.float scalars.
 </pre></div>
 </div>
 </dd></dl>
