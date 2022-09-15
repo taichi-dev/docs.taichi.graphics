@@ -130,6 +130,8 @@
   --docusaurus-details-decoration-color: var(--taichi-grey-2);
 
   --ifm-global-radius: 2px;
+
+  --taichi-code-bg: #DAE5E5;
 }
 
 .DocSearch-Modal {
@@ -162,6 +164,8 @@ html[data-theme='dark'] {
   --ifm-color-danger-contrast-background: rgba(255, 64, 64, 0.1);
   --ifm-color-warning-contrast-background: rgba(229, 215, 92, 0.1);
   --ifm-color-tip-contrast-background: rgba(89, 125, 255, 0.1);
+
+  --taichi-code-bg: #2D3E40;
 }
 
 html {
@@ -304,13 +308,6 @@ article ul.table-of-contents {
   border-left: none;
 }
 
-.docusaurus-highlight-code-line {
-  background-color: #dee2e6;
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
-
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
 }
@@ -447,19 +444,11 @@ html[data-theme='dark'] .header-github-link:before {
   font-size: 95%;
 }
 
-/* Line numbers
-reference: https://gist.github.com/uditalias/3969a20ef759bf3a8757499429b30063
-*/
-.prism-code {
-  counter-reset: line-number;
-}
-
-.prism-code .token-line::marker {
+.prism-code .token-line::before {
   color: var(--ifm-color-gray-400);
-  content: counter(line-number);
 }
 
-html[data-theme='dark'] .prism-code .token-line::marker {
+html[data-theme='dark'] .prism-code .token-line::before {
   color: var(--ifm-color-gray-800);
 }
 
@@ -467,12 +456,34 @@ html[data-theme='dark'] .prism-code .token-line::marker {
   color: rgb(106,153,85) !important;
 }
 
+/* Line numbers
+reference: https://gist.github.com/uditalias/3969a20ef759bf3a8757499429b30063
+*/
+
+.prism-code code {
+  counter-reset: line-number;
+  padding-left: 40px;
+}
 
 .prism-code .token-line {
+  padding: 0 var(--ifm-pre-padding);
+  position: relative;
+}
+
+.prism-code .token-line::before {
   counter-increment: line-number;
-  display: list-item;
-  padding-left: var(--ifm-pre-padding);
-  margin-left: var(--ifm-global-spacing);
+  content: counter(line-number) ". ";
+  position: absolute;
+  left: calc(-1 * var(--ifm-pre-padding));
+  text-align: right;
+  font-family: var(--ifm-font-family-base);
+}
+
+.docusaurus-highlight-code-line {
+  background-color: #dee2e6;
+  display: block;
+  /* margin: 0 calc(-1 * var(--ifm-pre-padding)); */
+  /* padding: 0 var(--ifm-pre-padding); */
 }
 
 .alert-no-border {
