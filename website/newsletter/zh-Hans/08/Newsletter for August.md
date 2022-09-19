@@ -41,19 +41,23 @@ description:
 - **[Taichi x 电磁场时域有限差分方法的新尝试 ](https://github.com/lucifer1004/uFDTD-Taichi)**
 
    uFDTD (Understanding the FDTD Method)是著名的电磁场时域有限差分方法入门教材。社区同学 lucifer1004 在 uFDTD-Taichi 项目中，分别使用原生 Taichi 和 Taichi.jl 实现了原书前六章的有关内容，主要是一维电磁场的时域有限差分模拟，涉及理想导体、电介质、电磁散射、理想匹配层、吸收边界条件等基本概念和方法。 
+   
   ![uFDTD](https://github.com/lucywsq/docs.taichi.graphics/blob/master/website/newsletter/en/08/pics/1d_bare_bones.gif)
 
 
 - **[如何用 Taichi 实现拉普拉斯方程基本解模拟？](https://forum.taichi.graphics/t/topic/2879/9)**
 
    社区同学 bismarckkk 创作的 demo 可以模拟点源、点汇、点涡、偶极子等拉普拉斯方程的基本解，即理想不可压流体的一些最基本的平面定常无旋流动。同时，它也可以交互式地创建或更改上述基本解，通过箭头和从边缘出发的物质点显示该流场中的流动情况。 
+   
   ![laplace](https://github.com/lucywsq/docs.taichi.graphics/blob/master/website/newsletter/en/08/pics/laplace.gif)
   
   
 - **[有更简单的办法能够重绘 Taichi logo 了？](https://github.com/lgyStoic/taichi_rotation)**
 
    社区同学 garryling 在学习 Taichi 的过程中，发现 ti example 中的 Taichi logo 的例子代码较为抽象。于是他另辟蹊径，使用了一种更加直观的方法来重画 Taichi logo。该方法逻辑十分简单，只需要画出五个圆，并判断点是否在圆内就能表示出 Taichi Logo。同时通过 SSAA 进行抗锯齿操作，使得结果更加平滑。 
+  
   ![taichi-logo](https://github.com/lucywsq/docs.taichi.graphics/blob/master/website/newsletter/en/08/pics/taichi_logo.gif)
+
 
 ## 💪 贡献者力量
    感谢社区同学在增加新功能、修复问题等方面的贡献。 
@@ -70,11 +74,12 @@ description:
  - [Taichi 编程语言的开发进度面板](https://github.com/orgs/taichi-dev/projects/1)
    便于大家快速了解 Taichi 未处理/进展中/已处理/已完成开发的 issue。 
  - [从这里寻找贡献灵感](https://github.com/taichi-dev/taichi/contribute)
-   开启向 Taichi 贡献第一步，可从 GitHub 中找到灵感，从 (good first issue)[https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22]（非常容易上手）和 (welcome contribution)[https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22]（稍微带有挑战性）这两类 issues 中找到感兴趣的贡献方向。 
+   开启向 Taichi 贡献第一步，可从 GitHub 中找到灵感，从 [good first issue](https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)（非常容易上手）和 [welcome contribution](https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22)（稍微带有挑战性）这两类 issues 中找到感兴趣的贡献方向。 
  - [加入 GitHub discussion](https://github.com/taichi-dev/taichi/discussions)
    在这里你可以与海内外开发者一起讨论功能开发、Taichi roadmap 等话题，也欢迎提出你对 Taichi 的建议。 
  - [Awesome Taichi](https://github.com/taichi-dev/awesome-taichi)
    精选社区同学用 Taichi 做出的优质项目，可以从中找到感兴趣的例子尝试运行。 
+
 
 ## 📢 社区活动
 -  [Ti example 征集活动](https://forum.taichi.graphics/t/ti-example/2872) 
