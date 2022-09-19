@@ -9,7 +9,7 @@ description:
 ## ⭐️ 八月高光时刻
 - Taichi 发布 v1.1.0 版本！
 - Taichi 文档站全新上线，更直观的快速索引、更清晰的内容排布！
-- Taichi 项目在 GitHub 中获得超 20k stars,感谢每一位支持 Taichi「献上星星的你」!
+- Taichi 项目在 GitHub 中获得超 20k stars，感谢每一位支持 Taichi「献上星星的你」！
   
 ## 🔧 技术动态
 - **Taichi v1.1.0 发布，令人期待的多个新功能正式上线**
@@ -19,8 +19,8 @@ description:
   - 离线缓存：用户可将编译产物存储到磁盘上，极大地减少了程序重复启动 kernel 的编译开销。
   - 前向模式自动微分：当一个函数的输出数量大于输入数量时，前向自动微分的效率比反向微分要高很多。前向模式和反向模式下的 Jacobi 矩阵计算样例即体现这一特点，大家可以在 Taichi v1.1.0 运行 ti example jacobian 实际体会。
   
-  更详细的 v1.1.0 功能介绍和进展，请参考发版说明（[release notes](https://mp.weixin.qq.com/s?__biz=MzkzNDI3NDY4Mw==&mid=2247502082&idx=1&sn=e7cad8c09a6af9539a64a4ec4ac6b58a&chksm=c2bd3a16f5cab300b58d81942bf74138552acb4e4c4658a3d6b53107441fe685f6579f3cdcfa&scene=21#wechat_redirect)）。 
-  目前最新版本中也将 v1.1.0 的部分 bug 做了补丁修复，可直接升级到 v1.1.2 `pip install taichi==1.1.2`
+  关于 v1.1.0 功能介绍和更多进展，请参考发版说明[release notes](https://mp.weixin.qq.com/s?__biz=MzkzNDI3NDY4Mw==&mid=2247502082&idx=1&sn=e7cad8c09a6af9539a64a4ec4ac6b58a&chksm=c2bd3a16f5cab300b58d81942bf74138552acb4e4c4658a3d6b53107441fe685f6579f3cdcfa&scene=21#wechat_redirect)。 
+  目前最新版本中也将 v1.1.0 的部分 bug 做了补丁修复，可直接升级到 v1.1.2 版本 `pip install taichi==1.1.2`
   
 
 - **[Taichi 新版文档站](https://docs.taichi-lang.org)正式上线——分类更清晰，内容更简洁** 
@@ -59,26 +59,27 @@ description:
    感谢社区同学在增加新功能、修复问题等方面的贡献。 
   
    **@mshoe**  [#5836 Enable gravity option in stable_fluid_ggui.py](https://github.com/taichi-dev/taichi/pull/5836)
+   
    **@Hyiker** [#5654 Add GGUI set_image support for non-Vector fields and NumPy Ndarrays](https://github.com/taichi-dev/taichi/pull/5654) 
   
   
 ## 🔧 如何成为 Taichi 贡献者
    自开源之初，Taichi 贡献者们积极参与开发，并为打造更好的 Taichi 持续贡献力量。以下是成为 Taichi 贡献者们的一些 Tips，期待更多同学加入贡献者的队伍之中。
  - [Taichi 贡献者指南](https://docs.taichi-lang.org/docs/contributor_guide)
-一文带大家读懂如何成为 Taichi 贡献者，解释了具体的行为规范，也包含了实用小技巧，便于大家快速上手。
+   一文带大家读懂如何成为 Taichi 贡献者，解释了具体的行为规范，也包含了实用小技巧，便于大家快速上手。
  - [Taichi 编程语言的开发进度面板](https://github.com/orgs/taichi-dev/projects/1)
-便于大家快速了解 Taichi 未处理/进展中/已处理/已完成开发的 issues。 
+   便于大家快速了解 Taichi 未处理/进展中/已处理/已完成开发的 issues。 
  - [从这里寻找贡献灵感](https://github.com/taichi-dev/taichi/contribute)
-开启向 Taichi 贡献第一步，可从 GitHub 中找到灵感，从 good first issue（非常容易上手） 和  welcome contribution （稍微带有挑战性）这两类 issues 中找到感兴趣的贡献方向。 
+   开启向 Taichi 贡献第一步，可从 GitHub 中找到灵感，从 (good first issue)[https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22]（非常容易上手）和 (welcome contribution)[https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22]（稍微带有挑战性）这两类 issues 中找到感兴趣的贡献方向。 
  - [加入 GitHub discussion](https://github.com/taichi-dev/taichi/discussions)
-在这里你可以与海内外开发者一起讨论功能开发、Taichi roadmap 等话题，也欢迎提出你对 Taichi 的建议。 
+   在这里你可以与海内外开发者一起讨论功能开发、Taichi roadmap 等话题，也欢迎提出你对 Taichi 的建议。 
  - [Awesome Taichi](https://github.com/taichi-dev/awesome-taichi)
-精选社区同学用 Taichi 做出的优质项目，可以从中找到感兴趣的例子尝试运行。 
+   精选社区同学用 Taichi 做出的优质项目，可以从中找到感兴趣的例子尝试运行。 
 
 ## 📢 社区活动
 -  [Ti example 征集活动](https://forum.taichi.graphics/t/ti-example/2872) 
-本次征集活动将持续至 2022 年 10 月 14 日 下午 5 点，参与即可获得 Taichi 定制周边。希望大家踊跃提交作品。如果你的作品被收录，将会被全球数以十万计的用户和开发者看到哦！ 
+   本次征集活动将持续至 2022 年 10 月 14 日 下午 5 点，参与即可获得 Taichi 定制周边。希望大家踊跃提交作品。如果你的作品被收录，将会被全球数以十万计的用户和开发者看到哦！ 
 
 -  数值计算 SIG  
-学习分享会将于每周五晚 20:00 进行，后续将邀请到社区同学结合自己的学术成果进行分享，同时也欢迎大家加入到数值计算 SIG 交流群，感兴趣的同学可[填写表单](https://love3d.wjx.cn/vm/PX0LrrP.aspx?udsid=791245)加入其中。
+   学习分享会将于每周五晚 20:00 进行，后续将邀请到社区同学结合自己的学术成果进行分享，同时也欢迎大家加入到数值计算 SIG 交流群，感兴趣的同学可[填写表单](https://love3d.wjx.cn/vm/PX0LrrP.aspx?udsid=791245)加入其中。
   
