@@ -40,7 +40,7 @@ description:
 ## 🌟 社区精选作品
 - **[Taichi x 电磁场时域有限差分方法的新尝试 ](https://github.com/lucifer1004/uFDTD-Taichi)**
 
-   uFDTD (Understanding the FDTD Method)是著名的电磁场时域有限差分方法入门教材。社区同学 lucifer1004 在 uFDTD-Taichi 项目中，分别使用原生 Taichi 和 Taichi.jl 实现了原书前六章的有关内容，主要是一维电磁场的时域有限差分模拟，涉及理想导体、电介质、电磁散射、理想匹配层、吸收边界条件等基本概念和方法。 
+   uFDTD (Understanding the FDTD Method) 是著名的电磁场时域有限差分方法入门教材。社区同学 lucifer1004 在 uFDTD-Taichi 项目中，分别使用原生 Taichi 和 Taichi.jl 实现了原书前六章的有关内容，主要是一维电磁场的时域有限差分模拟，涉及理想导体、电介质、电磁散射、理想匹配层、吸收边界条件等基本概念和方法。 
    
   ![uFDTD](https://github.com/lucywsq/docs.taichi.graphics/blob/master/website/newsletter/en/08/pics/1d_bare_bones.gif)
 
