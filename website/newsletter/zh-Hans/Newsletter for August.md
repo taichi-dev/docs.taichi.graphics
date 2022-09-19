@@ -17,7 +17,7 @@ description:
     Taichi 在 v1.1.0 中取得了多项进展，程序性能也有所提升，进一步提高了用户的开发效率。诸如： 
   - 量化数据类型：用户可以在不改变计算部分的代码的前提下，将数据以任意低的精确度进行存储，大幅节约显存。
   - 离线缓存：用户可将编译产物存储到磁盘上，极大地减少了程序重复启动 kernel 的编译开销。
-  - 前向模式自动微分：当一个函数的输出数量大于输入数量时，前向自动微分的效率比反向微分要高很多。前向模式和反向模式下的 Jacobi 矩阵计算样例即体现这一特点，大家可以在 Taichi v1.1.0 运行 ti example jacobian 实际体会。
+  - 前向模式自动微分：当一个函数的输出数量大于输入数量时，前向自动微分的效率比反向微分要高很多。前向模式和反向模式下的 Jacobi 矩阵计算样例即体现这一特点，大家可以在 Taichi v1.1.0 运行 ti example jacobian 示例实际体会。
   
   关于 v1.1.0 功能介绍和更多进展，请参考发版说明[release notes](https://mp.weixin.qq.com/s?__biz=MzkzNDI3NDY4Mw==&mid=2247502082&idx=1&sn=e7cad8c09a6af9539a64a4ec4ac6b58a&chksm=c2bd3a16f5cab300b58d81942bf74138552acb4e4c4658a3d6b53107441fe685f6579f3cdcfa&scene=21#wechat_redirect)。 
   目前最新版本中也将 v1.1.0 的部分 bug 做了补丁修复，可直接升级到 v1.1.2 版本 `pip install taichi==1.1.2`
@@ -31,28 +31,28 @@ description:
 - **Taichi 助力科研工作者入围 SIGGRAPH 2022!** 
   
   - [Automatic Quantization for Physics-Based Simulation](https://arxiv.org/pdf/2207.04658.pdf)
-  作者刘嘉枫等人合作开发了一套自动量化系统，可以根据用户的误差或内存限制的规格生成量化方案。该项目利用 Taichi 的自动微分框架来优化由量化计算带来的仿真误差，并受 Taichi 自身的量化系统    启发，采用了内存存储优化策略，节省了大量的人工劳动，内存压缩高达 2.5 倍。 
+  作者刘嘉枫等人合作开发了一套自动量化系统，可以根据用户的误差或内存限制的规格生成量化方案。该项目利用 Taichi 的自动微分框架来优化由量化计算带来的仿真误差，并受 Taichi 自身的量化系统启发，采用了内存存储优化策略，节省了大量的人工劳动，内存压缩高达 2.5 倍。 
 
   - [A General Two-stage Initialization for Sag-Free Deformable Simulations](https://graphics.cs.utah.edu/research/projects/sag-free-simulations/sig22_sagfree_sim.pdf)
-  本篇论文由 Jerry Hsu 等人合作完成。通常来说，仿真物体零受力状态的形状和其在动画中的收到重力等外力下的初始帧不吻合，这给艺术家带来了很多麻烦。本文逆向推算了物体的零受力状态，使得艺    术家们可以「所见即所得」地初始化物体的初始帧。这个解决方案能工用于多种仿真系统和材料模型中。值得一提的是，文章使用 Taichi 开源了对 MPM 模拟的初始化修正样例。 
+  本篇论文由 Jerry Hsu 等人合作完成。通常来说，仿真物体零受力状态的形状和其在动画中的收到重力等外力下的初始帧不吻合，这给艺术家带来了很多麻烦。本文逆向推算了物体的零受力状态，使得艺术家们可以「所见即所得」地初始化物体的初始帧。这个解决方案能工用于多种仿真系统和材料模型中。值得一提的是，文章使用 Taichi 开源了对 MPM 模拟的初始化修正样例。 
 
 
 ## 🌟 社区精选作品
 - **[Taichi x 电磁场时域有限差分方法的新尝试 ](https://github.com/lucifer1004/uFDTD-Taichi)**
 
-   uFDTD(Understanding the FDTD Method)是著名的电磁场时域有限差分方法入门教材。社区同学 lucifer1004 在 uFDTD-Taichi 项目中，分别使用原生 Taichi 和 Taichi.jl 实现了原书    前六章的有关内容，主要是一维电磁场的时域有限差分模拟，涉及理想导体、电介质、电磁散射、理想匹配层、吸收边界条件等基本概念和方法。 
+   uFDTD(Understanding the FDTD Method)是著名的电磁场时域有限差分方法入门教材。社区同学 lucifer1004 在 uFDTD-Taichi 项目中，分别使用原生 Taichi 和 Taichi.jl 实现了原书前六章的有关内容，主要是一维电磁场的时域有限差分模拟，涉及理想导体、电介质、电磁散射、理想匹配层、吸收边界条件等基本概念和方法。 
   ![uFDTD](https://github.com/lucywsq/docs.taichi.graphics/blob/master/website/newsletter/en/08/pics/1d_bare_bones.gif)
 
 
 - **[如何用 Taichi 实现拉普拉斯方程基本解模拟？](https://forum.taichi.graphics/t/topic/2879/9)**
 
-   社区同学 bismarckkk 创作的 demo 可以模拟点源、点汇、点涡、偶极子等拉普拉斯方程的基本解，即理想不可压流体的一些最基本的平面定常无旋流动。 同时，它也可以交互式地创建或更改上述基本      解，通过箭头和从边缘出发的物质点显示该流场中的流动情况。 
+   社区同学 bismarckkk 创作的 demo 可以模拟点源、点汇、点涡、偶极子等拉普拉斯方程的基本解，即理想不可压流体的一些最基本的平面定常无旋流动。同时，它也可以交互式地创建或更改上述基本解，通过箭头和从边缘出发的物质点显示该流场中的流动情况。 
   ![laplace](https://github.com/lucywsq/docs.taichi.graphics/blob/master/website/newsletter/en/08/pics/laplace.gif)
   
   
 - **[有更简单的办法能够重绘 Taichi logo 了？](https://github.com/lgyStoic/taichi_rotation)**
 
-   社区同学 garryling 在学习 Taichi 的过程中，发现 ti example 中的 Taichi logo 的例子代码较为抽象。于是他另辟蹊径，使用了一种更加直观的方法来重画 Taichi logo。该方法逻辑十分    简单，只需要画出五个圆，并判断点是否在圆内就能表示出 Taichi Logo。同时通过 SSAA 进行抗锯齿操作，使得结果更加平滑。 
+   社区同学 garryling 在学习 Taichi 的过程中，发现 ti example 中的 Taichi logo 的例子代码较为抽象。于是他另辟蹊径，使用了一种更加直观的方法来重画 Taichi logo。该方法逻辑十分简单，只需要画出五个圆，并判断点是否在圆内就能表示出 Taichi Logo。同时通过 SSAA 进行抗锯齿操作，使得结果更加平滑。 
   ![taichi-logo](https://github.com/lucywsq/docs.taichi.graphics/blob/master/website/newsletter/en/08/pics/taichi_logo.gif)
 
 ## 💪 贡献者力量
