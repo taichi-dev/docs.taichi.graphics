@@ -19,7 +19,7 @@ description:
   - 离线缓存：用户可将编译产物存储到磁盘上，极大地减少了程序重复启动 kernel 的编译开销。
   - 前向模式自动微分：当一个函数的输出数量大于输入数量时，前向自动微分的效率比反向微分要高很多。前向模式和反向模式下的 Jacobi 矩阵计算样例即体现这一特点，大家可以在 Taichi v1.1.0 运行 ti example jacobian 示例实际体会。
   
-  关于 v1.1.0 功能介绍和更多进展，请参考发版说明[release notes](https://mp.weixin.qq.com/s?__biz=MzkzNDI3NDY4Mw==&mid=2247502082&idx=1&sn=e7cad8c09a6af9539a64a4ec4ac6b58a&chksm=c2bd3a16f5cab300b58d81942bf74138552acb4e4c4658a3d6b53107441fe685f6579f3cdcfa&scene=21#wechat_redirect)。 
+  关于 v1.1.0 功能介绍和更多进展，请参考发版说明 [release notes](https://mp.weixin.qq.com/s?__biz=MzkzNDI3NDY4Mw==&mid=2247502082&idx=1&sn=e7cad8c09a6af9539a64a4ec4ac6b58a&chksm=c2bd3a16f5cab300b58d81942bf74138552acb4e4c4658a3d6b53107441fe685f6579f3cdcfa&scene=21#wechat_redirect)。 
   目前最新版本中也将 v1.1.0 的部分 bug 做了补丁修复，可直接升级到 v1.1.2 版本 `pip install taichi==1.1.2`
   
 
