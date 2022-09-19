@@ -68,7 +68,7 @@ description:
  - [Taichi 贡献者指南](https://docs.taichi-lang.org/docs/contributor_guide)
    一文带大家读懂如何成为 Taichi 贡献者，解释了具体的行为规范，也包含了实用小技巧，便于大家快速上手。
  - [Taichi 编程语言的开发进度面板](https://github.com/orgs/taichi-dev/projects/1)
-   便于大家快速了解 Taichi 未处理/进展中/已处理/已完成开发的 issues。 
+   便于大家快速了解 Taichi 未处理/进展中/已处理/已完成开发的 issue。 
  - [从这里寻找贡献灵感](https://github.com/taichi-dev/taichi/contribute)
    开启向 Taichi 贡献第一步，可从 GitHub 中找到灵感，从 (good first issue)[https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22]（非常容易上手）和 (welcome contribution)[https://github.com/taichi-dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22]（稍微带有挑战性）这两类 issues 中找到感兴趣的贡献方向。 
  - [加入 GitHub discussion](https://github.com/taichi-dev/taichi/discussions)
