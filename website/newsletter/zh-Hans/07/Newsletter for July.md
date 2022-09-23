@@ -29,7 +29,7 @@ description:
   
 - **Clang 15 目前能够在 COMPILE_LLVM_RUNTIME 中使用** 
 
- 贡献者 **python3kgae** 提议为编译器添加 DirectX 12 后端。到目前为止，他已经成功地为 COMPILE_LLVM_RUNTIME 启用了 Clang 15，并更改了 getPointerElementType 的使用方法。感谢这位开发者的贡献！当然，Taichi 仍然支持 Clang 10。目前这个功能仍在开发中，欢迎关注它的开发进展，[点击这里](https://github.com/taichi-dev/taichi/issues/5276)也可以加入讨论。
+贡献者 **python3kgae** 提议为编译器添加 DirectX 12 后端。到目前为止，他已经成功地为 COMPILE_LLVM_RUNTIME 启用了 Clang 15，并更改了 getPointerElementType 的使用方法。感谢这位开发者的贡献！当然，Taichi 仍然支持 Clang 10。目前这个功能仍在开发中，欢迎关注它的开发进展，[点击这里](https://github.com/taichi-dev/taichi/issues/5276)也可以加入讨论。
 
 
 ## 📢 社区活动
