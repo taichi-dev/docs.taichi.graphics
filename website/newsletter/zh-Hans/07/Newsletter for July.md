@@ -23,13 +23,13 @@ description:
 
 - **v1.0.4 版本正式发布**
 
-  本次版本进行了语言、语法和文档的少量更新。更多细节请参考完整的 Release Notes 文档。 欢迎升级你的 Taichi 版本体验：`pip install --upgrade taichi` 
-  [点击这里浏览更新文档](http://bit.ly/3RBc1Ld) 
+   本次版本进行了语言、语法和文档的少量更新。更多细节请参考完整的 Release Notes 文档。 欢迎升级你的 Taichi 版本体验：`pip install --upgrade taichi` 
+   [点击这里浏览更新文档](http://bit.ly/3RBc1Ld) 
   
   
 - **Clang 15 目前能够在 COMPILE_LLVM_RUNTIME 中使用** 
 
-贡献者 **python3kgae** 提议为编译器添加 DirectX 12 后端。到目前为止，他已经成功地为 COMPILE_LLVM_RUNTIME 启用了 Clang 15，并更改了 getPointerElementType 的使用方法。感谢这位开发者的贡献！当然，Taichi 仍然支持 Clang 10。目前这个功能仍在开发中，欢迎关注它的开发进展，[点击这里](https://github.com/taichi-dev/taichi/issues/5276)也可以加入讨论。
+   贡献者 **python3kgae** 提议为编译器添加 DirectX 12 后端。到目前为止，他已经成功地为 COMPILE_LLVM_RUNTIME 启用了 Clang 15，并更改了 getPointerElementType 的使用方法。感谢这位开发者的贡献！当然，Taichi 仍然支持 Clang 10。目前这个功能仍在开发中，欢迎关注它的开发进展，[点击这里](https://github.com/taichi-dev/taichi/issues/5276)也可以加入讨论。
 
 
 ## 📢 社区活动
@@ -64,6 +64,7 @@ description:
 - **[在 Julia 中使用 Taichi](https://github.com/lucifer1004/Taichi.jl)**
 
    社区同学 **lucifer1004** 尝试在编程语言 Julia 中使用 Taichi，创造出 Taichi.jl 项目。这个项目基于两个 Julia 的包：PythonCall.jl 和 Jl2Py.jl，总代码量只有几十行。目前他在 Julia 中实现了三个例子，分别是经典的 Julia Set、Game of Life 和 FEM99。欢迎感兴趣的小伙伴访问项目链接，试用体验。
+   
    ![julia](https://github.com/taichi-dev/docs.taichi.graphics/blob/master/website/newsletter/en/07/pics/julia.gif)
 
   
