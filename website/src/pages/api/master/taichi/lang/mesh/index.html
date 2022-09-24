@@ -34,6 +34,7 @@
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -224,12 +225,121 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh">
-   Mesh
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Mesh
+    </span>
+   </code>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.RelationVisitor">
-     RelationVisitor
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.RelationVisitor
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.RelationVisitor.generic_visit">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.generic_visit()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.RelationVisitor.visit">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.visit()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.RelationVisitor.visit_Assign">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.visit_Assign()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.RelationVisitor.visit_Attribute">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.visit_Attribute()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.RelationVisitor.visit_Constant">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.visit_Constant()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.RelationVisitor.visit_For">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.visit_For()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.Tet">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.Tet()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.Tri">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.Tri()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.generate_meta">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.generate_meta()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.load_meta">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.load_meta()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.update_relation">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.update_relation()
+      </span>
+     </code>
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -263,6 +373,36 @@
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.mesh.TetMesh">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TetMesh()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.mesh.TriMesh">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TriMesh()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh">
+   Mesh
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.RelationVisitor">
+     RelationVisitor
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.mesh.Mesh.Tet">
@@ -472,7 +612,7 @@ allows modifications.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

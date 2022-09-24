@@ -34,6 +34,7 @@
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,6 +223,357 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.arm64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     arm64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.assume_in_range">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assume_in_range()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.block_local">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     block_local()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.cache_read_only">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cache_read_only()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.cc">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cc
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.cpu">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cpu
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.cuda">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cuda
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.dx11">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dx11
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.extension">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     extension
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.get_compute_stream_device_time_elapsed_us">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_compute_stream_device_time_elapsed_us()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.global_thread_idx">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     global_thread_idx()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.gpu">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     gpu
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.i">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     i
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ij">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ij
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ijk">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ijk
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ijkl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ijkl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ijl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ijl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ik">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ik
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.ikl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ikl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.il">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     il
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.init">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     init()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.j">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     j
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.jk">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     jk
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.jkl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     jkl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.jl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     jl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.k">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     k
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.kl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     kl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.l">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     l
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.loop_config">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     loop_config()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.mesh_local">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mesh_local()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.mesh_patch_idx">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mesh_patch_idx()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.metal">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     metal
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.no_activate">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     no_activate()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.opengl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     opengl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.reset">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reset()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.vulkan">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     vulkan
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.wasm">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     wasm
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.x64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     x64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.x86_64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     x86_64
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.misc.arm64">
    arm64
@@ -866,7 +1218,7 @@ before rest: 1
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

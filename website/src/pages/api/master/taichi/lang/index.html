@@ -34,6 +34,7 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
@@ -223,6 +224,2766 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.BitpackedFields">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     BitpackedFields
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.BitpackedFields.place">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BitpackedFields.place()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.Field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Field
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Field.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Field.dtype">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.dtype()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Field.from_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.from_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Field.from_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.from_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Field.parent">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.parent()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Field.shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Field.snode">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.snode()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.Layout">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Layout
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.Matrix">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matrix
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.all">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.all()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.any">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.any()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.any_array_access">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.any_array_access()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.cast">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.cast()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.cols">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.cols()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.cross">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.cross()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.determinant">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.determinant()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.diag">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.diag()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.dot">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.dot()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.dynamic_index_stride">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.dynamic_index_stride()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.entries">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.entries()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.field()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.identity">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.identity()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.inverse">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.inverse()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.local_tensor_proxy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.local_tensor_proxy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.max">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.max()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.min">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.min()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.ndarray">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.ndarray()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.norm">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.norm()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.norm_inv">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.norm_inv()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.norm_sqr">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.norm_sqr()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.normalized">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.normalized()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.one">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.one()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.outer_product">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.outer_product()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.rotation2d">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.rotation2d()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.rows">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.rows()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.sum">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.sum()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.to_list">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.to_list()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.to_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.to_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.trace">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.trace()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.transpose">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.transpose()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.unit">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.unit()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Matrix.zero">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matrix.zero()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.MatrixField">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MatrixField
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixField.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.from_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixField.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.get_scalar_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixField.get_scalar_field()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.to_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixField.to_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.to_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixField.to_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixField.to_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixField.to_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MatrixNdarray
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.element_shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixNdarray.element_shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.from_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixNdarray.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.to_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixNdarray.to_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.Mesh">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Mesh
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.RelationVisitor
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.generic_visit">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.generic_visit()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.visit()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Assign">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.visit_Assign()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Attribute">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.visit_Attribute()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Constant">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.visit_Constant()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_For">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Mesh.RelationVisitor.visit_For()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Mesh.Tet">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.Tet()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Mesh.Tri">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.Tri()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Mesh.generate_meta">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.generate_meta()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Mesh.load_meta">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.load_meta()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Mesh.update_relation">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Mesh.update_relation()
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.generic_visit">
+       generic_visit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit">
+       visit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Assign">
+       visit_Assign
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Attribute">
+       visit_Attribute
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Constant">
+       visit_Constant
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_For">
+       visit_For
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.Ndarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Ndarray
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Ndarray.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Ndarray.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Ndarray.element_shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Ndarray.element_shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Ndarray.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Ndarray.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Ndarray.get_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Ndarray.get_type()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.SNode">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SNode
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.bitmasked">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.bitmasked()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.deactivate_all">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.deactivate_all()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.dense">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.dense()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.dynamic">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.dynamic()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.lazy_dual">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.lazy_dual()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.lazy_grad">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.lazy_grad()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.parent">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.parent()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.place">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.place()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.pointer">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.pointer()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.quant_array">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.quant_array()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.SNode.shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.shape()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ScalarField">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ScalarField
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.dtype">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.dtype()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.from_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.from_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.from_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.from_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.from_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.parent">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.parent()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.snode">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.snode()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.to_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.to_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.to_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.to_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarField.to_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.to_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ScalarNdarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ScalarNdarray
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarNdarray.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarNdarray.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarNdarray.element_shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarNdarray.element_shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarNdarray.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarNdarray.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarNdarray.from_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarNdarray.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarNdarray.get_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarNdarray.get_type()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ScalarNdarray.to_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarNdarray.to_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.Struct">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Struct
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Struct.field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Struct.field()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Struct.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Struct.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Struct.items">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Struct.items()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Struct.keys">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Struct.keys()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Struct.to_dict">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Struct.to_dict()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.StructField">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     StructField
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.dtype">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.dtype()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.from_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.from_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.from_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.from_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.from_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.get_member_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.get_member_field()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.keys">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.keys()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.parent">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.parent()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.snode">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.snode()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.to_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.to_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.to_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.to_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.StructField.to_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       StructField.to_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.TaichiAssertionError">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TaichiAssertionError
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiAssertionError.args">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiAssertionError.args
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiAssertionError.with_traceback">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiAssertionError.with_traceback()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.TaichiCompilationError">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TaichiCompilationError
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiCompilationError.args">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiCompilationError.args
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiCompilationError.with_traceback">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiCompilationError.with_traceback()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.TaichiNameError">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TaichiNameError
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiNameError.args">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiNameError.args
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiNameError.with_traceback">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiNameError.with_traceback()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.TaichiRuntimeError">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TaichiRuntimeError
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiRuntimeError.args">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiRuntimeError.args
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiRuntimeError.with_traceback">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiRuntimeError.with_traceback()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.TaichiRuntimeTypeError">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TaichiRuntimeTypeError
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiRuntimeTypeError.args">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiRuntimeTypeError.args
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiRuntimeTypeError.get">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiRuntimeTypeError.get()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiRuntimeTypeError.with_traceback">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiRuntimeTypeError.with_traceback()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TaichiSyntaxError
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError.args">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiSyntaxError.args
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError.filename">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiSyntaxError.filename
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError.lineno">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiSyntaxError.lineno
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError.msg">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiSyntaxError.msg
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError.offset">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiSyntaxError.offset
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError.print_file_and_line">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiSyntaxError.print_file_and_line
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError.text">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiSyntaxError.text
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiSyntaxError.with_traceback">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiSyntaxError.with_traceback()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.TaichiTypeError">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TaichiTypeError
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiTypeError.args">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiTypeError.args
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.TaichiTypeError.with_traceback">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiTypeError.with_traceback()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.TetMesh">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TetMesh()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.Texture">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Texture
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Texture.from_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Texture.from_field()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Texture.from_image">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Texture.from_image()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Texture.from_ndarray">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Texture.from_ndarray()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Texture.to_image">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Texture.to_image()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.TriMesh">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TriMesh()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.Vector">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Vector
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.all">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.all()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.any">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.any()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.any_array_access">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.any_array_access()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.cast">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.cast()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.cols">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.cols()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.cross">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.cross()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.determinant">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.determinant()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.diag">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.diag()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.dot">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.dot()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.dynamic_index_stride">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.dynamic_index_stride()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.entries">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.entries()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.field()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.identity">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.identity()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.inverse">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.inverse()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.local_tensor_proxy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.local_tensor_proxy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.max">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.max()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.min">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.min()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.ndarray">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.ndarray()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.norm">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.norm()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.norm_inv">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.norm_inv()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.norm_sqr">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.norm_sqr()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.normalized">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.normalized()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.one">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.one()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.outer_product">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.outer_product()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.rotation2d">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.rotation2d()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.rows">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.rows()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.sum">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.sum()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.to_list">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.to_list()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.to_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.to_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.trace">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.trace()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.transpose">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.transpose()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.unit">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.unit()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.Vector.zero">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Vector.zero()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     VectorNdarray
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.element_shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VectorNdarray.element_shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.from_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VectorNdarray.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.to_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VectorNdarray.to_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.abs">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     abs()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.acos">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     acos()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.activate">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     activate()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.append">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     append()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.arm64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     arm64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.asin">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asin()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.assume_in_range">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assume_in_range()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.atan2">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atan2()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.atomic_add">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atomic_add()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.atomic_and">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atomic_and()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.atomic_max">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atomic_max()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.atomic_min">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atomic_min()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.atomic_or">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atomic_or()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.atomic_sub">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atomic_sub()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.atomic_xor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atomic_xor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.axes">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     axes()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.bit_cast">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bit_cast()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.bit_shr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bit_shr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.block_local">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     block_local()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.cache_read_only">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cache_read_only()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.cast">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cast()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.cc">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cc
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ceil">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ceil()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.cos">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cos()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.cpu">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cpu
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.cuda">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cuda
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.data_oriented">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     data_oriented()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.dataclass">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dataclass()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.deactivate">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     deactivate()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.deactivate_all_snodes">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     deactivate_all_snodes()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.dx11">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dx11
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.exp">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     exp()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.extension">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     extension
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     field()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.floor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     floor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.func">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     func()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.get_addr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_addr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.get_compute_stream_device_time_elapsed_us">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_compute_stream_device_time_elapsed_us()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.global_thread_idx">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     global_thread_idx()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.gpu">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     gpu
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.grouped">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     grouped()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.i">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     i
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ij">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ij
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ijk">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ijk
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ijkl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ijkl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ijl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ijl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ik">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ik
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ikl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ikl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.il">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     il
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.init">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     init()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.is_active">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     is_active()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.j">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     j
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.jk">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     jk
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.jkl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     jkl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.jl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     jl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.k">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     k
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.kernel">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     kernel()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.kl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     kl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.l">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     l
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.length">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     length()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.log">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     log()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.loop_config">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     loop_config()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.max">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     max()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.mesh_local">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mesh_local()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.mesh_patch_idx">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mesh_patch_idx()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.metal">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     metal
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.min">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     min()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ndarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ndarray()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ndrange">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ndrange()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.no_activate">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     no_activate()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.one">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     one()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.opengl">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     opengl
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.pow">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pow()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.random">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     random()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.raw_div">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     raw_div()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.raw_mod">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     raw_mod()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.rescale_index">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rescale_index()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.reset">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reset()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.root">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     root
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.round">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     round()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.rsqrt">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rsqrt()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.select">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     select()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.sin">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sin()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.sqrt">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sqrt()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.static">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     static()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.static_assert">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     static_assert()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.static_print">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     static_print()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.stop_grad">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     stop_grad()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.sync">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sync()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.tan">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tan()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.tanh">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tanh()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.vulkan">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     vulkan
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.wasm">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     wasm
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.x64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     x64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.x86_64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     x86_64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.zero">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     zero()
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.BitpackedFields">
    BitpackedFields
@@ -527,38 +3288,6 @@
     <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor">
      RelationVisitor
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.generic_visit">
-       generic_visit
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit">
-       visit
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Assign">
-       visit_Assign
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Attribute">
-       visit_Attribute
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_Constant">
-       visit_Constant
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.lang.Mesh.RelationVisitor.visit_For">
-       visit_For
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.Mesh.Tet">
@@ -2181,10 +4910,10 @@ with <cite>val</cite>.</p>
 <li><p><strong>n</strong> (<em>int</em>) – The desired number of rows of the Matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em>) – The desired number of columns of the Matrix.</p></li>
 <li><p><strong>dtype</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of the Matrix.</p></li>
-<li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple of int</em><em>]</em><em>, </em><em>optional</em>) – The desired shape of the Matrix.</p></li>
+<li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em> of </em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The desired shape of the Matrix.</p></li>
 <li><p><strong>order</strong> (<em>str</em><em>, </em><em>optional</em>) – order of the shape laid out in memory.</p></li>
 <li><p><strong>name</strong> (<em>string</em><em>, </em><em>optional</em>) – The custom name of the field.</p></li>
-<li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple of int</em><em>]</em><em>, </em><em>optional</em>) – The coordinate offset
+<li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em> of </em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The coordinate offset
 of all elements in a field.</p></li>
 <li><p><strong>needs_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the Matrix need grad field (reverse mode autodiff).</p></li>
 <li><p><strong>needs_dual</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the Matrix need dual field (forward mode autodiff).</p></li>
@@ -6543,7 +9272,7 @@ if the input is a scalar.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

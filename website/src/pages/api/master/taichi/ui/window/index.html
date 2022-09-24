@@ -34,6 +34,7 @@
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,6 +223,170 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.window.Window">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Window
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.GUI">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.GUI()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.destroy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.destroy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.event">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.event()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_canvas">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_canvas()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_cursor_pos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_cursor_pos()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_depth_buffer">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_depth_buffer()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_depth_buffer_as_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_depth_buffer_as_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_event">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_event()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_events">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_events()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_gui">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_gui()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_image_buffer_as_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_image_buffer_as_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.get_window_shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_window_shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.is_pressed">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.is_pressed()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.running">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.running()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.save_image">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.save_image()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.show">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.show()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.window.Window.write_image">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.write_image()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.ui.window.Window">
    Window
@@ -540,7 +705,7 @@ interface; please use <cite>save_image</cite> instead.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

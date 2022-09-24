@@ -34,6 +34,7 @@
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,6 +223,629 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ASTTransformer
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_AnnAssign">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_AnnAssign()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Assert">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Assert()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Assign">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Assign()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Attribute">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Attribute()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_AugAssign">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_AugAssign()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_BinOp">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_BinOp()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_BoolOp">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_BoolOp()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Break">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Break()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Bytes">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Bytes()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Call">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Call()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Compare">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Compare()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Constant">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Constant()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Continue">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Continue()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Dict">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Dict()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_DictComp">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_DictComp()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Expr">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Expr()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_ExtSlice">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_ExtSlice()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_For">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_For()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_FunctionDef">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_FunctionDef()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_If">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_If()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_IfExp">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_IfExp()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Index">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Index()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_JoinedStr">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_JoinedStr()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_List">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_List()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_ListComp">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_ListComp()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Module">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Module()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_NameConstant">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_NameConstant()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_NamedExpr">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_NamedExpr()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Num">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Num()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Pass">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Pass()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Return">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Return()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Slice">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Slice()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Starred">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Starred()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Str">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Str()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Subscript">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Subscript()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Tuple">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_Tuple()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_UnaryOp">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_UnaryOp()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_While">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_While()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_annotated">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_assign_annotated()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_basic">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_assign_basic()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_slice">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_assign_slice()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_unpack">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_assign_unpack()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_bool_op">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_bool_op()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_call_if_is_builtin">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_call_if_is_builtin()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_call_if_is_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_call_if_is_type()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_grouped_ndrange_for">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_grouped_ndrange_for()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_keyword">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_keyword()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_mesh_for">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_mesh_for()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_ndrange_for">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_ndrange_for()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_nested_mesh_for">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_nested_mesh_for()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_range_for">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_range_for()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_static_and">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_static_and()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_static_for">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_static_for()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_static_or">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_static_or()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_struct_for">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_struct_for()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.get_decorator">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.get_decorator()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.get_for_loop_targets">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.get_for_loop_targets()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.is_tuple">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.is_tuple()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.process_dictcomp">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.process_dictcomp()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.process_generators">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.process_generators()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.process_ifs">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.process_ifs()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.process_listcomp">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.process_listcomp()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.ti_format_list_to_assert_msg">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.ti_format_list_to_assert_msg()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.warn_if_is_external_func">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.warn_if_is_external_func()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.boundary_type_cast_warning">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     boundary_type_cast_warning()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.build_stmt">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     build_stmt
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.build_stmts">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     build_stmts()
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer">
    ASTTransformer
@@ -841,7 +1465,7 @@ The function should be called only if the node target is a tuple.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctx</strong> (<em>ast_builder_utils.BuilderContext</em>) – The builder context.</p></li>
 <li><p><strong>node_target</strong> (<em>ast.Tuple</em>) – A list or tuple object. <cite>node_target.elts</cite> holds a</p></li>
-<li><p><strong>elements.</strong> (<em>list of nodes representing the</em>) – </p></li>
+<li><p><strong>elements.</strong> (<em>list</em><em> of </em><em>nodes representing the</em>) – </p></li>
 <li><p><strong>values</strong> – A node/list representing the values.</p></li>
 <li><p><strong>is_static_assign</strong> – A boolean value indicating whether this is a static assignment</p></li>
 </ul>
@@ -1006,7 +1630,7 @@ See also: <a class="reference external" href="https://docs.python.org/3/library/
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

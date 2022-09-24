@@ -34,6 +34,7 @@
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,6 +223,179 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.snode.SNode">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SNode
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.bitmasked">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.bitmasked()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.deactivate_all">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.deactivate_all()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.dense">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.dense()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.dynamic">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.dynamic()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.lazy_dual">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.lazy_dual()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.lazy_grad">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.lazy_grad()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.parent">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.parent()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.place">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.place()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.pointer">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.pointer()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.quant_array">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.quant_array()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.snode.SNode.shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SNode.shape()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.snode.activate">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     activate()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.snode.append">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     append()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.snode.deactivate">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     deactivate()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.snode.get_addr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_addr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.snode.is_active">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     is_active()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.snode.length">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     length()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.snode.rescale_index">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rescale_index()
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.snode.SNode">
    SNode
@@ -672,7 +846,7 @@ the memory of the deactivated cell.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

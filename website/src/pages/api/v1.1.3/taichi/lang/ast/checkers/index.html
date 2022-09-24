@@ -34,6 +34,7 @@
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -224,12 +225,139 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker">
-   KernelSimplicityASTChecker
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     KernelSimplicityASTChecker
+    </span>
+   </code>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.ScopeGuard">
-     ScopeGuard
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       KernelSimplicityASTChecker.ScopeGuard
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.ScopeGuard.allows_for_loop">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         KernelSimplicityASTChecker.ScopeGuard.allows_for_loop()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.ScopeGuard.allows_more_stmt">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         KernelSimplicityASTChecker.ScopeGuard.allows_more_stmt()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.ScopeGuard.mark_no_more_for_loop">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         KernelSimplicityASTChecker.ScopeGuard.mark_no_more_for_loop()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.ScopeGuard.mark_no_more_stmt">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         KernelSimplicityASTChecker.ScopeGuard.mark_no_more_stmt()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.current_scope">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       KernelSimplicityASTChecker.current_scope()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.generic_visit">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       KernelSimplicityASTChecker.generic_visit()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.get_error_location">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       KernelSimplicityASTChecker.get_error_location()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.new_scope">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       KernelSimplicityASTChecker.new_scope()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.should_check">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       KernelSimplicityASTChecker.should_check()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.top_level">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       KernelSimplicityASTChecker.top_level()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.visit">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       KernelSimplicityASTChecker.visit()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.visit_Constant">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       KernelSimplicityASTChecker.visit_Constant()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.visit_for">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       KernelSimplicityASTChecker.visit_for()
+      </span>
+     </code>
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -253,6 +381,18 @@
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker">
+   KernelSimplicityASTChecker
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.ScopeGuard">
+     ScopeGuard
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.ast.checkers.KernelSimplicityASTChecker.current_scope">
@@ -443,7 +583,7 @@ allows modifications.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

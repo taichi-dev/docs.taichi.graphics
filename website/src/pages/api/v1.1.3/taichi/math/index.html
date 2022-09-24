@@ -34,6 +34,7 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
@@ -223,6 +224,591 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.acos">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     acos()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.asin">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asin()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.atan2">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atan2()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cconj">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cconj()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cdiv">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cdiv()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.ceil">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ceil()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cexp">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cexp()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cinv">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cinv()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.clamp">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     clamp()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.clog">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     clog()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cmul">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cmul()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cos">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cos()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cpow">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cpow()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.cross">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cross()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.csqrt">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     csqrt()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.degrees">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     degrees()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.determinant">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     determinant()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.distance">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     distance()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.dot">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dot()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.exp">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     exp()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.eye">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     eye()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.floor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     floor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.fract">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     fract()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.inverse">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     inverse()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.isinf">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     isinf()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.isnan">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     isnan()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.ivec2">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ivec2
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.ivec3">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ivec3
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.ivec4">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ivec4
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.length">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     length()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.log">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     log()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.log2">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     log2()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.mat2">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mat2
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.mat3">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mat3
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.mat4">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mat4
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.max">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     max()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.min">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     min()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.mix">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mix()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.mod">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mod()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.normalize">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     normalize()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.pow">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pow()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.radians">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     radians()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.reflect">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reflect()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.refract">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     refract()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rot_by_axis">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rot_by_axis()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rot_yaw_pitch_roll">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rot_yaw_pitch_roll()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rotation2d">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rotation2d()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.rotation3d">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rotation3d()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.round">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     round()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.scale">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scale()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.sign">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sign()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.sin">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sin()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.smoothstep">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     smoothstep()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.sqrt">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sqrt()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.step">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     step()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.tan">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tan()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.tanh">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tanh()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.translate">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     translate()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.uvec2">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     uvec2
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.uvec3">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     uvec3
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.uvec4">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     uvec4
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.vdir">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     vdir()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.vec2">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     vec2
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.vec3">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     vec3
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.math.vec4">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     vec4
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.math.acos">
    acos
@@ -2031,7 +2617,7 @@ the value to be used to generate the step function.</p></li>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

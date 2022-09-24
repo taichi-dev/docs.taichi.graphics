@@ -34,6 +34,7 @@
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,6 +223,132 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.at_startup">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     at_startup()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.check_exists">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     check_exists()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.compare_version">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     compare_version()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.get_core_shared_object">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_core_shared_object()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.get_dll_name">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_dll_name()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.get_os_name">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_os_name()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.import_ti_python_core">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     import_ti_python_core()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.in_docker">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     in_docker()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.is_ci">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     is_ci()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.locale_encode">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     locale_encode()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.log_level">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     log_level
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.package_root">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     package_root
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.print_red_bold">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print_red_bold()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._lib.utils.ti_python_core">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ti_python_core
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi._lib.utils.at_startup">
    at_startup
@@ -413,7 +540,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     
