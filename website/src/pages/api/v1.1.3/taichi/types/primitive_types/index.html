@@ -34,6 +34,7 @@
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,6 +223,213 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.f16">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     f16
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.f32">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     f32
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.f64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     f64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.float16">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     float16
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.float32">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     float32
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.float64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     float64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.i16">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     i16
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.i32">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     i32
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.i64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     i64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.i8">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     i8
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.int16">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     int16
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.int32">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     int32
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.int64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     int64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.int8">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     int8
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.ref">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ref()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.u16">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     u16
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.u32">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     u32
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.u64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     u64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.u8">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     u8
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.uint16">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     uint16
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.uint32">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     uint32
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.uint64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     uint64
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.primitive_types.uint8">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     uint8
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.types.primitive_types.f16">
    f16
@@ -525,7 +733,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

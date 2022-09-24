@@ -34,6 +34,7 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -224,6 +225,1285 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.ui.ALT">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ALT
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.BACKSPACE">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     BACKSPACE
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.CAPSLOCK">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     CAPSLOCK
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.CTRL">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     CTRL
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.Camera">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Camera
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.bottom">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.bottom()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.fov">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.fov()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.get_projection_matrix">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.get_projection_matrix()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.get_view_matrix">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.get_view_matrix()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.left">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.left()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.lookat">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.lookat()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.position">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.position()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.projection_mode">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.projection_mode()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.right">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.right()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.top">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.top()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.track_user_inputs">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.track_user_inputs()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.up">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.up()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.z_far">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.z_far()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Camera.z_near">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Camera.z_near()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.Canvas">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Canvas
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Canvas.circles">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.circles()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Canvas.lines">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.lines()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Canvas.scene">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.scene()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Canvas.set_background_color">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.set_background_color()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Canvas.set_image">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.set_image()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Canvas.triangles">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.triangles()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.DOWN">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     DOWN
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.ESCAPE">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ESCAPE
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.GUI">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     GUI
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.Event">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.Event
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.EventFilter">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.EventFilter
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.ui.GUI.EventFilter.match">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         GUI.EventFilter.match()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.WidgetValue">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.WidgetValue
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.ui.GUI.WidgetValue.value">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         GUI.WidgetValue.value()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.ALT">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.ALT
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.BACKSPACE">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.BACKSPACE
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.CAPSLOCK">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.CAPSLOCK
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.CTRL">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.CTRL
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.DOWN">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.DOWN
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.ESCAPE">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.ESCAPE
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.EXIT">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.EXIT
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.LEFT">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.LEFT
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.LMB">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.LMB
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.MMB">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.MMB
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.MOTION">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.MOTION
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.MOVE">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.MOVE
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.PRESS">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.PRESS
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.RELEASE">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.RELEASE
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.RETURN">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.RETURN
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.RIGHT">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.RIGHT
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.RMB">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.RMB
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.SHIFT">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.SHIFT
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.SPACE">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.SPACE
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.TAB">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.TAB
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.UP">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.UP
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.WHEEL">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.WHEEL
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.arrow">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.arrow()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.arrow_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.arrow_field()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.arrows">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.arrows()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.button">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.button()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.circle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.circle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.circles">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.circles()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.clear">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.clear()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.close">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.close()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.cook_image">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.cook_image()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.fps_limit">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.fps_limit()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.get_bool_environ">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.get_bool_environ()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.get_cursor_pos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.get_cursor_pos()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.get_event">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.get_event()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.get_events">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.get_events()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.get_image">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.get_image()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.get_key_event">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.get_key_event()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.has_key_event">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.has_key_event()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.is_pressed">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.is_pressed()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.label">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.label()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.line">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.line()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.lines">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.lines()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.point_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.point_field()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.rect">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.rect()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.running">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.running()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.set_image">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.set_image()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.show">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.show()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.slider">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.slider()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.text">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.text()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.triangle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.triangle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.triangles">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.triangles()
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.ui.GUI.EventFilter.match">
+       match
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taichi.ui.GUI.WidgetValue.value">
+       value
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.Gui">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Gui
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Gui.begin">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Gui.begin()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Gui.button">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Gui.button()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Gui.checkbox">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Gui.checkbox()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Gui.color_edit_3">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Gui.color_edit_3()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Gui.end">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Gui.end()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Gui.slider_float">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Gui.slider_float()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Gui.slider_int">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Gui.slider_int()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Gui.sub_window">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Gui.sub_window()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Gui.text">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Gui.text()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.LEFT">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     LEFT
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.LMB">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     LMB
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.MMB">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MMB
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.PRESS">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     PRESS
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.ProjectionMode">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ProjectionMode
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.RELEASE">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     RELEASE
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.RETURN">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     RETURN
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.RIGHT">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     RIGHT
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.RMB">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     RMB
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.SHIFT">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SHIFT
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.SPACE">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SPACE
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.Scene">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Scene
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Scene.ambient_light">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Scene.ambient_light()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Scene.lines">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Scene.lines()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Scene.mesh">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Scene.mesh()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Scene.mesh_instance">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Scene.mesh_instance()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Scene.particles">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Scene.particles()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Scene.point_light">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Scene.point_light()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Scene.set_camera">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Scene.set_camera()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.TAB">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TAB
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.UP">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     UP
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.Window">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Window
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.GUI">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.GUI()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.destroy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.destroy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.event">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.event()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_canvas">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_canvas()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_cursor_pos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_cursor_pos()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_depth_buffer">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_depth_buffer()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_depth_buffer_as_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_depth_buffer_as_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_event">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_event()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_events">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_events()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_gui">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_gui()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_image_buffer_as_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_image_buffer_as_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.get_window_shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.get_window_shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.is_pressed">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.is_pressed()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.running">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.running()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.save_image">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.save_image()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.show">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.show()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Window.write_image">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Window.write_image()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.check_ggui_availability">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     check_ggui_availability()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.hex_to_rgb">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     hex_to_rgb()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.make_camera">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     make_camera()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.rgb_to_hex">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rgb_to_hex()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.ALT">
    ALT
   </a>
  </li>
@@ -380,25 +1660,11 @@
     <a class="reference internal nav-link" href="#taichi.ui.GUI.EventFilter">
      EventFilter
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.ui.GUI.EventFilter.match">
-       match
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.GUI.WidgetValue">
      WidgetValue
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.ui.GUI.WidgetValue.value">
-       value
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.GUI.ALT">
@@ -2619,7 +3885,7 @@ interface, please construct <cite>~taichi.ui.Camera</cite> directly.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

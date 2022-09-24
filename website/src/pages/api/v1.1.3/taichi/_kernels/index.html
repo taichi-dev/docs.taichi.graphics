@@ -34,6 +34,7 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,6 +223,294 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.arr_vulkan_layout_to_arr_normal_layout">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     arr_vulkan_layout_to_arr_normal_layout()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.arr_vulkan_layout_to_field_normal_layout">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     arr_vulkan_layout_to_field_normal_layout()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.blit_from_field_to_field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     blit_from_field_to_field()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.clear_gradients">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     clear_gradients()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.clear_loss">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     clear_loss()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_matrix">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ext_arr_to_matrix()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_ndarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ext_arr_to_ndarray()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_ndarray_matrix">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ext_arr_to_ndarray_matrix()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_tensor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ext_arr_to_tensor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.fill_matrix">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     fill_matrix()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.fill_ndarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     fill_ndarray()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.fill_ndarray_matrix">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     fill_ndarray_matrix()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.fill_tensor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     fill_tensor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.load_texture_from_numpy">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     load_texture_from_numpy()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.matrix_to_ext_arr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matrix_to_ext_arr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ndarray_matrix_to_ext_arr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ndarray_matrix_to_ext_arr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ndarray_to_ext_arr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ndarray_to_ext_arr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ndarray_to_ndarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ndarray_to_ndarray()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.parallel_sort">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     parallel_sort()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.prefix_sum_inclusive_inplace">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     prefix_sum_inclusive_inplace()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.save_texture_to_numpy">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     save_texture_to_numpy()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.scan_add_inclusive">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scan_add_inclusive()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.snode_deactivate">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     snode_deactivate()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.snode_deactivate_dynamic">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     snode_deactivate_dynamic()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.sort_stage">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sort_stage()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.tensor_to_ext_arr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tensor_to_ext_arr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.tensor_to_image">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tensor_to_image()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.tensor_to_tensor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tensor_to_tensor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.uniform_add">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     uniform_add()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.vector_to_fast_image">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     vector_to_fast_image()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.vector_to_image">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     vector_to_image()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.warp_shfl_up_i32">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     warp_shfl_up_i32()
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi._kernels.arr_vulkan_layout_to_arr_normal_layout">
    arr_vulkan_layout_to_arr_normal_layout
@@ -593,7 +882,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

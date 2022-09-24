@@ -34,6 +34,7 @@
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,6 +223,219 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.field.BitpackedFields">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     BitpackedFields
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.BitpackedFields.place">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BitpackedFields.place()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.field.Field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Field
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.dtype">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.dtype()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.from_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.from_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.from_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.from_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.parent">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.parent()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.snode">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.snode()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ScalarField
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.dtype">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.dtype()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.from_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.from_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.from_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.from_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.from_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.parent">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.parent()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.snode">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.snode()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.to_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.to_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.to_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.to_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.to_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.to_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.field.BitpackedFields">
    BitpackedFields
@@ -665,7 +879,7 @@ A field member is a Python Expr wrapping a C++ FieldExpression.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     

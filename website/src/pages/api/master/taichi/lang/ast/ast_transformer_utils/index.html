@@ -34,6 +34,7 @@
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,6 +223,363 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ASTTransformerContext
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.check_loop_var">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.check_loop_var()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.create_variable">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.create_variable()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.current_loop_scope">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.current_loop_scope()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.current_scope">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.current_scope()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.get_pos_info">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.get_pos_info()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.get_var_by_name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.get_var_by_name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.is_in_non_static_control_flow">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.is_in_non_static_control_flow()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.is_in_static_for">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.is_in_static_for()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.is_in_static_scope">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.is_in_static_scope()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.is_var_declared">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.is_var_declared()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.loop_scope_guard">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.loop_scope_guard()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.loop_status">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.loop_status()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.non_static_control_flow_guard">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.non_static_control_flow_guard()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.non_static_if_guard">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.non_static_if_guard()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.set_loop_status">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.set_loop_status()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.static_scope_guard">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.static_scope_guard()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext.variable_scope_guard">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformerContext.variable_scope_guard()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.Builder">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Builder
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.LoopScopeAttribute">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     LoopScopeAttribute
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.LoopScopeGuard">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     LoopScopeGuard
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.LoopStatus">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     LoopStatus
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.LoopStatus.Break">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       LoopStatus.Break
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.LoopStatus.Continue">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       LoopStatus.Continue
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.LoopStatus.Normal">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       LoopStatus.Normal
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.LoopStatus.name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       LoopStatus.name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.LoopStatus.value">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       LoopStatus.value()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowGuard">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NonStaticControlFlowGuard
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.NonStaticControlFlowStatus">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NonStaticControlFlowStatus
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.NonStaticIfGuard">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NonStaticIfGuard
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ReturnStatus">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ReturnStatus
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ReturnStatus.NoReturn">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ReturnStatus.NoReturn
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ReturnStatus.ReturnedValue">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ReturnStatus.ReturnedValue
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ReturnStatus.ReturnedVoid">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ReturnStatus.ReturnedVoid
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ReturnStatus.name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ReturnStatus.name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ReturnStatus.value">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ReturnStatus.value()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.StaticScopeGuard">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     StaticScopeGuard
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.StaticScopeStatus">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     StaticScopeStatus
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.VariableScopeGuard">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     VariableScopeGuard
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer_utils.ASTTransformerContext">
    ASTTransformerContext
@@ -679,7 +1037,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.0.<br>
 </p>
     </div>
     
