@@ -499,3 +499,12 @@ reference: https://gist.github.com/uditalias/3969a20ef759bf3a8757499429b30063
   text-decoration: underline;
   color: var(--taichi-brand-cyan);
 }
+
+.pagination-nav__item .pagination-nav__link {
+  border: 1px solid var(--taichi-grey-2);
+  background-color: var(--taichi-grey-0);
+}
+
+.pagination-nav__item .pagination-nav__link:hover {
+  border-color: var(--taichi-brand-cyan);
+}
