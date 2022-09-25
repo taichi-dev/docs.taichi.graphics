@@ -122,6 +122,7 @@
   --ifm-toc-border-color: var(--taichi-grey-2);
 
   --ifm-color-info-contrast-background: #F7FCFC;
+  --ifm-color-note-contrast-background: #F4FCE9;
   --ifm-color-success-contrast-background: #F4FCE9;
   --ifm-color-danger-contrast-background: #FFECEF;
   --ifm-color-warning-contrast-background: #FBF9E2;
@@ -161,6 +162,7 @@ html[data-theme='dark'] {
   --taichi-grey-4: var(--taichi-dark-grey-4);
 
   --ifm-color-info-contrast-background: rgba(255, 255, 255, 0.1);
+  --ifm-color-note-contrast-background: rgba(174, 229, 92, 0.1);
   --ifm-color-success-contrast-background: rgba(174, 229, 92, 0.1);
   --ifm-color-danger-contrast-background: rgba(255, 64, 64, 0.1);
   --ifm-color-warning-contrast-background: rgba(229, 215, 92, 0.1);
