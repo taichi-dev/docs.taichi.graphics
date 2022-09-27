@@ -63,7 +63,7 @@ function BlogListPostItem(props: Props): JSX.Element {
             {authors && authors.length > 0 && (
               <>
                 <span> | </span>
-                <span>{authors.map((item) => item.name)}</span>
+                <span>{authors.map((item) => item.name).join(', ')}</span>
               </>
             )}
           </div>
