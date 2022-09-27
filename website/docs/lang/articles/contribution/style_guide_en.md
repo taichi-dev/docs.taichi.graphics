@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 slug: /style_guide_en
 ---
 # Document Style Guide

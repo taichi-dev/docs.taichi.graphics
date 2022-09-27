@@ -134,6 +134,7 @@ function BlogListPage(props: Props): JSX.Element {
                   <BlogPostContent />
                 </BlogPostItem>
               ))}
+              <BlogListPaginator metadata={metadata} />
             </div>
           </div>
           {showSubscription && (

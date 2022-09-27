@@ -124,6 +124,11 @@ article a:hover {
   --ifm-alert-border-color: #4C8EF4;
 }
 
+.admonition-note.alert--secondary {
+  --ifm-alert-background-color: var(--ifm-color-note-contrast-background);
+  --ifm-alert-border-color: #AEE55C;
+}
+
 .alert a {
   text-decoration-color: inherit;
   --ifm-link-decoration: none;
