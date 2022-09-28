@@ -13,7 +13,7 @@ for (const version of versions) {
 }
 
 // For i18n
-const DefaultLocale = 'en';
+const DefaultLocale = process.env.TAICHI_DOCS_DEFAULT_LOCALE || 'en';
 const mapLocaleCodeToCrowdin = (locale) => {
   switch (locale) {
     case 'zh-Hans':
@@ -29,7 +29,7 @@ const mapLocaleCodeToCrowdin = (locale) => {
 module.exports = {
   title: 'Taichi Docs',
   tagline: 'Graphics programming for everyone',
-  url: 'https://docs.taichi-lang.org',
+  url: process.env.TAICHI_DOCS_URL || 'https://docs.taichi-lang.org',
   baseUrl: '/',
   // trailingSlash: false,
   onBrokenLinks: 'throw',
@@ -139,7 +139,7 @@ module.exports = {
   ],
   i18n: {
     defaultLocale: DefaultLocale,
-    locales: [DefaultLocale, 'zh-Hans', 'fr-FR'],
+    locales: ['en', 'zh-Hans', 'fr-FR'],
   },
   themeConfig: {
     hideableSidebar: true,
@@ -338,4 +338,11 @@ module.exports = {
       },
     ],
   ],
+  customFields: {
+    locale2BlogUrlMapping: {
+      'en': '/blog',
+      'zh-Hans': 'https://www.zhihu.com/org/tai-ji-tu-xing/posts',
+      'fr-FR': 'https://docs.taichi-lang.org/blog',
+    },
+  }
 };

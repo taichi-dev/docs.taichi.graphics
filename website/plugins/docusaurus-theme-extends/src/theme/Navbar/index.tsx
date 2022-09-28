@@ -43,36 +43,51 @@ import { NavLink, WithLocalLink, WithVersionLink } from './WithVersionUrl';
 import { translate } from '@docusaurus/Translate';
 import { useLocation } from '@docusaurus/router';
 
-const resources = [
-  {
-    label: translate({
-      id: 'theme.text.blog',
-      message: 'Blogs',
-    }),
-    href: '/blog',
-  },
-  {
-    label: translate({
-      id: 'theme.text.newsletters',
-      message: 'Newsletters',
-    }),
-    href: '/newsletter',
-  },
-  {
-    label: translate({
-      id: 'theme.text.userstories',
-      message: 'User Stories',
-    }),
-    href: '/user-stories',
-  },
-  {
-    label: translate({
-      id: 'theme.text.taichicourse',
-      message: 'Taichi Graphics Course',
-    }),
-    href: '/tgc01/',
-  },
-];
+function getBlogUrl() {
+  const {
+    i18n: { currentLocale },
+    siteConfig: { customFields: { locale2BlogUrlMapping } },
+  } = useDocusaurusContext();
+  return locale2BlogUrlMapping[currentLocale] || '/blog'
+}
+
+function getResources() {
+  const {
+    i18n: { currentLocale },
+    siteConfig: { customFields: { locale2BlogUrlMapping } },
+  } = useDocusaurusContext();
+
+  return [
+    {
+      label: translate({
+        id: 'theme.text.blog',
+        message: 'Blogs',
+      }),
+      href: getBlogUrl(),
+    },
+    {
+      label: translate({
+        id: 'theme.text.newsletters',
+        message: 'Newsletters',
+      }),
+      href: '/newsletter',
+    },
+    {
+      label: translate({
+        id: 'theme.text.userstories',
+        message: 'User Stories',
+      }),
+      href: '/user-stories',
+    },
+    {
+      label: translate({
+        id: 'theme.text.taichicourse',
+        message: 'Taichi Graphics Course',
+      }),
+      href: '/tgc01/',
+    },
+  ]
+}
 
 const communities = [
   {
@@ -160,7 +175,7 @@ function NavbarMobileSidebar({
               matchPath="/api"
             />
           </li>
-          <CollapseDropDown label="Resource" items={resources} />
+          <CollapseDropDown label="Resource" items={getResources()} />
           <CollapseDropDown label="Community" items={communities} />
         </ul>
       </div>
@@ -195,7 +210,7 @@ function Navbar(props): JSX.Element {
     i18n: { defaultLocale, currentLocale },
   } = useDocusaurusContext();
 
-  const resourceswithactive = resources.map((item) => {
+  const resourceswithactive = getResources().map((item) => {
     let matchpath = item.href
     if (defaultLocale !== currentLocale) matchpath = '/' + currentLocale + matchpath
     const active = pathname.startsWith(matchpath)
@@ -261,7 +276,7 @@ function Navbar(props): JSX.Element {
                 {/* <h4 className="flex justify-between items-center"> */}
                 <WithLocalLink
                   className="text-h4 flex justify-between items-center text-black hover:text-white"
-                  href="/blog"
+                  href={getBlogUrl()}
                   label={
                     <>
                       {translate({
