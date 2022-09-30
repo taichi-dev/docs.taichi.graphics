@@ -13,7 +13,7 @@ for (const version of versions) {
 }
 
 // For i18n
-const DefaultLocale = process.env.TAICHI_DOCS_DEFAULT_LOCALE || 'en';
+const DefaultLocale = 'en';
 const mapLocaleCodeToCrowdin = (locale) => {
   switch (locale) {
     case 'zh-Hans':
