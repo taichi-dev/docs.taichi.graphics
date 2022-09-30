@@ -122,6 +122,7 @@
   --ifm-toc-border-color: var(--taichi-grey-2);
 
   --ifm-color-info-contrast-background: #F7FCFC;
+  --ifm-color-note-contrast-background: #F4FCE9;
   --ifm-color-success-contrast-background: #F4FCE9;
   --ifm-color-danger-contrast-background: #FFECEF;
   --ifm-color-warning-contrast-background: #FBF9E2;
@@ -131,7 +132,8 @@
 
   --ifm-global-radius: 2px;
 
-  --taichi-code-bg: #DAE5E5;
+  --taichi-code-bg: var(--taichi-grey-2);
+  --taichi-code-bg-highlight: #DAE5E5;
 }
 
 .DocSearch-Modal {
@@ -160,12 +162,14 @@ html[data-theme='dark'] {
   --taichi-grey-4: var(--taichi-dark-grey-4);
 
   --ifm-color-info-contrast-background: rgba(255, 255, 255, 0.1);
+  --ifm-color-note-contrast-background: rgba(174, 229, 92, 0.1);
   --ifm-color-success-contrast-background: rgba(174, 229, 92, 0.1);
   --ifm-color-danger-contrast-background: rgba(255, 64, 64, 0.1);
   --ifm-color-warning-contrast-background: rgba(229, 215, 92, 0.1);
   --ifm-color-tip-contrast-background: rgba(89, 125, 255, 0.1);
 
-  --taichi-code-bg: #2D3E40;
+  /* --taichi-code-bg: #2D3E40; */
+  --taichi-code-bg-highlight: #2D3E40;
 }
 
 html {
@@ -480,7 +484,7 @@ reference: https://gist.github.com/uditalias/3969a20ef759bf3a8757499429b30063
 }
 
 .docusaurus-highlight-code-line {
-  background-color: #dee2e6;
+  background-color: var(--taichi-code-bg-highlight) !important;
   display: block;
   /* margin: 0 calc(-1 * var(--ifm-pre-padding)); */
   /* padding: 0 var(--ifm-pre-padding); */
@@ -496,4 +500,13 @@ reference: https://gist.github.com/uditalias/3969a20ef759bf3a8757499429b30063
 .newsletter-article a {
   text-decoration: underline;
   color: var(--taichi-brand-cyan);
+}
+
+.pagination-nav__item .pagination-nav__link {
+  border: 1px solid var(--taichi-grey-2);
+  background-color: var(--taichi-grey-0);
+}
+
+.pagination-nav__item .pagination-nav__link:hover {
+  border-color: var(--taichi-brand-cyan);
 }

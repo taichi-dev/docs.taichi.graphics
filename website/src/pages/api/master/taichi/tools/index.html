@@ -34,6 +34,7 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -129,7 +130,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.1.2</a>
+            <a class="dropdown-item" href="/api/">v1.1.3</a>
             
           
             
@@ -222,6 +223,289 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.tools.PLYWriter">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     PLYWriter
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_face_channel">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_face_channel()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_face_id">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_face_id()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_face_piece">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_face_piece()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_faces">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_faces()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_vertex_alpha">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_vertex_alpha()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_vertex_channel">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_vertex_channel()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_vertex_color">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_vertex_color()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_vertex_id">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_vertex_id()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_vertex_normal">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_vertex_normal()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_vertex_piece">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_vertex_piece()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_vertex_pos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_vertex_pos()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_vertex_rgba">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_vertex_rgba()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.add_vertex_vel">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.add_vertex_vel()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.export">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.export()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.export_ascii">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.export_ascii()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.export_frame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.export_frame()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.export_frame_ascii">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.export_frame_ascii()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.print_header">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.print_header()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.PLYWriter.sanity_check">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PLYWriter.sanity_check()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.tools.VideoManager">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     VideoManager
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.VideoManager.clean_frames">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.clean_frames()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.VideoManager.get_frame_directory">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.get_frame_directory()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.VideoManager.get_output_filename">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.get_output_filename()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.VideoManager.make_video">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.make_video()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.VideoManager.write_frame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.write_frame()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.VideoManager.write_frames">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.write_frames()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.tools.imread">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     imread()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.tools.imresize">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     imresize()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.tools.imshow">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     imshow()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.tools.imwrite">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     imwrite()
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.tools.PLYWriter">
    PLYWriter
@@ -756,7 +1040,7 @@ For an interactive Ipython environment, the image will be shown in the notebook.
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.1.<br>
 </p>
     </div>
     

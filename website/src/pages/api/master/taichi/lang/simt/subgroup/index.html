@@ -34,6 +34,7 @@
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -129,7 +130,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.1.2</a>
+            <a class="dropdown-item" href="/api/">v1.1.3</a>
             
           
             
@@ -222,6 +223,294 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.all_equal">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     all_equal()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.all_true">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     all_true()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.any_true">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     any_true()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.barrier">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     barrier()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.broadcast_first">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     broadcast_first()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.elect">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elect()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.exclusive_add">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     exclusive_add()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.exclusive_and">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     exclusive_and()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.exclusive_max">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     exclusive_max()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.exclusive_min">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     exclusive_min()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.exclusive_mul">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     exclusive_mul()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.exclusive_or">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     exclusive_or()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.exclusive_xor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     exclusive_xor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.inclusive_add">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     inclusive_add()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.inclusive_and">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     inclusive_and()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.inclusive_max">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     inclusive_max()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.inclusive_min">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     inclusive_min()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.inclusive_mul">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     inclusive_mul()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.inclusive_or">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     inclusive_or()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.inclusive_xor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     inclusive_xor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.memory_barrier">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     memory_barrier()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.reduce_add">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reduce_add()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.reduce_and">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reduce_and()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.reduce_max">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reduce_max()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.reduce_min">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reduce_min()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.reduce_mul">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reduce_mul()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.reduce_or">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reduce_or()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.reduce_xor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reduce_xor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.shuffle">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     shuffle()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.shuffle_down">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     shuffle_down()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.shuffle_up">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     shuffle_up()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.shuffle_xor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     shuffle_xor()
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.simt.subgroup.all_equal">
    all_equal
@@ -593,7 +882,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.1.<br>
 </p>
     </div>
     

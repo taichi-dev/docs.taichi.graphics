@@ -34,6 +34,7 @@
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
     <link rel="search" title="Search" href="../../../../search/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -129,7 +130,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.1.2</a>
+            <a class="dropdown-item" href="/api/">v1.1.3</a>
             
           
             
@@ -224,6 +225,219 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.field.BitpackedFields">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     BitpackedFields
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.BitpackedFields.place">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BitpackedFields.place()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.field.Field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Field
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.dtype">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.dtype()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.from_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.from_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.from_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.from_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.parent">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.parent()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.Field.snode">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Field.snode()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ScalarField
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.dtype">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.dtype()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.from_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.from_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.from_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.from_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.from_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.parent">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.parent()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.shape">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.shape()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.snode">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.snode()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.to_numpy">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.to_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.to_paddle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.to_paddle()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.field.ScalarField.to_torch">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ScalarField.to_torch()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.field.BitpackedFields">
    BitpackedFields
   </a>
   <ul class="nav section-nav flex-column">
@@ -250,16 +464,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.field.Field.fill">
-     fill
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.field.Field.from_numpy">
-     from_numpy
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.field.Field.from_paddle">
      from_paddle
     </a>
@@ -282,21 +486,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.field.Field.snode">
      snode
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.field.Field.to_numpy">
-     to_numpy
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.field.Field.to_paddle">
-     to_paddle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.field.Field.to_torch">
-     to_torch
     </a>
    </li>
   </ul>
@@ -455,29 +644,6 @@ A field member is a Python Expr wrapping a C++ FieldExpression.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.field.Field.fill">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field.fill" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills <cite>self</cite> with a specific value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.field.Field.from_numpy">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field.from_numpy" title="Permalink to this definition">#</a></dt>
-<dd><p>Loads all elements from a numpy array.</p>
-<p>The shape of the numpy array needs to be the same as <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>arr</strong> (<em>numpy.ndarray</em>) – The source numpy array.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.field.Field.from_paddle">
 <span class="sig-name descname"><span class="pre">from_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field.from_paddle" title="Permalink to this definition">#</a></dt>
 <dd><p>Loads all elements from a paddle tensor.</p>
@@ -542,57 +708,6 @@ A field member is a Python Expr wrapping a C++ FieldExpression.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="../../#taichi.SNode" title="taichi.SNode">SNode</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.field.Field.to_numpy">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field.to_numpy" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts <cite>self</cite> to a numpy array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dtype</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of returned numpy array.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The result numpy array.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.field.Field.to_paddle">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field.to_paddle" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts <cite>self</cite> to a paddle tensor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>place</strong> (<em>paddle.CPUPlace</em><em>(</em><em>)</em><em>/CUDAPlace</em><em>(</em><em>n</em><em>)</em><em>, </em><em>optional</em>) – The desired place of returned tensor.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The result paddle tensor.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>paddle.Tensor</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.field.Field.to_torch">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.field.Field.to_torch" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts <cite>self</cite> to a torch tensor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The desired device of returned tensor.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The result torch tensor.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>torch.tensor</p>
 </dd>
 </dl>
 </dd></dl>
@@ -764,7 +879,7 @@ A field member is a Python Expr wrapping a C++ FieldExpression.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.1.<br>
 </p>
     </div>
     

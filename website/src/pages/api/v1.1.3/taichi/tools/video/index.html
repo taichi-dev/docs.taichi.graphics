@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>taichi.tools.video &#8212; taichi-api-docstring  documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:category" content="API Reference">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../">
+  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="ml-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../">
+  Taichi Language’s API reference
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://docs.taichi.graphics">Taichi Documentation Site<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/taichi-dev/taichi" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl autoapi-container">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items">
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="dropdown show">
+        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          v1.1.3
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          
+            
+            <a class="dropdown-item" href="/api/master/">master</a>
+            
+          
+             <strong> 
+            <a class="dropdown-item" href="/api/">v1.1.3</a>
+             </strong> 
+          
+            
+            <a class="dropdown-item" href="/api/v1.0.4/">v1.0.4</a>
+            
+          
+        </div>
+      </span>
+    </span>
+  </div>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <!--  -->
+
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../">
+   Taichi Language’s API reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../">
+     taichi: The main taichi module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ad/">
+     taichi.ad: Taichi Autodiff system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aot/">
+     taichi.aot: Taichi AOT system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../linalg/">
+     taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../profiler/">
+     taichi.profiler: Taichi profiler tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../">
+     taichi.tools: Miscellaneous tools shipped with Taichi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/">
+     taichi.types: Taichi types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/quant/">
+     taichi.types.quant: Taichi quantized types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/">
+     taichi.ui: Taichi UI components (GUI and GGUI)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     VideoManager
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.clean_frames">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.clean_frames()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.get_frame_directory">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.get_frame_directory()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.get_output_filename">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.get_output_filename()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.make_video">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.make_video()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.write_frame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.write_frame()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.write_frames">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VideoManager.write_frames()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager">
+   VideoManager
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.clean_frames">
+     clean_frames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.get_frame_directory">
+     get_frame_directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.get_output_filename">
+     get_output_filename
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.make_video">
+     make_video
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.write_frame">
+     write_frame
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.tools.video.VideoManager.write_frames">
+     write_frames
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-taichi.tools.video">
+<span id="taichi-tools-video"></span><h1><a class="reference internal" href="#module-taichi.tools.video" title="taichi.tools.video"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.tools.video</span></code></a><a class="headerlink" href="#module-taichi.tools.video" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.tools.video.VideoManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.tools.video.</span></span><span class="sig-name descname"><span class="pre">VideoManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_processor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">framerate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">automatic_build</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager" title="Permalink to this definition">#</a></dt>
+<dd><p>Utility class for exporting results to <cite>mp4</cite> and <cite>gif</cite> formats.
+This class relies on <cite>ffmpeg</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_dir</strong> (<em>str</em>) – directory to save the frames.</p></li>
+<li><p><strong>video_filename</strong> (<em>str</em>) – filename for the video. default filename is video.mp4.</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – resolution of the video.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – resolution of the video.</p></li>
+<li><p><strong>post_processor</strong> (<em>object</em>) – any object that implements the <cite>process(img)</cite>
+method, which accepts an image as a <cite>numpy.ndarray</cite> and returns
+the process image.</p></li>
+<li><p><strong>framerate</strong> (<em>int</em>) – frame rate of the video.</p></li>
+<li><p><strong>automatic_build</strong> (<em>bool</em>) – automatically generate the resulting video or not.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; video_manager = ti.tools.VideoManager(output_dir=&quot;./output&quot;, framerate=24, automatic_build=False)
+&gt;&gt;&gt; for i in range(50):
+&gt;&gt;&gt;     render()
+&gt;&gt;&gt;     img = pixels.to_numpy()
+&gt;&gt;&gt;     video_manager.write_frame(img)
+&gt;&gt;&gt;
+&gt;&gt;&gt; video_manager.make_video(gif=True, mp4=True)
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An instance of <a class="reference internal" href="../#taichi.tools.VideoManager" title="taichi.tools.VideoManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">taichi.tools.VideoManager</span></code></a> class.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.tools.video.VideoManager.clean_frames">
+<span class="sig-name descname"><span class="pre">clean_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.clean_frames" title="Permalink to this definition">#</a></dt>
+<dd><p>Delete all previous image files in the saved directory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.tools.video.VideoManager.get_frame_directory">
+<span class="sig-name descname"><span class="pre">get_frame_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.get_frame_directory" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns path to the directory where the image files are located in.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.tools.video.VideoManager.get_output_filename">
+<span class="sig-name descname"><span class="pre">get_output_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.get_output_filename" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.tools.video.VideoManager.make_video">
+<span class="sig-name descname"><span class="pre">make_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mp4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gif</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.make_video" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert the image files to a <cite>mp4</cite> or <cite>gif</cite> animation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.tools.video.VideoManager.write_frame">
+<span class="sig-name descname"><span class="pre">write_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.write_frame" title="Permalink to this definition">#</a></dt>
+<dd><p>Write an <cite>numpy.ndarray</cite> <cite>img</cite> to an image file.</p>
+<p>The filename will be automatically determined by this manager
+and the frame counter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.tools.video.VideoManager.write_frames">
+<span class="sig-name descname"><span class="pre">write_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">images</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.tools.video.VideoManager.write_frames" title="Permalink to this definition">#</a></dt>
+<dd><p>Write a list of <cite>numpy.ndarray</cite> <cite>images</cite> to image files.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Taichi Graphics.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.1.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
