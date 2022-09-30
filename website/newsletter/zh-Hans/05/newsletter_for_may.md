@@ -38,7 +38,7 @@ description:
 
 - **[2D-simulator 流体数值计算求解器](https://github.com/takah29/2d-fluid-simulator)**
 
-   从语言的角度来说，Taichi 虽然诞生于计算机图形学界，但是其对并行运算和跨平台的天然支持完全可以在科学计算领域发挥价值。GitHub@takah29 同学的 2d-fluid-simulator 项目就是这样的一个硬核 CFD(Computational Fluid Dynamics) 流体数值计算求解器。作者以 MAC(Marker-And-Cell)法为基础，在极短的代码行数内实现了二维环境下的单个圆柱、多个圆柱以及平板障碍物绕流等工况的模拟。
+   从语言的角度来说，Taichi 虽然诞生于计算机图形学界，但是其对并行运算和跨平台的天然支持完全可以在科学计算领域发挥价值。GitHub@takah29 同学的 2d-fluid-simulator 项目就是这样的一个硬核 CFD(Computational Fluid Dynamics) 流体数值计算求解器。作者以 MAC(Marker-And-Cell) 法为基础，在极短的代码行数内实现了二维环境下的单个圆柱、多个圆柱以及平板障碍物绕流等工况的模拟。
    
    特别值得一提的是，作者对流体求解器代码进行了很好的 OOP(Object-Oriented Programming) 风格封装，将对流项差分、边界条件、流体可视化等功能模块都进行了独立的拆解，在提高代码易读性和减少代码重复上做了很多细致的设计，强烈推荐有兴趣的同学动手运行一下。
 
