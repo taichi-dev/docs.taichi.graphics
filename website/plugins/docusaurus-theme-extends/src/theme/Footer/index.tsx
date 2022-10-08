@@ -17,6 +17,7 @@ import {
 } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 import ThemedImage, {
   type Props as ThemedImageProps,
@@ -191,6 +192,10 @@ function Footer(): JSX.Element | null {
 
   const { copyright } = footer || {};
 
+  const {
+    siteConfig: { customFields: { blogUrl } },
+  } = useDocusaurusContext();
+
   return (
     <footer className="bg-grey-4 dark:bg-grey-0 text-white">
       <div className="mx-auto my-6 desktop:mt-10 desktop:mb-2 px-4 max-w-docmain">
@@ -211,7 +216,7 @@ function Footer(): JSX.Element | null {
                   })}
                 </h5>
                 <div className="flex flex-col space-y-2">
-                  <Link href="/blog">
+                  <Link href={blogUrl}>,
                     {translate({
                       id: 'theme.text.blog',
                       message: 'Blogs',

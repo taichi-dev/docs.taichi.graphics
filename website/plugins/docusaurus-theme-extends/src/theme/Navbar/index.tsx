@@ -43,36 +43,45 @@ import { NavLink, WithLocalLink, WithVersionLink } from './WithVersionUrl';
 import { translate } from '@docusaurus/Translate';
 import { useLocation } from '@docusaurus/router';
 
-const resources = [
-  {
-    label: translate({
-      id: 'theme.text.blog',
-      message: 'Blogs',
-    }),
-    href: '/blog',
-  },
-  {
-    label: translate({
-      id: 'theme.text.newsletters',
-      message: 'Newsletters',
-    }),
-    href: '/newsletter',
-  },
-  {
-    label: translate({
-      id: 'theme.text.userstories',
-      message: 'User Stories',
-    }),
-    href: '/user-stories',
-  },
-  {
-    label: translate({
-      id: 'theme.text.taichicourse',
-      message: 'Taichi Graphics Course',
-    }),
-    href: '/tgc01/',
-  },
-];
+function getBlogUrl() {
+  const {
+    siteConfig: { customFields: { blogUrl } },
+  } = useDocusaurusContext();
+  return blogUrl;
+}
+
+function getResources() {
+  return [
+    {
+      label: translate({
+        id: 'theme.text.blog',
+        message: 'Blogs',
+      }),
+      href: getBlogUrl(),
+    },
+    {
+      label: translate({
+        id: 'theme.text.newsletters',
+        message: 'Newsletters',
+      }),
+      href: '/newsletter',
+    },
+    {
+      label: translate({
+        id: 'theme.text.userstories',
+        message: 'User Stories',
+      }),
+      href: '/user-stories',
+    },
+    {
+      label: translate({
+        id: 'theme.text.taichicourse',
+        message: 'Taichi Graphics Course',
+      }),
+      href: '/tgc01/',
+    },
+  ]
+}
 
 const communities = [
   {
@@ -125,11 +134,15 @@ function NavbarMobileSidebar({
 
   const colorModeToggle = useColorModeToggle();
 
+  const {
+    siteConfig: { url },
+  } = useDocusaurusContext();
+
   return (
     <div className="navbar-sidebar flex flex-col overflow-hidden">
       <div className="desktop:h-20 h-16 flex items-center px-3 border-b border-grey-3">
         <div className="flex items-center space-x-3">
-          <a href="https://www.taichi-lang.org">
+          <a href={url}>
             <LogoIcon width={120} />
           </a>
           <GithubStars />
@@ -160,7 +173,7 @@ function NavbarMobileSidebar({
               matchPath="/api"
             />
           </li>
-          <CollapseDropDown label="Resource" items={resources} />
+          <CollapseDropDown label="Resource" items={getResources()} />
           <CollapseDropDown label="Community" items={communities} />
         </ul>
       </div>
@@ -170,7 +183,6 @@ function NavbarMobileSidebar({
             <VersionDropdownNavbarItem position="top" />
           </li>
           <li className="flex-1">
-            <LocaleDropdownNavbarItem position="top" />
           </li>
           <li>
             <Toggle
@@ -193,9 +205,10 @@ function Navbar(props): JSX.Element {
 
   const {
     i18n: { defaultLocale, currentLocale },
+    siteConfig: { url },
   } = useDocusaurusContext();
 
-  const resourceswithactive = resources.map((item) => {
+  const resourceswithactive = getResources().map((item) => {
     let matchpath = item.href
     if (defaultLocale !== currentLocale) matchpath = '/' + currentLocale + matchpath
     const active = pathname.startsWith(matchpath)
@@ -211,7 +224,7 @@ function Navbar(props): JSX.Element {
       )}
     >
       <div className="flex items-center space-x-5">
-        <a href="https://www.taichi-lang.org/">
+        <a href={url}>
           <LogoIcon />
         </a>
         <div className="hidden desktop:inline-block">
@@ -261,7 +274,7 @@ function Navbar(props): JSX.Element {
                 {/* <h4 className="flex justify-between items-center"> */}
                 <WithLocalLink
                   className="text-h4 flex justify-between items-center text-black hover:text-white"
-                  href="/blog"
+                  href={getBlogUrl()}
                   label={
                     <>
                       {translate({

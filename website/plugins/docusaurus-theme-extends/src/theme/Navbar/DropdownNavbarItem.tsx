@@ -178,6 +178,7 @@ export const LocaleDropdownNavbarItem: React.FC<{
 }> = ({ position }) => {
   const {
     i18n: { currentLocale, locales, localeConfigs },
+    siteConfig: {customFields: { localeUrls } },
   } = useDocusaurusContext();
 
   const alternatePageUtils = useAlternatePageUtils();
@@ -186,10 +187,11 @@ export const LocaleDropdownNavbarItem: React.FC<{
     return localeConfigs[locale].label;
   }
   const localeItems = locales.map((locale) => {
-    const to = `${alternatePageUtils.createUrl({
+    const to = localeUrls[locale] || `${alternatePageUtils.createUrl({
       locale,
       fullyQualified: false,
     })}`;
+
     return {
       label: getLocaleLabel(locale),
       href: to,
