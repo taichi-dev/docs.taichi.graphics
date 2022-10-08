@@ -358,5 +358,10 @@ module.exports = {
   ],
   customFields: {
     blogUrl: presets[chosenPreset].blogUrl,
+    localeUrls: {
+      'fr-FR': 'https://docs.taichi-lang.org/fr-FR',
+      'zh-Hans': 'https://docs.taichi-lang.cn',
+      'en': 'https://docs.taichi-lang.org',
+    },
   }
 };
