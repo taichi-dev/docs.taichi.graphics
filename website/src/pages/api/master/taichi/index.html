@@ -3212,6 +3212,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.dx12">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dx12
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.eig">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -5722,6 +5731,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.dx11">
    dx11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.dx12">
+   dx12
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -10705,6 +10719,12 @@ the memory of the deactivated cell.</p>
 <dd><p>The DX11 backend.</p>
 </dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.dx12">
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">dx12</span></span><a class="headerlink" href="#taichi.dx12" title="Permalink to this definition">#</a></dt>
+<dd><p>The DX11 backend.</p>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.eig">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">eig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.eig" title="Permalink to this definition">#</a></dt>
@@ -10945,7 +10965,7 @@ test()
 <dt class="sig sig-object py" id="taichi.gpu">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">gpu</span></span><a class="headerlink" href="#taichi.gpu" title="Permalink to this definition">#</a></dt>
 <dd><p>A list of GPU backends supported on the current system.
-Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’.</p>
+Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’, ‘dx12’.</p>
 <p>When this is used, Taichi automatically picks the matching GPU backend. If no
 GPU is detected, Taichi falls back to the CPU backend.</p>
 </dd></dl>
