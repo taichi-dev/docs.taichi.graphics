@@ -45,18 +45,12 @@ import { useLocation } from '@docusaurus/router';
 
 function getBlogUrl() {
   const {
-    i18n: { currentLocale },
-    siteConfig: { customFields: { locale2BlogUrlMapping } },
+    siteConfig: { customFields: { blogUrl } },
   } = useDocusaurusContext();
-  return locale2BlogUrlMapping[currentLocale] || '/blog'
+  return blogUrl;
 }
 
 function getResources() {
-  const {
-    i18n: { currentLocale },
-    siteConfig: { customFields: { locale2BlogUrlMapping } },
-  } = useDocusaurusContext();
-
   return [
     {
       label: translate({

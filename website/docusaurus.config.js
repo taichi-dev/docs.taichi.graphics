@@ -12,8 +12,26 @@ for (const version of versions) {
   versionpaths.push(__dirname + `/versioned_docs/version-${version}`)
 }
 
+const presets = {
+  dotorg: {
+    url: 'https://docs.taichi-lang.org',
+    baseUrl: '/',
+    blogUrl: '/blog',
+    defaultLocale: 'en',
+  },
+  dotcn: {
+    url: 'https://docs.taichi-lang.cn',
+    baseUrl: '/',
+    blogUrl: 'https://www.zhihu.com/org/tai-ji-tu-xing/posts',
+    defaultLocale: 'zh-Hans',
+  },
+};
+
+const chosenPreset = process.env.PRESET || 'dotorg';
+
+
 // For i18n
-const DefaultLocale = 'en';
+const DefaultLocale = process.env.WRITING_TRANSLATION ? 'en' : presets[chosenPreset].defaultLocale;
 const mapLocaleCodeToCrowdin = (locale) => {
   switch (locale) {
     case 'zh-Hans':
@@ -29,8 +47,8 @@ const mapLocaleCodeToCrowdin = (locale) => {
 module.exports = {
   title: 'Taichi Docs',
   tagline: 'Graphics programming for everyone',
-  url: process.env.TAICHI_DOCS_URL || 'https://docs.taichi-lang.org',
-  baseUrl: '/',
+  url: presets[chosenPreset].url,
+  baseUrl: presets[chosenPreset].baseUrl,
   // trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -339,10 +357,6 @@ module.exports = {
     ],
   ],
   customFields: {
-    locale2BlogUrlMapping: {
-      'en': '/blog',
-      'zh-Hans': 'https://www.zhihu.com/org/tai-ji-tu-xing/posts',
-      'fr-FR': 'https://docs.taichi-lang.org/blog',
-    },
+    blogUrl: presets[chosenPreset].blogUrl,
   }
 };

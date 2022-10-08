@@ -193,8 +193,7 @@ function Footer(): JSX.Element | null {
   const { copyright } = footer || {};
 
   const {
-    i18n: { currentLocale },
-    siteConfig: { customFields: { locale2BlogUrlMapping } },
+    siteConfig: { customFields: { blogUrl } },
   } = useDocusaurusContext();
 
   return (
@@ -217,7 +216,7 @@ function Footer(): JSX.Element | null {
                   })}
                 </h5>
                 <div className="flex flex-col space-y-2">
-                  <Link href={locale2BlogUrlMapping[currentLocale] || '/blog'}>,
+                  <Link href={blogUrl}>,
                     {translate({
                       id: 'theme.text.blog',
                       message: 'Blogs',
