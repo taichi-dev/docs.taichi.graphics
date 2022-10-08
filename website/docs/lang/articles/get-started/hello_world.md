@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /index
+slug: /hello_world
 ---
 # Hello, World!
 
