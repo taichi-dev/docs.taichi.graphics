@@ -134,11 +134,15 @@ function NavbarMobileSidebar({
 
   const colorModeToggle = useColorModeToggle();
 
+  const {
+    siteConfig: { url },
+  } = useDocusaurusContext();
+
   return (
     <div className="navbar-sidebar flex flex-col overflow-hidden">
       <div className="desktop:h-20 h-16 flex items-center px-3 border-b border-grey-3">
         <div className="flex items-center space-x-3">
-          <a href="https://www.taichi-lang.org">
+          <a href={url}>
             <LogoIcon width={120} />
           </a>
           <GithubStars />
@@ -179,7 +183,6 @@ function NavbarMobileSidebar({
             <VersionDropdownNavbarItem position="top" />
           </li>
           <li className="flex-1">
-            <LocaleDropdownNavbarItem position="top" />
           </li>
           <li>
             <Toggle
@@ -202,6 +205,7 @@ function Navbar(props): JSX.Element {
 
   const {
     i18n: { defaultLocale, currentLocale },
+    siteConfig: { url },
   } = useDocusaurusContext();
 
   const resourceswithactive = getResources().map((item) => {
@@ -220,7 +224,7 @@ function Navbar(props): JSX.Element {
       )}
     >
       <div className="flex items-center space-x-5">
-        <a href="https://www.taichi-lang.org/">
+        <a href={url}>
           <LogoIcon />
         </a>
         <div className="hidden desktop:inline-block">
