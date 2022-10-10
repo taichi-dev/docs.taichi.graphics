@@ -216,7 +216,7 @@ function Footer(): JSX.Element | null {
                   })}
                 </h5>
                 <div className="flex flex-col space-y-2">
-                  <Link href={blogUrl}>,
+                  <Link href={blogUrl}>
                     {translate({
                       id: 'theme.text.blog',
                       message: 'Blogs',
