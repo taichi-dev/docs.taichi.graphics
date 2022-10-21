@@ -7772,7 +7772,7 @@ the remaining entries are all zeros.</p>
 <dd><p>Fills this matrix field with specified values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>List</em><em>, </em><em>Tuple</em><em>, </em><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><em>Matrix</em></a><em>]</em>) – Values to fill,
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>Expr</em><em>, </em><em>List</em><em>, </em><em>Tuple</em><em>, </em><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><em>Matrix</em></a><em>]</em>) – Values to fill,
 should have consistent dimension consistent with <cite>self</cite>.</p>
 </dd>
 </dl>
@@ -7784,7 +7784,7 @@ should have consistent dimension consistent with <cite>self</cite>.</p>
 <dd><p>Copies an <cite>numpy.ndarray</cite> into this field.</p>
 <p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; m = ti.Matrix.field(2, 2, ti.f32, shape=(3, 3))
-&gt;&gt;&gt; arr = numpp.ones((3, 3, 2, 2))
+&gt;&gt;&gt; arr = numpy.ones((3, 3, 2, 2))
 &gt;&gt;&gt; m.from_numpy(arr)
 </pre></div>
 </div>
