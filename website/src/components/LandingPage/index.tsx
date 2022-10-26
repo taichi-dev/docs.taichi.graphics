@@ -72,7 +72,7 @@ const LandingPageView = (props) => {
             <div className="absolute left-[181px] inset-y-0">
               <NormalUserBg />
             </div>
-            <Link href='/docs' className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black cursor-pointer hover:text-white">
+            <Link href='/docs/hello_world' className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black cursor-pointer hover:text-white">
               <div className="text-caption mb-2 text-black">
                 {translate({
                   id: 'theme.docs.docHome.userhint',
