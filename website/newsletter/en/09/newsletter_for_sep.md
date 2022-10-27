@@ -30,7 +30,7 @@ description:
 
     Take a look at our selected demos:
 
-    <video src="siggraph.mp4"></video>
+    <video src="website/newsletter/en/09/pics/siggraph.mp4" type="video/mp4"></video>
 
 ## 🌟 Featured repos & projects
 
