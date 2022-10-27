@@ -2,7 +2,7 @@
 title: "Taichi Newsletter for September"
 date: "2022-09-30"
 description:
-  📌 Highlights\n Taichi announced its release of v1.1.3.0\n accelerate pytorch and facilitate CFD with Taichi
+  📌 Highlights\n Taichi announced its release of v1.1.3.0\n Accelerate pytorch and facilitate CFD with Taichi
 ---
 
 # Taichi Newsletter for September
