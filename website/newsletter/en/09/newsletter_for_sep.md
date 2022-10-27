@@ -26,11 +26,9 @@ description:
 
 - **MeshTaichi makes mesh-based operations more efficient - findings accepted by SIGGRAPH Asia 2022**
 
-    Mesh-based operations are often slow due to unstructured memory access patterns. Taichi researchers propose a novel mesh compiler, MeshTaichi, which uses an intuitive programming model for handling relations on meshes. Thanks to low-level data access optimizations, MeshTaichi achieves 1.4x to 6x faster performance than the state-of-art compilers and data structures. 
+    Mesh-based operations are often slow due to unstructured memory access patterns. Taichi researchers propose a novel mesh compiler, MeshTaichi, which uses an intuitive programming model for handling relations on meshes. Thanks to low-level data access optimizations, MeshTaichi achieves 1.4x to 6x faster performance than the state-of-art compilers and data structures.
 
-    Take a look at our selected demos:
-
-    <video src="website/newsletter/en/09/pics/siggraph.mp4" type="video/mp4"></video>
+    View [this video](https://www.youtube.com/watch?v=vjBrk7k8SPE&t=47s) to learn more about the features of MeshTaichi and sophisticated demos.
 
 ## 🌟 Featured repos & projects
 
