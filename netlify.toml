@@ -20,7 +20,13 @@ force = true
   from = "/lang/articles/:slug"
   to = "/docs/:slug"
   status = 301
+
 [[redirects]]
   from = "/lang/articles/:dir/:slug"
   to = "/docs/:slug"
   status = 301
+
+[[redirects]]
+  from = "/docs"
+  to = "/docs/hello_world"
+  status = 302
