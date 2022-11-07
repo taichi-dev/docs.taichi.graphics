@@ -15,6 +15,8 @@ description:
 - Why choose Taichi over other numerical computation acceleration solutions? View the [benchmark report](https://docs.taichi-lang.org/blog/taichi-compared-to-cub-cupy-numba).
 - Taichi users exhibit great creativity and prowess as they craft DEM simulations based on [Taichi's template](https://github.com/taichi-dev/taichi_dem).
 
+</div>
+
 ## ⚙️ Releases & development
 
 - **Taichi v1.2.0 released**
