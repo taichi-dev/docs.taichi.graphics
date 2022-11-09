@@ -260,6 +260,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.cross">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cross()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.determinant">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -273,6 +282,15 @@
    <code class="docutils literal notranslate">
     <span class="pre">
      diag()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.dot">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dot()
     </span>
    </code>
   </a>
@@ -350,6 +368,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.outer_product">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     outer_product()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.rows">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -406,6 +433,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.cross">
+   cross
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.determinant">
    determinant
   </a>
@@ -413,6 +445,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.diag">
    diag
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.dot">
+   dot
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -453,6 +490,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.normalized">
    normalized
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops.outer_product">
+   outer_product
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -519,6 +561,11 @@
 <dd></dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops.cross">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops.</span></span><span class="sig-name descname"><span class="pre">cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops.cross" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.matrix_ops.determinant">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops.</span></span><span class="sig-name descname"><span class="pre">determinant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops.determinant" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -526,6 +573,11 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.matrix_ops.diag">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops.</span></span><span class="sig-name descname"><span class="pre">diag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops.diag" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops.dot">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops.</span></span><span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops.dot" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -566,6 +618,11 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.matrix_ops.normalized">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops.</span></span><span class="sig-name descname"><span class="pre">normalized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops.normalized" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops.outer_product">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops.</span></span><span class="sig-name descname"><span class="pre">outer_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops.outer_product" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
