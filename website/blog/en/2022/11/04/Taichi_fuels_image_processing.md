@@ -8,11 +8,11 @@ authors:
 tags: [advanced, beginner, image processing, tutorial]
 ---
 
-![background image](./pics/background.png)
+![GPU-accelerated image processing tutorial](./pics/background.png)
 
 In the [previous blog](https://docs.taichi-lang.org/blog/accelerate-python-code-100x), we talked about how to use Taichi to accelerate Python programs. Many of our readers are curious about whether Taichi can fuel specifically *image processing tasks*, work together with OpenCV (`import cv2`), and even process images in parallel on GPUs. Well, in this article we will strive to provide answers to these questions. 
 
-To make your reading experience less tedious, we will take the beauty filters and the HDR effect of the popular console game *Ghost of Tsushima* as examples to elaborate on image processing algorithms, including the Gaussian filter, the bilateral filter, and the bilateral grid, in ascending order of difficulty. You are recommended to write code as you read on, and we're sure you will not close this page empty-handed whether you are familiar with image processing or not. We hope that this article can serve you well, and we look forward to your feedback, positive or negative :)
+To make your reading experience less tedious, we will take the beauty filters and the HDR effect of the popular console game *Ghost of Tsushima* as examples to elaborate on image processing algorithms, including the Gaussian filter, the bilateral filter, and the bilateral grid, in ascending order of difficulty. You are recommended to write code as you read on, and we're sure you will not close this page empty-handed whether you are familiar with image processing or not. We hope that this article can serve you well, and we look forward to your feedback, positive or negative :).
 
 ## Introduction
 
@@ -37,8 +37,10 @@ With the features listed above, Taichi not only maximizes the simplicity of codi
 So much for the theory. Let's get down to practice. This article is composed of three sections to explain how Taichi accelerates image processing in Python:
 
 I. [An entry-level case: Image transposition and bilinear interpolation](#an-entry-level-case-image-transposition-and-interpolation)
-II. An intermediate case:  Gaussian filtering and bilateral filtering
-III. An advanced case: Bilateral grid and high dynamic range (HDR) tone mapping
+
+II. [An intermediate case: Gaussian filtering and bilateral filtering](#an-intermediate-case-gaussian-filtering-and-bilateral-filtering)
+
+III. [An advanced case: Bilateral grid and high dynamic range (HDR) tone mapping](#an-advanced-case-bilateral-grid)
 
 We will demonstrate, step by step, how image processing algorithms evolve, and explore some of their fascinating applications. In the end, we will summarize things you need to keep in mind when using Taichi for image processing and also discuss Taichi's current limitations for future improvement.
 
@@ -56,7 +58,7 @@ All source code used in this article is available at this repo: [Image processin
 
 Let's start with a basic example, image transposition, to familiarize you with the essential steps of image processing with Taichi.
 
-Similar to matrix transposition, image transposition entails swapping the positions of the pixels at $(i, j)$ and $(j, i)$.
+Similar to matrix transposition, image transposition entails swapping the positions of the pixels at *(i, j)* and *(j, i)*.
 
 ![transposed cat](./pics/transpose_cat.png)
 
@@ -121,9 +123,9 @@ Bilinear interpolation is a technique frequently used for image upsampling. Supp
 Upsampling by enlarging each pixel five times
 </center>
 
-For a pixel $(i, j)$ in the output image, its corresponding position in the original image is $P=(i/5, j/5)$, which does not necessarily coincide with any pixel of the input. Rounding $P$ up or down to the nearest pixel produces the mosaic effect as above.
+For a pixel *(i, j)* in the output image, its corresponding position in the original image is *P=(i/5, j/5)*, which does not necessarily coincide with any pixel of the input. Rounding *P* up or down to the nearest pixel produces the mosaic effect as above.
 
-Bilinear interpolation takes a different approach. It captures the four pixels around $P$ and returns the weighted mean of their pixel values:
+Bilinear interpolation takes a different approach. It captures the four pixels around *P* and returns the weighted mean of their pixel values:
 
 <center>
 
@@ -131,12 +133,13 @@ Bilinear interpolation takes a different approach. It captures the four pixels a
 Image source: [Wikipedia](https://en.wikipedia.org/wiki/Bilinear_interpolation)
 </center>
 
-The four pixels surrounding $P=(x,y)$ are:
-$$Q_{11}=(x_1,y_1),\ Q_{12}=(x_1,y_2),\ Q_{21}=(x_2,y_1),\ Q_{22}=(x_2,y_2)$$ 
+The four pixels surrounding *P=(x,y)* are:
 
-They form a unit square, whose area (equivalent to the sum of the areas of the four rectangles) is 1. The weight of each pixel is the area of the rectangle in the same color as the pixel. For example, if $P$ moves closer to the yellow pixel $Q_{12}$ in the upper left corner, the yellow rectangle at the bottom right will become larger, assigning a larger weight to $Q_{12}$. 
+*Q<sub>11</sub> = (x<sub>1</sub>,y<sub>1</sub>), Q<sub>12</sub> = (x<sub>1</sub>,y<sub>2</sub>), Q<sub>21</sub> = (x<sub>2</sub>,y<sub>1</sub>), Q<sub>22</sub> = (x<sub>2</sub>,y<sub>2</sub>)*
 
-We can now perform three 1D linear interpolations. We first adopt the weight $x-x_1$ to perform interpolations on the pairs $(Q_{11},Q_{21})$ and $(Q_{12},Q_{22})$, respectively, and get the results $R_{1}$ and $R_{2}$. Then, interpolate $(R_{1},R_{2})$ with the weight $y-y_1$.
+They form a unit square, whose area (equivalent to the sum of the areas of the four rectangles) is 1. The weight of each pixel is the area of the rectangle in the same color as the pixel. For example, if *P* moves closer to the yellow pixel *Q<sub>12</sub>* in the upper left corner, the yellow rectangle at the bottom right will become larger, assigning a larger weight to *Q<sub>12</sub>*. 
+
+We can now perform three 1D linear interpolations. We first adopt the weight *x - x<sub>1</sub>* to perform interpolations on the pairs *(Q<sub>11</sub>,Q<sub>21</sub>)* and *(Q<sub>12</sub>,Q<sub>22</sub>)*, respectively, and get the results *R<sub>1</sub>* and *R<sub>2</sub>*. Then, interpolate *(R<sub>1</sub>,R<sub>2</sub>)* with the weight *y - y<sub>1</sub>*.
 
 ```python
 import taichi.math as tm
@@ -156,7 +159,7 @@ def bilinear_interp(src: img2d, dst: img2d):
         dst[I] = ti.round(tm.mix(R1, R2, y - y1), ti.u8) # Round into uint8
 ```
 
-In the code snippet above, the 2D index `I`, which denotes the coordinate of a pixel in the output image dst, traverses all the pixels in `dst`. `I/scale` returns $(x,y)$, which is `I`'s corresponding position in the input image `src`. $R_1$ represents the horizontal interpolation between the pixels $Q_{11}=(x_1,y_1)$ and $Q_{21}=(x_2, y_1)$, and $R_2$ represents the horizontal interpolation between the pixels $Q_{12}=(x_1,y_2)$ and $Q_{22}=(x_2, y_2)$. The final output pixel value is derived after finishing the vertical interpolation between $R_1$ and $R_2$.
+In the code snippet above, the 2D index `I`, which denotes the coordinate of a pixel in the output image dst, traverses all the pixels in `dst`. `I/scale` returns *(x,y)*, which is `I`'s corresponding position in the input image `src`. *R<sub>1</sub>* represents the horizontal interpolation between the pixels *Q<sub>11</sub> = (x<sub>1</sub>,y<sub>1</sub>* and *Q<sub>21</sub> = (x<sub>2</sub>, y<sub>1</sub>)*, and *R<sub>2</sub>* represents the horizontal interpolation between the pixels *Q<sub>12</sub> = (x<sub>1</sub>,y<sub>2</sub>)* and *Q<sub>22</sub> = (x<sub>2</sub>, y<sub>2</sub>)*. The final output pixel value is derived after finishing the vertical interpolation between *R<sub>1</sub>* and *R<sub>2</sub>*.
 
 `tm.mix()` above is the function that performs the 1D interpolation. It is provided by the `taichi.math` module and defined as follows:
 
@@ -191,25 +194,33 @@ Gaussian filtering is one of the most widely used filtering algorithms in the fi
 
 ![guassian kernel](./pics/gaussian_kernel.png)
 A 2D Gaussian convolution kernel. 
+
 Image source: *Fast Bilateral Filtering for the Display of High-Dynamic-Range Images* by Durand and Dorsey, SIGGRAPH 2006
 </center>
 
-The probability density function of the 2D Gaussian distribution is 
-$$G(x,y) = \frac{1}{2\pi\sigma^2}\mathrm{e}^{-\frac{x^2+y^2}{2\sigma^2}}$$
+The probability density function of the 2D Gaussian distribution is
 
-For a $(2k+1)\times (2k+1)$ Gaussian kernel $K$, its elements are derived from $G(x,y)$ sampled at the points falling within ${(i,j)\mid-k\leq i,j\leq k}$. For example, the following is a 3x3 Gaussian kernel:
-$$K = \begin{bmatrix}G(-1,-1
-)&G(0, -1) & G(1,-1)\\ G(-1,0)& G(0,0) & G(1, 0)\\ G(-1, 1)& G(0,1) & G(1, 1)\end{bmatrix}$$
+![probability density function](./pics/probability_density.png)
 
-Given that $G(x,y) = \frac{1}{\sqrt{2\pi\sigma^2}}\mathrm{e}^{-\frac{x^2}{2\sigma^2}} \cdot \frac{1}{\sqrt{2\pi\sigma^2}}\mathrm{e}^{-\frac{y^2}{2\sigma^2}} = G_1(x)G_1(y)$ denotes the product of two 1D density functions, the Gaussian kernel is separable. $K$ can be represented as the product of a 1D vector $v=(G_1(-k),G_1(-k+1),\ldots,G_1(k))^T$ and the transpose of the vector:
-$$K=v\cdot v^T$$
 
-Accordingly, the convolution between an image and the kernel $K$ can be separated into two 1D convolution operations, i.e., convolution of each column using $v$ and convolution of each row using $v^T$ ([this website](http://www.songho.ca/dsp/convolution/convolution.html#convolution_2d) provides a proof). In this way, the 2D convolution $O(m*n*k^2)$ is simplified into $O(m*n*k)$.
+For a *(2k+1)&times;(2k+1)* Gaussian kernel *K*, its elements are derived from *G(x,y)* sampled at the points falling within *(i,j)｜-k &le; i,j &le; k*. For example, the following is a 3x3 Gaussian kernel:
+
+![3*3 gaussian kernel](./pics/3times3_gaussian_kernel.png)
+
+
+Given that 
+
+![G(x,y)](./pics/G(xy).png)
+
+denotes the product of two 1D density functions, the Gaussian kernel is separable. *K* can be represented as the product of a 1D vector *v = (G<sub>1</sub>(-k),G<sub>1</sub>(-k + 1),...,G<sub>1</sub>(k))<sup>T</sup>* and the transpose of the vector: *K = v &times; v<sup>T</sup>*.
+
+Accordingly, the convolution between an image and the kernel *K* can be separated into two 1D convolution operations, i.e., convolution of each column using *v* and convolution of each row using *v<sup>T</sup>* ([this website](http://www.songho.ca/dsp/convolution/convolution.html#convolution_2d) provides a proof). In this way, the 2D convolution *O(m&times;n&times;k<sup>2</sup>)* is simplified into *O(m&times;n&times;k)*.
 
 <center>
 
 ![Gaussian filtering](./pics/origin_to_Gaussian.png)
-From left to right: the original image, the intermediate result of vertical filtering, and the final result of complete Gaussian filtering ($\sigma$=5.0)
+From left to right: the original image, the intermediate result of vertical filtering, and the final result of complete Gaussian filtering (*&sigma; = 5.0*)
+
 Input image source: [Wikipedia](https://en.wikipedia.org/wiki/Bilateral_filter)
 </center>
 
@@ -240,7 +251,7 @@ def compute_weights(radius: int, sigma: float):
 
 The parameter `radius` controls the size of the Gaussian kernel – the element index of the kernel ranges between `[-radius, radius]`. `sigma` represents the variance of the Gaussian density function.
 
-One thing worth attention is that `ti.loop_config(serialize=True)` disables the parallelization of the immediately following for loop. It is more efficient to serialize the for loops for non-intensive computation tasks to avoid the heavy thread overhead generated on CPUs/GPUs. We can safely ignore the coefficient $1/{2\pi\sigma^2}$ when computing each element of the Gaussian kernel, and use the variable `total` for the final normalization.
+One thing worth attention is that `ti.loop_config(serialize=True)` disables the parallelization of the immediately following for loop. It is more efficient to serialize the for loops for non-intensive computation tasks to avoid the heavy thread overhead generated on CPUs/GPUs. We can safely ignore the coefficient *1/2&pi;&sigma;<sup>2</sup>* when computing each element of the Gaussian kernel, and use the variable `total` for the final normalization.
 
 We now get down to the two 1D convolution operations. Declare a 1,024x1,024 vector field (essentially a 2D data array whose elements are RGB values) for storing the intermediate image after the first filtering:
 
@@ -276,7 +287,7 @@ def gaussian_blur(img: img2d, sigma: float):
         img[i, j] = total_rgb.cast(ti.u8)
 ```
 
-In the code snippet above, Lines 3-5 set the post-filtering image to 0 and initialize the Gaussian filter. The following two for loops, as defined by Lines 7-14 and Lines 16-22, respectively, are essentially the same, except that the first for loop saves the column filtering results in `img_blurred` and the second for loop saves results back to the input image `img`.
+In the code snippet above, Lines 3–5 set the post-filtering image to 0 and initialize the Gaussian filter. The following two for loops, as defined by Lines 7–14 and Lines 16–22, respectively, are essentially the same, except that the first for loop saves the column filtering results in `img_blurred` and the second for loop saves results back to the input image `img`.
 
 With preparation done, we can compute the product of the filter's elements and the elements of `img`. It is as simple as that!
 
@@ -296,15 +307,17 @@ Image source: *Fast Bilateral Filtering for the Display of High-Dynamic-Range Im
 
 As the image above shows, we create a 3D surface plot out of a 2D (single-channel) grayscale image, with the heights representing pixel values. Thanks to bilateral filtering, the output image has smooth slopes and preserves clear cliffs (i.e., the edges).
 
-$$I^{\text{filtered}}(x) = \frac{1}{W_p}\sum_{x_i\in\Omega}I(x_i)G_{\sigma_r}(\|I(x_i)-I(x)\|)G_{\sigma_s}(\|x_i-x\|)$$
+![I filtered](./pics/I_filtered.png)
 
-$G_{\sigma_s}$ refers to the distance-based Gaussian kernel, as explained in the last section, and $G_{\sigma_r}$ is a new Gaussian kernel determined by the difference in pixel values: 
-$$G_{\sigma_r}(|I(x_i)-I(x)|)=\frac{1}{\sqrt{2\pi\sigma_r^2}}\mathrm{e}^{-\frac{|I(x_i)-I(x)|^2}{2\sigma_r^2}}$$
+*G<sub>&sigma;<sub>s</sub></sub>* refers to the distance-based Gaussian kernel, as explained in the last section, and *G<sub>&sigma;<sub>r</sub></sub>* is a new Gaussian kernel determined by the difference in pixel values: 
 
-$W_P$ is the normalization coefficient. The weight carried by the pixel $(k,l)$ for filtering the pixel $(i,j)$ can be denoted as
-$$w(i, j, k, l) = \mathrm{exp}\left({-\frac{(i-k)^2+(j-l)^2}{2\sigma_s^2} -\frac{|I(i, j)-I(k, l)|^2}{2\sigma_r^2}}\right)$$
+![formula G](./pics/G_sigma.png)
 
-The equation indicates that the bigger the difference in pixel values $|I(i,j)-I(k,l)|$ is, the smaller the weight is allocated to $I(k,l)$. Therefore, the image edges are kept relatively intact.
+*W<sub>P</sub>* is the normalization coefficient. The weight carried by the pixel *(k,l)* for filtering the pixel *(i,j)* can be denoted as
+
+![formula W](./pics/w.png)
+
+The equation indicates that the bigger the difference in pixel values *|I(i,j) - I(k,l)|* is, the smaller the weight is allocated to *I(k,l)*. Therefore, the image edges are kept relatively intact.
 
 <center>
 
@@ -369,12 +382,17 @@ The bilateral grid was proposed in the [SIGGRAPH 2007 paper by Chen et al.](http
 
 A bilateral filter cannot be separated because the convolution kernels contain pixel values. But what if we create a third dimension for the independent convolution of pixel values? This is what the bilateral grid is about - involving higher dimensions to separate a bilateral filter.
 
-Take a grayscale image as an example. The image is a 2D grid $I$, with each element storing a grayscale pixel value. We now transform the grid into a 3D one $\widetilde{I}$, whose third dimension equals the pixel value range [0, 255] in length. That is to say, the new grid has a shape of $w\times h\times 255$. The pixel value at the position $(i, j, k)$ is denoted as follows:
-$$\widetilde{I}(i, j, k) = \begin{cases}(I(i,j),1), & \text{if } k=I(i,j)\\ (0, 0). & \text{otherwise}\end{cases}$$
+Take a grayscale image as an example. The image is a 2D grid *I*, with each element storing a grayscale pixel value. We now transform the grid into a 3D one, whose third dimension equals the pixel value range [0, 255] in length. That is to say, the new grid has a shape of *w&times; h&times; 255*. The pixel value at the position *(i, j, k)* in the new grid is denoted as follows:
 
-Apply a 3D Gaussian filter to this grid, and the result is a new 3D grid $\widetilde{\Gamma}:\widetilde{\Gamma}(i,j,k) = (z, w)$. $\Gamma(i,j)=z/w$ is what we can derive from the bilateral filtering of $I$.
+![widetilde I](./pics/widetilde_I.png)
 
-A useful technique: The grid $I$ stores the 2-tuple $(I(i,j),1)$to record the weighted sum of pixel values, i.e., $\sum w_iI(x_i)$, into the first entry and the sum of weights, i.e., $\sum w_i$, into the second entry during convolution. The division of the two results gives the normalized value. 
+
+Apply a 3D Gaussian filter to this grid, and the result is a new 3D grid:
+![filtered 3D grid](./pics/filtered_3Dgrid.png)
+
+*&Gamma;(i,j) = z/w* is what we can derive from the bilateral filtering of the original grid *I*.
+
+A useful technique: The grid *I* stores the 2-tuple *(I(i,j),1)* to record the weighted sum of pixel values, i.e., *&sum; w<sub>i</sub>I(x<sub>i</sub>)*, into the first entry and the sum of weights, i.e., *&sum; w<sub>i</sub>*, into the second entry during convolution. The division of the two results gives the normalized value. 
 
 The figure below is excerpted from the paper, illustrating how to upgrade a 1D image to 2D. The process involves three steps: create, process, and slice.
 
@@ -471,7 +489,7 @@ for i, j in ti.ndrange(img.shape[0], img.shape[1]):
     img[i, j] = ti.u8(sample[0] / sample[1])
 ```
 
-For the position `[i, j, img[i,j]]` in the pre-scaling 3D grid, we derive its value by passing the value of `[i / s_s, j / s_s, lum / s_r]` in the post-scaling grid into the interpolation function `sample_grid`. The result should be a 2-tuple $(z,w)$, where $z$ represents the weighted sum of pixels and $w$ the sum of weights. The division of $z$ and $w$ gives the filtered value.
+For the position `[i, j, img[i,j]]` in the pre-scaling 3D grid, we derive its value by passing the value of `[i / s_s, j / s_s, lum / s_r]` in the post-scaling grid into the interpolation function `sample_grid`. The result should be a 2-tuple *(z,w)*, where *z* represents the weighted sum of pixels and *w* the sum of weights. The division of *z* and *w* gives the filtered value.
 
 Wait... Have we missed out something? You may wonder what the interpolation function `sample_grid` is. It is not invented out of nowhere but merely an upgrade of the bilinear interpolation that we have explained in the first section. It is trilinear in nature, and similar to bilinear interpolation, it calculates the weighted sum of the eight vertices of a unit cube. The function consists of two steps: bilinear interpolations of the top and bottom faces of the cube, respectively, followed by a linear interpolation operation on the results derived from the aforementioned step. 
 
@@ -485,7 +503,7 @@ Source code: [bilateral_grid.py](https://github.com/taichi-dev/image-processing-
 
 ### Application: Real-time local tone mapping (HDR effect)
 
-The *dynamic range*, i.e., the ratio between the maximum and minimum light intensities, that can be perceived by human eyes is $1:10^9$. However, an ordinary display screen can only display images with a dynamic range limited to $1:100 \sim 1:1000$, while an advanced camera captures a range lower than what human eyes are capable of but better than display screens. As a result, displaying high dynamic range (HDR) pictures on low dynamic range (LDR) devices without any processing often leads to a loss of details in the shadows or in the highlights.
+The *dynamic range*, i.e., the ratio between the maximum and minimum light intensities, that can be perceived by human eyes is *1:10<sup>9</sup>*. However, an ordinary display screen can only display images with a dynamic range limited to *1:100 ~ 1:1000*, while an advanced camera captures a range lower than what human eyes are capable of but better than display screens. As a result, displaying high dynamic range (HDR) pictures on low dynamic range (LDR) devices without any processing often leads to a loss of details in the shadows or in the highlights.
 
 <center>
 
@@ -499,12 +517,12 @@ It all sounds terrific. But what is the relationship between local tone mapping 
 
 Follow the steps below to implement local tone mapping with the bilateral grid:
 
-1. Calculate the log luminance of an RGB image (i.e., logarithm of the weighted sum of the RGB values) and name the new image $L$.
-2. Apply bilateral filtering to $L$ and get the blurred image, i.e., log luminance base: $B =$ bilateral_filter$(L)$.
-3. Calculate the luminance detail layer: $D = L - B$, which is the brightness part we want to preserve.
-4. Compress B: $B' = \alpha B$, ($0 < \alpha < 1$). B is the major cause of the wide dynamic range, and compressing it would not affect viewers' perception.
-5. Recalculate the log luminance of the adjusted image: $L' = B' + D + \beta$, where $\beta$ is a constant standing for exposure compensation.
-6. Compute the new image based on $L'$, ensuring that the RBG values of each pixel are in proportion to the original values and that the luminance is the same as $L'$.
+1. Calculate the log luminance of an RGB image (i.e., logarithm of the weighted sum of the RGB values) and name the new image *L*.
+2. Apply bilateral filtering to *L* and get the blurred image, i.e., log luminance base: *B = bilateral_filter(L)*.
+3. Calculate the luminance detail layer: *D = L − B*, which is the brightness part we want to preserve.
+4. Compress B: *B' = &alpha;B*, (*0 &lt; &alpha; &lt; 1*). B is the major cause of the wide dynamic range, and compressing it would not affect viewers' perception.
+5. Recalculate the log luminance of the adjusted image: *L' = B' + D + &beta;*, where *&beta;* is a constant standing for exposure compensation.
+6. Compute the new image based on *L'*, ensuring that the RBG values of each pixel are in proportion to the original values and that the luminance is the same as *L'*.
 
 *At last, we get a more natural picture where shadows and highlights are balanced and vividly presented.*
 
@@ -517,7 +535,7 @@ Image captured on the MIT campus.
 Save and run the source code on your device. Play with the parameters to see how the effects change. You may see haloing at some point. The parameter "blend" controls tone mapping.
 </center>
 
-A well-known case where the bilateral grid is used for tone mapping is the adventure game *Ghost of Tsushima*, where it takes only 250us to process a scene for display on a 1080P PS4 screen:
+A well-known case where the bilateral grid is used for tone mapping is the adventure game *Ghost of Tsushima*, where it takes only 250 ƒus to process a scene for display on a 1080P PS4 screen:
 
 ![game](./pics/ghost_of_tsushima.png)
 
