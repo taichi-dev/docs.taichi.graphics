@@ -200,17 +200,25 @@ Image source: *Fast Bilateral Filtering for the Display of High-Dynamic-Range Im
 
 The probability density function of the 2D Gaussian distribution is
 
+<center>
+
 ![probability density function](./pics/probability_density.png)
+</center>
 
 
 For a *(2k+1)&times;(2k+1)* Gaussian kernel *K*, its elements are derived from *G(x,y)* sampled at the points falling within *(i,j)｜-k &le; i,j &le; k*. For example, the following is a 3x3 Gaussian kernel:
 
-![3*3 gaussian kernel](./pics/3times3_gaussian_kernel.png)
+<center>
 
+![K kernel](./pics/K_kernel.png)
+</center>
 
 Given that 
 
-![G(x,y)](./pics/G(xy).png)
+<center>
+
+![G_x,y](./pics/G_xy.png)
+</center>
 
 denotes the product of two 1D density functions, the Gaussian kernel is separable. *K* can be represented as the product of a 1D vector *v = (G<sub>1</sub>(-k),G<sub>1</sub>(-k + 1),...,G<sub>1</sub>(k))<sup>T</sup>* and the transpose of the vector: *K = v &times; v<sup>T</sup>*.
 
@@ -307,15 +315,21 @@ Image source: *Fast Bilateral Filtering for the Display of High-Dynamic-Range Im
 
 As the image above shows, we create a 3D surface plot out of a 2D (single-channel) grayscale image, with the heights representing pixel values. Thanks to bilateral filtering, the output image has smooth slopes and preserves clear cliffs (i.e., the edges).
 
-![I filtered](./pics/I_filtered.png)
+<center>
+
+![I filtered](./pics/filtered_I.png)
+</center>
 
 *G<sub>&sigma;<sub>s</sub></sub>* refers to the distance-based Gaussian kernel, as explained in the last section, and *G<sub>&sigma;<sub>r</sub></sub>* is a new Gaussian kernel determined by the difference in pixel values: 
 
-![formula G](./pics/G_sigma.png)
+<center>
+
+![G sigma r](./pics/G_sigma_r.png)
+</center>
 
 *W<sub>P</sub>* is the normalization coefficient. The weight carried by the pixel *(k,l)* for filtering the pixel *(i,j)* can be denoted as
 
-![formula W](./pics/w.png)
+![w](./pics/w.png)
 
 The equation indicates that the bigger the difference in pixel values *|I(i,j) - I(k,l)|* is, the smaller the weight is allocated to *I(k,l)*. Therefore, the image edges are kept relatively intact.
 
@@ -384,11 +398,16 @@ A bilateral filter cannot be separated because the convolution kernels contain p
 
 Take a grayscale image as an example. The image is a 2D grid *I*, with each element storing a grayscale pixel value. We now transform the grid into a 3D one, whose third dimension equals the pixel value range [0, 255] in length. That is to say, the new grid has a shape of *w&times; h&times; 255*. The pixel value at the position *(i, j, k)* in the new grid is denoted as follows:
 
-![widetilde I](./pics/widetilde_I.png)
+<center>
 
+![widetiled I](./pics/widetilde_I.png)
+</center>
 
 Apply a 3D Gaussian filter to this grid, and the result is a new 3D grid:
-![filtered 3D grid](./pics/filtered_3Dgrid.png)
+<center>
+
+![new 3d grid](./pics/new_3dgrid.png)
+</center>
 
 *&Gamma;(i,j) = z/w* is what we can derive from the bilateral filtering of the original grid *I*.
 
