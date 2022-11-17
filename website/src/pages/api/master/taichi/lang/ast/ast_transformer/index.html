@@ -130,7 +130,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.2.1</a>
+            <a class="dropdown-item" href="/api/">v1.2.2</a>
             
           
             
@@ -174,6 +174,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../linalg/">
      taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../math/">
+     taichi.math: Taichi math library
     </a>
    </li>
    <li class="toctree-l2">
@@ -606,6 +611,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        ASTTransformer.build_assign_unpack()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_attribute_if_is_dynamic_snode_method">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_attribute_if_is_dynamic_snode_method()
       </span>
      </code>
     </a>
@@ -1062,6 +1076,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_attribute_if_is_dynamic_snode_method">
+     build_attribute_if_is_dynamic_snode_method
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_bool_op">
      build_bool_op
     </a>
@@ -1467,6 +1486,11 @@ The function should be called only if the node target is a tuple.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_attribute_if_is_dynamic_snode_method">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_attribute_if_is_dynamic_snode_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_attribute_if_is_dynamic_snode_method" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_bool_op">

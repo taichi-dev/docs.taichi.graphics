@@ -130,7 +130,7 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.2.1</a>
+            <a class="dropdown-item" href="/api/">v1.2.2</a>
             
           
             
@@ -174,6 +174,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../linalg/">
      taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../math/">
+     taichi.math: Taichi math library
     </a>
    </li>
    <li class="toctree-l2">
@@ -233,10 +238,55 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.arg_foreach_check">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     arg_foreach_check()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.assert_list">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assert_list()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.assert_tensor">
    <code class="docutils literal notranslate">
     <span class="pre">
      assert_tensor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.assert_vector">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     assert_vector()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.check_matmul">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     check_matmul()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.dim_lt">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dim_lt()
     </span>
    </code>
   </a>
@@ -251,10 +301,37 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.get_list_shape">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_list_shape()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.is_int_const">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     is_int_const()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.preconditions">
    <code class="docutils literal notranslate">
     <span class="pre">
      preconditions()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.same_shapes">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     same_shapes()
     </span>
    </code>
   </a>
@@ -274,8 +351,33 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.arg_foreach_check">
+   arg_foreach_check
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.assert_list">
+   assert_list
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.assert_tensor">
    assert_tensor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.assert_vector">
+   assert_vector
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.check_matmul">
+   check_matmul
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.dim_lt">
+   dim_lt
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -284,8 +386,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.get_list_shape">
+   get_list_shape
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.is_int_const">
+   is_int_const
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.preconditions">
    preconditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.matrix_ops_utils.same_shapes">
+   same_shapes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -318,7 +435,17 @@
 <span id="taichi-lang-matrix-ops-utils"></span><h1><a class="reference internal" href="#module-taichi.lang.matrix_ops_utils" title="taichi.lang.matrix_ops_utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.matrix_ops_utils</span></code></a><a class="headerlink" href="#module-taichi.lang.matrix_ops_utils" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.arg_at">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">arg_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">fns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.arg_at" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">arg_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">fns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.arg_at" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.arg_foreach_check">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">arg_foreach_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">arg_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'or'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.arg_foreach_check" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.assert_list">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">assert_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'not</span> <span class="pre">a</span> <span class="pre">list:</span> <span class="pre">{}'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.assert_list" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -327,13 +454,43 @@
 <dd></dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.assert_vector">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">assert_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'expected</span> <span class="pre">a</span> <span class="pre">vector,</span> <span class="pre">got</span> <span class="pre">{}'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.assert_vector" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.check_matmul">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">check_matmul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.check_matmul" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.dim_lt">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">dim_lt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.dim_lt" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.do_check">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">do_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checker_fns</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.do_check" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.get_list_shape">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">get_list_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.get_list_shape" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.is_int_const">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">is_int_const</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.is_int_const" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.preconditions">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">preconditions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">checker_funcs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.preconditions" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.matrix_ops_utils.same_shapes">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix_ops_utils.</span></span><span class="sig-name descname"><span class="pre">same_shapes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">xs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix_ops_utils.same_shapes" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
