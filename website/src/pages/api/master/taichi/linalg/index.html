@@ -238,15 +238,6 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.linalg.SparseMatrix.build_coo">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       SparseMatrix.build_coo()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.linalg.SparseMatrix.build_from_ndarray">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -393,11 +384,6 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.linalg.SparseMatrix.build_coo">
-     build_coo
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.linalg.SparseMatrix.build_from_ndarray">
      build_from_ndarray
     </a>
@@ -516,24 +502,6 @@
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.linalg.SparseMatrix.build_coo">
-<span class="sig-name descname"><span class="pre">build_coo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row_coo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_coo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_coo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseMatrix.build_coo" title="Permalink to this definition">#</a></dt>
-<dd><p>Build a CSR format sparse matrix from COO format inputs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>row_indices</strong> (<em>ti.ndarray</em>) – the row indices of the matrix entries.</p></li>
-<li><p><strong>col_indices</strong> (<em>ti.ndarray</em>) – the column indices of the matrix entries.</p></li>
-<li><p><strong>data</strong> (<em>ti.ndarray</em>) – the entries of the matrix.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../#taichi.TaichiRuntimeError" title="taichi.TaichiRuntimeError"><strong>TaichiRuntimeError</strong></a> – If the inputs are not <code class="docutils literal notranslate"><span class="pre">ti.ndarray</span></code> or the datatypes of the ndarray are not correct.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.linalg.SparseMatrix.build_from_ndarray">
 <span class="sig-name descname"><span class="pre">build_from_ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseMatrix.build_from_ndarray" title="Permalink to this definition">#</a></dt>
