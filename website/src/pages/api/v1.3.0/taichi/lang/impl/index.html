@@ -1,0 +1,715 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>taichi.lang.impl &#8212; taichi-api-docstring  documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:category" content="API Reference">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../">
+  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="ml-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../">
+  Taichi Language’s API reference
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://docs.taichi.graphics">Taichi Documentation Site<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/taichi-dev/taichi" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl autoapi-container">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items">
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="dropdown show">
+        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          v1.3.0
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          
+            
+            <a class="dropdown-item" href="/api/master/">master</a>
+            
+          
+             <strong> 
+            <a class="dropdown-item" href="/api/">v1.3.0</a>
+             </strong> 
+          
+            
+            <a class="dropdown-item" href="/api/v1.2.2/">v1.2.2</a>
+            
+          
+        </div>
+      </span>
+    </span>
+  </div>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <!--  -->
+
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../">
+   Taichi Language’s API reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../">
+     taichi: The main taichi module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ad/">
+     taichi.ad: Taichi Autodiff system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aot/">
+     taichi.aot: Taichi AOT system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../linalg/">
+     taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../math/">
+     taichi.math: Taichi math library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../profiler/">
+     taichi.profiler: Taichi profiler tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/">
+     taichi.tools: Miscellaneous tools shipped with Taichi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/">
+     taichi.types: Taichi types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/quant/">
+     taichi.types.quant: Taichi quantized types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/">
+     taichi.ui: Taichi UI components (GUI and GGUI)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.axes">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     axes()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.deactivate_all_snodes">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     deactivate_all_snodes()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     field()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.grouped">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     grouped()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.ndarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ndarray()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.one">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     one()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.root">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     root
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.static">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     static()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.static_assert">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     static_assert()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.static_print">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     static_print()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.stop_grad">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     stop_grad()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.zero">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     zero()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.axes">
+   axes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.deactivate_all_snodes">
+   deactivate_all_snodes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.field">
+   field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.grouped">
+   grouped
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.ndarray">
+   ndarray
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.one">
+   one
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.root">
+   root
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.static">
+   static
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.static_assert">
+   static_assert
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.static_print">
+   static_print
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.stop_grad">
+   stop_grad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.impl.zero">
+   zero
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-taichi.lang.impl">
+<span id="taichi-lang-impl"></span><h1><a class="reference internal" href="#module-taichi.lang.impl" title="taichi.lang.impl"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.impl</span></code></a><a class="headerlink" href="#module-taichi.lang.impl" title="Permalink to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.axes">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">axes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.axes" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines a list of axes to be used by a field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*x</strong> – A list of axes to be activated</p>
+</dd>
+</dl>
+<p>Note that Taichi has already provided a set of commonly used axes. For example,
+<cite>ti.ij</cite> is just <cite>axes(0, 1)</cite> under the hood.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.deactivate_all_snodes">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">deactivate_all_snodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.deactivate_all_snodes" title="Permalink to this definition">#</a></dt>
+<dd><p>Recursively deactivate all SNodes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.field">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_dual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.field" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines a Taichi field.</p>
+<p>A Taichi field can be viewed as an abstract N-dimensional array, hiding away
+the complexity of how its underlying <a class="reference internal" href="../snode/#taichi.lang.snode.SNode" title="taichi.lang.snode.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a> are
+actually defined. The data in a Taichi field can be directly accessed by
+a Taichi <a class="reference internal" href="../kernel_impl/#taichi.lang.kernel_impl.kernel" title="taichi.lang.kernel_impl.kernel"><code class="xref py py-func docutils literal notranslate"><span class="pre">kernel()</span></code></a>.</p>
+<p>See also <a class="reference external" href="https://docs.taichi-lang.org/docs/field">https://docs.taichi-lang.org/docs/field</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dtype</strong> (<em>DataType</em>) – data type of the field.</p></li>
+<li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – shape of the field.</p></li>
+<li><p><strong>order</strong> (<em>str</em><em>, </em><em>optional</em>) – order of the shape laid out in memory.</p></li>
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – name of the field.</p></li>
+<li><p><strong>offset</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – offset of the field domain.</p></li>
+<li><p><strong>needs_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether this field participates in autodiff (reverse mode)
+and thus needs an adjoint field to store the gradients.</p></li>
+<li><p><strong>needs_dual</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether this field participates in autodiff (forward mode)
+and thus needs an dual field to store the gradients.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The code below shows how a Taichi field can be declared and defined::
+
+    &gt;&gt;&gt; x1 = ti.field(ti.f32, shape=(16, 8))
+    &gt;&gt;&gt; # Equivalently
+    &gt;&gt;&gt; x2 = ti.field(ti.f32)
+    &gt;&gt;&gt; ti.root.dense(ti.ij, shape=(16, 8)).place(x2)
+    &gt;&gt;&gt;
+    &gt;&gt;&gt; x3 = ti.field(ti.f32, shape=(16, 8), order=&#39;ji&#39;)
+    &gt;&gt;&gt; # Equivalently
+    &gt;&gt;&gt; x4 = ti.field(ti.f32)
+    &gt;&gt;&gt; ti.root.dense(ti.j, shape=8).dense(ti.i, shape=16).place(x4)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.grouped">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">grouped</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.grouped" title="Permalink to this definition">#</a></dt>
+<dd><p>Groups the indices in the iterator returned by <cite>ndrange()</cite> into a 1-D vector.</p>
+<p>This is often used when you want to iterate over all indices returned by <cite>ndrange()</cite>
+in one <cite>for</cite> loop and a single index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="../../#taichi.ndrange" title="taichi.ndrange"><code class="xref py py-func docutils literal notranslate"><span class="pre">ndrange()</span></code></a>) – an iterator object returned by <cite>ti.ndrange</cite>.</p>
+</dd>
+</dl>
+<dl>
+<dt>Example::</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># without ti.grouped</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="n">ti</span><span class="o">.</span><span class="n">ndrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="go">prints 0, 1, 2, 3, 4, 5</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># with ti.grouped</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="n">ti</span><span class="o">.</span><span class="n">grouped</span><span class="p">(</span><span class="n">ndrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="go">prints [0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.ndarray">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.ndarray" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines a Taichi ndarray with scalar elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dtype</strong> (<em>Union</em><em>[</em><em>DataType</em><em>, </em><em>MatrixType</em><em>]</em>) – Data type of each element. This can be either a scalar type like ti.f32 or a compound type like ti.types.vector(3, ti.i32).</p></li>
+<li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>The code below shows how a Taichi ndarray with scalar elements can be declared and defined:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.ndarray(ti.f32, shape=(16, 8))  # ndarray of shape (16, 8), each element is ti.f32 scalar.
+&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.i32)
+&gt;&gt;&gt; y = ti.ndarray(vec3, shape=(10, 2))  # ndarray of shape (10, 2), each element is a vector of 3 ti.i32 scalars.
+&gt;&gt;&gt; matrix_ty = ti.types.matrix(3, 4, float)
+&gt;&gt;&gt; z = ti.ndarray(matrix_ty, shape=(4, 5))  # ndarray of shape (4, 5), each element is a matrix of (3, 4) ti.float scalars.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.one">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.one" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns an array of ones with the same shape and type as the input. It’s also a scalar
+if the input is a scalar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new copy of the input but filled with ones.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.Vector([0, 0])
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     y = ti.one(x)
+&gt;&gt;&gt;     print(y)
+[1, 1]
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.impl.root">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">root</span></span><a class="headerlink" href="#taichi.lang.impl.root" title="Permalink to this definition">#</a></dt>
+<dd><p>Root of the declared Taichi :func:<a href="#id1"><span class="problematic" id="id2">`</span></a>~taichi.lang.impl.field`s.</p>
+<p>See also <a class="reference external" href="https://docs.taichi-lang.org/docs/layout">https://docs.taichi-lang.org/docs/layout</a></p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.field(ti.f32)
+&gt;&gt;&gt; ti.root.pointer(ti.ij, 4).dense(ti.ij, 8).place(x)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.static">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">static</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">xs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.static" title="Permalink to this definition">#</a></dt>
+<dd><p>Evaluates a Taichi-scope expression at compile time.</p>
+<p><cite>static()</cite> is what enables the so-called metaprogramming in Taichi. It is
+in many ways similar to <code class="docutils literal notranslate"><span class="pre">constexpr</span></code> in C++.</p>
+<p>See also <a class="reference external" href="https://docs.taichi-lang.org/docs/meta">https://docs.taichi-lang.org/docs/meta</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>Any</em>) – an expression to be evaluated</p></li>
+<li><p><strong>*xs</strong> (<em>Any</em>) – for Python-ish swapping assignment</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>The most common usage of <cite>static()</cite> is for compile-time evaluation:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; cond = False
+&gt;&gt;&gt;
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def run():
+&gt;&gt;&gt;     if ti.static(cond):
+&gt;&gt;&gt;         do_a()
+&gt;&gt;&gt;     else:
+&gt;&gt;&gt;         do_b()
+</pre></div>
+</div>
+<p>Depending on the value of <code class="docutils literal notranslate"><span class="pre">cond</span></code>, <code class="docutils literal notranslate"><span class="pre">run()</span></code> will be directly compiled
+into either <code class="docutils literal notranslate"><span class="pre">do_a()</span></code> or <code class="docutils literal notranslate"><span class="pre">do_b()</span></code>. Thus there won’t be a runtime
+condition check.</p>
+<p>Another common usage is for compile-time loop unrolling:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def run():
+&gt;&gt;&gt;     for i in ti.static(range(3)):
+&gt;&gt;&gt;         print(i)
+&gt;&gt;&gt;
+&gt;&gt;&gt; # The above will be unrolled to:
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def run():
+&gt;&gt;&gt;     print(0)
+&gt;&gt;&gt;     print(1)
+&gt;&gt;&gt;     print(2)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.static_assert">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">static_assert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cond</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.static_assert" title="Permalink to this definition">#</a></dt>
+<dd><p>Throw AssertionError when <cite>cond</cite> is False.</p>
+<p>This function is called at compile time and has no runtime overhead.
+The bool value in <cite>cond</cite> must can be determined at compile time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond</strong> (<em>bool</em>) – an expression with a bool value.</p></li>
+<li><p><strong>msg</strong> (<em>str</em>) – assertion message.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; year = 2001
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     ti.static_assert(year % 4 == 0, &quot;the year must be a lunar year&quot;)
+AssertionError: the year must be a lunar year
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.static_print">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">static_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">__p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">print</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.static_print" title="Permalink to this definition">#</a></dt>
+<dd><p>The print function in Taichi scope.</p>
+<p>This function is called at compile time and has no runtime overhead.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.stop_grad">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">stop_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.stop_grad" title="Permalink to this definition">#</a></dt>
+<dd><p>Stops computing gradients during back propagation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>) – A field.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.impl.zero">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.impl.</span></span><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.impl.zero" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns an array of zeros with the same shape and type as the input. It’s also a scalar
+if the input is a scalar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (Union[<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new copy of the input but filled with zeros.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ti.Vector([1, 1])
+&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     y = ti.zero(x)
+&gt;&gt;&gt;     print(y)
+[0, 0]
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Taichi Graphics.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
