@@ -229,15 +229,6 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang._texture.FORMAT2TY_CH">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     FORMAT2TY_CH
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang._texture.RWTextureAccessor">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -352,11 +343,6 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.lang._texture.FORMAT2TY_CH">
-   FORMAT2TY_CH
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang._texture.RWTextureAccessor">
    RWTextureAccessor
   </a>
@@ -445,11 +431,6 @@
                 
   <section id="module-taichi.lang._texture">
 <span id="taichi-lang-texture"></span><h1><a class="reference internal" href="#module-taichi.lang._texture" title="taichi.lang._texture"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang._texture</span></code></a><a class="headerlink" href="#module-taichi.lang._texture" title="Permalink to this heading">#</a></h1>
-<dl class="py data">
-<dt class="sig sig-object py" id="taichi.lang._texture.FORMAT2TY_CH">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang._texture.</span></span><span class="sig-name descname"><span class="pre">FORMAT2TY_CH</span></span><a class="headerlink" href="#taichi.lang._texture.FORMAT2TY_CH" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang._texture.RWTextureAccessor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang._texture.</span></span><span class="sig-name descname"><span class="pre">RWTextureAccessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ptr_expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_dims</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.RWTextureAccessor" title="Permalink to this definition">#</a></dt>
@@ -486,8 +467,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
-<li><p><strong>num_channels</strong> (<em>int</em>) – Number of channels in texture</p></li>
+<li><p><strong>fmt</strong> (<em>ti.Format</em>) – Color format of the texture.</p></li>
 <li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – Shape of the Texture.</p></li>
 </ul>
 </dd>
