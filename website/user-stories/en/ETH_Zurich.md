@@ -31,8 +31,9 @@ Select an efficient parallel programming language and use it to implement a phys
 
 + Achieved comparable performance to C++/CUDA with much less code.
 
+<p align="center">
 <video src="/video/sand.mp4" controls></video>
-
+</p>
 
 # Requests for improvement: The future
 
