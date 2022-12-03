@@ -1,6 +1,6 @@
 ---
 title: "User Story: ETH Zurich"
-date: 2021-09
+date: 2022-07-08
 slug: eth
 ---
 
