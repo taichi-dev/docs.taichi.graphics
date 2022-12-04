@@ -502,11 +502,11 @@ by <a class="reference internal" href="#taichi.ad.grad_for" title="taichi.ad.gra
 &gt;&gt;&gt;     for I in ti.grouped(x):
 &gt;&gt;&gt;         x.grad[I] = y.grad[I] / a
 &gt;&gt;&gt;
-&gt;&gt;&gt; @ti.grad_replaced
+&gt;&gt;&gt; @ti.ad.grad_replaced
 &gt;&gt;&gt; def foo(a):
 &gt;&gt;&gt;     multiply(a)
 &gt;&gt;&gt;
-&gt;&gt;&gt; @ti.grad_for(foo)
+&gt;&gt;&gt; @ti.ad.grad_for(foo)
 &gt;&gt;&gt; def foo_grad(a):
 &gt;&gt;&gt;     multiply_grad(a)
 </pre></div>
