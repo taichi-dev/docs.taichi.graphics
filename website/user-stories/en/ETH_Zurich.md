@@ -1,7 +1,7 @@
 ---
 title: "User Story: ETH Zurich"
 date: 2022-07-08
-slug: eth
+slug: "eth-zurich"
 ---
 
 ![](./eth_pics/topbg-full.png)
