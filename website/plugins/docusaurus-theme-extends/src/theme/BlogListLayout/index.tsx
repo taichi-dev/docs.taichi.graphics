@@ -36,6 +36,11 @@ const newslettertitle = translate({
   message: 'Taichi Newletters',
 })
 
+const userstorytitle = translate({
+  id: 'theme.text.taichinewsletters',
+  message: 'Taichi User Stories',
+})
+
 function BlogListPage(props: Props): JSX.Element {
   const { metadata, items } = props;
   const {
@@ -50,10 +55,10 @@ function BlogListPage(props: Props): JSX.Element {
 
   const prefix = defaultLocale === currentLocale ? '' : '/' + currentLocale
   const isNewsletter = permalink.startsWith(prefix + '/newsletter');
+  const isUserStory = permalink.startsWith(prefix + '/user-stories');
+  const baseUrl = isNewsletter ? '/newsletter' : (isUserStory ? '/user-stories' : '/blog');
 
-  const baseUrl = isNewsletter ? '/newsletter' : '/blog';
-
-  const { blogTags } = useBlogTags(isNewsletter ? 'newsletter' : undefined);
+  const { blogTags } = useBlogTags(isNewsletter ? 'newsletter' : (isUserStory ? 'user-stories' : undefined));
 
   const [showSubscription, setShowSubscription] = useState(true);
 
@@ -74,10 +79,10 @@ function BlogListPage(props: Props): JSX.Element {
         <h1 className="bg-clip-text text-transparent text-brand-cyan-gradients inline-block font-bold mb-4 px-4">
           {isNewsletter
             ? newslettertitle
-            : translate({
+            : (isUserStory ? userstorytitle : translate({
                 id: 'theme.text.taichiblogs',
                 message: 'Taichi Blogs',
-              })}
+              }))}
         </h1>
         <div className="flex flex-col desktop:flex-row">
           <div className="space-y-4 flex-1 px-4">
