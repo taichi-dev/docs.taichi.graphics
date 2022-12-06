@@ -90,24 +90,24 @@ module.exports = {
     [
       path.resolve(__dirname, 'plugins/blog-enhance-plugin'),
       {
-        id: 'newsletter',
-        postsPerPage: 10,
-        path: 'newsletter',
-        routeBasePath: 'newsletter',
-        blogTitle: 'Taichi Newsletter',
-        blogDescription: 'Newsletter',
-        showReadingTime: false,
-      }
-    ],
-    [
-      path.resolve(__dirname, 'plugins/blog-enhance-plugin'),
-      {
         id: 'user-stories',
         postsPerPage: 10,
         path: 'user-stories',
         routeBasePath: 'user-stories',
         blogTitle: 'Taichi User Stories',
         blogDescription: 'User Stories',
+        showReadingTime: false,
+      }
+    ],
+    [
+      path.resolve(__dirname, 'plugins/blog-enhance-plugin'),
+      {
+        id: 'newsletter',
+        postsPerPage: 10,
+        path: 'newsletter',
+        routeBasePath: 'newsletter',
+        blogTitle: 'Taichi Newsletter',
+        blogDescription: 'Newsletter',
         showReadingTime: false,
       }
     ],
