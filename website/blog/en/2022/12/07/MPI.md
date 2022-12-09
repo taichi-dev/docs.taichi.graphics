@@ -208,7 +208,7 @@ What is the gap between our optimized implementation and the ideal linear scalab
 
     ![GPU](./pics/GPU_performance.png)
 
-If we want to achieve linear scalability over hardware platforms with great performance difference, we need to re-paritition the fields into uneven proportions. However, this is beyond the scope of this blog, and I will drop the discussion here.
+If we want to achieve linear scalability over hardware platforms with great performance difference, we need to re-partition the fields into uneven proportions. However, this is beyond the scope of this blog, and I will drop the discussion here.
 
 ## Conclusion
 
