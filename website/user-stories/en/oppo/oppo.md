@@ -48,4 +48,5 @@ However, AOT alone cannot make it. Taichi's important features like readability,
 ## Learn more about Taichi AOT: 
 
 [Taichi AOT, the solution for deploying kernels in mobile devices](https://docs.taichi-lang.org/blog/taichi-aot-the-solution-for-deploying-kernels-in-mobile-devices)
+
 [Load and destroy a Taichi AOT module](https://docs.taichi-lang.org/docs/taichi_core#load-and-destroy-a-taichi-aot-module)
