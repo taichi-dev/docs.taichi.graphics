@@ -1,5 +1,5 @@
 ---
-title: "User Story: Oppo"
+title: "User Story: OPPO"
 date: 2022-12-05
 slug: "oppo-user-story"
 ---
@@ -17,7 +17,7 @@ From the refreshing water droplet wallpaper unveiled together with the iPhone 4 
 
 </center>
 
-Fast forward to August 2022. A series of 3D physical simulation wallpapers co-developed by Oppo and Taichi Lang was officially launched, now available for download in OPPO App Store (China). The initial set of six wallpapers innovatively employs gravity sensing and touch control, simulating the movements of objects in the real world. This is yet another step forward in the industrial deployment of Taichi-powered physical simulation.
+Fast forward to August 2022. A series of 3D physical simulation wallpapers co-developed by OPPO and Taichi Lang was officially launched, now available for download in OPPO App Store (China). The initial set of six wallpapers innovatively employs gravity sensing and touch control, simulating the movements of objects in the real world. This is yet another step forward in the industrial deployment of Taichi-powered physical simulation.
 
 ## Showtime
 
@@ -48,4 +48,5 @@ However, AOT alone cannot make it. Taichi's important features like readability,
 ## Learn more about Taichi AOT: 
 
 [Taichi AOT, the solution for deploying kernels in mobile devices](https://docs.taichi-lang.org/blog/taichi-aot-the-solution-for-deploying-kernels-in-mobile-devices)
+
 [Load and destroy a Taichi AOT module](https://docs.taichi-lang.org/docs/taichi_core#load-and-destroy-a-taichi-aot-module)
