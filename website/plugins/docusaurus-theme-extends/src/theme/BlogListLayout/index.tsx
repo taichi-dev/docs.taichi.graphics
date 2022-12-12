@@ -37,7 +37,7 @@ const newslettertitle = translate({
 })
 
 const userstorytitle = translate({
-  id: 'theme.text.taichinewsletters',
+  id: 'theme.text.userstories',
   message: 'Taichi User Stories',
 })
 
