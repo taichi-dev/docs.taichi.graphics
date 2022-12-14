@@ -31,7 +31,7 @@ slug: "eth-zurich"
 
 - 语言/框架需要自带一些**周边组件**，比如说 3D 可视化，这样才能比较容易地显示、查看结果。因为课程主要内容是物理仿真而不是可视化，大家都**不希望**自己写一套 OpenGL 之类的框架来进行可视化。
 
-学生 3 人组成一组合作，因此必须考虑到语言的**可移植性**。用 CUDA 之类的工具可能有额外的问题：合作伙伴用的是 Mac 或者 AMD 的 GPU，导致自己写的程序到了别的组员那里无法运行，弄不好友谊的小船就这么翻了。C++ 对于特殊硬件的需求小很多，但是也面临着跨平台编译的种种麻烦。
+- 学生 3 人组成一组合作，因此必须考虑到语言的**可移植性**。用 CUDA 之类的工具可能有额外的问题：合作伙伴用的是 Mac 或者 AMD 的 GPU，导致自己写的程序到了别的组员那里无法运行，弄不好友谊的小船就这么翻了。C++ 对于特殊硬件的需求小很多，但是也面临着跨平台编译的种种麻烦。
 
 ## 为什么学生们选择使用 Taichi？
 
@@ -62,14 +62,13 @@ slug: "eth-zurich"
 ![group 6](./eth_pics/group_6.gif)
 <center>不可压性还有提升空间</center>
 
-该组发现的一个痛点是 GPU sorting。当时 Taichi 确实不支持，需要自己实现，这个同学在 GitHub 也开了个 issue ⁵。后来社区里面一位同学实现了 ⁶。最后的 demo 看着比较简单。
-
-![group 7](./eth_pics/group7.png)
+该组发现的一个痛点是 GPU sorting。当时 Taichi 确实不支持，需要自己实现，这个同学在 GitHub 也开了个 issue ⁵。后来社区里面一位同学实现了 ⁶。
 
 ### Group 7
 
-这组挺能打， 在实现过程中还发现了 paper 的一个 bug。用了 BiCGSTAB 来实现最近的一个 SIGGRAPH paper，SPH for snow (Gissler et al. 2020)。
+这组挺能打， 在实现过程中还发现了 paper 的一个 bug。用了 BiCGSTAB 来实现最近的一个 SIGGRAPH paper，SPH for snow (Gissler et al. 2020)。最后的 demo 看着比较简单。
 
+![group 7](./eth_pics/group7.png)
 ### Group 15
 
 这组也挺能打，用 Taichi 实现了流固耦合：
