@@ -3,7 +3,6 @@
   publish = "build"
   command = "yarn build"
   environment = { NODE_VERSION = "14" }
-  ignore = "false"
 
 [context.production]
   command = "yarn run crowdin:sync && yarn build"
