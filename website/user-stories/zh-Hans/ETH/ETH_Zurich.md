@@ -8,14 +8,14 @@ slug: "eth-zurich"
 
 > Taichi, a perfect programming framework for computer graphics courses.
 
-前一阵得知了 ETH Zurich（有 “欧陆第一名校” 美誉的苏黎世联邦理工）的 Computer Graphics Laboratory (CGL) ¹ 去年秋天在教学中使用了 Taichi 进行计算机图形学的教学 ²（内容是 Physically-based Simulation，也就是基于物理的动画）。我们对课上的学生、以及助教（TA）通过 Zoom 进行了访谈。收获很多信息，对 Taichi 未来的发展有很强的指导意义，因此共享出来，和各位开发者一起探讨探讨。（当然也顺便展示一下同学们用 Taichi 创造出了哪些新奇的玩意儿 LOL）
+前一阵得知了 ETH Zurich（有 “欧陆第一名校” 美誉的苏黎世联邦理工）的 [Computer Graphics Laboratory (CGL)](https://cgl.ethz.ch) 去年秋天在教学中使用了 Taichi 进行[计算机图形学的教学](https://cgl.ethz.ch/teaching/simulation21/fame.php)（内容是 Physically-based Simulation，也就是基于物理的动画）。我们对课上的学生、以及助教（TA）通过 Zoom 进行了访谈。收获很多信息，对 Taichi 未来的发展有很强的指导意义，因此共享出来，和各位开发者一起探讨探讨。（当然也顺便展示一下同学们用 Taichi 创造出了哪些新奇的玩意儿 LOL）
 
 ![summary](./eth_pics/summary_animation.gif)
 <center>同学们用 Taichi 实现的几个有意思的 simulator，下面会提到</center>
 
 值得一提的是，课程教学人员不但用 Taichi 布置了日常作业，还布置了 final project。Final project 可以使用任何工具和编程语言，不过 90% 的同学选择了 Taichi。
 
-课程进行时，大家使用的 Taichi 是 v0.8.7，但截至本文发布，如今已经快速迭代至 v1.3.0 ³，有些提到的问题已经得到了解决。以下内容来自对同学和助教的访谈结果。
+课程进行时，大家使用的 Taichi 是 v0.8.7，但截至本文发布，如今已经快速迭代至 [v1.3.0](https://github.com/taichi-dev/taichi/releases/tag/v1.3.0)，有些提到的问题已经得到了解决。以下内容来自对同学和助教的访谈结果。
 
 ## 助教和同学们的目标
 
@@ -53,7 +53,7 @@ slug: "eth-zurich"
 
 ![frame](./eth_pics/hall_of_frame.jpeg)
 
-我们从所有项目最后的 presentation 视频 ⁴中精选了以下几例讨论讨论~
+我们从所有项目最后的 [presentation 视频](https://cgl.ethz.ch/teaching/simulation21/fame.php)中精选了以下几例讨论讨论~
 
 ### Group 6
 
@@ -62,7 +62,7 @@ slug: "eth-zurich"
 ![group 6](./eth_pics/group_6.gif)
 <center>不可压性还有提升空间</center>
 
-该组发现的一个痛点是 GPU sorting。当时 Taichi 确实不支持，需要自己实现，这个同学在 GitHub 也开了个 issue ⁵。后来社区里面一位同学实现了 ⁶。
+该组发现的一个痛点是 GPU sorting。当时 Taichi 确实不支持，需要自己实现，这个同学在 GitHub 也开了个 [issue](https://github.com/taichi-dev/taichi/issues/3764)。后来社区里面一位同学[实现](https://github.com/taichi-dev/taichi/pull/3790)了。
 
 ### Group 7
 
@@ -86,7 +86,7 @@ slug: "eth-zurich"
 
 ### Group 19
 
-Highlight 一下几个中国同学写的项目：SandyFluid ⁷，用 Taichi 实现了 PIC/APIC/FLIP，欢迎大家关注。
+Highlight 一下几个中国同学写的项目：[SandyFluid](https://github.com/ethz-pbs21/SandyFluid)，用 Taichi 实现了 PIC/APIC/FLIP，欢迎大家关注。
 
 ![group 19-1](./eth_pics/group19_2.gif)
 ![group 19-2](./eth_pics/group19_1.gif)
@@ -122,9 +122,9 @@ Highlight 一下几个中国同学写的项目：SandyFluid ⁷，用 Taichi 实
 
 - **Syntax error** 质量依然是大家很在乎的 feature，不过根据这次调查，用户体验已经比之前好很多了，但是还需要进一步提升。
 
-- **编译速度**需要提升。一个简单的方式是 Cache，需要实现 IR serialization/deserialization。学生用户往往会有快速迭代的需求，每次改一点点程序，都要等几秒他们还是体验不太好的。当然这一点社区已经在实现了，相关 issue 可复制文末链接查看 ⁸。
+- **编译速度**需要提升。一个简单的方式是 Cache，需要实现 IR serialization/deserialization。学生用户往往会有快速迭代的需求，每次改一点点程序，都要等几秒他们还是体验不太好的。当然这一点社区已经在实现了，可查看[相关 issue](https://github.com/taichi-dev/taichi/issues/4401)。
 
-- 不确定 Taichi 和 CUDA 等语言比起来性能如何，需要更加完善的性能评测数据。我们在 1.0 发布的同时也公布了非常系统的**性能评测数据** ⁹。Taichi 通常与 CUDA 拥有差不多的性能，但是有时也会更快或者更慢。当然，代码一般都是短不少的。
+- 不确定 Taichi 和 CUDA 等语言比起来性能如何，需要更加完善的性能评测数据。我们在 1.0 发布的同时也公布了非常系统的[**性能评测数据**](https://github.com/taichi-dev/taichi_benchmark)。Taichi 通常与 CUDA 拥有差不多的性能，但是有时也会更快或者更慢。当然，代码一般都是短不少的。
 
 ![benchmark 1](./eth_pics/benchmark1.png)
 ![benchmark 2](./eth_pics/benchmark2.png)
@@ -133,29 +133,14 @@ Highlight 一下几个中国同学写的项目：SandyFluid ⁷，用 Taichi 实
 
 - **可视化功能** (GGUI etc.) 可以继续加强，需要画线等功能。也有同学抱怨 v0.8 版本的 Taichi 在 Mac 上不支持 GGUI，造成了一些不便。我们在 v0.9 的时候已经解决了这个问题。
 
-- **单线程模式**（serial mode）：有的时候顶层的 for 循环不希望被并行。之前的解决方案是在 for loop 外面套一个 “if 1:”，但是看着有点丑。目前这一点已经系统解决 ¹⁰。
+- **单线程模式**（serial mode）：有的时候顶层的 for 循环不希望被并行。之前的解决方案是在 for loop 外面套一个 “if 1:”，但是看着有点丑。目前这一点已经[系统解决](https://github.com/taichi-dev/taichi/issues/4421)。
 
 - **二阶导数**。在计划之中了...
 
-- 还有很多很多我们想解决的问题，欢迎大家加入社区 ¹¹一起开发！
+- 还有很多很多我们想解决的问题，欢迎大家[加入社区](https://github.com/taichi-dev/taichi)一起开发！
 
 ## 没有用 Taichi 的同学是因为什么呢？
 
-助教提到 30 组同学中有两组同学并没有使用 Taichi。有一个用了 Numpy，原因是需要 direct solver，当时 Taichi 确实还不支持（现在支持了：Sparse linear solver ¹²）。还有一组要用到二阶导数，所以用了 PyTorch。二阶导数的功能 Taichi 正在开发过程中。
+助教提到 30 组同学中有两组同学并没有使用 Taichi。有一个用了 Numpy，原因是需要 direct solver，当时 Taichi 确实还不支持（现在支持了：[Sparse linear solver](https://docs.taichi.graphics/lang/articles/sparse_matrix#sparse-linear-solver)）。还有一组要用到二阶导数，所以用了 PyTorch。二阶导数的功能 Taichi 正在开发过程中。
 
 基础软件的开发一定是不容易的。我们一方面为取得的每一份小小的成功欢欣鼓舞，另一方面也会关注到需要解决的问题，把事情做得更好。Taichi 开发者社区，加油！
-
-## Reference
-
-1.<https://cgl.ethz.ch/>
-2.<https://cgl.ethz.ch/teaching/simulation21/fame.php>
-3.<https://github.com/taichi-dev/taichi/releases/tag/v1.0.0>
-4.<https://cgl.ethz.ch/teaching/simulation21/fame.php>
-5.<https://github.com/taichi-dev/taichi/issues/3764>
-6.<https://github.com/taichi-dev/taichi/pull/3790>
-7.<https://github.com/ethz-pbs21/SandyFluid>
-8.<https://github.com/taichi-dev/taichi/issues/4401>
-9.<https://github.com/taichi-dev/taichi_benchmark>
-10.<https://github.com/taichi-dev/taichi/issues/4421>
-11.<https://github.com/taichi-dev/taichi>
-12.<https://docs.taichi.graphics/lang/articles/sparse_matrix#sparse-linear-solver>
