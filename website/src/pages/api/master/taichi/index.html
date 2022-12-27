@@ -3367,6 +3367,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.gles">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     gles
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.global_thread_idx">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -5885,6 +5894,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.get_compute_stream_device_time_elapsed_us">
    get_compute_stream_device_time_elapsed_us
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.gles">
+   gles
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -10884,6 +10898,12 @@ will JIT compile it into native instructions.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">get_compute_stream_device_time_elapsed_us</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#taichi.get_compute_stream_device_time_elapsed_us" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.gles">
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">gles</span></span><a class="headerlink" href="#taichi.gles" title="Permalink to this definition">#</a></dt>
+<dd><p>The OpenGL ES backend. OpenGL ES 3.1 required.</p>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.global_thread_idx">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">global_thread_idx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.global_thread_idx" title="Permalink to this definition">#</a></dt>
@@ -10907,7 +10927,7 @@ test()
 <dt class="sig sig-object py" id="taichi.gpu">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">gpu</span></span><a class="headerlink" href="#taichi.gpu" title="Permalink to this definition">#</a></dt>
 <dd><p>A list of GPU backends supported on the current system.
-Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’, ‘dx12’.</p>
+Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’, ‘dx12’, ‘gles’.</p>
 <p>When this is used, Taichi automatically picks the matching GPU backend. If no
 GPU is detected, Taichi falls back to the CPU backend.</p>
 </dd></dl>
