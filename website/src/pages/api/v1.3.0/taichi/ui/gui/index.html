@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../../">
-  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -274,17 +269,6 @@
       </span>
      </code>
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.WidgetValue.value">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         GUI.WidgetValue.value()
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.ALT">
@@ -566,15 +550,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.fps_limit">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       GUI.fps_limit()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.get_bool_environ">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -692,15 +667,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.running">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       GUI.running()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.set_image">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -757,11 +723,6 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.EventFilter.match">
        match
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.WidgetValue.value">
-       value
       </a>
      </li>
     </ul>
@@ -962,11 +923,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.fps_limit">
-     fps_limit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.get_bool_environ">
      get_bool_environ
     </a>
@@ -1029,11 +985,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.rect">
      rect
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.running">
-     running
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1158,11 +1109,6 @@ Taichi. Default is False.</p></li>
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.WidgetValue">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WidgetValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gui</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.WidgetValue" title="Permalink to this definition">#</a></dt>
 <dd><p>Class for maintaining id of gui widgets.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.ui.gui.GUI.WidgetValue.value">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.WidgetValue.value" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 <dl class="py attribute">
@@ -1410,20 +1356,6 @@ the dtype is <cite>float</cite> it will be directly casted to 32-bit float type.
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.ui.gui.GUI.fps_limit">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fps_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.fps_limit" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the maximum fps of this gui.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the maximum fps.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.get_bool_environ">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_bool_environ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.get_bool_environ" title="Permalink to this definition">#</a></dt>
 <dd><p>Get an environment variable and cast it to <cite>bool</cite>.</p>
@@ -1636,20 +1568,6 @@ of rectangle. Shape must be 2.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.ui.gui.GUI.running">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.running" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns whether this gui is running or not.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>whether this gui is running or not.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.set_image">
 <span class="sig-name descname"><span class="pre">set_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.set_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets an image to display on the window.</p>
@@ -1828,7 +1746,7 @@ the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.0.0.<br>
 </p>
     </div>
     
