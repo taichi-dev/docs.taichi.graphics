@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../../">
-  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -368,7 +363,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>centers</strong> – a taichi 2D Vector field, where each element indicate the                 3D location of a vertex.</p></li>
-<li><p><strong>radius</strong> (<em>float</em>) – radius of the circles, relative to the height of the screen.</p></li>
+<li><p><strong>radius</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>numpy.array</em><em>]</em>) – radius of the circles in pixels.                 Can be either a single number, which will be applied to all circles, or a 1D NumPy array of the same length as <cite>centers</cite>.                The <cite>i-th</cite> item in the array will be the radius for the <cite>i-th</cite> circle in <cite>centers</cite>.</p></li>
 <li><p><strong>color</strong> – a global color for the triangles as 3 floats representing                 RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
 <li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where                 each element indicate the RGB color of a circle.</p></li>
 </ul>
@@ -472,7 +467,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.0.0.<br>
 </p>
     </div>
     

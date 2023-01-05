@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../">
-  <img src="../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -242,6 +237,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        TaichiMain.baseline()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi._main.TaichiMain.cache">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiMain.cache()
       </span>
      </code>
     </a>
@@ -475,6 +479,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi._main.TaichiMain.cache">
+     cache
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi._main.TaichiMain.cc_compose">
      cc_compose
     </a>
@@ -626,6 +635,12 @@
 <dt class="sig sig-object py" id="taichi._main.TaichiMain.baseline">
 <span class="sig-name descname"><span class="pre">baseline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">arguments:</span> <span class="pre">list</span> <span class="pre">=</span> <span class="pre">sys.argv[2:]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._main.TaichiMain.baseline" title="Permalink to this definition">#</a></dt>
 <dd><p>Archive current benchmark result as baseline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi._main.TaichiMain.cache">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">arguments:</span> <span class="pre">list</span> <span class="pre">=</span> <span class="pre">sys.argv[2:]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._main.TaichiMain.cache" title="Permalink to this definition">#</a></dt>
+<dd><p>Manage the offline cache files manually</p>
 </dd></dl>
 
 <dl class="py method">
@@ -800,7 +815,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.0.0.<br>
 </p>
     </div>
     
