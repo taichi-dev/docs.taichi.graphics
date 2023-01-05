@@ -2397,7 +2397,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>centers</strong> – a taichi 2D Vector field, where each element indicate the                 3D location of a vertex.</p></li>
-<li><p><strong>radius</strong> (<em>float</em>) – radius of the circles, relative to the height of the screen.</p></li>
+<li><p><strong>radius</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>numpy.array</em><em>]</em>) – radius of the circles in pixels.                 Can be either a single number, which will be applied to all circles, or a 1D NumPy array of the same length as <cite>centers</cite>.                The <cite>i-th</cite> item in the array will be the radius for the <cite>i-th</cite> circle in <cite>centers</cite>.</p></li>
 <li><p><strong>color</strong> – a global color for the triangles as 3 floats representing                 RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
 <li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where                 each element indicate the RGB color of a circle.</p></li>
 </ul>
@@ -2741,7 +2741,7 @@ Default is WidgetButton_{text}</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pos</strong> (<em>numpy.array</em>) – The positions of the circles.</p></li>
-<li><p><strong>radius</strong> (<em>Number</em><em>, </em><em>optional</em>) – The radius of the circles in pixel. Default is 1.</p></li>
+<li><p><strong>radius</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>numpy.array</em><em>]</em><em>, </em><em>optional</em>) – The radius of the circles in pixel.                 Can be either a number, which will be applied to all circles, or a 1D NumPy array of the same length as <cite>pos</cite>.                 The default is 1.</p></li>
 <li><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – The color of the circles. Default is 0xFFFFFF.</p></li>
 <li><p><strong>palette</strong> (<em>list</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The List of colors from which to
 choose to draw. Default is None.</p></li>
