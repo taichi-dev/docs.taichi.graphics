@@ -1405,15 +1405,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.rotation2d">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.rotation2d()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Matrix.rows">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -2662,15 +2653,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Vector.outer_product()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.rotation2d">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.rotation2d()
       </span>
      </code>
     </a>
@@ -4635,11 +4617,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.rotation2d">
-     rotation2d
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Matrix.rows">
      rows
     </a>
@@ -5350,11 +5327,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Vector.outer_product">
      outer_product
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.rotation2d">
-     rotation2d
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -7566,21 +7538,6 @@ entry is equal to <cite>xi*yj</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.Matrix.rotation2d">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.rotation2d" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the matrix representation of the 2D
-anti-clockwise rotation of angle <cite>alpha</cite>. The angle <cite>alpha</cite>
-is in radians.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import math
-&gt;&gt;&gt; ti.Matrix.rotation2d(math.pi/4)
-[[ 0.70710678 -0.70710678]
- [ 0.70710678  0.70710678]]
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.Matrix.rows">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.rows" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructs a matrix by concatenating a list of
@@ -9291,21 +9248,6 @@ entry is equal to <cite>xi*yj</cite>.</p>
 <dd class="field-odd"><p><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Vector.rotation2d">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector.rotation2d" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the matrix representation of the 2D
-anti-clockwise rotation of angle <cite>alpha</cite>. The angle <cite>alpha</cite>
-is in radians.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import math
-&gt;&gt;&gt; ti.Matrix.rotation2d(math.pi/4)
-[[ 0.70710678 -0.70710678]
- [ 0.70710678  0.70710678]]
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="py method">
