@@ -908,7 +908,7 @@ Currently contains ‘x64’, ‘x86_64’, ‘arm64’, ‘cc’, ‘wasm’.</
 <dt class="sig sig-object py" id="taichi.lang.misc.extension">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#taichi.lang.misc.extension" title="Permalink to this definition">#</a></dt>
 <dd><p>An instance of Taichi extension.</p>
-<p>The list of currently available extensions is [‘sparse’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
+<p>The list of currently available extensions is [‘sparse’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘dynamic_index’].</p>
 </dd></dl>
 
 <dl class="py function">
@@ -1021,7 +1021,6 @@ complete list, please check out
 <li><p><code class="docutils literal notranslate"><span class="pre">cpu_max_num_threads</span></code> (int): Sets the number of threads used by the CPU thread pool.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">debug</span></code> (bool): Enables the debug mode, under which Taichi does a few more things like boundary checks.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">print_ir</span></code> (bool): Prints the CHI IR of the Taichi kernels.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">packed</span></code> (bool): Enables the packed memory layout. See <a class="reference external" href="https://docs.taichi-lang.org/docs/layout">https://docs.taichi-lang.org/docs/layout</a>.</p></li>
 </ul>
 <p><a href="#id1"><span class="problematic" id="id2">*</span></a><code class="docutils literal notranslate"><span class="pre">offline_cache</span></code> (bool): Enables offline cache of the compiled kernels. Default to True. When this is enabled Taichi will cache compiled kernel on your local disk to accelerate future calls.
 <a href="#id3"><span class="problematic" id="id4">*</span></a><code class="docutils literal notranslate"><span class="pre">random_seed</span></code> (int): Sets the seed of the random generator. The default is 0.</p>
