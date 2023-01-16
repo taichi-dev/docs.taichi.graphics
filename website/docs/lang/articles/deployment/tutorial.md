@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 slug: /tutorial
 ---
 # Tutorial: Run Taichi programs in C++ application
