@@ -100,7 +100,7 @@ const LandingPageView = (props) => {
               <DeveloperUserBg />
             </div>
             <Link
-              href="/docs/ndarray_android"
+              href="/docs/tutorial"
               className="relative flex flex-col justify-between h-full px-5 pt-3 pb-4 text-black cursor-pointer hover:text-white"
             >
               <div className="text-caption  mb-2 text-black">
