@@ -6,6 +6,9 @@ on:
     - cron: '0 */3 * * *'
   workflow_dispatch:
 
+env:
+  DO_NOT_THROW_ON_BROKEN_LINKS: 'true'
+
 jobs:
   sync-docs:
     runs-on: "ubuntu-20.04"
