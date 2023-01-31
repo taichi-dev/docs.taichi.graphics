@@ -154,6 +154,10 @@ Use `field.dtype` and `field.shape` to retrieve the metadata.
 
 <https://en.wikipedia.org/wiki/Metaprogramming>
 
+## Ndarray
+
+A Taichi ndarray is an array object that holds contiguous multi-dimensional data, allowing easy data exchange with external libraries.
+
 ## Object-oriented programming (OOP)
 
 <https://en.wikipedia.org/wiki/Object-oriented_programming>
@@ -181,6 +185,10 @@ See also [coloum-major order](./glossary.md/#column-major-order).
 ## Shader storage buffer object (SSBO)
 
 <https://www.khronos.org/opengl/wiki/Shader_Storage_Buffer_Object>
+
+## SNode
+
+SNode stands for Structural Node. The SNode tree system defined the internal organization of Taichi's data structure. SNodes can be used to compose hierarchical, dense or sparse, multi-dimensional fields conveniently.
 
 ## Sparse matrix
 
