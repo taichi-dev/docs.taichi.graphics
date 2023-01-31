@@ -227,6 +227,10 @@ test(array)
 
 ## Visualization
 
+### GGUI does not work on my Linux system with the latest Taichi version (v1.4.0) installed via pip.
+
+Taichi GGUI now supports the x64/CUDA/Vulkan backends (for more information, see [A New UI system: GGUI](../visualization/ggui.md)). However, mind that pip installation from the obsolete manylinux2014 wheel does not support GGUI for now. To solve the problem, upgrade your pip/Python version and reinstall Taichi. `pip >= 20.3, python 3.8.10+, 3.9.5+, 3.10.0+` is required for GGUI to work. If the new version does not help either, consider building Taichi from the source by following the instructions provided in the [Developer Installation](../contribution/dev_install.md), and do not forget to install the [Vulkan SDK](../contribution/dev_install.md#install-optional-dependencies).
+
 ### Does the Taichi's GUI system support color mapping when rendering simulation results?
 
 Taichi's GUI system can display colors when the field it accepts is a 3D vector field where each vector represents the RGB values of a pixel.
