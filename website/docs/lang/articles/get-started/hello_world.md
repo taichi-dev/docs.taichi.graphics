@@ -111,6 +111,7 @@ ti.init(arch=ti.gpu)
 
 :::note
 `ti.field(dtype, shape)` - Defines a Taichi field whose shape is of `shape` and whose elements are of type `dtype`.
+:::
 
 `ti.field` is the most important and frequently used data structure in Taichi. You can compare it to NumPy's `ndarray` or PyTorch's `tensor`. But Taichi's field is more flexible. For example, a Taichi field can be [spatially sparse](../basic/sparse.md) and easily [switched between different data layouts](../basic/layout.md).
 
