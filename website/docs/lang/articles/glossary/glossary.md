@@ -188,7 +188,7 @@ See also [coloum-major order](./glossary.md/#column-major-order).
 
 ## SNode
 
-SNode stands for Structural Node. The SNode tree system defined the internal organization of Taichi's data structure. SNodes can be used to compose hierarchical, dense or sparse, multi-dimensional fields conveniently.
+SNode stands for Structural Node. The SNode tree system defines the internal organization of Taichi's data structure. SNodes can be used to compose hierarchical, dense or sparse, multi-dimensional fields conveniently.
 
 ## Sparse matrix
 
