@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /ndarray_android
+slug: /tutorial
 ---
 # Tutorial: Run Taichi programs in C++ applications
 
