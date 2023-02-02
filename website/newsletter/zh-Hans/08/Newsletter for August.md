@@ -4,7 +4,9 @@ date: "2022-09-01"
 description:
   📌 八月高光时刻\n Taichi 发布 v1.1.0 版本\n 文档站全新上线\n GitHub 中获得超 20k stars
 ---
+
 # Taichi 八月社区月报
+
 <div class="alert--warning alert alert-no-border">
 
 ## 📌八月高光时刻
@@ -26,10 +28,10 @@ description:
     Taichi 在 v1.1.0 中取得了多项进展，程序性能也有所提升，进一步提高了用户的开发效率。诸如： 
   - 量化数据类型：用户可以在不改变计算部分的代码的前提下，将数据以任意低的精确度进行存储，大幅节约显存。
   - 离线缓存：用户可将编译产物存储到磁盘上，极大地减少了程序重复启动 kernel 的编译开销。
-  - 前向模式自动微分：当一个函数的输出数量大于输入数量时，前向自动微分的效率比反向微分要高很多。前向模式和反向模式下的 Jacobi 矩阵计算样例即体现这一特点，大家可以在 Taichi v1.1.0 运行 ti example jacobian 示例实际体会。
+  - 前向模式自动微分：当一个函数的输出数量大于输入数量时，前向自动微分的效率比反向微分要高很多。前向模式和反向模式下的 Jacobi 矩阵计算样例即体现这一特点，大家可以在 Taichi v1.1.0 运行 `ti example jacobian` 示例实际体会。
   
   关于 v1.1.0 功能介绍和更多进展，请参考发版说明 [release notes](https://mp.weixin.qq.com/s?__biz=MzkzNDI3NDY4Mw==&mid=2247502082&idx=1&sn=e7cad8c09a6af9539a64a4ec4ac6b58a&chksm=c2bd3a16f5cab300b58d81942bf74138552acb4e4c4658a3d6b53107441fe685f6579f3cdcfa&scene=21#wechat_redirect)。 
-  目前最新版本中也将 v1.1.0 的部分 bug 做了补丁修复，可直接升级到 v1.1.2 版本 `pip install taichi==1.1.2`
+  目前最新版本中也将 v1.1.0 的部分 bug 做了补丁修复，可直接升级到 v1.1.2 版本 `pip install taichi==1.1.2`。
   
 
 - **[Taichi 新版文档站](https://docs.taichi-lang.org)正式上线——分类更清晰，内容更简洁** 
