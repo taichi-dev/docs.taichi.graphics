@@ -224,6 +224,15 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.amdgpu">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     amdgpu
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.misc.arm64">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -593,6 +602,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.misc.amdgpu">
+   amdgpu
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.misc.arm64">
    arm64
   </a>
@@ -821,6 +835,12 @@
   <section id="module-taichi.lang.misc">
 <span id="taichi-lang-misc"></span><h1><a class="reference internal" href="#module-taichi.lang.misc" title="taichi.lang.misc"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.misc</span></code></a><a class="headerlink" href="#module-taichi.lang.misc" title="Permalink to this heading">#</a></h1>
 <dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.misc.amdgpu">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">amdgpu</span></span><a class="headerlink" href="#taichi.lang.misc.amdgpu" title="Permalink to this definition">#</a></dt>
+<dd><p>The AMDGPU backend.</p>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="taichi.lang.misc.arm64">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">arm64</span></span><a class="headerlink" href="#taichi.lang.misc.arm64" title="Permalink to this definition">#</a></dt>
 <dd><p>The ARM CPU backend.</p>
@@ -945,7 +965,7 @@ test()
 <dt class="sig sig-object py" id="taichi.lang.misc.gpu">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.misc.</span></span><span class="sig-name descname"><span class="pre">gpu</span></span><a class="headerlink" href="#taichi.lang.misc.gpu" title="Permalink to this definition">#</a></dt>
 <dd><p>A list of GPU backends supported on the current system.
-Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’, ‘dx12’, ‘gles’.</p>
+Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’, ‘dx12’, ‘gles’, ‘amdgpu’.</p>
 <p>When this is used, Taichi automatically picks the matching GPU backend. If no
 GPU is detected, Taichi falls back to the CPU backend.</p>
 </dd></dl>
