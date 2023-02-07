@@ -70,7 +70,7 @@ description:
 - Supporting tuple types as struct members #6856
 - Request for the feature to get the size of ndarray in Taichi kernel. #6799
 
-更多 good first issue（非常容易上手）和  welcome contribution（稍微带有挑战性）的 issue 请查阅[这里](https://github.com/taichi-dev/taichi/contribute)。
+更多 good first issue（非常容易上手）和 welcome contribution（稍微带有挑战性）的 issue 请查阅[这里](https://github.com/taichi-dev/taichi/contribute)。
 
 **期待更多同学加入贡献者的队伍之中，特别送上几则小贴士：**
 
