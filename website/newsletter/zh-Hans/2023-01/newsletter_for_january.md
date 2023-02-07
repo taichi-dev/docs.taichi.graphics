@@ -49,7 +49,7 @@ description:
 
 ## 📢 社区活动
 
-[编译器优化技术 Equality Saturation，是如何提升运算性能的？](https://www.bilibili.com/video/BV1hG4y1w79u/?spm_id_from=333.999.0.0&vd_source=7e8cfbc83bcd0c8522627c6544d35724)
+[编译器优化技术 Equality Saturation 是如何提升运算性能的？](https://www.bilibili.com/video/BV1hG4y1w79u/?spm_id_from=333.999.0.0&vd_source=7e8cfbc83bcd0c8522627c6544d35724)
 
 主讲人何德源是普林斯顿大学一年级博士生，刚刚结束了在太极图形的远程实习。他的主要研究方向是编程语言、形式化方法和深度学习编译器。本次分享讲解了编译优化中的 Equality Saturation 技术以及他在 Taichi 中对其应用的探索。
 
