@@ -35,7 +35,7 @@ description:
 
 - Ti example 投稿：[Cornell box](https://github.com/HK-SHAO/RayTracingPBR/blob/taichi-dev/examples/cornell_box/cornell_box_shortest.py)。
 
-康奈尔盒子是图形学中常用来观察和测试全局光照的场景，社区的烧风同学使用蒙特卡洛路径追踪采样简化程序后只用了 139 行就完成了这个作品.
+康奈尔盒子是图形学中常用来观察和测试全局光照的场景，社区的烧风同学使用蒙特卡洛路径追踪采样简化程序后只用了 139 行就完成了这个作品。
   
 ![](https://user-images.githubusercontent.com/124654014/217157256-42f178f9-da22-41a9-ba31-d687f963adf4.jpeg)
   
