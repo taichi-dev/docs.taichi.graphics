@@ -11,7 +11,7 @@ description:
 
 - Taichi v1.4 发布，Taichi AOT 正式发布 Vulkan 后端的运行时库 TiRT 及其 C API.
 
-- Taichi Slack 将逐步迁移至 Discord，[欢迎来讨论！](https://github.com/taichi-dev/taichi/issues/7206)
+- Taichi Slack 将逐步迁移至 Discord，欢迎来[讨论](https://github.com/taichi-dev/taichi/issues/7206)！
 
 - RAL 论文：基于弹性体形变仿真的视触觉传感器仿真器 Tacchi.
 
