@@ -37,7 +37,7 @@ description:
 
 康奈尔盒子是图形学中常用来观察和测试全局光照的场景，社区的烧风同学使用蒙特卡洛路径追踪采样简化程序后只用了 139 行就完成了这个作品.
   
-![编辑图片](https://user-images.githubusercontent.com/124654014/217157256-42f178f9-da22-41a9-ba31-d687f963adf4.jpeg)
+![](https://user-images.githubusercontent.com/124654014/217157256-42f178f9-da22-41a9-ba31-d687f963adf4.jpeg)
   
 - 使用 Taichi 渲染的 [水晶兔子](https://github.com/HK-SHAO/RayTracingPBR/tree/taichi-dev/examples/bunny)
 
