@@ -20,7 +20,7 @@ description:
 - **Taichi v1.4 发布！看看有哪些重要更新：**
 
 - Taichi AOT 已正式启用，并提供了基于 C API 的 Taichi 原生运行时库 (TiRT)。现在不需要 Python 解释器也可运行编译好的 Taichi 内核。
-- Taichi kernel 编译速度显著提升，在一些大量使用 ti.Matrix 的场景中提升可达 2 倍.
+- Taichi kernel 编译速度显著提升，在一些大量使用 ti.Matrix 的场景中提升可达 2 倍。
 - Taichi ndarray 现已正式发布。这是一种保存连续多维数据的数组对象，可以方便地与外部库进行数据交换。
 - 支持所有后端的动态索引。不再需要 dynamic_index=True 来访问具有运行时变量的向量/矩阵。
 - 移除了 Metal 后端对 sparse SNode 的支持。
