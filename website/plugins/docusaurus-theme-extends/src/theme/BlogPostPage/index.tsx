@@ -45,6 +45,7 @@ function BlogPostPage(props: Props): JSX.Element {
 
   const prefix = defaultLocale === currentLocale ? '' : '/' + currentLocale
   const isNewsletter = permalink.startsWith(prefix + '/newsletter');
+  const isUserStory = permalink.startsWith(prefix + '/user-stories');
 
   return (
     <BlogLayout
@@ -53,7 +54,7 @@ function BlogPostPage(props: Props): JSX.Element {
       sidebar={sidebar}
       searchMetadata={{
         // assign unique search tag to exclude this page from search results!
-        category: isNewsletter ? 'newletters' : 'blogs'
+        category: isNewsletter ? 'newletters' : (isUserStory ? 'user-stories' : 'blogs')
       }}
       toc={
         !hideTableOfContents &&

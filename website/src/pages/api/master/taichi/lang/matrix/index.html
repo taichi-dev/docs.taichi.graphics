@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../../">
-  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -130,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.2.2</a>
+            <a class="dropdown-item" href="/api/">v1.4.1</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.1.3/">v1.1.3</a>
+            <a class="dropdown-item" href="/api/v1.3.0/">v1.3.0</a>
             
           
         </div>
@@ -256,15 +251,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.any_array_access">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.any_array_access()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.cast">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -319,33 +305,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.dynamic_index_stride">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.dynamic_index_stride()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.element_type">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.element_type()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.entries">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.entries()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.field">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -386,15 +345,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Matrix.inverse()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.local_tensor_proxy">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.local_tensor_proxy()
       </span>
      </code>
     </a>
@@ -476,15 +426,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Matrix.outer_product()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.rotation2d">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.rotation2d()
       </span>
      </code>
     </a>
@@ -638,10 +579,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.element_shape">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.copy_from">
      <code class="docutils literal notranslate">
       <span class="pre">
-       MatrixNdarray.element_shape()
+       MatrixNdarray.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixNdarray.fill()
       </span>
      </code>
     </a>
@@ -651,6 +601,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        MatrixNdarray.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.get_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixNdarray.get_type()
       </span>
      </code>
     </a>
@@ -689,15 +648,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Vector.any()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.any_array_access">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.any_array_access()
       </span>
      </code>
     </a>
@@ -757,33 +707,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.dynamic_index_stride">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.dynamic_index_stride()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.element_type">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.element_type()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.entries">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.entries()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.field">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -824,15 +747,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Vector.inverse()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.local_tensor_proxy">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.local_tensor_proxy()
       </span>
      </code>
     </a>
@@ -914,15 +828,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Vector.outer_product()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.rotation2d">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.rotation2d()
       </span>
      </code>
     </a>
@@ -1011,10 +916,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.element_shape">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.copy_from">
      <code class="docutils literal notranslate">
       <span class="pre">
-       VectorNdarray.element_shape()
+       VectorNdarray.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VectorNdarray.fill()
       </span>
      </code>
     </a>
@@ -1024,6 +938,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        VectorNdarray.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.get_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VectorNdarray.get_type()
       </span>
      </code>
     </a>
@@ -1052,11 +975,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.any">
      any
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.any_array_access">
-     any_array_access
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1090,21 +1008,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.dynamic_index_stride">
-     dynamic_index_stride
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.element_type">
-     element_type
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.entries">
-     entries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.field">
      field
     </a>
@@ -1127,11 +1030,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.inverse">
      inverse
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.local_tensor_proxy">
-     local_tensor_proxy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1177,11 +1075,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.outer_product">
      outer_product
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Matrix.rotation2d">
-     rotation2d
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1269,13 +1162,23 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.element_shape">
-     element_shape
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.copy_from">
+     copy_from
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.fill">
+     fill
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.from_numpy">
      from_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.MatrixNdarray.get_type">
+     get_type
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1298,11 +1201,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.any">
      any
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.any_array_access">
-     any_array_access
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1336,21 +1234,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.dynamic_index_stride">
-     dynamic_index_stride
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.element_type">
-     element_type
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.entries">
-     entries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.field">
      field
     </a>
@@ -1373,11 +1256,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.inverse">
      inverse
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.local_tensor_proxy">
-     local_tensor_proxy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1423,11 +1301,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.outer_product">
      outer_product
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.Vector.rotation2d">
-     rotation2d
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1478,13 +1351,23 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.element_shape">
-     element_shape
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.copy_from">
+     copy_from
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.fill">
+     fill
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.from_numpy">
      from_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.matrix.VectorNdarray.get_type">
+     get_type
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1519,7 +1402,7 @@
 <span id="taichi-lang-matrix"></span><h1><a class="reference internal" href="#module-taichi.lang.matrix" title="taichi.lang.matrix"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.matrix</span></code></a><a class="headerlink" href="#module-taichi.lang.matrix" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.matrix.Matrix">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.matrix.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../common_ops/#taichi.lang.common_ops.TaichiOperations" title="taichi.lang.common_ops.TaichiOperations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.common_ops.TaichiOperations</span></code></a></p>
 <p>The matrix class.</p>
 <p>A matrix is a 2-D rectangular array with scalar entries, it’s row-majored, and is
@@ -1600,11 +1483,6 @@ True
 </pre></div>
 </div>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.any_array_access">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">any_array_access</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.any_array_access" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.cast">
@@ -1757,21 +1635,6 @@ with <cite>val</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.dynamic_index_stride">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dynamic_index_stride</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.dynamic_index_stride" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.element_type">
-<span class="sig-name descname"><span class="pre">element_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.element_type" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.entries">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">entries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.entries" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.field">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_dual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.field" title="Permalink to this definition">#</a></dt>
 <dd><p>Construct a data container to hold all elements of the Matrix.</p>
@@ -1864,11 +1727,6 @@ Structure (AOS) or Structure Of Array (SOA).</p></li>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.local_tensor_proxy">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">local_tensor_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.local_tensor_proxy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.max">
@@ -2007,21 +1865,6 @@ entry is equal to <cite>xi*yj</cite>.</p>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Matrix.rotation2d">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Matrix.rotation2d" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the matrix representation of the 2D
-anti-clockwise rotation of angle <cite>alpha</cite>. The angle <cite>alpha</cite>
-is in radians.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import math
-&gt;&gt;&gt; ti.Matrix.rotation2d(math.pi/4)
-[[ 0.70710678 -0.70710678]
- [ 0.70710678  0.70710678]]
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="py method">
@@ -2332,15 +2175,26 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.element_shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.element_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the shape of each element (a 2D matrix) in this ndarray.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(3, 3))
-&gt;&gt;&gt; arr.element_shape
-(2, 2)
-</pre></div>
-</div>
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.copy_from">
+<span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.copy_from" title="Permalink to this definition">#</a></dt>
+<dd><p>Copies all elements from another ndarray.</p>
+<p>The shape of the other ndarray needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../../#taichi.Ndarray" title="taichi.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills ndarray with a specific scalar value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2354,6 +2208,11 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.MatrixNdarray.get_type" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.matrix.MatrixNdarray.to_numpy">
@@ -2456,11 +2315,6 @@ True
 </pre></div>
 </div>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Vector.any_array_access">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">any_array_access</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Vector.any_array_access" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.matrix.Vector.cast">
@@ -2613,21 +2467,6 @@ with <cite>val</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Vector.dynamic_index_stride">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dynamic_index_stride</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Vector.dynamic_index_stride" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Vector.element_type">
-<span class="sig-name descname"><span class="pre">element_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Vector.element_type" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Vector.entries">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">entries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Vector.entries" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.matrix.Vector.field">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Vector.field" title="Permalink to this definition">#</a></dt>
 <dd><p>ti.Vector.field</p>
@@ -2696,11 +2535,6 @@ with <cite>val</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Vector.local_tensor_proxy">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">local_tensor_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Vector.local_tensor_proxy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.matrix.Vector.max">
@@ -2837,21 +2671,6 @@ entry is equal to <cite>xi*yj</cite>.</p>
 <dd class="field-odd"><p><a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.Vector.rotation2d">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.Vector.rotation2d" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the matrix representation of the 2D
-anti-clockwise rotation of angle <cite>alpha</cite>. The angle <cite>alpha</cite>
-is in radians.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import math
-&gt;&gt;&gt; ti.Matrix.rotation2d(math.pi/4)
-[[ 0.70710678 -0.70710678]
- [ 0.70710678  0.70710678]]
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="py method">
@@ -3039,15 +2858,26 @@ the remaining entries are all zeros.</p>
 </pre></div>
 </div>
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.element_shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.element_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the dimension of the vector of this ndarray.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (3, 3))
-&gt;&gt;&gt; a.element_shape
-(3,)
-</pre></div>
-</div>
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.copy_from">
+<span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.copy_from" title="Permalink to this definition">#</a></dt>
+<dd><p>Copies all elements from another ndarray.</p>
+<p>The shape of the other ndarray needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../../#taichi.Ndarray" title="taichi.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills ndarray with a specific scalar value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -3063,6 +2893,11 @@ the remaining entries are all zeros.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.matrix.VectorNdarray.get_type" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.matrix.VectorNdarray.to_numpy">
@@ -3110,7 +2945,7 @@ array([[[0., 0., 0.],
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

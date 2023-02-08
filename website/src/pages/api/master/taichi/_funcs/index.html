@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../">
-  <img src="../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -130,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.2.2</a>
+            <a class="dropdown-item" href="/api/">v1.4.1</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.1.3/">v1.1.3</a>
+            <a class="dropdown-item" href="/api/v1.3.0/">v1.3.0</a>
             
           
         </div>
@@ -339,8 +334,7 @@
 <dt class="sig sig-object py" id="taichi._funcs.eig">
 <span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">eig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.eig" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the eigenvalues and right eigenvectors of a real matrix.</p>
-<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.
-2D implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.eig2x2()</span></code>.</p>
+<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -362,8 +356,7 @@ eigenvectors (ti.Matrix(n*2, n)): The eigenvectors in complex form. Each column 
 <dt class="sig sig-object py" id="taichi._funcs.polar_decompose">
 <span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">polar_decompose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.polar_decompose" title="Permalink to this definition">#</a></dt>
 <dd><p>Perform polar decomposition (A=UP) for arbitrary size matrix.</p>
-<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Polar_decomposition">https://en.wikipedia.org/wiki/Polar_decomposition</a>.
-This is only a wrapper for <a class="reference internal" href="../#taichi.polar_decompose" title="taichi.polar_decompose"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.polar_decompose()</span></code></a>.</p>
+<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Polar_decomposition">https://en.wikipedia.org/wiki/Polar_decomposition</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -428,8 +421,7 @@ If set to <cite>None</cite> <cite>dt</cite> will be determined dynamically in ru
 <dt class="sig sig-object py" id="taichi._funcs.svd">
 <span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.svd" title="Permalink to this definition">#</a></dt>
 <dd><p>Perform singular value decomposition (A=USV^T) for arbitrary size matrix.</p>
-<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Singular_value_decomposition">https://en.wikipedia.org/wiki/Singular_value_decomposition</a>.
-This is only a wrappers for <a class="reference internal" href="../#taichi.svd" title="taichi.svd"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.svd()</span></code></a>.</p>
+<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Singular_value_decomposition">https://en.wikipedia.org/wiki/Singular_value_decomposition</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -447,8 +439,7 @@ This is only a wrappers for <a class="reference internal" href="../#taichi.svd" 
 <dt class="sig sig-object py" id="taichi._funcs.sym_eig">
 <span class="sig-prename descclassname"><span class="pre">taichi._funcs.</span></span><span class="sig-name descname"><span class="pre">sym_eig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._funcs.sym_eig" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the eigenvalues and right eigenvectors of a real symmetric matrix.</p>
-<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.
-2D implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.sym_eig2x2()</span></code>.</p>
+<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -494,7 +485,7 @@ eigenvectors (ti.Matrix(n, n)): The eigenvectors. Each column stores one eigenve
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

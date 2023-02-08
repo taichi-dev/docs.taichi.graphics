@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../../">
-  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -130,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.2.2</a>
+            <a class="dropdown-item" href="/api/">v1.4.1</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.1.3/">v1.1.3</a>
+            <a class="dropdown-item" href="/api/v1.3.0/">v1.3.0</a>
             
           
         </div>
@@ -229,10 +224,10 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_colors_to_vbo">
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_all_to_vbo">
    <code class="docutils literal notranslate">
     <span class="pre">
-     copy_colors_to_vbo()
+     copy_all_to_vbo()
     </span>
    </code>
   </a>
@@ -274,46 +269,10 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_normals_to_vbo">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     copy_normals_to_vbo()
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_texcoords_to_vbo">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     copy_texcoords_to_vbo()
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_texture_to_rgba8">
    <code class="docutils literal notranslate">
     <span class="pre">
      copy_texture_to_rgba8()
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_to_vbo">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     copy_to_vbo()
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_vertices_to_vbo">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     copy_vertices_to_vbo()
     </span>
    </code>
   </a>
@@ -328,19 +287,28 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.fill_vbo">
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.get_depth_ndarray">
    <code class="docutils literal notranslate">
     <span class="pre">
-     fill_vbo()
+     get_depth_ndarray()
     </span>
    </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.get_depth_ndarray">
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.get_indices_field">
    <code class="docutils literal notranslate">
     <span class="pre">
-     get_depth_ndarray()
+     get_indices_field()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.get_transforms_field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_transforms_field()
     </span>
    </code>
   </a>
@@ -364,6 +332,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.indices_ndarray_cache">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     indices_ndarray_cache
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.to_rgba8">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -373,10 +350,10 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.validate_input_field">
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.transforms_ndarray_cache">
    <code class="docutils literal notranslate">
     <span class="pre">
-     validate_input_field()
+     transforms_ndarray_cache
     </span>
    </code>
   </a>
@@ -391,8 +368,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_colors_to_vbo">
-   copy_colors_to_vbo
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_all_to_vbo">
+   copy_all_to_vbo
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -416,28 +393,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_normals_to_vbo">
-   copy_normals_to_vbo
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_texcoords_to_vbo">
-   copy_texcoords_to_vbo
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_texture_to_rgba8">
    copy_texture_to_rgba8
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_to_vbo">
-   copy_to_vbo
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.copy_vertices_to_vbo">
-   copy_vertices_to_vbo
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -446,13 +403,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.fill_vbo">
-   fill_vbo
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.get_depth_ndarray">
+   get_depth_ndarray
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.get_depth_ndarray">
-   get_depth_ndarray
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.get_indices_field">
+   get_indices_field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.get_transforms_field">
+   get_transforms_field
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -466,13 +428,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.indices_ndarray_cache">
+   indices_ndarray_cache
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.to_rgba8">
    to_rgba8
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.validate_input_field">
-   validate_input_field
+  <a class="reference internal nav-link" href="#taichi.ui.staging_buffer.transforms_ndarray_cache">
+   transforms_ndarray_cache
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -504,53 +471,33 @@
   <section id="module-taichi.ui.staging_buffer">
 <span id="taichi-ui-staging-buffer"></span><h1><a class="reference internal" href="#module-taichi.ui.staging_buffer" title="taichi.ui.staging_buffer"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.ui.staging_buffer</span></code></a><a class="headerlink" href="#module-taichi.ui.staging_buffer" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_colors_to_vbo">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_colors_to_vbo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_colors_to_vbo" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_all_to_vbo">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_all_to_vbo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.ndarray(element_dim=1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texcoords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_all_to_vbo" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_image_f32_to_rgba8">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_f32_to_rgba8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gray_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_f32_to_rgba8" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_f32_to_rgba8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gray_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_f32_to_rgba8" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_image_f32_to_rgba8_np">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_f32_to_rgba8_np</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gray_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_f32_to_rgba8_np" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_f32_to_rgba8_np</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gray_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_f32_to_rgba8_np" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_image_u8_to_rgba8">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_u8_to_rgba8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gray_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_u8_to_rgba8" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_u8_to_rgba8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gray_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_u8_to_rgba8" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_image_u8_to_rgba8_np">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_u8_to_rgba8_np</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gray_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_u8_to_rgba8_np" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_normals_to_vbo">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_normals_to_vbo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normals</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_normals_to_vbo" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_texcoords_to_vbo">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_texcoords_to_vbo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texcoords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_texcoords_to_vbo" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_image_u8_to_rgba8_np</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gray_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_image_u8_to_rgba8_np" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_texture_to_rgba8">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_texture_to_rgba8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.texture(num_dimensions=2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.i32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.i32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_texture_to_rgba8" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_to_vbo">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_to_vbo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_to_vbo" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.copy_vertices_to_vbo">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_vertices_to_vbo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_vertices_to_vbo" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">copy_texture_to_rgba8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.texture(num_dimensions=2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ti.types.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.i32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.i32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.copy_texture_to_rgba8" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py data">
@@ -559,13 +506,18 @@
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.fill_vbo">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">fill_vbo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vbo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.types.primitive_types.f32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.fill_vbo" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.ui.staging_buffer.get_depth_ndarray">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">get_depth_ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.get_depth_ndarray" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.get_depth_ndarray">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">get_depth_ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.get_depth_ndarray" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.ui.staging_buffer.get_indices_field">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">get_indices_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.get_indices_field" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.ui.staging_buffer.get_transforms_field">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">get_transforms_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transforms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.get_transforms_field" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -578,14 +530,19 @@
 <span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">image_field_cache</span></span><a class="headerlink" href="#taichi.ui.staging_buffer.image_field_cache" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.ui.staging_buffer.indices_ndarray_cache">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">indices_ndarray_cache</span></span><a class="headerlink" href="#taichi.ui.staging_buffer.indices_ndarray_cache" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ui.staging_buffer.to_rgba8">
 <span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">to_rgba8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.to_rgba8" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.staging_buffer.validate_input_field">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">validate_input_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.staging_buffer.validate_input_field" title="Permalink to this definition">#</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.ui.staging_buffer.transforms_ndarray_cache">
+<span class="sig-prename descclassname"><span class="pre">taichi.ui.staging_buffer.</span></span><span class="sig-name descname"><span class="pre">transforms_ndarray_cache</span></span><a class="headerlink" href="#taichi.ui.staging_buffer.transforms_ndarray_cache" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py data">
@@ -621,7 +578,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

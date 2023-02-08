@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -56,11 +53,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../">
-  <img src="../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -131,11 +126,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.2.2</a>
+            <a class="dropdown-item" href="/api/">v1.4.1</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.1.3/">v1.1.3</a>
+            <a class="dropdown-item" href="/api/v1.3.0/">v1.3.0</a>
             
           
         </div>
@@ -358,10 +353,10 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.DeviceCapability.spirv_has_atomic_i64">
+    <a class="reference internal nav-link" href="#taichi.DeviceCapability.spirv_has_atomic_int64">
      <code class="docutils literal notranslate">
       <span class="pre">
-       DeviceCapability.spirv_has_atomic_i64
+       DeviceCapability.spirv_has_atomic_int64
       </span>
      </code>
     </a>
@@ -540,15 +535,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Field.dtype">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Field.dtype()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Field.from_paddle">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -571,24 +557,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Field.parent()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Field.shape">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Field.shape()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Field.snode">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Field.snode()
       </span>
      </code>
     </a>
@@ -751,17 +719,6 @@
       </span>
      </code>
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.GUI.WidgetValue.value">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         GUI.WidgetValue.value()
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.GUI.ALT">
@@ -1043,15 +1000,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.GUI.fps_limit">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       GUI.fps_limit()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.GUI.get_bool_environ">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -1169,15 +1117,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.GUI.running">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       GUI.running()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.GUI.set_image">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -1236,11 +1175,6 @@
        match
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.GUI.WidgetValue.value">
-       value
-      </a>
-     </li>
     </ul>
    </li>
   </ul>
@@ -1286,15 +1220,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Matrix.any()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.any_array_access">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.any_array_access()
       </span>
      </code>
     </a>
@@ -1354,33 +1279,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.dynamic_index_stride">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.dynamic_index_stride()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.element_type">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.element_type()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.entries">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.entries()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Matrix.field">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -1421,15 +1319,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Matrix.inverse()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.local_tensor_proxy">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.local_tensor_proxy()
       </span>
      </code>
     </a>
@@ -1511,15 +1400,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Matrix.outer_product()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.rotation2d">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matrix.rotation2d()
       </span>
      </code>
     </a>
@@ -1673,10 +1553,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.MatrixNdarray.element_shape">
+    <a class="reference internal nav-link" href="#taichi.MatrixNdarray.copy_from">
      <code class="docutils literal notranslate">
       <span class="pre">
-       MatrixNdarray.element_shape()
+       MatrixNdarray.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.MatrixNdarray.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixNdarray.fill()
       </span>
      </code>
     </a>
@@ -1686,6 +1575,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        MatrixNdarray.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.MatrixNdarray.get_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixNdarray.get_type()
       </span>
      </code>
     </a>
@@ -1859,15 +1757,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Ndarray.element_shape">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Ndarray.element_shape()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Ndarray.fill">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -1986,15 +1875,6 @@
      </code>
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.SNode.shape">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       SNode.shape()
-      </span>
-     </code>
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -2011,15 +1891,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        ScalarField.copy_from()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ScalarField.dtype">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ScalarField.dtype()
       </span>
      </code>
     </a>
@@ -2070,24 +1941,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ScalarField.shape">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ScalarField.shape()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ScalarField.snode">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ScalarField.snode()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ScalarField.to_numpy">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -2130,15 +1983,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        ScalarNdarray.copy_from()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ScalarNdarray.element_shape">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ScalarNdarray.element_shape()
       </span>
      </code>
     </a>
@@ -2209,24 +2053,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Struct.items">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Struct.items()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Struct.keys">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Struct.keys()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Struct.to_dict">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -2251,15 +2077,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        StructField.copy_from()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.StructField.dtype">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       StructField.dtype()
       </span>
      </code>
     </a>
@@ -2305,42 +2122,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        StructField.get_member_field()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.StructField.keys">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       StructField.keys()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.StructField.parent">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       StructField.parent()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.StructField.shape">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       StructField.shape()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.StructField.snode">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       StructField.snode()
       </span>
      </code>
     </a>
@@ -2724,15 +2505,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.any_array_access">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.any_array_access()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Vector.cast">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -2787,33 +2559,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.dynamic_index_stride">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.dynamic_index_stride()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.element_type">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.element_type()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.entries">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.entries()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Vector.field">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -2854,15 +2599,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Vector.inverse()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.local_tensor_proxy">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.local_tensor_proxy()
       </span>
      </code>
     </a>
@@ -2944,15 +2680,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Vector.outer_product()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.rotation2d">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Vector.rotation2d()
       </span>
      </code>
     </a>
@@ -3041,10 +2768,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.VectorNdarray.element_shape">
+    <a class="reference internal nav-link" href="#taichi.VectorNdarray.copy_from">
      <code class="docutils literal notranslate">
       <span class="pre">
-       VectorNdarray.element_shape()
+       VectorNdarray.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.VectorNdarray.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VectorNdarray.fill()
       </span>
      </code>
     </a>
@@ -3054,6 +2790,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        VectorNdarray.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.VectorNdarray.get_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VectorNdarray.get_type()
       </span>
      </code>
     </a>
@@ -3101,6 +2846,15 @@
    <code class="docutils literal notranslate">
     <span class="pre">
      activate()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.amdgpu">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     amdgpu
     </span>
    </code>
   </a>
@@ -3488,6 +3242,15 @@
    <code class="docutils literal notranslate">
     <span class="pre">
      get_compute_stream_device_time_elapsed_us()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.gles">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     gles
     </span>
    </code>
   </a>
@@ -4231,6 +3994,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.warn_restricted_version">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     warn_restricted_version()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.wasm">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -4339,8 +4111,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.DeviceCapability.spirv_has_atomic_i64">
-     spirv_has_atomic_i64
+    <a class="reference internal nav-link" href="#taichi.DeviceCapability.spirv_has_atomic_int64">
+     spirv_has_atomic_int64
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -4441,11 +4213,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Field.dtype">
-     dtype
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Field.from_paddle">
      from_paddle
     </a>
@@ -4458,16 +4225,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Field.parent">
      parent
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Field.shape">
-     shape
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Field.snode">
-     snode
     </a>
    </li>
   </ul>
@@ -4710,11 +4467,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.GUI.fps_limit">
-     fps_limit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.GUI.get_bool_environ">
      get_bool_environ
     </a>
@@ -4780,11 +4532,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.GUI.running">
-     running
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.GUI.set_image">
      set_image
     </a>
@@ -4842,11 +4589,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.any_array_access">
-     any_array_access
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Matrix.cast">
      cast
     </a>
@@ -4877,21 +4619,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.dynamic_index_stride">
-     dynamic_index_stride
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.element_type">
-     element_type
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.entries">
-     entries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Matrix.field">
      field
     </a>
@@ -4914,11 +4641,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Matrix.inverse">
      inverse
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.local_tensor_proxy">
-     local_tensor_proxy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -4964,11 +4686,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Matrix.outer_product">
      outer_product
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Matrix.rotation2d">
-     rotation2d
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5056,13 +4773,23 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.MatrixNdarray.element_shape">
-     element_shape
+    <a class="reference internal nav-link" href="#taichi.MatrixNdarray.copy_from">
+     copy_from
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.MatrixNdarray.fill">
+     fill
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.MatrixNdarray.from_numpy">
      from_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.MatrixNdarray.get_type">
+     get_type
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5162,11 +4889,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Ndarray.element_shape">
-     element_shape
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Ndarray.fill">
      fill
     </a>
@@ -5233,11 +4955,6 @@
      quant_array
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.SNode.shape">
-     shape
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -5248,11 +4965,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ScalarField.copy_from">
      copy_from
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ScalarField.dtype">
-     dtype
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5281,16 +4993,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ScalarField.shape">
-     shape
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ScalarField.snode">
-     snode
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ScalarField.to_numpy">
      to_numpy
     </a>
@@ -5315,11 +5017,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ScalarNdarray.copy_from">
      copy_from
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ScalarNdarray.element_shape">
-     element_shape
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5360,16 +5057,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Struct.items">
-     items
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Struct.keys">
-     keys
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Struct.to_dict">
      to_dict
     </a>
@@ -5384,11 +5071,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.StructField.copy_from">
      copy_from
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.StructField.dtype">
-     dtype
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5414,26 +5096,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.StructField.get_member_field">
      get_member_field
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.StructField.keys">
-     keys
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.StructField.parent">
-     parent
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.StructField.shape">
-     shape
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.StructField.snode">
-     snode
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5655,11 +5317,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.any_array_access">
-     any_array_access
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Vector.cast">
      cast
     </a>
@@ -5690,21 +5347,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.dynamic_index_stride">
-     dynamic_index_stride
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.element_type">
-     element_type
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.entries">
-     entries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Vector.field">
      field
     </a>
@@ -5727,11 +5369,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Vector.inverse">
      inverse
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.local_tensor_proxy">
-     local_tensor_proxy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5777,11 +5414,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.Vector.outer_product">
      outer_product
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.Vector.rotation2d">
-     rotation2d
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5832,13 +5464,23 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.VectorNdarray.element_shape">
-     element_shape
+    <a class="reference internal nav-link" href="#taichi.VectorNdarray.copy_from">
+     copy_from
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.VectorNdarray.fill">
+     fill
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.VectorNdarray.from_numpy">
      from_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.VectorNdarray.get_type">
+     get_type
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5866,6 +5508,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.activate">
    activate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.amdgpu">
+   amdgpu
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -6081,6 +5728,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.get_compute_stream_device_time_elapsed_us">
    get_compute_stream_device_time_elapsed_us
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.gles">
+   gles
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -6494,6 +6146,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.warn_restricted_version">
+   warn_restricted_version
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.wasm">
    wasm
   </a>
@@ -6622,8 +6279,8 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="taichi.DeviceCapability.spirv_has_atomic_i64">
-<span class="sig-name descname"><span class="pre">spirv_has_atomic_i64</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_i64</span></em><a class="headerlink" href="#taichi.DeviceCapability.spirv_has_atomic_i64" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="taichi.DeviceCapability.spirv_has_atomic_int64">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_int64</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_int64</span></em><a class="headerlink" href="#taichi.DeviceCapability.spirv_has_atomic_int64" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -6739,20 +6396,6 @@ A field member is a Python Expr wrapping a C++ FieldExpression.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.Field.dtype">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Field.dtype" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets data type of each individual value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Data type of each individual value.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>DataType</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.Field.from_paddle">
 <span class="sig-name descname"><span class="pre">from_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Field.from_paddle" title="Permalink to this definition">#</a></dt>
 <dd><p>Loads all elements from a paddle tensor.</p>
@@ -6793,34 +6436,6 @@ A field member is a Python Expr wrapping a C++ FieldExpression.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Field.shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Field.shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets field shape.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Field shape.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple[Int]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Field.snode">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Field.snode" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets representative SNode for info purposes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#taichi.SNode" title="taichi.SNode">SNode</a></p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
@@ -6848,7 +6463,7 @@ fb.finalize()
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.FieldsBuilder.bitmasked">
-<span class="sig-name descname"><span class="pre">bitmasked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.bitmasked" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bitmasked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_Axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.bitmasked" title="Permalink to this definition">#</a></dt>
 <dd><p>Same as <a class="reference internal" href="lang/snode/#taichi.lang.snode.SNode.bitmasked" title="taichi.lang.snode.SNode.bitmasked"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.bitmasked()</span></code></a></p>
 </dd></dl>
 
@@ -6860,13 +6475,13 @@ fb.finalize()
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.FieldsBuilder.dense">
-<span class="sig-name descname"><span class="pre">dense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.dense" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">dense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_Axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.dense" title="Permalink to this definition">#</a></dt>
 <dd><p>Same as <a class="reference internal" href="lang/snode/#taichi.lang.snode.SNode.dense" title="taichi.lang.snode.SNode.dense"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.dense()</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.FieldsBuilder.dynamic">
-<span class="sig-name descname"><span class="pre">dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.dynamic" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_Axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.dynamic" title="Permalink to this definition">#</a></dt>
 <dd><p>Same as <a class="reference internal" href="lang/snode/#taichi.lang.snode.SNode.dynamic" title="taichi.lang.snode.SNode.dynamic"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.dynamic()</span></code></a></p>
 </dd></dl>
 
@@ -6895,19 +6510,19 @@ fb.finalize()
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.FieldsBuilder.place">
-<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.place" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.place" title="Permalink to this definition">#</a></dt>
 <dd><p>Same as <a class="reference internal" href="lang/snode/#taichi.lang.snode.SNode.place" title="taichi.lang.snode.SNode.place"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.place()</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.FieldsBuilder.pointer">
-<span class="sig-name descname"><span class="pre">pointer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.pointer" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">pointer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_Axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.pointer" title="Permalink to this definition">#</a></dt>
 <dd><p>Same as <a class="reference internal" href="lang/snode/#taichi.lang.snode.SNode.pointer" title="taichi.lang.snode.SNode.pointer"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.pointer()</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.FieldsBuilder.quant_array">
-<span class="sig-name descname"><span class="pre">quant_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.quant_array" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">quant_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">_Axis</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_Axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.FieldsBuilder.quant_array" title="Permalink to this definition">#</a></dt>
 <dd><p>Same as <a class="reference internal" href="lang/snode/#taichi.lang.snode.SNode.quant_array" title="taichi.lang.snode.SNode.quant_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.lang.snode.SNode.quant_array()</span></code></a></p>
 </dd></dl>
 
@@ -6975,11 +6590,6 @@ Taichi. Default is False.</p></li>
 <dt class="sig sig-object py" id="taichi.GUI.WidgetValue">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WidgetValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gui</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.GUI.WidgetValue" title="Permalink to this definition">#</a></dt>
 <dd><p>Class for maintaining id of gui widgets.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.GUI.WidgetValue.value">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.GUI.WidgetValue.value" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 <dl class="py attribute">
@@ -7181,7 +6791,7 @@ Default is WidgetButton_{text}</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pos</strong> (<em>numpy.array</em>) – The positions of the circles.</p></li>
-<li><p><strong>radius</strong> (<em>Number</em><em>, </em><em>optional</em>) – The radius of the circles in pixel. Default is 1.</p></li>
+<li><p><strong>radius</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>numpy.array</em><em>]</em><em>, </em><em>optional</em>) – The radius of the circles in pixel.                 Can be either a number, which will be applied to all circles, or a 1D NumPy array of the same length as <cite>pos</cite>.                 The default is 1.</p></li>
 <li><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – The color of the circles. Default is 0xFFFFFF.</p></li>
 <li><p><strong>palette</strong> (<em>list</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The List of colors from which to
 choose to draw. Default is None.</p></li>
@@ -7224,20 +6834,6 @@ is the background color of GUI.</p>
 <p>The input image is stored in a <cite>numpy.ndarray</cite>, if it’s dtype
 is <cite>int</cite> it will be rescaled and mapped into range [0, 1]. If
 the dtype is <cite>float</cite> it will be directly casted to 32-bit float type.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.GUI.fps_limit">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fps_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.GUI.fps_limit" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the maximum fps of this gui.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the maximum fps.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -7453,20 +7049,6 @@ of rectangle. Shape must be 2.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.GUI.running">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.GUI.running" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns whether this gui is running or not.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>whether this gui is running or not.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.GUI.set_image">
 <span class="sig-name descname"><span class="pre">set_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.GUI.set_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets an image to display on the window.</p>
@@ -7602,7 +7184,7 @@ the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.Matrix">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="lang/common_ops/#taichi.lang.common_ops.TaichiOperations" title="taichi.lang.common_ops.TaichiOperations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.common_ops.TaichiOperations</span></code></a></p>
 <p>The matrix class.</p>
 <p>A matrix is a 2-D rectangular array with scalar entries, it’s row-majored, and is
@@ -7683,11 +7265,6 @@ True
 </pre></div>
 </div>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Matrix.any_array_access">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">any_array_access</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.any_array_access" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Matrix.cast">
@@ -7840,21 +7417,6 @@ with <cite>val</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.Matrix.dynamic_index_stride">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dynamic_index_stride</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.dynamic_index_stride" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Matrix.element_type">
-<span class="sig-name descname"><span class="pre">element_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.element_type" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Matrix.entries">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">entries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.entries" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.Matrix.field">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_dual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.field" title="Permalink to this definition">#</a></dt>
 <dd><p>Construct a data container to hold all elements of the Matrix.</p>
@@ -7947,11 +7509,6 @@ Structure (AOS) or Structure Of Array (SOA).</p></li>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Matrix.local_tensor_proxy">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">local_tensor_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.local_tensor_proxy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Matrix.max">
@@ -8090,21 +7647,6 @@ entry is equal to <cite>xi*yj</cite>.</p>
 <dd class="field-odd"><p><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Matrix.rotation2d">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Matrix.rotation2d" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the matrix representation of the 2D
-anti-clockwise rotation of angle <cite>alpha</cite>. The angle <cite>alpha</cite>
-is in radians.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import math
-&gt;&gt;&gt; ti.Matrix.rotation2d(math.pi/4)
-[[ 0.70710678 -0.70710678]
- [ 0.70710678  0.70710678]]
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="py method">
@@ -8415,15 +7957,26 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.MatrixNdarray.element_shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.MatrixNdarray.element_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the shape of each element (a 2D matrix) in this ndarray.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; arr = ti.MatrixNdarray(2, 2, ti.f32, shape=(3, 3))
-&gt;&gt;&gt; arr.element_shape
-(2, 2)
-</pre></div>
-</div>
+<dt class="sig sig-object py" id="taichi.MatrixNdarray.copy_from">
+<span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.MatrixNdarray.copy_from" title="Permalink to this definition">#</a></dt>
+<dd><p>Copies all elements from another ndarray.</p>
+<p>The shape of the other ndarray needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.Ndarray" title="taichi.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.MatrixNdarray.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.MatrixNdarray.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills ndarray with a specific scalar value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -8437,6 +7990,11 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.MatrixNdarray.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.MatrixNdarray.get_type" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.MatrixNdarray.to_numpy">
@@ -8565,20 +8123,6 @@ only available for backends supporting <cite>ti.extension.mesh</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.Ndarray" title="taichi.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Ndarray.element_shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Ndarray.element_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets ndarray element shape.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Ndarray element shape.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple[Int]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -8759,20 +8303,6 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.SNode.shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.SNode.shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the number of elements from root in each axis of <cite>self</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of elements from root in each axis of <cite>self</cite>.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple[int]</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
@@ -8793,20 +8323,6 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.Field" title="taichi.Field"><em>Field</em></a>) – The source field.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.ScalarField.dtype">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ScalarField.dtype" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets data type of each individual value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Data type of each individual value.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>DataType</p>
 </dd>
 </dl>
 </dd></dl>
@@ -8865,34 +8381,6 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.ScalarField.shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ScalarField.shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets field shape.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Field shape.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple[Int]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.ScalarField.snode">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ScalarField.snode" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets representative SNode for info purposes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#taichi.SNode" title="taichi.SNode">SNode</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ScalarField.to_numpy">
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ScalarField.to_numpy" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts this field to a <cite>numpy.ndarray</cite>.</p>
@@ -8933,20 +8421,6 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.Ndarray" title="taichi.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.ScalarNdarray.element_shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ScalarNdarray.element_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets ndarray element shape.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Ndarray element shape.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple[Int]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -9066,32 +8540,6 @@ will start at <cite>(-10, -10)</cite>, not <cite>(0, 0)</cite>.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.Struct.items">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Struct.items" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the items in this struct.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
-&gt;&gt;&gt; sphere = ti.Struct(center=vec3([0, 0, 0]), radius=1.0)
-&gt;&gt;&gt; sphere.items
-dict_items([(&#39;center&#39;, 2), (&#39;radius&#39;, 1.0)])
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Struct.keys">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Struct.keys" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the list of member names in string format.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
-&gt;&gt;&gt; sphere = ti.Struct(center=vec3([0, 0, 0]), radius=1.0)
-&gt;&gt;&gt; a.keys
-[&#39;center&#39;, &#39;radius&#39;]
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.Struct.to_dict">
 <span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_methods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_ndim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Struct.to_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the Struct to a dictionary.</p>
@@ -9138,20 +8586,6 @@ to each struct instance in the field.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.Field" title="taichi.Field"><em>Field</em></a>) – The source field.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.StructField.dtype">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.StructField.dtype" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets data type of each individual value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Data type of each individual value.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>DataType</p>
 </dd>
 </dl>
 </dd></dl>
@@ -9207,65 +8641,6 @@ between corresponding items can be performed.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#taichi.ScalarField" title="taichi.ScalarField">ScalarField</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.StructField.keys">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.StructField.keys" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the list of names of the field members.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; f1 = ti.Vector.field(3, ti.f32, shape=(3, 3))
-&gt;&gt;&gt; f2 = ti.field(ti.f32, shape=(3, 3))
-&gt;&gt;&gt; F = ti.StructField({&quot;center&quot;: f1, &quot;radius&quot;: f2})
-&gt;&gt;&gt; F.keys
-[&#39;center&#39;, &#39;radius&#39;]
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.StructField.parent">
-<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.StructField.parent" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets an ancestor of the representative SNode in the SNode tree.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of levels going up from the representative SNode.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The n-th parent of the representative SNode.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#taichi.SNode" title="taichi.SNode">SNode</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.StructField.shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.StructField.shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets field shape.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Field shape.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple[Int]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.StructField.snode">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.StructField.snode" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets representative SNode for info purposes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Representative SNode (SNode of first field member).</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#taichi.SNode" title="taichi.SNode">SNode</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9520,8 +8895,7 @@ set self.__traceback__ to tb and return self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
-<li><p><strong>num_channels</strong> (<em>int</em>) – Number of channels in texture</p></li>
+<li><p><strong>fmt</strong> (<em>ti.Format</em>) – Color format of the texture.</p></li>
 <li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – Shape of the Texture.</p></li>
 </ul>
 </dd>
@@ -9658,11 +9032,6 @@ True
 </pre></div>
 </div>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Vector.any_array_access">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">any_array_access</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector.any_array_access" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Vector.cast">
@@ -9815,21 +9184,6 @@ with <cite>val</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.Vector.dynamic_index_stride">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dynamic_index_stride</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector.dynamic_index_stride" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Vector.element_type">
-<span class="sig-name descname"><span class="pre">element_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector.element_type" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Vector.entries">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">entries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector.entries" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.Vector.field">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector.field" title="Permalink to this definition">#</a></dt>
 <dd><p>ti.Vector.field</p>
@@ -9898,11 +9252,6 @@ with <cite>val</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Vector.local_tensor_proxy">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">local_tensor_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector.local_tensor_proxy" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Vector.max">
@@ -10039,21 +9388,6 @@ entry is equal to <cite>xi*yj</cite>.</p>
 <dd class="field-odd"><p><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.Vector.rotation2d">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Vector.rotation2d" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the matrix representation of the 2D
-anti-clockwise rotation of angle <cite>alpha</cite>. The angle <cite>alpha</cite>
-is in radians.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import math
-&gt;&gt;&gt; ti.Matrix.rotation2d(math.pi/4)
-[[ 0.70710678 -0.70710678]
- [ 0.70710678  0.70710678]]
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="py method">
@@ -10241,15 +9575,26 @@ the remaining entries are all zeros.</p>
 </pre></div>
 </div>
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.VectorNdarray.element_shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.VectorNdarray.element_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the dimension of the vector of this ndarray.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = ti.VectorNdarray(3, ti.f32, (3, 3))
-&gt;&gt;&gt; a.element_shape
-(3,)
-</pre></div>
-</div>
+<dt class="sig sig-object py" id="taichi.VectorNdarray.copy_from">
+<span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.VectorNdarray.copy_from" title="Permalink to this definition">#</a></dt>
+<dd><p>Copies all elements from another ndarray.</p>
+<p>The shape of the other ndarray needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.Ndarray" title="taichi.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.VectorNdarray.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.VectorNdarray.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills ndarray with a specific scalar value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -10265,6 +9610,11 @@ the remaining entries are all zeros.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.VectorNdarray.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.VectorNdarray.get_type" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.VectorNdarray.to_numpy">
@@ -10351,6 +9701,12 @@ array([[[0., 0., 0.],
 </dl>
 </dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.amdgpu">
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">amdgpu</span></span><a class="headerlink" href="#taichi.amdgpu" title="Permalink to this definition">#</a></dt>
+<dd><p>The AMDGPU backend.</p>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.append">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.append" title="Permalink to this definition">#</a></dt>
@@ -10360,7 +9716,7 @@ array([[[0., 0., 0.],
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>node</strong> (<a class="reference internal" href="#taichi.SNode" title="taichi.SNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNode</span></code></a>) – Input SNode.</p></li>
 <li><p><strong>indices</strong> (Union[int, <a class="reference internal" href="#taichi.Vector" title="taichi.Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code></a>]) – the indices to visit.</p></li>
-<li><p><strong>val</strong> (<a class="reference internal" href="types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>) – the scalar data to be appended, only i32 value is support for now.</p></li>
+<li><p><strong>val</strong> (Union[<a class="reference internal" href="types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="types/compound_types/#module-taichi.types.compound_types" title="taichi.types.compound_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">compound_types</span></code></a>]) – the data to be appended.</p></li>
 </ul>
 </dd>
 </dl>
@@ -10978,8 +10334,7 @@ the memory of the deactivated cell.</p>
 <dt class="sig sig-object py" id="taichi.eig">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">eig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.eig" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the eigenvalues and right eigenvectors of a real matrix.</p>
-<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.
-2D implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.eig2x2()</span></code>.</p>
+<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -11026,7 +10381,7 @@ eigenvectors (ti.Matrix(n*2, n)): The eigenvectors in complex form. Each column 
 <dt class="sig sig-object py" id="taichi.extension">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#taichi.extension" title="Permalink to this definition">#</a></dt>
 <dd><p>An instance of Taichi extension.</p>
-<p>The list of currently available extensions is [‘sparse’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’, ‘packed’, ‘dynamic_index’].</p>
+<p>The list of currently available extensions is [‘sparse’, ‘quant’,     ‘mesh’, ‘quant_basic’, ‘data64’, ‘adstack’, ‘bls’, ‘assertion’,         ‘extfunc’].</p>
 </dd></dl>
 
 <dl class="py data">
@@ -11191,6 +10546,12 @@ will JIT compile it into native instructions.</p>
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">get_compute_stream_device_time_elapsed_us</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#taichi.get_compute_stream_device_time_elapsed_us" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.gles">
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">gles</span></span><a class="headerlink" href="#taichi.gles" title="Permalink to this definition">#</a></dt>
+<dd><p>The OpenGL ES backend. OpenGL ES 3.1 required.</p>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.global_thread_idx">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">global_thread_idx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.global_thread_idx" title="Permalink to this definition">#</a></dt>
@@ -11214,7 +10575,7 @@ test()
 <dt class="sig sig-object py" id="taichi.gpu">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">gpu</span></span><a class="headerlink" href="#taichi.gpu" title="Permalink to this definition">#</a></dt>
 <dd><p>A list of GPU backends supported on the current system.
-Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’, ‘dx12’.</p>
+Currently contains ‘cuda’, ‘metal’, ‘opengl’, ‘vulkan’, ‘dx11’, ‘dx12’, ‘gles’, ‘amdgpu’.</p>
 <p>When this is used, Taichi automatically picks the matching GPU backend. If no
 GPU is detected, Taichi falls back to the CPU backend.</p>
 </dd></dl>
@@ -11356,7 +10717,6 @@ complete list, please check out
 <li><p><code class="docutils literal notranslate"><span class="pre">cpu_max_num_threads</span></code> (int): Sets the number of threads used by the CPU thread pool.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">debug</span></code> (bool): Enables the debug mode, under which Taichi does a few more things like boundary checks.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">print_ir</span></code> (bool): Prints the CHI IR of the Taichi kernels.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">packed</span></code> (bool): Enables the packed memory layout. See <a class="reference external" href="https://docs.taichi-lang.org/docs/layout">https://docs.taichi-lang.org/docs/layout</a>.</p></li>
 </ul>
 <p><a href="#id1"><span class="problematic" id="id2">*</span></a><code class="docutils literal notranslate"><span class="pre">offline_cache</span></code> (bool): Enables offline cache of the compiled kernels. Default to True. When this is enabled Taichi will cache compiled kernel on your local disk to accelerate future calls.
 <a href="#id3"><span class="problematic" id="id4">*</span></a><code class="docutils literal notranslate"><span class="pre">random_seed</span></code> (int): Sets the seed of the random generator. The default is 0.</p>
@@ -11719,7 +11079,7 @@ must have the same shape, and scalars will be broadcasted to the same shape as t
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.ndarray">
-<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ndarray" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ndarray" title="Permalink to this definition">#</a></dt>
 <dd><p>Defines a Taichi ndarray with scalar elements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -11861,8 +11221,7 @@ if the input is a scalar.</p>
 <dt class="sig sig-object py" id="taichi.polar_decompose">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">polar_decompose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.polar_decompose" title="Permalink to this definition">#</a></dt>
 <dd><p>Perform polar decomposition (A=UP) for arbitrary size matrix.</p>
-<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Polar_decomposition">https://en.wikipedia.org/wiki/Polar_decomposition</a>.
-This is only a wrapper for <a class="reference internal" href="#taichi.polar_decompose" title="taichi.polar_decompose"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.polar_decompose()</span></code></a>.</p>
+<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Polar_decomposition">https://en.wikipedia.org/wiki/Polar_decomposition</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -12355,8 +11714,7 @@ AssertionError: the year must be a lunar year
 <dt class="sig sig-object py" id="taichi.svd">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.svd" title="Permalink to this definition">#</a></dt>
 <dd><p>Perform singular value decomposition (A=USV^T) for arbitrary size matrix.</p>
-<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Singular_value_decomposition">https://en.wikipedia.org/wiki/Singular_value_decomposition</a>.
-This is only a wrappers for <a class="reference internal" href="#taichi.svd" title="taichi.svd"><code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.svd()</span></code></a>.</p>
+<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Singular_value_decomposition">https://en.wikipedia.org/wiki/Singular_value_decomposition</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -12374,8 +11732,7 @@ This is only a wrappers for <a class="reference internal" href="#taichi.svd" tit
 <dt class="sig sig-object py" id="taichi.sym_eig">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">sym_eig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.sym_eig" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the eigenvalues and right eigenvectors of a real symmetric matrix.</p>
-<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.
-2D implementation refers to <code class="xref py py-func docutils literal notranslate"><span class="pre">taichi.sym_eig2x2()</span></code>.</p>
+<p>Mathematical concept refers to <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -12512,6 +11869,11 @@ launched Taichi kernels have completed.</p>
 <dd><p>The Vulkan backend.</p>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.warn_restricted_version">
+<span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">warn_restricted_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.warn_restricted_version" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.wasm">
 <span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">wasm</span></span><a class="headerlink" href="#taichi.wasm" title="Permalink to this definition">#</a></dt>
@@ -12582,7 +11944,7 @@ if the input is a scalar.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

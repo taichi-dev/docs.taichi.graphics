@@ -11,7 +11,7 @@ We use NumPy arrays as an example to illustrate the data transfer process becaus
 
 There are two ways to import a NumPy array `arr` to the Taichi scope:
 
-- Create a Taichi field `f`, whose shape and dtype match the shape and dtype of `arr`, and call `f.from_numpy(arr)` to copy the data in `arr` into `f`. This approach is preferred when the original array is visited frequently from elsewhere in the Taichi scope (for example, in the case of texture sampling).
+- Create a Taichi field `f`, whose shape and dtype match the shape and dtype of `arr`, and call `f.from_numpy(arr)` to copy the data in `arr` into `f`. This approach is preferred when the original array is visited frequently from elsewhere in the Taichi scope (for example, in texture sampling).
 
 - Pass `arr` as an argument to a kernel or a Taichi function using `ti.types.ndarray()` as type hint. The argument is passed by reference without creating a copy of `arr`. Thus, any modification to this argument from inside a kernel or Taichi function also changes the original array `arr`. This approach is preferred when the kernel or Taichi function that takes in the argument needs to process the original array (for storage or filtering, for example).
 
@@ -39,7 +39,7 @@ The field should also have the same dtype as the array; otherwise, an implicit t
 
 Conversely, to export the data in `x` to a NumPy array, call `to_numpy()`:
 
-```python
+```python cont
 arr = x.to_numpy()
 #array([[0, 1, 2],
 #       [3, 4, 5],
@@ -50,18 +50,22 @@ arr = x.to_numpy()
 
 Data transfer between a PyTorch tensor and a Taichi field is similar to the NumPy case above: Call `from_torch()` for data import and `to_torch()` for data export. But note that `to_torch()` requires one more argument `device`, which specifies the PyTorch device:
 
-```python
+```python cont
 tensor = x.to_torch(device="cuda:0")
 print(tensor.device) # device(type='cuda', index=0)
 ```
-
 For Paddle, you need to specify the device by calling `paddle.CPUPlace()` or `paddle.CUDAPlace(n)`, where `n` is an optional ID set to 0 by default.
+
+```python skip-ci:NotTestingPaddle
+device = paddle.CPUPlace()
+tensor = x.to_paddle(device=device)
+```
 
 ## External array shapes
 
-As mentioned before, when transferring data between a `ti.field/ti.Vector.field/ti.Matrix.field` and a NumPy array, you need to make sure that the shapes of both sides are in alignment. The shape matching rules are summarized as below:
+When transferring data between a `ti.field/ti.Vector.field/ti.Matrix.field` and a NumPy array, you need to make sure that the shapes of both sides are aligned. The shape matching rules are summarized as below:
 
-- When importing data to or exporting data from a scalar field, ensure that **the shape of the corresponding NumPy array, PyTorch tensor, or Paddle tensor equals the shape of the scalar field**
+1. When importing data to or exporting data from a scalar field, ensure that **the shape of the corresponding NumPy array, PyTorch tensor, or Paddle tensor equals the shape of the scalar field**
 
     ```python
     field = ti.field(int, shape=(256, 512))
@@ -89,7 +93,7 @@ As mentioned before, when transferring data between a `ti.field/ti.Vector.field/
                                    └  └───┴───┴───┴───┴───┴───┘  ┘
     ```
 
-- When importing data to or exporting data from an `n`-dimensional vector field, ensure that **the shape of the corresponding NumPy array, PyTorch tensor, or Paddle tensor is set to** `(*field_shape, n)`:
+2. When importing data to or exporting data from an `n`-dimensional vector field, ensure that **the shape of the corresponding NumPy array, PyTorch tensor, or Paddle tensor is set to** `(*field_shape, n)`:
 
     ```python
     field = ti.Vector.field(3, int, shape=(256, 512))
@@ -118,7 +122,7 @@ As mentioned before, when transferring data between a `ti.field/ti.Vector.field/
                                   └  └─────────┴─────────┴─────────┘  ┘
     ```
 
-- When importing data to or exporting data from an `n`-by-`m` (`n x m`) matrix field,  ensure that **the shape of the corresponding NumPy array, PyTorch tensor, or Paddle tensor is set to** `(*field_shape, n, m)`:
+3. When importing data to or exporting data from an `n`-by-`m` (`n x m`) matrix field,  ensure that **the shape of the corresponding NumPy array, PyTorch tensor, or Paddle tensor is set to** `(*field_shape, n, m)`:
 
     ```python
     field = ti.Matrix.field(3, 4, ti.i32, shape=(256, 512))
@@ -132,7 +136,7 @@ As mentioned before, when transferring data between a `ti.field/ti.Vector.field/
     field.from_numpy(array)  # the input array must be of shape (256, 512, 3, 4)
     ```
 
-- When importing data to a struct field, export the data of the corresponding external array as **a dictionary of NumPy arrays, PyTorch tensors, or Paddle tensors** with keys being struct member names and values being struct member arrays. Nested structs are exported as nested dictionaries:
+4. When importing data to a struct field, export the data of the corresponding external array as **a dictionary of NumPy arrays, PyTorch tensors, or Paddle tensors** with keys being struct member names and values being struct member arrays. Nested structs are exported as nested dictionaries:
 
     ```python
     field = ti.Struct.field({'a': ti.i32, 'b': ti.types.vector(3, float)}, shape=(256, 512))
@@ -148,7 +152,11 @@ As mentioned before, when transferring data between a `ti.field/ti.Vector.field/
 
 ## Using external arrays as Taichi kernel arguments
 
-Use type hint `ti.types.ndarray()` to pass external arrays as kernel arguments. For example:
+Use type hint `ti.types.ndarray()` to pass external arrays as kernel arguments.
+
+### An entry-level example
+
+The following example shows the most basic way to call `ti.types.ndarray()`:
 
 ```python {10}
 import taichi as ti
@@ -163,21 +171,22 @@ def test(a: ti.types.ndarray()):
         for j in range(a.shape[1]):
             a[i, j] = i + j
 
-test()
+test(a)
 print(a)
 ```
 
-This is an entry-level example to show you how to call `ti.types.ndarray()`. We now illustrate a more advanced usage of this method.
+### Advanced usage
 
-Assume that `a` and `b` are both 2D arrays of the same shape and dtype. For each cell `(i, j)` in `a`, we want to calculate the difference between its value and the average of its four neighboring cells while storing the result in the corresponding cell in `b`. In this case, cells on the boundary, which are cells with fewer than four neighbors, are ruled out for simplicity. This operation is usually denoted as the *discrete Laplace operator*:
 
-```
+Assume that `a` and `b` are both 2D arrays of the same shape and dtype. For each cell `(i, j)` in `a`, we want to calculate the difference between its value and the average of its four neighboring cells while storing the result in the corresponding cell in `b`. In this case, cells on the boundary, which are cells with fewer than four neighbors, are ruled out for simplicity. This operation is usually denoted as the *Discrete Laplace Operator*:
+
+```python skip-ci:Trivial
 b[i, j] = a[i, j] - (a[i-1, j] + a[i, j-1] + a[i+1, j] + a[i, j+1]) / 4
 ```
 
-Such an operation is usually very slow even with NumPy's vectorization, as the following code snippet shows:
+Such an operation is typically very slow, even with NumPy's vectorization as shown below:
 
-```python
+```python skip-ci:NumpyOnly
 b[1:-1, 1:-1] += (               a[ :-2, 1:-1] +
                   a[1:-1, :-2]                 + a[1:-1, 2:] +
                                  a[2:  , 1:-1])
@@ -194,9 +203,11 @@ def test(a: ti.types.ndarray(), b: ti.types.ndarray()):  # assume a, b have the 
             b[i, j] = a[i, j] - (a[i-1, j] + a[i, j-1] + a[i+1, j] + a[i, j+1]) / 4
 ```
 
-This code snippet is more readable than the NumPy version above and runs way faster even on the CPU backend.
+Not only is this code snippet more readable than the NumPy version above, but it also runs way faster even on the CPU backend.
 
-Note that the elements in an external array must be indexed using a single square bracket. This contrasts with a Taichi vector field or matrix field where field members and elements are indexed separately:
+:::note
+The elements in an external array must be indexed using a single square bracket. This contrasts with a Taichi vector field or matrix field where field members and elements are indexed separately:
+:::
 
 ```python
 x = ti.Vector.field(3, float, shape=(5, 5))
@@ -213,7 +224,7 @@ def copy_vector(x: ti.template(), y: ti.types.ndarray()):
 
 In addition, external arrays in a Taichi kernel are indexed using their **physical memory layout**. For PyTorch users, this means that a PyTorch tensor [needs to be made contiguous](https://pytorch.org/docs/stable/generated/torch.Tensor.contiguous.html) before being passed into a Taichi kernel:
 
-```python
+```python known-error:CopyNotDefined
 x = ti.field(dtype=int, shape=(3, 3))
 y = torch.Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 y = y.T # Transposing the tensor returns a view of the tensor which is not contiguous
@@ -223,7 +234,7 @@ def copy_scalar(x: ti.template(), y: ti.types.ndarray()):
     for i, j in x:
         y[i, j] = x[i, j]
 
-copy(x, y) # error!
+# copy(x, y) # error!
 copy(x, y.clone()) # correct
 copy(x, y.contiguous()) # correct
 ```
@@ -247,7 +258,8 @@ def invalid_sum(arr: ti.types.ndarray()):
 If you want to use a NumPy function, which lacks a counterpart in Taichi, you can call the function in the Python scope as usual and pass the processed array to Taichi kernels via `ti.types.ndarray()`. For example:
 
 ```python
-indices = np.argsort(arr)  # arr is a Numpy.ndarray
+arr = np.random.random(233)
+indices = np.argsort(arr)  # arr is a NumPy ndarray
 
 @ti.kernel
 def valid_example(arr: ti.types.ndarray(), indices: ti.types.ndarray()):

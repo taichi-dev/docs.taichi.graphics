@@ -122,8 +122,9 @@ function BlogPostItem(props: Props): JSX.Element {
 
   const prefix = defaultLocale === currentLocale ? '' : '/' + currentLocale;
   const isNewsletter = permalink.startsWith(prefix + '/newsletter');
+  const isUserStory = permalink.startsWith(prefix + '/user-stories');
 
-  const baseUrl = isNewsletter ? '/newsletter' : '/blog';
+  const baseUrl = isNewsletter ? '/newsletter' : (isUserStory ? '/user-stories' : '/blog');
 
   return (
     <article
@@ -138,7 +139,7 @@ function BlogPostItem(props: Props): JSX.Element {
       <div>
         <Link className="text-brand-cyan font-bold space-x-1" to={baseUrl}>
           <ArrowLeft />
-          <span>Back to {isNewsletter ? 'newsletter' : 'blog'}</span>
+          <span>Back to {isNewsletter ? 'newsletter' : (isUserStory ? 'user stories' : 'blog')}</span>
         </Link>
       </div>
       <header>
