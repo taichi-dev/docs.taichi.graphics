@@ -29,7 +29,7 @@ import { translate } from '@docusaurus/Translate';
 import SubscriptionInput from '../Subscription';
 
 import MessageIcon from './message-circle.svg';
-import SlackIcon from './slack.svg';
+import DiscordIcon from './discord.svg';
 import GithubIcon from './github.svg';
 import Logo from './logo.svg';
 
@@ -170,10 +170,10 @@ function FooterSubscriber() {
           <MessageIcon width={32} height={32} />
         </a>
         <a
-          href="https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg"
+          href="https://discord.gg/f25GRdXRfg"
           target="_blank"
         >
-          <SlackIcon width={32} height={32} />
+          <DiscordIcon width={32} height={32} />
         </a>
         <a href="https://github.com/taichi-dev/taichi" target="_blank">
           <GithubIcon width={32} height={32} />
@@ -254,8 +254,8 @@ function Footer(): JSX.Element | null {
                     Global Forum
                   </Link>
                   <Link href="https://forum.taichi.graphics/">中文论坛</Link>
-                  <Link href="https://join.slack.com/t/taichicommunity/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg">
-                    Slack
+                  <Link href="https://discord.gg/f25GRdXRfg">
+                    Discord
                   </Link>
                   {/* <Link href='/'>Wechat</Link> */}
                   <div className="relative group">

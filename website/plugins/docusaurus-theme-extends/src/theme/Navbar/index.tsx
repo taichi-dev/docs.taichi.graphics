@@ -95,8 +95,8 @@ const communities = [
     isExternal: true,
   },
   {
-    label: 'Slack',
-    href: 'https://taichicommunity.slack.com/join/shared_invite/zt-14ic8j6no-Fd~wKNpfskXLfqDr58Tddg#/shared-invite/email',
+    label: 'Discord',
+    href: 'https://discord.gg/f25GRdXRfg',
     isExternal: true,
   },
   {
