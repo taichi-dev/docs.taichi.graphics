@@ -23,7 +23,7 @@ description:
 - Packed mode 现成为默认模式。
 - 废弃了 Metal 后端的稀疏数据结构。
 
-有关此版本的更多更新，请参阅完整的 [变更日志](github.com/taichi-dev/taichi/releases/tag/v1.3.0)
+有关此版本的更多更新，请参阅完整的 [变更日志](https://github.com/taichi-dev/taichi/releases/tag/v1.3.0)
 
 赶快升级体验新功能吧 👉 `pip install -U taichi==1.3.`
 
@@ -39,13 +39,13 @@ description:
 
 ## 🌟 社区精选作品
 
-- [有限元求解器 FEMcy](github.com/mo-hanxuan/FEMcy)。
+- [有限元求解器 FEMcy](https://github.com/mo-hanxuan/FEMcy)。
 
 mo-hanxuan 完成了一个基于 Taichi 的有限元求解器 FEMcy。FEMcy 具有良好的可移植性并且是开源的，可以灵活地满足用户的需求。
   
 ![](https://user-images.githubusercontent.com/124654014/217705579-17d072e7-c5b1-42fb-a84d-b4e8c61d0607.gif)
   
-- [三维离散元的 linear contact model](github.com/Yihao-Shi/TaichiDEM/tree/version-updated)
+- [三维离散元的 linear contact model](https://github.com/Yihao-Shi/TaichiDEM/tree/version-updated)
 
 Yihao-shi 实现了三维离散元的 linear contact model。加入了库伦摩擦定律以及 rolling、twisting 的计算，使得球形颗粒能做出非球形颗粒的效果，并使用 Taichi 写了几个简单的四元数函数，完整地考虑了颗粒的旋转与方位。
 
@@ -53,13 +53,13 @@ Yihao-shi 实现了三维离散元的 linear contact model。加入了库伦摩�
 
 ## 📢 社区活动
 
-**[🔵 用 Taichi 实现 Instant NGP (NeRF) 的渲染器](forum.taichi-lang.cn/t/topic/3368)**
+**[🔵 用 Taichi 实现 Instant NGP (NeRF) 的渲染器](https://forum.taichi-lang.cn/t/topic/3368)**
 
 主讲人林尤添，是哈尔滨工业大学电子信息工程学院在读博士研究生，在这次分享中，向我们介绍了如何用 Taichi 实现 Instant NGP——Instant NGP 是加速 NeRF 训练和渲染的新方法 (SIGGRAPH 2022）。
 
 视频详解请点击 [这里](https://www.bilibili.com/video/BV1xR4y117cU/?spm_id_from=333.999.0.0&vd_source=7e8cfbc83bcd0c8522627c6544d35724)
 
-**[👨‍🏫 Git & GitHub 基础知识和实用技巧](forum.taichi-lang.cn/t/topic/3368)**
+**[👨‍🏫 Git & GitHub 基础知识和实用技巧](https://forum.taichi-lang.cn/t/topic/3368)**
 
 Taichi 编译器工程师 Ailing 和研究员包乾带来了详尽的实战操作演示，挑选出 Git 和 GitHub 工作中容易忽视的细节，进行突击式讲解。
 
@@ -85,7 +85,7 @@ Taichi 编译器工程师 Ailing 和研究员包乾带来了详尽的实战操�
 - `taichi.lang.util.warning` doesn't respect stdlib `warnings` filters #4543
 - Unexpect exit of ggui window after clicking Alt, Shift or Ctrl  #6513
 
-更多 good first issue（非常容易上手） 和  welcome contribution （稍微带有挑战性）的 issue [请点击这里](github.com/taichi-dev/taichi/contribute)
+更多 good first issue（非常容易上手） 和  welcome contribution （稍微带有挑战性）的 issue [请点击这里](https://github.com/taichi-dev/taichi/contribute)
 
 **期待更多同学加入贡献者的队伍之中，特别送上几则小贴士：**
 
