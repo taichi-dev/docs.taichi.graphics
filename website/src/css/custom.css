@@ -12,62 +12,27 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: opensans;
-  src:
-    url('./font/opensans/OpenSans-Regular.ttf')
-      format('TrueType');
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 @font-face {
-  font-family: opensans;
-  src:
-    url('./font/opensans/OpenSans-Bold.ttf')
-      format('TrueType');
-  font-weight: 700;
-  font-style: normal;
+  font-family: Consolas;
+  src: url('./font/Consolas.ttf')
+    format('TrueType');
 }
 
-@font-face {
-  font-family: opensans;
-  src:
-    url('./font/opensans/OpenSans-Light.ttf') format('TrueType');
-  font-weight: 300;
-  font-style: normal;
-}
+
 
 @font-face {
-  font-family: firacode;
-  src:
-    url('./font/firacode/FiraMono-Regular.ttf')
-      format('TrueType');
-  font-weight: normal;
-  font-style: normal;
+  font-family: LucidaGrande;
+  src: url('./font/LucidaGrande.ttf')
+    format('TrueType');
 }
 
-@font-face {
-  font-family: firacode;
-  src:
-    url('./font/firacode/FiraMono-Bold.ttf')
-      format('TrueType');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: firacode;
-  src:
-    url('./font/firacode/FiraMono-Medium.ttf') format('TrueType');
-  font-weight: 500;
-  font-style: normal;
-}
 
 :root {
 
-  --ifm-font-family-base: opensans,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --ifm-font-family-monospace: firacode,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --ifm-font-family-base: LucidaGrande,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  --ifm-font-family-monospace: Consolas,SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace;
 
   --taichi-brand-cyan: #4CBDC7;
   --taichi-brand-blue: #4C8EF4;
