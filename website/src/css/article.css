@@ -6,6 +6,7 @@
   --ifm-hover-overlay: var(--taichi-grey-1);
 }
 
+/* color for inline markdown code*/
 code {
   border: 1px solid var(--taichi-grey-3);
   background: var(--taichi-grey-2);
