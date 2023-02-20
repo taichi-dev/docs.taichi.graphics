@@ -457,7 +457,7 @@ html[data-theme='dark'] .prism-code .token-line::before {
 }
 
 .prism-code .token-line .comment {
-  color: rgb(106,153,85) !important;
+  color: #aaa !important;
 }
 
 /* Line numbers
@@ -466,21 +466,14 @@ reference: https://gist.github.com/uditalias/3969a20ef759bf3a8757499429b30063
 
 .prism-code code {
   counter-reset: line-number;
-  padding-left: 40px;
+  padding-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .prism-code .token-line {
   padding: 0 var(--ifm-pre-padding);
   position: relative;
-}
-
-.prism-code .token-line::before {
-  counter-increment: line-number;
-  content: counter(line-number) ". ";
-  position: absolute;
-  left: calc(-1 * var(--ifm-pre-padding));
-  text-align: right;
-  font-family: var(--ifm-font-family-base);
 }
 
 .docusaurus-highlight-code-line {
