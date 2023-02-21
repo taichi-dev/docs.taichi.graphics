@@ -199,7 +199,7 @@ while gui.running:
 Taichi fields do not support slicing. Neither of the following usages are correct:
 
 ```python skip-ci:NegativeExample
-for x in f_2d[0]:  # Error! You tried to access its first row, but it is not supported
+for x in f_2d[0]:  # Error! You tried to access its first row，but it is not supported
     ...
 ```
 
@@ -226,7 +226,7 @@ def test():
 
 ### Metadata
 
-Metadata provides the basic information of a scalar field. You can retrieve the data type and shape of a scalar field via its `dtype` and `shape` properties:
+Metadata provides the basic information of a scalar field. You can retrieve the data type and shape of a scalar field via its `shape` and `dtype` properties:
 
 ```python skip-ci:Trivial
 f_1d.shape  # (9,)
@@ -399,7 +399,7 @@ Struct fields are fields that store user-defined structs. Members of a struct el
 - Scalars
 - Vectors
 - Matrices
-- Other struct fields
+- Other struct fields.
 
 ### Declaration
 
