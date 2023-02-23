@@ -55,7 +55,7 @@ canvas.lines(vertices, width, indices, color, per_vertex_color)
 canvas.set_image(image)
 ```
 
-The arguments `vertices`, `indices`, `per_vertex_color`, and `image` must be Taichi fields. If `per_vertex_color` is provided, `color` is ignored.
+The arguments `vertices`, `indices`, and `per_vertex_color` must be Taichi fields. If `per_vertex_color` is provided, `color` is ignored.
 
 The positions/centers of geometries are represented as floats between `0.0` and `1.0`, which indicate the relative positions of the geometries on the canvas. For `circles()` and `lines()`, the `radius` and `width` arguments are relative to the height of the window.
 
