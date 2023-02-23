@@ -52,7 +52,7 @@ Upgrade now 👉 pip install -U taichi==1.4.0. For more details and improvements
 
   This is a 3D fractal scene rendered in Taichi by [@neozhaoliang](https://gist.github.com/neozhaoliang), adapted from artwork by [@gaziya5](https://twitter.com/gaziya5). The space-folding and orbit-coloring techniques are used: The project applies a series of transformations like translation, scaling, and sphere inversion to geometric shapes to form a fractal-like object, and tracks the orbit information of a point for coloring. Try [run this program on your device](https://gist.github.com/neozhaoliang/80d1f3299874c94640199c895b4d5709).
 
-  ![](./pics/fractal%2020M.gif)
+  ![](./pics/fractal.gif)
 
 
 ## 📝 Blogs
