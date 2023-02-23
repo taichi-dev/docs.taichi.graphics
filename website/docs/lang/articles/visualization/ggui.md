@@ -110,7 +110,7 @@ If a mesh has `num` triangles, the `indices` should be a 1D scalar field with a 
 
 `normals` is an optional parameter for `scene.mesh()`.
 
-:::example
+:::
 
 1. An example of drawing 3d-lines
 
@@ -165,7 +165,7 @@ scene.mesh_instance(vertices, indices, normals, color, per_vertex_color, vertex_
 
 The additional arguments `vertex_offset`, `vertex_count`, `index_offset` and `index_count` control the visible part of the particles and mesh. For the `mesh()` and `mesh_instance()` methods, set whether to show wireframe mode through setting `show_wireframe`.
 
-:::example
+
 
 1. Example of drawing a part of the mesh/particles
 
