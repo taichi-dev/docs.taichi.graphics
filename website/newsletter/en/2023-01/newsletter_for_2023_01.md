@@ -23,7 +23,9 @@ description:
   - Taichi ndarray, an array object that holds contiguous multi-dimensional data, is now released, allowing easy data exchange with external libraries.
   - Dynamic indexing is now supported on all backends. dynamic_index=True is no longer needed to access a vector/matrix with a runtime variable.
   - Support for sparse SNodes on the Metal backend has been removed.
-  Upgrade now 👉 pip install -U taichi==1.4.0. For more details and improvements, see the release note.
+
+Upgrade now 👉 pip install -U taichi==1.4.0. For more details and improvements, see the release note.
+
 - 231 PRs have been merged and 39 issues resolved this month.👏
 - The total number of commits surpassed 10,000. 🎉
 
@@ -38,17 +40,19 @@ description:
 
     Taichi added a new example, marching squares, which generates contour lines of a 2D scalar field. The newly released feature [dynamic SNode](https://docs.taichi-lang.org/docs/sparse#dynamic-snode) is used to represent line segments, and linear interpolation is applied to smoothen the boundaries.
 
-      ![](./pics/index.gif)
+    ![](./pics/index.gif)
 
 - **Image processing with circle packing**
 
     This project redraws an input image with circle packing, i.e., arranging circles to make some or all of them mutually tangent without creating overlaps. The program first runs Canny edge detection to detect the edges in the image and uses distance transform to get the minimum distance from each pixel to the edges. Circles are then packed into the image without creating any overlap. See the [source code](https://gist.github.com/neozhaoliang/02754b488de2de857a57e98ac6e59168).
 
-      ![](./pics/1280X1280_2.PNG)
+    ![](./pics/1280X1280_2.PNG)
 
 - **A 3D fractal scene rendered in Taichi using space-folding and orbit-coloring**
 
   This is a 3D fractal scene rendered in Taichi by [@neozhaoliang](https://gist.github.com/neozhaoliang), adapted from artwork by [@gaziya5](https://twitter.com/gaziya5). The space-folding and orbit-coloring techniques are used: The project applies a series of transformations like translation, scaling, and sphere inversion to geometric shapes to form a fractal-like object, and tracks the orbit information of a point for coloring. Try [run this program on your device](https://gist.github.com/neozhaoliang/80d1f3299874c94640199c895b4d5709).
+
+  ![](./pics/fractal%2020M.gif)
 
 
 ## 📝 Blogs
@@ -89,3 +93,6 @@ Taichi values your contribution, which is indispensable to the prosperity of a h
 - [Awesome Taichi](https://github.com/taichi-dev/awesome-taichi)
 
   A curated list of awesome Taichi applications and resources.
+
+
+Until next time! 👋
