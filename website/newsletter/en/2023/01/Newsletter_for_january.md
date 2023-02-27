@@ -32,12 +32,14 @@ Upgrade now 👉 pip install -U taichi==1.4.0. For more details and improvements
 ## 🌟 Featured repos & projects
 
 - **Research paper on optical tactile sensors based on MLS-MPM and implemented with Taichi has been published by IEEE RA-L.**
+
   Optical tactile sensors provide touch perception with sensing information derived from images. The simulation of such sensors often leverages optical simulation or data-driven image processing techniques, yet fails to consider elastomer deformation physics; the finite element method (FEM) is frequently used as well, which incurs high computational cost and yields unsatisfactory performance. [This paper](https://ieeexplore.ieee.org/document/10017344) proposes an optical tactile sensor simulator, Tacchi, based on the Moving Least Squares Material Point Method (MLS-MPM) and supported by the parallel computing language Taichi. It takes into account the elastomer deformation to generate realistic tactile images and reproduce the roughness of real-life object surfaces.
 - **Marching squares algorithm implemented with Taichi**
+
   Taichi added a new example, marching squares, which generates contour lines of a 2D scalar field. The newly released feature ["dynamic SNode"](https://docs.taichi-lang.org/docs/sparse#dynamic-snode) is used to represent line segments, and linear interpolation is applied to smoothen the boundaries.
   ![marching sqaures](./pics/marching_sqaures.gif)
 - **Image processing with circle packing**
-This project redraws an input image with circle packing, i.e., arranging circles to make some or all of them mutually tangent without creating overlaps. The program first runs Canny edge detection to detect the edges in the image and uses distance transform to get the minimum distance from each pixel to the edges. Circles are then packed into the image without creating any overlap. See the [source code](https://gist.github.com/neozhaoliang/02754b488de2de857a57e98ac6e59168).
+    This project redraws an input image with circle packing, i.e., arranging circles to make some or all of them mutually tangent without creating overlaps. The program first runs Canny edge detection to detect the edges in the image and uses distance transform to get the minimum distance from each pixel to the edges. Circles are then packed into the image without creating any overlap. See the [source code](https://gist.github.com/neozhaoliang/02754b488de2de857a57e98ac6e59168).
 
 <center>
 
@@ -49,16 +51,19 @@ Output image
 </center>
 
 - **A 3D fractal scene rendered in Taichi using space-folding and orbit-coloring**
-This is a 3D fractal scene rendered in Taichi by [@neozhaoliang](https://gist.github.com/neozhaoliang), adapted from artwork by [@gaziya5](https://twitter.com/gaziya5). The space-folding and orbit-coloring techniques are used: The project applies a series of transformations like translation, scaling, and sphere inversion to geometric shapes to form a fractal-like object, and tracks the orbit information of a point for coloring. [Try run this program on your device.](https://gist.github.com/neozhaoliang/80d1f3299874c94640199c895b4d5709)
+
+    This is a 3D fractal scene rendered in Taichi by [@neozhaoliang](https://gist.github.com/neozhaoliang), adapted from artwork by [@gaziya5](https://twitter.com/gaziya5). The space-folding and orbit-coloring techniques are used: The project applies a series of transformations like translation, scaling, and sphere inversion to geometric shapes to form a fractal-like object, and tracks the orbit information of a point for coloring. [Try run this program on your device.](https://gist.github.com/neozhaoliang/80d1f3299874c94640199c895b4d5709)
 ![fractal](./pics/fractal.gif)
 
 ## 📝 Blogs
 
 - [**Pythonic Supercomputing: Scaling Taichi Programs with MPI4Py**](https://docs.taichi-lang.org/blog/scale-taichi-programs-with-mpi4py)
-Can we run a Taichi program on a cluster of powerful GPU machines? [Haidong Lan](https://github.com/turbo0628) experimented with the combo of Taichi and MPI4y, and got exciting computing performance with dozens of lines of Python code. Read [this blog](https://docs.taichi-lang.org/blog/scale-taichi-programs-with-mpi4py) for more details.
+
+    Can we run a Taichi program on a cluster of powerful GPU machines? [Haidong Lan](https://github.com/turbo0628) experimented with the combo of Taichi and MPI4y, and got exciting computing performance with dozens of lines of Python code. Read [this blog](https://docs.taichi-lang.org/blog/scale-taichi-programs-with-mpi4py) for more details.
 
 - [**GPU-Accelerated Collision Detection and Taichi DEM Optimization Challenge**](https://docs.taichi-lang.org/blog/acclerate-collision-detection-with-taichi)
-Collision detection of a large number of particles often imposes an algorithmic bottleneck. A commonly-used technique to reduce the time complexity of collision detection is grid-based neighborhood search, which confines the search for collision-prone particles to a small area. In [this blog](https://docs.taichi-lang.org/blog/acclerate-collision-detection-with-taichi), [Yuanming Hu](https://github.com/yuanming-hu) and [Qian Bao](https://github.com/houkensjtu) demonstrate how to implement collision detection in Taichi based on a minimal DEM model and accelerate neighborhood search effectively using Taichi fields. See the complete code at <https://github.com/taichi-dev/taichi_dem> - acceleration achieved in less than 40 lines of code.
+
+    Collision detection of a large number of particles often imposes an algorithmic bottleneck. A commonly-used technique to reduce the time complexity of collision detection is grid-based neighborhood search, which confines the search for collision-prone particles to a small area. In [this blog](https://docs.taichi-lang.org/blog/acclerate-collision-detection-with-taichi), [Yuanming Hu](https://github.com/yuanming-hu) and [Qian Bao](https://github.com/houkensjtu) demonstrate how to implement collision detection in Taichi based on a minimal DEM model and accelerate neighborhood search effectively using Taichi fields. See the complete code at <https://github.com/taichi-dev/taichi_dem> - acceleration achieved in less than 40 lines of code.
 
 ## 🙌 Welcome contribution
 
