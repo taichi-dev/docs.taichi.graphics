@@ -224,6 +224,35 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     GfxRuntime140
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140.to_graphs_json">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GfxRuntime140.to_graphs_json()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140.to_metadata_json">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GfxRuntime140.to_metadata_json()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.aot.Module">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -307,6 +336,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140">
+   GfxRuntime140
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140.to_graphs_json">
+     to_graphs_json
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140.to_metadata_json">
+     to_metadata_json
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.aot.Module">
    Module
   </a>
@@ -379,6 +425,21 @@
 <p>Taichi’s AOT (ahead of time) module.</p>
 <p>Users can use Taichi as a GPU compute shader/kernel compiler by compiling their
 Taichi kernels into an AOT module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.GfxRuntime140">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">GfxRuntime140</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata_json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphs_json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.GfxRuntime140" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.GfxRuntime140.to_graphs_json">
+<span class="sig-name descname"><span class="pre">to_graphs_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#taichi.aot.GfxRuntime140.to_graphs_json" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.GfxRuntime140.to_metadata_json">
+<span class="sig-name descname"><span class="pre">to_metadata_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#taichi.aot.GfxRuntime140.to_metadata_json" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.aot.Module">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">Module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.Module" title="Permalink to this definition">#</a></dt>
