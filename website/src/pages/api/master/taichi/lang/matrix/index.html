@@ -1538,7 +1538,7 @@ with <cite>val</cite>.</p>
 <dd class="field-even"><p>The dot product result (scalar) of the two Vectors.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>DataType</p>
+<dd class="field-odd"><p><a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType">DataType</a></p>
 </dd>
 </dl>
 <p>Example:</p>
@@ -1559,7 +1559,7 @@ with <cite>val</cite>.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – The desired number of rows of the Matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em>) – The desired number of columns of the Matrix.</p></li>
-<li><p><strong>dtype</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of the Matrix.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a><em>, </em><em>optional</em>) – The desired data type of the Matrix.</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em> of </em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The desired shape of the Matrix.</p></li>
 <li><p><strong>order</strong> (<em>str</em><em>, </em><em>optional</em>) – order of the shape laid out in memory.</p></li>
 <li><p><strong>name</strong> (<em>string</em><em>, </em><em>optional</em>) – The custom name of the field.</p></li>
@@ -1610,7 +1610,7 @@ Structure (AOS) or Structure Of Array (SOA).</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – The desired data type.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – The number of rows/columns.</p></li>
 </ul>
 </dd>
@@ -1666,7 +1666,7 @@ This function must be called in Python scope, and after <cite>ti.init</cite> is 
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Number of rows of the matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
-<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – Data type of each value.</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
 </ul>
 </dd>
@@ -1749,7 +1749,7 @@ and has the same direction with <cite>v</cite>. It’s equal to <cite>v/|v|</cit
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – The desired data type.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – The first dimension (row) of the matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em><em>, </em><em>optional</em>) – The second dimension (column) of the matrix.</p></li>
 </ul>
@@ -1932,7 +1932,7 @@ the remaining entries are all zeros.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – The desired data type.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – The first dimension (row) of the matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em><em>, </em><em>optional</em>) – The second dimension (column) of the matrix.</p></li>
 </ul>
@@ -2015,7 +2015,7 @@ should have consistent dimension consistent with <cite>self</cite>.</p>
 When keep_dims=True, on an n-D matrix field, the numpy array always has n+2 dims, even for 1x1, 1xn, nx1 matrix fields.
 When keep_dims=False, the resulting numpy array should skip the matrix dims with size 1.
 For example, a 4x1 or 1x4 matrix field with 5x6x7 elements results in an array of shape 5x6x7x4.</p></li>
-<li><p><strong>dtype</strong> (<em>DataType</em><em>, </em><em>optional</em>) – The desired data type of returned numpy array.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a><em>, </em><em>optional</em>) – The desired data type of returned numpy array.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -2081,7 +2081,7 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Number of rows of the matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em>) – Number of columns of the matrix.</p></li>
-<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – Data type of each value.</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
 </ul>
 </dd>
@@ -2342,7 +2342,7 @@ with <cite>val</cite>.</p>
 <dd class="field-even"><p>The dot product result (scalar) of the two Vectors.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>DataType</p>
+<dd class="field-odd"><p><a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType">DataType</a></p>
 </dd>
 </dl>
 <p>Example:</p>
@@ -2390,7 +2390,7 @@ with <cite>val</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – The desired data type.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – The number of rows/columns.</p></li>
 </ul>
 </dd>
@@ -2444,7 +2444,7 @@ with <cite>val</cite>.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Size of the vector.</p></li>
-<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – Data type of each value.</p></li>
 <li><p><strong>shape</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Shape of the ndarray.</p></li>
 <li><p><strong>layout</strong> (<em>Layout</em><em>, </em><em>optional</em>) – Memory layout, AOS by default.</p></li>
 </ul>
@@ -2527,7 +2527,7 @@ and has the same direction with <cite>v</cite>. It’s equal to <cite>v/|v|</cit
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – The desired data type.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – The first dimension (row) of the matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em><em>, </em><em>optional</em>) – The second dimension (column) of the matrix.</p></li>
 </ul>
@@ -2710,7 +2710,7 @@ the remaining entries are all zeros.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dt</strong> (<em>DataType</em>) – The desired data type.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – The desired data type.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – The first dimension (row) of the matrix.</p></li>
 <li><p><strong>m</strong> (<em>int</em><em>, </em><em>optional</em>) – The second dimension (column) of the matrix.</p></li>
 </ul>
@@ -2735,7 +2735,7 @@ the remaining entries are all zeros.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Size of the vector.</p></li>
-<li><p><strong>dtype</strong> (<em>DataType</em>) – Data type of each value.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – Data type of each value.</p></li>
 <li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>]</em>) – Shape of the ndarray.</p></li>
 <li><p><strong>layout</strong> (<em>Layout</em>) – Memory layout.</p></li>
 </ul>
