@@ -251,6 +251,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.kernel_impl.pyfunc">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pyfunc()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.kernel_impl.data_oriented">
    data_oriented
   </a>
@@ -263,6 +272,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.kernel_impl.kernel">
    kernel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.kernel_impl.pyfunc">
+   pyfunc
   </a>
  </li>
 </ul>
@@ -383,6 +397,27 @@ to either a CPU thread pool or massively parallel GPUs.</p>
 &gt;&gt;&gt;         x[i] = i
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.kernel_impl.pyfunc">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_impl.</span></span><span class="sig-name descname"><span class="pre">pyfunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_impl.pyfunc" title="Permalink to this definition">#</a></dt>
+<dd><p>Marks a function as callable in both Taichi and Python scopes.</p>
+<p>When called inside the Taichi scope, Taichi will JIT compile it into
+native instructions. Otherwise it will be invoked directly as a
+Python function.</p>
+<p>See also <a class="reference internal" href="#taichi.lang.kernel_impl.func" title="taichi.lang.kernel_impl.func"><code class="xref py py-func docutils literal notranslate"><span class="pre">func()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – The Python function to be decorated</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The decorated function</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Callable</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
