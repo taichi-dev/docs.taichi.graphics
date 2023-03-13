@@ -1410,15 +1410,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.Struct.fill">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Struct.fill()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.Struct.to_dict">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -3711,11 +3702,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.Struct.field">
      field
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.Struct.fill">
-     fill
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -6191,8 +6177,7 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.Struct">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">Struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="common_ops/#taichi.lang.common_ops.TaichiOperations" title="taichi.lang.common_ops.TaichiOperations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.common_ops.TaichiOperations</span></code></a></p>
-<p>The Struct type class.</p>
+<dd><p>The Struct type class.</p>
 <p>A struct is a dictionary-like data structure that stores members as
 (key, value) pairs. Valid data members of a struct can be scalars,
 matrices or other dictionary-like structures.</p>
@@ -6261,17 +6246,6 @@ will start at <cite>(-10, -10)</cite>, not <cite>(0, 0)</cite>.</p></li>
 <p>[0., 0., 0.],
 [0., 0., 0.]], dtype=float32)}</p>
 </div></blockquote>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.Struct.fill">
-<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.Struct.fill" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills the Struct with a specific value in Taichi scope.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
