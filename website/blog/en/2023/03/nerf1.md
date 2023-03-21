@@ -2,7 +2,12 @@
 title: "Taichi NeRF (Part 1): Develop and Deploy Instant NGP without writing CUDA"
 slug: taichi-instant-ngp
 date: "2023-03-21"
+tags: [nerf, "instant ngp"]
 ---
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 
 Imagine this: when you flip through a photo album and see pictures of past family trips, do you want to revisit those places and relive those warm moments? When browsing an online museum, do you want to freely adjust your perspective, observe the details of the exhibits up close, and enjoy a full interaction with the cultural relics? When doctors face patients, can they significantly improve diagnostic accuracy and efficiency by synthesizing a 3D perspective of the affected area based on images and providing estimates of lesion size and volume?
 
@@ -10,7 +15,7 @@ NeRF (Neural Radiance Field) technology is the key to making these things a real
 
 The following video demonstrates how NeRF technology is used to achieve 3D roaming by capturing some static images of Taichi offices with a mobile phone:
 
-<video src="./imgs/nerf-room.MP4"/>
+![](./imgs/nerf-room.MP4)
 
 In the past two years, NeRF technology has become a hot field in computer vision. Since the groundbreaking work of Mildenhall et al. in 2020, **[NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/abs/2003.08934)**, the NeRF field has spawned many subsequent studies, especially the recent improved work [Instant NGP](https://nvlabs.github.io/instant-ngp/), which was listed as one of [Time Magazine's Best Inventions of 2022](https://time.com/collection/best-inventions-2022/6225489/nvidia-instant-nerf/).
 
