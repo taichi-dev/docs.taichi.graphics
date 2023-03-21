@@ -11,6 +11,8 @@ const versionpaths = [__dirname + '/docs']
 for (const version of versions) {
   versionpaths.push(__dirname + `/versioned_docs/version-${version}`)
 }
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 const presets = {
   dotorg: {
@@ -55,6 +57,15 @@ module.exports = {
   favicon: 'img/black_or_white.svg',
   organizationName: 'taichi-dev',
   projectName: 'docs.taichi.graphics',
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X',
+      crossorigin: 'anonymous',
+    },
+  ],
   plugins: [
     'docusaurus-plugin-sass',
     async function myPlugin() {
@@ -356,7 +367,10 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: false,
+        docs: {
+          remarkPlugins: [math],
+          rehypePlugins: [katex]
+        },
         blog: false,
         gtag: {
           trackingID: 'G-9K17QVGTR6',
