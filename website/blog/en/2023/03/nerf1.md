@@ -5,17 +5,13 @@ date: "2023-03-21"
 tags: [nerf, "instant ngp"]
 ---
 
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
 Imagine this: when you flip through a photo album and see pictures of past family trips, do you want to revisit those places and relive those warm moments? When browsing an online museum, do you want to freely adjust your perspective, observe the details of the exhibits up close, and enjoy a full interaction with the cultural relics? When doctors face patients, can they significantly improve diagnostic accuracy and efficiency by synthesizing a 3D perspective of the affected area based on images and providing estimates of lesion size and volume?
 
 NeRF (Neural Radiance Field) technology is the key to making these things a reality. It can reconstruct the 3D representation of a scene from multi-angle captured images and generate images of the scene from any viewpoint and position (new viewpoint synthesis).
 
 The following video demonstrates how NeRF technology is used to achieve 3D roaming by capturing some static images of Taichi offices with a mobile phone:
 
-![](./imgs/nerf-room.MP4)
+![](./imgs/room.gif)
 
 In the past two years, NeRF technology has become a hot field in computer vision. Since the groundbreaking work of Mildenhall et al. in 2020, **[NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/abs/2003.08934)**, the NeRF field has spawned many subsequent studies, especially the recent improved work [Instant NGP](https://nvlabs.github.io/instant-ngp/), which was listed as one of [Time Magazine's Best Inventions of 2022](https://time.com/collection/best-inventions-2022/6225489/nvidia-instant-nerf/).
 
@@ -45,7 +41,7 @@ In simple terms, a neural radiance field is the encoding of an entire 3D scene i
 
 Therefore, the input to the neural radiance field is a five-dimensional vector $(x,y,z,\theta,\phi)$, and the output is a four-dimensional vector $(r,g,b,\sigma)$:
 
-![image source：https://inst.eecs.berkeley.edu/~cs194-26/fa22/Lectures/nerf_lecture2.pdf](https://files.mdnice.com/user/11544/44e8c984-5120-4a88-aec4-bc2935b99351.png)
+![image source：https://inst.eecs.berkeley.edu/~cs194-26/fa22/Lectures/nerf_lecture2.pdf](./imgs/F.png)
 
 Assuming we have such a neural radiance field, sending the corresponding $(r,g,b,\sigma)$ of each point in space further into **volume rendering** will result in a 2D image seen from the current viewpoint $(\theta,\phi)$.
 
@@ -58,11 +54,11 @@ The core step of NeRF is a processed called **volume rendering**. Volume renderi
 
 Before introducing volume rendering, let's first understand the basic principles of camera imaging. In computer graphics, to save computational resources, it is assumed that the color of a point in the scene after being hit by a ray emitted from the camera is the color of the pixel at the intersection of the ray and the screen:
 
-![image source：https://www.shadertoy.com/view/wlSGWy](https://files.mdnice.com/user/11544/fff3e4a1-b9b6-48a0-933c-2919804fc611.gif)
+![image source：https://www.shadertoy.com/view/wlSGWy](./imgs/shadertoy.gif)
 
 However, when rendering atmospheric, smoke-like media, rays pass through the media rather than stopping only at the surface of the media. Moreover, during the rays' propagation, a certain proportion of the rays will be absorbed by the media (not considering scattering and self-emission). The portion of the media that absorbs the rays contributes to the final color of the rays. The higher the volume density, the more rays are absorbed, and the more intense the color of this part of the media. So the final color of the rays is the integral of the colors of the points along the path.
 
-![image source：https://inst.eecs.berkeley.edu/~cs194-26/fa22/Lectures/nerf_lecture1.pdf](https://files.mdnice.com/user/11544/c25d54ea-52f5-44b8-9d7b-f8029b7e0c2a.png)
+![image source：https://inst.eecs.berkeley.edu/~cs194-26/fa22/Lectures/nerf_lecture1.pdf](./imgs/volume_ray.png)
 
 Assuming the camera is at $\bf O$ and the ray direction is $\mathbf{d}$, the equation of the ray is $\mathbf{r}(t)=\mathbf{O}+t\mathbf{d}$, and its predicted pixel color $C(\mathbf{r})$ is
 
@@ -77,7 +73,7 @@ In actual calculations, we need to use discrete sums to approximate the integral
 
 With the knowledge of neural radiance fields and volume rendering, let's further look into the training process of NeRF. The entire process is divided into five steps, as shown in the following figure:
 
-![source：https://arxiv.org/pdf/2102.07064.pdf](https://files.mdnice.com/user/11544/167e08ef-f631-4972-bb48-368a53a7dbbe.png)
+![source：https://arxiv.org/pdf/2102.07064.pdf](./imgs/nerf_steps.png)
 
 1. [Camera parameters] After preparing a set of captured 2D images, the first step is to compute the camera pose parameters for each image. This can be done using existing tools like COLMAP. COLMAP matches common points in the scene appearing in different images to compute the camera pose. In addition, we assume that the entire scene is located within a cubic box with a range of $[-1,1]^3$.
 2. [3D point sampling] For a real image, a ray is emitted from the camera, passing through the image and entering the scene. The pixel value $I(p)$ of the intersection point $p$ between the ray and the image is the reference color. We discretely sample several points along this ray. The spatial coordinates $(x,y,z)$ of these sample points and the camera pose $\theta, \phi$ computed in the first step are combined as the input to the neural network.
@@ -99,7 +95,7 @@ There are also community-contributed [PyTorch-based implementations](https://git
 
 Is there a way to achieve CUDA-like runtime efficiency without writing CUDA and only writing Python? Of course! You can combine Taichi and PyTorch: use PyTorch for the MLP inference and training parts while writing the hash encoding and volume rendering parts with Taichi. The workflow is shown in the following diagram:
 
-![](https://files.mdnice.com/user/11544/6c4b2f04-6986-4cfa-ac5f-1a6a487d2473.png)
+![](./imgs/workflow.png)
 
 As shown in the diagram, we replace the hash encoding and volume rendering computations that PyTorch is not good at with corresponding Taichi kernels while retaining the PyTorch inference and training network parts. Taichi and PyTorch can conveniently and efficiently exchange data between each other, allowing users to easily organize Taichi and PyTorch code in a modular manner and conveniently modify or replace modules.
 
@@ -154,4 +150,4 @@ In the first part of the Taichi NeRF series, we introduced the basic concepts of
 
 If you are interested in NeRF, feel free to join our chat group by scanning the QR code. For partners interested in mobile NeRF training and deployment, please contact us at contact@taichi.graphics.
 
-![](https://files.mdnice.com/user/11544/f6556ed2-de59-4a66-a519-cb91cd75aa86.png)
+![](./imgs/qr.png)
