@@ -1,5 +1,5 @@
 ---
-title: Taichi NeRF (Part 1): Develop and Deploy Instant NGP without writing CUDA
+title: "Taichi NeRF (Part 1): Develop and Deploy Instant NGP without writing CUDA"
 slug: taichi-instant-ngp
 date: "2023-03-21"
 ---
