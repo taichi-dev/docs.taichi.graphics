@@ -11,8 +11,9 @@ const versionpaths = [__dirname + '/docs']
 for (const version of versions) {
   versionpaths.push(__dirname + `/versioned_docs/version-${version}`)
 }
-const math = require('remark-math');
-const katex = require('rehype-katex');
+
+import math from "remark-math";
+import katex from "rehype-katex";
 
 const presets = {
   dotorg: {
