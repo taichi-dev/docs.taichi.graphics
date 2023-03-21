@@ -15,9 +15,7 @@ NeRF (Neural Radiance Field) technology is the key to making these things a real
 
 The following video demonstrates how NeRF technology is used to achieve 3D roaming by capturing some static images of Taichi offices with a mobile phone:
 
-<video width="320" controls>
-  <source src="./imgs/nerf-room.MP4" type="video/mp4">
-</video>
+![](./imgs/nerf-room.MP4)
 
 In the past two years, NeRF technology has become a hot field in computer vision. Since the groundbreaking work of Mildenhall et al. in 2020, **[NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/abs/2003.08934)**, the NeRF field has spawned many subsequent studies, especially the recent improved work [Instant NGP](https://nvlabs.github.io/instant-ngp/), which was listed as one of [Time Magazine's Best Inventions of 2022](https://time.com/collection/best-inventions-2022/6225489/nvidia-instant-nerf/).
 
