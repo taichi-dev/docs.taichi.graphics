@@ -426,12 +426,12 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_matrix_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_matrix_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrixtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_matrix_arg" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_matrix_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrixtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_matrix_arg" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_ndarray_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_ndarray_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_ndarray_arg" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_ndarray_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_ndarray_arg" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -441,22 +441,22 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_rw_texture_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_rw_texture_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lod</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_rw_texture_arg" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_rw_texture_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_rw_texture_arg" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_scalar_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_scalar_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_scalar_arg" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_scalar_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_scalar_arg" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_sparse_matrix">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_sparse_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_sparse_matrix" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_sparse_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_sparse_matrix" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.kernel_arguments.decl_texture_arg">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_texture_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_dimensions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_texture_arg" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_arguments.</span></span><span class="sig-name descname"><span class="pre">decl_texture_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_arguments.decl_texture_arg" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </section>
