@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>taichi._kernels &#8212; taichi-api-docstring  documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:category" content="API Reference">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../../">
+<p class="title">taichi-api-docstring</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="ml-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../">
+  Taichi Language’s API reference
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://docs.taichi.graphics">Taichi Documentation Site<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/taichi-dev/taichi" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl autoapi-container">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items">
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="dropdown show">
+        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          v1.5.0
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          
+            
+            <a class="dropdown-item" href="/api/master/">master</a>
+            
+          
+             <strong> 
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
+             </strong> 
+          
+            
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
+            
+          
+        </div>
+      </span>
+    </span>
+  </div>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <!--  -->
+
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../">
+   Taichi Language’s API reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../">
+     taichi: The main taichi module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ad/">
+     taichi.ad: Taichi Autodiff system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aot/">
+     taichi.aot: Taichi AOT system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/">
+     taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../math/">
+     taichi.math: Taichi math library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../profiler/">
+     taichi.profiler: Taichi profiler tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/">
+     taichi.tools: Miscellaneous tools shipped with Taichi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../types/">
+     taichi.types: Taichi types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../types/quant/">
+     taichi.types.quant: Taichi quantized types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ui/">
+     taichi.ui: Taichi UI components (GUI and GGUI)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.arr_vulkan_layout_to_arr_normal_layout">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     arr_vulkan_layout_to_arr_normal_layout()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.arr_vulkan_layout_to_field_normal_layout">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     arr_vulkan_layout_to_field_normal_layout()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.blit_from_field_to_field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     blit_from_field_to_field()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.clear_gradients">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     clear_gradients()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.clear_loss">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     clear_loss()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_matrix">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ext_arr_to_matrix()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_ndarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ext_arr_to_ndarray()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_ndarray_matrix">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ext_arr_to_ndarray_matrix()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_tensor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ext_arr_to_tensor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.field_fill_python_scope">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     field_fill_python_scope()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.fill_ndarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     fill_ndarray()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.fill_ndarray_matrix">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     fill_ndarray_matrix()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.fill_tensor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     fill_tensor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.load_texture_from_numpy">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     load_texture_from_numpy()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.matrix_to_ext_arr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matrix_to_ext_arr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ndarray_matrix_to_ext_arr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ndarray_matrix_to_ext_arr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ndarray_to_ext_arr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ndarray_to_ext_arr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ndarray_to_ndarray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ndarray_to_ndarray()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.save_texture_to_numpy">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     save_texture_to_numpy()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.scan_add_inclusive">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scan_add_inclusive()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.snode_deactivate">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     snode_deactivate()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.snode_deactivate_dynamic">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     snode_deactivate_dynamic()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.sort_stage">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sort_stage()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.tensor_to_ext_arr">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tensor_to_ext_arr()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.tensor_to_image">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tensor_to_image()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.tensor_to_tensor">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tensor_to_tensor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.uniform_add">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     uniform_add()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.vector_to_fast_image">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     vector_to_fast_image()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.vector_to_image">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     vector_to_image()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.warp_shfl_up_i32">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     warp_shfl_up_i32()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.arr_vulkan_layout_to_arr_normal_layout">
+   arr_vulkan_layout_to_arr_normal_layout
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.arr_vulkan_layout_to_field_normal_layout">
+   arr_vulkan_layout_to_field_normal_layout
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.blit_from_field_to_field">
+   blit_from_field_to_field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.clear_gradients">
+   clear_gradients
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.clear_loss">
+   clear_loss
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_matrix">
+   ext_arr_to_matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_ndarray">
+   ext_arr_to_ndarray
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_ndarray_matrix">
+   ext_arr_to_ndarray_matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ext_arr_to_tensor">
+   ext_arr_to_tensor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.field_fill_python_scope">
+   field_fill_python_scope
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.fill_ndarray">
+   fill_ndarray
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.fill_ndarray_matrix">
+   fill_ndarray_matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.fill_tensor">
+   fill_tensor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.load_texture_from_numpy">
+   load_texture_from_numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.matrix_to_ext_arr">
+   matrix_to_ext_arr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ndarray_matrix_to_ext_arr">
+   ndarray_matrix_to_ext_arr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ndarray_to_ext_arr">
+   ndarray_to_ext_arr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.ndarray_to_ndarray">
+   ndarray_to_ndarray
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.save_texture_to_numpy">
+   save_texture_to_numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.scan_add_inclusive">
+   scan_add_inclusive
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.snode_deactivate">
+   snode_deactivate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.snode_deactivate_dynamic">
+   snode_deactivate_dynamic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.sort_stage">
+   sort_stage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.tensor_to_ext_arr">
+   tensor_to_ext_arr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.tensor_to_image">
+   tensor_to_image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.tensor_to_tensor">
+   tensor_to_tensor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.uniform_add">
+   uniform_add
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.vector_to_fast_image">
+   vector_to_fast_image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.vector_to_image">
+   vector_to_image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi._kernels.warp_shfl_up_i32">
+   warp_shfl_up_i32
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-taichi._kernels">
+<span id="taichi-kernels"></span><h1><a class="reference internal" href="#module-taichi._kernels" title="taichi._kernels"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi._kernels</span></code></a><a class="headerlink" href="#module-taichi._kernels" title="Permalink to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.arr_vulkan_layout_to_arr_normal_layout">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">arr_vulkan_layout_to_arr_normal_layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vk_arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal_arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.arr_vulkan_layout_to_arr_normal_layout" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.arr_vulkan_layout_to_field_normal_layout">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">arr_vulkan_layout_to_field_normal_layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vk_arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.arr_vulkan_layout_to_field_normal_layout" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.blit_from_field_to_field">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">blit_from_field_to_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.types.primitive_types.i32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.types.primitive_types.i32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.blit_from_field_to_field" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.clear_gradients">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">clear_gradients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.clear_gradients" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.clear_loss">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">clear_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.clear_loss" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.ext_arr_to_matrix">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">ext_arr_to_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.ext_arr_to_matrix" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.ext_arr_to_ndarray">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">ext_arr_to_ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndarray</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.ext_arr_to_ndarray" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.ext_arr_to_ndarray_matrix">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">ext_arr_to_ndarray_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndarray</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_is_aos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.ext_arr_to_ndarray_matrix" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.ext_arr_to_tensor">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">ext_arr_to_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.ext_arr_to_tensor" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.field_fill_python_scope">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">field_fill_python_scope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.field_fill_python_scope" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.fill_ndarray">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">fill_ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.fill_ndarray" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.fill_ndarray_matrix">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">fill_ndarray_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.fill_ndarray_matrix" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.fill_tensor">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">fill_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.fill_tensor" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.load_texture_from_numpy">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">load_texture_from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">texture_type.rw_texture(num_dimensions=2,</span> <span class="pre">fmt=Format.rgba8,</span> <span class="pre">lod=0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray(dtype=vec3,</span> <span class="pre">ndim=2)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.load_texture_from_numpy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.matrix_to_ext_arr">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">matrix_to_ext_arr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.matrix_to_ext_arr" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.ndarray_matrix_to_ext_arr">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">ndarray_matrix_to_ext_arr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_is_aos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.ndarray_matrix_to_ext_arr" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.ndarray_to_ext_arr">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">ndarray_to_ext_arr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.ndarray_to_ext_arr" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.ndarray_to_ndarray">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">ndarray_to_ndarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.ndarray_to_ndarray" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.save_texture_to_numpy">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">save_texture_to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">texture_type.rw_texture(num_dimensions=2,</span> <span class="pre">fmt=Format.rgba8,</span> <span class="pre">lod=0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray(dtype=vec3,</span> <span class="pre">ndim=2)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.save_texture_to_numpy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.scan_add_inclusive">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">scan_add_inclusive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_beg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.types.primitive_types.i32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.types.primitive_types.i32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inclusive_add</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.scan_add_inclusive" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.snode_deactivate">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">snode_deactivate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.snode_deactivate" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.snode_deactivate_dynamic">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">snode_deactivate_dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.snode_deactivate_dynamic" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.sort_stage">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">sort_stage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invocations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.sort_stage" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.tensor_to_ext_arr">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">tensor_to_ext_arr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.tensor_to_ext_arr" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.tensor_to_image">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">tensor_to_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.tensor_to_image" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.tensor_to_tensor">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">tensor_to_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.tensor_to_tensor" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.uniform_add">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">uniform_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_beg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.types.primitive_types.i32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.types.primitive_types.i32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.uniform_add" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.vector_to_fast_image">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">vector_to_fast_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.vector_to_fast_image" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.vector_to_image">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">vector_to_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray_type.ndarray()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.vector_to_image" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi._kernels.warp_shfl_up_i32">
+<span class="sig-prename descclassname"><span class="pre">taichi._kernels.</span></span><span class="sig-name descname"><span class="pre">warp_shfl_up_i32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">template()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._kernels.warp_shfl_up_i32" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Taichi Graphics.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
