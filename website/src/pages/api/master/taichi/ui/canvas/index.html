@@ -242,6 +242,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.contour">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.contour()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.lines">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -286,6 +295,15 @@
      </code>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.vector_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.vector_field()
+      </span>
+     </code>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -296,6 +314,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.circles">
      circles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.contour">
+     contour
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -321,6 +344,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.triangles">
      triangles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.vector_field">
+     vector_field
     </a>
    </li>
   </ul>
@@ -366,6 +394,25 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <li><p><strong>radius</strong> (<em>Number</em>) – radius of the circles in pixels.</p></li>
 <li><p><strong>color</strong> – a global color for the triangles as 3 floats representing                 RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
 <li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where                 each element indicate the RGB color of a circle.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.canvas.Canvas.contour">
+<span class="sig-name descname"><span class="pre">contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'plasma'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.contour" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot a contour view of a scalar field.</p>
+<p>The input scalar_field will be converted to a Numpy array first, and then plotted
+using Matplotlib’s colormap. Users can specify the color map through the cmap_name
+argument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scalar_field</strong> (<em>ti.field</em>) – The scalar field being plotted. Must be 2D.</p></li>
+<li><p><strong>cmap_name</strong> (<em>str</em><em>, </em><em>Optional</em>) – The name of the color map in Matplotlib.</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em><em>, </em><em>Optional</em>) – Display the normalized scalar field if set to True.</p></li>
+<li><p><strong>False.</strong> (<em>Default is</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -432,6 +479,23 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which                 indicate the vertex indices of the triangles. If this is None,                 then it is assumed that the vertices are already arranged in                 triangles order.</p></li>
 <li><p><strong>color</strong> – a global color for the triangles as 3 floats representing                 RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
 <li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field,                 where each element indicate the RGB color of a vertex.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.canvas.Canvas.vector_field">
+<span class="sig-name descname"><span class="pre">vector_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrow_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.002</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.vector_field" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a vector field on this canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector_field</strong> – The vector field to be plotted on the canvas.</p></li>
+<li><p><strong>arrow_spacing</strong> (<em>int</em>) – Spacing used when sample on the vector field.</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Maximum vector length proportional to the canvas.</p></li>
+<li><p><strong>width</strong> (<em>float</em>) – Line width when drawing the arrow.</p></li>
+<li><p><strong>color</strong> (<em>tuple</em><em>[</em><em>float</em><em>]</em>) – The RGB color of arrows.</p></li>
 </ul>
 </dd>
 </dl>
