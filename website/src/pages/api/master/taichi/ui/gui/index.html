@@ -125,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.4.1</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.3.0/">v1.3.0</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -541,6 +541,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.contour">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.contour()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.cook_image">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -716,6 +725,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        GUI.triangles()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.vector_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.vector_field()
       </span>
      </code>
     </a>
@@ -918,6 +936,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.contour">
+     contour
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.cook_image">
      cook_image
     </a>
@@ -1015,6 +1038,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.triangles">
      triangles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.vector_field">
+     vector_field
     </a>
    </li>
   </ul>
@@ -1344,6 +1372,25 @@ is the background color of GUI.</p>
 &gt;&gt;&gt;     gui.show()
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.gui.GUI.contour">
+<span class="sig-name descname"><span class="pre">contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.contour" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot a contour view of a scalar field.</p>
+<p>The input scalar_field will be converted to a Numpy array first, and then plotted
+by the Matplotlib colormap ‘Plasma’. Notice this method will automatically perform
+a bilinear interpolation on the field if the size of the field does not match with
+the GUI window size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scalar_field</strong> (<em>ti.field</em>) – The scalar field being plotted.</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em><em>, </em><em>Optional</em>) – Display the normalized scalar field if set to True.</p></li>
+<li><p><strong>False.</strong> (<em>Default is</em>) – </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1683,6 +1730,21 @@ image filename the frame will be saved as the specified image.</p>
 <li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>numpy.array</em><em>]</em><em>, </em><em>optional</em>) – The color or colors of triangles.
 Can be either a single color or a list of colors whose shape matches
 the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.gui.GUI.vector_field">
+<span class="sig-name descname"><span class="pre">vector_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrow_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.vector_field" title="Permalink to this definition">#</a></dt>
+<dd><p>Display a vector field on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector_field</strong> (<em>ti.Vector.field</em>) – The vector field being displayed.</p></li>
+<li><p><strong>arrow_spacing</strong> (<em>int</em><em>, </em><em>optional</em>) – The spacing between vectors.</p></li>
+<li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>np.array</em><em>]</em><em>, </em><em>optional</em>) – The color of vectors.</p></li>
 </ul>
 </dd>
 </dl>
