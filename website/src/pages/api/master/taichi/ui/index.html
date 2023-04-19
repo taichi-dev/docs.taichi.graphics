@@ -125,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.4.0</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.3.0/">v1.3.0</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -415,6 +415,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Canvas.contour">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.contour()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.Canvas.lines">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -455,6 +464,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Canvas.triangles()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Canvas.vector_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.vector_field()
       </span>
      </code>
     </a>
@@ -797,6 +815,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.contour">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.contour()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.GUI.cook_image">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -972,6 +999,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        GUI.triangles()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.vector_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.vector_field()
       </span>
      </code>
     </a>
@@ -1549,6 +1585,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Canvas.contour">
+     contour
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.Canvas.lines">
      lines
     </a>
@@ -1571,6 +1612,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.Canvas.triangles">
      triangles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.Canvas.vector_field">
+     vector_field
     </a>
    </li>
   </ul>
@@ -1756,6 +1802,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.contour">
+     contour
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.GUI.cook_image">
      cook_image
     </a>
@@ -1853,6 +1904,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.GUI.triangles">
      triangles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.GUI.vector_field">
+     vector_field
     </a>
    </li>
   </ul>
@@ -2318,7 +2374,7 @@ your scene.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.Camera.track_user_inputs">
-<span class="sig-name descname"><span class="pre">track_user_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">movement_speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw_speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch_speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hold_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.track_user_inputs" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">track_user_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">movement_speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw_speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch_speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hold_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Camera.track_user_inputs" title="Permalink to this definition">#</a></dt>
 <dd><p>Move the camera according to user inputs.
 Press <cite>w</cite>, <cite>s</cite>, <cite>a</cite>, <cite>d</cite>, <cite>e</cite>, <cite>q</cite> to move the camera
 <cite>formard</cite>, <cite>back</cite>, <cite>left</cite>, <cite>right</cite>, <cite>head up</cite>, <cite>head down</cite>, accordingly.</p>
@@ -2406,6 +2462,25 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Canvas.contour">
+<span class="sig-name descname"><span class="pre">contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'plasma'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Canvas.contour" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot a contour view of a scalar field.</p>
+<p>The input scalar_field will be converted to a Numpy array first, and then plotted
+using Matplotlib’s colormap. Users can specify the color map through the cmap_name
+argument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scalar_field</strong> (<em>ti.field</em>) – The scalar field being plotted. Must be 2D.</p></li>
+<li><p><strong>cmap_name</strong> (<em>str</em><em>, </em><em>Optional</em>) – The name of the color map in Matplotlib.</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em><em>, </em><em>Optional</em>) – Display the normalized scalar field if set to True.</p></li>
+<li><p><strong>False.</strong> (<em>Default is</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.Canvas.lines">
 <span class="sig-name descname"><span class="pre">lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_vertex_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Canvas.lines" title="Permalink to this definition">#</a></dt>
 <dd><p>Draw a set of 2D lines on this canvas.</p>
@@ -2466,6 +2541,23 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <li><p><strong>indices</strong> – a taichi int field of shape (3 * #triangles), which                 indicate the vertex indices of the triangles. If this is None,                 then it is assumed that the vertices are already arranged in                 triangles order.</p></li>
 <li><p><strong>color</strong> – a global color for the triangles as 3 floats representing                 RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
 <li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field,                 where each element indicate the RGB color of a vertex.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.Canvas.vector_field">
+<span class="sig-name descname"><span class="pre">vector_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrow_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.002</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Canvas.vector_field" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a vector field on this canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector_field</strong> – The vector field to be plotted on the canvas.</p></li>
+<li><p><strong>arrow_spacing</strong> (<em>int</em>) – Spacing used when sample on the vector field.</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Maximum vector length proportional to the canvas.</p></li>
+<li><p><strong>width</strong> (<em>float</em>) – Line width when drawing the arrow.</p></li>
+<li><p><strong>color</strong> (<em>tuple</em><em>[</em><em>float</em><em>]</em>) – The RGB color of arrows.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2775,6 +2867,25 @@ is the background color of GUI.</p>
 &gt;&gt;&gt;     gui.show()
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.contour">
+<span class="sig-name descname"><span class="pre">contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.contour" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot a contour view of a scalar field.</p>
+<p>The input scalar_field will be converted to a Numpy array first, and then plotted
+by the Matplotlib colormap ‘Plasma’. Notice this method will automatically perform
+a bilinear interpolation on the field if the size of the field does not match with
+the GUI window size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scalar_field</strong> (<em>ti.field</em>) – The scalar field being plotted.</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em><em>, </em><em>Optional</em>) – Display the normalized scalar field if set to True.</p></li>
+<li><p><strong>False.</strong> (<em>Default is</em>) – </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -3114,6 +3225,21 @@ image filename the frame will be saved as the specified image.</p>
 <li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>numpy.array</em><em>]</em><em>, </em><em>optional</em>) – The color or colors of triangles.
 Can be either a single color or a list of colors whose shape matches
 the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.GUI.vector_field">
+<span class="sig-name descname"><span class="pre">vector_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrow_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.GUI.vector_field" title="Permalink to this definition">#</a></dt>
+<dd><p>Display a vector field on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector_field</strong> (<em>ti.Vector.field</em>) – The vector field being displayed.</p></li>
+<li><p><strong>arrow_spacing</strong> (<em>int</em><em>, </em><em>optional</em>) – The spacing between vectors.</p></li>
+<li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>np.array</em><em>]</em><em>, </em><em>optional</em>) – The color of vectors.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3520,7 +3646,7 @@ element indicate the RGB color of a particle.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.Window">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">Window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vsync</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(100,</span> <span class="pre">100)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Window" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">Window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vsync</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fps_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(100,</span> <span class="pre">100)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Window" title="Permalink to this definition">#</a></dt>
 <dd><p>The window class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

@@ -125,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.4.0</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.3.0/">v1.3.0</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -224,6 +224,44 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     GfxRuntime140
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140.from_module">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GfxRuntime140.from_module()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140.to_graphs_json">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GfxRuntime140.to_graphs_json()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140.to_metadata_json">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GfxRuntime140.to_metadata_json()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.aot.Module">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -289,22 +327,44 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.aot.start_recording">
+  <a class="reference internal nav-link" href="#taichi.aot.export">
    <code class="docutils literal notranslate">
     <span class="pre">
-     start_recording()
+     export()
     </span>
    </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.aot.stop_recording">
+  <a class="reference internal nav-link" href="#taichi.aot.export_as">
    <code class="docutils literal notranslate">
     <span class="pre">
-     stop_recording()
+     export_as()
     </span>
    </code>
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140">
+   GfxRuntime140
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140.from_module">
+     from_module
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140.to_graphs_json">
+     to_graphs_json
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.GfxRuntime140.to_metadata_json">
+     to_metadata_json
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.aot.Module">
@@ -344,13 +404,13 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.aot.start_recording">
-   start_recording
+  <a class="reference internal nav-link" href="#taichi.aot.export">
+   export
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.aot.stop_recording">
-   stop_recording
+  <a class="reference internal nav-link" href="#taichi.aot.export_as">
+   export_as
   </a>
  </li>
 </ul>
@@ -379,6 +439,26 @@
 <p>Taichi’s AOT (ahead of time) module.</p>
 <p>Users can use Taichi as a GPU compute shader/kernel compiler by compiling their
 Taichi kernels into an AOT module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.GfxRuntime140">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">GfxRuntime140</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata_json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphs_json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.GfxRuntime140" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.GfxRuntime140.from_module">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#taichi.aot.GfxRuntime140" title="taichi.aot.GfxRuntime140"><span class="pre">GfxRuntime140</span></a></span></span><a class="headerlink" href="#taichi.aot.GfxRuntime140.from_module" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.GfxRuntime140.to_graphs_json">
+<span class="sig-name descname"><span class="pre">to_graphs_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#taichi.aot.GfxRuntime140.to_graphs_json" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.GfxRuntime140.to_metadata_json">
+<span class="sig-name descname"><span class="pre">to_metadata_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#taichi.aot.GfxRuntime140.to_metadata_json" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.aot.Module">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">Module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.Module" title="Permalink to this definition">#</a></dt>
@@ -503,43 +583,14 @@ end with <cite>.tcm</cite>.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.aot.start_recording">
-<span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">start_recording</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.start_recording" title="Permalink to this definition">#</a></dt>
-<dd><p>Starts recording kernel information to a <cite>yml</cite> file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – output <cite>yml</cite> file.</p>
-</dd>
-</dl>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; ti.aot.start_recording(&#39;record.yml&#39;)
-&gt;&gt;&gt; ti.init(arch=ti.cc)
-&gt;&gt;&gt; loss = ti.field(float, (), needs_grad=True)
-&gt;&gt;&gt; x = ti.field(float, 233, needs_grad=True)
-&gt;&gt;&gt;
-&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def compute_loss():
-&gt;&gt;&gt;     for i in x:
-&gt;&gt;&gt;         loss[None] += x[i]**2
-&gt;&gt;&gt;
-&gt;&gt;&gt; @ti.kernel
-&gt;&gt;&gt; def do_some_works():
-&gt;&gt;&gt;     for i in x:
-&gt;&gt;&gt;         x[i] -= x.grad[i]
-&gt;&gt;&gt;
-&gt;&gt;&gt; with ti.ad.Tape(loss):
-&gt;&gt;&gt;     compute_loss()
-&gt;&gt;&gt; do_some_works()
-</pre></div>
-</div>
-</dd></dl>
+<dt class="sig sig-object py" id="taichi.aot.export">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.export" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="taichi.aot.stop_recording">
-<span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">stop_recording</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.stop_recording" title="Permalink to this definition">#</a></dt>
-<dd><p>Stops recording kernel information.</p>
-<p>This function should be called in pair with <code class="xref py py-func docutils literal notranslate"><span class="pre">start_recording()</span></code>.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="taichi.aot.export_as">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.</span></span><span class="sig-name descname"><span class="pre">export_as</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.export_as" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 </section>
 

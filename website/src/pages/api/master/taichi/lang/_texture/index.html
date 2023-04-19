@@ -125,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.4.0</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.3.0/">v1.3.0</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -453,7 +453,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang._texture.Texture.from_image">
 <span class="sig-name descname"><span class="pre">from_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture.from_image" title="Permalink to this definition">#</a></dt>
-<dd><p>Loads a PIL image to texture. This method is only allowed a 2D texture with <cite>ti.u8</cite> dtype and <cite>num_channels=4</cite>.</p>
+<dd><p>Loads a PIL image to texture. This method is only allowed a 2D texture with <cite>ti.Format.rgba8</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>image</strong> (<em>PIL.Image.Image</em>) – Source PIL image to load from.</p>
@@ -475,7 +475,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang._texture.Texture.to_image">
 <span class="sig-name descname"><span class="pre">to_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._texture.Texture.to_image" title="Permalink to this definition">#</a></dt>
-<dd><p>Saves a texture to a PIL image in RGB mode. This method is only allowed a 2D texture with <cite>ti.u8</cite> dtype and <cite>num_channels=4</cite>.</p>
+<dd><p>Saves a texture to a PIL image in RGB mode. This method is only allowed a 2D texture with <cite>ti.Format.rgba8</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>a PIL image in RGB mode, with the same size as source texture.</p>

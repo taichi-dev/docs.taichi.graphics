@@ -77,31 +77,80 @@ To enable printing on Vulkan, please
 :::
 
 
-### Comma-separated strings only
+### Printing comma-separated strings, f-strings, or formatted strings
 
-Strings passed to `print` in the Taichi scope *must* be comma-separated. Neither f-strings nor formatted strings can be recognized. For example:
+In Taichi scope, you can print both scalar and matrix values using the `print` function. There are multiple ways to format your output, including comma-separated strings, f-strings, and formatted strings via the `str.format()` method.
 
-```python {9-11}
+For instance, suppose you have a scalar field `a` and want to print its value. Here are some examples:
+
+```python
 import taichi as ti
 ti.init(arch=ti.cpu)
+
 a = ti.field(ti.f32, 4)
 
-
 @ti.kernel
-def foo():
+def print_scalar():
     a[0] = 1.0
-    print('a[0] = ', a[0]) # right
-    print(f'a[0] = {a[0]}') # wrong: f-strings are not supported
-    print("a[0] = %f" % a[0]) # wrong: formatted strings are not supported
 
-foo()
+    # comma-separated string
+    print('a[0] =', a[0])
+
+    # f-string
+    print(f'a[0] = {a[0]}')
+    # with format specifier
+    print(f'a[0] = {a[0]:.1f}')
+    # without conversion
+    print(f'a[0] = {a[0]:.1}')
+    # with self-documenting expressions (Python 3.8+)
+    print(f'{a[0] = :.1f}')
+
+    # formatted string via `str.format()` method
+    print('a[0] = {}'.format(a[0]))
+    # with format specifier
+    print('a[0] = {:.1f}'.format(a[0]))
+    # without conversion
+    print('a[0] = {:.1}'.format(a[0]))
+    # with positional arguments
+    print('a[3] = {3:.3f}, a[2] = {2:.2f}, a[1] = {1:.1f}, a[0] = {0:.0f}'.format(a[0], a[1], a[2], a[3]))
 ```
+
+If you have a matrix field m, you can print it as well. Here are some examples:
+
+```python
+@ti.kernel
+def print_matrix():
+    m = ti.Matrix([[2e1, 3e2, 4e3], [5e4, 6e5, 7e6]], ti.f32)
+
+    # comma-separated string
+    print('m =', m)
+
+    # f-string
+    print(f'm = {m}')
+    # with format specifier
+    print(f'm = {m:.1f}')
+    # without conversion
+    print(f'm = {m:.1}')
+    # with self-documenting expressions
+    print(f'{m = :g}')
+
+    # formatted string via `str.format()` method
+    print('m = {}'.format(m))
+    # with format specifier
+    print('m = {:e}'.format(m))
+    # without conversion
+    print('m = {:.1}'.format(m))
+```
+
+:::note
+Building formatted strings using the % operator is currently **not** supported in Taichi.
+:::
 
 ## Compile-time `ti.static_print`
 
 It can be useful to print Python objects and their properties like data types or SNodes in the Taichi scope. Similar to `ti.static`, which makes the compiler evaluate an argument at compile time (see the [Metaprogramming](../advanced/meta.md) for more information), `ti.static_print` prints compile-time constants in the Taichi scope:
 
-```python{6,8,10,13}
+```python {6,8,10,13}
 x = ti.field(ti.f32, (2, 3))
 y = 1
 
@@ -127,7 +176,7 @@ Because threads are processed in random order, Taichi's automated parallelizatio
 
 ### Serialize an entire Taichi program
 
-If you choose CPU as the backend, you can set `cpu_max_num_thread=1` when initializing Taichi to serialize the program. Then the program runs on a single thread and its behavior becomes deterministic. For example:
+If you choose CPU as the backend, you can set `cpu_max_num_threads=1` when initializing Taichi to serialize the program. Then the program runs on a single thread and its behavior becomes deterministic. For example:
 
 ```python
 ti.init(arch=ti.cpu, cpu_max_num_threads=1)
@@ -173,7 +222,7 @@ The array index out of bounds error occurs frequently. However, Taichi disables 
 
 Taichi detects array index out of bound errors in debug mode. You can activate this mode by setting `debug=True` in the `ti.init()` call:
 
-```python{2}
+```python {2}
 import taichi as ti
 ti.init(arch=ti.cpu, debug=True)
 f = ti.field(dtype=ti.i32, shape=(32, 32))
@@ -380,7 +429,7 @@ Output:
 
 This means that a precision loss occurs when Taichi converts a `float32` result to `int32`. The solution is to initialize `ret` as a floating-point value:
 
-```python{3}
+```python {3}
 @ti.kernel
 def not_buggy():
     ret = 0.0  # 0 is a floating point number, so `ret` is typed as float32

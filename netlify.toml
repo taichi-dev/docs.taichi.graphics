@@ -2,7 +2,7 @@
   base = "website/"
   publish = "build"
   command = "yarn build"
-  environment = { NODE_VERSION = "14", DO_NOT_THROW_ON_BROKEN_LINKS = "true" }
+  environment = { NODE_VERSION = "14" }
   ignore = "false"
 
 [context.production]

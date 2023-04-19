@@ -13,7 +13,7 @@
     "write-translations": "WRITING_TRANSLATION=1 docusaurus write-translations",
     "write-heading-ids": "WRITING_TRANSLATION=1 docusaurus write-heading-ids",
     "crowdin": "crowdin",
-    "crowdin:sync": "WRITING_TRANSLATION=1 docusaurus write-translations && crowdin upload && crowdin download",
+    "crowdin:sync": "WRITING_TRANSLATION=1 docusaurus write-translations && while true; do if (crowdin upload && crowdin download); then break; fi; echo Wait!; sleep 300; done",
     "crowdin:download": "WRITING_TRANSLATION=1 docusaurus write-translations && crowdin download",
     "crowdin:upload": "WRITING_TRANSLATION=1 docusaurus write-translations && crowdin upload",
     "genversions": "node ./scripts/versions",

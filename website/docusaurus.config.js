@@ -50,7 +50,7 @@ module.exports = {
   url: presets[chosenPreset].url,
   baseUrl: presets[chosenPreset].baseUrl,
   // trailingSlash: false,
-  onBrokenLinks: process.env.DO_NOT_THROW_ON_BROKEN_LINKS === 'true' ? 'error' : 'throw',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/black_or_white.svg',
   organizationName: 'taichi-dev',

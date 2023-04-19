@@ -38,7 +38,7 @@ slug: /install
   - Make sure you're using Python version 3.7/3.8/3.9/3.10:
 
     ```bash
-    python3 -c "print(__import__('sys').version[:3])"
+    python3 -c "import sys;print(sys.version[:sys.version.find('.', 2)])"
     # 3.7, 3.8, 3.9, or 3.10
     ```
 
@@ -120,7 +120,7 @@ slug: /install
   `glfwCreateWindow` (see
   [\#958](https://github.com/taichi-dev/taichi/issues/958)):
 
-  ```{9-11}
+  ```plaintext {9-11}
   [Taichi] mode=release
   [E 05/12/20 18.25:00.129] Received signal 11 (Segmentation Fault)
   ***********************************

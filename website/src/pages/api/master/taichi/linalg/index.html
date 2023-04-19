@@ -125,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.4.0</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.3.0/">v1.3.0</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -224,6 +224,46 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.CG">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     CG
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.CG.solve">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       CG.solve()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.LinearOperator">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     LinearOperator
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.LinearOperator.matvec">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       LinearOperator.matvec()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.linalg.SparseMatrix">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -237,6 +277,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        SparseMatrix.build_from_ndarray()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.SparseMatrix.mmwrite">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SparseMatrix.mmwrite()
       </span>
      </code>
     </a>
@@ -338,6 +387,64 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.TaichiRuntimeError">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TaichiRuntimeError
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.TaichiRuntimeError.args">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiRuntimeError.args
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.TaichiRuntimeError.with_traceback">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiRuntimeError.with_traceback()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.TaichiTypeError">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TaichiTypeError
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.TaichiTypeError.args">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiTypeError.args
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.TaichiTypeError.with_traceback">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiTypeError.with_traceback()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.linalg.sparse_matrix_builder">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -347,6 +454,39 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.taichi_cg_solver">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     taichi_cg_solver()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.CG">
+   CG
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.CG.solve">
+     solve
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.LinearOperator">
+   LinearOperator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.LinearOperator.matvec">
+     matvec
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.linalg.SparseMatrix">
    SparseMatrix
   </a>
@@ -354,6 +494,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.linalg.SparseMatrix.build_from_ndarray">
      build_from_ndarray
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.SparseMatrix.mmwrite">
+     mmwrite
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -413,8 +558,47 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.TaichiRuntimeError">
+   TaichiRuntimeError
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.TaichiRuntimeError.args">
+     args
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.TaichiRuntimeError.with_traceback">
+     with_traceback
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.TaichiTypeError">
+   TaichiTypeError
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.TaichiTypeError.args">
+     args
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.TaichiTypeError.with_traceback">
+     with_traceback
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.linalg.sparse_matrix_builder">
    sparse_matrix_builder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.taichi_cg_solver">
+   taichi_cg_solver
   </a>
  </li>
 </ul>
@@ -442,6 +626,26 @@
 <span id="taichi-linalg"></span><h1><a class="reference internal" href="#module-taichi.linalg" title="taichi.linalg"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.linalg</span></code></a><a class="headerlink" href="#module-taichi.linalg" title="Permalink to this heading">#</a></h1>
 <p>Taichi support module for sparse matrix operations.</p>
 <dl class="py class">
+<dt class="sig sig-object py" id="taichi.linalg.CG">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">CG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.CG" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="taichi.linalg.CG.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.CG.solve" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.linalg.LinearOperator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">LinearOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matvec_kernel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.LinearOperator" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="taichi.linalg.LinearOperator.matvec">
+<span class="sig-name descname"><span class="pre">matvec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.LinearOperator.matvec" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="taichi.linalg.SparseMatrix">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">SparseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">f32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'col_major'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseMatrix" title="Permalink to this definition">#</a></dt>
 <dd><p>Taichi’s Sparse Matrix class</p>
@@ -464,7 +668,7 @@
 <dd class="field-odd"><p><strong>ndarray</strong> (<em>Union</em><em>[</em><em>ti.ndarray</em><em>, </em><em>ti.Vector.ndarray</em><em>, </em><em>ti.Matrix.ndarray</em><em>]</em>) – the ndarray to build the sparse matrix from.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../#taichi.TaichiRuntimeError" title="taichi.TaichiRuntimeError"><strong>TaichiRuntimeError</strong></a> – If the input is not a ndarray or the length is not divisible by 3.</p>
+<dd class="field-even"><p><a class="reference internal" href="#taichi.linalg.TaichiRuntimeError" title="taichi.linalg.TaichiRuntimeError"><strong>TaichiRuntimeError</strong></a> – If the input is not a ndarray or the length is not divisible by 3.</p>
 </dd>
 </dl>
 <dl>
@@ -485,6 +689,17 @@
 <span class="go">[5, 0, 0, 0, 0]</span>
 </pre></div>
 </div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.linalg.SparseMatrix.mmwrite">
+<span class="sig-name descname"><span class="pre">mmwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseMatrix.mmwrite" title="Permalink to this definition">#</a></dt>
+<dd><p>Writes the sparse matrix to Matrix Market file-like target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – the file name to write the sparse matrix to.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -610,11 +825,54 @@
 
 </dd></dl>
 
+<dl class="py exception">
+<dt class="sig sig-object py" id="taichi.linalg.TaichiRuntimeError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">TaichiRuntimeError</span></span><a class="headerlink" href="#taichi.linalg.TaichiRuntimeError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></p>
+<p>Thrown when the compiled program cannot be executed due to unspecified reasons.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.linalg.TaichiRuntimeError.args">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.linalg.TaichiRuntimeError.args" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.linalg.TaichiRuntimeError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.TaichiRuntimeError.with_traceback" title="Permalink to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="taichi.linalg.TaichiTypeError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">TaichiTypeError</span></span><a class="headerlink" href="#taichi.linalg.TaichiTypeError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">TaichiCompilationError</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></p>
+<p>Thrown when a type mismatch is found during compilation.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.linalg.TaichiTypeError.args">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#taichi.linalg.TaichiTypeError.args" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.linalg.TaichiTypeError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.TaichiTypeError.with_traceback" title="Permalink to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.linalg.sparse_matrix_builder">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">sparse_matrix_builder</span></span><a class="headerlink" href="#taichi.linalg.sparse_matrix_builder" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../types/annotations/#taichi.types.annotations.sparse_matrix_builder" title="taichi.types.annotations.sparse_matrix_builder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.types.annotations.sparse_matrix_builder</span></code></a></p>
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.linalg.taichi_cg_solver">
+<span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">taichi_cg_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.taichi_cg_solver" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 </section>
 
