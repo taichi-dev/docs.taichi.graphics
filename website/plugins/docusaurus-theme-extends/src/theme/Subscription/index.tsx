@@ -45,10 +45,12 @@ function SubscriptionInput(props) {
       return;
     }
     setDisabled(true);
-    request(
-      `https://taichi-lang.us14.list-manage.com/subscribe/post-json?u=4e92b5a2a6c075ad83eb4709d&amp;id=40276d4c2b&EMAIL=${email}`,
-      { timeout: 30000 }
-    )
+    const formData = new FormData();
+    formData.append('fields[email]', email);
+    fetch('https://assets.mailerlite.com/jsonp/372057/forms/83795482172720151/subscribe', {
+      method: 'post',
+      body: formData
+    })
       .then(() => {
         setErr('');
         setSuccessed(true);

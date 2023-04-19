@@ -125,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.4.1</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.3.0/">v1.3.0</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -237,15 +237,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        Struct.field()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.fill">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Struct.fill()
       </span>
      </code>
     </a>
@@ -382,11 +373,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.fill">
-     fill
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.struct.Struct.to_dict">
      to_dict
     </a>
@@ -481,8 +467,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.struct.</span></span><span class="sig-name descname"><span class="pre">Struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../common_ops/#taichi.lang.common_ops.TaichiOperations" title="taichi.lang.common_ops.TaichiOperations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.lang.common_ops.TaichiOperations</span></code></a></p>
-<p>The Struct type class.</p>
+<dd><p>The Struct type class.</p>
 <p>A struct is a dictionary-like data structure that stores members as
 (key, value) pairs. Valid data members of a struct can be scalars,
 matrices or other dictionary-like structures.</p>
@@ -554,17 +539,6 @@ will start at <cite>(-10, -10)</cite>, not <cite>(0, 0)</cite>.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.struct.Struct.fill">
-<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.fill" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills the Struct with a specific value in Taichi scope.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.struct.Struct.to_dict">
 <span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_methods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_ndim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.struct.Struct.to_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts the Struct to a dictionary.</p>
@@ -596,7 +570,7 @@ directly hosts members as <cite>Field</cite> instances to support nested structs
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>field_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><em>Field</em></a><em>]</em>) – Struct field members.</p></li>
+<li><p><strong>field_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.Field" title="taichi.aot.conventions.gfxruntime140.sr.Field"><em>Field</em></a><em>]</em>) – Struct field members.</p></li>
 <li><p><strong>struct_methods</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>callable</em><em>]</em>) – Dictionary of functions to apply
 to each struct instance in the field.</p></li>
 <li><p><strong>name</strong> (<em>string</em><em>, </em><em>optional</em>) – The custom name of the field.</p></li>
@@ -610,7 +584,7 @@ to each struct instance in the field.</p></li>
 <p>The shape of the other field needs to be the same as <cite>self</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../../#taichi.Field" title="taichi.Field"><em>Field</em></a>) – The source field.</p>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.Field" title="taichi.aot.conventions.gfxruntime140.sr.Field"><em>Field</em></a>) – The source field.</p>
 </dd>
 </dl>
 </dd></dl>
