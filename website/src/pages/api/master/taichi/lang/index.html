@@ -2262,6 +2262,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.atomic_mul">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atomic_mul()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.atomic_or">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -4177,6 +4186,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.atomic_min">
    atomic_min
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.atomic_mul">
+   atomic_mul
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -7594,6 +7608,38 @@ are not allowed.</p>
 &gt;&gt;&gt;     print(z)  # 2, the old value of x
 &gt;&gt;&gt;
 &gt;&gt;&gt;     ti.atomic_min(1, x)  # will raise TaichiSyntaxError
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.atomic_mul">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.</span></span><span class="sig-name descname"><span class="pre">atomic_mul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.atomic_mul" title="Permalink to this definition">#</a></dt>
+<dd><p>Atomically compute <cite>x * y</cite>, store the result in <cite>x</cite>,
+and return the old value of <cite>x</cite>.</p>
+<p><cite>x</cite> must be a writable target, constant expressions or scalars
+are not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+<li><p><strong>y</strong> (Union[<a class="reference internal" href="../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The old value of <cite>x</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Vector([1, 2, 3])
+&gt;&gt;&gt;     y = ti.Vector([4, 5, 6])
+&gt;&gt;&gt;     z = ti.atomic_mul(x, y)
+&gt;&gt;&gt;     print(x)  # [1, 2, 3]  the new value of x
+&gt;&gt;&gt;     print(z)  # [4, 10, 18], the old value of x
+&gt;&gt;&gt;
+&gt;&gt;&gt;     ti.atomic_mul(1, x)  # will raise TaichiSyntaxError
 </pre></div>
 </div>
 </dd></dl>
