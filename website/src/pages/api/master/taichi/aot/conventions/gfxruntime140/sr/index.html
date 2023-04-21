@@ -1,0 +1,1695 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>taichi.aot.conventions.gfxruntime140.sr &#8212; taichi-api-docstring  documentation</title>
+    
+  <link href="../../../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../../../search/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:category" content="API Reference">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../../../../../">
+<p class="title">taichi-api-docstring</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="ml-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../../">
+  Taichi Language’s API reference
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://docs.taichi.graphics">Taichi Documentation Site<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/taichi-dev/taichi" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl autoapi-container">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items">
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="dropdown show">
+        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          master
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          
+             <strong> 
+            <a class="dropdown-item" href="/api/master/">master</a>
+             </strong> 
+          
+            
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
+            
+          
+            
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
+            
+          
+        </div>
+      </span>
+    </span>
+  </div>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <!--  -->
+
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../../">
+   Taichi Language’s API reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../">
+     taichi: The main taichi module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../ad/">
+     taichi.ad: Taichi Autodiff system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../">
+     taichi.aot: Taichi AOT system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../linalg/">
+     taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../math/">
+     taichi.math: Taichi math library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../profiler/">
+     taichi.profiler: Taichi profiler tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../tools/">
+     taichi.tools: Miscellaneous tools shipped with Taichi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../types/">
+     taichi.types: Taichi types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../types/quant/">
+     taichi.types.quant: Taichi quantized types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../ui/">
+     taichi.ui: Taichi UI components (GUI and GGUI)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Argument">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Argument
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentNdArray">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ArgumentNdArray
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentRwTexture">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ArgumentRwTexture
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentScalar">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ArgumentScalar
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentTexture">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ArgumentTexture
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBinding">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     BufferBinding
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     BufferBindingType
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Args">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BufferBindingType.Args
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.ExtArr">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BufferBindingType.ExtArr
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.GlobalTmps">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BufferBindingType.GlobalTmps
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.ListGen">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BufferBindingType.ListGen
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Rets">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BufferBindingType.Rets
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Root">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BufferBindingType.Root
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BufferBindingType.name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.value">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       BufferBindingType.value()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Context">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Context
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     DataType
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.f16">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.f16
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.f32">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.f32
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.f64">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.f64
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i16">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.i16
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i32">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.i32
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i64">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.i64
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i8">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.i8
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u16">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.u16
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u32">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.u32
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u64">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.u64
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u8">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.u8
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.value">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataType.value()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Dispatch">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Dispatch
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Field
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Graph">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Graph
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Kernel">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Kernel
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.LaunchGrid">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     LaunchGrid
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Metadata">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Metadata
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NamedArgument">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NamedArgument
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NdArrayAccess
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.NoAccess">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NdArrayAccess.NoAccess
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.Read">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NdArrayAccess.Read
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.ReadWrite">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NdArrayAccess.ReadWrite
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.Write">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NdArrayAccess.Write
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NdArrayAccess.name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.value">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NdArrayAccess.value()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.ReturnValue">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ReturnValue
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Task">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Task
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TaskType
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.Gc">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaskType.Gc
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.GcRc">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaskType.GcRc
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.ListGen">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaskType.ListGen
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.MeshFor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaskType.MeshFor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.RangeFor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaskType.RangeFor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.Serial">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaskType.Serial
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.StructFor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaskType.StructFor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaskType.name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.value">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaskType.value()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBinding">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TextureBinding
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TextureBindingType
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.RwTexture">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TextureBindingType.RwTexture
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.Texture">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TextureBindingType.Texture
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.name">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TextureBindingType.name()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.value">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TextureBindingType.value()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     from_dr_field()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_graph">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     from_dr_graph()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_kernel">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     from_dr_kernel()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_metadata">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     from_dr_metadata()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.get_data_type_size">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     get_data_type_size()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_field">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     to_dr_field()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_graph">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     to_dr_graph()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_kernel">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     to_dr_kernel()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_metadata">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     to_dr_metadata()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Argument">
+   Argument
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentNdArray">
+   ArgumentNdArray
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentRwTexture">
+   ArgumentRwTexture
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentScalar">
+   ArgumentScalar
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentTexture">
+   ArgumentTexture
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBinding">
+   BufferBinding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType">
+   BufferBindingType
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Args">
+     Args
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.ExtArr">
+     ExtArr
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.GlobalTmps">
+     GlobalTmps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.ListGen">
+     ListGen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Rets">
+     Rets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Root">
+     Root
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.name">
+     name
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.value">
+     value
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Context">
+   Context
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType">
+   DataType
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.f16">
+     f16
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.f32">
+     f32
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.f64">
+     f64
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i16">
+     i16
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i32">
+     i32
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i64">
+     i64
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i8">
+     i8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u16">
+     u16
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u32">
+     u32
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u64">
+     u64
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u8">
+     u8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.name">
+     name
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.value">
+     value
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Dispatch">
+   Dispatch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Field">
+   Field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Graph">
+   Graph
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Kernel">
+   Kernel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.LaunchGrid">
+   LaunchGrid
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Metadata">
+   Metadata
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NamedArgument">
+   NamedArgument
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess">
+   NdArrayAccess
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.NoAccess">
+     NoAccess
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.Read">
+     Read
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.ReadWrite">
+     ReadWrite
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.Write">
+     Write
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.name">
+     name
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.value">
+     value
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.ReturnValue">
+   ReturnValue
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.Task">
+   Task
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType">
+   TaskType
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.Gc">
+     Gc
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.GcRc">
+     GcRc
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.ListGen">
+     ListGen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.MeshFor">
+     MeshFor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.RangeFor">
+     RangeFor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.Serial">
+     Serial
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.StructFor">
+     StructFor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.name">
+     name
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.value">
+     value
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBinding">
+   TextureBinding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType">
+   TextureBindingType
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.RwTexture">
+     RwTexture
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.Texture">
+     Texture
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.name">
+     name
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.value">
+     value
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_field">
+   from_dr_field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_graph">
+   from_dr_graph
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_kernel">
+   from_dr_kernel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_metadata">
+   from_dr_metadata
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.get_data_type_size">
+   get_data_type_size
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_field">
+   to_dr_field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_graph">
+   to_dr_graph
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_kernel">
+   to_dr_kernel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_metadata">
+   to_dr_metadata
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-taichi.aot.conventions.gfxruntime140.sr">
+<span id="taichi-aot-conventions-gfxruntime140-sr"></span><h1><a class="reference internal" href="#module-taichi.aot.conventions.gfxruntime140.sr" title="taichi.aot.conventions.gfxruntime140.sr"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.aot.conventions.gfxruntime140.sr</span></code></a><a class="headerlink" href="#module-taichi.aot.conventions.gfxruntime140.sr" title="Permalink to this heading">#</a></h1>
+<p>Structured representation of all JSON data structures following the
+GfxRuntime140.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.Argument">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">Argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.Argument" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.ArgumentNdArray">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">ArgumentNdArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><span class="pre">DataType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess" title="taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess"><span class="pre">NdArrayAccess</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentNdArray" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Argument" title="taichi.aot.conventions.gfxruntime140.sr.Argument"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Argument</span></code></a></p>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.ArgumentRwTexture">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">ArgumentRwTexture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">taichi.Format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentRwTexture" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Argument" title="taichi.aot.conventions.gfxruntime140.sr.Argument"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Argument</span></code></a></p>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.ArgumentScalar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">ArgumentScalar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><span class="pre">DataType</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentScalar" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Argument" title="taichi.aot.conventions.gfxruntime140.sr.Argument"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Argument</span></code></a></p>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.ArgumentTexture">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">ArgumentTexture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.ArgumentTexture" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Argument" title="taichi.aot.conventions.gfxruntime140.sr.Argument"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Argument</span></code></a></p>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.BufferBinding">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">BufferBinding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_bind_ty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType" title="taichi.aot.conventions.gfxruntime140.sr.BufferBindingType"><span class="pre">BufferBindingType</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBinding" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.BufferBindingType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">BufferBindingType</span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Generic enumeration.</p>
+<p>Derive from this class to define new enumerations.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Args">
+<span class="sig-name descname"><span class="pre">Args</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Args" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.ExtArr">
+<span class="sig-name descname"><span class="pre">ExtArr</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">5</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.ExtArr" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.GlobalTmps">
+<span class="sig-name descname"><span class="pre">GlobalTmps</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.GlobalTmps" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.ListGen">
+<span class="sig-name descname"><span class="pre">ListGen</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.ListGen" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Rets">
+<span class="sig-name descname"><span class="pre">Rets</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Rets" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Root">
+<span class="sig-name descname"><span class="pre">Root</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.Root" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.name" title="Permalink to this definition">#</a></dt>
+<dd><p>The name of the Enum member.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBindingType.value" title="Permalink to this definition">#</a></dt>
+<dd><p>The value of the Enum member.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.Context">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">Context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Argument" title="taichi.aot.conventions.gfxruntime140.sr.Argument"><span class="pre">Argument</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ret</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.ReturnValue" title="taichi.aot.conventions.gfxruntime140.sr.ReturnValue"><span class="pre">ReturnValue</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.Context" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">DataType</span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Generic enumeration.</p>
+<p>Derive from this class to define new enumerations.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.f16">
+<span class="sig-name descname"><span class="pre">f16</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.f16" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.f32">
+<span class="sig-name descname"><span class="pre">f32</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.f32" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.f64">
+<span class="sig-name descname"><span class="pre">f64</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.f64" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.i16">
+<span class="sig-name descname"><span class="pre">i16</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i16" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.i32">
+<span class="sig-name descname"><span class="pre">i32</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">5</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i32" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.i64">
+<span class="sig-name descname"><span class="pre">i64</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">6</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i64" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.i8">
+<span class="sig-name descname"><span class="pre">i8</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.i8" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.u16">
+<span class="sig-name descname"><span class="pre">u16</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">9</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u16" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.u32">
+<span class="sig-name descname"><span class="pre">u32</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">10</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u32" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.u64">
+<span class="sig-name descname"><span class="pre">u64</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">11</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u64" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.u8">
+<span class="sig-name descname"><span class="pre">u8</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">8</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.u8" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.name" title="Permalink to this definition">#</a></dt>
+<dd><p>The name of the Enum member.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.DataType.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.DataType.value" title="Permalink to this definition">#</a></dt>
+<dd><p>The value of the Enum member.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.Dispatch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">Dispatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Kernel" title="taichi.aot.conventions.gfxruntime140.sr.Kernel"><span class="pre">Kernel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.NamedArgument" title="taichi.aot.conventions.gfxruntime140.sr.NamedArgument"><span class="pre">NamedArgument</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.Dispatch" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.Field">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">Field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><span class="pre">DataType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.Field" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.Graph">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">Graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dispatches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Dispatch" title="taichi.aot.conventions.gfxruntime140.sr.Dispatch"><span class="pre">Dispatch</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.Graph" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.Kernel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">Kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Context" title="taichi.aot.conventions.gfxruntime140.sr.Context"><span class="pre">Context</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tasks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Task" title="taichi.aot.conventions.gfxruntime140.sr.Task"><span class="pre">Task</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.Kernel" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.LaunchGrid">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">LaunchGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.LaunchGrid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.Metadata">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">Metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Field" title="taichi.aot.conventions.gfxruntime140.sr.Field"><span class="pre">Field</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Kernel" title="taichi.aot.conventions.gfxruntime140.sr.Kernel"><span class="pre">Kernel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_caps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../../../#taichi.DeviceCapability" title="taichi.DeviceCapability"><span class="pre">taichi.DeviceCapability</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_buffer_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.Metadata" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.NamedArgument">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">NamedArgument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Argument" title="taichi.aot.conventions.gfxruntime140.sr.Argument"><span class="pre">Argument</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.NamedArgument" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">NdArrayAccess</span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Generic enumeration.</p>
+<p>Derive from this class to define new enumerations.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.NoAccess">
+<span class="sig-name descname"><span class="pre">NoAccess</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.NoAccess" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.Read">
+<span class="sig-name descname"><span class="pre">Read</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.Read" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.ReadWrite">
+<span class="sig-name descname"><span class="pre">ReadWrite</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.ReadWrite" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.Write">
+<span class="sig-name descname"><span class="pre">Write</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.Write" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.name" title="Permalink to this definition">#</a></dt>
+<dd><p>The name of the Enum member.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.NdArrayAccess.value" title="Permalink to this definition">#</a></dt>
+<dd><p>The value of the Enum member.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.ReturnValue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">ReturnValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><span class="pre">DataType</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.ReturnValue" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.Task">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_ty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType" title="taichi.aot.conventions.gfxruntime140.sr.TaskType"><span class="pre">TaskType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_binds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.BufferBinding" title="taichi.aot.conventions.gfxruntime140.sr.BufferBinding"><span class="pre">BufferBinding</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texture_binds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBinding" title="taichi.aot.conventions.gfxruntime140.sr.TextureBinding"><span class="pre">TextureBinding</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">launch_grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.LaunchGrid" title="taichi.aot.conventions.gfxruntime140.sr.LaunchGrid"><span class="pre">LaunchGrid</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.Task" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TaskType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">TaskType</span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Generic enumeration.</p>
+<p>Derive from this class to define new enumerations.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TaskType.Gc">
+<span class="sig-name descname"><span class="pre">Gc</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">5</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.Gc" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TaskType.GcRc">
+<span class="sig-name descname"><span class="pre">GcRc</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">6</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.GcRc" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TaskType.ListGen">
+<span class="sig-name descname"><span class="pre">ListGen</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.ListGen" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TaskType.MeshFor">
+<span class="sig-name descname"><span class="pre">MeshFor</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.MeshFor" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TaskType.RangeFor">
+<span class="sig-name descname"><span class="pre">RangeFor</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.RangeFor" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TaskType.Serial">
+<span class="sig-name descname"><span class="pre">Serial</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.Serial" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TaskType.StructFor">
+<span class="sig-name descname"><span class="pre">StructFor</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.StructFor" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TaskType.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.name" title="Permalink to this definition">#</a></dt>
+<dd><p>The name of the Enum member.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TaskType.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TaskType.value" title="Permalink to this definition">#</a></dt>
+<dd><p>The value of the Enum member.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TextureBinding">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">TextureBinding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iarg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texture_bind_ty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType" title="taichi.aot.conventions.gfxruntime140.sr.TextureBindingType"><span class="pre">TextureBindingType</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBinding" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TextureBindingType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">TextureBindingType</span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Generic enumeration.</p>
+<p>Derive from this class to define new enumerations.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.RwTexture">
+<span class="sig-name descname"><span class="pre">RwTexture</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.RwTexture" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.Texture">
+<span class="sig-name descname"><span class="pre">Texture</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.Texture" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.name" title="Permalink to this definition">#</a></dt>
+<dd><p>The name of the Enum member.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.TextureBindingType.value" title="Permalink to this definition">#</a></dt>
+<dd><p>The value of the Enum member.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.from_dr_field">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">from_dr_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../dr/#taichi.aot.conventions.gfxruntime140.dr.FieldAttributes" title="taichi.aot.conventions.gfxruntime140.dr.FieldAttributes"><span class="pre">taichi.aot.conventions.gfxruntime140.dr.FieldAttributes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Field" title="taichi.aot.conventions.gfxruntime140.sr.Field"><span class="pre">Field</span></a></span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_field" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.from_dr_graph">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">from_dr_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Metadata" title="taichi.aot.conventions.gfxruntime140.sr.Metadata"><span class="pre">Metadata</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../dr/#taichi.aot.conventions.gfxruntime140.dr.Graph" title="taichi.aot.conventions.gfxruntime140.dr.Graph"><span class="pre">taichi.aot.conventions.gfxruntime140.dr.Graph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Graph" title="taichi.aot.conventions.gfxruntime140.sr.Graph"><span class="pre">Graph</span></a></span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_graph" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.from_dr_kernel">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">from_dr_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../dr/#taichi.aot.conventions.gfxruntime140.dr.KernelAttributes" title="taichi.aot.conventions.gfxruntime140.dr.KernelAttributes"><span class="pre">taichi.aot.conventions.gfxruntime140.dr.KernelAttributes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Kernel" title="taichi.aot.conventions.gfxruntime140.sr.Kernel"><span class="pre">Kernel</span></a></span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_kernel" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.from_dr_metadata">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">from_dr_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../dr/#taichi.aot.conventions.gfxruntime140.dr.Metadata" title="taichi.aot.conventions.gfxruntime140.dr.Metadata"><span class="pre">taichi.aot.conventions.gfxruntime140.dr.Metadata</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Metadata" title="taichi.aot.conventions.gfxruntime140.sr.Metadata"><span class="pre">Metadata</span></a></span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.from_dr_metadata" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.get_data_type_size">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">get_data_type_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><span class="pre">DataType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.get_data_type_size" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.to_dr_field">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">to_dr_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Field" title="taichi.aot.conventions.gfxruntime140.sr.Field"><span class="pre">Field</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_field" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.to_dr_graph">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">to_dr_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Graph" title="taichi.aot.conventions.gfxruntime140.sr.Graph"><span class="pre">Graph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../dr/#taichi.aot.conventions.gfxruntime140.dr.Graph" title="taichi.aot.conventions.gfxruntime140.dr.Graph"><span class="pre">taichi.aot.conventions.gfxruntime140.dr.Graph</span></a></span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_graph" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.to_dr_kernel">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">to_dr_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Kernel" title="taichi.aot.conventions.gfxruntime140.sr.Kernel"><span class="pre">Kernel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_kernel" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.aot.conventions.gfxruntime140.sr.to_dr_metadata">
+<span class="sig-prename descclassname"><span class="pre">taichi.aot.conventions.gfxruntime140.sr.</span></span><span class="sig-name descname"><span class="pre">to_dr_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#taichi.aot.conventions.gfxruntime140.sr.Metadata" title="taichi.aot.conventions.gfxruntime140.sr.Metadata"><span class="pre">Metadata</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../dr/#taichi.aot.conventions.gfxruntime140.dr.Metadata" title="taichi.aot.conventions.gfxruntime140.dr.Metadata"><span class="pre">taichi.aot.conventions.gfxruntime140.dr.Metadata</span></a></span></span><a class="headerlink" href="#taichi.aot.conventions.gfxruntime140.sr.to_dr_metadata" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Taichi Graphics.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

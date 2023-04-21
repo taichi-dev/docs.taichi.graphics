@@ -1,0 +1,877 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>taichi.lang.enums &#8212; taichi-api-docstring  documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:category" content="API Reference">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../../../">
+<p class="title">taichi-api-docstring</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="ml-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../">
+  Taichi Language’s API reference
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://docs.taichi.graphics">Taichi Documentation Site<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/taichi-dev/taichi" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl autoapi-container">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items">
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="dropdown show">
+        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          v1.3.0
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          
+            
+            <a class="dropdown-item" href="/api/master/">master</a>
+            
+          
+             <strong> 
+            <a class="dropdown-item" href="/api/">v1.3.0</a>
+             </strong> 
+          
+            
+            <a class="dropdown-item" href="/api/v1.2.2/">v1.2.2</a>
+            
+          
+        </div>
+      </span>
+    </span>
+  </div>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <!--  -->
+
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../">
+   Taichi Language’s API reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../">
+     taichi: The main taichi module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ad/">
+     taichi.ad: Taichi Autodiff system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aot/">
+     taichi.aot: Taichi AOT system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../linalg/">
+     taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../math/">
+     taichi.math: Taichi math library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../profiler/">
+     taichi.profiler: Taichi profiler tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/">
+     taichi.tools: Miscellaneous tools shipped with Taichi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/">
+     taichi.types: Taichi types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../types/quant/">
+     taichi.types.quant: Taichi quantized types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ui/">
+     taichi.ui: Taichi UI components (GUI and GGUI)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.enums.AutodiffMode">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     AutodiffMode
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     DeviceCapability
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_atomic_float
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_atomic_float16
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16_add">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_atomic_float16_add
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16_minmax">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_atomic_float16_minmax
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_atomic_float64
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64_add">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_atomic_float64_add
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64_minmax">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_atomic_float64_minmax
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float_add">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_atomic_float_add
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float_minmax">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_atomic_float_minmax
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_i64">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_atomic_i64
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_float16">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_float16
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_float64">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_float64
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_int16">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_int16
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_int64">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_int64
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_int8">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_int8
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_no_integer_wrap_decoration">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_no_integer_wrap_decoration
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_non_semantic_info">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_non_semantic_info
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_physical_storage_buffer">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_physical_storage_buffer
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_arithmetic">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_subgroup_arithmetic
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_ballot">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_subgroup_ballot
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_basic">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_subgroup_basic
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_vote">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_subgroup_vote
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_variable_ptr">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_has_variable_ptr
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_version_1_3">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_version_1_3
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_version_1_4">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_version_1_4
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_version_1_5">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeviceCapability.spirv_version_1_5
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.enums.Format">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Format
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.enums.Layout">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Layout
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.enums.SNodeGradType">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SNodeGradType
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.enums.AutodiffMode">
+   AutodiffMode
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability">
+   DeviceCapability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float">
+     spirv_has_atomic_float
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16">
+     spirv_has_atomic_float16
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16_add">
+     spirv_has_atomic_float16_add
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16_minmax">
+     spirv_has_atomic_float16_minmax
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64">
+     spirv_has_atomic_float64
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64_add">
+     spirv_has_atomic_float64_add
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64_minmax">
+     spirv_has_atomic_float64_minmax
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float_add">
+     spirv_has_atomic_float_add
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float_minmax">
+     spirv_has_atomic_float_minmax
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_i64">
+     spirv_has_atomic_i64
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_float16">
+     spirv_has_float16
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_float64">
+     spirv_has_float64
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_int16">
+     spirv_has_int16
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_int64">
+     spirv_has_int64
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_int8">
+     spirv_has_int8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_no_integer_wrap_decoration">
+     spirv_has_no_integer_wrap_decoration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_non_semantic_info">
+     spirv_has_non_semantic_info
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_physical_storage_buffer">
+     spirv_has_physical_storage_buffer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_arithmetic">
+     spirv_has_subgroup_arithmetic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_ballot">
+     spirv_has_subgroup_ballot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_basic">
+     spirv_has_subgroup_basic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_vote">
+     spirv_has_subgroup_vote
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_has_variable_ptr">
+     spirv_has_variable_ptr
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_version_1_3">
+     spirv_version_1_3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_version_1_4">
+     spirv_version_1_4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.enums.DeviceCapability.spirv_version_1_5">
+     spirv_version_1_5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.enums.Format">
+   Format
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.enums.Layout">
+   Layout
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.enums.SNodeGradType">
+   SNodeGradType
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-taichi.lang.enums">
+<span id="taichi-lang-enums"></span><h1><a class="reference internal" href="#module-taichi.lang.enums" title="taichi.lang.enums"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.lang.enums</span></code></a><a class="headerlink" href="#module-taichi.lang.enums" title="Permalink to this heading">#</a></h1>
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.enums.AutodiffMode">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.enums.</span></span><span class="sig-name descname"><span class="pre">AutodiffMode</span></span><a class="headerlink" href="#taichi.lang.enums.AutodiffMode" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.lang.enums.</span></span><span class="sig-name descname"><span class="pre">DeviceCapability</span></span><a class="headerlink" href="#taichi.lang.enums.DeviceCapability" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_atomic_float">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_float</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_float</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_float16</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_float16</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16_add">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_float16_add</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_float16_add</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16_add" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16_minmax">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_float16_minmax</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_float16_minmax</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float16_minmax" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_float64</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_float64</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64_add">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_float64_add</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_float64_add</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64_add" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64_minmax">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_float64_minmax</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_float64_minmax</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float64_minmax" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_atomic_float_add">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_float_add</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_float_add</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float_add" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_atomic_float_minmax">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_float_minmax</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_float_minmax</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_float_minmax" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_atomic_i64">
+<span class="sig-name descname"><span class="pre">spirv_has_atomic_i64</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_atomic_i64</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_atomic_i64" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_float16">
+<span class="sig-name descname"><span class="pre">spirv_has_float16</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_float16</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_float16" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_float64">
+<span class="sig-name descname"><span class="pre">spirv_has_float64</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_float64</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_float64" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_int16">
+<span class="sig-name descname"><span class="pre">spirv_has_int16</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_int16</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_int16" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_int64">
+<span class="sig-name descname"><span class="pre">spirv_has_int64</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_int64</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_int64" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_int8">
+<span class="sig-name descname"><span class="pre">spirv_has_int8</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_int8</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_int8" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_no_integer_wrap_decoration">
+<span class="sig-name descname"><span class="pre">spirv_has_no_integer_wrap_decoration</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_no_integer_wrap_decoration</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_no_integer_wrap_decoration" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_non_semantic_info">
+<span class="sig-name descname"><span class="pre">spirv_has_non_semantic_info</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_non_semantic_info</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_non_semantic_info" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_physical_storage_buffer">
+<span class="sig-name descname"><span class="pre">spirv_has_physical_storage_buffer</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_physical_storage_buffer</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_physical_storage_buffer" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_subgroup_arithmetic">
+<span class="sig-name descname"><span class="pre">spirv_has_subgroup_arithmetic</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_subgroup_arithmetic</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_arithmetic" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_subgroup_ballot">
+<span class="sig-name descname"><span class="pre">spirv_has_subgroup_ballot</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_subgroup_ballot</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_ballot" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_subgroup_basic">
+<span class="sig-name descname"><span class="pre">spirv_has_subgroup_basic</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_subgroup_basic</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_basic" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_subgroup_vote">
+<span class="sig-name descname"><span class="pre">spirv_has_subgroup_vote</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_subgroup_vote</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_subgroup_vote" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_has_variable_ptr">
+<span class="sig-name descname"><span class="pre">spirv_has_variable_ptr</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_has_variable_ptr</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_has_variable_ptr" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_version_1_3">
+<span class="sig-name descname"><span class="pre">spirv_version_1_3</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_version=1.3</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_version_1_3" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_version_1_4">
+<span class="sig-name descname"><span class="pre">spirv_version_1_4</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_version=1.4</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_version_1_4" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="taichi.lang.enums.DeviceCapability.spirv_version_1_5">
+<span class="sig-name descname"><span class="pre">spirv_version_1_5</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">spirv_version=1.5</span></em><a class="headerlink" href="#taichi.lang.enums.DeviceCapability.spirv_version_1_5" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.enums.Format">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.enums.</span></span><span class="sig-name descname"><span class="pre">Format</span></span><a class="headerlink" href="#taichi.lang.enums.Format" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.enums.Layout">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.enums.</span></span><span class="sig-name descname"><span class="pre">Layout</span></span><a class="headerlink" href="#taichi.lang.enums.Layout" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="taichi.lang.enums.SNodeGradType">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.enums.</span></span><span class="sig-name descname"><span class="pre">SNodeGradType</span></span><a class="headerlink" href="#taichi.lang.enums.SNodeGradType" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Taichi Graphics.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

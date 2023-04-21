@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../">
-  <img src="../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -130,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.1.3</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.0.4/">v1.0.4</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -174,6 +169,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../linalg/">
      taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../math/">
+     taichi.math: Taichi math library
     </a>
    </li>
    <li class="toctree-l2">
@@ -242,19 +242,10 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._main.TaichiMain.benchmark">
+    <a class="reference internal nav-link" href="#taichi._main.TaichiMain.cache">
      <code class="docutils literal notranslate">
       <span class="pre">
-       TaichiMain.benchmark()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._main.TaichiMain.cc_compose">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       TaichiMain.cc_compose()
+       TaichiMain.cache()
       </span>
      </code>
     </a>
@@ -345,6 +336,15 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        TaichiMain.lint()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi._main.TaichiMain.module">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiMain.module()
       </span>
      </code>
     </a>
@@ -479,13 +479,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._main.TaichiMain.benchmark">
-     benchmark
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi._main.TaichiMain.cc_compose">
-     cc_compose
+    <a class="reference internal nav-link" href="#taichi._main.TaichiMain.cache">
+     cache
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -536,6 +531,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi._main.TaichiMain.lint">
      lint
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi._main.TaichiMain.module">
+     module
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -638,15 +638,9 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi._main.TaichiMain.benchmark">
-<span class="sig-name descname"><span class="pre">benchmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">arguments:</span> <span class="pre">list</span> <span class="pre">=</span> <span class="pre">sys.argv[2:]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._main.TaichiMain.benchmark" title="Permalink to this definition">#</a></dt>
-<dd><p>Run Python tests in benchmark mode</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi._main.TaichiMain.cc_compose">
-<span class="sig-name descname"><span class="pre">cc_compose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">arguments:</span> <span class="pre">list</span> <span class="pre">=</span> <span class="pre">sys.argv[2:]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._main.TaichiMain.cc_compose" title="Permalink to this definition">#</a></dt>
-<dd><p>Compose C backend action record into a complete C file</p>
+<dt class="sig sig-object py" id="taichi._main.TaichiMain.cache">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">arguments:</span> <span class="pre">list</span> <span class="pre">=</span> <span class="pre">sys.argv[2:]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._main.TaichiMain.cache" title="Permalink to this definition">#</a></dt>
+<dd><p>Manage the offline cache files manually</p>
 </dd></dl>
 
 <dl class="py method">
@@ -707,6 +701,12 @@
 <dt class="sig sig-object py" id="taichi._main.TaichiMain.lint">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">arguments:</span> <span class="pre">list</span> <span class="pre">=</span> <span class="pre">sys.argv[2:]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._main.TaichiMain.lint" title="Permalink to this definition">#</a></dt>
 <dd><p>Run pylint checker for the Python codebase of Taichi</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi._main.TaichiMain.module">
+<span class="sig-name descname"><span class="pre">module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">arguments:</span> <span class="pre">list</span> <span class="pre">=</span> <span class="pre">sys.argv[2:]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi._main.TaichiMain.module" title="Permalink to this definition">#</a></dt>
+<dd><p>Taichi module tools</p>
 </dd></dl>
 
 <dl class="py method">
@@ -815,7 +815,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

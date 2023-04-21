@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-    <script src="../../../../../_static/jquery.js"></script>
-    <script src="../../../../../_static/underscore.js"></script>
-    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
     <script src="../../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../../../">
-  <img src="../../../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -130,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.1.3</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.0.4/">v1.0.4</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -174,6 +169,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../linalg/">
      taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../math/">
+     taichi.math: Taichi math library
     </a>
    </li>
    <li class="toctree-l2">
@@ -395,6 +395,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_FormattedValue">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.build_FormattedValue()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_FunctionDef">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -602,19 +611,19 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_slice">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_unpack">
      <code class="docutils literal notranslate">
       <span class="pre">
-       ASTTransformer.build_assign_slice()
+       ASTTransformer.build_assign_unpack()
       </span>
      </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_unpack">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_attribute_if_is_dynamic_snode_method">
      <code class="docutils literal notranslate">
       <span class="pre">
-       ASTTransformer.build_assign_unpack()
+       ASTTransformer.build_attribute_if_is_dynamic_snode_method()
       </span>
      </code>
     </a>
@@ -737,6 +746,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.canonicalize_formatted_string">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ASTTransformer.canonicalize_formatted_string()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.get_decorator">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -847,6 +865,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.reshape_list">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reshape_list()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer">
    ASTTransformer
   </a>
@@ -939,6 +966,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_For">
      build_For
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_FormattedValue">
+     build_FormattedValue
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1057,13 +1089,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_slice">
-     build_assign_slice
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_unpack">
+     build_assign_unpack
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_unpack">
-     build_assign_unpack
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_attribute_if_is_dynamic_snode_method">
+     build_attribute_if_is_dynamic_snode_method
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1132,6 +1164,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.canonicalize_formatted_string">
+     canonicalize_formatted_string
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.ASTTransformer.get_decorator">
      get_decorator
     </a>
@@ -1191,6 +1228,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.build_stmts">
    build_stmts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ast.ast_transformer.reshape_list">
+   reshape_list
   </a>
  </li>
 </ul>
@@ -1311,6 +1353,11 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_FormattedValue">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_FormattedValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_FormattedValue" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_FunctionDef">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_FunctionDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_FunctionDef" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -1397,7 +1444,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_Subscript">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_Subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Subscript" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_Subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_Subscript" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1435,7 +1482,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_basic">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_assign_basic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_static_assign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_basic" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_assign_basic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_static_assign</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_basic" title="Permalink to this definition">#</a></dt>
 <dd><p>Build basic assignment like this: target = value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1449,11 +1496,6 @@
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_slice">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_assign_slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_static_assign</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_slice" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_assign_unpack">
@@ -1472,6 +1514,11 @@ The function should be called only if the node target is a tuple.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_attribute_if_is_dynamic_snode_method">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_attribute_if_is_dynamic_snode_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.build_attribute_if_is_dynamic_snode_method" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.build_bool_op">
@@ -1539,6 +1586,11 @@ The function should be called only if the node target is a tuple.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.canonicalize_formatted_string">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">canonicalize_formatted_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_string</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">raw_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">raw_keywords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.canonicalize_formatted_string" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.ASTTransformer.get_decorator">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_decorator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.ASTTransformer.get_decorator" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -1602,6 +1654,11 @@ See also: <a class="reference external" href="https://docs.python.org/3/library/
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.ast.ast_transformer.</span></span><span class="sig-name descname"><span class="pre">build_stmts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stmts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.build_stmts" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.ast.ast_transformer.reshape_list">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.ast.ast_transformer.</span></span><span class="sig-name descname"><span class="pre">reshape_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flat_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ast.ast_transformer.reshape_list" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 </section>
 
 
@@ -1630,7 +1687,7 @@ See also: <a class="reference external" href="https://docs.python.org/3/library/
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

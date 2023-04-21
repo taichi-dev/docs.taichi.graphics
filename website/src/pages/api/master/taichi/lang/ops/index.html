@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -56,11 +53,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../../">
-  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -131,11 +126,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.1.3</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.0.4/">v1.0.4</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -175,6 +170,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../linalg/">
      taichi.linalg: Taichi Linear algebra library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../math/">
+     taichi.math: Taichi math library
     </a>
    </li>
    <li class="toctree-l2">
@@ -297,6 +297,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ops.atomic_mul">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     atomic_mul()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.ops.atomic_or">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -382,6 +391,15 @@
    <code class="docutils literal notranslate">
     <span class="pre">
      floor()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ops.frexp">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     frexp()
     </span>
    </code>
   </a>
@@ -553,6 +571,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ops.atomic_mul">
+   atomic_mul
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.ops.atomic_or">
    atomic_or
   </a>
@@ -600,6 +623,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.ops.floor">
    floor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.ops.frexp">
+   frexp
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -924,6 +952,38 @@ are not allowed.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.ops.atomic_mul">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.ops.</span></span><span class="sig-name descname"><span class="pre">atomic_mul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ops.atomic_mul" title="Permalink to this definition">#</a></dt>
+<dd><p>Atomically compute <cite>x * y</cite>, store the result in <cite>x</cite>,
+and return the old value of <cite>x</cite>.</p>
+<p><cite>x</cite> must be a writable target, constant expressions or scalars
+are not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (Union[<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+<li><p><strong>y</strong> (Union[<a class="reference internal" href="../../types/primitive_types/#module-taichi.types.primitive_types" title="taichi.types.primitive_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">primitive_types</span></code></a>, <a class="reference internal" href="../../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>]) – The input.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The old value of <cite>x</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; @ti.kernel
+&gt;&gt;&gt; def test():
+&gt;&gt;&gt;     x = ti.Vector([1, 2, 3])
+&gt;&gt;&gt;     y = ti.Vector([4, 5, 6])
+&gt;&gt;&gt;     z = ti.atomic_mul(x, y)
+&gt;&gt;&gt;     print(x)  # [1, 2, 3]  the new value of x
+&gt;&gt;&gt;     print(z)  # [4, 10, 18], the old value of x
+&gt;&gt;&gt;
+&gt;&gt;&gt;     ti.atomic_mul(1, x)  # will raise TaichiSyntaxError
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.ops.atomic_or">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.ops.</span></span><span class="sig-name descname"><span class="pre">atomic_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ops.atomic_or" title="Permalink to this definition">#</a></dt>
 <dd><p>Atomically compute the bit-wise OR of <cite>x</cite> and <cite>y</cite>, element-wise.
@@ -1072,7 +1132,7 @@ This is a scalar if both <cite>x1</cite> and <cite>x2</cite> are scalars.</p>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">x</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">y</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">bit_shr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">main</span><span class="p">()</span>
 <span class="go">[3, 2]</span>
 </pre></div>
@@ -1211,6 +1271,11 @@ The floor of the scalar <cite>x</cite> is the largest integer <cite>k</cite>, su
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.ops.frexp">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.ops.</span></span><span class="sig-name descname"><span class="pre">frexp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ops.frexp" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.ops.log">
 <span class="sig-prename descclassname"><span class="pre">taichi.lang.ops.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ops.log" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the natural logarithm, element-wise.</p>
@@ -1332,7 +1397,7 @@ are on; otherwise 1 will be returned.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="taichi.lang.ops.random">
-<span class="sig-prename descclassname"><span class="pre">taichi.lang.ops.</span></span><span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.ops.random" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.ops.</span></span><span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></span><a class="headerlink" href="#taichi.lang.ops.random" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a single random float/integer according to the specified data type.
 Must be called in taichi scope.</p>
 <p>If the required <cite>dtype</cite> is float type, this function returns a random number
@@ -1613,7 +1678,7 @@ element wise. If <cite>x &lt; 0</cite> an exception is raised.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

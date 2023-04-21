@@ -34,8 +34,7 @@
     "description": "The label of the button to try again when the page crashed"
   },
   "theme.NotFound.title": {
-    "message": "Page Not Found",
-    "description": "The title of the 404 page"
+    "message": "Page Not Found"
   },
   "theme.NotFound.p1": {
     "message": "We could not find what you were looking for.",
@@ -291,5 +290,44 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "theme.text.dochome": {
+    "message": "Doc Home"
+  },
+  "theme.text.pythonuser": {
+    "message": "Python User"
+  },
+  "theme.text.aotdeployment": {
+    "message": "AOT Deployment"
+  },
+  "theme.text.taichinewsletters": {
+    "message": "Taichi Newsletters"
+  },
+  "theme.text.taichiblogs": {
+    "message": "Taichi Blogs"
+  },
+  "theme.subscription.subscribetoourupdates": {
+    "message": "Subscribe to our updates"
+  },
+  "theme.text.resources": {
+    "message": "Resources"
+  },
+  "theme.text.blog": {
+    "message": "Blogs"
+  },
+  "theme.text.newsletters": {
+    "message": "Newsletters"
+  },
+  "theme.text.userstories": {
+    "message": "User Stories"
+  },
+  "theme.text.taichicourse": {
+    "message": "Taichi Graphics Course"
+  },
+  "theme.text.community": {
+    "message": "Community"
+  },
+  "theme.text.wechat": {
+    "message": "Wechat"
   }
 }

@@ -12,8 +12,26 @@ for (const version of versions) {
   versionpaths.push(__dirname + `/versioned_docs/version-${version}`)
 }
 
+const presets = {
+  dotorg: {
+    url: 'https://docs.taichi-lang.org',
+    baseUrl: '/',
+    blogUrl: '/blog',
+    defaultLocale: 'en',
+  },
+  dotcn: {
+    url: 'https://docs.taichi-lang.cn',
+    baseUrl: '/',
+    blogUrl: 'https://www.zhihu.com/org/tai-ji-tu-xing/posts',
+    defaultLocale: 'zh-Hans',
+  },
+};
+
+const chosenPreset = process.env.PRESET || 'dotorg';
+
+
 // For i18n
-const DefaultLocale = 'en';
+const DefaultLocale = process.env.WRITING_TRANSLATION ? 'en' : presets[chosenPreset].defaultLocale;
 const mapLocaleCodeToCrowdin = (locale) => {
   switch (locale) {
     case 'zh-Hans':
@@ -29,8 +47,8 @@ const mapLocaleCodeToCrowdin = (locale) => {
 module.exports = {
   title: 'Taichi Docs',
   tagline: 'Graphics programming for everyone',
-  url: 'https://docs.taichi-lang.org',
-  baseUrl: '/',
+  url: presets[chosenPreset].url,
+  baseUrl: presets[chosenPreset].baseUrl,
   // trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -67,6 +85,18 @@ module.exports = {
       {
         postsPerPage: 10,
         blogTitle: 'Taichi Blogs'
+      }
+    ],
+    [
+      path.resolve(__dirname, 'plugins/blog-enhance-plugin'),
+      {
+        id: 'user-stories',
+        postsPerPage: 10,
+        path: 'user-stories',
+        routeBasePath: 'user-stories',
+        blogTitle: 'Taichi User Stories',
+        blogDescription: 'User Stories',
+        showReadingTime: false,
       }
     ],
     [
@@ -139,7 +169,7 @@ module.exports = {
   ],
   i18n: {
     defaultLocale: DefaultLocale,
-    locales: [DefaultLocale, 'zh-Hans', 'fr-FR'],
+    locales: ['en', 'zh-Hans', 'fr-FR'],
   },
   themeConfig: {
     hideableSidebar: true,
@@ -338,4 +368,12 @@ module.exports = {
       },
     ],
   ],
+  customFields: {
+    blogUrl: presets[chosenPreset].blogUrl,
+    localeUrls: {
+      'fr-FR': 'https://docs.taichi-lang.org/fr-FR',
+      'zh-Hans': 'https://docs.taichi-lang.cn',
+      'en': 'https://docs.taichi-lang.org',
+    },
+  }
 };

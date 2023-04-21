@@ -110,12 +110,12 @@ If your PR is to implement a new feature, we recommend that you write your own t
 
 We highly recommend that you complete code style checks and integration tests on your local computer before filing a PR.
 
-### Enforce code style
+### Enforce code format
 
 Taichi enforces code style via [pre-commit](https://pre-commit.com/) hooks, which includes the following checks:
 
 1. C++ codes are formatted by `clang-format-10`.
-2. Python codes are formatted by `yapf v0.31.0` based on PEP 8 rules.
+2. Python codes are formatted by `black v23.3.0`.
 3. Python codes are statically checked by [`pylint`](https://pylint.org/).
 
 You will need to install `pre-commit` first:
@@ -130,7 +130,7 @@ and run the code checkers:
 pre-commit run -a
 ```
 
-With this command, `yapf` will format your Python codes automatically.
+With this command, `black` will format your Python codes automatically.
 You can install it as a pre-commit hook so that it is run before you commit the changes to git:
 
 ```
@@ -147,6 +147,24 @@ No problem, the CI bot will run the code checkers and format your codes automati
 <!-- Todo: Make this a reusable fragment. -->
 
 > For more style information for your C++ code, see [our C++ style](#c-style).
+
+### C++ style guide
+
+We generally follow [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html). One major exception is the naming convention of functions: Taichi adopts the snake case for function naming, as opposed to the camel case [suggested in Google's style](https://google.github.io/styleguide/cppguide.html#Function_Names), e.g. `this_is_a_taichi_function()`.
+
+Taichi uses `clang-tidy-10` (install via `sudo apt install clang-tidy-10`) to automatically check C++ code for stype violations, programming errors and enforce coding style best practices. You can find a list of enabled checks in [.clang-tidy](https://github.com/taichi-dev/taichi/blob/master/.clang-tidy).
+
+Taichi's clang-tidy integration test is enabled per PR basis and you can run it locally via:
+
+```
+python ./scripts/run_clang_tidy.py $PWD/taichi -clang-tidy-binary clang-tidy-10 -header-filter=$PWD/taichi -j4
+```
+
+`clang-tidy` also provides an easy way to automatically apply suggested fixes by passing `-fix` argument:
+
+```
+python ./scripts/run_clang_tidy.py $PWD/taichi -clang-tidy-binary clang-tidy-10 -clang-apply-replacements-binary clang-apply-replacements-10 -header-filter=$PWD/taichi -j4 -fix
+```
 
 ### Run integration tests
 
@@ -192,6 +210,7 @@ Now you get to the point where you need to get your hands dirty with your PRs. T
 - **When implementing a complex feature:**
 
   - Consider breaking it down to multiple separate, self-contained PRs to provide the community with a clearer context and keep a more traceable development history.
+  - If you're already a collaborator or maintainer with write access to the Taichi repository, please consider adopting [the ghstack workflow](#ghstack-workflow).
 
 - **When creating a PR:**
 
@@ -298,36 +317,19 @@ Here, we do not want to repeat some best practices summarized in the following G
   - [Code Health: Respectful Reviews == Useful Reviews](https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html)
   - [How to have your PR merged quickly](https://testing.googleblog.com/2017/06/code-health-too-many-comments-on-your.html)
 
-## C++ style
 
-We generally follow [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html). One major exception is the naming convention of functions: Taichi adopts the snake case for function naming, as opposed to the camel case [suggested in Google's style](https://google.github.io/styleguide/cppguide.html#Function_Names), e.g. `this_is_a_taichi_function()`.
+<a name="ghstack-workflow"></a>
 
-Below we highlight some of the most widely used styles.
+### Implementing the ghstack workflow for complex changesets
 
-### Naming conventions
+The standard GitHub PR workflow can become unwieldy when dealing with large changesets.
+With the help of [ghstack](https://github.com/ezyang/ghstack), you can break down a large changeset into multiple PRs, each building upon the previous one.
+Each PR will undergo its own review process and CI/CD checks.
 
-- Class and struct names should use the camel case, for example, `CodegenLlvm`.
-  - Prefer capitalizing only the first letter of an acronym/abbreviation ([examples](https://google.github.io/styleguide/jsguide.html#naming-camel-case-defined)).
-- Variable names should use the snake case, for example, `llvm_context`.
-- Private class member variable names should end with an `_`, for example, `id_to_snodes_`.
-- Constant names should use the camel case, with a prefix `k`, for example, `constexpr int kTaichiMaxNumArgs = 64;`.
-- Macros should start with `TI_`, for example, `TI_NOT_IMPLEMENTED`.
-  - In general, avoid using macros as much as possible.
+For details on how to use ghstack, please consult its documentation, with the exception of the landing step.
+To land ghstack commits, simply comment `/land` on the PR. A landing bot will then verify if the corresponding PR and all its predecessors have been approved and passed the CI/CD checks.
+If all checks have been cleared, the bot will execute `ghstack land` for you.
 
-### Rule of thumbs
-
-- Use `const` as much as possible, for example, function parameter types, class member functions, and more.
-- Provide default initializers to the class member variables, at least for the POD types.
-  ```cpp
-  class Foo {
-   private:
-    int x_{0};
-    char* buf_{nullptr};
-  };
-  ```
-- Embrace the smart pointers and avoid `new` and `delete`.
-- Mark the constructor `explicit` to prevent the compiler from doing any implicit conversion.
-- Avoid virtual function calls in the constructors or destructors ([explanation](https://wiki.sei.cmu.edu/confluence/display/cplusplus/OOP50-CPP.+Do+not+invoke+virtual+functions+from+constructors+or+destructors)).
 
 ## Deal with compilation warnings
 

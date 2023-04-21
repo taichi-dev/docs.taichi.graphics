@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  DO_NOT_THROW_ON_BROKEN_LINKS: 'true'
+
 jobs:
   pr-test:
     runs-on: ubuntu-latest
