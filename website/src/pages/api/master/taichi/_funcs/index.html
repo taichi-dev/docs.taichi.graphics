@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../">
-  <img src="../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -130,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.3.0</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.2.2/">v1.2.2</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -344,7 +339,7 @@
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – 2D Matrix for which the eigenvalues and right eigenvectors will be computed.</p></li>
-<li><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the eigenvalues and right eigenvectors.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – The datatype for the eigenvalues and right eigenvectors.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -366,7 +361,7 @@ eigenvectors (ti.Matrix(n*2, n)): The eigenvectors in complex form. Each column 
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – input nxn matrix <cite>A</cite>.</p></li>
-<li><p><strong>dt</strong> (<em>DataType</em>) – date type of elements in matrix <cite>A</cite>, typically accepts ti.f32 or ti.f64.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – date type of elements in matrix <cite>A</cite>, typically accepts ti.f32 or ti.f64.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -383,7 +378,7 @@ eigenvectors (ti.Matrix(n*2, n)): The eigenvectors in complex form. Each column 
 Box-Muller transformation. Must be called in Taichi scope.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dt</strong> (<em>DataType</em>) – Data type of the required random number. Default to <cite>None</cite>.
+<dd class="field-odd"><p><strong>dt</strong> (<a class="reference internal" href="../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – Data type of the required random number. Default to <cite>None</cite>.
 If set to <cite>None</cite> <cite>dt</cite> will be determined dynamically in runtime.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -410,7 +405,7 @@ If set to <cite>None</cite> <cite>dt</cite> will be determined dynamically in ru
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – input nxn matrix <cite>A</cite>.</p></li>
 <li><p><strong>b</strong> (<em>ti.Vector</em><em>(</em><em>n</em><em>, </em><em>1</em><em>)</em>) – input nx1 vector <cite>b</cite>.</p></li>
-<li><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the <cite>A</cite> and <cite>b</cite>.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – The datatype for the <cite>A</cite> and <cite>b</cite>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -431,7 +426,7 @@ If set to <cite>None</cite> <cite>dt</cite> will be determined dynamically in ru
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – input nxn matrix <cite>A</cite>.</p></li>
-<li><p><strong>dt</strong> (<em>DataType</em>) – date type of elements in matrix <cite>A</cite>, typically accepts ti.f32 or ti.f64.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – date type of elements in matrix <cite>A</cite>, typically accepts ti.f32 or ti.f64.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -449,7 +444,7 @@ If set to <cite>None</cite> <cite>dt</cite> will be determined dynamically in ru
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>A</strong> (<em>ti.Matrix</em><em>(</em><em>n</em><em>, </em><em>n</em><em>)</em>) – Symmetric Matrix for which the eigenvalues and right eigenvectors will be computed.</p></li>
-<li><p><strong>dt</strong> (<em>DataType</em>) – The datatype for the eigenvalues and right eigenvectors.</p></li>
+<li><p><strong>dt</strong> (<a class="reference internal" href="../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.DataType" title="taichi.aot.conventions.gfxruntime140.sr.DataType"><em>DataType</em></a>) – The datatype for the eigenvalues and right eigenvectors.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -490,7 +485,7 @@ eigenvectors (ti.Matrix(n, n)): The eigenvectors. Each column stores one eigenve
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

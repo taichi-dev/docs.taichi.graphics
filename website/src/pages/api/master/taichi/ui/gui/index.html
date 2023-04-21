@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../../">
-  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -130,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.3.0</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.2.2/">v1.2.2</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -274,17 +269,6 @@
       </span>
      </code>
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.WidgetValue.value">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         GUI.WidgetValue.value()
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.ALT">
@@ -557,19 +541,19 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.cook_image">
+    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.contour">
      <code class="docutils literal notranslate">
       <span class="pre">
-       GUI.cook_image()
+       GUI.contour()
       </span>
      </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.fps_limit">
+    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.cook_image">
      <code class="docutils literal notranslate">
       <span class="pre">
-       GUI.fps_limit()
+       GUI.cook_image()
       </span>
      </code>
     </a>
@@ -692,15 +676,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.running">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       GUI.running()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.set_image">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -753,15 +728,19 @@
       </span>
      </code>
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.vector_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GUI.vector_field()
+      </span>
+     </code>
+    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.EventFilter.match">
        match
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.WidgetValue.value">
-       value
       </a>
      </li>
     </ul>
@@ -957,13 +936,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.cook_image">
-     cook_image
+    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.contour">
+     contour
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.fps_limit">
-     fps_limit
+    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.cook_image">
+     cook_image
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1032,11 +1011,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.running">
-     running
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.set_image">
      set_image
     </a>
@@ -1064,6 +1038,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.triangles">
      triangles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.gui.GUI.vector_field">
+     vector_field
     </a>
    </li>
   </ul>
@@ -1158,11 +1137,6 @@ Taichi. Default is False.</p></li>
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.WidgetValue">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WidgetValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gui</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.WidgetValue" title="Permalink to this definition">#</a></dt>
 <dd><p>Class for maintaining id of gui widgets.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.ui.gui.GUI.WidgetValue.value">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.WidgetValue.value" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 <dl class="py attribute">
@@ -1364,7 +1338,7 @@ Default is WidgetButton_{text}</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pos</strong> (<em>numpy.array</em>) – The positions of the circles.</p></li>
-<li><p><strong>radius</strong> (<em>Number</em><em>, </em><em>optional</em>) – The radius of the circles in pixel. Default is 1.</p></li>
+<li><p><strong>radius</strong> (<em>Union</em><em>[</em><em>Number</em><em>, </em><em>numpy.array</em><em>]</em><em>, </em><em>optional</em>) – The radius of the circles in pixel.                 Can be either a number, which will be applied to all circles, or a 1D NumPy array of the same length as <cite>pos</cite>.                 The default is 1.</p></li>
 <li><p><strong>color</strong> (<em>int</em><em>, </em><em>optional</em>) – The color of the circles. Default is 0xFFFFFF.</p></li>
 <li><p><strong>palette</strong> (<em>list</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The List of colors from which to
 choose to draw. Default is None.</p></li>
@@ -1401,26 +1375,31 @@ is the background color of GUI.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.gui.GUI.contour">
+<span class="sig-name descname"><span class="pre">contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.contour" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot a contour view of a scalar field.</p>
+<p>The input scalar_field will be converted to a Numpy array first, and then plotted
+by the Matplotlib colormap ‘Plasma’. Notice this method will automatically perform
+a bilinear interpolation on the field if the size of the field does not match with
+the GUI window size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scalar_field</strong> (<em>ti.field</em>) – The scalar field being plotted.</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em><em>, </em><em>Optional</em>) – Display the normalized scalar field if set to True.</p></li>
+<li><p><strong>False.</strong> (<em>Default is</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.cook_image">
 <span class="sig-name descname"><span class="pre">cook_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.cook_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts an img to range [0, 1] for display.</p>
 <p>The input image is stored in a <cite>numpy.ndarray</cite>, if it’s dtype
 is <cite>int</cite> it will be rescaled and mapped into range [0, 1]. If
 the dtype is <cite>float</cite> it will be directly casted to 32-bit float type.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.ui.gui.GUI.fps_limit">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fps_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.fps_limit" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the maximum fps of this gui.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the maximum fps.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1636,20 +1615,6 @@ of rectangle. Shape must be 2.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.ui.gui.GUI.running">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.running" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns whether this gui is running or not.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>whether this gui is running or not.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.gui.GUI.set_image">
 <span class="sig-name descname"><span class="pre">set_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.set_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets an image to display on the window.</p>
@@ -1770,6 +1735,21 @@ the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.gui.GUI.vector_field">
+<span class="sig-name descname"><span class="pre">vector_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrow_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16777215</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.gui.GUI.vector_field" title="Permalink to this definition">#</a></dt>
+<dd><p>Display a vector field on canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector_field</strong> (<em>ti.Vector.field</em>) – The vector field being displayed.</p></li>
+<li><p><strong>arrow_spacing</strong> (<em>int</em><em>, </em><em>optional</em>) – The spacing between vectors.</p></li>
+<li><p><strong>color</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>np.array</em><em>]</em><em>, </em><em>optional</em>) – The color of vectors.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py function">
@@ -1828,7 +1808,7 @@ the shape of a &amp; b &amp; c. Default is 0xFFFFFF.</p></li>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

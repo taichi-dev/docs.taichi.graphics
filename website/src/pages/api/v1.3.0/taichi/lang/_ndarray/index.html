@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../../">
-  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -247,15 +242,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.element_shape">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Ndarray.element_shape()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.fill">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -289,15 +275,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        ScalarNdarray.copy_from()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.ScalarNdarray.element_shape">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ScalarNdarray.element_shape()
       </span>
      </code>
     </a>
@@ -351,11 +328,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.element_shape">
-     element_shape
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang._ndarray.Ndarray.fill">
      fill
     </a>
@@ -375,11 +347,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang._ndarray.ScalarNdarray.copy_from">
      copy_from
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang._ndarray.ScalarNdarray.element_shape">
-     element_shape
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -452,20 +419,6 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.Ndarray.element_shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.Ndarray.element_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets ndarray element shape.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Ndarray element shape.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple[Int]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang._ndarray.Ndarray.fill">
 <span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.Ndarray.fill" title="Permalink to this definition">#</a></dt>
 <dd><p>Fills ndarray with a specific scalar value.</p>
@@ -504,20 +457,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.lang._ndarray.Ndarray" title="taichi.lang._ndarray.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang._ndarray.ScalarNdarray.element_shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">element_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang._ndarray.ScalarNdarray.element_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets ndarray element shape.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Ndarray element shape.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple[Int]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -578,7 +517,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

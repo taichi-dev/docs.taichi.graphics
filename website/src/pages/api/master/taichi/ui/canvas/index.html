@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../../">
-  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -130,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.3.0</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.2.2/">v1.2.2</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -247,6 +242,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.contour">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.contour()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.lines">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -291,6 +295,15 @@
      </code>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.vector_field">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Canvas.vector_field()
+      </span>
+     </code>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -301,6 +314,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.circles">
      circles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.contour">
+     contour
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -326,6 +344,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.triangles">
      triangles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ui.canvas.Canvas.vector_field">
+     vector_field
     </a>
    </li>
   </ul>
@@ -368,9 +391,28 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>centers</strong> – a taichi 2D Vector field, where each element indicate the                 3D location of a vertex.</p></li>
-<li><p><strong>radius</strong> (<em>float</em>) – radius of the circles, relative to the height of the screen.</p></li>
+<li><p><strong>radius</strong> (<em>Number</em>) – radius of the circles in pixels.</p></li>
 <li><p><strong>color</strong> – a global color for the triangles as 3 floats representing                 RGB values. If <cite>per_vertex_color</cite> is provided, this is ignored.</p></li>
 <li><p><strong>per_vertex_color</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em>) – a taichi 3D vector field, where                 each element indicate the RGB color of a circle.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.canvas.Canvas.contour">
+<span class="sig-name descname"><span class="pre">contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'plasma'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.contour" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot a contour view of a scalar field.</p>
+<p>The input scalar_field will be converted to a Numpy array first, and then plotted
+using Matplotlib’s colormap. Users can specify the color map through the cmap_name
+argument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scalar_field</strong> (<em>ti.field</em>) – The scalar field being plotted. Must be 2D.</p></li>
+<li><p><strong>cmap_name</strong> (<em>str</em><em>, </em><em>Optional</em>) – The name of the color map in Matplotlib.</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em><em>, </em><em>Optional</em>) – Display the normalized scalar field if set to True.</p></li>
+<li><p><strong>False.</strong> (<em>Default is</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -442,6 +484,23 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ui.canvas.Canvas.vector_field">
+<span class="sig-name descname"><span class="pre">vector_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrow_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.002</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.canvas.Canvas.vector_field" title="Permalink to this definition">#</a></dt>
+<dd><p>Draw a vector field on this canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector_field</strong> – The vector field to be plotted on the canvas.</p></li>
+<li><p><strong>arrow_spacing</strong> (<em>int</em>) – Spacing used when sample on the vector field.</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Maximum vector length proportional to the canvas.</p></li>
+<li><p><strong>width</strong> (<em>float</em>) – Line width when drawing the arrow.</p></li>
+<li><p><strong>color</strong> (<em>tuple</em><em>[</em><em>float</em><em>]</em>) – The RGB color of arrows.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -472,7 +531,7 @@ please call the <cite>get_canvas()</cite> method of <a class="reference internal
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     

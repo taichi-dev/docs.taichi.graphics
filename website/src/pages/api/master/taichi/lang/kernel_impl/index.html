@@ -30,9 +30,6 @@
   <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex/" />
@@ -55,11 +52,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../../">
-  <img src="../../../../_static/logo.svg" class="logo" alt="logo">
+<p class="title">taichi-api-docstring</p>
 </a>
-
 
     
   </div>
@@ -130,11 +125,11 @@
              </strong> 
           
             
-            <a class="dropdown-item" href="/api/">v1.3.0</a>
+            <a class="dropdown-item" href="/api/">v1.5.0</a>
             
           
             
-            <a class="dropdown-item" href="/api/v1.2.2/">v1.2.2</a>
+            <a class="dropdown-item" href="/api/v1.4.1/">v1.4.1</a>
             
           
         </div>
@@ -256,6 +251,15 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.kernel_impl.pyfunc">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pyfunc()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.kernel_impl.data_oriented">
    data_oriented
   </a>
@@ -268,6 +272,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.lang.kernel_impl.kernel">
    kernel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.lang.kernel_impl.pyfunc">
+   pyfunc
   </a>
  </li>
 </ul>
@@ -390,6 +399,27 @@ to either a CPU thread pool or massively parallel GPUs.</p>
 </div>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.lang.kernel_impl.pyfunc">
+<span class="sig-prename descclassname"><span class="pre">taichi.lang.kernel_impl.</span></span><span class="sig-name descname"><span class="pre">pyfunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.kernel_impl.pyfunc" title="Permalink to this definition">#</a></dt>
+<dd><p>Marks a function as callable in both Taichi and Python scopes.</p>
+<p>When called inside the Taichi scope, Taichi will JIT compile it into
+native instructions. Otherwise it will be invoked directly as a
+Python function.</p>
+<p>See also <a class="reference internal" href="#taichi.lang.kernel_impl.func" title="taichi.lang.kernel_impl.func"><code class="xref py py-func docutils literal notranslate"><span class="pre">func()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em>) – The Python function to be decorated</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The decorated function</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Callable</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
@@ -418,7 +448,7 @@ to either a CPU thread pool or massively parallel GPUs.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
     </div>
     
