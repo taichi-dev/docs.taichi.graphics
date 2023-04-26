@@ -946,10 +946,37 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixNdarray.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixNdarray.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.from_numpy">
      <code class="docutils literal notranslate">
       <span class="pre">
        MatrixNdarray.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.get_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MatrixNdarray.get_type()
       </span>
      </code>
     </a>
@@ -1488,15 +1515,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        StructField.get_member_field()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.StructField.parent">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       StructField.parent()
       </span>
      </code>
     </a>
@@ -2134,10 +2152,37 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.copy_from">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VectorNdarray.copy_from()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.fill">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VectorNdarray.fill()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.from_numpy">
      <code class="docutils literal notranslate">
       <span class="pre">
        VectorNdarray.from_numpy()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.get_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       VectorNdarray.get_type()
       </span>
      </code>
     </a>
@@ -3450,8 +3495,23 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.copy_from">
+     copy_from
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.fill">
+     fill
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.from_numpy">
      from_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.MatrixNdarray.get_type">
+     get_type
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -3758,11 +3818,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.StructField.get_member_field">
      get_member_field
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.lang.StructField.parent">
-     parent
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -4126,8 +4181,23 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.copy_from">
+     copy_from
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.fill">
+     fill
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.from_numpy">
      from_numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.lang.VectorNdarray.get_type">
+     get_type
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5720,6 +5790,29 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixNdarray.copy_from">
+<span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixNdarray.copy_from" title="Permalink to this definition">#</a></dt>
+<dd><p>Copies all elements from another ndarray.</p>
+<p>The shape of the other ndarray needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.lang.Ndarray" title="taichi.lang.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixNdarray.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixNdarray.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills ndarray with a specific scalar value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.MatrixNdarray.from_numpy">
 <span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixNdarray.from_numpy" title="Permalink to this definition">#</a></dt>
 <dd><p>Copies the data of a <cite>numpy.ndarray</cite> into this array.</p>
@@ -5730,6 +5823,11 @@ See <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.MatrixNdarray.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.MatrixNdarray.get_type" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.MatrixNdarray.to_numpy">
@@ -6376,23 +6474,6 @@ between corresponding items can be performed.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.ScalarField" title="taichi.lang.ScalarField">ScalarField</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.lang.StructField.parent">
-<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.StructField.parent" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets an ancestor of the representative SNode in the SNode tree.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of levels going up from the representative SNode.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The n-th parent of the representative SNode.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#taichi.lang.SNode" title="taichi.lang.SNode">SNode</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -7321,6 +7402,29 @@ the remaining entries are all zeros.</p>
 </pre></div>
 </div>
 <dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.VectorNdarray.copy_from">
+<span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.VectorNdarray.copy_from" title="Permalink to this definition">#</a></dt>
+<dd><p>Copies all elements from another ndarray.</p>
+<p>The shape of the other ndarray needs to be the same as <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#taichi.lang.Ndarray" title="taichi.lang.Ndarray"><em>Ndarray</em></a>) – The source ndarray.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.VectorNdarray.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.VectorNdarray.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills ndarray with a specific scalar value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value to fill.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.VectorNdarray.from_numpy">
 <span class="sig-name descname"><span class="pre">from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.VectorNdarray.from_numpy" title="Permalink to this definition">#</a></dt>
 <dd><p>Copies the data from a <cite>numpy.ndarray</cite> into this ndarray.</p>
@@ -7333,6 +7437,11 @@ the remaining entries are all zeros.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.lang.VectorNdarray.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.lang.VectorNdarray.get_type" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.lang.VectorNdarray.to_numpy">
