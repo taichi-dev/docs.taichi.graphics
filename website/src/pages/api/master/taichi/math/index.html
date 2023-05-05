@@ -1963,7 +1963,7 @@ must have the same shape, and scalars will be broadcasted to the same shape as t
 <span class="sig-prename descclassname"><span class="pre">taichi.math.</span></span><span class="sig-name descname"><span class="pre">mix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.math.mix" title="Permalink to this definition">#</a></dt>
 <dd><p>Performs a linear interpolation between <cite>x</cite> and <cite>y</cite> using
 <cite>a</cite> to weight between them. The return value is computed as
-<span class="math notranslate nohighlight">\(x    imes a + (1-a)  imes y\)</span>.</p>
+<cite>x * (1 - a) + a * y</cite>.</p>
 <p>The arguments can be scalars or <a class="reference internal" href="../#taichi.Matrix" title="taichi.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>,
 as long as the operation can be performed.</p>
 <p>This function is similar to the <cite>mix</cite> function in GLSL.</p>
