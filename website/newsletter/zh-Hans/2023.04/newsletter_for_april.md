@@ -45,7 +45,7 @@ VOF 求解器结果展示
 
 3D res
 
-**🧰 [TaichiVisTools: 用于 Taichi 调试的可视化小工具](forum.taichi-lang.cn/t/topic/4244)**
+**🧰 [TaichiVisTools: 用于 Taichi 调试的可视化小工具](https://forum.taichi-lang.cn/t/topic/4244)**
 
 在写仿真代码的时候，常常会希望有可视化的调试工具。比如用鼠标框选粒子，可视化稀疏网格，矩阵检查器等…这对我们调试代码很有帮助。作者 beidou 正在开发一套完全基于 GGUI 之上的小工具。
 
