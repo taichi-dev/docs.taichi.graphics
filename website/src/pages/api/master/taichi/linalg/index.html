@@ -223,26 +223,6 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.linalg.CG">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     CG
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.linalg.CG.solve">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       CG.solve()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.linalg.LinearOperator">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -256,6 +236,35 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        LinearOperator.matvec()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.MatrixFreeCG">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MatrixFreeCG()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.SparseCG">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SparseCG
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.SparseCG.solve">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SparseCG.solve()
       </span>
      </code>
     </a>
@@ -453,27 +462,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.linalg.taichi_cg_solver">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     taichi_cg_solver()
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.linalg.CG">
-   CG
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.linalg.CG.solve">
-     solve
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.linalg.LinearOperator">
    LinearOperator
   </a>
@@ -481,6 +469,23 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.linalg.LinearOperator.matvec">
      matvec
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.MatrixFreeCG">
+   MatrixFreeCG
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.SparseCG">
+   SparseCG
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.linalg.SparseCG.solve">
+     solve
     </a>
    </li>
   </ul>
@@ -595,11 +600,6 @@
    sparse_matrix_builder
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.linalg.taichi_cg_solver">
-   taichi_cg_solver
-  </a>
- </li>
 </ul>
 
 </nav>
@@ -625,21 +625,54 @@
 <span id="taichi-linalg"></span><h1><a class="reference internal" href="#module-taichi.linalg" title="taichi.linalg"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi.linalg</span></code></a><a class="headerlink" href="#module-taichi.linalg" title="Permalink to this heading">#</a></h1>
 <p>Taichi support module for sparse matrix operations.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="taichi.linalg.CG">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">CG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.CG" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="taichi.linalg.CG.solve">
-<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.CG.solve" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="taichi.linalg.LinearOperator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">LinearOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matvec_kernel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.LinearOperator" title="Permalink to this definition">#</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="taichi.linalg.LinearOperator.matvec">
 <span class="sig-name descname"><span class="pre">matvec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.LinearOperator.matvec" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.linalg.MatrixFreeCG">
+<span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">MatrixFreeCG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.MatrixFreeCG" title="Permalink to this definition">#</a></dt>
+<dd><p>Matrix-free conjugate-gradient solver.</p>
+<p>Use conjugate-gradient method to solve the linear system Ax = b, where A is implicitly
+represented as a LinearOperator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<a class="reference internal" href="#taichi.linalg.LinearOperator" title="taichi.linalg.LinearOperator"><em>LinearOperator</em></a>) – The coefficient matrix A of the linear system.</p></li>
+<li><p><strong>b</strong> (<a class="reference internal" href="../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.Field" title="taichi.aot.conventions.gfxruntime140.sr.Field"><em>Field</em></a>) – The right-hand side of the linear system.</p></li>
+<li><p><strong>x</strong> (<a class="reference internal" href="../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.Field" title="taichi.aot.conventions.gfxruntime140.sr.Field"><em>Field</em></a>) – The initial guess for the solution.</p></li>
+<li><p><strong>maxiter</strong> (<em>int</em>) – Maximum number of iterations.</p></li>
+<li><p><strong>atol</strong> – Tolerance(absolute) for convergence.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Switch to turn on/off iteration log.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.linalg.SparseCG">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">SparseCG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseCG" title="Permalink to this definition">#</a></dt>
+<dd><p>Conjugate-gradient solver built for SparseMatrix.</p>
+<p>Use conjugate-gradient method to solve the linear system Ax = b, where A is SparseMatrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<a class="reference internal" href="#taichi.linalg.SparseMatrix" title="taichi.linalg.SparseMatrix"><em>SparseMatrix</em></a>) – The coefficient matrix A of the linear system.</p></li>
+<li><p><strong>b</strong> (<em>numpy ndarray</em><em>, </em><em>taichi Ndarray</em>) – The right-hand side of the linear system.</p></li>
+<li><p><strong>x0</strong> (<em>numpy ndarray</em><em>, </em><em>taichi Ndarray</em>) – The initial guess for the solution.</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em>) – Maximum number of iterations.</p></li>
+<li><p><strong>atol</strong> – Tolerance(absolute) for convergence.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.linalg.SparseCG.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.SparseCG.solve" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -867,11 +900,6 @@ set self.__traceback__ to tb and return self.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">sparse_matrix_builder</span></span><a class="headerlink" href="#taichi.linalg.sparse_matrix_builder" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../types/annotations/#taichi.types.annotations.sparse_matrix_builder" title="taichi.types.annotations.sparse_matrix_builder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">taichi.types.annotations.sparse_matrix_builder</span></code></a></p>
 </dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.linalg.taichi_cg_solver">
-<span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">taichi_cg_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.taichi_cg_solver" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
 
 </section>
 
