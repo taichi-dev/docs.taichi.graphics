@@ -1429,15 +1429,6 @@
      </code>
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.Window.write_image">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Window.write_image()
-      </span>
-     </code>
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1454,15 +1445,6 @@
    <code class="docutils literal notranslate">
     <span class="pre">
      hex_to_rgb()
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.make_camera">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     make_camera()
     </span>
    </code>
   </a>
@@ -2141,11 +2123,6 @@
      show
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taichi.ui.Window.write_image">
-     write_image
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -2156,11 +2133,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.ui.hex_to_rgb">
    hex_to_rgb
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taichi.ui.make_camera">
-   make_camera
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -3786,18 +3758,6 @@ to the corresponding event.</p>
 <dd><p>Display this window.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="taichi.ui.Window.write_image">
-<span class="sig-name descname"><span class="pre">write_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Window.write_image" title="Permalink to this definition">#</a></dt>
-<dd><p>Save the window content to an image file. This is an deprecated
-interface; please use <cite>save_image</cite> instead.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – output filename.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py function">
@@ -3818,17 +3778,6 @@ interface; please use <cite>save_image</cite> instead.</p>
 <dd class="field-even"><p>The rgb representation of color.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="taichi.ui.make_camera">
-<span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">make_camera</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.make_camera" title="Permalink to this definition">#</a></dt>
-<dd><p>Return an instance of <a class="reference internal" href="#taichi.ui.Camera" title="taichi.ui.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a>. This is an deprecated
-interface, please construct <cite>~taichi.ui.Camera</cite> directly.</p>
-<p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; camera = ti.ui.make_camera()
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="py function">
