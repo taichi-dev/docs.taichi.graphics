@@ -223,6 +223,15 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.argpack">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     argpack()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.types.f16">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -556,6 +565,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.types.argpack">
+   argpack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.types.f16">
    f16
   </a>
@@ -771,6 +785,27 @@
 <li><p>ndarray: for arbitrary arrays.</p></li>
 <li><p>quant: for quantized types, see “<a class="reference external" href="https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf">https://yuanming.taichi.graphics/publication/2021-quantaichi/quantaichi.pdf</a>”</p></li>
 </ul>
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.types.argpack">
+<span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">argpack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.types.argpack" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates an argument pack type with given members.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> (<em>dict</em>) – a dictionary contains the names and types of the
+argument pack members.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A argument pack type.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
+&gt;&gt;&gt; sphere = ti.types.argpack(center=vec3, radius=float)
+&gt;&gt;&gt; s = sphere(center=vec3([0., 0., 0.]), radius=1.0)
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="py data">
 <dt class="sig sig-object py" id="taichi.types.f16">
 <span class="sig-prename descclassname"><span class="pre">taichi.types.</span></span><span class="sig-name descname"><span class="pre">f16</span></span><a class="headerlink" href="#taichi.types.f16" title="Permalink to this definition">#</a></dt>
