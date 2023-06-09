@@ -224,6 +224,26 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ArgPack">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ArgPack
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ArgPack.to_dict">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ArgPack.to_dict()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.BitpackedFields">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -2334,6 +2354,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.TaichiRuntimeTypeError.get_ret">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TaichiRuntimeTypeError.get_ret()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.TaichiRuntimeTypeError.with_traceback">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -4056,6 +4085,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.ArgPack">
+   ArgPack
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.ArgPack.to_dict">
+     to_dict
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.BitpackedFields">
    BitpackedFields
   </a>
@@ -5236,6 +5277,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taichi.TaichiRuntimeTypeError.get_ret">
+     get_ret
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taichi.TaichiRuntimeTypeError.with_traceback">
      with_traceback
     </a>
@@ -6220,6 +6266,50 @@
                 
   <section id="module-taichi">
 <span id="taichi"></span><h1><a class="reference internal" href="#module-taichi" title="taichi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">taichi</span></code></a><a class="headerlink" href="#module-taichi" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="taichi.ArgPack">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">ArgPack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annotations</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ArgPack" title="Permalink to this definition">#</a></dt>
+<dd><p>The <cite>ArgPack</cite> Type Class.</p>
+<p>The <cite>ArgPack</cite> operates as a dictionary-like data pack, storing members as (key, value) pairs. Members stored can
+range from scalars and matrices to other dictionary-like structures. Distinguished from structs, <cite>ArgPack</cite> can
+accommodate buffer types such as <cite>NdarrayType</cite> and <cite>TextureType</cite> from Taichi. However, unlike <cite>ti.Struct</cite> which
+serves as a data container, <cite>ArgPack</cite> functions as a reference container. It’s important to note that <cite>ArgPack</cite>
+cannot be nested within other types except for another <cite>ArgPack</cite>, and can only be utilized as kernel parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>annotations</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>Dict</em><em>, </em><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><em>Matrix</em></a><em>, </em><a class="reference internal" href="#taichi.Struct" title="taichi.Struct"><em>Struct</em></a><em>]</em><em>]</em>) – The keys and types for <cite>ArgPack</cite> members.</p></li>
+<li><p><strong>entries</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>Dict</em><em>, </em><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><em>Matrix</em></a><em>, </em><a class="reference internal" href="#taichi.Struct" title="taichi.Struct"><em>Struct</em></a><em>]</em><em>]</em>) – The keys and corresponding values for <cite>ArgPack</cite> members.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An instance of this <cite>ArgPack</cite>.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
+&gt;&gt;&gt; pack_type = ti.ArgPackType(v=vec3, t=ti.f32)
+&gt;&gt;&gt; a = pack_type(v=vec3([0, 0, 0]), t=1.0)
+&gt;&gt;&gt; print(a.items)
+dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0)])
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.ArgPack.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ArgPack.to_dict" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts the ArgPack to a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result dictionary.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.BitpackedFields">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">BitpackedFields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_num_bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.BitpackedFields" title="Permalink to this definition">#</a></dt>
@@ -8538,30 +8628,35 @@ please see Page 4 and Page 13-14 of DiffTaichi Paper: <a class="reference extern
 <dt class="sig sig-object py" id="taichi.Struct">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.</span></span><span class="sig-name descname"><span class="pre">Struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Struct" title="Permalink to this definition">#</a></dt>
 <dd><p>The Struct type class.</p>
-<p>A struct is a dictionary-like data structure that stores members as
+<blockquote>
+<div><p>A struct is a dictionary-like data structure that stores members as
 (key, value) pairs. Valid data members of a struct can be scalars,
 matrices or other dictionary-like structures.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>entries</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>Dict</em><em>, </em><em>Expr</em><em>, </em><a class="reference internal" href="#taichi.Matrix" title="taichi.Matrix"><em>Matrix</em></a><em>, </em><a class="reference internal" href="#taichi.Struct" title="taichi.Struct"><em>Struct</em></a><em>]</em><em>]</em>) – keys and values for struct members. Entries can optionally
-include a dictionary of functions with the key ‘__struct_methods’
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>entries (Dict[str, Union[Dict, Expr, Matrix, Struct]]):             keys and values for struct members. Entries can optionally</dt><dd><p>include a dictionary of functions with the key ‘__struct_methods’
 which will be attached to the struct for executing on the struct data.</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>An instance of this struct.</p>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>An instance of this struct.</p>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vec3 = ti.types.vector(3, ti.f32)
-&gt;&gt;&gt; a = ti.Struct(v=vec3([0, 0, 0]), t=1.0)
-&gt;&gt;&gt; print(a.items)
-dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0)])
-&gt;&gt;&gt;
-&gt;&gt;&gt; B = ti.Struct(v=vec3([0., 0., 0.]), t=1.0, A=a)
-&gt;&gt;&gt; print(B.items)
-dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v&#39;: [[0.], [0.], [0.]], &#39;t&#39;: 1.0})])
+</div></blockquote>
+<dl>
+<dt>_</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vec3</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">ti</span><span class="o">.</span><span class="n">f32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Struct</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="n">vec3</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span> <span class="n">t</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+<span class="go">dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0)])</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Struct</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="n">vec3</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]),</span> <span class="n">t</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+<span class="go">dict_items([(&#39;v&#39;, [0. 0. 0.]), (&#39;t&#39;, 1.0), (&#39;A&#39;, {&#39;v&#39;: [[0.], [0.], [0.]], &#39;t&#39;: 1.0})])</span>
 </pre></div>
 </div>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.Struct.field">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">members</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;Struct&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_dual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Layout.AOS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.Struct.field" title="Permalink to this definition">#</a></dt>
@@ -8889,6 +8984,11 @@ set self.__traceback__ to tb and return self.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.TaichiRuntimeTypeError.get">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provided</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.TaichiRuntimeTypeError.get" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="taichi.TaichiRuntimeTypeError.get_ret">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_ret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">needed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provided</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.TaichiRuntimeTypeError.get_ret" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
