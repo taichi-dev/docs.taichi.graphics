@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-slug: /writing_cpp_tests
 ---
+
 # Write a C++ test
 
 We strongly recommend each developer to write C++ unit tests when sending a PR.

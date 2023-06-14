@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
-slug: /field
+
 ---
+
 # Fields
 
 The term _field_ is borrowed from mathematics and physics. If you already know [scalar field](https://en.wikipedia.org/wiki/Scalar_field) (for example heat field), or vector field (for example [gravitational field](https://en.wikipedia.org/wiki/Gravitational_field)), then it is easy for you to understand fields in Taichi.

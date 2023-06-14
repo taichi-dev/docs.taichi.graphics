@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
-slug: /windows_debug
 ---
+
 # Debugging on Windows
 
 ## Prerequisites

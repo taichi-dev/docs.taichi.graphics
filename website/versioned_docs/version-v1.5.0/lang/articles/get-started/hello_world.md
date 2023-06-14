@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
-slug: /hello_world
 ---
+
+
 # Hello, World!
 
 Taichi is a domain-specific language designed for high-performance, parallel computing, and is embedded in Python.

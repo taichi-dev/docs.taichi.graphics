@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-slug: /kernel_sync
 ---
+
 # Synchronization between Kernels and Python Scope
 
 When using the GPU backend, a kernel is compiled and sent to the GPU queue for execution. The Python program does not wait for the kernel to finish before continuing to execute the next statement. This can be problematic if subsequent computations depend on the result of the kernel. In most of the time, Taichi automatically handles such data dependencies, waiting for the kernel to finish before executing subsequent statements. However, in rare cases, users may need to manually call `ti.sync()` to ensure synchronization.

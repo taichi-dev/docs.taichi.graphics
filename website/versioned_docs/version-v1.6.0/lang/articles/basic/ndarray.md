@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
-slug: /ndarray
 ---
+
 # Taichi Ndarray
 
 The Taichi ndarray is an array object that holds contiguous multi-dimensional data. Generally speaking, it plays a similar role to its counterpart `numpy.ndarray` in NumPy, but its underlying memory is allocated on the user-specified Taichi arch and managed by Taichi runtime.

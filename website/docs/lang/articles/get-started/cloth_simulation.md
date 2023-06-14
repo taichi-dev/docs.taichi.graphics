@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
-slug: /cloth_simulation
 ---
+
 # Conduct Physical Simulation
 
 ![download_image](https://user-images.githubusercontent.com/106292061/188805695-ed2ca0f7-4efd-45c5-83c3-42cfeac03eb7.gif)

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-slug: /odop
 ---
+
 # Objective Data-Oriented Programming
 
 Taichi is a [Data-Oriented](https://en.wikipedia.org/wiki/Data-Oriented_design) Programming (DOP) language. However, one-size-fits-all DOP makes modularization hard. To allow modularized code, Taichi borrows some concepts from Object-Oriented Programming (OOP). For convenience, let's call the hybrid scheme Objective Data-Oriented Programming (ODOP).

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-slug: /sparse_matrix
 ---
+
 # Sparse Matrix
 
 Sparse matrices are frequently involved in solving linear systems in science and engineering. Taichi provides useful APIs for sparse matrices on the CPU and CUDA backends.

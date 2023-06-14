@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-slug: /write_test
 ---
+
 # Write a Python test
 
 Normally we write functional tests in Python.

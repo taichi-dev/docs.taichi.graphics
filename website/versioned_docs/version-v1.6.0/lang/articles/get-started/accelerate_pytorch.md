@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-slug: /accelerate_pytorch
 ---
+
 # Accelerate PyTorch with Taichi
 
 Taichi and Torch serve different application scenarios but can complement each other.

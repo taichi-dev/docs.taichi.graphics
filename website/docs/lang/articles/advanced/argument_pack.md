@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
-slug: /argument_pack
 ---
+
 # Taichi Argument Pack
 
 Taichi provides custom [argpack types](../type_system/type.md#argument-pack-type) for developers to cache unchanged parameters between multiple kernel calls.

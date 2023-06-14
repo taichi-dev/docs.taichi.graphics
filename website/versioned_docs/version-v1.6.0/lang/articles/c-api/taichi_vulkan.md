@@ -1,7 +1,7 @@
 ---
 sidebar_positions: 2
-slug: /taichi_vulkan
 ---
+
 # Vulkan Backend Features
 
 Taichi's Vulkan API gives you further control over the Vulkan version and extension requirements and allows you to interop with external Vulkan applications with shared resources.

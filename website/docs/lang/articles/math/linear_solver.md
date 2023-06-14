@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
-slug: /linear_solver
 ---
+
 # Linear Solver
 
 Solving linear equations is a common task in scientific computing. Taichi provides basic direct and iterative linear solvers for
