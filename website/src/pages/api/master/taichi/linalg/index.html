@@ -243,6 +243,15 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.MatrixFreeBICGSTAB">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MatrixFreeBICGSTAB()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.linalg.MatrixFreeCG">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -465,6 +474,11 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taichi.linalg.MatrixFreeBICGSTAB">
+   MatrixFreeBICGSTAB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taichi.linalg.MatrixFreeCG">
    MatrixFreeCG
   </a>
@@ -618,6 +632,26 @@
 <span class="sig-name descname"><span class="pre">matvec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.LinearOperator.matvec" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="taichi.linalg.MatrixFreeBICGSTAB">
+<span class="sig-prename descclassname"><span class="pre">taichi.linalg.</span></span><span class="sig-name descname"><span class="pre">MatrixFreeBICGSTAB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.linalg.MatrixFreeBICGSTAB" title="Permalink to this definition">#</a></dt>
+<dd><p>Matrix-free biconjugate-gradient stabilized solver (BiCGSTAB).</p>
+<p>Use BiCGSTAB method to solve the linear system Ax = b, where A is implicitly
+represented as a LinearOperator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<a class="reference internal" href="#taichi.linalg.LinearOperator" title="taichi.linalg.LinearOperator"><em>LinearOperator</em></a>) – The coefficient matrix A of the linear system.</p></li>
+<li><p><strong>b</strong> (<a class="reference internal" href="../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.Field" title="taichi.aot.conventions.gfxruntime140.sr.Field"><em>Field</em></a>) – The right-hand side of the linear system.</p></li>
+<li><p><strong>x</strong> (<a class="reference internal" href="../aot/conventions/gfxruntime140/sr/#taichi.aot.conventions.gfxruntime140.sr.Field" title="taichi.aot.conventions.gfxruntime140.sr.Field"><em>Field</em></a>) – The initial guess for the solution.</p></li>
+<li><p><strong>maxiter</strong> (<em>int</em>) – Maximum number of iterations.</p></li>
+<li><p><strong>atol</strong> – Tolerance(absolute) for convergence.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Switch to turn on/off iteration log.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
