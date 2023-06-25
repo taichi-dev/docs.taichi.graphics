@@ -2,7 +2,7 @@
   base = "website/"
   publish = "build"
   command = "yarn build"
-  environment = { NODE_VERSION = "14" }
+  environment = { NODE_VERSION = "18" }
   ignore = "false"
 
 [context.production]
