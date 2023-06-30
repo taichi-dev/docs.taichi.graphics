@@ -2208,7 +2208,7 @@ and other helper utilities like adding widgets and exporting video files.</p>
 <cite>camera.lookat</cite>, <cite>camera.up</cite>, etc. The default settings may not work for
 your scene.</p>
 <p>Example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; scene = ti.ui.Scene()  # assume you have a scene
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; scene = window.get_scene()  # assumes you have a window
 &gt;&gt;&gt;
 &gt;&gt;&gt; camera = ti.ui.Camera()
 &gt;&gt;&gt; camera.position(1, 1, 1)  # set camera position
@@ -3436,8 +3436,11 @@ and before the next <cite>end</cite> will describe the widgets within this subwi
 <dl class="py class">
 <dt class="sig sig-object py" id="taichi.ui.Scene">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">taichi.ui.</span></span><span class="sig-name descname"><span class="pre">Scene</span></span><a class="headerlink" href="#taichi.ui.Scene" title="Permalink to this definition">#</a></dt>
-<dd><p>The 3D scene class, which can contain meshes and particles,
-and can be rendered on a canvas.</p>
+<dd><p>The old 3D scene class, which can contain meshes, lines and particles,
+and can be rendered on a canvas.
+This scene class is to be instantiated directly and is deprecated.
+Use the new SceneV2 class instead, which can be retrieved using the
+get_scene() function of a taichi.ui.Window.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="taichi.ui.Scene.ambient_light">
 <span class="sig-name descname"><span class="pre">ambient_light</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#taichi.ui.Scene.ambient_light" title="Permalink to this definition">#</a></dt>
