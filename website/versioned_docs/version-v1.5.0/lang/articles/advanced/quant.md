@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-slug: /quant
 ---
+
 # Use quantized data types
 
 High-resolution simulations can deliver great visual quality, but are often limited by the capacity of the onboard memory, GPU memory in particular.

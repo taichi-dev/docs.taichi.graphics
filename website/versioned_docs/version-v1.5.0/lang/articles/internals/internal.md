@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-slug: /internal
 ---
+
 # Internal Designs
 
 ## Intermediate representation (IR)

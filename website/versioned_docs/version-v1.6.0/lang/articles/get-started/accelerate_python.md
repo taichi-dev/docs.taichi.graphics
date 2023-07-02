@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-slug: /accelerate_python
 ---
+
 # Accelerate Python with Taichi
 
 Taichi is a domain-specific language *embedded* in Python. One of its key features is that Taichi can accelerate computation-intensive Python programs and help these programs [achieve comparable performance to C/C++ or even CUDA](https://docs.taichi-lang.org/blog/is-taichi-lang-comparable-to-or-even-faster-than-cuda). This makes Taichi much better positioned in the area of scientific computation.

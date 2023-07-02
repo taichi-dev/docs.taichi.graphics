@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-slug: /external
 ---
+
 # Interacting with External Arrays
 
 

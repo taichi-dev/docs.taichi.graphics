@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-slug: /math_module
 ---
+
 # Math Module
 
 

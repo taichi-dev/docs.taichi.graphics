@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-slug: /glossary
 ---
+
 # Glossary
 
 ## Abstract syntax tree (AST)

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-slug: /dataclass
 ---
+
 # Taichi Dataclass
 
 Taichi provides custom [struct types](../type_system/type.md#compound-types) for developers to assemble pieces of data together. However, it would be more convenient to have:

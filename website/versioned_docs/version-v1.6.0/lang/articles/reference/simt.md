@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-slug: /simt
 ---
+
 # SIMT Intrinsics
 
 For the CUDA backend, Taichi supports warp-level and block-level intrinsics, which

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-slug: /kernel_function
 ---
+
 # Kernels and Functions
 
 Taichi and Python share a similar syntax, but they are not identical. To distinguish Taichi code from native Python code, we utilize two decorators, `@ti.kernel` and `@ti.func`:
